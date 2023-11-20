@@ -51,7 +51,7 @@
 		gtklock
 		sway-contrib.grimshot
 		libreoffice-fresh
-		wineWowPackages.stable
+		wineWowPackages.wayland
 		winetricks
 		protontricks
 		soundux
@@ -105,7 +105,7 @@
 		wf-recorder
 		clonehero
 		scanmem
-		cinnamon.nemo
+		cinnamon.nemo-with-extensions
 		unzip
 		bless
 		handbrake
@@ -135,6 +135,9 @@
 		grim
 		wl-clipboard
 		gh
+		gnome.gnome-calendar
+		clamtk
+		lazygit
 # Overrides
 
 	(pkgs.goverlay.overrideAttrs { # cock
@@ -194,22 +197,27 @@
 # Custom packages
 
 (callPackage ../pkgcustom/vesktop/vesktop.nix {})
-(callPackage ../pkgcustom/vinegar {})
-
+#(callPackage ../pkgcustom/vinegar {})
+#(callPackage ../pkgcustom/sgdboop/default.nix {})
 	];
 	
-	  # Declarative flatpak module
-  services.flatpak = {
-    enableModule = true;
-    packages = [ "flathub:app/org.kde.index//stable" "flathub-beta:app/org.kde.kdenlive/x86_64/stable" ];
-    remotes = {
-      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    };
-    target-dir = "/home/vaporsnake/.local/share/flatpak";
-  };
+	  # Declaratively Manage Flatpaks here
+  services.flatpak.packages = [
+		"org.kde.Platform"
+		"org.freedesktop.Platform.GL.default"
+		"org.kde.Platform.Locale"
+		"org.freedesktop.Platform.openh264"
+		"io.mrarm.mcpelauncher"
+		"com.github.tchx84.Flatseal"
+		"com.librumreader.librum"
+		"com.steamgriddb.SGDBoop"
+		"org.ryujinx.Ryujinx"
+		"org.yuzu_emu.yuzu"
+		"net.rpcs3.RPCS3"
+		"org.duckstation.DuckStation"
+	];
 	
 	imports = [
-		inputs.flatpaks.homeManagerModules.default
+	inputs.nix-flatpak.homeManagerModules.nix-flatpak
 	];
 }

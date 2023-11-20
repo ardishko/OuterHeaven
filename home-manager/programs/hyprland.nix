@@ -26,11 +26,11 @@ exec-once = mullvad-gui
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
 #monitor=HDMI-A-1,2560x1440@144,0x0,1
-monitor=HDMI-A-1,1920x1080@60,0x350,1
-monitor=DP-2,1920x1080,1920x0,1,transform,3
+monitor=DP-2,1920x1080@60,0x350,1
+monitor=HDMI-A-1,1920x1080,1920x0,1,transform,3
 exec-once=waybar
-exec-once=swaybg -o HDMI-A-1 -i /home/vaporsnake/Pictures/wallpapers/vergil_catppuccin-frappe_hald8_GaussianRBF_lum1_shape96_near16.png
-exec-once=swaybg -o DP-2 -i /home/vaporsnake/Pictures/wallpapers/Wallpaper_catppuccin_frappe.png
+exec-once=swaybg -o DP-2 -i /home/vaporsnake/Pictures/wallpapers/vergil_catppuccin-frappe_hald8_GaussianRBF_lum1_shape96_near16.png
+exec-once=swaybg -o HDMI-A-1 -i /home/vaporsnake/Pictures/wallpapers/Wallpaper_catppuccin_frappe.png
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 general:layout = dwindle
@@ -279,20 +279,20 @@ bind = CTRL_SHIFT,D,pass,^(vencorddesktop)
 ##bind = CTRL, SHIFT, M,pass, vencord
 
 #workspace bindings to monitors
-workspace=HDMI-A-1,1
-workspace=HDMI-A-1,2
-workspace=HDMI-A-1,3
-workspace=HDMI-A-1,4
-workspace=HDMI-A-1,5
-workspace=HDMI-A-1,6
-workspace=HDMI-A-1,7
-workspace=HDMI-A-1,8
-workspace=HDMI-A-1,9
-workspace=HDMI-A-1,10
-workspace=DP-2,name:h
-workspace=DP-2,name:j
-workspace=DP-2,name:k
-workspace=DP-2,name:l
+workspace=DP-2,1
+workspace=DP-2,2
+workspace=DP-2,3
+workspace=DP-2,4
+workspace=DP-2,5
+workspace=DP-2,6
+workspace=DP-2,7
+workspace=DP-2,8
+workspace=DP-2,9
+workspace=DP-2,10
+workspace=HDMI-A-1,name:h
+workspace=HDMI-A-1,name:j
+workspace=HDMI-A-1,name:k
+workspace=HDMI-A-1,name:l
 
 # Switch workspaces with mainMod + [0-9]
 bind = $mainMod, 1, workspace, 1
