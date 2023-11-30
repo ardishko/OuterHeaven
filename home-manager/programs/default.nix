@@ -9,7 +9,12 @@
         ./waybar.nix
         ./swaync.nix
         ./heroic.nix
-        ./neovim-flake.nix
         ./vinegar.nix
+        ./neovim-flake.nix
+        ./kitty.nix
+        ./nushell.nix
+#        ./schizofox.nix
+#           wtf raf
+
     ];
 }

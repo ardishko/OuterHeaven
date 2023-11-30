@@ -1,18 +1,39 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, helix, inputs, outputs, flakes, ... }:
-
 {
-
+  config,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-#  boot.loader.grub.enable = true;
-#  boot.loader.grub.devices = [
-#    "/dev/disk/by-id/46eacb0b-2fb3-dc41-980c-a65d672a9882"
-#  ];
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+      #efiSysMountPoint = "boot/efi";
+    };
+  };
+  #boot.loader.grub = {
+  #  enable = true;
+  #  devices = ["nodev"];
+  #  efiSupport = true;
+  #  useOSProber = true;
+  #  theme =
+  #    pkgs.fetchFromGitHub {
+  #      owner = "catppuccin";
+  #      repo = "grub";
+  #      rev = "803c5df0e83aba61668777bb96d90ab8f6847106";
+  #      sha256 = "/bSolCta8GCZ4lP0u5NVqYQ9Y3ZooYCNdTwORNvR7M0=";
+  #    }
+  #    + "/src/catppuccin-frappe-grub-theme";
+  #};
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.7"
+  ];
 
   networking.hostName = "ShadowMoses"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -52,52 +73,19 @@
       };
     };
   };
-  
+
   xdg.portal = {
-		enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-	};
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+  };
   programs = {
     dconf.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-		};
-  };
-# Steam gamescope workaround found at: https://github.com/NixOS/nixpkgs/issues/162562
-  nixpkgs.config.packageOverrides = pkgs: {
-    steam = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
-        libpng
-        libpulseaudio
-        libvorbis
-        stdenv.cc.cc.lib
-        libkrb5
-        keyutils               
-        libgdiplus
-        at-spi2-atk
-        fmodex
-        gtk3
-        gtk3-x11
-        harfbuzz
-        icu
-        glxinfo
-        inetutils
-        libthai
-        mono5
-        pango
-        strace
-        zlib
-        libunwind
-      ];
     };
   };
-
   services = {
     tailscale.enable = true;
     flatpak.enable = true;
@@ -110,40 +98,40 @@
     gnome.gnome-keyring.enable = true;
     mullvad-vpn.enable = true;
     gnome.sushi.enable = true;
-    
+
     # Enable CUPS to print documents.
     printing.enable = true;
-    
+
     # Enable the X11 windowing system.
     xserver = {
-      enable = true;  
+      enable = true;
       layout = "tr";
       xkbVariant = "";
-      excludePackages = [ pkgs.xterm ];
-      videoDrivers = [ "amdgpu" ];
+      excludePackages = [pkgs.xterm];
+      videoDrivers = ["amdgpu"];
     };
   };
   systemd = {
     services.NetworkManager-wait-online.enable = false;
   };
   hardware = {
-# Enable OpenGL and Vulkan stuff
+    # Enable OpenGL and Vulkan stuff
     opengl.enable = true;
     opengl.driSupport = true;
     opengl.driSupport32Bit = true;
     opengl.extraPackages = with pkgs; [
       rocm-opencl-icd
-      rocm-opencl-runtime   
-   ];
+      rocm-opencl-runtime
+    ];
     bluetooth.enable = true;
   };
 
-  virtualisation = { 
+  virtualisation = {
     libvirtd.enable = true;
     waydroid.enable = true;
     podman.enable = true;
   };
-# Polkit stuff
+  # Polkit stuff
   security = {
     pam.services = {
       gtklock.text = "auth include login";
@@ -163,7 +151,6 @@
   };
 
   # Configure keymap in X11
-
 
   # Configure console keymap
   console.keyMap = "trq";
@@ -192,10 +179,11 @@
   users.users.vaporsnake = {
     isNormalUser = true;
     description = "vaporsnake";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
     ];
+    shell = pkgs.nushell;
   };
 
   # Allow unfree packages
@@ -203,40 +191,40 @@
 
   # Enable flakes
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
     builders-use-substitutes = true;
     # substituters to use
     substituters = [
-        "https://anyrun.cachix.org"
-        "https://hyprland.cachix.org"
+      "https://anyrun.cachix.org"
+      "https://hyprland.cachix.org"
     ];
-    
+
     trusted-public-keys = [
-        "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-environment.systemPackages = with pkgs; [
-  bash
-  gamescope
+  environment.systemPackages = with pkgs; [
+    bash
+    gamescope
+    lshw
   ];
-#};
-fonts.packages = with pkgs; [
-  noto-fonts
-  noto-fonts-cjk
-  noto-fonts-emoji
-  liberation_ttf
-  fira-code
-  fira-code-symbols
-  mplus-outline-fonts.githubRelease
-  dina-font
-  proggyfonts
-  nerdfonts
+  #};
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    nerdfonts
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -259,10 +247,10 @@ fonts.packages = with pkgs; [
 
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ]; 
-# boot.kernelParams = [ loglevel = 1 ]
+  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
+  # boot.kernelParams = [ loglevel = 1 ]
   boot.consoleLogLevel = 1;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -272,12 +260,15 @@ fonts.packages = with pkgs; [
   system.stateVersion = "23.05"; # Did you read the comment?
 
   imports = [
-      inputs.home-manager.nixosModules.home-manager
-      ../builders
-    ];
-# Some home manager stuff
+    inputs.home-manager.nixosModules.home-manager
+    #    ../builders
+  ];
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+  # Some home manager stuff
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
     useGlobalPkgs = false;
     useUserPackages = true;
     users = {
@@ -286,4 +277,3 @@ fonts.packages = with pkgs; [
     };
   };
 }
-

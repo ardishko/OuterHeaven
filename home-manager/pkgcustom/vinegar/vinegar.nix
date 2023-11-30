@@ -18,9 +18,9 @@
 			owner = "vinegarhq";
 			repo = "vinegar";
 			rev = "v${version}";
-			hash = "sha256-6fQZ+NCJq7mMEGKubTIiffC2+05FUmM58Qb+6PMsoC8=";
+			hash = "sha256-1KDcc9Hms1hQgpvf/49zFJ85kDUsieNcoOTYaZWV+S0=";
 		};
-		vendorHash = "sha256-EO7G2WD00wVErO72pag9qIxmLeBGV9orY98piGuh8Ac=";
+		vendorHash = "sha256-UJLwSOJ4vZt3kquKllm5OMfFheZtAG5gLSA20313PpA=";
 		makeFlags = [
 			"PREFIX=$(out)"
 			"VERSION=${version}"
