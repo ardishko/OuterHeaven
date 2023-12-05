@@ -49,7 +49,6 @@
     swappy
     eww-wayland
     transmission-gtk
-    gtklock
     sway-contrib.grimshot
     libreoffice-fresh
     wineWowPackages.wayland
@@ -80,8 +79,6 @@
     android-tools
     scrcpy
     baobab
-    alacritty
-    r2modman
     python3Full
     gnupg
     mangohud
@@ -143,6 +140,11 @@
     neovim-unwrapped
     blender
     evince
+    tailscale
+    telegram-desktop
+    android-studio
+    samrewritten
+    zathura
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -169,20 +171,24 @@
       buildInputs = with pkgs; [libsForQt5.kguiaddons];
     })
 
+    (pkgs.swaylock-effects.overrideAttrs {
+      src = pkgs.fetchFromGitHub {
+        owner = "jirutka";
+        repo = "swaylock-effects";
+        rev = "dd9db0efbdf85c4c9116644d4b5fbee6c1c27e90";
+        hash = "sha256-/ixrlCn9cvhE0h0rUfYO8fsy3dThfNAttYB6fYo27EI=";
+      };
+    })
+
+    (pkgs.r2modman.overrideAttrs {
+      src = fetchFromGitHub {
+        owner = "ebkr";
+        repo = "r2modmanPlus";
+        rev = "v3.1.45";
+        hash = "sha256-6o6iPDKKqCzt7H0a64HGTvEvwO6hjRh1Drl8o4x+4ew=";
+      };
+    })
     # Custom desktop entries
-
-    #   (pkgs.makeDesktopItem {
-    #     name = "Roblox App (real)";
-    #     desktopName = "Roblox App (real)";
-    #     genericName = "Roblox application for running roblox experiences. Includes gamescope and mangohud.";
-    #     categories = ["Network" "Game"];
-    #     type = "Application";
-    #     icon = "grapejuice-roblox-player";
-    #     exec = "gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
-    #     terminal = false;
-    #   })
-
-    # Below are some failed attempts at overriding versions of some programs. They are safe to delete.
 
     #(pkgs.gpu-screen-recorder-gtk.overrideAttrs {
     #  src = pkgs.fetchgit {
@@ -205,6 +211,16 @@
     (callPackage ../pkgcustom/vesktop/vesktop.nix {})
     (callPackage ../pkgcustom/vinegar {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
+    #(callPackage ../pkgcustom/discover-overlay/default.nix {})
+
+    (pkgs.appimageTools.wrapType2 {
+      # or wrapType1
+      name = "premid";
+      src = fetchurl {
+        url = "https://github.com/PreMiD/Linux/releases/download/v2.3.2/PreMiD-Portable.AppImage";
+        hash = "sha256-wYlNpc68IuE594AODHNkGIZfQtPEcsdnzJRlD7nsPLI=";
+      };
+    })
   ];
 
   # List of packages end here
@@ -259,20 +275,25 @@
     };
   };
   # Declaratively Manage Flatpaks here
-  services.flatpak.packages = [
-    "org.kde.Platform"
-    "org.freedesktop.Platform.GL.default"
-    "org.kde.Platform.Locale"
-    "org.freedesktop.Platform.openh264"
-    "io.mrarm.mcpelauncher"
-    "com.github.tchx84.Flatseal"
-    "com.librumreader.librum"
-    "com.steamgriddb.SGDBoop"
-    "org.ryujinx.Ryujinx"
-    "org.yuzu_emu.yuzu"
-    "net.rpcs3.RPCS3"
-    "org.duckstation.DuckStation"
-  ];
+  services.flatpak = {
+    packages = [
+      "org.kde.Platform"
+      "org.freedesktop.Platform.GL.default"
+      "org.kde.Platform.Locale"
+      "org.freedesktop.Platform.openh264"
+      "org.gnome.Platform"
+      "org.freedesktop.Platform.Compat.i386"
+      "org.freedesktop.Platform"
+      "com.github.tchx84.Flatseal"
+      "com.librumreader.librum"
+      "com.steamgriddb.SGDBoop"
+      "org.ryujinx.Ryujinx"
+      "org.yuzu_emu.yuzu"
+      "org.freedesktop.Platform.ffmpeg-full"
+      "io.mrarm.mcpelauncher"
+      "net.rpcs3.RPCS3"
+    ];
+  };
 
   imports = [
     inputs.nix-flatpak.homeManagerModules.nix-flatpak

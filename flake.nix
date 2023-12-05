@@ -15,7 +15,7 @@
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
     };
-    hyprcontrib = { 
+    hyprcontrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -52,16 +52,19 @@
     };
   };
 
-
-  outputs = inputs @ { nixpkgs, home-manager, hyprland, hy3, nix-flatpak, ... }: {
-#    homeConfigurations.vaporsnake = home-manager.lib.homeManagerConfiguration {
-#      modules = [
-#        nix-flatpak.homeManagerModules.default
-#      ];
-#    };
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
+    #    homeConfigurations.vaporsnake = home-manager.lib.homeManagerConfiguration {
+    #      modules = [
+    #        nix-flatpak.homeManagerModules.default
+    #      ];
+    #    };
     nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         ./core
         home-manager.nixosModules.home-manager
@@ -69,3 +72,4 @@
     };
   };
 }
+

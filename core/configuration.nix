@@ -87,7 +87,7 @@
     };
   };
   services = {
-    tailscale.enable = true;
+    #tailscale.enable = true;
     flatpak.enable = true;
     blueman.enable = true;
     davfs2.enable = true;
@@ -134,7 +134,7 @@
   # Polkit stuff
   security = {
     pam.services = {
-      gtklock.text = "auth include login";
+      swaylock.text = "auth include login";
     };
     polkit = {
       enable = true;

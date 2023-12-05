@@ -16,7 +16,7 @@
       # Please note not all available settings / options are set here.
       # For a full list, see the wiki
 
-      #exec-once = mullvad-gui
+      exec-once = mullvad-gui
 
       # envvars
       #env =_JAVA_AWT_WM_NONREPARENTING,1
@@ -51,13 +51,10 @@
       exec-once=swayosd-server
       exec-once=wlsunset
       exec-once=/nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1
+      exec-once=premid --in-process-gpu
 
 
       # Window rules
-      #windowrulev2=rounding 0,title:^(notificationtoasts)
-      #windowrulev2=float,title:^(nofiticationtoasts)
-      #windowrulev2=noinitialfocus,title:^(nofiticationtoasts)
-      #windowrulev2=nofocus,title:^(notificationtoasts)
       windowrulev2=float,title:^(flameshot)
       windowrulev2=move 0 0,title:^(flameshot)
       windowrulev2=nofullscreenrequest,title:^(flameshot)
@@ -68,9 +65,7 @@
       windowrulev2=nomaxsize,title:^(.*)
       windowrulev2=noanim,title:^(wlogout)
       windowrulev2=float,title:^(wlogout)
-      #windowrulev2=float,title:^(Alacritty)
-      #windowrulev2=pin,title:^(Alacritty)
-      #windowrule=pin,class:^(steamwebhelper)
+
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input {
           kb_layout = tr,us
@@ -232,7 +227,6 @@
 
       misc {
           force_default_wallpaper = 0
-          vrr = 2
       }
 
       # Example windowrule v1
@@ -252,19 +246,20 @@
       bind = SUPER_SHIFT, Del, exec, pkill Hyprland
       bind = $mainMod, A, togglefloating,
       bind = CTRL, Escape, exec, anyrun
-      #bind = CTRL, Escape, exec, anyrun
+
       bind = $mainMod, R, pseudo, # dwindle
       bind = $mainMod, E, togglesplit, # dwindle
       bind = $mainMod,F,fullscreen
       bind =,Print, exec, flameshot gui
-      #bind =,Print, exec, flameshot gui
       bind =CTRL, Print, exec, hyprshot -m region
       bind = $mainMod, Tab, exec, swaync-client -t
+
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
+
       #i3/sway type beat
       bind = ,Caps_Lock, exec, sleep 0.1 && swayosd-client --caps-lock
       bind = $mainMod, Q, togglegroup
@@ -278,8 +273,6 @@
       bind = SUPER,F4,pass,^(com\.obsproject\.Studio)$
       bind = CTRL_SHIFT,M,pass,^(vencorddesktop)
       bind = CTRL_SHIFT,D,pass,^(vencorddesktop)
-      #bind = num-lock,swayosd-client
-      ##bind = CTRL, SHIFT, M,pass, vencord
 
       #workspace bindings to monitors
       workspace=DP-2,1
