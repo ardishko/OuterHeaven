@@ -10,7 +10,7 @@
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
-    inputs.ags.packages.${pkgs.system}.default
+    #inputs.ags.packages.${pkgs.system}.default
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
     wget
@@ -187,13 +187,14 @@
         hash = "sha256-6o6iPDKKqCzt7H0a64HGTvEvwO6hjRh1Drl8o4x+4ew=";
       };
     })
+    # Desktop Entry overrides
 
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
         (makeDesktopItem {
           name = "vencorddesktop";
           desktopName = "Discord";
-          exec = "vencorddesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
+          exec = "vencorddesktop";
           icon = "discord";
           startupWMClass = "VencordDesktop";
           genericName = "Internet Messenger";
@@ -216,6 +217,19 @@
         })
       ];
     })
+
+    # (callPackage ../pkgcustom/vinegar).overrideAttrs
+    # {
+    #   desktopItem = [
+    #     (makeDesktopItem {
+    #       name = "Roblox Packed";
+    #       type = "Application";
+    #       icon = "grapejuice-roblox-player";
+    #       terminal = false;
+    #       exec = "gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
+    #     })
+    #   ];
+    # }
 
     # Custom desktop entries
 

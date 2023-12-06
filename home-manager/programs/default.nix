@@ -5,7 +5,6 @@
     ./alacritty.nix
     ./anyrun.nix
     ./hyprland.nix
-    ./gbar.nix
     ./waybar.nix
     ./swaync.nix
     ./heroic.nix
@@ -19,4 +18,3 @@
     #           wtf raf
   ];
 }
-
