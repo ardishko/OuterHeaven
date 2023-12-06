@@ -145,6 +145,7 @@
     android-studio
     samrewritten
     zathura
+    nwg-dock-hyprland
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -188,6 +189,20 @@
         hash = "sha256-6o6iPDKKqCzt7H0a64HGTvEvwO6hjRh1Drl8o4x+4ew=";
       };
     })
+    (pkgs.vesktop.overrideAttrs {
+      desktopItems = [
+        (makeDesktopItem {
+          name = "vencorddesktop";
+          desktopName = "Discord";
+          exec = "vencorddesktop %U";
+          icon = "discord";
+          startupWMClass = "VencordDesktop";
+          genericName = "Internet Messenger";
+          keywords = ["discord" "vencord" "electron" "chat"];
+          categories = ["Network" "InstantMessaging" "Chat"];
+        })
+      ];
+    })
     # Custom desktop entries
 
     #(pkgs.gpu-screen-recorder-gtk.overrideAttrs {
@@ -208,7 +223,7 @@
 
     # Custom packages
 
-    (callPackage ../pkgcustom/vesktop/vesktop.nix {})
+    #(callPackage ../pkgcustom/vesktop/vesktop.nix {})
     (callPackage ../pkgcustom/vinegar {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
     #(callPackage ../pkgcustom/discover-overlay/default.nix {})

@@ -1,6 +1,5 @@
-{ inputs, pkgs, config, options, ... }:
-{
-  imports = [ inputs.schizofox.homeManagerModules.default ];
+{inputs, ...}: {
+  imports = [inputs.schizofox.homeManagerModules.default];
   programs.schizofox = {
     enable = true;
     theme = {
@@ -34,3 +33,4 @@
     };
   };
 }
+
