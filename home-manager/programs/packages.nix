@@ -194,7 +194,7 @@
         (makeDesktopItem {
           name = "vencorddesktop";
           desktopName = "Discord";
-          exec = "vencorddesktop %U";
+          exec = "vencorddesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
           icon = "discord";
           startupWMClass = "VencordDesktop";
           genericName = "Internet Messenger";
@@ -223,7 +223,6 @@
 
     # Custom packages
 
-    #(callPackage ../pkgcustom/vesktop/vesktop.nix {})
     (callPackage ../pkgcustom/vinegar {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
     #(callPackage ../pkgcustom/discover-overlay/default.nix {})
