@@ -14,7 +14,6 @@
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
     wget
-    obsidian
     lutris
     steam-rom-manager
     bluez-tools
@@ -26,7 +25,6 @@
     swaybg
     swayosd
     obs-studio
-    obsidian
     wlr-randr
     wlogout
     thefuck
@@ -189,6 +187,7 @@
         hash = "sha256-6o6iPDKKqCzt7H0a64HGTvEvwO6hjRh1Drl8o4x+4ew=";
       };
     })
+
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
         (makeDesktopItem {
@@ -203,6 +202,21 @@
         })
       ];
     })
+
+    (pkgs.obsidian.overrideAttrs {
+      desktopItem = [
+        (makeDesktopItem {
+          name = "obsidian";
+          desktopName = "Obsidian";
+          comment = "Knowledge base";
+          icon = "obsidian";
+          exec = "obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland";
+          categories = ["Office"];
+          mimeTypes = ["x-scheme-handler/obsidian"];
+        })
+      ];
+    })
+
     # Custom desktop entries
 
     #(pkgs.gpu-screen-recorder-gtk.overrideAttrs {
