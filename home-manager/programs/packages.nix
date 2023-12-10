@@ -144,8 +144,19 @@
     samrewritten
     zathura
     nwg-dock-hyprland
+    gnome.pomodoro
+    ytui-music
+    youtube-tui
+    vinegar
     # Overrides
-
+    (pkgs.vinegar.overrideAttrs {
+      src = pkgs.fetchFromGitHub {
+        owner = "vinegarhq";
+        repo = "vinegar";
+        rev = "v1.5.9";
+        sha256 = "";
+      }
+    })
     (pkgs.goverlay.overrideAttrs {
       # cock
       src = pkgs.fetchFromGitHub {
@@ -251,7 +262,6 @@
 
     # Custom packages
 
-    (callPackage ../pkgcustom/vinegar {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
     #(callPackage ../pkgcustom/discover-overlay/default.nix {})
 
@@ -282,38 +292,6 @@
         "python-2.7.18.7"
       ];
       allowUnfree = true;
-      packageOverrides = pkgs: {
-        steam = pkgs.steam.override {
-          extraPkgs = pkgs:
-            with pkgs; [
-              xorg.libXcursor
-              xorg.libXi
-              xorg.libXinerama
-              xorg.libXScrnSaver
-              libpng
-              libpulseaudio
-              libvorbis
-              stdenv.cc.cc.lib
-              libkrb5
-              keyutils
-              libgdiplus
-              at-spi2-atk
-              fmodex
-              gtk3
-              gtk3-x11
-              harfbuzz
-              icu
-              glxinfo
-              inetutils
-              libthai
-              mono5
-              pango
-              strace
-              zlib
-              libunwind
-            ];
-        };
-      };
     };
   };
   # Declaratively Manage Flatpaks here

@@ -31,10 +31,6 @@
   #    + "/src/catppuccin-frappe-grub-theme";
   #};
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "python-2.7.18.7"
-  ];
-
   networking.hostName = "ShadowMoses"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -186,9 +182,46 @@
     shell = pkgs.nushell;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "python-2.7.18.7"
+      ];
+      packageOverrides = pkgs: {
+        steam = pkgs.steam.override {
+          extraPkgs = pkgs:
+            with pkgs; [
+              xorg.libXcursor
+              xorg.libXi
+              xorg.libXinerama
+              xorg.libXScrnSaver
+              libpng
+              libpulseaudio
+              libvorbis
+              stdenv.cc.cc.lib
+              libkrb5
+              keyutils
+              libgdiplus
+              at-spi2-atk
+              fmodex
+              gtk3
+              gtk3-x11
+              harfbuzz
+              icu
+              glxinfo
+              inetutils
+              libthai
+              mono5
+              pango
+              strace
+              zlib
+              libunwind
+            ];
+        };
+      };
+    };
+  };
   # Enable flakes
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
