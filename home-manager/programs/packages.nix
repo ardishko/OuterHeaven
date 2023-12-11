@@ -147,18 +147,15 @@
     gnome.pomodoro
     ytui-music
     youtube-tui
-    vinegar
     qrscan
     # Overrides
 
-    # (pkgs.vinegar.overrideAttrs {
-    #   src = fetchFromGitHub {
-    #     owner = "vinegarhq";
-    #     repo = "vinegar";
-    #     rev = "v1.5.9";
-    #     hash = "sha256-cLzQnNmQYyAIdTGygk/CNU/mxGgcgoFTg5G/0DNwpz4=";
-    #   };
-    # })
+    (pkgs.vinegar.overrideAttrs {
+      postInstall = ''
+        wrapProgram $out/bin/vinegar \
+        --prefix PATH : ${lib.makeBinPath [wineWowPackages.staging]}
+      '';
+    })
 
     (pkgs.goverlay.overrideAttrs {
       # cock
