@@ -148,15 +148,18 @@
     ytui-music
     youtube-tui
     vinegar
+    qrscan
     # Overrides
-    (pkgs.vinegar.overrideAttrs {
-      src = pkgs.fetchFromGitHub {
-        owner = "vinegarhq";
-        repo = "vinegar";
-        rev = "v1.5.9";
-        sha256 = "";
-      }
-    })
+
+    # (pkgs.vinegar.overrideAttrs {
+    #   src = fetchFromGitHub {
+    #     owner = "vinegarhq";
+    #     repo = "vinegar";
+    #     rev = "v1.5.9";
+    #     hash = "sha256-cLzQnNmQYyAIdTGygk/CNU/mxGgcgoFTg5G/0DNwpz4=";
+    #   };
+    # })
+
     (pkgs.goverlay.overrideAttrs {
       # cock
       src = pkgs.fetchFromGitHub {
@@ -288,7 +291,7 @@
   nixpkgs = {
     config = {
       permittedInsecurePackages = [
-        "electron-24.8.6"
+        "electron-25.9.0"
         "python-2.7.18.7"
       ];
       allowUnfree = true;
