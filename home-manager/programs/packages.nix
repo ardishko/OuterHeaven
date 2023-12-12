@@ -147,18 +147,9 @@
     gnome.pomodoro
     ytui-music
     youtube-tui
-    vinegar
     qrscan
+    premid
     # Overrides
-
-    # (pkgs.vinegar.overrideAttrs {
-    #   src = fetchFromGitHub {
-    #     owner = "vinegarhq";
-    #     repo = "vinegar";
-    #     rev = "v1.5.9";
-    #     hash = "sha256-cLzQnNmQYyAIdTGygk/CNU/mxGgcgoFTg5G/0DNwpz4=";
-    #   };
-    # })
 
     (pkgs.goverlay.overrideAttrs {
       # cock
@@ -232,28 +223,15 @@
       ];
     })
 
-    # (callPackage ../pkgcustom/vinegar).overrideAttrs
-    # {
-    #   desktopItem = [
-    #     (makeDesktopItem {
-    #       name = "Roblox Packed";
-    #       type = "Application";
-    #       icon = "grapejuice-roblox-player";
-    #       terminal = false;
-    #       exec = "gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
-    #     })
-    #   ];
-    # }
-
     # Custom desktop entries
 
-    #(pkgs.gpu-screen-recorder-gtk.overrideAttrs {
-    #  src = pkgs.fetchgit {
-    #    url = "https://repo.dec05eba.com/gpu-screen-recorder-gtk";
-    #    rev = "6ebe8fb2a9c838e076286d960b3ef3c9482433b3";
-    #    sha256 = "sha256-6ELq07fZAwlJN6AJTMffQ69bGaQ2FGThPbamQRvxrK4=";
-    #  };
-    # })
+    # (pkgs.gpu-screen-recorder-gtk.overrideAttrs {
+    #   src = pkgs.fetchgit {
+    #     url = "https://repo.dec05eba.com/gpu-screen-recorder-gtk";
+    #     rev = "6ebe8fb2a9c838e076286d960b3ef3c9482433b3";
+    #     sha256 = "sha256-6ELq07fZAwlJN6AJTMffQ69bGaQ2FGThPbamQRvxrK4=";
+    #   };
+    #  })
 
     #	(pkgs.gpu-screen-recorder.overrideAttrs {
     #	  src = pkgs.fetchgit {
@@ -264,18 +242,9 @@
     #	 })
 
     # Custom packages
-
+    (callPackage ../pkgcustom/vinegar {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
     #(callPackage ../pkgcustom/discover-overlay/default.nix {})
-
-    (pkgs.appimageTools.wrapType2 {
-      # or wrapType1
-      name = "premid";
-      src = fetchurl {
-        url = "https://github.com/PreMiD/Linux/releases/download/v2.3.2/PreMiD-Portable.AppImage";
-        hash = "sha256-wYlNpc68IuE594AODHNkGIZfQtPEcsdnzJRlD7nsPLI=";
-      };
-    })
   ];
 
   # List of packages end here
