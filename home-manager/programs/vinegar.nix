@@ -1,6 +1,8 @@
 {
   xdg.configFile."vinegar/config.toml".text = ''
     # In case you need some help, here: https://vinegarhq.github.io/Configuration
+    [player]
+    launcher = "gamemoderun"
     [player.env]
     MANGOHUD = "1"
     [splash]

@@ -243,7 +243,9 @@
 
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})
+
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
+
     #(callPackage ../pkgcustom/discover-overlay/default.nix {})
   ];
 
