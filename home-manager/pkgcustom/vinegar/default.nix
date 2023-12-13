@@ -2,7 +2,6 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-  wine,
   makeBinaryWrapper,
   pkg-config,
   libGL,
@@ -10,6 +9,7 @@
   xorg,
   fetchpatch,
   pkgs,
+  wine,
 }: let
   wine = pkgs.wineWowPackages.staging.overrideDerivation (oldAttrs: {
     patches =

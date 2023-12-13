@@ -279,7 +279,6 @@
       "org.freedesktop.Platform.Compat.i386"
       "org.freedesktop.Platform"
       "com.github.tchx84.Flatseal"
-      "com.librumreader.librum"
       "com.steamgriddb.SGDBoop"
       "org.ryujinx.Ryujinx"
       "org.yuzu_emu.yuzu"

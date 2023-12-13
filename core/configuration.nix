@@ -252,6 +252,8 @@
   # boot.kernelParams = [ loglevel = 1 ]
   boot.consoleLogLevel = 1;
   boot.supportedFilesystems = ["ntfs"];
+  boot.kernelParams = ["split_lock_detect=off"];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

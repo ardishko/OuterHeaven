@@ -28,4 +28,10 @@ Some notable ones are:
 - The flameshot override that adds some `buildInputs`, `cmakeBuildFlags` and the version. This is because the current flameshot package in nixpkgs is pretty bad and doesn't even have the version that adds proper wayland support on flameshot. Only the latest commits currently have Wayland support so I will not be updating this override for a while until the next stable release which is when the proper, solid Wayland support is supposedly coming. They added the `-DUSE_WAYLAND_GRIM` and `-DUSE_WAYLAND_CLIPBOARD` build flags as per an issue I opened a small while ago. (https://github.com/flameshot-org/flameshot/issues/3012)
 - Some formatting is a bit bad because I haven't gone over my old Nix code to overhaul them with a proper formatter or anything of that sort
 
+## What is the pkgcustom folder about?
+
+pkgcustom's name comes from my mind where everything is chaos and I name things the way I do because they sound cool.
+
+Besides the name, the pkgcustom folder is for experimental packages I have generated with nix-init and/or packages I'm working on to submit to nixpkgs eventually and the "why" of this is because I suck at writing flakes, so I will keep doing this until I get better at writing flakes for programs and utilities I love.
+
 And yeah, I think that's about it. feel free to send me PRs or issues or anything at all. Beware of my idiocy and have fun with my config.
