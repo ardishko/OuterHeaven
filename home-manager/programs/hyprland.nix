@@ -8,7 +8,7 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
     plugins = [
-      inputs.hy3.packages.${pkgs.system}.hy3
+      #inputs.hy3.packages.${pkgs.system}.hy3
       #inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
     ];
     extraConfig = ''
@@ -264,7 +264,7 @@
       bind = $mainMod, Q, togglegroup
       bind = $mainMod, D, changegroupactive
       bind = $mainMod, W, lockgroups, toggle
-      bind = $mainMod, V, hy3:makegroup
+      #bind = $mainMod, V, hy3:makegroup
 
       #global shortcuts
       bind = SUPER,F10,pass,^(com\.obsproject\.Studio)$

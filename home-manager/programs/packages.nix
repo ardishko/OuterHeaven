@@ -107,13 +107,12 @@
     bottles-unwrapped
     woeusb-ng
     ungoogled-chromium
-    signal-desktop-beta
+    signal-desktop
     emacs-nox
     qgnomeplatform-qt6
     qgnomeplatform
     gparted
     gnome-usage
-    signal-desktop
     timeshift
     watershot
     gnome.gnome-clocks
@@ -149,6 +148,7 @@
     youtube-tui
     qrscan
     premid
+    gpu-screen-recorder-gtk
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -222,24 +222,6 @@
         })
       ];
     })
-
-    # Custom desktop entries
-
-    # (pkgs.gpu-screen-recorder-gtk.overrideAttrs {
-    #   src = pkgs.fetchgit {
-    #     url = "https://repo.dec05eba.com/gpu-screen-recorder-gtk";
-    #     rev = "6ebe8fb2a9c838e076286d960b3ef3c9482433b3";
-    #     sha256 = "sha256-6ELq07fZAwlJN6AJTMffQ69bGaQ2FGThPbamQRvxrK4=";
-    #   };
-    #  })
-
-    #	(pkgs.gpu-screen-recorder.overrideAttrs {
-    #	  src = pkgs.fetchgit {
-    #	    url = "https://repo.dec05eba.com/gpu-screen-recorder";
-    #	    rev = "cd6105fe10aa0761f4b0bd107947c81b2a5a2cc9";
-    #	    sha256 = "sha256-ROjydeuV+TL8VXAC/LRWJWJgGica+O/xW3RcuMselRc";
-    #	  };
-    #	 })
 
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})

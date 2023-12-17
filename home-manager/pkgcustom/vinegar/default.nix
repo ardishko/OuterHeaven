@@ -7,18 +7,26 @@
   libGL,
   libxkbcommon,
   xorg,
+  wineWowPackages,
   fetchpatch,
-  pkgs,
-  wine,
 }: let
-  wine = pkgs.wineWowPackages.staging.overrideDerivation (oldAttrs: {
+  # wine-staging doesn't support overrideAttrs for now
+  wine = wineWowPackages.stagingFull.overrideDerivation (oldAttrs: {
     patches =
       (oldAttrs.patches or [])
       ++ [
+        # upstream issue: https://bugs.winehq.org/show_bug.cgi?id=55604
+        # Here are the currently applied patches for Roblox to run under WINE:
         (fetchpatch {
-          url = "https://raw.githubusercontent.com/flathub/io.github.vinegarhq.Vinegar/4f2d744c80477e54426299aa171c1f0ea8282d27/patches/wine/segregrevert.patch";
-          hash = "sha256-GTOBKnvk3JUuoykvQlOYDLt/ohCeqJfugnQnn7ay5+w=";
+          name = "vinegar-wine-segrevert.patch";
+          url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/8fc153c492542a522d6cc2dff7d1af0e030a529a/patches/wine/temp.patch";
+          hash = "sha256-AnEBBhB8leKP0xCSr6UsQK7CN0NDbwqhe326tJ9dDjc=";
         })
+        # (fetchpatch {
+        #   name = "vinegar-wine-mouse-lock.patch";
+        #   url = "https://cdn.discordapp.com/attachments/1099853933712773193/1183894726647218236/mouselock.patch?ex=6589fee2&is=657789e2&hm=d9d6975a190365cb99007dfc558f67971a8bfaf0dc8188e8296cd032cd8e2876&";
+        #   hash = "sha256-EmlvVGid2uYeE4oBI3spHdEpKmg4pdCJCDDP899kVj4=";
+        # })
       ];
   });
 in
