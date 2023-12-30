@@ -1,12 +1,12 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, make
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  curl,
+  pkgs,
 }:
-
 stdenv.mkDerivation rec {
-
-  pname = "sgd-boop";
+  pname = "sgdboop";
   version = "1.2.8";
 
   src = fetchFromGitHub {
@@ -15,17 +15,32 @@ stdenv.mkDerivation rec {
     rev = "v${version}";
     hash = "sha256-bdSzTwObMEBe1pHTDwXeJ3GXmOwwFp4my7qTmifX218=";
   };
-  
-  buildPhase = ''
-	gcc sgdboop.c curl-helper.c string-helpers.c crc.c -liup -lcurl -o $out/SGDBoop
+
+  makeFlags = [
+    # Makefile copies a bundled libiup.so, so put it somewhere it won't be found
+    "USER_LIB_PATH=ignored"
+
+    # The Flakepak install just copies things to /app - otherwise wants to do things with XDG
+    "FLATPAK_ID=fake"
+  ];
+
+  postPatch = ''
+    sed -i "s|Exec=|Exec=$out/bin/|" linux-release/com.steamgriddb.SGDBoop.desktop
+    sed -i "s|/app/|$out/|g" Makefile
   '';
-  
-    meta = with lib; {
-    description = "A program used for applying custom artwork to Steam, using SteamGridDB. Supports both Windows and Linux, written completely in C";
+
+  postInstall = ''
+    rm -r "$out/share/metainfo"
+  '';
+
+  buildInputs = [curl pkgs.chickenPackages_5.chickenEggs.iup];
+
+  meta = {
+    description = "A program used for applying custom artwork to Steam, using SteamGridDB";
     homepage = "https://github.com/SteamGridDB/SGDBoop/";
-    license = licenses.cc-by-nc-sa-40;
-    maintainers = with maintainers; [  ];
-    mainProgram = "sgd-boop";
-    platforms = platforms.all;
+    license = lib.licenses.cc-by-nc-sa-40;
+    maintainers = [lib.maintainers.puffnfresh];
+    mainProgram = "SGDBoop";
+    platforms = lib.platforms.linux;
   };
 }

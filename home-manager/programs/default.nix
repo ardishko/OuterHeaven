@@ -8,7 +8,7 @@
     ./waybar.nix
     ./swaync.nix
     ./heroic.nix
-    #./vinegar.nix
+    ./vinegar.nix
     ./neovim-flake.nix
     ./kitty.nix
     ./nushell.nix

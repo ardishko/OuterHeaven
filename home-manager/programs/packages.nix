@@ -10,6 +10,8 @@
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
+    inputs.nix-gaming.packages.${pkgs.system}.proton-ge
+
     #inputs.ags.packages.${pkgs.system}.default
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
@@ -49,7 +51,7 @@
     transmission-gtk
     sway-contrib.grimshot
     libreoffice-fresh
-    wineWowPackages.wayland
+    #wineWowPackages.wayland
     winetricks
     protontricks
     soundux
@@ -107,7 +109,7 @@
     bottles-unwrapped
     woeusb-ng
     ungoogled-chromium
-    signal-desktop
+    signal-desktop-beta
     emacs-nox
     qgnomeplatform-qt6
     qgnomeplatform
@@ -149,6 +151,20 @@
     qrscan
     premid
     gpu-screen-recorder-gtk
+    gpu-screen-recorder
+    nixpkgs-fmt
+    nix-update
+    firewalld-gui
+    sherlock
+    element-desktop
+    gtkcord4
+    wine-staging
+    nmap
+    valent
+    ntfs3g
+    revolt-desktop
+    vinegar
+    parsec-bin
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -199,7 +215,7 @@
         (makeDesktopItem {
           name = "vencorddesktop";
           desktopName = "Discord";
-          exec = "vencorddesktop";
+          exec = "mullvad-exclude vencorddesktop";
           icon = "discord";
           startupWMClass = "VencordDesktop";
           genericName = "Internet Messenger";
@@ -208,6 +224,20 @@
         })
       ];
     })
+
+    # (pkgs.vinegar.overrideAttrs {
+    #   desktopItem = [
+    #     (makeDesktopItem {
+    #       name = "roblox-player";
+    #       desktopName = "Roblox Player";
+    #       exec = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
+    #       icon = "discord";
+    #       startupWMClass = "VencordDesktop";
+    #       genericName = "Internet Messenger";
+    #       keywords = ["discord" "vencord" "electron" "chat"];
+    #       categories = ["Network" "InstantMessging" "Chat"];
+    #   ];
+    # })
 
     (pkgs.obsidian.overrideAttrs {
       desktopItem = [
@@ -223,22 +253,56 @@
       ];
     })
 
+    # (pkgs.steam.overrideAttrs {
+    #   desktopItem = [
+    #     (makeDesktopItem {
+    #       name = "Steam";
+    #       desktopName = "Steam";
+    #       icon = "steam";
+    #       exec = "mullvad-exclude steam";
+    #     })
+    #   ];
+    # })
     # Custom packages
-    (callPackage ../pkgcustom/vinegar {})
-
+    #(callPackage ../pkgcustom/vinegar-alt {})
+    #(callPackage ../pkgcustom/sgdboop {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
 
     #(callPackage ../pkgcustom/discover-overlay/default.nix {})
   ];
 
   # List of packages end here
-  xdg.desktopEntries.roblox-app = lib.mkForce {
-    name = "Roblox Packed";
-    type = "Application";
-    icon = "grapejuice-roblox-player";
-    terminal = false;
-    exec = "gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
+  xdg.desktopEntries = {
+    roblox-app = lib.mkForce {
+      name = "Roblox Packed";
+      type = "Application";
+      icon = "grapejuice-roblox-player";
+      terminal = false;
+      exec = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
+    };
+    neovim = lib.mkForce {
+      name = "Neovim";
+      type = "Application";
+      mimeType = ["text/plain"];
+
+      icon = builtins.fetchurl {
+        url = "https://raw.githubusercontent.com/NotAShelf/neovim-flake/main/assets/neovim-flake-logo-work.svg";
+        sha256 = "19n7n9xafyak35pkn4cww0s5db2cr97yz78w5ppbcp9jvxw6yyz3";
+      };
+      exec = "kitty nvim";
+    };
   };
+
+  # xdg.desktopEntries.comms = lib.mkForce {
+  #   name = "Comms";
+  #   type = "Application";
+  #   icon = "discord";
+  #   terminal = false;
+  #   exec = "vencorddesktop";
+  #   exec = "cinny";
+  # };
+
+  # scripts
 
   # Permitted Insecure Packages and Steam gamescope workaround found at: https://github.com/NixOS/nixpkgs/issues/162562#issuecomment-1523177264
   nixpkgs = {
@@ -248,6 +312,7 @@
         "python-2.7.18.7"
       ];
       allowUnfree = true;
+      allowBroken = true;
     };
   };
   # Declaratively Manage Flatpaks here

@@ -6,6 +6,7 @@
   pkgs,
   inputs,
   outputs,
+  lib,
   ...
 }: {
   # Bootloader.
@@ -112,13 +113,15 @@
   };
   hardware = {
     # Enable OpenGL and Vulkan stuff
-    opengl.enable = true;
-    opengl.driSupport = true;
-    opengl.driSupport32Bit = true;
-    opengl.extraPackages = with pkgs; [
-      rocm-opencl-icd
-      rocm-opencl-runtime
-    ];
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        rocm-opencl-icd
+        rocm-opencl-runtime
+      ];
+    };
     bluetooth.enable = true;
   };
 
@@ -188,6 +191,23 @@
       permittedInsecurePackages = [
         "python-2.7.18.7"
       ];
+      packageOverrides = pkgs: {
+        steam = pkgs.steam.override {
+          extraPkgs = pkgs:
+            with pkgs; [
+              xorg.libXcursor
+              xorg.libXi
+              xorg.libXinerama
+              xorg.libXScrnSaver
+              libpng
+              libpulseaudio
+              libvorbis
+              stdenv.cc.cc.lib
+              libkrb5
+              keyutils
+            ];
+        };
+      };
     };
   };
   # Enable flakes
@@ -240,19 +260,21 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [22 443];
+      allowedUDPPorts = [22 443];
+    };
+  };
 
-  # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
-  # boot.kernelParams = [ loglevel = 1 ]
-  boot.consoleLogLevel = 1;
-  boot.supportedFilesystems = ["ntfs"];
-  boot.kernelParams = ["split_lock_detect=off"];
+  boot = {
+    consoleLogLevel = 1;
+    kernelParams = ["split_lock_detect=off"];
+    extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
+    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelParams = [ loglevel = 1 ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

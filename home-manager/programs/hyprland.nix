@@ -40,8 +40,6 @@
       exec-once=flameshot
       exec-once=easyeffects --hide-window
       exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-      #exec-once=hyprctl plugin load /home/vaporsnake/hyprland-plugins/hyprbars/hyprbars.so
-      #exec-once=waybar
       exec-once=discover-overlay
       exec-once=/usr/bin/flameshot
       exec-once=hyprctl setcursor macOS-BigSur 24
@@ -51,7 +49,6 @@
       exec-once=wlsunset
       exec-once=/nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1
       exec-once=premid --in-process-gpu
-
 
       # Window rules
       windowrulev2=float,title:^(flameshot)
@@ -167,11 +164,6 @@
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
           rounding = 5
-      #    blur = no
-      #    blur_size = 0
-      #    blur_passes = 1
-      #    blur_new_optimizations = on
-
           drop_shadow = no
           shadow_range = 4
           shadow_render_power = 3
@@ -320,6 +312,12 @@
       bind = $mainMod SHIFT, j, movetoworkspacesilent, name:j
       bind = $mainMod SHIFT, k, movetoworkspacesilent, name:k
       bind = $mainMod SHIFT, l, movetoworkspacesilent, name:l
+
+      # Move window with mainMod_SHIFT + arrow keys
+      bind = $mainMod SHIFT, left, movewindow, l
+      bind = $mainMod SHIFT, right, movewindow, r
+      bind = $mainMod SHIFT, up, movewindow, u
+      bind = $mainMod SHIFT, down, movewindow, d
 
       # Scroll through existing workspaces with mainMod + scroll
       bind = $mainMod, mouse_up, workspace, r+1

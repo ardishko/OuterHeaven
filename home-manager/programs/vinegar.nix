@@ -1,8 +1,6 @@
 {
   xdg.configFile."vinegar/config.toml".text = ''
     # In case you need some help, here: https://vinegarhq.github.io/Configuration
-    [env]
-    WINEFSYNC = "0"
     [global]
     launcher = "gamemoderun"
     [player]
