@@ -14,6 +14,7 @@
     ./nushell.nix
     ./swaylock.nix
     ./wlogout.nix
+    ./obs.nix
     #        ./schizofox.nix
     #           wtf raf
   ];

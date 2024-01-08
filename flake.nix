@@ -27,6 +27,10 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    xdg-desktop-portal-hyprland = {
+      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+      inputs.hyprland.follows = "hyprland";
+    };
     hy3 = {
       url = "github:outfoxxed/hy3";
       # or "github:outfoxxed/hy3?ref=hl{version}" for a release version of hyprland
@@ -59,11 +63,6 @@
     home-manager,
     ...
   }: {
-    #    homeConfigurations.vaporsnake = home-manager.lib.homeManagerConfiguration {
-    #      modules = [
-    #        nix-flatpak.homeManagerModules.default
-    #      ];
-    #    };
     nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};

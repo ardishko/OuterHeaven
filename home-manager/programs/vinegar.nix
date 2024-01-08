@@ -2,11 +2,9 @@
   xdg.configFile."vinegar/config.toml".text = ''
     # In case you need some help, here: https://vinegarhq.github.io/Configuration
     [global]
-    launcher = "gamemoderun"
+    launcher = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen mangohud --"
     [player]
     forced_version = "version-07c83728577248bd"
-    [player.env]
-    MANGOHUD = "1"
     [splash]
     background = 0x252836
     foreground = 0xC6D0F5

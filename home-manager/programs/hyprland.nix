@@ -3,6 +3,10 @@
   inputs,
   ...
 }: {
+  xdg.portal = {
+    enable = true;
+    extraPortals = [inputs.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default];
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;

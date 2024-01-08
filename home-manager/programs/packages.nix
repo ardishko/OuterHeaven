@@ -26,7 +26,6 @@
     easyeffects
     swaybg
     swayosd
-    obs-studio
     wlr-randr
     wlogout
     thefuck
@@ -103,9 +102,8 @@
     unzip
     bless
     handbrake
-    mullvad-vpn
     monero-gui
-    heroic-unwrapped
+    heroic
     bottles-unwrapped
     woeusb-ng
     ungoogled-chromium
@@ -163,8 +161,9 @@
     valent
     ntfs3g
     revolt-desktop
-    vinegar
+    #vinegar
     parsec-bin
+    amdgpu_top
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -176,6 +175,16 @@
         sha256 = "sha256-jLnWdywS398qu6lU0RMZ1cC3KM9dH9uWizuJZa7gahE";
       };
     })
+
+    # (pkgs.vinegar.overrideAttrs {
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "vinegarhq";
+    #     repo = "vinegar";
+    #     rev = "v1.5.9";
+    #     hash = "sha256-cLzQnNmQYyAIdTGygk/CNU/mxGgcgoFTg5G/0DNwpz4=";
+    #   };
+    #   vendorHash = "sha256-DZI4APnrldnwOmLZ9ucFBGQDxzPXTIi44eLu74WrSBI=";
+    # })
 
     (pkgs.flameshot.overrideAttrs {
       src = pkgs.fetchFromGitHub {
@@ -189,6 +198,13 @@
         "-DUSE_WAYLAND_CLIPBOARD=1"
       ];
       buildInputs = with pkgs; [libsForQt5.kguiaddons];
+    })
+
+    (pkgs.mullvad-vpn.overrideAttrs {
+      src = fetchurl {
+        url = "https://github.com/mullvad/mullvadvpn-app/releases/download/2023.3/MullvadVPN-2023.3_amd64.deb";
+        sha256 = "sha256-+XK9xUeSs93egmtsQ7qATug/n9taeQkmc4ZgObPYvn4=";
+      };
     })
 
     (pkgs.swaylock-effects.overrideAttrs {
@@ -223,19 +239,22 @@
           categories = ["Network" "InstantMessaging" "Chat"];
         })
       ];
+      # src = pkgs.fetchFromGitHub {
+      #   owner = "Vencord";
+      #   repo = "Vesktop";
+      #   rev = "v0.4.3";
+      #   hash = "sha256-wGOyDGY0FpAVS5+MTiKrOpDyd13ng0RLGAENW5tXuR4=";
+      # };
     })
 
     # (pkgs.vinegar.overrideAttrs {
-    #   desktopItem = [
+    #   desktopItems = [
     #     (makeDesktopItem {
-    #       name = "roblox-player";
+    #       name = "org.vinegarhq.Vinegar.player";
     #       desktopName = "Roblox Player";
-    #       exec = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
-    #       icon = "discord";
-    #       startupWMClass = "VencordDesktop";
-    #       genericName = "Internet Messenger";
-    #       keywords = ["discord" "vencord" "electron" "chat"];
-    #       categories = ["Network" "InstantMessging" "Chat"];
+    #       exec = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player %u";
+    #       icon = "grapejuice-roblox-player";
+    #     })
     #   ];
     # })
 
@@ -263,8 +282,9 @@
     #     })
     #   ];
     # })
+
     # Custom packages
-    #(callPackage ../pkgcustom/vinegar-alt {})
+    (callPackage ../pkgcustom/vinegar {})
     #(callPackage ../pkgcustom/sgdboop {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
 
@@ -273,13 +293,14 @@
 
   # List of packages end here
   xdg.desktopEntries = {
-    roblox-app = lib.mkForce {
-      name = "Roblox Packed";
+    "org.prismlauncher.PrismLauncher" = lib.mkForce {
+      name = "Prism Launcher";
       type = "Application";
-      icon = "grapejuice-roblox-player";
+      icon = "org.prismlauncher.PrismLauncher";
       terminal = false;
-      exec = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player";
+      exec = "mullvad-exclude prismlauncher %u";
     };
+
     neovim = lib.mkForce {
       name = "Neovim";
       type = "Application";
@@ -292,15 +313,6 @@
       exec = "kitty nvim";
     };
   };
-
-  # xdg.desktopEntries.comms = lib.mkForce {
-  #   name = "Comms";
-  #   type = "Application";
-  #   icon = "discord";
-  #   terminal = false;
-  #   exec = "vencorddesktop";
-  #   exec = "cinny";
-  # };
 
   # scripts
 

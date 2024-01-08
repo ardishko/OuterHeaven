@@ -6,7 +6,6 @@
   pkgs,
   inputs,
   outputs,
-  lib,
   ...
 }: {
   # Bootloader.
@@ -73,7 +72,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+    extraPortals = [inputs.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default];
   };
   programs = {
     dconf.enable = true;
@@ -206,6 +205,14 @@
               libkrb5
               keyutils
             ];
+          # desktopItems = [
+          #   (makeDesktopItem {
+          #     name = "steam";
+          #     desktopName = "Steam";
+          #     exec = "mullvad-exclude steam";
+          #     icon = "steam";
+          #   })
+          # ];
         };
       };
     };

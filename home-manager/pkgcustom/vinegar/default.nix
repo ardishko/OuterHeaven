@@ -22,11 +22,6 @@
           url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/8fc153c492542a522d6cc2dff7d1af0e030a529a/patches/wine/temp.patch";
           hash = "sha256-AnEBBhB8leKP0xCSr6UsQK7CN0NDbwqhe326tJ9dDjc=";
         })
-        # (fetchpatch {
-        #   name = "vinegar-wine-mouse-lock.patch";
-        #   url = "https://cdn.discordapp.com/attachments/1099853933712773193/1183894726647218236/mouselock.patch?ex=6589fee2&is=657789e2&hm=d9d6975a190365cb99007dfc558f67971a8bfaf0dc8188e8296cd032cd8e2876&";
-        #   hash = "sha256-EmlvVGid2uYeE4oBI3spHdEpKmg4pdCJCDDP899kVj4=";
-        # })
       ];
   });
 in
