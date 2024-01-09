@@ -9,7 +9,7 @@
     ./swaync.nix
     ./heroic.nix
     ./vinegar.nix
-    ./neovim-flake.nix
+    ./neovim.nix
     ./kitty.nix
     ./nushell.nix
     ./swaylock.nix

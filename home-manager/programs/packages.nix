@@ -161,9 +161,9 @@
     valent
     ntfs3g
     revolt-desktop
-    #vinegar
     parsec-bin
     amdgpu_top
+    floorp-unwrapped
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -225,7 +225,18 @@
       };
     })
     # Desktop Entry overrides
-
+    (pkgs.floorp.overrideAttrs {
+      desktopItems = [
+        (makeDesktopItem {
+          name = "floorp";
+          desktopName = "Florp";
+          exec = "floorp";
+          icon = builtins.fetchurl {
+          };
+          keywords = ["firefox" "floorp" "florp"];
+        })
+      ];
+    })
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
         (makeDesktopItem {
