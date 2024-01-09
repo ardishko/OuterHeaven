@@ -225,18 +225,21 @@
       };
     })
     # Desktop Entry overrides
-    (pkgs.floorp.overrideAttrs {
-      desktopItems = [
-        (makeDesktopItem {
-          name = "floorp";
-          desktopName = "Florp";
-          exec = "floorp";
-          icon = builtins.fetchurl {
-          };
-          keywords = ["firefox" "floorp" "florp"];
-        })
-      ];
-    })
+    # (pkgs.floorp.overrideAttrs {
+    #   desktopItems = [
+    #     (makeDesktopItem {
+    #       name = "floorp";
+    #       desktopName = "Florp";
+    #       exec = "floorp";
+    #       icon = builtins.fetchurl {
+    #         url = "https://github.com/ardishco-the-great/nixcfg/blob/master/images/florp.png";
+    #         sha256 = "sha256:029mxf6asp81h1pvrpaxqjzjgwlpsbrrxj4cyrq1xj5mi3pza8d6";
+    #       };
+    #       keywords = ["firefox" "floorp" "florp"];
+    #     })
+    #   ];
+    # })
+
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
         (makeDesktopItem {
@@ -250,24 +253,7 @@
           categories = ["Network" "InstantMessaging" "Chat"];
         })
       ];
-      # src = pkgs.fetchFromGitHub {
-      #   owner = "Vencord";
-      #   repo = "Vesktop";
-      #   rev = "v0.4.3";
-      #   hash = "sha256-wGOyDGY0FpAVS5+MTiKrOpDyd13ng0RLGAENW5tXuR4=";
-      # };
     })
-
-    # (pkgs.vinegar.overrideAttrs {
-    #   desktopItems = [
-    #     (makeDesktopItem {
-    #       name = "org.vinegarhq.Vinegar.player";
-    #       desktopName = "Roblox Player";
-    #       exec = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen vinegar player %u";
-    #       icon = "grapejuice-roblox-player";
-    #     })
-    #   ];
-    # })
 
     (pkgs.obsidian.overrideAttrs {
       desktopItem = [
