@@ -179,7 +179,6 @@
     description = "vaporsnake";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      firefox
     ];
     shell = pkgs.nushell;
   };

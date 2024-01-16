@@ -6,7 +6,7 @@ Like for example, If something is handled inside of the core system config, it w
 
 Think of it like how a dependency tree works.
 
-I mostly base my configuration on traditional configuration
+I mostly base my configuration on traditional NixOS configuration
 
 # Why?
 

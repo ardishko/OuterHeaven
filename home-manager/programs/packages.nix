@@ -81,7 +81,6 @@
     python3Full
     gnupg
     mangohud
-    firefox
     gzdoom
     wlprop
     mate.mate-polkit
@@ -163,7 +162,8 @@
     revolt-desktop
     parsec-bin
     amdgpu_top
-    floorp-unwrapped
+    floorp
+    mullvad-vpn
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -200,12 +200,12 @@
       buildInputs = with pkgs; [libsForQt5.kguiaddons];
     })
 
-    (pkgs.mullvad-vpn.overrideAttrs {
-      src = fetchurl {
-        url = "https://github.com/mullvad/mullvadvpn-app/releases/download/2023.3/MullvadVPN-2023.3_amd64.deb";
-        sha256 = "sha256-+XK9xUeSs93egmtsQ7qATug/n9taeQkmc4ZgObPYvn4=";
-      };
-    })
+    # (pkgs.mullvad-vpn.overrideAttrs {
+    #   src = fetchurl {
+    #     url = "https://github.com/mullvad/mullvadvpn-app/releases/download/2023.3/MullvadVPN-2023.3_amd64.deb";
+    #     sha256 = "sha256-+XK9xUeSs93egmtsQ7qATug/n9taeQkmc4ZgObPYvn4=";
+    #   };
+    # })
 
     (pkgs.swaylock-effects.overrideAttrs {
       src = pkgs.fetchFromGitHub {
@@ -245,7 +245,7 @@
         (makeDesktopItem {
           name = "vencorddesktop";
           desktopName = "Discord";
-          exec = "mullvad-exclude vencorddesktop";
+          exec = "mullvad-exclude vencorddesktop --enable-gpu --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
           icon = "discord";
           startupWMClass = "VencordDesktop";
           genericName = "Internet Messenger";
@@ -278,7 +278,7 @@
     #       exec = "mullvad-exclude steam";
     #     })
     #   ];
-    # })
+      # })
 
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})
