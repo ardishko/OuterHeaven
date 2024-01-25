@@ -53,7 +53,6 @@
     #wineWowPackages.wayland
     winetricks
     protontricks
-    soundux
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     themechanger
@@ -130,7 +129,6 @@
     yazi
     almanah
     wireguard-tools
-    komikku
     kdenlive
     tor-browser
     neovim-unwrapped
@@ -164,8 +162,20 @@
     amdgpu_top
     floorp
     mullvad-vpn
+    inxi
+    satty
+    nitch
+    # soundux
     # Overrides
 
+    # (pkgs.komikku.overrideAttrs {
+    #   src = pkgs.fetchFromGitLab {
+    #     owner = "valos";
+    #     repo = "Komikku";
+    #     rev = "v1.24.2";
+    #     hash = "sha256-c00JRy1K/jYoQYNAMSm6lQkuGQXZv/2liV1F4jpg+C4=";
+    #   };
+    # })
     (pkgs.goverlay.overrideAttrs {
       # cock
       src = pkgs.fetchFromGitHub {
@@ -175,16 +185,6 @@
         sha256 = "sha256-jLnWdywS398qu6lU0RMZ1cC3KM9dH9uWizuJZa7gahE";
       };
     })
-
-    # (pkgs.vinegar.overrideAttrs {
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "vinegarhq";
-    #     repo = "vinegar";
-    #     rev = "v1.5.9";
-    #     hash = "sha256-cLzQnNmQYyAIdTGygk/CNU/mxGgcgoFTg5G/0DNwpz4=";
-    #   };
-    #   vendorHash = "sha256-DZI4APnrldnwOmLZ9ucFBGQDxzPXTIi44eLu74WrSBI=";
-    # })
 
     (pkgs.flameshot.overrideAttrs {
       src = pkgs.fetchFromGitHub {
@@ -224,21 +224,6 @@
         hash = "sha256-6o6iPDKKqCzt7H0a64HGTvEvwO6hjRh1Drl8o4x+4ew=";
       };
     })
-    # Desktop Entry overrides
-    # (pkgs.floorp.overrideAttrs {
-    #   desktopItems = [
-    #     (makeDesktopItem {
-    #       name = "floorp";
-    #       desktopName = "Florp";
-    #       exec = "floorp";
-    #       icon = builtins.fetchurl {
-    #         url = "https://github.com/ardishco-the-great/nixcfg/blob/master/images/florp.png";
-    #         sha256 = "sha256:029mxf6asp81h1pvrpaxqjzjgwlpsbrrxj4cyrq1xj5mi3pza8d6";
-    #       };
-    #       keywords = ["firefox" "floorp" "florp"];
-    #     })
-    #   ];
-    # })
 
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
@@ -282,6 +267,7 @@
 
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})
+    (callPackage ../pkgcustom/pdiary {})
     #(callPackage ../pkgcustom/sgdboop {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
 

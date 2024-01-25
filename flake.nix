@@ -60,6 +60,9 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neocord = {
+      url = "github:IogaMaster/neocord";
+    };
   };
 
   outputs = inputs @ {

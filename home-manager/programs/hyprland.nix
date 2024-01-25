@@ -34,8 +34,8 @@
       monitor=DP-2,2560x1440@164.998993,0x350,1
       monitor=HDMI-A-1,1920x1080,2560x0,1,transform,3
       exec-once=waybar
-      exec-once=swaybg -o DP-2 -i /home/vaporsnake/Pictures/wallpapers/vergil_catppuccin-frappe_hald8_GaussianRBF_lum1_shape96_near16.png
-      exec-once=swaybg -o HDMI-A-1 -i /home/vaporsnake/Pictures/wallpapers/Wallpaper_catppuccin_frappe.png
+      exec-once=swaybg --o DP-2 -i ~/nixcfg/images/wallpapers/vergil-catppuccin.png
+      exec-once=swaybg -o HDMI-A-1 ~/nixcfg/images/wallpapers/mark-of-sacrifice-vertical.png
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       general:layout = dwindle
@@ -241,7 +241,7 @@
       bind = SUPER_SHIFT, Del, exec, pkill Hyprland
       bind = $mainMod, A, togglefloating,
       bind = CTRL, Escape, exec, anyrun
-
+	bind = $mainMod SHIFT, F, exec, nemo
       bind = $mainMod, R, pseudo, # dwindle
       bind = $mainMod, E, togglesplit, # dwindle
       bind = $mainMod,F,fullscreen
