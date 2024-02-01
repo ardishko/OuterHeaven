@@ -19,7 +19,7 @@
       treesitter.enable = true;
       alpha = {
         enable = true;
-        theme = "startify";
+        theme = "dashboard";
       };
       nvim-tree = {
         enable = true;
