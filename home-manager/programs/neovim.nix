@@ -19,25 +19,41 @@
       treesitter.enable = true;
       alpha = {
         enable = true;
-        theme = "dashboard";
+        theme = "startify";
       };
-      # nix.enable = true;
-      # better-escape.enable = true;
-      # undotree.enable = true;
-      # which-key.enable = true;
-      # comment-nvim.enable = true;
-      # nvim-tree.enable = true;
-      # telescope.enable = true;
-      # nvim-colorizer.enable = true;
-      # lualine.enable = true;
-      # lspkind.enable = true;
-      # vim-bbye.enable = true;
-      # cursorline.enable = true;
-      # barbecue.enable = true;
-      # airline.enable = true;
+      nvim-tree = {
+        enable = true;
+        autoClose = true;
+      };
+      nix.enable = true;
+      better-escape.enable = true;
+      undotree.enable = true;
+      which-key.enable = true;
+      comment-nvim.enable = true;
+      telescope.enable = true;
+      nvim-colorizer.enable = true;
+      lualine.enable = true;
+      lspkind.enable = true;
+      vim-bbye.enable = true;
+      cursorline.enable = true;
+      barbecue.enable = true;
+      airline.enable = true;
+      neo-tree.enable = true;
+      presence-nvim.enable = true;
     };
-    extraPlugins = [
-      pkgs.vimPlugins.nvchad
+    keymaps = [
+      {
+        action = "<cmd>Neotree<CR>";
+        key = "<C-s>";
+      }
+      {
+        action = "<cmd>Telescope<CR>";
+        key = "<C-l>";
+      }
+      {
+        action = "<cmd>set number<CR>";
+        key = "<C-n>";
+      }
     ];
   };
 }

@@ -63,6 +63,9 @@
     neocord = {
       url = "github:IogaMaster/neocord";
     };
+    anime-games = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+    };
   };
 
   outputs = inputs @ {

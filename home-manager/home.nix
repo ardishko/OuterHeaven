@@ -76,9 +76,6 @@
       uris = ["qemu:///system"];
     };
   };
-  # Hyprland
-  # I used to configure hyprland here but it's it's own file in form of "hyprland.nix"
-  # as shown in the imports below
 
   # Enable "services"
   services = {

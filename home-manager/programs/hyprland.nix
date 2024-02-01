@@ -35,7 +35,7 @@
       monitor=HDMI-A-1,1920x1080,2560x0,1,transform,3
       exec-once=waybar
       exec-once=swaybg --o DP-2 -i ~/nixcfg/images/wallpapers/vergil-catppuccin.png
-      exec-once=swaybg -o HDMI-A-1 ~/nixcfg/images/wallpapers/mark-of-sacrifice-vertical.png
+      exec-once=swaybg --o HDMI-A-1 -i ~/nixcfg/images/wallpapers/mark-of-sacrifice-vertical.png
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       general:layout = dwindle

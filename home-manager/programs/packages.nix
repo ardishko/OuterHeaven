@@ -11,14 +11,13 @@
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
-
-    #inputs.ags.packages.${pkgs.system}.default
+    inputs.anime-games.packages.${pkgs.system}.honkers-railway-launcher
+      #inputs.ags.packages.${pkgs.system}.default
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
     wget
     lutris
-    steam-rom-manager
-    bluez-tools
+    steam-rom-manager 
     neofetch
     swaynotificationcenter
     font-manager
@@ -69,12 +68,10 @@
     virt-manager
     krita
     gimp-with-plugins
-    droidcam
     lolcat
     cinny-desktop
     vulkan-tools
     fastfetch
-    android-tools
     scrcpy
     baobab
     python3Full
@@ -165,7 +162,8 @@
     inxi
     satty
     nitch
-    # soundux
+    komikku
+    mysql-workbench
     # Overrides
 
     # (pkgs.komikku.overrideAttrs {
@@ -228,9 +226,9 @@
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
         (makeDesktopItem {
-          name = "vencorddesktop";
+          name = "vesktop";
           desktopName = "Discord";
-          exec = "mullvad-exclude vencorddesktop --enable-gpu --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
+          exec = "mullvad-exclude vesktop --enable-gpu --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
           icon = "discord";
           startupWMClass = "VencordDesktop";
           genericName = "Internet Messenger";
@@ -263,7 +261,7 @@
     #       exec = "mullvad-exclude steam";
     #     })
     #   ];
-      # })
+    # })
 
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})

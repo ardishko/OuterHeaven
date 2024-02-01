@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [inputs.neovim-flake.homeManagerModules.default];
+
   programs.neovim-flake = {
     enable = true;
     settings = {
@@ -338,10 +339,6 @@
 
       vim.comments = {
         comment-nvim.enable = true;
-      };
-
-      vim.presence = {
-        presence-nvim.enable = true;
       };
     };
   };

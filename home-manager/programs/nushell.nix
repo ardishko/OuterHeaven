@@ -12,8 +12,8 @@
     '';
   };
   # Here we enable oh-my-posh. It doesn't have its own file for organization reasons.
-#   programs.oh-my-posh = {
-#     enable = true;
-#     useTheme = "catppuccin_frappe";
-#   };
+  programs.oh-my-posh = {
+    enable = true;
+    useTheme = "catppuccin_frappe";
+  };
 }

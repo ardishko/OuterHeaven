@@ -7,6 +7,8 @@
   libGL,
   libxkbcommon,
   xorg,
+  wayland,
+  vulkan-headers,
   wineWowPackages,
   fetchpatch,
 }: let
@@ -19,8 +21,8 @@
         # Here are the currently applied patches for Roblox to run under WINE:
         (fetchpatch {
           name = "vinegar-wine-segrevert.patch";
-          url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/8fc153c492542a522d6cc2dff7d1af0e030a529a/patches/wine/temp.patch";
-          hash = "sha256-AnEBBhB8leKP0xCSr6UsQK7CN0NDbwqhe326tJ9dDjc=";
+          url = "https://cdn.discordapp.com/attachments/1099853933712773193/1198842257588109333/segregrevert.mypatch?ex=65c05fdb&is=65adeadb&hm=25e51210f43d32fa52940af6f2cd5559d9e3857d6f5921cb98b61b3d1b2ea103&";
+          hash = "sha256-+3Nld81nG3GufI4jAF6yrWfkJmsSCOku39rx0Hov29c=";
         })
       ];
   });
@@ -39,7 +41,7 @@ in
     vendorHash = "sha256-DZI4APnrldnwOmLZ9ucFBGQDxzPXTIi44eLu74WrSBI=";
 
     nativeBuildInputs = [pkg-config makeBinaryWrapper];
-    buildInputs = [libGL libxkbcommon xorg.libX11 xorg.libXcursor xorg.libXfixes wine];
+    buildInputs = [libGL libxkbcommon xorg.libX11 xorg.libXcursor xorg.libXfixes wayland vulkan-headers wine];
 
     buildPhase = ''
       runHook preBuild
@@ -64,7 +66,7 @@ in
       changelog = "https://github.com/vinegarhq/vinegar/releases/tag/v${version}";
       mainProgram = "vinegar";
       license = licenses.gpl3Only;
-      platforms = ["x86_64-linux" "i686-linux"];
+      platforms = ["x86_64-linux"];
       maintainers = with maintainers; [nyanbinary];
     };
   }
