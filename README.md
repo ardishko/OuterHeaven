@@ -12,7 +12,7 @@ I mostly base my configuration on traditional NixOS configuration
 
 I just wanted to share my config, that's all :P
 
-# X isn't working, why?
+# Some stuff isn't working, why?
 
 I admit that I sometimes set up stuff in my config that I don't make use of all the time so if there is a problem I might not notice it myself so feel free to open an issue (No, really I don't mind at all. Do it.)
 
