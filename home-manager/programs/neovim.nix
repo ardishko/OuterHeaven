@@ -6,6 +6,9 @@
   imports = [inputs.nixvim.homeManagerModules.nixvim];
   programs.nixvim = {
     enable = true;
+    options = {
+      number = true;
+    };
     defaultEditor = true;
     package = pkgs.neovim-unwrapped;
     enableMan = true;
@@ -40,6 +43,8 @@
       airline.enable = true;
       neo-tree.enable = true;
       presence-nvim.enable = true;
+      gitsigns.enable = true;
+      image.enable = true;
     };
     keymaps = [
       {

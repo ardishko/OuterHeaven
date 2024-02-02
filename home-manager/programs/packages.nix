@@ -164,6 +164,7 @@
     nitch
     komikku
     mysql-workbench
+    gtklock
     # Overrides
 
     # (pkgs.komikku.overrideAttrs {
@@ -266,6 +267,7 @@
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})
     (callPackage ../pkgcustom/pdiary {})
+    #(callPackage ../pkgcustom/nexus-mods/package.nix {})
     #(callPackage ../pkgcustom/sgdboop {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
 
