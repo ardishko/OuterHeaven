@@ -60,15 +60,6 @@
   };
 
   # Enable the WMs and programs.
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd /home/vaporsnake/scripts/hyprlaunch";
-        user = "greeter";
-      };
-    };
-  };
 
   xdg.portal = {
     enable = true;
@@ -85,6 +76,20 @@
     droidcam.enable = true;
   };
   services = {
+    greetd = {
+      enable = true;
+        settings = {
+          default_session = {
+            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd /home/vaporsnake/scripts/hyprlaunch";
+            user = "greeter";
+          };
+        };
+      };
+    # enable mysql for uni stuff
+    mysql = {
+      enable = true;
+      package = pkgs.mysql80;
+    };
     #tailscale.enable = true;
     flatpak.enable = true;
     blueman.enable = true;

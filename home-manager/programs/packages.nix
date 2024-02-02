@@ -267,6 +267,7 @@
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})
     (callPackage ../pkgcustom/pdiary {})
+    # (callPackage ../pkgcustom/xampp {})
     #(callPackage ../pkgcustom/nexus-mods/package.nix {})
     #(callPackage ../pkgcustom/sgdboop {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
