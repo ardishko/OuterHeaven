@@ -22,7 +22,10 @@
       treesitter.enable = true;
       alpha = {
         enable = true;
-        theme = "dashboard";
+        theme = "startify";
+        opts = {
+          position = "center";
+        };
       };
       nvim-tree = {
         enable = true;
