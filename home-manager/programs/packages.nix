@@ -266,13 +266,14 @@
 
     # Custom packages
     (callPackage ../pkgcustom/vinegar {})
+
     (callPackage ../pkgcustom/pdiary {})
     # (callPackage ../pkgcustom/xampp {})
     #(callPackage ../pkgcustom/nexus-mods/package.nix {})
     #(callPackage ../pkgcustom/sgdboop {})
     #(callPackage ../pkgcustom/sgdboop/default.nix {})
 
-    #(callPackage ../pkgcustom/discover-overlay/default.nix {})
+    (callPackage ../pkgcustom/discover-overlay/default.nix {})
   ];
 
   # List of packages end here
@@ -285,7 +286,7 @@
       exec = "mullvad-exclude prismlauncher %u";
     };
 
-    neovim = lib.mkForce {
+    nvim = lib.mkForce {
       name = "Neovim";
       type = "Application";
       mimeType = ["text/plain"];

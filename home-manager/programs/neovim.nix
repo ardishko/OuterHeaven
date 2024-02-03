@@ -55,7 +55,7 @@
         key = "<C-s>";
       }
       {
-        action = "<cmd>Telescope<CR>";
+        action = "<cmd>Telescope find_files<CR>";
         key = "<C-l>";
       }
       {
