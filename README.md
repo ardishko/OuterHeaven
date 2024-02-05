@@ -1,12 +1,21 @@
 # General philosophy
 
-Mostly, everything is categorized under what they are managed under.
+Everything is categorized under what they are managed under.
 
-Like for example, If something is handled inside of the core system config, it will be listed under /core or if it's managed with home-manager then it will be inside home-manager and so forth.
+Like for example, If something is handled inside of the core system config (or otherwise known as nixos configurations), it will be listed under `/core` or if it's managed with home-manager then it will be inside home-manager and so forth. (For context: the reason why It's not simply called "nixos" is because it sounds way cooler to call it the "core" system config.)
 
 Think of it like how a dependency tree works.
 
-I mostly base my configuration on traditional NixOS configuration
+This configuration is made so that you can drag and drop your traditional NixOS configuration files generated on installation (from /etc/nixos) into `/core` although I can't guarantee that this will work BUT I am working to keep it compatible.
+
+(and as a sidenote, this configuration will be a multi-system configuration in the future but I will not do it in a convoluded way like most people do, it will be easy to remove and add a device from the configuration and it's for this reason that I want to make it as easy as possible to migrate from your automatically generated configuration to this configuration. Most updated configuration will be on my main machine since most my other devices don't really need a lot.)
+
+# Versioning
+
+The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config.
+
+Current major version: `2.0`
+Next Major version: `3.0` (will be released when my configuration is a multi-system configuration like mentioned above.)
 
 # Why?
 
@@ -14,7 +23,7 @@ I just wanted to share my config, that's all :P
 
 # Some stuff isn't working, why?
 
-I admit that I sometimes set up stuff in my config that I don't make use of all the time so if there is a problem I might not notice it myself so feel free to open an issue (No, really I don't mind at all. Do it.)
+I admit that I sometimes set up stuff in my config that I don't make use of all the time so if there is a problem I might not notice it myself so feel free to open an issue (No, really I don't mind at all. Do it. It helps me better my system too.)
 
 # Things to note
 
