@@ -59,103 +59,6 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-  # Enable the WMs and programs.
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [inputs.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default];
-  };
-  programs = {
-    dconf.enable = true;
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    };
-    noisetorch.enable = true;
-    droidcam.enable = true;
-  };
-  services = {
-    greetd = {
-      enable = true;
-        settings = {
-          default_session = {
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd /home/vaporsnake/scripts/hyprlaunch";
-            user = "greeter";
-          };
-        };
-      };
-    # enable mysql for uni stuff
-    mysql = {
-      enable = true;
-      package = pkgs.mysql80;
-    };
-    #tailscale.enable = true;
-    flatpak.enable = true;
-    blueman.enable = true;
-    davfs2.enable = true;
-    webdav.enable = true;
-    ratbagd.enable = true;
-    gvfs.enable = true;
-    openssh.allowSFTP = true;
-    gnome.gnome-keyring.enable = true;
-    mullvad-vpn.enable = true;
-    gnome.sushi.enable = true;
-
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
-    # Enable the X11 windowing system.
-    xserver = {
-      enable = true;
-      layout = "tr";
-      xkbVariant = "";
-      excludePackages = [pkgs.xterm];
-      videoDrivers = ["amdgpu"];
-    };
-  };
-  systemd = {
-    services.NetworkManager-wait-online.enable = false;
-  };
-  hardware = {
-    # Enable OpenGL and Vulkan stuff
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        rocm-opencl-icd
-        rocm-opencl-runtime
-      ];
-    };
-    bluetooth.enable = true;
-  };
-
-  virtualisation = {
-    libvirtd.enable = true;
-    waydroid.enable = true;
-    podman.enable = true;
-  };
-  # Polkit stuff
-  security = {
-    pam.services = {
-      swaylock.text = "auth include login";
-      gtklock.text = "auth include login";
-    };
-    polkit = {
-      enable = true;
-      debug = true;
-      extraConfig = ''
-        polkit.addRule(function(action, subject) {
-          if (action.id === "org.freedesktop.NetworkManager.settings.modify.system") {
-            var name = polkit.spawn(["cat", "/proc/" + subject.pid + "/comm"]);
-            if (name == "steam\n") { return polkit.Result.NO; }
-          }
-        })
-      '';
-    };
-  };
-
   # Configure keymap in X11
 
   # Configure console keymap
@@ -191,64 +94,8 @@
     shell = pkgs.nushell;
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-        "python-2.7.18.7"
-      ];
-      packageOverrides = pkgs: {
-        steam = pkgs.steam.override {
-          extraPkgs = pkgs:
-            with pkgs; [
-              xorg.libXcursor
-              xorg.libXi
-              xorg.libXinerama
-              xorg.libXScrnSaver
-              libpng
-              libpulseaudio
-              libvorbis
-              stdenv.cc.cc.lib
-              libkrb5
-              keyutils
-            ];
-          # desktopItems = [
-          #   (makeDesktopItem {
-          #     name = "steam";
-          #     desktopName = "Steam";
-          #     exec = "mullvad-exclude steam";
-          #     icon = "steam";
-          #   })
-          # ];
-        };
-      };
-    };
-  };
-  # Enable flakes
-  nix.settings = {
-    experimental-features = ["nix-command" "flakes"];
-    builders-use-substitutes = true;
-    # substituters to use
-    substituters = [
-      "https://anyrun.cachix.org"
-      "https://hyprland.cachix.org"
-      "https://ezkea.cachix.org"
-    ];
-
-    trusted-public-keys = [
-      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
-    ];
-  };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-
   environment.systemPackages = with pkgs; [
-    bash
-    gamescope
-    lshw
+	firefox
   ];
   #};
   fonts.packages = with pkgs; [
@@ -263,27 +110,6 @@
     proggyfonts
     nerdfonts
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  networking = {
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [22 443];
-      allowedUDPPorts = [22 443];
-    };
-  };
 
   boot = {
     consoleLogLevel = 1;

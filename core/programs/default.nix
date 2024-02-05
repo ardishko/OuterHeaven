@@ -1,5 +1,5 @@
 {
     imports = [
-        ./anyrun.nix
-    ]
+        ./packages.nix
+    ];
 }

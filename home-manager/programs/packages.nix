@@ -4,6 +4,9 @@
   lib,
   ...
 }: {
+  # imports = [
+  #   inputs.nix-flatpak.homeManagerModules.nix-flatpak
+  # ];
   # Define your packages here and everything related.
   home.packages = with pkgs; [
     # Define packages that derive from inputs
@@ -12,7 +15,6 @@
     inputs.nh.packages.${pkgs.system}.default
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     inputs.anime-games.packages.${pkgs.system}.honkers-railway-launcher
-      #inputs.ags.packages.${pkgs.system}.default
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
     wget
@@ -49,7 +51,6 @@
     transmission-gtk
     sway-contrib.grimshot
     libreoffice-fresh
-    #wineWowPackages.wayland
     winetricks
     protontricks
     libsForQt5.qt5ct
@@ -165,6 +166,10 @@
     komikku
     mysql-workbench
     gtklock
+    discord
+    rmg
+    gnome.nautilus
+    gnome-text-editor
     # Overrides
 
     # (pkgs.komikku.overrideAttrs {
@@ -228,7 +233,7 @@
       desktopItems = [
         (makeDesktopItem {
           name = "vesktop";
-          desktopName = "Discord";
+          desktopName = "Discord (vesktop)";
           exec = "mullvad-exclude vesktop --enable-gpu --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
           icon = "discord";
           startupWMClass = "VencordDesktop";
@@ -313,26 +318,23 @@
     };
   };
   # Declaratively Manage Flatpaks here
-  services.flatpak = {
-    packages = [
-      "org.kde.Platform"
-      "org.freedesktop.Platform.GL.default"
-      "org.kde.Platform.Locale"
-      "org.freedesktop.Platform.openh264"
-      "org.gnome.Platform"
-      "org.freedesktop.Platform.Compat.i386"
-      "org.freedesktop.Platform"
-      "com.github.tchx84.Flatseal"
-      "com.steamgriddb.SGDBoop"
-      "org.ryujinx.Ryujinx"
-      "org.yuzu_emu.yuzu"
-      "org.freedesktop.Platform.ffmpeg-full"
-      "io.mrarm.mcpelauncher"
-      "net.rpcs3.RPCS3"
-    ];
-  };
-
-  imports = [
-    inputs.nix-flatpak.homeManagerModules.nix-flatpak
-  ];
+  # services.flatpak = {
+  #   packages = [
+  #     "org.kde.Platform"
+  #     "org.freedesktop.Platform.GL.default"
+  #     "org.kde.Platform.Locale"
+  #     "org.freedesktop.Platform.openh264"
+  #     "org.gnome.Platform"
+  #     "org.freedesktop.Platform.Compat.i386"
+  #     "org.freedesktop.Platform"
+  #     "com.github.tchx84.Flatseal"
+  #     "com.steamgriddb.SGDBoop"
+  #     "org.ryujinx.Ryujinx"
+  #     "org.yuzu_emu.yuzu"
+  #     "org.freedesktop.Platform.ffmpeg-full"
+  #     "io.mrarm.mcpelauncher"
+  #     "net.rpcs3.RPCS3"
+  #     "net.pcsx2.PCSX2"
+  #   ];
+  # };
 }
