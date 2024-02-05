@@ -14,7 +14,8 @@ This configuration is made so that you can drag and drop your traditional NixOS 
 
 The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config.
 
-Current major version: `2.0`
+Current major version: `2.0` (release notes: https://github.com/ardishco-the-great/nixcfg/commit/74fb191b478100c5d9abf9ddecedc52e6b6fdec4 )
+
 Next Major version: `3.0` (will be released when my configuration is a multi-system configuration like mentioned above.)
 
 # Why?
