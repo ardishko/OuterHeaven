@@ -95,7 +95,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-	firefox
+	dnf5
   ];
   #};
   fonts.packages = with pkgs; [

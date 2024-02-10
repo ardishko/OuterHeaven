@@ -9,5 +9,6 @@
     ./services.nix
     ./virtualisation.nix
     ./xdg.nix
+    ./environment.nix
   ];
 }

@@ -1,15 +1,15 @@
 { pkgs, ... }:
 {
   services = {
-    greetd = {
-      enable = true;
-        settings = {
-          default_session = {
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd /home/vaporsnake/scripts/hyprlaunch";
-            user = "greeter";
-          };
-        };
-      };
+    # greetd = {
+    #   enable = true;
+    #     settings = {
+    #       default_session = {
+    #         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+    #         user = "greeter";
+    #       };
+    #     };
+    #   };
     # enable mysql for uni stuff
     mysql = {
       enable = true;
@@ -26,7 +26,7 @@
     gnome.gnome-keyring.enable = true;
     mullvad-vpn.enable = true;
     gnome.sushi.enable = true;
-
+   /*  tailscale.enable = true; */
     # Enable CUPS to print documents.
     printing.enable = true;
 
@@ -37,6 +37,13 @@
       xkbVariant = "";
       excludePackages = [pkgs.xterm];
       videoDrivers = ["amdgpu"];
+      displayManager = {
+        lightdm.enable = false;
+        gdm.enable = true;
+        #sddm.enable = true;
+      };
+      # desktopManager = {
+      # };
     };
   };
 }

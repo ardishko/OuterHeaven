@@ -12,6 +12,7 @@
     defaultEditor = true;
     package = pkgs.neovim-unwrapped;
     enableMan = true;
+    clipboard.register = "unnamedplus";
     colorscheme = "catppuccin";
     colorschemes.catppuccin = {
       enable = true;
@@ -22,11 +23,31 @@
       treesitter.enable = true;
       alpha = {
         enable = true;
-        theme = "startify";
-        opts = {
-          position = "center";
-        };
+        theme = null;
+
+        layout = [
+          {
+          opts = {
+            position = "center";
+            hl = "Type";
+          };
+            type = "text";
+            val = [
+        " ███▄    █  ██▓▒██   ██▒ ██▒   █▓ ██▓ ███▄ ▄███▓"
+        " ██ ▀█   █ ▓██▒▒▒ █ █ ▒░▓██░   █▒▓██▒▓██▒▀█▀ ██▒"
+        "▓██  ▀█ ██▒▒██▒░░  █   ░ ▓██  █▒░▒██▒▓██    ▓██░"
+        "▓██▒  ▐▌██▒░██░ ░ █ █ ▒   ▒██ █░░░██░▒██    ▒██ "
+        "▒██░   ▓██░░██░▒██▒ ▒██▒   ▒▀█░  ░██░▒██▒   ░██▒"
+        "░ ▒░   ▒ ▒ ░▓  ▒▒ ░ ░▓ ░   ░ ▐░  ░▓  ░ ▒░   ░  ░"
+        "░ ░░   ░ ▒░ ▒ ░░░   ░▒ ░   ░ ░░   ▒ ░░  ░      ░"
+        "   ░   ░ ░  ▒ ░ ░    ░       ░░   ▒ ░░      ░   "
+        "         ░  ░   ░    ░        ░   ░         ░   "
+        "                             ░                  "
+            ];
+          }
+        ];
       };
+
       nvim-tree = {
         enable = true;
         autoClose = true;
@@ -49,6 +70,9 @@
       gitsigns.enable = true;
       image.enable = true;
     };
+    globals = {
+        mapleader = " ";
+      };
     keymaps = [
       {
         action = "<cmd>Neotree<CR>";

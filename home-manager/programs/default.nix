@@ -4,7 +4,7 @@
     ./packages.nix
     ./alacritty.nix
     ./anyrun.nix
-    ./hyprland.nix
+    ./hyprland-conf.nix
     ./waybar.nix
     ./swaync.nix
     ./heroic.nix

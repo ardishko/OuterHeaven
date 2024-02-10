@@ -94,7 +94,6 @@
     wf-recorder
     clonehero
     scanmem
-    cinnamon.nemo-with-extensions
     unzip
     bless
     handbrake
@@ -135,6 +134,7 @@
     tailscale
     telegram-desktop
     android-studio
+    android-tools
     samrewritten
     zathura
     nwg-dock-hyprland
@@ -166,20 +166,20 @@
     komikku
     mysql-workbench
     gtklock
-    discord
     rmg
     gnome.nautilus
+    nautilus-open-any-terminal
     gnome-text-editor
+    bleachbit
+    netflix
+    tailscale
+    neovide
     # Overrides
+    
+    (pkgs.discord-canary.overrideAttrs {
+      withVencord = true;
+    })
 
-    # (pkgs.komikku.overrideAttrs {
-    #   src = pkgs.fetchFromGitLab {
-    #     owner = "valos";
-    #     repo = "Komikku";
-    #     rev = "v1.24.2";
-    #     hash = "sha256-c00JRy1K/jYoQYNAMSm6lQkuGQXZv/2liV1F4jpg+C4=";
-    #   };
-    # })
     (pkgs.goverlay.overrideAttrs {
       # cock
       src = pkgs.fetchFromGitHub {

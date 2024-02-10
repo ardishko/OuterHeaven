@@ -3,12 +3,15 @@
   inputs,
   ...
 }: {
-  xdg.portal = {
-    enable = true;
-    extraPortals = [inputs.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default];
-  };
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd = {
+      enable = true;
+      variables = [
+        "DISPLAY"
+        "XDG_CURRENT_DESKTOP"
+      ];
+    };
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
     plugins = [
@@ -18,18 +21,8 @@
     extraConfig = ''
       # Please note not all available settings / options are set here.
       # For a full list, see the wiki
-
       exec-once = mullvad-gui
-
-      # envvars
-      #env =_JAVA_AWT_WM_NONREPARENTING,1
-      #env = WLR_NO_HARDWARE_CURSORS,1
-      #env = GTK_THEME,Kanagawa-border
-      #env =QT_QPA_PLATFORMTHEME,qt6ct;qt5ct
-      #env =MOZ_ENABLE_WAYLAND,1
-      #env =RUST_BACKTRACE,1
-      #env = QT_QPA_PLATFORM=wayland;xcb
-
+      exec-once = noisetorch -i
       # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor=DP-2,2560x1440@164.998993,0x350,1
       monitor=HDMI-A-1,1920x1080,2560x0,1,transform,3
@@ -241,7 +234,7 @@
       bind = SUPER_SHIFT, Del, exec, pkill Hyprland
       bind = $mainMod, A, togglefloating,
       bind = CTRL, Escape, exec, anyrun
-	bind = $mainMod SHIFT, F, exec, nemo
+      bind = $mainMod SHIFT, F, exec, nemo
       bind = $mainMod, R, pseudo, # dwindle
       bind = $mainMod, E, togglesplit, # dwindle
       bind = $mainMod,F,fullscreen
@@ -280,10 +273,10 @@
       workspace=DP-2,8
       workspace=DP-2,9
       workspace=DP-2,10
-      workspace=HDMI-A-1,name:h
-      workspace=HDMI-A-1,name:j
-      workspace=HDMI-A-1,name:k
-      workspace=HDMI-A-1,name:l
+      workspace=HDMI-A-1,11
+      workspace=HDMI-A-1,12
+      workspace=HDMI-A-1,13
+      workspace=HDMI-A-1,14
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
@@ -296,10 +289,10 @@
       bind = $mainMod, 8, workspace, 8
       bind = $mainMod, 9, workspace, 9
       bind = $mainMod, 0, workspace, 10
-      bind = $mainMod, h, workspace, name:h
-      bind = $mainMod, j, workspace, name:j
-      bind = $mainMod, k, workspace, name:k
-      bind = $mainMod, l, workspace, name:l
+      bind = $mainMod, h, workspace, 11
+      bind = $mainMod, j, workspace, 12
+      bind = $mainMod, k, workspace, 13
+      bind = $mainMod, l, workspace, 14
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1
@@ -312,10 +305,10 @@
       bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
       bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
       bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
-      bind = $mainMod SHIFT, h, movetoworkspacesilent, name:h
-      bind = $mainMod SHIFT, j, movetoworkspacesilent, name:j
-      bind = $mainMod SHIFT, k, movetoworkspacesilent, name:k
-      bind = $mainMod SHIFT, l, movetoworkspacesilent, name:l
+      bind = $mainMod SHIFT, h, movetoworkspacesilent, 11
+      bind = $mainMod SHIFT, j, movetoworkspacesilent, 12
+      bind = $mainMod SHIFT, k, movetoworkspacesilent, 13
+      bind = $mainMod SHIFT, l, movetoworkspacesilent, 14
 
       # Move window with mainMod_SHIFT + arrow keys
       bind = $mainMod SHIFT, left, movewindow, l
