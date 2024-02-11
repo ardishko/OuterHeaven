@@ -10,6 +10,8 @@
       number = true;
     };
     defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
     package = pkgs.neovim-unwrapped;
     enableMan = true;
     clipboard.register = "unnamedplus";

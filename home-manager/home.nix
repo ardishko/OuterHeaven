@@ -38,6 +38,7 @@
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders;
     };
+
     # Where we define the cursor
     cursorTheme.name = "macOS-BigSur";
 
@@ -55,10 +56,10 @@
   qt = {
     enable = true;
     style = {
-      name = "kvantum";
+      name = "catppuccin-kvantum";
       package = pkgs.catppuccin-kvantum;
     };
-    platformTheme = "gtk";
+    platformTheme = "gtk3";
   };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

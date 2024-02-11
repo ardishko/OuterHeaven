@@ -18,6 +18,9 @@
       #inputs.hy3.packages.${pkgs.system}.hy3
       #inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
     ];
+    settings = {
+      "$mainMod" = "SUPER";
+    };
     extraConfig = ''
       # Please note not all available settings / options are set here.
       # For a full list, see the wiki
@@ -223,9 +226,7 @@
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
-
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-      $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 

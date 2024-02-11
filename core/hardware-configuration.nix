@@ -12,7 +12,7 @@
   boot = {
     extraModulePackages = [];
     supportedFilesystems = ["ntfs"];
-    kernelModules = ["kvm-intel"];
+    kernelModules = ["kvm-intel" "udev"];
     initrd = {
       kernelModules = ["amdgpu"];
       availableKernelModules = ["vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];

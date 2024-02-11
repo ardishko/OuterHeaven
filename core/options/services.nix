@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   services = {
     # greetd = {
@@ -26,7 +26,8 @@
     gnome.gnome-keyring.enable = true;
     mullvad-vpn.enable = true;
     gnome.sushi.enable = true;
-   /*  tailscale.enable = true; */
+    udev.enable = true;
+    #tailscale.enable = true;
     # Enable CUPS to print documents.
     printing.enable = true;
 
@@ -40,7 +41,6 @@
       displayManager = {
         lightdm.enable = false;
         gdm.enable = true;
-        #sddm.enable = true;
       };
       # desktopManager = {
       # };
