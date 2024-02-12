@@ -22,11 +22,9 @@
     lutris
     steam-rom-manager 
     neofetch
-    swaynotificationcenter
     font-manager
     gnome-photos
     easyeffects
-    swayosd
     wlr-randr
     wlogout
     thefuck
@@ -172,11 +170,8 @@
     netflix
     tailscale
     qutebrowser
+    clipit
     # Overrides
-    
-    (pkgs.discord-canary.overrideAttrs {
-      withVencord = true;
-    })
 
     (pkgs.goverlay.overrideAttrs {
       # cock
@@ -241,7 +236,27 @@
         })
       ];
     })
-
+    ((pkgs.discord-canary.override { 
+      withVencord = true;
+      withOpenASAR = true;
+      # electron = src = pkgs.fetchFromGithub {
+      #     owner = "electron";
+      #     repo = "electron";
+      #     rev = "v29.0.0-beta.8";
+      #     hash = "";
+      #   };
+      #};
+      })
+      .overrideAttrs { 
+        desktopItems = [ 
+          (makeDesktopItem {
+            name = "discordcanary";
+            desktopName = "Discord Canary";
+            exec = "mullvad-exclude discordcanary";
+            icon = "discord-canary";
+            })
+          ]; 
+        })
     (pkgs.obsidian.overrideAttrs {
       desktopItem = [
         (makeDesktopItem {

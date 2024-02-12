@@ -61,13 +61,12 @@
         "SUPER_SHIFT, W, killactive,"
         "SUPER_SHIFT, Del, exec, pkill Hyprland"
         "$mainMod, A, togglefloating,"
-        "CTRL, Escape, exec, anyrun"
-        "$mainMod SHIFT, F, exec, nemo"
+        "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
+        "$mainMod SHIFT, F, exec, ${pkgs.gnome.nautilus}/bin/nautilus"
         "$mainMod, R, pseudo, # dwindle"
         "$mainMod, E, togglesplit, # dwindle"
         "$mainMod,F,fullscreen"
         ",Print, exec, flameshot gui"
-        "CTRL, Print, exec, hyprshot -m region"
         "$mainMod, Tab, exec, swaync-client -t"
 
         # Move focus with mainMod + arrow keys
