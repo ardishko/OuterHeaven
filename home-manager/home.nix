@@ -40,6 +40,7 @@
     };
 
     # Where we define the cursor
+
     cursorTheme.name = "macOS-BigSur";
 
     gtk3.extraConfig = {
@@ -60,6 +61,13 @@
       package = pkgs.catppuccin-kvantum;
     };
     platformTheme = "gtk3";
+  };
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.apple-cursor;
+    name = "macOS-BigSur";
+    size = 24;
   };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

@@ -1,15 +1,6 @@
 { pkgs, inputs, ... }:
 {
   services = {
-    # greetd = {
-    #   enable = true;
-    #     settings = {
-    #       default_session = {
-    #         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-    #         user = "greeter";
-    #       };
-    #     };
-    #   };
     # enable mysql for uni stuff
     mysql = {
       enable = true;
@@ -27,7 +18,7 @@
     mullvad-vpn.enable = true;
     gnome.sushi.enable = true;
     udev.enable = true;
-    #tailscale.enable = true;
+
     # Enable CUPS to print documents.
     printing.enable = true;
 

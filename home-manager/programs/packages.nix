@@ -26,7 +26,6 @@
     font-manager
     gnome-photos
     easyeffects
-    swaybg
     swayosd
     wlr-randr
     wlogout
@@ -84,7 +83,6 @@
     mate.mate-polkit
     cinnamon.folder-color-switcher
     libsForQt5.qtstyleplugins
-    apple-cursor
     ioquake3
     nvtop-amd
     wlsunset
@@ -104,7 +102,6 @@
     woeusb-ng
     ungoogled-chromium
     signal-desktop-beta
-    emacs-nox
     qgnomeplatform-qt6
     qgnomeplatform
     gparted
@@ -174,7 +171,7 @@
     bleachbit
     netflix
     tailscale
-    neovide
+    qutebrowser
     # Overrides
     
     (pkgs.discord-canary.overrideAttrs {
