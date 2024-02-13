@@ -1,0 +1,5 @@
+{
+  services = {
+    webdav.enable = true;
+  };
+}

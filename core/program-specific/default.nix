@@ -2,6 +2,8 @@
     imports = [
       ./packages.nix
       ./hyprland.nix
-      ./pipewire-lowlatency.nix
+      ./sound.nix
+      ./gdm.nix
+      ./steam.nix
     ];
 }

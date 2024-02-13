@@ -2,7 +2,7 @@
   imports = [
     ./device-specific
     ./options
-    ./programs
+    ./program-specific
   ];
 }
 

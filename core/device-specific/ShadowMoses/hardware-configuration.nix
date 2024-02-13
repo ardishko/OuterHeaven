@@ -12,9 +12,8 @@
   boot = {
     extraModulePackages = [];
     supportedFilesystems = ["ntfs"];
-    kernelModules = ["kvm-intel" "udev"];
+    kernelModules = ["kvm-intel"];
     initrd = {
-      kernelModules = ["amdgpu"];
       availableKernelModules = ["vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
     };
   };
@@ -48,6 +47,5 @@
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

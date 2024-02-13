@@ -13,7 +13,6 @@
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
-    inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
     inputs.anime-games.packages.${pkgs.system}.honkers-railway-launcher
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
@@ -144,7 +143,6 @@
     nixpkgs-fmt
     nix-update
     firewalld-gui
-    sherlock
     element-desktop
     gtkcord4
     wine-staging
@@ -169,7 +167,6 @@
     bleachbit
     netflix
     tailscale
-    qutebrowser
     clipit
     etcher
     ventoy-full

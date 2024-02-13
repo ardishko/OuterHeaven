@@ -9,11 +9,10 @@
   xorg,
   wayland,
   vulkan-headers,
-  wineWowPackages,
-  fetchpatch,
+  winePackages,
 }: let
   # wine-staging doesn't support overrideAttrs for now
-  wine = wineWowPackages.stagingFull.overrideDerivation (oldAttrs: {
+  wine = winePackages.stable.overrideDerivation (oldAttrs: {
     patches =
       (oldAttrs.patches or [])
       ++ [

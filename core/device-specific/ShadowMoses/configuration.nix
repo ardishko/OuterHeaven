@@ -8,28 +8,7 @@
   outputs,
   ...
 }: {
-  # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi = {
-      canTouchEfiVariables = true;
-      #efiSysMountPoint = "boot/efi";
-    };
-  };
-  #boot.loader.grub = {
-  #  enable = true;
-  #  devices = ["nodev"];
-  #  efiSupport = true;
-  #  useOSProber = true;
-  #  theme =
-  #    pkgs.fetchFromGitHub {
-  #      owner = "catppuccin";
-  #      repo = "grub";
-  #      rev = "803c5df0e83aba61668777bb96d90ab8f6847106";
-  #      sha256 = "/bSolCta8GCZ4lP0u5NVqYQ9Y3ZooYCNdTwORNvR7M0=";
-  #    }
-  #    + "/src/catppuccin-frappe-grub-theme";
-  #};
+
 
   networking.hostName = "ShadowMoses"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -38,12 +17,10 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Istanbul";
 
+  services.xserver.videoDrivers = [ "amdgpu" ];
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -59,31 +36,6 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-  # Configure keymap in X11
-
-  # Configure console keymap
-  console.keyMap = "trq";
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vaporsnake = {
     isNormalUser = true;
@@ -92,29 +44,6 @@
     packages = with pkgs; [
     ];
     shell = pkgs.nushell;
-  };
-
-  environment.systemPackages = with pkgs; [
-  ];
-  #};
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-    nerdfonts
-  ];
-
-  boot = {
-    consoleLogLevel = 1;
-    kernelParams = ["split_lock_detect=off"];
-    extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
-    kernelPackages = pkgs.linuxPackages_zen;
   };
 
   # This value determines the NixOS release from which the default

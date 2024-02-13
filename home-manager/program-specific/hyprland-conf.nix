@@ -68,7 +68,7 @@
         "$mainMod, E, togglesplit, # dwindle"
         "$mainMod,F,fullscreen"
         ",Print, exec, flameshot gui"
-        "$mainMod, Tab, exec, swaync-client -t"
+        "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync -t"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"

@@ -11,6 +11,5 @@
         rocm-opencl-runtime
       ];
     };
-    bluetooth.enable = true;
   };
 }
