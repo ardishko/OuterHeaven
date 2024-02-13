@@ -95,7 +95,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-	dnf5
   ];
   #};
   fonts.packages = with pkgs; [
@@ -116,7 +115,6 @@
     kernelParams = ["split_lock_detect=off"];
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     kernelPackages = pkgs.linuxPackages_zen;
-    #kernelParams = [ loglevel = 1 ];
   };
 
   # This value determines the NixOS release from which the default
@@ -141,7 +139,7 @@
     useUserPackages = true;
     users = {
       # Import your home-manager configuration
-      vaporsnake = import ../home-manager;
+      vaporsnake = import ../../../home-manager;
     };
   };
 }

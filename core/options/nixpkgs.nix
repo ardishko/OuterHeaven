@@ -2,9 +2,6 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "python-2.7.18.7"
-      ];
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
           extraPkgs = pkgs:

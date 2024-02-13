@@ -28,7 +28,7 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 
 # Things to note
 
-There is a fix for Steam's gamescope under /core/configuration.nix which is essential if you want to use gamescope on NixOS what-so-ever but If you are not interested in that, then you can safely remove it.
+There is a fix for Steam's gamescope at ``/core/options/nixpkgs.nix`` which is essential if you want to use gamescope on NixOS what-so-ever but If you are not interested in that, then you can safely remove that part.
 
 There are a bunch of overrides under home.package inside of packages.nix under /home-manager/programs, some containing version overrides and some containing desktop entry changes.
 

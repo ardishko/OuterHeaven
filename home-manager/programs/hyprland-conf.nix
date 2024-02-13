@@ -39,6 +39,7 @@
         "${pkgs.premid}/bin/premid --in-process-gpu"
         "${pkgs.swayosd}/bin/swayosd-server"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
+        "${pkgs.xwaylandvideobridge}/bin/xwaylandvideobridge"
       ];
       workspace = [
         "DP-2,1"

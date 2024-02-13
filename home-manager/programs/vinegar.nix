@@ -3,7 +3,7 @@
 # In case you need some help, here: https://vinegarhq.github.io/Configuration
 
 [global]
-launcher = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --force-windows-fullscreen mangohud --"
+launcher = "mullvad-exclude gamescope -W 2560 -H 1440 --force-grab-cursor --expose-wayland --force-windows-fullscreen mangohud --"
 
 [splash]
 background = 0x252836

@@ -1,7 +1,6 @@
 {
   imports = [
-    ./configuration.nix
-    ./hardware-configuration.nix
+    ./device-specific
     ./options
     ./programs
   ];

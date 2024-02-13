@@ -19,11 +19,7 @@
       ++ [
         # upstream issue: https://bugs.winehq.org/show_bug.cgi?id=55604
         # Here are the currently applied patches for Roblox to run under WINE:
-        (fetchpatch {
-          name = "vinegar-wine-segrevert.patch";
-          url = "https://cdn.discordapp.com/attachments/1099853933712773193/1198842257588109333/segregrevert.mypatch?ex=65c05fdb&is=65adeadb&hm=25e51210f43d32fa52940af6f2cd5559d9e3857d6f5921cb98b61b3d1b2ea103&";
-          hash = "sha256-+3Nld81nG3GufI4jAF6yrWfkJmsSCOku39rx0Hov29c=";
-        })
+          ./patches/segrevert.mypatch
       ];
   });
 in

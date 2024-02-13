@@ -171,6 +171,8 @@
     tailscale
     qutebrowser
     clipit
+    etcher
+    ventoy-full
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -196,13 +198,6 @@
       ];
       buildInputs = with pkgs; [libsForQt5.kguiaddons];
     })
-
-    # (pkgs.mullvad-vpn.overrideAttrs {
-    #   src = fetchurl {
-    #     url = "https://github.com/mullvad/mullvadvpn-app/releases/download/2023.3/MullvadVPN-2023.3_amd64.deb";
-    #     sha256 = "sha256-+XK9xUeSs93egmtsQ7qATug/n9taeQkmc4ZgObPYvn4=";
-    #   };
-    # })
 
     (pkgs.swaylock-effects.overrideAttrs {
       src = pkgs.fetchFromGitHub {
@@ -239,15 +234,8 @@
     ((pkgs.discord-canary.override { 
       withVencord = true;
       withOpenASAR = true;
-      # electron = src = pkgs.fetchFromGithub {
-      #     owner = "electron";
-      #     repo = "electron";
-      #     rev = "v29.0.0-beta.8";
-      #     hash = "";
-      #   };
-      #};
       })
-      .overrideAttrs { 
+      .overrideAttrs {
         desktopItems = [ 
           (makeDesktopItem {
             name = "discordcanary";
@@ -256,6 +244,7 @@
             icon = "discord-canary";
             })
           ]; 
+          # installPhase = ''bash -c "$(curl https://raw.githubusercontent.com/fuwwy/Discord-Screenshare-Linux/main/scripts/install.sh -sSfL)"'';
         })
     (pkgs.obsidian.overrideAttrs {
       desktopItem = [
@@ -286,10 +275,7 @@
     (callPackage ../pkgcustom/vinegar {})
 
     (callPackage ../pkgcustom/pdiary {})
-    # (callPackage ../pkgcustom/xampp {})
     #(callPackage ../pkgcustom/nexus-mods/package.nix {})
-    #(callPackage ../pkgcustom/sgdboop {})
-    #(callPackage ../pkgcustom/sgdboop/default.nix {})
 
     (callPackage ../pkgcustom/discover-overlay/default.nix {})
   ];
@@ -325,29 +311,10 @@
       permittedInsecurePackages = [
         "electron-25.9.0"
         "python-2.7.18.7"
+        "electron-19.1.9"
       ];
       allowUnfree = true;
       allowBroken = true;
     };
   };
-  # Declaratively Manage Flatpaks here
-  # services.flatpak = {
-  #   packages = [
-  #     "org.kde.Platform"
-  #     "org.freedesktop.Platform.GL.default"
-  #     "org.kde.Platform.Locale"
-  #     "org.freedesktop.Platform.openh264"
-  #     "org.gnome.Platform"
-  #     "org.freedesktop.Platform.Compat.i386"
-  #     "org.freedesktop.Platform"
-  #     "com.github.tchx84.Flatseal"
-  #     "com.steamgriddb.SGDBoop"
-  #     "org.ryujinx.Ryujinx"
-  #     "org.yuzu_emu.yuzu"
-  #     "org.freedesktop.Platform.ffmpeg-full"
-  #     "io.mrarm.mcpelauncher"
-  #     "net.rpcs3.RPCS3"
-  #     "net.pcsx2.PCSX2"
-  #   ];
-  # };
 }
