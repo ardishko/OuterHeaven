@@ -15,6 +15,7 @@
     kernelModules = ["kvm-intel"];
     initrd = {
       availableKernelModules = ["vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
+      kernelModules = [ "amdgpu" ];
     };
   };
 

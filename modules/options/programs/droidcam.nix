@@ -1,0 +1,7 @@
+{
+  programs = {
+    droidcam = {
+      enable = true;
+    };
+  };
+}

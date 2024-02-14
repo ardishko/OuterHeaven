@@ -1,0 +1,7 @@
+{
+  programs = {
+    sway = {
+      enable = true;
+    };
+  };
+}
