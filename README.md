@@ -1,12 +1,13 @@
 # General philosophy
 
-Everything is categorized under what they are managed under.
+Everything is categorized under what they are managed under and the goal is to make this fully modular, so that anyone can take a module from my config and have it work on theirs.
 
 Like for example, If something is handled inside of the core system config (or otherwise known as nixos configurations), it will be listed under `/core` or if it's managed with home-manager then it will be inside home-manager and so forth. (For context: the reason why It's not simply called "nixos" is because it sounds way cooler to call it the "core" system config.)
 
-Think of it like how a dependency tree works.
+Think of it like how a dependency tree works/looks.
 
-This configuration is made so that you can drag and drop your traditional NixOS configuration files generated on installation (from /etc/nixos) into `/core` although I can't guarantee that this will work BUT I am working to keep it compatible.
+This configuration is made so that you can drag and drop your traditional NixOS configuration files generated on installation or through the files `sudo nixos-generate-config` generates over at `/etc/nixos` (this is what I'm going to generally try to keep it compatible with since it's the most consistent.) into `/core/device-specific/$YOUR_HOSTNAME` although I can't guarantee that this will work for every auto-generated config BUT I am working to keep it compatible.
+
 
 (and as a sidenote, this configuration will be a multi-system configuration in the future but I will not do it in a convoluded way like most people do, it will be easy to remove and add a device from the configuration and it's for this reason that I want to make it as easy as possible to migrate from your automatically generated configuration to this configuration. Most updated configuration will be on my main machine since most my other devices don't really need a lot.)
 
@@ -28,7 +29,7 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 
 # Things to note
 
-There is a fix for Steam's gamescope at ``/core/options/nixpkgs.nix`` which is essential if you want to use gamescope on NixOS what-so-ever but If you are not interested in that, then you can safely remove that part.
+There is a fix for Steam's gamescope at ``/core/program-specific/steam.nix`` which is essential if you want to use gamescope on NixOS (mostly due to a bug) but If you are not interested in that, then you can safely remove that part.
 
 There are a bunch of overrides under home.package inside of packages.nix under /home-manager/programs, some containing version overrides and some containing desktop entry changes.
 
