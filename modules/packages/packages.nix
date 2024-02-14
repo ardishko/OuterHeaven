@@ -5,7 +5,9 @@
   options,
   ...
 }: {
-  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
+  imports = [ 
+    inputs.nix-flatpak.nixosModules.nix-flatpak 
+  ];
   environment.systemPackages = with pkgs; [
     bash
     gamescope

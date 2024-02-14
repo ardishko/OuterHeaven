@@ -54,21 +54,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    #    ../builders
-  ];
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
-  # Some home manager stuff
-  home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
-    useGlobalPkgs = false;
-    useUserPackages = true;
-    users = {
-      # Import your home-manager configuration
-      vaporsnake = import ../../home-manager;
-    };
-  };
 }
+

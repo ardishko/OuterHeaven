@@ -105,7 +105,7 @@
   };
 
   imports = [
-    ./program-specific
+    ./modules
   ];
 
   # Let Home Manager install and manage itself.

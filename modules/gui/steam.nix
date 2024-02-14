@@ -30,16 +30,18 @@
               libkrb5
               keyutils
             ];
-          # desktopItems = [
-          #   (makeDesktopItem {
-          #     name = "steam";
-          #     desktopName = "Steam";
-          #     exec = "mullvad-exclude steam";
-          #     icon = "steam";
-          #   })
-          # ];
+          };
+          # overrideAttrs {
+          #   desktopItems = [
+          #     (makeDesktopItem {
+          #       name = "steam";
+          #       desktopName = "Steam";
+          #       exec = "mullvad-exclude steam";
+          #       icon = "steam";
+          #     })
+          #   ];
+          # };
         };
-      };
     };
   };
 }
