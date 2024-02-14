@@ -1,9 +1,11 @@
 {
     imports = [
-      ./packages.nix
+      ./boot
       ./gui
       ./options
+      ./other
       ./services
+      ./packages.nix
       ./tui
     ];
 }

@@ -14,6 +14,7 @@
   };
   nixpkgs = {
     config = {
+      allowUnfree = true;
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
           extraPkgs = pkgs:
