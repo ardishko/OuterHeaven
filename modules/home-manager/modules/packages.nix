@@ -230,7 +230,7 @@
     })
     ((pkgs.discord-canary.override { 
       withVencord = true;
-      withOpenASAR = true;
+      #withOpenASAR = true;
       })
       .overrideAttrs {
         desktopItems = [ 

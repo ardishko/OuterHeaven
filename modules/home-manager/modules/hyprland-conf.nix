@@ -31,8 +31,8 @@
         "discover-overlay"
         "flameshot"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ~/nixcfg/images/wallpapers/vergil-catppuccin.png"
-        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ~/nixcfg/images/wallpapers/mark-of-sacrifice-vertical.png"
+        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/vergil-catppuccin.png}"
+        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -144,6 +144,7 @@
         touchpad = {
           natural_scroll = true;
         };
+        mouse_refocus = false;
       };
       general = {
         gaps_in = 5;
