@@ -1,0 +1,7 @@
+{
+  services = {
+    joycond = {
+      enable = true;
+    };
+  };
+}

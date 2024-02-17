@@ -1,13 +1,7 @@
 { inputs, outputs, ...}:
 {
     imports = [
-      ./boot
-      ./gui
-      ./options
-      ./other
-      ./services
-      ./packages
-      ./tui
+      ./core
       inputs.home-manager.nixosModules.home-manager
     ];
   home-manager = {

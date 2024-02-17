@@ -31,8 +31,8 @@
         "discover-overlay"
         "flameshot"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/vergil-catppuccin.png}"
-        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../images/wallpapers/vergil-catppuccin.png}"
+        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../images/wallpapers/mark-of-sacrifice-vertical.png}"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -77,18 +77,18 @@
         "$mainMod, down, movefocus, d"
 
         #i3/sway type beat
-        ",Caps_Lock, exec, sleep 0.1 && swayosd-client --caps-lock"
+        ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
         "$mainMod, Q, togglegroup"
         "$mainMod, D, changegroupactive"
         "$mainMod, W, lockgroups, toggle"
-       #bind = $mainMod, V, hy3:makegroup
+       
 
         #global shortcuts
         "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
         "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
         "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
-        "CTRL_SHIFT,M,pass,^(vencorddesktop)"
-        "CTRL_SHIFT,D,pass,^(vencorddesktop)"
+        "$mainMod, Insert,pass,^(discordcanary)"
+        "$mainMod, Home,pass,^(discordcanary)"
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"

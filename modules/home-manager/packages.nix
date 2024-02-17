@@ -170,6 +170,7 @@
     clipit
     etcher
     ventoy-full
+    ripcord
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -269,12 +270,12 @@
     # })
 
     # Custom packages
-    (callPackage ../pkgcustom/vinegar {})
+    (callPackage ./pkgcustom/vinegar {})
 
-    (callPackage ../pkgcustom/pdiary {})
+    (callPackage ./pkgcustom/pdiary {})
     #(callPackage ../pkgcustom/nexus-mods/package.nix {})
 
-    (callPackage ../pkgcustom/discover-overlay/default.nix {})
+    (callPackage ./pkgcustom/discover-overlay/default.nix {})
   ];
 
   # List of packages end here
