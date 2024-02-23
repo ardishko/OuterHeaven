@@ -9,7 +9,7 @@ general {
 
 background {
     monitor = DP-2
-    path = ${../../images/wallpapers/y0lock.png}
+    path = ${../../../images/wallpapers/y0lock.png}
     color = rgba(20, 20, 20, 0.9)
     blur_passes = 5 # 0 disables blurring
     blur_size = 1
@@ -21,7 +21,7 @@ background {
 }
 background {
     monitor = HDMI-A-1
-    path = ${../../images/wallpapers/mark-of-sacrifice-vertical.png}
+    path = ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}
     color = rgba(20, 20, 20, 0.9)
     blur_passes = 5 # 0 disables blurring
     blur_size = 1
@@ -45,7 +45,7 @@ label {
 }
 
 label {
-    monitor =
+    monitor = DP-2
     text = Wake the fuck up Samurai, we've got a city to burn.
     color = rgba(166, 173, 200, 1.0)
     font_size = 21
@@ -54,30 +54,17 @@ label {
     position = 0, 80
     halign = center
     valign = center
-}
-
+  }
 label {
-    monitor =
-    text = 󰌾 <br/>
-    color = rgba(19, 200, 206, 1.0)
-    font_size = 25
-    font_family = JetBrainsMono Nerd Font
+    monitor = HDMI-A-1
+    text = Keep pushing, young struggler.
+    color = rgba(166, 173, 200, 1.0)
+    font_size = 21
+    font_family = Iosevka Nerd Font
 
-    position = 0, 0
+    position = 0, 80
     halign = center
-    valign = bottom
-}
-
-label {
-    monitor =
-    text =  <br/>
-    color = rgba(19, 200, 206, 1.0)
-    font_size = 55
-    font_family = JetBrainsMono Nerd Font
-
-    position = 7, -180
-    halign = center
-    valign = bottom
+    valign = center
 }
 
 input-field {
@@ -90,7 +77,7 @@ input-field {
     inner_color = rgb(37, 35, 44)
     font_color = rgb(166, 173, 200)
     fade_on_empty = false
-    placeholder_text = <i>Input Password...</i> # Text rendered in the input box when it's empty.
+    placeholder_text = <i>Give 'er here</i> # Text rendered in the input box when it's empty.
     hide_input = false
 
     position = 0, -20

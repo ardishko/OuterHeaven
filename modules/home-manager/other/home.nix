@@ -55,14 +55,7 @@
       '';
     };
   };
-  qt = {
-    enable = true;
-    style = {
-      name = "catppuccin-kvantum";
-      package = pkgs.catppuccin-kvantum;
-    };
-    platformTheme = "gtk3";
-  };
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;

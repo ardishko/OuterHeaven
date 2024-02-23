@@ -32,7 +32,7 @@
     htop
     killall
     steamtinkerlaunch
-    prismlauncher-qt5
+    prismlauncher
     appimage-run
     cinnamon.nemo-fileroller
     gnome.file-roller
