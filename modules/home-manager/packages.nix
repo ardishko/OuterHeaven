@@ -15,6 +15,8 @@
     inputs.nh.packages.${pkgs.system}.default
     inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
     inputs.anime-games.packages.${pkgs.system}.honkers-railway-launcher
+    inputs.hyprlock.packages.${pkgs.system}.hyprlock
+
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
     wget
@@ -58,7 +60,7 @@
     mangohud
     nix-init
     waydroid
-    celluloid
+    mpv
     rustdesk
     tartube-yt-dlp
     ffmpeg
@@ -171,6 +173,9 @@
     etcher
     ventoy-full
     ripcord
+    r2modman
+    nomachine-client
+    remote-touchpad
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -206,14 +211,14 @@
       };
     })
 
-    (pkgs.r2modman.overrideAttrs {
-      src = fetchFromGitHub {
-        owner = "ebkr";
-        repo = "r2modmanPlus";
-        rev = "v3.1.45";
-        hash = "sha256-6o6iPDKKqCzt7H0a64HGTvEvwO6hjRh1Drl8o4x+4ew=";
-      };
-    })
+    # (pkgs.r2modman.overrideAttrs {
+    #   src = fetchFromGitHub {
+    #     owner = "ebkr";
+    #     repo = "r2modmanPlus";
+    #     rev = "v3.1.47";
+    #     hash = "";
+    #   };
+    # })
 
     (pkgs.vesktop.overrideAttrs {
       desktopItems = [
@@ -241,7 +246,11 @@
             exec = "mullvad-exclude discordcanary";
             icon = "discord-canary";
             })
-          ]; 
+          ];
+          src = fetchurl {
+            url = "https://dl-canary.discordapp.net/apps/linux/0.0.267/discord-canary-0.0.267.tar.gz";
+            hash = "sha256-Hq78SDer7Gb+ju8wk9DrMLisHnoYoSwTzrs8PKhbS3s=";
+          };
           # installPhase = ''bash -c "$(curl https://raw.githubusercontent.com/fuwwy/Discord-Screenshare-Linux/main/scripts/install.sh -sSfL)"'';
         })
     (pkgs.obsidian.overrideAttrs {
@@ -297,7 +306,7 @@
         url = "https://raw.githubusercontent.com/NotAShelf/neovim-flake/main/assets/neovim-flake-logo-work.svg";
         sha256 = "19n7n9xafyak35pkn4cww0s5db2cr97yz78w5ppbcp9jvxw6yyz3";
       };
-      exec = "kitty nvim";
+      exec = "${pkgs.kitty}/bin/kitty nvim";
     };
   };
 

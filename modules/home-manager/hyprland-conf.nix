@@ -64,31 +64,31 @@
         "$mainMod, A, togglefloating,"
         "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
         "$mainMod SHIFT, F, exec, ${pkgs.gnome.nautilus}/bin/nautilus"
-        "$mainMod, R, pseudo, # dwindle"
         "$mainMod, E, togglesplit, # dwindle"
         "$mainMod,F,fullscreen"
         ",Print, exec, flameshot gui"
         "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync -t"
-
+        "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
+        "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
+        "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-
+        
         #i3/sway type beat
         ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
         "$mainMod, Q, togglegroup"
         "$mainMod, D, changegroupactive"
         "$mainMod, W, lockgroups, toggle"
        
-
         #global shortcuts
         "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
         "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
         "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
-        "$mainMod, Insert,pass,^(discordcanary)"
-        "$mainMod, Home,pass,^(discordcanary)"
+        "$mainMod, Insert,pass,^(discordcanary)$"
+        "$mainMod, Home,pass,^(discordcanary)$"
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
@@ -144,7 +144,6 @@
         touchpad = {
           natural_scroll = true;
         };
-        mouse_refocus = false;
       };
       general = {
         gaps_in = 5;
@@ -177,7 +176,7 @@
       };
       windowrulev2 = [
         "float,title:^(flameshot)"
-        "move 0 0,title:^(flameshot)"
+        "move 0 -350,title:^(flameshot)"
         "nofullscreenrequest,title:^(flameshot)"
         "noanim,title:^(flameshot)"
         "rounding 0,title:^(flameshot)"
@@ -185,6 +184,12 @@
         "nomaxsize,title:^(.*)"
         "noanim,title:^(wlogout)"
         "float,title:^(wlogout)"
+        "workspace 1, class:^(floorp)"
+        "workspace 2,class:^(discord)"
+        "workspace 3,initialTitle:^(Steam)"
+        "workspace 5,initialTitle:^(nvim)"
+        "workspace 7,class:^(info.febvre.Komikku)"
+        "workspace 8,class:^(obsidian)"
       ];
       layerrule = [
         "noanim,rofi"

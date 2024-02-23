@@ -1,0 +1,7 @@
+{
+  programs = {
+    kdeconnect = {
+      enable = true;
+    };
+  };
+}

@@ -6,6 +6,7 @@
     ./gnome-keyring.nix
     ./gnome-sushi.nix
     ./gvfs.nix
+    ./kdeconnect.nix
     ./joycond.nix
     ./mullvad-vpn.nix
     ./mysql.nix

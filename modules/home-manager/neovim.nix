@@ -22,7 +22,27 @@
       transparentBackground = true;
     };
     plugins = {
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        ensureInstalled = [
+          "all"
+        ];
+        nixvimInjections = true;
+        };
+        lsp = {
+          enable = true;
+          servers = {
+            bashls.enable = true;
+            lua-ls.enable = true;
+            tsserver.enable = true;
+            pylyzer.enable = true;
+            rust-analyzer = {
+              enable = true;
+              installCargo = false;
+              installRustc = false;
+            };
+          };
+      };
       alpha = {
         enable = true;
         theme = null;
@@ -71,6 +91,11 @@
       presence-nvim.enable = true;
       gitsigns.enable = true;
       image.enable = true;
+      neorg.enable = true;
+      obsidian = {
+        enable = true;
+        dir = "/mnt/EEEEEEEEEEE/obsidian";
+      };
     };
     globals = {
         mapleader = " ";
@@ -83,10 +108,6 @@
       {
         action = "<cmd>Telescope find_files<CR>";
         key = "<C-l>";
-      }
-      {
-        action = "<cmd>set number<CR>";
-        key = "<C-n>";
       }
     ];
   };

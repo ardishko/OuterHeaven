@@ -2,7 +2,7 @@
   xdg.configFile."wlogout/layout".text = ''
     {
         "label" : "lock",
-        "action" : "swaylock",
+        "action" : "hyprlock",
         "text" : "Lock",
         "keybind" : "l"
     }

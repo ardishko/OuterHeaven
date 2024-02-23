@@ -19,26 +19,21 @@
       ++ [
         # upstream issue: https://bugs.winehq.org/show_bug.cgi?id=55604
         # Here are the currently applied patches for Roblox to run under WINE:
-        (fetchpatch {
-          name = "vinegar-wine-segregrevert.patch";
-          url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/e24cb9dfa996bcfeaa46504c0375660fe271148d/patches/wine/segregrevert.patch";
-          hash = "sha256-+3Nld81nG3GufI4jAF6yrWfkJmsSCOku39rx0Hov29c=";
-        })
-        (fetchpatch {
-          name = "vinegar-wine-mouselock.patch";
-          url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/e24cb9dfa996bcfeaa46504c0375660fe271148d/patches/wine/mouselock.patch";
-          hash = "sha256-0AGA4AQbxTL5BGVbm072moav7xVA3zpotYqM8pcEDa4=";
-        })
         # (fetchpatch {
         #   name = "vinegar-wine-childwindow.patch";
         #   url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/e24cb9dfa996bcfeaa46504c0375660fe271148d/patches/wine/childwindow.patch";
         #   hash = "sha256-zbschtnOm4y1RppYyZJSQY0F8eaVdFmcSyFzLkbCUjo=";
         # })
-        # (fetchpatch {
-        #   name = "vinegar-wine-loader-prefer-winedllpath.patch";
-        #   url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/e24cb9dfa996bcfeaa46504c0375660fe271148d/patches/wine/loader-prefer-winedllpath.patch";
-        #   hash = "sha256-KscGMMSmjnQEBjNSHECw9VCX2H6z7fKxrqxEfElGwJQ=";
-        # })
+        (fetchpatch {
+          name = "vinegar-wine-mouselock.patch";
+          url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/e24cb9dfa996bcfeaa46504c0375660fe271148d/patches/wine/mouselock.patch";
+          hash = "sha256-0AGA4AQbxTL5BGVbm072moav7xVA3zpotYqM8pcEDa4=";
+        })
+        (fetchpatch {
+          name = "vinegar-wine-segregrevert.patch";
+          url = "https://raw.githubusercontent.com/flathub/org.vinegarhq.Vinegar/e24cb9dfa996bcfeaa46504c0375660fe271148d/patches/wine/segregrevert.patch";
+          hash = "sha256-+3Nld81nG3GufI4jAF6yrWfkJmsSCOku39rx0Hov29c=";
+        })
       ];
   });
 in

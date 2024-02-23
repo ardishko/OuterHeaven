@@ -12,6 +12,8 @@
     bash
     gamescope
     lshw
+    flatpak-builder
+    f3d
   ];
   services.flatpak = {
     enable = true;
@@ -24,6 +26,7 @@
       "net.rpcs3.RPCS3"
       "net.pcsx2.PCSX2"
       "camp.nook.nookdesktop"
+      "org.freedesktop.Sdk/x86_64/23.08"
     ];
   };
   fonts.packages = with pkgs; [

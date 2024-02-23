@@ -21,6 +21,7 @@
 
   #  extraSpecialArgs = {inherit inputs;};
   #}
+
   gtk = {
     enable = true;
     font.name = "Iosevka Nerd Font 14";

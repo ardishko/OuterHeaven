@@ -30,7 +30,7 @@
     };
     xdg-desktop-portal-hyprland = {
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
-      inputs.hyprland.follows = "hyprland";
+      inputs.nixpkgs.follows = "hyprland";
     };
     hy3 = {
       url = "github:outfoxxed/hy3";
@@ -57,6 +57,14 @@
     anime-games = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.nixpkgs.follows = "hyprland";
     };
   };
 
