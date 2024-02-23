@@ -81,7 +81,6 @@
     wlprop
     mate.mate-polkit
     cinnamon.folder-color-switcher
-    libsForQt5.qtstyleplugins
     ioquake3
     nvtop-amd
     wlsunset
@@ -224,7 +223,7 @@
       desktopItems = [
         (makeDesktopItem {
           name = "vesktop";
-          desktopName = "Discord (vesktop)";
+          desktopName = "Vesktop";
           exec = "mullvad-exclude vesktop --enable-gpu --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
           icon = "discord";
           startupWMClass = "VencordDesktop";

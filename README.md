@@ -7,7 +7,6 @@ The general philosophy is this configuration is simplicity and modularity. Mostl
 
 (as a sidenote, this configuration will be a multi-system configuration in the future but I will not do it in a convoluded way like most people do, it will be easy to remove and add a device from the configuration and it's for this reason that I want to make it as easy as possible to migrate from your automatically generated configuration to this configuration. The most updated configuration will be on my main machine since most my other devices don't really need a lot.)
 
-*ALSO, THIS CONFIG IS GOING THROUGH SOME ORGANIZATION HELL AND I CAN'T FIX IT ALL IN ONE COMMIT AS I NEED TO SPLIT MY WORK UP OTHERWISE I WON'T BE ABLE TO WRITE THIS CONFIG AT ALL DUE TO RESPONSIBILITIES, I ASK THAT YOU STAY TUNED FOR MY ORGANIZATION UPDATE SOON*
 # Versioning
 
 The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config.
