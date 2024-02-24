@@ -175,6 +175,7 @@
     r2modman
     nomachine-client
     remote-touchpad
+    qutebrowser
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
