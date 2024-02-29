@@ -1,6 +1,7 @@
 {
   imports = [
     ./anyrun.nix
+    ./browser
     ./heroic.nix
     ./hyprland-conf.nix
     ./hyprlock.nix

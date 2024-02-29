@@ -1,5 +1,6 @@
 {
   imports = [
+    ./anime-games.nix
     ./blueman.nix
     ./droidcam.nix
     ./gdm.nix

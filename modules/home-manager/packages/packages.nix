@@ -4,10 +4,8 @@
   lib,
   ...
 }: {
-  # imports = [
-  #   inputs.nix-flatpak.homeManagerModules.nix-flatpak
-  # ];
   # Define your packages here and everything related.
+
   home.packages = with pkgs; [
     # Define packages that derive from inputs
 
@@ -125,7 +123,6 @@
     kdenlive
     tor-browser
     neovim-unwrapped
-    blender
     evince
     tailscale
     telegram-desktop
@@ -162,8 +159,6 @@
     mysql-workbench
     gtklock
     rmg
-    gnome.nautilus
-    nautilus-open-any-terminal
     gnome-text-editor
     bleachbit
     netflix
@@ -176,6 +171,12 @@
     nomachine-client
     remote-touchpad
     qutebrowser
+    nheko
+    cinnamon.nemo-with-extensions
+    libsForQt5.dolphin
+    mullvad-browser
+    nixpkgs-review
+    evince
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -319,6 +320,7 @@
         "electron-25.9.0"
         "python-2.7.18.7"
         "electron-19.1.9"
+        "adobe-reader-9.5.5"
       ];
       allowUnfree = true;
       allowBroken = true;
