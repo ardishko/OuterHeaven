@@ -69,6 +69,15 @@ let
       url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_lavender.xpi";
       sha256 = "sha256-cCkrC4ZSy6tAjRXSYdxRUPaQ+1u6+W9OcxclbH2beTM=";
     };
+    # and this one too
+    catppuccin-mocha-green = remoteXpiAddon {
+      pname = "catppuccin-mocha-green";
+      version = "unknown";
+      addonId = "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}";
+      url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_green.xpi";
+      sha256 = "sha256-mKTr2yab/BOFnRBRrgqiVFoFxGms2nvjcOXKmYL54ww=";
+    };
+
     cf-purge-plugin = remoteXpiAddon {
       pname = "Cloudflare Purge Plugin";
       version = "1.5.1";
@@ -82,6 +91,27 @@ let
       addonId = "btroblox@antiboomz.com";
       url = "https://addons.mozilla.org/firefox/downloads/file/4226524/btroblox-3.5.0.xpi";
       sha256 = "sha256-I5rEKfRv6UVwqAw1poaFHIlrSQpAnjk0jNaYl+3xuVE=";
+    };
+    google-container = remoteXpiAddon {
+      pname = "Google Container";
+      version = "1.5.4";
+      addonId = "@contain-google";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3736912/google_container-1.5.4.xpi";
+      sha256 = "sha256-R6fA6FRoMyoNlJko2LdDdhks3kq6oUKAACs6yk7IFNA=";
+    };
+    watch-on-odysee = remoteXpiAddon {
+      pname = "Watch on Odysee";
+      version = "2.0.1";
+      addonId = "{884679b9-5d6b-48b2-90a7-15ae26ce568a}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3984569/watch_on_odysee-2.0.1.xpi";
+      sha256 = "sha256-/aJ0A/b1sRtyAOZizraL2Nlq0nOUfLN9Z+Cf4S7eUDQ=";
+    };
+    youtube-for-tv = remoteXpiAddon {
+      pname = "Youtube for TV";
+      version = "0.0.3";
+      addonId = "{d2bcedce-889b-4d53-8ce9-493d8f78612a}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3420768/youtube_for_tv-0.0.3.xpi";
+      sha256 = "sha256-Xfa7cB4D0Iyfex5y9/jRR93gUkziaIyjqMT0LIOhT6o=";
     };
   };
 in {
@@ -172,9 +202,14 @@ in {
             premid
             cf-purge-plugin
             btroblox
+            (w2g.overrideAttrs { meta.license.free = true; })
+            watch-on-odysee
+            youtube-for-tv
+            google-container
             # Theme
             catppuccin-frappe-sky
             #catppuccin-mocha-lavender # over here
+            # catppuccin-mocha-green
           ];
           userChrome = ''
             ${builtins.readFile ./userChrome.css}
@@ -275,7 +310,64 @@ in {
               }
             ];
           };
-          bookmarks = [ ];
+          bookmarks = [
+            {
+              name = "SAT";
+              toolbar = true;
+              bookmarks = [
+                {
+                  name = "Khan Academy SAT Prep";
+                  url = "https://www.khanacademy.org/test-prep/digital-sat";
+                }
+              ];
+            }
+            {
+            name = "Nix";
+            toolbar = true;
+            bookmarks = [
+              {
+                  name = "NixOS Wiki";
+                  url = "https://nixos.wiki/wiki/";
+              }
+              {
+                  name = "nixiv";
+                  url = "https://wiki.nikiv.dev/package-managers/nix/";
+              }
+              {
+                name = "Zero to Nix";
+                url = "https://zero-to-nix.com/";
+              }
+              {
+                name = "NixOS & Flakes Book";
+                url = "https://nixos-and-flakes.thiscute.world/";
+              }
+              {
+                name = "MyNixOS";
+                url = "https://mynixos.com/";
+              }
+              {
+                name = "OuterHeaven";
+                url = "https://github.com/liquidovski/OuterHeaven";
+              }
+              {
+                name = "HM Options";
+                url = "https://nix-community.github.io/home-manager/options.xhtml";
+              }
+              {
+                name = "nixvim docs";
+                url = "https://nix-community.github.io/nixvim/";
+              }
+              {
+                name = "nixpkgs";
+                url = "https://github.com/NixOS/nixpkgs/";
+              }
+              {
+                name = "PR Tracker";
+                url = "https://nixpk.gs/pr-tracker.html";
+              }
+              ];
+            }
+          ];
         };
       };
     };
