@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, fetchurl, ... }:
 let
   extra-addons = let
     buildFirefoxXpiAddon = {
@@ -33,12 +33,55 @@ let
       src = import ./theme.nix { inherit pkgs name theme; };
     };
   in {
-    vencord = remoteXpiAddon {
-      pname = "vencord";
-      version = "1.2.7";
-      addonId = "vencord-firefox@vendicated.dev";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4123132/vencord_web-1.2.7.xpi";
-      sha256 = "A/XKdT0EuDHsQ7mcK9hsXAoAJYUt4Uvp/rtCf/9dAS0=";
+    read-aloud = remoteXpiAddon {
+      pname = "read-aloud";
+      version = "1.67.1";
+      addonId = "{ddc62400-f22d-4dd3-8b4a-05837de53c2e}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4219454/read_aloud-1.67.1.xpi";
+      sha256 = "sha256-YLkh100nbuIYy7q+Vd0RQ4RN5N0tBWuExkGnDQw06UA=";
+    };
+    open-tabs-next-to-current = remoteXpiAddon {
+      pname = "open-tabs-next-to-current";
+      version = "2.0.14";
+      addonId = "opentabsnexttocurrent@sblask";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3784283/open_tabs_next_to_current-2.0.14.xpi";
+      sha256 = "sha256-Q8qQm/k4CPAu8zlrO4/Gsx/qE4x+rnIlKa8mcFgY1sU=";
+    };
+    premid = remoteXpiAddon {
+      pname = "premid";
+      version = "2.5.2";
+      addonId = "support@premid.app";
+      url = "https://dl.premid.app/PreMiD.xpi";
+      sha256 = "sha256-VkaZM7M1nO2FqrGFTktNE0n+ipo+szaLyOLc9tCRsC0=";
+    };
+    catppuccin-frappe-sky = remoteXpiAddon {
+      pname = "catppuccin-frappe-sky";
+      version = "unknown";
+      addonId = "{c7cf6786-24b7-4bd2-ae71-b985fcc98f20}";
+      url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_frappe_sky.xpi";
+      sha256 = "sha256-Fb9VUpsWKtERV4VkeWhBZBSZLMkQMrnBexaRIuPc4Ho=";
+    };
+    # A: This one's for my friend. It's not referenced anywhere in the conf.
+    catppuccin-mocha-lavender = remoteXpiAddon {
+      pname = "catppuccin-mocha-lavender";
+      version = "unknown";
+      addonId = "{8446b178-c865-4f5c-8ccc-1d7887811ae3}";
+      url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_lavender.xpi";
+      sha256 = "sha256-cCkrC4ZSy6tAjRXSYdxRUPaQ+1u6+W9OcxclbH2beTM=";
+    };
+    cf-purge-plugin = remoteXpiAddon {
+      pname = "Cloudflare Purge Plugin";
+      version = "1.5.1";
+      addonId = "{0a40b0aa-001b-41c9-a3d7-7f4c4fe77025}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/1199228/cf_purge_plugin-1.5.1.xpi";
+      sha256 = "sha256-duYhpU5YuVDYNHYTdvI2Do58ZJx5UrmjRjxARUOFNq8=";
+    };
+    btroblox = remoteXpiAddon {
+      pname = "btroblox";
+      version = "3.5.0";
+      addonId = "btroblox@antiboomz.com";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4226524/btroblox-3.5.0.xpi";
+      sha256 = "sha256-I5rEKfRv6UVwqAw1poaFHIlrSQpAnjk0jNaYl+3xuVE=";
     };
   };
 in {
@@ -48,6 +91,50 @@ in {
       package = pkgs.firefox;
       profiles = {
         "freeform" = {
+          isDefault = true;
+          search = {
+            force = true;
+            default = "Brave";
+            privateDefault = "Brave";
+            engines = {
+              "Nix Packages" = {
+                urls = [{
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    { name = "type"; value = "packages"; }
+                    { name = "query"; value = "{searchTerms}"; }
+                  ];
+                }];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "!np" ];
+              };
+              "NixOS Wiki" = {
+                urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+                iconUpdateURL = "https://nixos.wiki/favicon.png";
+                updateInterval = 24 * 60 * 60 * 1000; # every day
+                definedAliases = [ "!nw" ];
+              };
+              "Brave" = {
+                urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
+                updateInterval = 24 * 60 * 60 * 1000; # every day
+                definedAliases = [ "!b" ];
+              };
+              "Bing".metaData.hidden = true;
+              "Google".metaData = {
+                hidden = true;
+                alias = "!g"; # builtin engines only support specifying one additional alias
+              };
+              "DuckDuckGo".metaData = {
+                hidden = true;
+                alias = "!ddg";
+              };
+            };
+            order = [
+              "Brave"
+              "Nix Packages"
+              "NixOS Wiki"
+            ];
+          };
           extensions = with inputs.firefox-addons.packages.${pkgs.system}; with extra-addons; [
             bitwarden
             ublock-origin
@@ -74,10 +161,121 @@ in {
             clearurls
             user-agent-string-switcher
             wayback-machine
+            youtube-shorts-block
+            return-youtube-dislikes
+            (youtube-recommended-videos.overrideAttrs { meta.license.free = true; }) # IDK why it wouldn't build without this. This is retarded.
+            (flagfox.overrideAttrs { meta.license.free = true; })
+            facebook-container
+            (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
+            read-aloud
+            open-tabs-next-to-current
+            premid
+            cf-purge-plugin
+            btroblox
+            # Theme
+            catppuccin-frappe-sky
+            #catppuccin-mocha-lavender # over here
           ];
           userChrome = ''
-            ${builtins.readFile ./sideberry_chrome.css}
+            ${builtins.readFile ./userChrome.css}
           '';
+          settings = {
+            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            "browser.aboutConfig.showWarning" = false;
+            "browser.startup.page" = 0;
+            "browser.startup.homepage" = "about:home";
+            "browser.newtabpage.enabled" = true;
+            "browser.newtabpage.activity-stream.showSponsored" = false;
+            "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+            "browser.newtabpage.activity-stream.default.sites" = "";
+            "extensions.getAddons.showPane" = false;
+            "extensions.htmlaboutaddons.recommendations.enabled" = false;
+            "browser.discovery.enabled" = false;
+            "extensions.unifiedExtensions.enabled" = false;
+            "datareporting.policy.dataSubmissionEnabled" = false;
+            "datareporting.healthreport.uploadEnabled" = false;
+            "toolkit.telemetry.unified" = false;
+            "toolkit.telemetry.enabled" = false;
+            "toolkit.telemetry.server" = "data:,";
+            "toolkit.telemetry.archive.enabled" = false;
+            "toolkit.telemetry.newProfilePing.enabled" = false;
+            "toolkit.telemetry.shutdownPingSender.enabled" = false;
+            "toolkit.telemetry.updatePing.enabled" = false;
+            "toolkit.telemetry.bhrPing.enabled" = false;
+            "toolkit.telemetry.firstShutdownPing.enabled" = false;
+            "toolkit.telemetry.coverage.opt-out" = true;
+            "toolkit.coverage.endpoint.base" = "";
+            "browser.ping-centre.telemetry" = false;
+            "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+            "browser.newtabpage.activity-stream.telemetry" = false;
+            "app.shield.optoutstudies.enabled" = false;
+            "app.normandy.enabled" = false;
+            "app.normandy.api_url" = "";
+            "breakpad.reportURL" = "";
+            "browser.tabs.crashReporting.sendReport" = false;
+            "browser.crashReports.unsubmittedCheck.enabled" = false;
+            "browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
+            "captivedetect.canonicalURL" = "";
+            "network.captive-portal-service.enabled" = false;
+            "network.connectivity-service.enabled" = false;
+            "browser.safebrowsing.malware.enabled" = false;
+            "browser.safebrowsing.phishing.enabled" = false;
+            "browser.safebrowsing.downloads.enabled" = false;
+            "browser.safebrowsing.downloads.remote.enabled" = false;
+            "browser.safebrowsing.downloads.remote.url" = "";
+            "browser.safebrowsing.downloads.remote.block_potentially_unwanted" = false;
+            "browser.safebrowsing.downloads.remote.block_uncommon" = false;
+            "browser.safebrowsing.allowOverride" = false;
+            "privacy.resistFingerprinting.block_mozAddonManager" = true;
+            "signon.rememberSignons" = false;
+            "gfx.webrender.all" = true;
+            "media.ffmpeg.vaapi.enabled" = true;
+            "extensions.pocket.enabled" = false;
+            "browser.newtabpage.activity-stream.topSitesRows" = 2;
+            "browser.newtabpage.pinned" = [
+              {
+                label = "Youtube";
+                url = "https://www.youtube.com/feed/subscriptions";
+              }
+              {
+                label = "Whatsapp";
+                url = "https://web.whatsapp.com";
+              }
+              {
+                label = "Discord";
+                url = "https://discord.com/app";
+              }
+              {
+                label = "Spreed";
+                url = "https://files.ardishco.net/apps/spreed";
+              }
+              {
+                label = "Digicampus";
+                url = "https://digicampus.fi";
+              }
+              {
+                label = "ProtonMail";
+                url = "https://account.proton.me/mail";
+              }
+              {
+                label = "Github";
+                url = "https://github.com";
+              }
+              {
+                label = "DeepL";
+                url = "https://deepl.com";
+              }
+              {
+                label = "Router";
+                url = "https://192.168.1.1";
+              }
+              {
+                label = "YTMusic";
+                url = "https://music.youtube.com/";
+              }
+            ];
+          };
+          bookmarks = [ ];
         };
       };
     };

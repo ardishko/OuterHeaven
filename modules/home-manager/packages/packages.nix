@@ -11,7 +11,7 @@
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
-    inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
+   /*  inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge */
     inputs.anime-games.packages.${pkgs.system}.honkers-railway-launcher
     inputs.hyprlock.packages.${pkgs.system}.hyprlock
 
@@ -177,6 +177,7 @@
     mullvad-browser
     nixpkgs-review
     evince
+    yambar
     # Overrides
 
     (pkgs.goverlay.overrideAttrs {
@@ -280,7 +281,7 @@
     # })
 
     # Custom packages
-    (callPackage ./pkgcustom/vinegar {})
+    /* (callPackage ./pkgcustom/vinegar {}) */
 
     (callPackage ./pkgcustom/pdiary {})
     #(callPackage ../pkgcustom/nexus-mods/package.nix {})
