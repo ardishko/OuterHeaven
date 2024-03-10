@@ -2,14 +2,21 @@
   imports = [
     ./anyrun.nix
     ./browser
+    ./discord-canary.nix
+    ./flameshot.nix
+    ./goverlay.nix
     ./heroic.nix
     ./hyprland-conf.nix
     ./hyprlock.nix
     ./kitty.nix
+    ./mpv.nix
     ./obs.nix
+    ./obsidian.nix
+    ./prism-launcher.nix
     ./qt
     ./spicetify.nix
     ./swaync.nix
+    ./vesktop.nix
     ./waybar.nix
     ./wlogout.nix
   ];

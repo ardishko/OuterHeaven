@@ -29,18 +29,11 @@
               stdenv.cc.cc.lib
               libkrb5
               keyutils
+              getent
+              libdrm
+              glibc
             ];
           };
-          # overrideAttrs {
-          #   desktopItems = [
-          #     (makeDesktopItem {
-          #       name = "steam";
-          #       desktopName = "Steam";
-          #       exec = "mullvad-exclude steam";
-          #       icon = "steam";
-          #     })
-          #   ];
-          # };
         };
     };
   };

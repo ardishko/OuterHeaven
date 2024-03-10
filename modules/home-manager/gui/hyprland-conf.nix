@@ -40,6 +40,7 @@
         "${pkgs.swayosd}/bin/swayosd-server"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "${pkgs.xwaylandvideobridge}/bin/xwaylandvideobridge"
+        "${pkgs.hypridle}/bin/hypridle"
       ];
       workspace = [
         "DP-2,1"
@@ -177,18 +178,19 @@
       windowrulev2 = [
         "float,title:^(flameshot)"
         "move 0 -350,title:^(flameshot)"
-        "nofullscreenrequest,title:^(flameshot)"
+        # "fullscreen 0,title:^(flameshot)"
         "noanim,title:^(flameshot)"
         "rounding 0,title:^(flameshot)"
+        "monitor:DP-2,title:^(flameshot)"
         "float,title:^(Firefox — Sharing Indicator)"
         "nomaxsize,title:^(winecfg)"
         "nomaxsize,class:^(steam)"
         "noanim,title:^(wlogout)"
         "float,title:^(wlogout)"
-        "workspace 1, class:^(floorp)"
+        "workspace 1, class:^(firefox)"
         "workspace 2,class:^(discord)"
-        "workspace 3,initialTitle:^(Steam)"
-        "workspace 5,initialTitle:^(nvim)"
+        "workspace 3,title:^(Steam)"
+        "workspace 5,title:^(nvim)"
         "workspace 7,class:^(info.febvre.Komikku)"
         "workspace 8,class:^(obsidian)"
       ];

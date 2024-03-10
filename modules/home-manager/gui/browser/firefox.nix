@@ -77,7 +77,6 @@ let
       url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_green.xpi";
       sha256 = "sha256-mKTr2yab/BOFnRBRrgqiVFoFxGms2nvjcOXKmYL54ww=";
     };
-
     cf-purge-plugin = remoteXpiAddon {
       pname = "Cloudflare Purge Plugin";
       version = "1.5.1";
@@ -144,10 +143,58 @@ in {
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "!nw" ];
               };
+              "NixOS Options" = {
+                urls = [{
+                  template = "https://search.nixos.org/options";
+                  params = [
+                    { name = "type"; value = "packages"; }
+                    { name = "query"; value = "{searchTerms}"; }
+                  ];
+                }];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "!no" ];
+              };
+              "ProtonDB" = {
+                urls = [{ template = "https://www.protondb.com/search?q={searchTerms}"; }];
+                iconUpdateURL = "https://icons.iconarchive.com/icons/simpleicons-team/simple/256/protondb-icon.png";
+                updateInterval = 24 * 60 * 60 * 1000; # every day
+                definedAliases = [ "!pdb" ];
+              };
               "Brave" = {
                 urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
-                updateInterval = 24 * 60 * 60 * 1000; # every day
+                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
+                updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!b" ];
+              };
+              "Brave Images" = {
+                urls = [{ template = "https://search.brave.com/images?q={searchTerms}"; }];
+                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
+                updateInterval = 24 * 60 * 60 * 1000; 
+                definedAliases = [ "!i" ];
+              };
+              "Flathub" = {
+                urls = [{ template = "https://flathub.org/apps/search?q={searchTerms}"; }];
+                iconUpdateURL = "https://styles.redditmedia.com/t5_3k6jw/styles/communityIcon_b1hyv6wssjd91.png";
+                updateInterval = 24 * 60 * 1000;
+                definedAliases = [ "!f" "!flathub" "!flatpak" ];
+              };
+              "Github Code" = {
+                urls = [{ template = "https://github.com/search?q={searchTerms}&type=code"; }];
+                definedAliases = [ "!code" "!ghc" "!gc" ];
+                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
+                updateInterval = 24 * 60 * 1000;
+              };
+              "Github Repos" = {
+                urls = [{ template = "https://github.com/search?q={searchTerms}&type=repositories"; }];
+                definedAliases = [ "!gh" "!repo" ];
+                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
+                updateInterval = 24 * 60 * 1000;
+              };
+              "Youtube" = {
+                urls = [{ template = "https://www.youtube.com/results?search_query={searchTerms}"; }];
+                definedAliasses = [ "!yt" "!y" ];
+                iconUpdateURL = "https://imgs.search.brave.com/0s_rkLjPXG0u6MFQl24I-Debkq4Mp8JmX04Any5mq6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMzg0LzEzODQw/NjAucG5n";
+                updateInterval = 24 * 60 * 1000;
               };
               "Bing".metaData.hidden = true;
               "Google".metaData = {
@@ -161,8 +208,11 @@ in {
             };
             order = [
               "Brave"
+              "Brave Images"
               "Nix Packages"
               "NixOS Wiki"
+              "Youtube"
+              "Flathub"
             ];
           };
           extensions = with inputs.firefox-addons.packages.${pkgs.system}; with extra-addons; [
@@ -267,6 +317,7 @@ in {
             "media.ffmpeg.vaapi.enabled" = true;
             "extensions.pocket.enabled" = false;
             "browser.newtabpage.activity-stream.topSitesRows" = 2;
+            "general.smoothScroll" = true;
             "browser.newtabpage.pinned" = [
               {
                 label = "Youtube";
@@ -308,63 +359,201 @@ in {
                 label = "YTMusic";
                 url = "https://music.youtube.com/";
               }
+              {
+                label = "Crunchyroll";
+                url = "https://www.crunchyroll.com/";
+              }
+              {
+                label = "Babbel";
+                url = "https://babbel.com";
+              }
+              {
+                label = "ProtonDB";
+                url = "https://www.protondb.com/";
+              }
             ];
           };
           bookmarks = [
             {
-              name = "SAT";
-              toolbar = true;
+              name = "Edu";
               bookmarks = [
                 {
                   name = "Khan Academy SAT Prep";
                   url = "https://www.khanacademy.org/test-prep/digital-sat";
                 }
+                {
+                  name = "Digicampus";
+                  url = "https://digicampus.fi/";
+                }
               ];
             }
             {
-            name = "Nix";
-            toolbar = true;
-            bookmarks = [
-              {
+              name = "Hosted";
+              bookmarks = [
+                {
+                  name = "Syncthing";
+                  url = "http://127.0.0.1:8384/#";
+                }
+                {
+                  name = "Tailscale";
+                  url = "https://login.tailscale.com/admin/machines";
+                }
+                {
+                  name = "Nextcloud";
+                  url = "https://files.ardishco.net";
+                }
+              ];
+            }
+            {
+              name = "Nix";              
+              bookmarks = [
+                {
                   name = "NixOS Wiki";
                   url = "https://nixos.wiki/wiki/";
-              }
-              {
+                }
+                {
                   name = "nixiv";
                   url = "https://wiki.nikiv.dev/package-managers/nix/";
-              }
-              {
-                name = "Zero to Nix";
-                url = "https://zero-to-nix.com/";
-              }
-              {
-                name = "NixOS & Flakes Book";
-                url = "https://nixos-and-flakes.thiscute.world/";
-              }
-              {
-                name = "MyNixOS";
-                url = "https://mynixos.com/";
-              }
-              {
-                name = "OuterHeaven";
-                url = "https://github.com/liquidovski/OuterHeaven";
-              }
-              {
-                name = "HM Options";
-                url = "https://nix-community.github.io/home-manager/options.xhtml";
-              }
-              {
-                name = "nixvim docs";
-                url = "https://nix-community.github.io/nixvim/";
-              }
-              {
-                name = "nixpkgs";
-                url = "https://github.com/NixOS/nixpkgs/";
-              }
-              {
-                name = "PR Tracker";
-                url = "https://nixpk.gs/pr-tracker.html";
-              }
+                }
+                {
+                  name = "Zero to Nix";
+                  url = "https://zero-to-nix.com/";
+                }
+                {
+                  name = "NixOS & Flakes Book";
+                  url = "https://nixos-and-flakes.thiscute.world/";
+                }
+                {
+                  name = "MyNixOS";
+                  url = "https://mynixos.com/";
+                }
+                {
+                  name = "OuterHeaven";
+                  url = "https://github.com/liquidovski/OuterHeaven";
+                }
+                {
+                  name = "HM Options";
+                  url = "https://nix-community.github.io/home-manager/options.xhtml";
+                }
+                {
+                  name = "nixvim docs";
+                  url = "https://nix-community.github.io/nixvim/";
+                }
+                {
+                  name = "nixpkgs";
+                  url = "https://github.com/NixOS/nixpkgs/";
+                }
+                {
+                  name = "PR Tracker";
+                  url = "https://nixpk.gs/pr-tracker.html";
+                }
+              ];
+            }
+            {
+              name = "Trading";
+              bookmarks = [
+                {
+                  name = "coin360";
+                  url = "https://coin360.com/";
+                }
+              ];
+            }
+            {
+              name = "Utils";
+              bookmarks = [
+                {
+                  name = "Steam Sale Dates";
+                  url = "https://steamdb.info/sales/history/";
+                }
+                {
+                  name = "De-Googled App DB";
+                  url = "https://plexus.techlore.tech/";
+                }
+                {
+                  name = "CyberChef";
+                  url = "https://gchq.github.io/CyberChef/";
+                }
+                {
+                  name = "YT Thumnail";
+                  url = "https://downdetector.com/";
+                }
+                {
+                  name = "Video Embedder";
+                  url = "https://stolen.shoes/";
+                }
+                {
+                  name = "Carrd";
+                  url = "https://carrd.co/build";
+                }
+                {
+                  name = "Flourish";
+                  url = "https://flourish.studio/";
+                }
+              ];
+            }
+            {
+              name = "Food";
+              bookmarks = [
+                {
+                  name = "Yemeksepeti";
+                  url = "https://www.yemeksepeti.com/istanbul";
+                }
+              ];
+            }
+            {
+              name = "Tutorials";
+              bookmarks = [ 
+                {
+                  name = "Python w3s";
+                  url = "https://www.w3schools.com/python/default.asp";
+                }
+                {
+                  name = "Godot Docs";
+                  url = "https://docs.godotengine.org/en/stable/about/introduction.html";
+                }
+                {
+                  name = "Git Book";
+                  url = "https://git-scm.com/book/en/v2";
+                }
+                {
+                  name = "Wayland Root";
+                  url = "https://github.com/swaywm/sway/wiki#wayland-wont-let-me-run-apps-as-root";
+                }
+                {
+                  name = "Nginx-Proxy Tutor";
+                  url = "https://medium.com/@life-is-short-so-enjoy-it/homelab-nginx-proxy-manager-setup-ssl-certificate-with-domain-name-in-cloudflare-dns-732af64ddc0b";
+                }
+                {
+                  name = "EasyEffects Pipewire Screensharing";
+                  url = "https://gist.github.com/amsyarzero/57ff8e566af48265950aead5ff900ce5";
+                }
+              ];
+            }
+            {
+              name = "Games";
+              bookmarks = [
+                {
+                  name = "Jackbox";
+                  url = "https://jackbox.tv/#/";
+                }
+              ];
+            }
+            {
+              name = "Anime";
+              bookmarks = [
+                {
+                  name = "Filler List";
+                  url = "https://www.animefillerlist.com/";
+                }
+                {
+                  name = "MAL";
+                  url = "https://myanimelist.net/";
+                }
+              ];
+            }
+            {
+              name = "Books";
+              bookmarks = [
               ];
             }
           ];

@@ -14,6 +14,7 @@
     lshw
     flatpak-builder
     f3d
+    linuxKernel.packages.linux_zen.amdgpu-pro
   ];
   services.flatpak = {
     enable = true;
@@ -27,6 +28,7 @@
       "net.pcsx2.PCSX2"
       "camp.nook.nookdesktop"
       "org.freedesktop.Sdk/x86_64/23.08"
+      "com.dec05eba.gpu_screen_recorder"
     ];
   };
   fonts.packages = with pkgs; [

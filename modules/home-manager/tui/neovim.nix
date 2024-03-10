@@ -1,9 +1,23 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   imports = [inputs.nixvim.homeManagerModules.nixvim];
+  xdg.desktopEntries = {
+    nvim = lib.mkForce {
+      name = "Neovim";
+      type = "Application";
+      mimeType = ["text/plain"];
+
+      icon = builtins.fetchurl {
+        url = "https://raw.githubusercontent.com/NotAShelf/neovim-flake/main/assets/neovim-flake-logo-work.svg";
+        sha256 = "19n7n9xafyak35pkn4cww0s5db2cr97yz78w5ppbcp9jvxw6yyz3";
+      };
+      exec = "${pkgs.kitty}/bin/kitty nvim";
+    };
+  };
   programs.nixvim = {
     enable = true;
     options = {

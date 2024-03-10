@@ -1,8 +1,9 @@
+{ inputs, pkgs, ... }:
 {
   xdg.configFile."wlogout/layout".text = ''
     {
         "label" : "lock",
-        "action" : "hyprlock",
+        "action" : "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock",
         "text" : "Lock",
         "keybind" : "l"
     }

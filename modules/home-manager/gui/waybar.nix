@@ -367,14 +367,14 @@
           "custom/menu": {
                "format": " ",
                "tooltip": false,
-               "on-click": "anyrun",
+               "on-click": "sleep 0.1 && anyrun",
                "on-click-right": "wvkbd-mobintl",
           },
 
           "custom/power": {
                "format": "襤",
                "tooltip": false,
-               "on-click": "wlogout",
+               "on-click": "sleep 0.1 && wlogout",
           },
 
       	// waybar-mpd

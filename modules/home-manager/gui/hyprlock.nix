@@ -1,4 +1,6 @@
+{ inputs, pkgs, ... }:
 {
+  home.packages = [ inputs.hyprlock.packages.${pkgs.system}.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
 general {
     disable_loading_bar = false

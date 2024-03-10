@@ -14,6 +14,7 @@
     ./openssh.nix
     ./printing.nix
     ./ratbagd.nix
+    # ./searx.nix
     ./sound.nix
     ./udev.nix
     ./webdav.nix

@@ -11,9 +11,12 @@
 {
   xdg.configFile."hypr/hypridle.conf".text = ''
     listener {
-      timeout = 10                             # in seconds
-      on-timeout = notify-send "You are idle!" # command to run when timeout has passed
-      on-resume = notify-send "Welcome back!"  # command to run when activity is detected after timeout has fired.
+      timeout = 300 # in seconds
+      on-timeout = ${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock # command to run when timeout has passed
+    }
+    listener {
+      timeout = 11000
+      on-timeout = systemctl suspend
     }
     '';
 }
