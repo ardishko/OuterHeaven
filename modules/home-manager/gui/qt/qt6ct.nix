@@ -1,4 +1,6 @@
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ qt6Packages.qt6ct ];
   xdg.configFile."qt6ct/qt6ct.conf".text = ''
   [Appearance]
   color_scheme_path=${./Catppuccin-Frappe.conf}
@@ -17,7 +19,6 @@
   cursor_flash_time=1000
   dialog_buttons_have_icons=1
   double_click_interval=400
-  gui_effects=@Invalid()
   keyboard_scheme=2
   menus_have_icons=true
   show_shortcuts_in_context_menus=true

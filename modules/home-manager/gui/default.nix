@@ -9,6 +9,7 @@
     ./hyprland-conf.nix
     ./hyprlock.nix
     ./kitty.nix
+    ./lutris.nix
     ./mpv.nix
     ./obs.nix
     ./obsidian.nix

@@ -2,8 +2,8 @@
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = [22 443];
-      allowedUDPPorts = [22 443];
+      allowedTCPPorts = [21 22 443 8080];
+      allowedUDPPorts = [21 22 443 8080];
     };
     # Enable networking
     networkmanager.enable = true;

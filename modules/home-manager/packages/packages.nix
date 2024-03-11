@@ -46,8 +46,6 @@
     libreoffice-fresh
     winetricks
     protontricks
-    libsForQt5.qt5ct
-    qt6Packages.qt6ct
     themechanger
     piper
     thunderbird
@@ -91,7 +89,6 @@
     heroic
     bottles-unwrapped
     woeusb-ng
-    ungoogled-chromium
     signal-desktop-beta
     qgnomeplatform-qt6
     qgnomeplatform
@@ -131,7 +128,6 @@
     youtube-tui
     qrscan
     premid
-    gpu-screen-recorder-gtk
     gpu-screen-recorder
     nixpkgs-fmt
     nix-update
@@ -176,8 +172,11 @@
     rustdesk
     moonlight-qt
     mysql-workbench
-
+    pulseaudioFull
+    pinentry-qt
+    sidequest
     # Custom packages
+    (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
     (callPackage ./pkgcustom/discover-overlay/default.nix {})
     (callPackage ./pkgcustom/pdiary {})
     # (callPackage ./pkgcustom/vinegar {})

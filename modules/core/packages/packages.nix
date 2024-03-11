@@ -28,7 +28,7 @@
       "net.pcsx2.PCSX2"
       "camp.nook.nookdesktop"
       "org.freedesktop.Sdk/x86_64/23.08"
-      "com.dec05eba.gpu_screen_recorder"
+      "com.fightcade.Fightcade"
     ];
   };
   fonts.packages = with pkgs; [
