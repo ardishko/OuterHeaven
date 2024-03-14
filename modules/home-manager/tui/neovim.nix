@@ -106,6 +106,7 @@
       gitsigns.enable = true;
       image.enable = true;
       neorg.enable = true;
+      multicursors.enable = true;
       obsidian = {
         enable = true;
         dir = "/mnt/EEEEEEEEEEE/obsidian";

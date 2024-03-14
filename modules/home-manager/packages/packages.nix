@@ -22,7 +22,6 @@
     gnome-photos
     easyeffects
     wlr-randr
-    wlogout
     thefuck
     htop
     killall
@@ -109,8 +108,6 @@
     gnome.gnome-calendar
     clamtk
     lazygit
-    yazi
-    almanah
     wireguard-tools
     kdenlive
     tor-browser
@@ -175,10 +172,11 @@
     pulseaudioFull
     pinentry-qt
     sidequest
+    nix-index
     # Custom packages
     (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
     (callPackage ./pkgcustom/discover-overlay/default.nix {})
-    (callPackage ./pkgcustom/pdiary {})
+    # (callPackage ./pkgcustom/pdiary {})
     # (callPackage ./pkgcustom/vinegar {})
     # (callPackage ./pkgcustom/mysql-workbench {})
     # (callPackage ../pkgcustom/nexus-mods/package.nix {})
