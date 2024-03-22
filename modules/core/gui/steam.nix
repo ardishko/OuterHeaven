@@ -1,7 +1,8 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, ... }: 
 {
-  imports = [ inputs.nix-gaming.nixosModules.steamCompat ];
+  # imports = [ inputs.nix-gaming.nixosModules.steamCompat ];
   programs = {
+    nix-ld.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -29,9 +30,6 @@
               stdenv.cc.cc.lib
               libkrb5
               keyutils
-              getent
-              libdrm
-              glibc
             ];
           };
         };

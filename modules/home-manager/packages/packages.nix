@@ -11,7 +11,9 @@
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
-
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
+    # (inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.davinci-resolve.overrideAttrs { meta.license.free = true; })
     #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
     # Over
     wget
@@ -57,7 +59,6 @@
     helvum
     virt-manager
     krita
-    gimp-with-plugins
     lolcat
     cinny-desktop
     vulkan-tools
@@ -150,7 +151,6 @@
     netflix
     tailscale
     clipit
-    etcher
     ventoy-full
     ripcord
     r2modman
@@ -168,11 +168,18 @@
     btop
     rustdesk
     moonlight-qt
-    mysql-workbench
+    # mysql-workbench
     pulseaudioFull
     pinentry-qt
     sidequest
     nix-index
+    ungoogled-chromium
+    # (pkgs.mysql-workbench.overrideAttrs {
+    #   src = pkgs.fetchurl {
+    #     url = "https://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-8.0.34-src.tar.gz";
+    #     sha256 = "sha256-ub/D6HRtXOvX+lai71t1UjMmMzBsz5ljCrJCuf9aq7U=";
+    #   };
+    # })
     # Custom packages
     (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
     (callPackage ./pkgcustom/discover-overlay/default.nix {})
@@ -194,6 +201,7 @@
         "python-2.7.18.7"
         "electron-19.1.9"
       ];
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["davinci-resolve"];
       allowUnfree = true;
       allowBroken = true;
     };

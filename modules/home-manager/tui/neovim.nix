@@ -49,7 +49,7 @@
             bashls.enable = true;
             lua-ls.enable = true;
             tsserver.enable = true;
-            pylyzer.enable = true;
+            # pylyzer.enable = true;
             rust-analyzer = {
               enable = true;
               installCargo = false;

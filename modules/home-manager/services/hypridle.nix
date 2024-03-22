@@ -11,7 +11,7 @@
 {
   xdg.configFile."hypr/hypridle.conf".text = ''
     listener {
-      timeout = 300 # in seconds
+      timeout = 1000 # in seconds
       on-timeout = ${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock # command to run when timeout has passed
     }
     listener {

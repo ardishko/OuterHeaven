@@ -15,6 +15,8 @@
     flatpak-builder
     f3d
     linuxKernel.packages.linux_zen.amdgpu-pro
+    davinci-resolve
+    # (inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.davinci-resolve.overrideAttrs { meta.license.free = true; })
   ];
   services.flatpak = {
     enable = true;
