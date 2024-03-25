@@ -18,6 +18,7 @@
     ./spicetify.nix
     ./swaync.nix
     ./vesktop.nix
+    ./virt-manager.nix
     ./waybar.nix
     ./wlogout.nix
   ];

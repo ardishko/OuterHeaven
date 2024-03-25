@@ -57,7 +57,6 @@
     tartube-yt-dlp
     ffmpeg
     helvum
-    virt-manager
     krita
     lolcat
     cinny-desktop
@@ -173,7 +172,6 @@
     pinentry-qt
     sidequest
     nix-index
-    ungoogled-chromium
     # (pkgs.mysql-workbench.overrideAttrs {
     #   src = pkgs.fetchurl {
     #     url = "https://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-8.0.34-src.tar.gz";

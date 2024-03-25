@@ -17,6 +17,11 @@
       };
       exec = "${pkgs.kitty}/bin/kitty nvim";
     };
+    notepad = {
+      name = "Quick Notes (tmp)";
+      exec = "${pkgs.kitty}/bin/kitty nvim tmp.txt";
+      icon = "notepad";
+    };
   };
   programs.nixvim = {
     enable = true;
