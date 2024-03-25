@@ -13,8 +13,7 @@
     inputs.nh.packages.${pkgs.system}.default
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
-    # (inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.davinci-resolve.overrideAttrs { meta.license.free = true; })
-    #   inputs.nixpkgs-stable.legacyPackages.x86_64-linux.davinci-resolve
+
     # Over
     wget
     lutris
@@ -167,7 +166,6 @@
     btop
     rustdesk
     moonlight-qt
-    # mysql-workbench
     pulseaudioFull
     pinentry-qt
     sidequest

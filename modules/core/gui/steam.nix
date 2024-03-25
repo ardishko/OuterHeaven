@@ -2,7 +2,6 @@
 {
   # imports = [ inputs.nix-gaming.nixosModules.steamCompat ];
   programs = {
-    nix-ld.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -35,4 +34,13 @@
         };
     };
   };
+  nixpkgs.overlays = [
+    (final: prev: {
+      steam = prev.steam.override ({ extraLibraries ? pkgs': [], ... }: {
+        extraLibraries = pkgs': (extraLibraries pkgs') ++ ( [
+          pkgs'.gperftools
+        ]);
+      });
+    })
+  ];
 }

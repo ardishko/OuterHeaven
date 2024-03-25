@@ -66,6 +66,10 @@
       url = "github:hyprwm/hypridle";
       inputs.nixpkgs.follows = "hyprland";
     };
+    pyprland = {
+      url = "github:hyprland-community/pyprland";
+      inputs.nixpkgs.follows = "hyprland";
+    };
   };
 
   outputs = inputs @ {

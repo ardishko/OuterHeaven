@@ -14,6 +14,7 @@
       cutter
       convert
       quality-menu
+      mpv-playlistmanager
     ];
     scriptOpts = {
       webtorrent = {
@@ -21,4 +22,5 @@
       };
     };
   };
+  home.packages = with pkgs; [ open-in-mpv ];
 }

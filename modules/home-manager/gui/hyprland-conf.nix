@@ -41,6 +41,8 @@
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "${pkgs.xwaylandvideobridge}/bin/xwaylandvideobridge"
         "${pkgs.hypridle}/bin/hypridle"
+        "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
+        "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
       ];
       workspace = [
         "DP-2,1"
@@ -72,6 +74,7 @@
         "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
         "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
         "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
+        "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
@@ -178,10 +181,10 @@
       windowrulev2 = [
         "float,title:^(flameshot)"
         "move 0 -350,title:^(flameshot)"
-        # "fullscreen 0,title:^(flameshot)"
+        "suppressevent fullscreen,title:^(flameshot)"
         "noanim,title:^(flameshot)"
         "rounding 0,title:^(flameshot)"
-        "monitor:DP-2,title:^(flameshot)"
+        "monitor DP-2,title:^(flameshot)"
         "float,title:^(Firefox — Sharing Indicator)"
         "nomaxsize,title:^(winecfg)"
         "nomaxsize,class:^(steam)"
@@ -196,6 +199,7 @@
       ];
       layerrule = [
         "noanim,rofi"
+        "xray 1, wofi"
       ];
       dwindle = {
         pseudotile = true;
