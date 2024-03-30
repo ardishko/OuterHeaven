@@ -82,7 +82,6 @@
     scanmem
     unzip
     bless
-    handbrake
     monero-gui
     heroic
     bottles-unwrapped
@@ -170,12 +169,8 @@
     pinentry-qt
     sidequest
     nix-index
-    # (pkgs.mysql-workbench.overrideAttrs {
-    #   src = pkgs.fetchurl {
-    #     url = "https://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-8.0.34-src.tar.gz";
-    #     sha256 = "sha256-ub/D6HRtXOvX+lai71t1UjMmMzBsz5ljCrJCuf9aq7U=";
-    #   };
-    # })
+    # handbrake
+
     # Custom packages
     (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
     (callPackage ./pkgcustom/discover-overlay/default.nix {})

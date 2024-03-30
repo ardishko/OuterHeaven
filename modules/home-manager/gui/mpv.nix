@@ -15,6 +15,7 @@
       convert
       quality-menu
       mpv-playlistmanager
+      chapterskip
     ];
     scriptOpts = {
       webtorrent = {

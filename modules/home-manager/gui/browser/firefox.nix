@@ -318,6 +318,7 @@ in {
             "extensions.pocket.enabled" = false;
             "browser.newtabpage.activity-stream.topSitesRows" = 2;
             "general.smoothScroll" = true;
+            "general.autoScroll" = true;
             "browser.newtabpage.pinned" = [
               {
                 label = "Youtube";

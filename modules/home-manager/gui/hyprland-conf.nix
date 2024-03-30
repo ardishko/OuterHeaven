@@ -39,7 +39,6 @@
         "${pkgs.premid}/bin/premid --in-process-gpu"
         "${pkgs.swayosd}/bin/swayosd-server"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
-        "${pkgs.xwaylandvideobridge}/bin/xwaylandvideobridge"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
@@ -73,7 +72,7 @@
         "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
         "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
         "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
-        "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
+        # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
         "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -143,11 +142,13 @@
       input = {
         kb_layout = "tr,us";
         kb_options = "grp:rctrl_toggle";
-        follow_mouse = true;
+        follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
           natural_scroll = true;
         };
+        float_switch_override_focus = 2;
+        # scroll_factor = 2.0;
       };
       general = {
         gaps_in = 5;

@@ -11,7 +11,7 @@
     ./kitty.nix
     ./lutris.nix
     ./mpv.nix
-    ./obs.nix
+    ./obs
     ./obsidian.nix
     ./prism-launcher.nix
     ./qt

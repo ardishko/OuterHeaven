@@ -31,6 +31,7 @@
       "camp.nook.nookdesktop"
       "org.freedesktop.Sdk/x86_64/23.08"
       "com.fightcade.Fightcade"
+      "com.dec05eba.gpu_screen_recorder"
     ];
   };
   fonts.packages = with pkgs; [
