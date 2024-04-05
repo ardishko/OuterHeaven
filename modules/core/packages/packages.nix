@@ -32,6 +32,7 @@
       "org.freedesktop.Sdk/x86_64/23.08"
       "com.fightcade.Fightcade"
       "com.dec05eba.gpu_screen_recorder"
+      "org.vinegarhq.Vinegar"
     ];
   };
   fonts.packages = with pkgs; [

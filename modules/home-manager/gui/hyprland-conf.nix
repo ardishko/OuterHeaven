@@ -5,6 +5,7 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     systemd = {
       enable = true;
       variables = [
@@ -16,6 +17,7 @@
     plugins = [
       #inputs.hy3.packages.${pkgs.system}.hy3
       #inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
     settings = {
       "$mainMod" = "SUPER";
@@ -72,6 +74,8 @@
         "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
         "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
         "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
+        "Alt_L, E, exec, hyprctl dispatch workspace +1"
+        "Alt_L, Q, exec, hyprctl dispatch workspace -1"
         # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
         "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
         # Move focus with mainMod + arrow keys
@@ -79,7 +83,8 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        
+        "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
+        "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
         #i3/sway type beat
         ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
         "$mainMod, Q, togglegroup"
@@ -138,6 +143,10 @@
       bindm = [ 
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
+      ];
+      bindrn = [
+        "Alt_L, Tab, exec, hyprswitch --daemon --ignore-monitors --switch-ws-on-hover || hyprswitch --stop-daemon"
+        "SUPER, SUPER_L, exec, pkill wofi || ${pkgs.wofi}/bin/wofi"
       ];
       input = {
         kb_layout = "tr,us";
