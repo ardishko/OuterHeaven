@@ -21,5 +21,6 @@
     ./virt-manager.nix
     ./waybar.nix
     ./wlogout.nix
+    ./fastfetch
   ];
 }

@@ -5,5 +5,6 @@
     ./pdiary.nix
     ./vinegar.nix
     ./yazi.nix
+    ./zsh.nix
   ];
 }

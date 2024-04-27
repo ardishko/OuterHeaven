@@ -10,8 +10,7 @@ background = 0x252836
 foreground = 0xC6D0F5
 
 [player]
-renderer = "Vulkan"
-dxvk = false
+forced_version = "version-70a2467227df4077"
 
 [player.fflags]
 DFIntTaskSchedulerTargetFps = 640 # set to 640 for better performance

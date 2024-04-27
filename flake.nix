@@ -69,6 +69,13 @@
       url = "github:hyprland-community/pyprland";
       inputs.nixpkgs.follows = "hyprland";
     };
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+    };
   };
 
   outputs = inputs @ {

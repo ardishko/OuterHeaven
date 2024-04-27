@@ -33,7 +33,7 @@
         "discover-overlay"
         "flameshot"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/vergil-catppuccin.png}"
+        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.jpg}"
         "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"

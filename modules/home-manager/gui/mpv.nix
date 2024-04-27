@@ -23,5 +23,10 @@
       };
     };
   };
+  xdg.mimeApps = {
+    defaultApplications = {
+      "x-scheme-handler/magnet" = [ "mpv.desktop" ];
+    };
+  };  
   home.packages = with pkgs; [ open-in-mpv ];
 }

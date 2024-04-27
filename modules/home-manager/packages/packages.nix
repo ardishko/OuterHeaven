@@ -13,7 +13,11 @@
     inputs.nh.packages.${pkgs.system}.default
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
-
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mullvad-vpn
+    # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.itch
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.handbrake
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.valent
+    inputs.nix-alien.packages.${pkgs.system}.nix-alien
     # Over
     wget
     lutris
@@ -30,7 +34,6 @@
     prismlauncher
     appimage-run
     cinnamon.nemo-fileroller
-    gnome.file-roller
     nerdfonts
     webdav
     gamemode
@@ -131,12 +134,10 @@
     gtkcord4
     wine-staging
     nmap
-    valent
     ntfs3g
     revolt-desktop
     parsec-bin
     amdgpu_top
-    mullvad-vpn
     inxi
     satty
     nitch
@@ -170,15 +171,63 @@
     sidequest
     nix-index
     monophony
+    looking-glass-client
+    libsForQt5.ark
+    libsForQt5.dolphin
+    zandronum
+    aria
+    jp2a
+    deskreen
+    nixpkgs-fmt
+    p7zip
+
+    # emu
+    ryujinx
+    cemu
+    pcsx2
+    duckstation
+    rpcs3
+
+    # (pkgs.rpcs3.overrideAttrs {
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "RPCS3";
+    #     repo = "rpcs3";
+    #     rev = "c268189e384a083753faf91ebc3b8c511bdc67ce";
+    #     sha256 = "sha256-zuDEcS60JmXtCyqrq45CJn1UPmAaIUk8y9O6JyxHGf8=";
+    #   };
+    # })
+
+    # (pkgs.ryujinx.overrideAttrs {
+    #   version = "1.1.1287";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "Ryujinx";
+    #     repo = "Ryujinx";
+    #     rev = "216026c096d844f8bf09ee0e185dec4111c64095";
+    #     sha256 = "sha256-4WfGFsIMGVMF/YLNZ9Qu7218/MNixaDPqc8fNBtgxMQ=";
+    #   };
+    # })
+
     # handbrake
+
+    # Override Template
+    
+    # (pkgs.<package>.overrideAttrs {
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "";
+    #     repo = "";
+    #     rev = "";
+    #     sha256 = "";
+    #   };
+    # })
 
     # Custom packages
     (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
     (callPackage ./pkgcustom/discover-overlay/default.nix {})
     (callPackage ./pkgcustom/hyprswitch {})
-    # (callPackage ./pkgcustom/pdiary {})
-    # (callPackage ./pkgcustom/vinegar {})
-    # (callPackage ./pkgcustom/mysql-workbench {})
+    (callPackage ./pkgcustom/video-downloader {})
+    (callPackage ./pkgcustom/vinegar {})
+    # (callPackage ./pkgcustom/lime3ds {})
+    # (callPackage ./pkgcustom/roblox-fd {})
     # (callPackage ../pkgcustom/nexus-mods/package.nix {})
   ];
 

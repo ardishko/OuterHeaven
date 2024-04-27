@@ -107,11 +107,11 @@
       barbecue.enable = true;
       airline.enable = true;
       neo-tree.enable = true;
-      presence-nvim.enable = true;
       gitsigns.enable = true;
       image.enable = true;
       neorg.enable = true;
       multicursors.enable = true;
+      neocord.enable = true;
       obsidian = {
         enable = true;
         dir = "/mnt/EEEEEEEEEEE/obsidian";

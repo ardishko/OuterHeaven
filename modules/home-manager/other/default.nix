@@ -2,5 +2,6 @@
   imports = [
     ./home.nix
     ./nixpkgs.nix
+    ./xdg.nix
   ];
 }
