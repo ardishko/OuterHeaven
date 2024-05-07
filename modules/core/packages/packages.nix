@@ -30,7 +30,6 @@
       "com.fightcade.Fightcade"
       "io.itch.itch"
       "io.github.lime3ds.Lime3DS"
-      "org.yuzu_emu.yuzu"
     ];
   };
     fonts.packages = with pkgs; [

@@ -86,7 +86,7 @@
     unzip
     bless
     monero-gui
-    heroic
+    # heroic
     bottles-unwrapped
     woeusb-ng
     signal-desktop-beta
@@ -180,6 +180,14 @@
     deskreen
     nixpkgs-fmt
     p7zip
+    # (pkgs.rpcs3.overrideAttrs {
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "RPCS3";
+    #     repo = "rpcs3";
+    #     rev = "c268189e384a083753faf91ebc3b8c511bdc67ce";
+    #     sha256 = "sha256-zuDEcS60JmXtCyqrq45CJn1UPmAaIUk8y9O6JyxHGf8=";
+    #   };
+    # })
 
     # emu
     ryujinx

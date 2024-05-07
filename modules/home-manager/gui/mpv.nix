@@ -6,7 +6,7 @@
       mpris
       seekTo
       webtorrent-mpv-hook
-      mpv-webm
+      # mpv-webm
       blacklistExtensions
       sponsorblock
       simple-mpv-webui
@@ -26,6 +26,7 @@
   xdg.mimeApps = {
     defaultApplications = {
       "x-scheme-handler/magnet" = [ "mpv.desktop" ];
+      "x-scheme-handler/curseforge" = [ "prismlauncher.desktop" ];
     };
   };  
   home.packages = with pkgs; [ open-in-mpv ];

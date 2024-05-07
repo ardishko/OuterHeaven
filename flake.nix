@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -76,6 +76,7 @@
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
     };
+    vesktop.url = "github:NixOS/nixpkgs/5607766da72127e8daa6bc58edddf8e4b9506986";
   };
 
   outputs = inputs @ {

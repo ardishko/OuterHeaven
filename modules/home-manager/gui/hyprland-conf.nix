@@ -46,20 +46,20 @@
         "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
       ];
       workspace = [
-        "DP-2,1"
-        "DP-2,2"
-        "DP-2,3"
-        "DP-2,4"
-        "DP-2,5"      
-        "DP-2,6"
-        "DP-2,7"       
-        "DP-2,8"
-        "DP-2,9"
-        "DP-2,10"
-        "HDMI-A-1,11"
-        "HDMI-A-1,12"
-        "HDMI-A-1,13"
-        "HDMI-A-1,14"
+        "1,,monitor:DP-2"
+        "2,monitor:DP-2"
+        "3,monitor:DP-2"
+        "4,monitor:DP-2"
+        "5,monitor:DP-2"      
+        "6,monitor:DP-2"
+        "7,monitor:DP-2"       
+        "8,monitor:DP-2"
+        "9,monitor:DP-2"
+        "10,monitor:DP-2"
+        "11,monitor:HDMI-A-1"
+        "12,monitor:HDMI-A-1"
+        "13,monitor:HDMI-A-1"
+        "14,monitor:HDMI-A-1"
       ];
       bind = [
         "$mainMod, Return, exec, kitty"
@@ -129,7 +129,7 @@
         "$mainMod SHIFT, j, movetoworkspacesilent, 12"
         "$mainMod SHIFT, k, movetoworkspacesilent, 13"
         "$mainMod SHIFT, l, movetoworkspacesilent, 14"
-
+        "$mainMod, minus, movetoworkspace, special:scratchpad"
         # Move window with mainMod_SHIFT + arrow keys
         "$mainMod SHIFT, left, movewindow, l"
         "$mainMod SHIFT, right, movewindow, r"
