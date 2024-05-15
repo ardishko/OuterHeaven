@@ -5,7 +5,7 @@
       desktopItems = [
         (makeDesktopItem {
           name = "vesktop";
-          desktopName = "Vesktop";
+          desktopName = "Discord";
           exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
           icon = "discord";
           startupWMClass = "VencordDesktop";

@@ -67,7 +67,7 @@
     };
     pyprland = {
       url = "github:hyprland-community/pyprland";
-      inputs.nixpkgs.follows = "hyprland";
+      inputs.hyprland.follows = "hyprland";
     };
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
@@ -77,6 +77,19 @@
       url = "github:thiagokokada/nix-alien";
     };
     vesktop.url = "github:NixOS/nixpkgs/5607766da72127e8daa6bc58edddf8e4b9506986";
+    shadower = {
+      url = "github:n3oney/shadower";
+    };
+    wayfreeze = {
+      url = "github:jappie3/wayfreeze";
+    };
+    watershot = {
+      url = "github:Kirottu/watershot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    jovian-nixos = {
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+    };
   };
 
   outputs = inputs @ {
@@ -88,7 +101,25 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts
+        ./machines/ShadowMoses
+        ./modules
+        home-manager.nixosModules.home-manager
+      ];
+    };
+    nixosConfiguration.Tanker = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./machines/Tanker
+        ./modules
+        home-manager.nixosModules.home-manager
+      ];
+    };
+    nixosConfiguration.BigShell = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./machines/BigShell
         ./modules
         home-manager.nixosModules.home-manager
       ];

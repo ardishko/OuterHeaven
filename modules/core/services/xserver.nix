@@ -9,4 +9,5 @@
       excludePackages = [pkgs.xterm];
     };
   };
+  services.displayManager.enable = false;
 }

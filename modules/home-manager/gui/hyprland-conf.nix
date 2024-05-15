@@ -44,6 +44,7 @@
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
+        "${pkgs.arrpc}/bin/arrpc"
       ];
       workspace = [
         "1,,monitor:DP-2"
@@ -70,7 +71,7 @@
         "$mainMod SHIFT, F, exec, ${pkgs.gnome.nautilus}/bin/nautilus"
         "$mainMod, E, togglesplit, # dwindle"
         "$mainMod,F,fullscreen"
-        ",Print, exec, flameshot gui"
+        '',Print, exec, ${inputs.wayfreeze.packages.${pkgs.system}.wayfreeze}/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${inputs.shadower.packages.${pkgs.system}.shadower}/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
         "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
         "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
         "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
@@ -202,8 +203,14 @@
         "float,title:^(wlogout)"
         "workspace 1, class:^(firefox)"
         "workspace 2,class:^(discord)"
+        "workspace 2,class:^(vesktop)"
         "workspace 3,title:^(Steam)"
+        "workspace 3,class:^(org.prismlauncher.PrismLauncher)"
+        "workspace 4,class:^(mpv)"
         "workspace 5,title:^(nvim)"
+        "workspace 6,class:^(krita)"
+        "workspace 6,class:^(.gimp-2.10-wrapped_)"
+        "workspace 7,class:^(evince)"
         "workspace 7,class:^(info.febvre.Komikku)"
         "workspace 8,class:^(obsidian)"
       ];

@@ -18,6 +18,9 @@
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.handbrake
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.valent
     inputs.nix-alien.packages.${pkgs.system}.nix-alien
+    inputs.shadower.packages.${pkgs.system}.shadower
+    inputs.watershot.packages.${pkgs.system}.default
+    inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
     # Over
     wget
     lutris
@@ -45,7 +48,6 @@
     hyprpicker
     eww-wayland
     transmission-gtk
-    sway-contrib.grimshot
     libreoffice-fresh
     winetricks
     protontricks
@@ -95,7 +97,6 @@
     gparted
     gnome-usage
     timeshift
-    watershot
     gnome.gnome-clocks
     gnome.gnome-sound-recorder
     wev
@@ -103,8 +104,6 @@
     lutgen
     docker
     speedtest-cli
-    grim
-    wl-clipboard
     gh
     gnome.gnome-calendar
     clamtk
@@ -153,7 +152,6 @@
     ripcord
     r2modman
     nomachine-client
-    remote-touchpad
     qutebrowser
     nheko
     cinnamon.nemo-with-extensions
@@ -180,42 +178,16 @@
     deskreen
     nixpkgs-fmt
     p7zip
-    # (pkgs.rpcs3.overrideAttrs {
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "RPCS3";
-    #     repo = "rpcs3";
-    #     rev = "c268189e384a083753faf91ebc3b8c511bdc67ce";
-    #     sha256 = "sha256-zuDEcS60JmXtCyqrq45CJn1UPmAaIUk8y9O6JyxHGf8=";
-    #   };
-    # })
-
+    wl-clipboard
+    grim
+    slurp
+    gnome.file-roller
     # emu
     ryujinx
     cemu
     pcsx2
     duckstation
     rpcs3
-
-    # (pkgs.rpcs3.overrideAttrs {
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "RPCS3";
-    #     repo = "rpcs3";
-    #     rev = "c268189e384a083753faf91ebc3b8c511bdc67ce";
-    #     sha256 = "sha256-zuDEcS60JmXtCyqrq45CJn1UPmAaIUk8y9O6JyxHGf8=";
-    #   };
-    # })
-
-    # (pkgs.ryujinx.overrideAttrs {
-    #   version = "1.1.1287";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "Ryujinx";
-    #     repo = "Ryujinx";
-    #     rev = "216026c096d844f8bf09ee0e185dec4111c64095";
-    #     sha256 = "sha256-4WfGFsIMGVMF/YLNZ9Qu7218/MNixaDPqc8fNBtgxMQ=";
-    #   };
-    # })
-
-    # handbrake
 
     # Override Template
     
