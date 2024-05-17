@@ -8,7 +8,8 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-
+  services.xserver.videoDrivers = [ "amdgpu" ];
+  
   boot = {
     extraModulePackages = [];
     supportedFilesystems = ["ntfs"];
@@ -23,7 +24,6 @@
     device = "/dev/disk/by-uuid/12f4f756-dfdb-40fd-8ed7-cf710e8cff28";
     fsType = "ext4";
   };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/93FD-AE0A";
     fsType = "vfat";

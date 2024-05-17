@@ -90,6 +90,12 @@
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
     };
+    impermanence = {
+      url = "github:nix-community/disko";
+    };
+    disko = {
+      url = "github:nix-community/impermanence";
+    };
   };
 
   outputs = inputs @ {
@@ -106,7 +112,7 @@
         home-manager.nixosModules.home-manager
       ];
     };
-    nixosConfiguration.Tanker = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
@@ -115,13 +121,21 @@
         home-manager.nixosModules.home-manager
       ];
     };
-    nixosConfiguration.BigShell = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.BigShell = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
         ./machines/BigShell
         ./modules
         home-manager.nixosModules.home-manager
+      ];
+    };
+    nixosConfigurations.jd = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./machines/jd
+        ./modules/self-host
       ];
     };
   };
