@@ -5,8 +5,8 @@
     kernelParams = ["split_lock_detect=off"]; 
 /*     kernelParams = [ ]; */
     extraModulePackages = [];
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_xanmod;
     supportedFilesystems = [ "ntfs" ];
-    kernelModules = [ "udev" ];
+    kernelModules = [ "udev" "xpadneo" ];
   };
 }

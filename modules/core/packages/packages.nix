@@ -28,6 +28,7 @@
       "com.fightcade.Fightcade"
       "io.itch.itch"
       "io.github.lime3ds.Lime3DS"
+      "com.dec05eba.gpu_screen_recorder"
     ];
   };
     fonts.packages = with pkgs; [

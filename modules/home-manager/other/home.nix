@@ -4,23 +4,12 @@
   self,
   user,
   inputs,
+  username,
   ...
 }: {
-  home.username = "vaporsnake";
-  home.homeDirectory = "/home/vaporsnake";
-
-  # Here is where we make inputs available within home manager
-  #	homeConfigurations.vaporsnake = inputs.home-manager.lib.homeManagerConfiguration {
-  #  pkgs = [
-  #	import inputs.nixpkgs {
-  #          config.allowUnfree = true;
-  #  	}
-  #	];
-
-  #  modules = ...;
-
-  #  extraSpecialArgs = {inherit inputs;};
-  #}
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
+  # home-manager.backupFileExtension = "backup";
 
   gtk = {
     enable = true;
