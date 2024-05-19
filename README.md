@@ -47,8 +47,7 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 <summary><b><font size="+3">gamescope workaround</font></b></summary>
 
 The override used here for Gamescope running through steam on NixOS (yes, **very specifically gamescope running through Steam on NixOS**) does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them in said FHS environment, therefore making this workaround necessary.
-
-
+</>
 
 <details>
 <summary><b><font size="+3">flameshot wayland fix</font></b></summary>
