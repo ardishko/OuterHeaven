@@ -83,15 +83,15 @@ packages that I plan to submit to nixpkgs in the future, some of which are refer
 people I was so gracious as to ~steal~ take inspiration from :)
 
 https://git.notashelf.dev/NotAShelf/nyx (I didn't actually take anything from notashelf's config, but felt like adding them anyway because funny.)
-
+<br>
 https://git.jacekpoz.pl/jacekpoz/niksos (I literally stole the entire README.md format from this guy)
-
+<br>
 https://git.outfoxxed.me/outfoxxed/nixnew (There are way too many things to say about this one)
-
+<br>
 https://github.com/kinzoku-dev/nebula (this person steals from me) (I'm flattered by it)
-
+<br>
 https://github.com/IogaMaster/dotfiles (added here for losing their mind and trying to help me set up my minecraft server AND making awesome nix videos)
-
+<br>
 https://github.com/vimjoyer/nixconf (added for being a cool guy and making super duper awesome nix videos) 
-
+<br>
 https://github.com/iynaix/dotfiles (added for being a nix wizard.)
