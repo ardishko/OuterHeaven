@@ -24,6 +24,7 @@ The general philosophy is this configuration is simplicity and modularity. Mostl
 The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config such as changes to config structre.
 
 Current major version: `2.0`
+<br>
 Next Major version: `3.0` (will be released when my configuration is a multi-system configuration like mentioned above.)
 
 # Why?
