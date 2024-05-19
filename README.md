@@ -12,6 +12,9 @@ OuterHeaven/
 │   ├───core/         [modules managed with NixOS options and flake provided modules]
 │   ├───home-manager/        [modules managed with home-manager options and flake provided modules]
 │   └───self-host/      [Modules used for my hosted services on my server]
+│
+├───flake.nix       (my flake containing my inputs, outputs and 2 custom variables for each machine.)
+├───flake.lock      (the flake lock, which controls version locks for each input.)
 ```
 # General philosophy
 
