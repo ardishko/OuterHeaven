@@ -1,4 +1,4 @@
-
+(small announcement, the readme will be reformatted soon, to be like jacekpoz's once my config structre is static after the multi-system migration is over)
 
 # General philosophy
 
