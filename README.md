@@ -46,15 +46,13 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 <details>
 <summary><b><font size="+3">gamescope workaround</font></b></summary>
 
-The override used here for Gamescope running through steam on NixOS (yes, **very specifically gamescope running through Steam on NixOS**) does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them in said FHS environment, therefore making this workaround necessary.
-</>
+The override used here for Gamescope running through steam on NixOS (yes, **very specifically gamescope running through Steam on NixOS**) does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them in said FHS environment, therefore making this workaround necessary. <details>
+
 
 <details>
 <summary><b><font size="+3">flameshot wayland fix</font></b></summary>
 
 The overrides used here make it so that flameshot is compiled with the appropriate cmake flags so that it works on Wayland and locks the version to a certain commit known to work with Wayland. (https://github.com/flameshot-org/flameshot/issues/3012)
-
-
 
 <details>
 <summary><b><font size="+3">vesktop override</font></b></summary>
