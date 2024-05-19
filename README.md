@@ -42,15 +42,38 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 ```
 
 ## Info about workaround/fixes applied
+<details>
+<summary><b><font size="+3">gamescope workaround</font></b></summary>
 
-[gamescope workaround]: The override used here for Gamescope running through steam on NixOS (yes, very specifically **gamescope running through Steam on NixOS**) does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them, making this workaround necessary.)
+The override used here for Gamescope running through steam on NixOS (yes, very specifically **gamescope running through Steam on NixOS**) does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them, making this workaround necessary.
 
-[flameshot wayland fix]: The overrides used here make it so that flameshot is compiled with the appropriate cmake flags so that it works on Wayland and locks the version to a certain commit known to work with Wayland. (https://github.com/flameshot-org/flameshot/issues/3012)
+<details>
 
-[vesktop override] The overrides used here removes Vencord related branding and replaces the icons and name with regular Discord's and adds launch flags that help with screen sharing on Wayland.
+<details>
+<summary><b><font size="+3">flameshot wayland fix</font></b></summary>
 
-[packages module]: This home manager managed module contains packages I manage under home-manager, alongside some overrides and override templates that I plan to reuse later.
-[pkgcustom]: packages that I plan to submit to nixpkgs in the future, some of which are referenced in packages.nix but mostly not.
+
+The overrides used here make it so that flameshot is compiled with the appropriate cmake flags so that it works on Wayland and locks the version to a certain commit known to work with Wayland. (https://github.com/flameshot-org/flameshot/issues/3012)
+<details>
+
+<details>
+<summary><b><font size="+3">vesktop override</font></b></summary>
+
+The overrides used here removes Vencord related branding and replaces the icons and name with regular Discord's and adds launch flags that help with screen sharing on Wayland.
+<details>
+
+<details>
+<summary><b><font size="+3">packages module</font></b></summary>
+
+
+This home manager managed module contains packages I manage under home-manager, alongside some overrides and override templates that I plan to reuse later.
+<details>
+
+<details>
+<summary><b><font size="+3">pkgcustom</font></b></summary>
+
+packages that I plan to submit to nixpkgs in the future, some of which are referenced in packages.nix but mostly not. The name is **pkgcustom** because it sounded cool in my head.
+<details>
 
 ## Cool people
 
