@@ -1,4 +1,4 @@
-## directory structure
+# Directory structure
 ```
 OuterHeaven/
 ├──builders/    (currently unused, module for remote build machines to help speed up rebuild time)
@@ -32,18 +32,25 @@ I just wanted to share my config, that's all :P
 
 I admit that I sometimes set up stuff in my config that I don't make use of all the time so if there is a problem I might not notice it myself so feel free to open an issue (No, really I don't mind at all. Do it. It helps me better my system too.)
 
-# Info about fixes/workarounds applied
-
 ## Heirarchy of fixes/workarounds applied
 ```
-├──modules/core/gui/steam.nix    (Explanation: The override used here for Gamescope running through steam on NixOS (yes, very specifically **gamescope running through Steam on NixOS**) 
-│                                does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them, making this workaround necessary.)
-├──modules/home-manager/gui/flameshot.nix      (Explanation: The overrides used here make it so that flameshot is compiled with the appropriate cmake flags so that it works on Wayland and locks the version to a certain commit known │                                               to work with Wayland.) (https://github.com/flameshot-org/flameshot/issues/3012)
-├──modules/home-manager/gui/vesktop.nix        (Explanation: The overrides used here removes Vencord related branding and replaces the icons and name with regular Discord's 
-│                                               and adds launch flags that help with screen sharing on Wayland.)
-├──modules/home-manager/packages/packages.nix   (Explanation: This home manager managed module contains packages I manage under home-manager, alongside some overrides and override templates that I plan to reuse later.)
-├──modules/home-manager/packages/pkgcustom/     (Explanation: packages that I plan to submit to nixpkgs in the future, some of which are referenced in packages.nix but mostly not.)
+├──modules/core/gui/steam.nix    (gamescope workaround)
+├──modules/home-manager/gui/flameshot.nix      (flameshot wayland fix)
+├──modules/home-manager/gui/vesktop.nix        (vesktop override)
+├──modules/home-manager/packages/packages.nix   (packages module)
+├──modules/home-manager/packages/pkgcustom/     (pkgcustom)
 ```
+
+## Info about workaround/fixes applied
+
+[gamescope workaround]: The override used here for Gamescope running through steam on NixOS (yes, very specifically **gamescope running through Steam on NixOS**) does not bring up the gamescope window because gamescope looks for certain libraries in the provided FHS environment and it can't find them, making this workaround necessary.)
+
+[flameshot wayland fix]: The overrides used here make it so that flameshot is compiled with the appropriate cmake flags so that it works on Wayland and locks the version to a certain commit known to work with Wayland. (https://github.com/flameshot-org/flameshot/issues/3012)
+
+[vesktop override] The overrides used here removes Vencord related branding and replaces the icons and name with regular Discord's and adds launch flags that help with screen sharing on Wayland.
+
+[packages module]: This home manager managed module contains packages I manage under home-manager, alongside some overrides and override templates that I plan to reuse later.
+[pkgcustom]: packages that I plan to submit to nixpkgs in the future, some of which are referenced in packages.nix but mostly not.
 
 ## Cool people
 
