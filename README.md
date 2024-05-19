@@ -46,6 +46,8 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 
 ## Info about workaround/fixes applied
 
+**See paranthesis' above for related modules and their directories.**
+
 <details>
 <summary><b><font size="+3">gamescope workaround</font></b></summary>
 
@@ -80,6 +82,16 @@ This home manager managed module contains packages I manage under home-manager, 
 
 packages that I plan to submit to nixpkgs in the future, some of which are referenced in packages.nix but mostly not. The name is **pkgcustom** because it sounded cool in my head.
 </details>
+
+## Plans
+
+- [ ] non-nixlang configurations in their own folder (so that the used languages percentage can be accurate)
+- [x] Multi-system configuration
+- [ ] Jovian NixOS setup
+- [ ] Impermanence
+- [ ] Disko (for each machine)
+
+...And more! (There are some things that are too insignificant for me to permanently add to this plans section)
 
 ## Cool people
 
