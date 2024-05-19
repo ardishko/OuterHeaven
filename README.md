@@ -7,7 +7,7 @@ OuterHeaven/
 │   ├───ShadowMoses/         [Main Desktop]
 │   ├───Tanker/            [My Steam Deck running NixOS]
 │   ├───BigShell/           [My laptop, a Lenovo IdeaPad Flex 5 16ALC7]
-│   └───jd/           [Another laptop, that I use as my server]
+│   └───jd/           [Another laptop, that I use as my server] (not an omnipotent AI)
 ├───modules/        (modules, all of which are machine-agnostic)
 │   ├───core/         [modules managed with NixOS options and flake provided modules]
 │   ├───home-manager/        [modules managed with home-manager options and flake provided modules]
