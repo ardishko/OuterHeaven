@@ -67,6 +67,7 @@ This home manager managed module contains packages I manage under home-manager, 
 <summary><b><font size="+3">pkgcustom</font></b></summary>
 
 packages that I plan to submit to nixpkgs in the future, some of which are referenced in packages.nix but mostly not. The name is **pkgcustom** because it sounded cool in my head.
+<details>
 
 ## Cool people
 
