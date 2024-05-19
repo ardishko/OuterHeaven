@@ -41,7 +41,7 @@ I admit that I sometimes set up stuff in my config that I don't make use of all 
 ├──modules/home-manager/gui/flameshot.nix      (flameshot wayland fix)
 ├──modules/home-manager/gui/vesktop.nix        (vesktop override)
 ├──modules/home-manager/packages/packages.nix   (packages module)
-├──modules/home-manager/packages/pkgcustom/     (pkgcustom)
+└──modules/home-manager/packages/pkgcustom/     (pkgcustom)
 ```
 
 ## Info about workaround/fixes applied
