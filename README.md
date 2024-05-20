@@ -113,4 +113,4 @@ https://github.com/iynaix/dotfiles (added for being a nix wizard.)
 
 Special thanks to:
 
-Anyone and everyone who has starred this config. It makes me super happy to know that my code helps some people!
+Anyone and everyone who has starred this config. It makes me super happy to know that my code helps some people! :^)
