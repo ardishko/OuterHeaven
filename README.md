@@ -110,3 +110,7 @@ https://github.com/IogaMaster/dotfiles (added here for losing their mind and try
 https://github.com/vimjoyer/nixconf (added for being a cool guy and making super duper awesome nix videos) 
 <br>
 https://github.com/iynaix/dotfiles (added for being a nix wizard.)
+
+Special thanks to:
+
+Anyone and everyone who has starred this config. It makes me super happy to know that my code helps some people!
