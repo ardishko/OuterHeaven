@@ -56,7 +56,7 @@
           "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
         ]) 
       ++ (lib.lists.optionals (hostname == "BigShell") [
-          "${pkgs.swaybg}/bin/swaybg --o eDP-2 -i ${../../../images/wallpaper/berserk-catppuccin.png}"
+          "${pkgs.swaybg}/bin/swaybg --o eDP-2 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
       ]);
       workspace = if (hostname == "ShadowMoses") then [
         "1,monitor:DP-2"
