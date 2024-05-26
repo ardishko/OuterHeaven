@@ -10,7 +10,7 @@
 }: {
   # Define your hostname.
   networking.hostName = "BigShell";
-  networking.hostId = "5d8fad81" # required for zfs
+  networking.hostId = "5d8fad81"; # required for zfs
 
   # Set your time zone.
   time.timeZone = "Europe/Istanbul";
