@@ -5,29 +5,23 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-      inputs.disko.nixosModules.disko
-    ];
+    [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/93d6988a-cb1d-40ae-b4d3-7deb6a6254a9";
-      fsType = "ext4";
-    };
+  # fileSystems."/" =
+  #   { device = "/dev/disk/by-uuid/93d6988a-cb1d-40ae-b4d3-7deb6a6254a9";
+  #     fsType = "ext4";
+  #   };
+  #
+  # fileSystems."/boot" =
+  #   { device = "/dev/disk/by-uuid/C0B0-3C8B";
+  #     fsType = "vfat";
+  #   };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C0B0-3C8B";
-      fsType = "vfat";
-    };
-  # Here is where I configure disko to automatically partition my disks  
-  disko = {
-    # to be continued
-    # https://www.youtube.com/watch?v=lPFzBjJp40A
-  };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

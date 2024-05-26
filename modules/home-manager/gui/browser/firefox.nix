@@ -117,7 +117,7 @@ in {
   programs = {
     firefox = {
       enable = true;
-      package = pkgs.firefox;
+      package = pkgs.firefox-beta;
       profiles = {
         "freeform" = {
           isDefault = true;
@@ -260,6 +260,7 @@ in {
             catppuccin-frappe-sky
             #catppuccin-mocha-lavender # over here
             # catppuccin-mocha-green
+            tridactyl
           ];
           userChrome = ''
             ${builtins.readFile ./userChrome.css}
@@ -268,6 +269,7 @@ in {
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
             "browser.aboutConfig.showWarning" = false;
             "browser.startup.page" = 0;
+            "browser.preferences.experimental" = true;
             "browser.startup.homepage" = "about:home";
             "browser.newtabpage.enabled" = true;
             "browser.newtabpage.activity-stream.showSponsored" = false;

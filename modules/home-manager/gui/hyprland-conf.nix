@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   lib,
+  hostname,
   ...
 }: {
   wayland.windowManager.hyprland = {
@@ -23,32 +24,42 @@
     settings = {
       "$mainMod" = "SUPER";
       "general:layout" = "dwindle";
-      monitor = [
+      monitor = if (hostname == "ShadowMoses") then [
         "DP-2,2560x1440@164.998993, 0x350, 1"
         "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
-      ];
+      ] else
+      if (hostname == "BigShell") then [
+        "eDP-1,1920x1200@60.001999, 0x0, 1"
+      ] else [];
       exec-once = [
         "mullvad-gui"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "hyprctl setcursor macOS-BigSur 24"
         "discover-overlay"
         "flameshot"
-        "${pkgs.waybar}/bin/waybar"
-        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.jpg}"
-        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+        "sleep 0.1 && ${pkgs.waybar}/bin/waybar"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
-        "${pkgs.premid}/bin/premid --in-process-gpu"
         "${pkgs.swayosd}/bin/swayosd-server"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.arrpc}/bin/arrpc"
-      ];
-      workspace = [
-        "1,,monitor:DP-2"
+        "${pkgs.noisetorch}/bin/noisetorch -i"
+        "${pkgs.premid}/bin/premid --in-process-gpu"
+
+      ] 
+      ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+          "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
+          "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+        ]) 
+      ++ (lib.lists.optionals (hostname == "BigShell") [
+          "${pkgs.swaybg}/bin/swaybg --o eDP-2 -i ${../../../images/wallpaper/berserk-catppuccin.png}"
+      ]);
+      workspace = if (hostname == "ShadowMoses") then [
+        "1,monitor:DP-2"
         "2,monitor:DP-2"
         "3,monitor:DP-2"
         "4,monitor:DP-2"
@@ -62,7 +73,19 @@
         "12,monitor:HDMI-A-1"
         "13,monitor:HDMI-A-1"
         "14,monitor:HDMI-A-1"
-      ];
+      ] else
+      if (hostname == "BigShell") then [
+        "1,monitor:eDP-1"
+        "2,monitor:eDP-1"
+        "3,monitor:eDP-1"
+        "4,monitor:eDP-1"
+        "5,monitor:eDP-1"      
+        "6,monitor:eDP-1"
+        "7,monitor:eDP-1"       
+        "8,monitor:eDP-1"
+        "9,monitor:eDP-1"
+        "10,monitor:eDP-1"
+      ] else [];
       bind = [
         "$mainMod, Return, exec, kitty"
         "SUPER_SHIFT, W, killactive,"
@@ -111,10 +134,6 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-        "$mainMod, h, workspace, 11"
-        "$mainMod, j, workspace, 12"
-        "$mainMod, k, workspace, 13"
-        "$mainMod, l, workspace, 14"
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
@@ -127,10 +146,6 @@
         "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
         "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-        "$mainMod SHIFT, h, movetoworkspacesilent, 11"
-        "$mainMod SHIFT, j, movetoworkspacesilent, 12"
-        "$mainMod SHIFT, k, movetoworkspacesilent, 13"
-        "$mainMod SHIFT, l, movetoworkspacesilent, 14"
         "$mainMod, minus, movetoworkspace, special:scratchpad"
         # Move window with mainMod_SHIFT + arrow keys
         "$mainMod SHIFT, left, movewindow, l"
@@ -141,7 +156,18 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_up, workspace, r+1"
         "$mainMod, mouse_down, workspace, r-1"
-      ];
+      ]
+      ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+        "$mainMod, h, workspace, 11"
+        "$mainMod, j, workspace, 12"
+        "$mainMod, k, workspace, 13"
+        "$mainMod, l, workspace, 14"
+        # Move to active window workspaces, for HJKL workspaces with SUPER + SHIFT + [h,j,k,l]
+        "$mainMod SHIFT, h, movetoworkspacesilent, 11"
+        "$mainMod SHIFT, j, movetoworkspacesilent, 12"
+        "$mainMod SHIFT, k, movetoworkspacesilent, 13"
+        "$mainMod SHIFT, l, movetoworkspacesilent, 14"
+      ]);
       bindm = [ 
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
@@ -213,7 +239,12 @@
         "workspace 6,class:^(.gimp-2.10-wrapped_)"
         "workspace 7,class:^(evince)"
         "workspace 7,class:^(info.febvre.Komikku)"
+        "workspace 7,class:^(Upscayl)"
         "workspace 8,class:^(obsidian)"
+        "workspace 9,class:^(Waydroid)"
+        "stayfocused,class:^(Waydroid)"
+        "forceinput,class:^(Waydroid)"
+        
       ];
       layerrule = [
         "noanim,rofi"

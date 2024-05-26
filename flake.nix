@@ -75,10 +75,10 @@
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
     };
-    vesktop.url = "github:NixOS/nixpkgs/5607766da72127e8daa6bc58edddf8e4b9506986";
     shadower = {
       url = "github:n3oney/shadower";
     };
+    vesktop.url = "github:NixOS/nixpkgs/5607766da72127e8daa6bc58edddf8e4b9506986";
     wayfreeze = {
       url = "github:jappie3/wayfreeze";
     };
@@ -89,10 +89,10 @@
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
     };
-    impermanence = {
-      url = "github:nix-community/disko";
-    };
     disko = {
+      url = "github:raidenovich/disko";
+    };
+    impermanence = {
       url = "github:nix-community/impermanence";
     };
   };
@@ -100,6 +100,7 @@
   outputs = inputs @ {
     nixpkgs,
     home-manager,
+    disko,
     ...
   }: {
     nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
@@ -109,6 +110,10 @@
         ./machines/ShadowMoses
         ./modules
         home-manager.nixosModules.home-manager
+        # (import ./disko.nix {
+        #    device = "/dev/nvme0n1";
+        #  })
+        # disko.nixosModules.disko
       ];
     };
     nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
@@ -118,6 +123,11 @@
         ./machines/Tanker
         ./modules
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        (import ./disko.nix {
+           device = "/dev/nvme0n1";
+         })
+        ./modules/core/other/impermanence.nix
       ];
     };
     nixosConfigurations.BigShell = nixpkgs.lib.nixosSystem {
@@ -127,6 +137,11 @@
         ./machines/BigShell
         ./modules
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        (import ./disko.nix {
+           device = "/dev/nvme0n1";
+         })
+        ./modules/core/other/impermanence.nix
       ];
     };
     nixosConfigurations.jd = nixpkgs.lib.nixosSystem {

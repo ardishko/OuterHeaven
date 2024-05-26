@@ -1,4 +1,7 @@
 { inputs, pkgs, ... }:
+# let
+#   ${primary-monitor} = (lib.list.optionals (hostname == "ShadowMoses") "DP-2")
+# in  
 {
   home.packages = [ inputs.hyprlock.packages.${pkgs.system}.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
@@ -11,7 +14,7 @@ general {
 
 background {
     monitor = DP-2
-    path = ${../../../images/wallpapers/y0lock.png}
+    path = ${../../../images/wallpapers/idolGoro.jpg}
     color = rgba(20, 20, 20, 0.9)
     blur_passes = 5 # 0 disables blurring
     blur_size = 1
@@ -35,7 +38,7 @@ background {
 }
 
 label {
-    monitor =
+    monitor = DP-2
     text = $TIME
     color = rgba(166, 173, 200, 1.0)
     font_family = Iosevka Nerd Font
@@ -48,7 +51,7 @@ label {
 
 label {
     monitor = DP-2
-    text = ... Welcome back.
+    text = Got ya now, Kiryu-chan!
     color = rgba(166, 173, 200, 1.0)
     font_size = 21
     font_family = Iosevka Nerd Font
@@ -59,7 +62,7 @@ label {
   }
 label {
     monitor = HDMI-A-1
-    text = You'll walk again, soon...
+    text = PEOPLE'S DREAMS... HAVE NO END!!
     color = rgba(166, 173, 200, 1.0)
     font_size = 21
     font_family = Iosevka Nerd Font
@@ -95,7 +98,6 @@ input-field {
     halign = center
     valign = center
   }
-
 '';
 
 }

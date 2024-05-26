@@ -88,7 +88,6 @@
     unzip
     bless
     monero-gui
-    # heroic
     bottles-unwrapped
     woeusb-ng
     signal-desktop-beta
@@ -141,7 +140,6 @@
     satty
     nitch
     komikku
-    gtklock
     rmg
     gnome-text-editor
     bleachbit
@@ -182,6 +180,10 @@
     grim
     slurp
     gnome.file-roller
+    zoom-us
+    heroic
+    upscayl
+
     # emu
     ryujinx
     cemu
