@@ -15,6 +15,11 @@
   fileSystems."/" =
     { /* device = "/dev/disk/by-uuid/93d6988a-cb1d-40ae-b4d3-7deb6a6254a9"; */
       device = "tmpfs";
+      options = [
+        "relatime"
+        "mode=755"
+        "size=6G"
+      ];
       fsType = "tmpfs";
       neededForBoot = true;
     };

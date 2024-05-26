@@ -36,6 +36,7 @@
           ".local/share/komikku"
           ".local/share/anime-games-launcher"
           ".local/share/gvfs-metadata"
+          ".local/share/Terraria"
           ".ssh"
           ".klei"
           ".thunderbird"
