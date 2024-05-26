@@ -19,6 +19,10 @@ OuterHeaven/
 
 The general philosophy is this configuration is simplicity and modularity. Mostly so people I tell about NixOS can look at my configuration and understand it.
 
+# How 2 Install?
+
+run `sudo nix --extra-experimental-features 'nix-command flakes' run 'github:raidenovich/disko#disko-install' -- --flake 'github:raidenovich/OuterHeaven#<machine-name>' --disk main /dev/<device-name>` in the nixos installer.
+
 # Versioning
 
 The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config such as changes to config structre.
