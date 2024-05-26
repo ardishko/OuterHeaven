@@ -21,6 +21,7 @@
   #   { device = "/dev/disk/by-uuid/C0B0-3C8B";
   #     fsType = "vfat";
   #   };
+  fileSystems."/persist".neededForBoot = true;
 
   swapDevices = [ ];
 

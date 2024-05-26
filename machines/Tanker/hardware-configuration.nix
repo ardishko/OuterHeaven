@@ -1,0 +1,5 @@
+{ ... }:
+{
+
+fileSystems."/persist".neededForBoot = true;
+}
