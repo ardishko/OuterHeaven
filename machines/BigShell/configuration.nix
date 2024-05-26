@@ -39,7 +39,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
-    shell = pkgs.nushell
+    shell = pkgs.nushell;
   };
 
   # This value determines the NixOS release from which the default
