@@ -93,9 +93,9 @@
               mountpoint = "/tmp";
               options.mountpoint = "legacy";
             };
-            mnt = {
+            disks = {
               type = "zfs_fs";
-              mountpoint = "/mnt";
+              mountpoint = "/disks";
               options.mountpoint = "legacy";
             };
           };
