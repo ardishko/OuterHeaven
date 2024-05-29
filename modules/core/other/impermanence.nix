@@ -1,6 +1,7 @@
 { inputs, username, ... }:
 {
   imports = [ inputs.impermanence.nixosModule ];
+  boot.tmp.cleanOnBoot = true;
   environment.persistence = {
     "/persist" = {
       files = [

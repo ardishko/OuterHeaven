@@ -47,13 +47,12 @@
         "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.arrpc}/bin/arrpc"
-        "${pkgs.noisetorch}/bin/noisetorch -i"
         "${pkgs.premid}/bin/premid --in-process-gpu"
-
       ] 
       ++ (lib.lists.optionals (hostname == "ShadowMoses") [
           "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
           "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+          "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
         ]) 
       ++ (lib.lists.optionals (hostname == "BigShell") [
           "${pkgs.swaybg}/bin/swaybg --o eDP-2 -i ${../../../images/wallpapers/berserk-catppuccin.png}"

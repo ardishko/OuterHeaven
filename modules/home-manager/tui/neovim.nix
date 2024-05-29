@@ -74,6 +74,7 @@
           };
             type = "text";
             val = [
+        "                                                "
         " ███▄    █  ██▓▒██   ██▒ ██▒   █▓ ██▓ ███▄ ▄███▓"
         " ██ ▀█   █ ▓██▒▒▒ █ █ ▒░▓██░   █▒▓██▒▓██▒▀█▀ ██▒"
         "▓██  ▀█ ██▒▒██▒░░  █   ░ ▓██  █▒░▒██▒▓██    ▓██░"
@@ -83,7 +84,7 @@
         "░ ░░   ░ ▒░ ▒ ░░░   ░▒ ░   ░ ░░   ▒ ░░  ░      ░"
         "   ░   ░ ░  ▒ ░ ░    ░       ░░   ▒ ░░      ░   "
         "         ░  ░   ░    ░        ░   ░         ░   "
-        "                             ░                  "
+        "                                                "
             ];
           }
         ];
@@ -112,6 +113,8 @@
       neorg.enable = true;
       multicursors.enable = true;
       neocord.enable = true;
+      noice.enable = true;
+      oil.enable = true;
       obsidian = {
         enable = true;
         dir = "/mnt/EEEEEEEEEEE/obsidian";
