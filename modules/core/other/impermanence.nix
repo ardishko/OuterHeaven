@@ -14,7 +14,7 @@
         "/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
         # persist /mnt so that all the mounted drives don't get wiped upon reboot
-        "/mnt"
+        # "/mnt"
       ];
       users.${username} = {
         directories = [
