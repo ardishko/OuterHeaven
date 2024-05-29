@@ -119,6 +119,7 @@
       #   enable = true;
       #   dir = "/mnt/EEEEEEEEEEE/obsidian";
       # };
+      # hello?
     };
     globals = {
         mapleader = " ";
