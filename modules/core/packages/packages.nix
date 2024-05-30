@@ -13,9 +13,11 @@
     gamescope
     lshw
     f3d
+  ] 
+  ++ (lib.lists.optionals (hostname == "ShadowMoses") [
     davinci-resolve
-    gpu-burn
-  ];
+  ]);
+
   services.flatpak = {
     enable = true;
     packages = [

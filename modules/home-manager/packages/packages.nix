@@ -17,7 +17,7 @@
     # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.itch
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.handbrake
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.valent
-    inputs.nix-alien.packages.${pkgs.system}.nix-alien
+    # inputs.nix-alien.packages.${pkgs.system}.nix-alien
     inputs.shadower.packages.${pkgs.system}.shadower
     inputs.watershot.packages.${pkgs.system}.default
     inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
@@ -149,7 +149,7 @@
     ventoy-full
     ripcord
     r2modman
-    nomachine-client
+    # nomachine-client
     qutebrowser
     nheko
     cinnamon.nemo-with-extensions
