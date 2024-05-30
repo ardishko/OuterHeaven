@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
  home.packages = with pkgs; [
-    (inputs.vesktop.legacyPackages."x86_64-linux".vesktop.overrideAttrs {
+    (pkgs.vesktop.overrideAttrs {
       desktopItems = [
         (makeDesktopItem {
           name = "vesktop";
