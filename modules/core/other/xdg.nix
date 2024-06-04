@@ -3,5 +3,7 @@
 
 # It looks lonely here... Maybe one day I'll put something here.
 # Someday.
-
+  xdg.portal = {
+    enable = true;
+  };
 }
