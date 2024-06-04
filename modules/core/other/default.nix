@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, hostname, ... }:
 {
   imports = [
     ./dconf.nix
@@ -7,5 +7,8 @@
     ./nixpkgs
     ./polkit.nix
     ./xdg.nix
-  ];
+  ]
+  ++ (lib.lists.optionals (hostname == "Tanker") [
+    ./jovian.nix
+  ]);
 }

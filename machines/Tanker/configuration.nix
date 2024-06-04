@@ -8,7 +8,6 @@
   outputs,
   ...
 }: {
-  imports = [ inputs.jovian-nixos.nixosModules.default ];
   # Define your hostname.
   networking.hostName = "Tanker";
   networking.hostId = "6a260131"; # required for zfs
@@ -43,15 +42,7 @@
     ];
     shell = pkgs.nushell;
   };
-    
-  # Jovian NixOS options, specific to the deck
-  jovian.steam = {
-    enable = true;
-    autoStart = true;
-    user = "raiden";
-    desktopSession = "plasma";
-  };
-
+  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
