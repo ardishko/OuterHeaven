@@ -130,7 +130,7 @@
     firewalld-gui
     element-desktop
     gtkcord4
-    wine-staging
+    wine
     nmap
     ntfs3g
     revolt-desktop
@@ -183,6 +183,7 @@
     zoom-us
     heroic
     upscayl
+    wl-gammarelay-rs
 
     # emu
     ryujinx

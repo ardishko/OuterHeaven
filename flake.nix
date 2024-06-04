@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -118,7 +118,7 @@
     };
     nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = let username = "raikov"; hostname = "Tanker"; in {inherit inputs username hostname;};
+      specialArgs = let username = "raiden"; hostname = "Tanker"; in {inherit inputs username hostname;};
       modules = [
         ./machines/Tanker
         ./modules

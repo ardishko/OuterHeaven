@@ -193,7 +193,6 @@
         "col.active_border" = "rgb(99D1DB)";
         layout = "dwindle";
         resize_on_border = true;
-        no_cursor_warps = true;
       };
       decoration = {
         rounding = 5;

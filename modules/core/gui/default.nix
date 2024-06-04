@@ -1,3 +1,4 @@
+{ lib, hostname, ... }:
 {
   imports = [
     ./alvr.nix
@@ -10,5 +11,9 @@
     ./opengl.nix
     ./steam.nix
     ./sway.nix
-  ];
+  ]
+   ++ (lib.lists.optionals (hostname == "Tanker") [
+     ./gnome.nix
+     ./kde6.nix
+   ]);
 }
