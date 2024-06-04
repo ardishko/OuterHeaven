@@ -8,6 +8,7 @@
   outputs,
   ...
 }: {
+  imports = [ inputs.jovian-nixos.nixosModules.default ];
   # Define your hostname.
   networking.hostName = "Tanker";
   networking.hostId = "6a260131"; # required for zfs
