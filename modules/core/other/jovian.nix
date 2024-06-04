@@ -6,6 +6,6 @@
     enable = true;
     autoStart = true;
     user = "${username}";
-    desktopSession = "plasma";
+    desktopSession = "gamescope-wayland";
   };
 }

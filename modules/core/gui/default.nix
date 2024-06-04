@@ -8,6 +8,7 @@
     # ./kde6.nix
     ./opengl.nix
     ./steam.nix
+    ./xdg.nix
   ]
   ++ (lib.lists.optionals (hostname == "ShadowMoses") [
     ./hyprland.nix
