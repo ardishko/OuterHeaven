@@ -78,7 +78,7 @@
     shadower = {
       url = "github:n3oney/shadower";
     };
-    vesktop.url = "github:NixOS/nixpkgs/5607766da72127e8daa6bc58edddf8e4b9506986";
+    vesktop.url = "github:NixOS/nixpkgs/755b915a158c9d588f08e9b08da9f7f3422070cc";
     wayfreeze = {
       url = "github:jappie3/wayfreeze";
     };
@@ -94,6 +94,12 @@
     };
     impermanence = {
       url = "github:nix-community/impermanence";
+    };
+    tag-studio = {
+      url = "github:TagStudioDev/TagStudio";
+    };
+    ags = {
+      url = "github:Aylur/ags";
     };
   };
 

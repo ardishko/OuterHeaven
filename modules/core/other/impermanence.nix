@@ -1,4 +1,4 @@
-{ inputs, username, ... }:
+{ inputs, username, lib, ... }:
 {
   imports = [ inputs.impermanence.nixosModule ];
   boot.tmp.cleanOnBoot = true;
@@ -61,5 +61,30 @@
         ];
       };
     };
+  };
+    # set persist fs as neededForBoot
+  fileSystems = {
+    "/" = lib.mkForce {
+        device = "tmpfs";
+        fsType = "tmpfs";
+        neededForBoot = true;
+        options = [
+          "defaults"
+          "size=5G"
+          "mode=755"
+        ];
+      };
+    "/home/${username}" = lib.mkForce {
+        device = "tmpfs";
+        fsType = "tmpfs";
+        neededForBoot = true;
+        options = [
+          "defaults"
+          "size=5G"
+          "mode=777"
+        ];
+      };
+    "/persist".neededForBoot = true;
+    "/persist/cache".neededForBoot = true;
   };
 }

@@ -9,18 +9,17 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { 
-      device = "tmpfs";
-      options = [
-        "relatime"
-        "mode=755"
-        "size=6G"
-      ];
-      fsType = "tmpfs";
-      neededForBoot = true;
-    };
-  fileSystems."/persist".neededForBoot = true;
+  # fileSystems."/" =
+  #   { 
+  #     device = "tmpfs";
+  #     options = [
+  #       "relatime"
+  #       "mode=755"
+  #       "size=6G"
+  #     ];
+  #     fsType = "tmpfs";
+  #     neededForBoot = true;
+  #   };
 
   swapDevices = [ ];
 

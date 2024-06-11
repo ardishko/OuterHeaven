@@ -21,6 +21,7 @@
     inputs.shadower.packages.${pkgs.system}.shadower
     inputs.watershot.packages.${pkgs.system}.default
     inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
+    # inputs.tag-studio.packages.${pkgs.system}.default
     # Over
     wget
     lutris
@@ -130,7 +131,7 @@
     firewalld-gui
     element-desktop
     gtkcord4
-    wine
+    wine-staging
     nmap
     ntfs3g
     revolt-desktop
@@ -184,6 +185,7 @@
     heroic
     upscayl
     wl-gammarelay-rs
+    lmms
 
     # emu
     ryujinx

@@ -21,10 +21,7 @@ The general philosophy is this configuration is simplicity and modularity. Mostl
 
 # How 2 Install?
 
-run 
-```console
-sudo nix --extra-experimental-features 'nix-command flakes' run 'github:raidenovich/disko#disko-install' -- --flake 'github:raidenovich/OuterHeaven#<machine-name>' --disk main /dev/<device-name>
-```
+(This part is WIP, I have not been able to reproduce my configuration on my systems yet with disko + impermanence.)
 
 in the nixos installer.
 
