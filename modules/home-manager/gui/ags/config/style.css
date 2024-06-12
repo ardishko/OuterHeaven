@@ -19,12 +19,23 @@ button:hover {
 }
 
 label {
+    font-size: 13px;
     font-weight: bold;
 }
-
-.workspaces button.focused {
-    border-bottom: 3px solid @theme_selected_bg_color;
+.workspaces {
+	padding: 3px;
 }
+.workspaces button.focused {
+	background-color: @theme_selected_bg_color;
+	color: @white;
+}
+
+/* slider { */
+/* 	display: none; */
+/* } */
+/* slider:hover { */
+/* 	display: block; */
+/* } */
 
 .client-title {
     color: @theme_selected_bg_color;
