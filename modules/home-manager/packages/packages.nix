@@ -13,13 +13,11 @@
     inputs.nh.packages.${pkgs.system}.default
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
-    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mullvad-vpn
     # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.itch
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.handbrake
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.valent
     # inputs.nix-alien.packages.${pkgs.system}.nix-alien
     inputs.shadower.packages.${pkgs.system}.shadower
-    inputs.watershot.packages.${pkgs.system}.default
     inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
     # inputs.tag-studio.packages.${pkgs.system}.default
     # Over
@@ -186,6 +184,8 @@
     upscayl
     wl-gammarelay-rs
     lmms
+    mullvad-vpn
+    impression
 
     # emu
     ryujinx

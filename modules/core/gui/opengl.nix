@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   hardware = {
     # Enable OpenGL and Vulkan stuff
-    opengl = {
+    opengl = lib.mkForce {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
@@ -11,5 +11,13 @@
         rocm-opencl-runtime
       ];
     };
+    # graphics = {
+    #   enable = true;
+    #   enable32Bit = true;
+    #   extraPackages = with pkgs; [
+    #     rocm-opencl-icd
+    #     rocm-opencl-runtime
+    #   ];
+    # };
   };
 }

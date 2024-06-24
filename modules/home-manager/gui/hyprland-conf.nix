@@ -37,7 +37,7 @@
         "hyprctl setcursor macOS-BigSur 24"
         "discover-overlay"
         "flameshot"
-        "sleep 0.1 && ${pkgs.ags}/bin/ags"
+        "${pkgs.ags}/bin/ags"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -240,6 +240,7 @@
         "workspace 7,class:^(Upscayl)"
         "workspace 8,class:^(obsidian)"
         "workspace 9,class:^(Waydroid)"
+        "workspace 10,class:^(steam_app*)"
         "stayfocused,class:^(Waydroid)"
         "forceinput,class:^(Waydroid)"
         
