@@ -9,18 +9,6 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  # fileSystems."/" =
-  #   { 
-  #     device = "tmpfs";
-  #     options = [
-  #       "relatime"
-  #       "mode=755"
-  #       "size=6G"
-  #     ];
-  #     fsType = "tmpfs";
-  #     neededForBoot = true;
-  #   };
-
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
