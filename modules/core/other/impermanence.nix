@@ -22,6 +22,7 @@
           ".config/dolphin-emu"
           ".config/melonDS"
           ".config/spotify"
+          ".config/ags"
           ".local/share/duckstation"
           ".local/share/Steam"
           ".local/share/vinegar"
