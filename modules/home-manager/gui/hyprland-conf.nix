@@ -37,7 +37,7 @@
         "hyprctl setcursor macOS-BigSur 24"
         "discover-overlay"
         "flameshot"
-        "${pkgs.ags}/bin/ags"
+        "sleep 0.5 && ags"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"

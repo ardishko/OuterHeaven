@@ -4,9 +4,11 @@ const mpris = await Service.import("mpris")
 const audio = await Service.import("audio")
 const battery = await Service.import("battery")
 const systemtray = await Service.import("systemtray")
+const network = await Service.import('network')
+const bluetooth = await Service.import('bluetooth')
 
 const date = Variable("", {
-	poll: [1000, 'date "+%H:%M:%S %b %e, %A"'],
+	poll: [1000, 'date "+%b %e, %A %H:%M:%S"'],
 })
 
 // widgets can be only assigned as a child in one container
@@ -52,6 +54,29 @@ function Clock() {
     })
 }
 
+const WifiIndicator = () => Widget.Box({
+    children: [
+        Widget.Icon({
+            icon: network.wifi.bind('icon_name'),
+        }),
+        Widget.Label({
+            label: network.wifi.bind('ssid')
+                .as(ssid => ssid || 'Unknown'),
+        }),
+    ],
+})
+
+const WiredIndicator = () => Widget.Icon({
+    icon: network.wired.bind('icon_name'),
+})
+
+const NetworkIndicator = () => Widget.Stack({
+    children: {
+        wifi: WifiIndicator(),
+        wired: WiredIndicator(),
+    },
+    shown: network.bind('primary').as(p => p || 'wifi'),
+})
 
 // we don't need dunst or any other notification daemon
 // because the Notifications module is a notification daemon itself
@@ -76,7 +101,7 @@ function Media() {
     const label = Utils.watch("", mpris, "player-changed", () => {
         if (mpris.players[0]) {
             const { track_artists, track_title } = mpris.players[0]
-            return `${track_artists.join(", ")} - ${track_title}`
+            return ` `
         } else {
             return "Nothing is playing"
         }
@@ -163,6 +188,33 @@ function SysTray() {
     })
 }
 
+// const connectedList = Widget.Box({
+//     setup: self => self.hook(bluetooth, self => {
+//         self.children = bluetooth.connected_devices
+//             .map(({ icon_name, name }) => Widget.Box([
+//                 Widget.Icon(icon_name + '-symbolic'),
+//                 Widget.Label(name),
+//             ]));
+//
+//         self.visible = bluetooth.connected_devices.length > 0;
+//     }, 'notify::connected-devices'),
+// })
+//
+// const indicator = Widget.Icon({
+//     icon: bluetooth.bind('enabled').as(on =>
+//         `bluetooth-${on ? 'active' : 'disabled'}-symbolic`),
+// })
+
+
+function PowerButton() {
+    return Widget.Button({
+        child: Widget.Label('襤'),
+	onClicked: () => Utils.exec('wlogout'),
+    })
+}
+
+// The power button depends on wlogout to be installed, but I am planning to include it all in the
+// ags config down the line. I'm just unfamiliar with it as of now.
 
 // layout of the bar
 function Left() {
@@ -170,7 +222,6 @@ function Left() {
         spacing: 8,
         children: [
             Workspaces(),
-            ClientTitle(),
         ],
     })
 }
@@ -179,8 +230,8 @@ function Center() {
     return Widget.Box({
         spacing: 8,
         children: [
-            Media(),
-        ],
+           ClientTitle(),
+	]
     })
 }
 
@@ -190,10 +241,13 @@ function Right() {
         spacing: 8,
         children: [
             Notification(),
+	    Media(),
             Volume(),
             BatteryLabel(),
+	    NetworkIndicator(),
             SysTray(),
             Clock(),
+	    PowerButton(),
         ],
     })
 }

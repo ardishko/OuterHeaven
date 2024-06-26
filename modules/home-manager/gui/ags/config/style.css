@@ -15,7 +15,7 @@ button:active {
 }
 
 button:hover {
-    border-bottom: 3px solid @theme_fg_color;
+    background-color: @theme_bg_color;
 }
 
 label {
@@ -27,15 +27,7 @@ label {
 }
 .workspaces button.focused {
 	background-color: @theme_selected_bg_color;
-	color: @white;
 }
-
-/* slider { */
-/* 	display: none; */
-/* } */
-/* slider:hover { */
-/* 	display: block; */
-/* } */
 
 .client-title {
     color: @theme_selected_bg_color;
