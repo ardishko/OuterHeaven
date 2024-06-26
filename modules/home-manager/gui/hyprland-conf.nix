@@ -55,7 +55,7 @@
           "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
         ]) 
       ++ (lib.lists.optionals (hostname == "BigShell") [
-          "${pkgs.swaybg}/bin/swaybg --o eDP-2 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
+          "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
       ]);
       workspace = if (hostname == "ShadowMoses") then [
         "1,monitor:DP-2"

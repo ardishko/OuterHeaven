@@ -45,6 +45,7 @@
           ".var"
           ".steam"
           "Backups"
+          "Downloads"
           "Desktop"
           "Documents"
           "Extracto"

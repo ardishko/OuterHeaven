@@ -186,6 +186,7 @@
     lmms
     mullvad-vpn
     impression
+    ungoogled-chromium
 
     # emu
     ryujinx

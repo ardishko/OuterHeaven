@@ -17,7 +17,7 @@
     config = {
       allowUnfree = true;
       packageOverrides = pkgs: {
-        steam = pkgs.steam.override {
+        steam = (pkgs.steam.override {
           extraPkgs = pkgs:
             with pkgs; [
               xorg.libXcursor
@@ -31,8 +31,19 @@
               libkrb5
               keyutils
             ];
-          };
-        };
+          });
+        #   .overrideAttrs (old: {
+        #     desktopItems = [
+        #       (pkgs.makeDesktopItem {
+        #         name = "steam";
+        #         desktopName = "Steam (mullvad-exclude)";
+        #         exec = "mullvad-exclude steam";
+        #         icon = "steam";
+        #     })
+        #   ];  
+        # });
+        # the custom desktop entry is in modules/home-manager/xdg.nix 
+      };
     };
   };
   nixpkgs.overlays = [
