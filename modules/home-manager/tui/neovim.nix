@@ -114,10 +114,6 @@
       multicursors.enable = true;
       neocord.enable = true;
       oil.enable = true;
-      obsidian = {
-        enable = true;
-        dir = "/disks/EEEEEEEEEEE/obsidian";
-      };
     };
     globals = {
         mapleader = " ";

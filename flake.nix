@@ -101,6 +101,9 @@
     ags = {
       url = "github:Aylur/ags";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+    };
   };
 
   outputs = inputs @ {
@@ -115,6 +118,7 @@
       modules = [
         ./machines/ShadowMoses
         ./modules
+        ./secrets
         home-manager.nixosModules.home-manager
         # (import ./disko.nix {
         #    device = "/dev/nvme0n1";
@@ -128,6 +132,7 @@
       modules = [
         ./machines/Tanker
         ./modules
+        ./secrets
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         (import ./disko.nix {
@@ -142,6 +147,7 @@
       modules = [
         ./machines/BigShell
         ./modules
+        ./secrets
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         (import ./disko.nix {
