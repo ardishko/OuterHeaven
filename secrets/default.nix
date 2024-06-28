@@ -11,8 +11,8 @@
 
     # Begin transmission of secrets
 
-    # secrets = {
-    #   user-pass = { };
-    # };
+    secrets = {
+      user-pass = { };
+    };
   };
 }
