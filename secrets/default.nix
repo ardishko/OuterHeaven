@@ -7,7 +7,7 @@
     defaultSopsFile = ./secrets.yaml;
     defaultSopsFormat = "yaml";
 
-    age.keyFile = "/home/${username}/S.O.P.S/keys.txt";
+    age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
 
     # Begin transmission of secrets
 
