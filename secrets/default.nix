@@ -12,7 +12,9 @@
     # Begin transmission of secrets
 
     secrets = {
-      user-pass = { };
+      user-pass-dir = { };
+      root-pass-dir = { };
+      cloudflare = { };
     };
   };
 }
