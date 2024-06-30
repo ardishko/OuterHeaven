@@ -1,7 +1,7 @@
-{ pkgs, config, boot, ... }:
+{ pkgs, config, boot, hostname, ... }:
 {
   boot = {
-    loader = {
+    loader = if (hostname == "ShadowMoses") then {
       # grub = {
       #   enable = true;
       #   efiSupport = true;
@@ -27,6 +27,30 @@
         efi = {
           canTouchEfiVariables = true;
         };
-    };
+      } else
+      if (hostname == "BigShell") then {
+        grub = {
+          enable = true;
+          efiSupport = true;
+          useOSProber = true;
+          devices = [ "nodev" ];
+        };
+        systemd-boot.enable = false;
+        efi = {
+          canTouchEfiVariables = true;
+        };
+      } else
+      if (hostname == "Tanker") then {
+        grub = {
+          enable = true;
+          efiSupport = true;
+          useOSProber = true;
+          devices = [ "nodev" ];
+        };
+        systemd-boot.enable = false;
+        efi = {
+          canTouchEfiVariables = true;
+        };
+      } else {};
   };
 }
