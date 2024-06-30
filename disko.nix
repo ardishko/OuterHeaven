@@ -1,9 +1,9 @@
-{ device ? throw "Set this to your disk device, e.g. /dev/sda", ... }:
+{ device ? throw "Set this to your disk device, e.g. /dev/sda", hostname, ... }:
 {
   disko = {
     devices = {
       disk = {
-        main = {
+        main = if (hostname == "ShadowMoses") then {
           inherit device;
           type = "disk";
           content = {
@@ -33,8 +33,7 @@
               };
             };
           };
-        };
-        swapful = {
+        } else {
           inherit device;
           type = "disk";
           content = {
