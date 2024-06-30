@@ -95,10 +95,10 @@
   };
   users.users = {
     ${username} = {
-      hashedPasswordFile = /persist/passwords/user;
+      hashedPasswordFile = "/persist/passwords/user";
     };
     root = {
-      hashedPasswordFile = /persist/passwords/root;
+      hashedPasswordFile = "/persist/passwords/root";
     };
   };
 }
