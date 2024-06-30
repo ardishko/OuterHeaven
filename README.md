@@ -30,11 +30,12 @@ in the nixos installer.
 
 1 - Import sops keys
 
-2 - Create a user password
+2 - Create a user [password with sops](https://github.com/Mic92/sops-nix?tab=readme-ov-file#setting-a-users-password)
 
-3 - Create a root password
+3 - Create a root [password with sops](https://github.com/Mic92/sops-nix?tab=readme-ov-file#setting-a-users-password)
 
 And with that, you'll get this config on a brand new computer! Hopefully.
+
 # Versioning
 
 The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config such as changes to config structre.
