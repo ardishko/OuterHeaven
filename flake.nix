@@ -122,6 +122,7 @@
         home-manager.nixosModules.home-manager
         # (import ./disko.nix {
         #    device = "/dev/nvme0n1";
+            # hostname = "ShadowMoses";
         #  })
         # disko.nixosModules.disko
       ];
@@ -136,7 +137,8 @@
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         (import ./disko.nix {
-           device = "/dev/nvme0n1";
+          device = "/dev/nvme0n1";
+          hostname = "Tanker"
          })
         ./modules/core/other/impermanence.nix
       ];
@@ -151,7 +153,8 @@
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         (import ./disko.nix {
-           device = "/dev/nvme0n1";
+          device = "/dev/nvme0n1";
+          hostname = "BigShell";
          })
         ./modules/core/other/impermanence.nix
       ];
