@@ -1,4 +1,4 @@
-{ inputs, username, lib, config, ... }:
+{ inputs, username, lib, ... }:
 {
   imports = [ inputs.impermanence.nixosModule ];
   boot.tmp.cleanOnBoot = true;
@@ -96,6 +96,7 @@
   users.users = {
     ${username} = {
       hashedPasswordFile = "/persist/passwords/user";
+      initialPassword = "nutsitch";
     };
     root = {
       hashedPasswordFile = "/persist/passwords/root";

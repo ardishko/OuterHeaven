@@ -72,7 +72,7 @@
           };
         };
       };
-      zpool =  {
+      zpool = {
         zroot = {
           type = "zpool";
           rootFsOptions = {

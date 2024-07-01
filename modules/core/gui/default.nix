@@ -18,4 +18,7 @@
     ./hyprland.nix
     ./gdm.nix
   ]);
+  ++ (lib.lists.optionals (hostname == "Tanker") [
+    ./gnome.nix
+  ]);
 }

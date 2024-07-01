@@ -39,7 +39,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
-    initialPassword = "nutsitch";
     shell = pkgs.nushell;
   };
 
