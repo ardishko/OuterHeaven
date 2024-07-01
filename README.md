@@ -21,9 +21,18 @@ The general philosophy is this configuration is simplicity and modularity. Mostl
 
 # How 2 Install?
 
-(This part is WIP, I have not been able to reproduce my configuration on my systems yet with disko + impermanence.)
+First, partition your drives with disko with the following commands
+```console
+sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-community/disko -- --mode zap_create_mount --flake github:raidenovich/OuterHeaven
+```
+(Or preferably use the minimal install, which has the same disko file anyways)
 
-in the nixos installer.
+Secondly, run the `nixos-install` command.
+```console
+sudo nixos-install --flake github:raidenovich/OuterHeaven 
+```
+
+My personal advice is to clone the git repo and not remotely build as sometimes it can disconnect from your wifi network while building. (Don't ask me why, I don't know)
 
 # What to do post-install? (note for self)
 (In order)
