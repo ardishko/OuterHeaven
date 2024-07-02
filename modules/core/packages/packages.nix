@@ -3,6 +3,7 @@
   inputs,
   lib,
   options,
+  hostname,
   ...
 }: {
   imports = [ 
@@ -16,6 +17,11 @@
   ] 
   ++ (lib.lists.optionals (hostname == "ShadowMoses") [
     davinci-resolve
+    hello
+  ])
+  ++ (lib.lists.optionals (hostname == "Tanker") [
+    steamdeck-firmware
+    jupiter-dock-updater-bin
   ]);
 
   services.flatpak = {
