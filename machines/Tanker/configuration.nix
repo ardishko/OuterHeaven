@@ -41,7 +41,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
-    initialPassword = "mynuts";
     shell = pkgs.nushell;
   };
   
