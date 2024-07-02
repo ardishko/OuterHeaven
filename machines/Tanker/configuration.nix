@@ -6,6 +6,7 @@
   pkgs, 
   inputs,
   outputs,
+  username,
   ...
 }: {
   # Define your hostname.
