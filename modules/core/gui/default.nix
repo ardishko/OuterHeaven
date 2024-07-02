@@ -17,7 +17,7 @@
   ++ (lib.lists.optionals (hostname == "BigShell") [
     ./hyprland.nix
     ./gdm.nix
-  ]);
+  ])
   ++ (lib.lists.optionals (hostname == "Tanker") [
     ./gnome.nix
   ]);
