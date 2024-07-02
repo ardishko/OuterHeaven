@@ -13,5 +13,6 @@
       steamdeck = {
         enable = true;
       };
+    };
   };
 }
