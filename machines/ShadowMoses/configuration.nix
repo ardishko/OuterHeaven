@@ -10,6 +10,7 @@
 }: {
   # Define your hostname.
   networking.hostName = "ShadowMoses";
+  networking.hostId = "69fbbf79";
 
   # Set your time zone.
   time.timeZone = "Europe/Istanbul";
