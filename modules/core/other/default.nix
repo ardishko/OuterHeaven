@@ -7,6 +7,7 @@
     ./nixpkgs
     ./polkit.nix
     ./xdg.nix
+    ./impermanence.nix
   ]
   ++ (lib.lists.optionals (hostname == "Tanker") [
     ./jovian.nix
