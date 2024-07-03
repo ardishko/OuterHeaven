@@ -35,7 +35,6 @@
           ".config/nuclearthrone"
           ".local/share/nheko"
           ".local/share/lutris"
-          ".local/share/gvfs-metadata"
           ".local/share/Danganronpa2"
           ".local/share/StardewValley"
           ".local/share/duckstation"
