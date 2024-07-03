@@ -2,12 +2,12 @@
 {
   boot = {
     loader = if (hostname == "ShadowMoses") then {
-      # grub = {
-      #   enable = true;
-      #   efiSupport = true;
-      #   useOSProber = true;
-      #   devices = [ "nodev" ];
-      # };
+      grub = {
+         enable = true;
+         efiSupport = true;
+         useOSProber = true;
+         devices = [ "nodev" ];
+      };
       # grub = {
       #   enable = true;
       #   devices = [ "nodev" ];
@@ -23,7 +23,7 @@
         #   + "/src/catppuccin-frappe-grub-theme";
         # };
       # };
-        systemd-boot.enable = true;
+        systemd-boot.enable = false;
         efi = {
           canTouchEfiVariables = true;
         };
