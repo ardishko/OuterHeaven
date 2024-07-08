@@ -7,7 +7,7 @@
       enable = true;
       autoStart = true;
       user = "${username}";
-      desktopSession = "steam";
+      desktopSession = "dbus-run-session gnome-session --wayland";
     };
     devices = {
       steamdeck = {
