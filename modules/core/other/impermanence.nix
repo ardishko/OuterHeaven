@@ -78,6 +78,7 @@
           "Programs"
           "Public"
           "Videos"
+          "homebrew" # (this is for deckyloader)
           # TO DO: Yuzu/Sudachi dirs, vencord/vesktop declarative configuration, .config/Mullvad VPN, nemo
         ];
       };

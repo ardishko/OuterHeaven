@@ -14,5 +14,8 @@
         enable = true;
       };
     };
+    decky-loader = {
+      enable = true;
+    };
   };
 }
