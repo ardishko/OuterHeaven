@@ -113,7 +113,7 @@ packages that I plan to submit to nixpkgs in the future, some of which are refer
 
 - [ ] non-nixlang configurations in their own folder (so that the used languages percentage can be accurate)
 - [x] Multi-system configuration
-- [ ] Jovian NixOS setup
+- [x] Jovian NixOS setup
 - [x] Impermanence
 - [x] Disko (for each machine)
 
