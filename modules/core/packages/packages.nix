@@ -30,7 +30,6 @@
       "com.github.tchx84.Flatseal"
       "com.steamgriddb.SGDBoop"
       "io.mrarm.mcpelauncher"
-      "net.rpcs3.RPCS3"
       "camp.nook.nookdesktop"
       "org.freedesktop.Sdk/x86_64/23.08"
       "com.fightcade.Fightcade"

@@ -13,6 +13,7 @@
         "/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
         "/var/lib/flatpak"
+        "/var/lib/waydroid"
         # persist /mnt so that all the mounted drives don't get wiped upon reboot
         # "/mnt"
       ];
@@ -37,6 +38,8 @@
           ".config/Signal Beta"
           ".config/noisetorch"
           ".config/Mullvad VPN"
+          ".config/nheko"
+          ".config/obs-studio"
           ".local/state/wireplumber"
           ".local/share/nheko"
           ".local/share/lutris"
