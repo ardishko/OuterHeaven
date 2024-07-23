@@ -185,6 +185,8 @@
     impression
     woeusb
     reaper 
+    parabolic
+    nexusmods-app
 
     # emu
     ryujinx
