@@ -110,7 +110,7 @@
       neo-tree.enable = true;
       gitsigns.enable = true;
       image.enable = true;
-      neorg.enable = true;
+      # neorg.enable = true;
       multicursors.enable = true;
       neocord.enable = true;
       oil.enable = true;
