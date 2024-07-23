@@ -21,10 +21,10 @@ in {
       sidebarConfig = true;
     };
     colorScheme = "CatppuccinLatte";
-    enabledExtensions = with inputs.spicetify-nix.packages.${pkgs.system}.default.extensions; [
+    enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
+      adblock
       fullScreen
       skipStats
-      brokenAdblock
       volumePercentage
       history
       copyToClipboard
@@ -36,9 +36,8 @@ in {
       seekSong
       powerBar
     ];
-    enabledCustomApps = with inputs.spicetify-nix.packages.${pkgs.system}.default.apps; [
+    enabledCustomApps = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.apps; [
       nameThatTune
-      lyrics-plus
     ];
   };
 }

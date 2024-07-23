@@ -32,7 +32,7 @@
     viAlias = true;
     vimAlias = true;
     package = pkgs.neovim-unwrapped;
-    enableMan = true;
+    enableMan = false;
     clipboard.register = "unnamedplus";
     colorscheme = "catppuccin";
     colorschemes.catppuccin = {
@@ -55,13 +55,13 @@
             lua-ls.enable = true;
             tsserver.enable = true;
             # pylyzer.enable = true;
-            rust-analyzer = {
-              enable = true;
-              installCargo = false;
-              installRustc = false;
-            };
+            # rust-analyzer = {
+            #   enable = true;
+            #   installCargo = false;
+            #   installRustc = false;
+            # };
           };
-      };
+        };
       alpha = {
         enable = true;
         theme = null;

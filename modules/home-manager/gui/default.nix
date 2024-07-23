@@ -23,5 +23,6 @@
     ./waybar.nix
     ./wlogout.nix
     ./fastfetch
+    ./mangohud
   ];
 }

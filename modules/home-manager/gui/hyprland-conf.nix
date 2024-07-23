@@ -242,7 +242,7 @@
         "workspace 9,class:^(Waydroid)"
         "workspace 10,class:^(steam_app*)"
         "stayfocused,class:^(Waydroid)"
-        "forceinput,class:^(Waydroid)"
+        # "forceinput,class:^(Waydroid)"
         
       ];
       layerrule = [

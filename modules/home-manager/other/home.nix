@@ -13,14 +13,17 @@
 
   gtk = {
     enable = true;
-    font.name = "Iosevka Nerd Font 14";
+    font = { 
+      name = "Iosevka Nerd Font";
+      size = 14;
+    };
     theme = {
-      name = "Catppuccin-Frappe-Compact-Blue-Dark";
+      name = "catppuccin-frappe-sky-compact+normal";
       package = pkgs.catppuccin-gtk.override {
         variant = "frappe";
         accents = ["sky"];
-        tweaks = ["normal"];
         size = "compact";
+        tweaks = ["normal"];
       };
     };
 

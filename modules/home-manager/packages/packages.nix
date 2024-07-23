@@ -19,6 +19,8 @@
     # inputs.nix-alien.packages.${pkgs.system}.nix-alien
     inputs.shadower.packages.${pkgs.system}.shadower
     inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
+    inputs.dolphin-emu.packages.${pkgs.system}.default
+
     # inputs.tag-studio.packages.${pkgs.system}.default
     # Over
     wget
@@ -57,7 +59,6 @@
     nix-init
     waydroid
     rustdesk
-    tartube-yt-dlp
     ffmpeg
     helvum
     krita
@@ -86,9 +87,7 @@
     scanmem
     unzip
     bless
-    monero-gui
     bottles-unwrapped
-    woeusb-ng
     signal-desktop-beta
     qgnomeplatform-qt6
     qgnomeplatform
@@ -119,8 +118,6 @@
     zathura
     nwg-dock-hyprland
     gnome.pomodoro
-    ytui-music
-    youtube-tui
     qrscan
     premid
     gpu-screen-recorder
@@ -186,6 +183,8 @@
     lmms
     mullvad-vpn
     impression
+    woeusb
+    reaper 
 
     # emu
     ryujinx
@@ -193,6 +192,8 @@
     pcsx2
     duckstation
     rpcs3
+    # inputs.dolphin-emu.packages.${pkgs.system}.default
+    melonDS
 
     # Override Template
     
@@ -209,7 +210,7 @@
     (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
     (callPackage ./pkgcustom/discover-overlay/default.nix {})
     (callPackage ./pkgcustom/hyprswitch {})
-    (callPackage ./pkgcustom/video-downloader {})
+    # (callPackage ./pkgcustom/video-downloader {})
     (callPackage ./pkgcustom/vinegar {})
     # (callPackage ./pkgcustom/lime3ds {})
     # (callPackage ./pkgcustom/roblox-fd {})

@@ -61,12 +61,14 @@
           ".local/share/sleepy-launcher"
           ".local/share/gvfs-metadata"
           ".local/share/Terraria"
+          ".local/share/DaVinciResolve"
           ".ssh"
           ".klei"
           ".thunderbird"
           ".wine"
           ".var"
           ".steam"
+          ".ftba"
           ".mozilla"
           ".mullvad"
           "Backups"
@@ -123,5 +125,6 @@
     root = {
       hashedPasswordFile = "/persist/passwords/root";
     };
+    # echo abcdef | mkpasswd -s
   };
 }

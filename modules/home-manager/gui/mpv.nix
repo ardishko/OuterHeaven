@@ -2,6 +2,7 @@
 {
   programs.mpv = {
     enable = true;
+    package = pkgs.mpv;
     scripts = with pkgs.mpvScripts; [
       mpris
       seekTo

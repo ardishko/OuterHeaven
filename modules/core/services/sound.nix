@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -25,7 +25,4 @@
     #   rate = 50000;
     # };
   };
-/*
-You may need to modify these values depending on your setup.
-*/
 }

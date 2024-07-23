@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprcontrib = {
@@ -50,8 +50,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim/e58380adcddc450eb08c37760a3f282077386d19";
     };
     anime-games = {
       url = "github:ezKEa/aagl-gtk-on-nix";
@@ -104,8 +103,10 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
     };
+    dolphin-emu = {
+      url = "github:MatthewCroughan/dolphin-emu-nix";
+    };
   };
-
   outputs = inputs @ {
     nixpkgs,
     home-manager,
