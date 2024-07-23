@@ -2,9 +2,9 @@
 {
   imports = [
     ./dconf.nix
-    ./environment
-    ./nix
-    ./nixpkgs
+    ./env-vars.nix
+    ./nix.nix
+    ./nixpkgs.nix
     ./polkit.nix
     ./xdg.nix
     ./impermanence.nix

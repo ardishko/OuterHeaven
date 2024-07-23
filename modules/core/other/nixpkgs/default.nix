@@ -1,5 +1,0 @@
-{
-  imports = [
-    ./nixpkgs-config.nix
-  ];
-}
