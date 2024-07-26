@@ -40,6 +40,8 @@
           ".config/Mullvad VPN"
           ".config/nheko"
           ".config/obs-studio"
+          ".local/share/bottles"
+          ".local/state/syncthing"
           ".local/state/wireplumber"
           ".local/share/nheko"
           ".local/share/lutris"

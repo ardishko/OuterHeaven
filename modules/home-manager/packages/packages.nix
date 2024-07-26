@@ -214,6 +214,7 @@
     (callPackage ./pkgcustom/hyprswitch {})
     # (callPackage ./pkgcustom/video-downloader {})
     (callPackage ./pkgcustom/vinegar {})
+    # (callPackage ./pkgcustom/davinci-resolve {})
     # (callPackage ./pkgcustom/lime3ds {})
     # (callPackage ./pkgcustom/roblox-fd {})
     # (callPackage ../pkgcustom/nexus-mods/package.nix {})
@@ -229,6 +230,7 @@
       permittedInsecurePackages = [
         "electron-25.9.0"
         "python-2.7.18.7"
+        "python-2.7.18.8"
         "electron-19.1.9"
       ];
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["davinci-resolve"];
