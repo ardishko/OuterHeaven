@@ -187,6 +187,7 @@
     reaper 
     parabolic
     nexusmods-app
+    stremio
 
     # emu
     ryujinx

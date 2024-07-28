@@ -64,6 +64,7 @@
           ".local/share/gvfs-metadata"
           ".local/share/Terraria"
           ".local/share/DaVinciResolve"
+          ".local/share/Smart Code ltd"
           ".ssh"
           ".klei"
           ".thunderbird"
