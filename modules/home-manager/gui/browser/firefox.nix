@@ -117,7 +117,7 @@ in {
   programs = {
     firefox = {
       enable = true;
-      package = pkgs.firefox-beta;
+      package = pkgs.firefox;
       profiles = {
         "freeform" = {
           isDefault = true;
