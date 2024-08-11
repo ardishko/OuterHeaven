@@ -14,6 +14,8 @@
         "/etc/NetworkManager/system-connections"
         "/var/lib/flatpak"
         "/var/lib/waydroid"
+        "/etc/mullvad-vpn"
+        "/etc/cosmic-comp"
         # persist /mnt so that all the mounted drives don't get wiped upon reboot
         # "/mnt"
       ];
@@ -41,6 +43,7 @@
           ".config/nheko"
           ".config/obs-studio"
           ".config/steam-rom-manager"
+          ".config/cosmic"
           ".local/share/bottles"
           ".local/state/syncthing"
           ".local/state/wireplumber"
@@ -73,6 +76,7 @@
           ".var"
           ".steam"
           ".ftba"
+          ".minecraft"
           ".stremio-server"
           ".mozilla"
           ".mullvad"

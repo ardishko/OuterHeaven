@@ -20,7 +20,7 @@
     inputs.shadower.packages.${pkgs.system}.shadower
     inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
     inputs.dolphin-emu.packages.${pkgs.system}.default
-
+    # inputs.polly-mc.${pkgs.system}.default
     # inputs.tag-studio.packages.${pkgs.system}.default
     # Over
     wget

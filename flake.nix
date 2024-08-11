@@ -106,6 +106,9 @@
     dolphin-emu = {
       url = "github:MatthewCroughan/dolphin-emu-nix";
     };
+    polly-mc = {
+      url = "github:fn2006/PollyMC";
+    };
   };
   outputs = inputs @ {
     nixpkgs,

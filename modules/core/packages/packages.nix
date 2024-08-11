@@ -26,6 +26,16 @@
 
   services.flatpak = {
     enable = true;
+    remotes = [
+      {
+        name = "flathub"; 
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }
+      {
+        name = "sober-origin";
+        location = "https://sober.vinegarhq.org/repo/";
+      }
+    ];
     packages = [
       "com.github.tchx84.Flatseal"
       "com.steamgriddb.SGDBoop"
@@ -35,6 +45,7 @@
       "com.fightcade.Fightcade"
       "io.itch.itch"
       "io.github.lime3ds.Lime3DS"
+      # { appId = "org.vinegarhq.Sober"; origin = "sober-origin"; }
     ];
   };
     fonts.packages = with pkgs; [

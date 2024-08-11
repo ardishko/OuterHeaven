@@ -109,7 +109,9 @@
         "$mainMod, down, movefocus, d"
         "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
         "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
+
         #i3/sway type beat
+        
         ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
         "$mainMod, Q, togglegroup"
         "$mainMod, D, changegroupactive"
@@ -271,6 +273,7 @@
         };
     };
     extraConfig = ''
+      debug:disable_logs = false
       group {
         col.border_active = rgb(99D1DB)
         col.border_inactive = rgb(4d4d4d)
