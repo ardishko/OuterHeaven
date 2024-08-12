@@ -8,6 +8,7 @@
     ./polkit.nix
     ./xdg.nix
     ./impermanence.nix
+    # ./byedpi
   ]
   ++ (lib.lists.optionals (hostname == "Tanker") [
     ./jovian.nix

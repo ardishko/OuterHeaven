@@ -37,7 +37,7 @@
     steamtinkerlaunch
     prismlauncher
     appimage-run
-    cinnamon.nemo-fileroller
+    nemo-fileroller
     nerdfonts
     webdav
     gamemode
@@ -47,8 +47,7 @@
     protonup-ng
     pavucontrol
     hyprpicker
-    eww-wayland
-    transmission-gtk
+    transmission_4-gtk
     libreoffice-fresh
     winetricks
     protontricks
@@ -74,9 +73,9 @@
     gzdoom
     wlprop
     mate.mate-polkit
-    cinnamon.folder-color-switcher
+    folder-color-switcher
     ioquake3
-    nvtop-amd
+    nvtopPackages.amd
     wlsunset
     pipes-rs
     qalculate-gtk
@@ -102,7 +101,7 @@
     docker
     speedtest-cli
     gh
-    gnome.gnome-calendar
+    gnome-calendar
     clamtk
     lazygit
     wireguard-tools
@@ -117,7 +116,7 @@
     samrewritten
     zathura
     nwg-dock-hyprland
-    gnome.pomodoro
+    gnome-pomodoro
     qrscan
     premid
     gpu-screen-recorder
@@ -148,7 +147,7 @@
     # nomachine-client
     qutebrowser
     nheko
-    cinnamon.nemo-with-extensions
+    nemo-with-extensions
     libsForQt5.dolphin
     nixpkgs-review
     evince
@@ -175,7 +174,7 @@
     wl-clipboard
     grim
     slurp
-    gnome.file-roller
+    file-roller
     zoom-us
     heroic
     upscayl
