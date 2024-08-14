@@ -10,7 +10,7 @@
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
     inputs.nh.packages.${pkgs.system}.default
-    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
+    # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
     # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.itch
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.handbrake
