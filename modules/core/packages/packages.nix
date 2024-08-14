@@ -1,20 +1,19 @@
-{
-  pkgs,
-  inputs,
-  lib,
-  options,
-  hostname,
-  ...
+{ pkgs
+, inputs
+, lib
+, options
+, hostname
+, ...
 }: {
-  imports = [ 
-    inputs.nix-flatpak.nixosModules.nix-flatpak 
+  imports = [
+    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
   environment.systemPackages = with pkgs; [
     bash
     gamescope
     lshw
     f3d
-  ] 
+  ]
   ++ (lib.lists.optionals (hostname == "ShadowMoses") [
     davinci-resolve
     hello
@@ -28,15 +27,21 @@
     enable = true;
     remotes = [
       {
-        name = "flathub"; 
+        name = "flathub";
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }
       {
-        name = "sober-origin";
+        name = "sober";
         location = "https://sober.vinegarhq.org/repo/";
       }
     ];
     packages = [
+      "${
+        pkgs.fetchurl {
+          url = "https://sober.vinegarhq.org/sober.flatpakref";
+          hash = "sha256-VFRvboQ7IZwYDQvEcWimOuno7vIj+5EztOvxCHvwSN4="; 
+        }
+      }"
       "com.github.tchx84.Flatseal"
       "com.steamgriddb.SGDBoop"
       "io.mrarm.mcpelauncher"
@@ -45,10 +50,13 @@
       "com.fightcade.Fightcade"
       "io.itch.itch"
       "io.github.lime3ds.Lime3DS"
-      # { appId = "org.vinegarhq.Sober"; origin = "sober-origin"; }
     ];
+    # update.auto = {
+    #   enable = true;
+    #   onCalendar = "daily";
+    # };
   };
-    fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji

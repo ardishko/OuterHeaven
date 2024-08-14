@@ -1,11 +1,10 @@
-{
-  config,
-  pkgs,
-  self,
-  user,
-  inputs,
-  username,
-  ...
+{ config
+, pkgs
+, self
+, user
+, inputs
+, username
+, ...
 }: {
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
@@ -13,7 +12,7 @@
 
   gtk = {
     enable = true;
-    font = { 
+    font = {
       name = "Iosevka Nerd Font";
       size = 14;
     };
@@ -21,9 +20,9 @@
       name = "catppuccin-frappe-sky-compact+normal";
       package = pkgs.catppuccin-gtk.override {
         variant = "frappe";
-        accents = ["sky"];
+        accents = [ "sky" ];
         size = "compact";
-        tweaks = ["normal"];
+        tweaks = [ "normal" ];
       };
     };
 
@@ -55,7 +54,7 @@
     name = "macOS-BigSur";
     size = 24;
   };
-  
+
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -69,8 +68,8 @@
   # The dconf lines are needed for QEMU virtualization.
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
 

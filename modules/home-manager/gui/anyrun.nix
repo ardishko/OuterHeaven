@@ -1,9 +1,8 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
-  imports = [inputs.anyrun.homeManagerModules.default];
+  imports = [ inputs.anyrun.homeManagerModules.default ];
   programs.anyrun = {
     enable = true;
     config = {
@@ -15,12 +14,12 @@
         inputs.anyrun.packages.${pkgs.system}.dictionary
         inputs.anyrun.packages.${pkgs.system}.kidex
       ];
-      x = {fraction = 0.5;};
-      y = {fraction = 0.0;};
+      x = { fraction = 0.5; };
+      y = { fraction = 0.0; };
       hideIcons = false;
       layer = "overlay";
-      width = {absolute = 800;};
-      height = {absolute = 0;};
+      width = { absolute = 800; };
+      height = { absolute = 0; };
       ignoreExclusiveZones = false;
       hidePluginInfo = false;
       closeOnClick = false;

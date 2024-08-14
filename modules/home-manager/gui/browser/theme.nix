@@ -1,4 +1,5 @@
-{ pkgs, name, theme }: let
+{ pkgs, name, theme }:
+let
   json = builtins.toJSON {
     manifest_version = 2;
     version = "1.0";
@@ -13,7 +14,8 @@
     name = "manifest.json";
     text = json;
   };
-in pkgs.stdenvNoCC.mkDerivation {
+in
+pkgs.stdenvNoCC.mkDerivation {
   pname = "firefox-theme-${name}.xpi";
   version = "1.0";
   preferLocalBuild = true;

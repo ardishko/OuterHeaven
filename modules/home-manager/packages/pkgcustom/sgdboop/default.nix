@@ -1,9 +1,9 @@
-{
-  lib,
-  stdenv,
-  fetchFromGitHub,
-  curl,
-  pkgs,
+{ lib
+, stdenv
+, fetchFromGitHub
+, curl
+, pkgs
+,
 }:
 stdenv.mkDerivation rec {
   pname = "sgdboop";
@@ -33,13 +33,13 @@ stdenv.mkDerivation rec {
     rm -r "$out/share/metainfo"
   '';
 
-  buildInputs = [curl pkgs.chickenPackages_5.chickenEggs.iup];
+  buildInputs = [ curl pkgs.chickenPackages_5.chickenEggs.iup ];
 
   meta = {
     description = "A program used for applying custom artwork to Steam, using SteamGridDB";
     homepage = "https://github.com/SteamGridDB/SGDBoop/";
     license = lib.licenses.cc-by-nc-sa-40;
-    maintainers = [lib.maintainers.puffnfresh];
+    maintainers = [ lib.maintainers.puffnfresh ];
     mainProgram = "SGDBoop";
     platforms = lib.platforms.linux;
   };

@@ -6,7 +6,7 @@
       enable = true;
       layout = "tr";
       xkbVariant = "";
-      excludePackages = [pkgs.xterm];
+      excludePackages = [ pkgs.xterm ];
     };
   };
 }

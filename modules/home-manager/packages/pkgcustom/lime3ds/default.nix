@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
     jack1
     sndio
   ];
-  
+
   cmakeFlags = [
     "-DCMAKE_POLICY_DEFAULT_CMP0025=NEW"
     "--no-warn-unused-cli"

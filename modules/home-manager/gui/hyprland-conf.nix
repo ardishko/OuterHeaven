@@ -1,9 +1,9 @@
-{
-  pkgs,
-  inputs,
-  lib,
-  hostname,
-  ...
+{ pkgs
+, inputs
+, lib
+, hostname
+, username
+, ...
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -24,13 +24,14 @@
     settings = {
       "$mainMod" = "SUPER";
       "general:layout" = "dwindle";
-      monitor = if (hostname == "ShadowMoses") then [
-        "DP-2,2560x1440@164.998993, 0x350, 1"
-        "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
-      ] else
-      if (hostname == "BigShell") then [
-        "eDP-1,1920x1200@60.001999, 0x0, 1"
-      ] else [];
+      monitor =
+        if (hostname == "ShadowMoses") then [
+          "DP-2,2560x1440@164.998993, 0x350, 1"
+          "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
+        ] else
+          if (hostname == "BigShell") then [
+            "eDP-1,1920x1200@60.001999, 0x0, 1"
+          ] else [ ];
       exec-once = [
         "mullvad-gui"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -38,6 +39,7 @@
         "discover-overlay"
         "flameshot"
         "sleep 0.5 && ags"
+        "obs --startreplaybuffer"
         "${pkgs.wlsunset}/bin/wlsunset"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -48,43 +50,44 @@
         "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.arrpc}/bin/arrpc"
         "${pkgs.premid}/bin/premid --in-process-gpu"
-      ] 
+      ]
       ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-          "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
-          "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
-          "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
-        ]) 
+        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
+        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+        "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
+      ])
       ++ (lib.lists.optionals (hostname == "BigShell") [
-          "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
+        "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
       ]);
-      workspace = if (hostname == "ShadowMoses") then [
-        "1,monitor:DP-2"
-        "2,monitor:DP-2"
-        "3,monitor:DP-2"
-        "4,monitor:DP-2"
-        "5,monitor:DP-2"      
-        "6,monitor:DP-2"
-        "7,monitor:DP-2"       
-        "8,monitor:DP-2"
-        "9,monitor:DP-2"
-        "10,monitor:DP-2"
-        "11,monitor:HDMI-A-1"
-        "12,monitor:HDMI-A-1"
-        "13,monitor:HDMI-A-1"
-        "14,monitor:HDMI-A-1"
-      ] else
-      if (hostname == "BigShell") then [
-        "1,monitor:eDP-1"
-        "2,monitor:eDP-1"
-        "3,monitor:eDP-1"
-        "4,monitor:eDP-1"
-        "5,monitor:eDP-1"      
-        "6,monitor:eDP-1"
-        "7,monitor:eDP-1"       
-        "8,monitor:eDP-1"
-        "9,monitor:eDP-1"
-        "10,monitor:eDP-1"
-      ] else [];
+      workspace =
+        if (hostname == "ShadowMoses") then [
+          "1,monitor:DP-2"
+          "2,monitor:DP-2"
+          "3,monitor:DP-2"
+          "4,monitor:DP-2"
+          "5,monitor:DP-2"
+          "6,monitor:DP-2"
+          "7,monitor:DP-2"
+          "8,monitor:DP-2"
+          "9,monitor:DP-2"
+          "10,monitor:DP-2"
+          "11,monitor:HDMI-A-1"
+          "12,monitor:HDMI-A-1"
+          "13,monitor:HDMI-A-1"
+          "14,monitor:HDMI-A-1"
+        ] else
+          if (hostname == "BigShell") then [
+            "1,monitor:eDP-1"
+            "2,monitor:eDP-1"
+            "3,monitor:eDP-1"
+            "4,monitor:eDP-1"
+            "5,monitor:eDP-1"
+            "6,monitor:eDP-1"
+            "7,monitor:eDP-1"
+            "8,monitor:eDP-1"
+            "9,monitor:eDP-1"
+            "10,monitor:eDP-1"
+          ] else [ ];
       bind = [
         "$mainMod, Return, exec, kitty"
         "SUPER_SHIFT, W, killactive,"
@@ -109,18 +112,19 @@
         "$mainMod, down, movefocus, d"
         "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
         "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
-
+        "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${username}/Videos'"
         #i3/sway type beat
-        
+
         ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
         "$mainMod, Q, togglegroup"
         "$mainMod, D, changegroupactive"
         "$mainMod, W, lockgroups, toggle"
-       
+
         #global shortcuts
         "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
         "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
         "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
+        "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
         "$mainMod, Insert,pass,^(discordcanary)$"
         "$mainMod, Home,pass,^(discordcanary)$"
 
@@ -169,7 +173,7 @@
         "$mainMod SHIFT, k, movetoworkspacesilent, 13"
         "$mainMod SHIFT, l, movetoworkspacesilent, 14"
       ]);
-      bindm = [ 
+      bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
@@ -241,11 +245,12 @@
         "workspace 7,class:^(info.febvre.Komikku)"
         "workspace 7,class:^(Upscayl)"
         "workspace 8,class:^(obsidian)"
+        "workspace 8,class:^(com.obsproject.Studio)"
         "workspace 9,class:^(Waydroid)"
         "workspace 10,class:^(steam_app*)"
         "stayfocused,class:^(Waydroid)"
         # "forceinput,class:^(Waydroid)"
-        
+
       ];
       layerrule = [
         "noanim,rofi"
@@ -268,9 +273,9 @@
       #       render_titles = false;
       #     };
       #   };
-        misc = {
-          force_default_wallpaper = false;
-        };
+      misc = {
+        force_default_wallpaper = false;
+      };
     };
     extraConfig = ''
       debug:disable_logs = false
@@ -351,6 +356,6 @@
           }
         }
       }
-     '';
+    '';
   };
 }

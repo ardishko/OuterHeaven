@@ -39,19 +39,19 @@ let
       '';
 
       installPhase = ''
-        runHook preInstall
+                runHook preInstall
 
-        export HOME=$PWD/home
-        mkdir -p $HOME
+                export HOME=$PWD/home
+                mkdir -p $HOME
 
-        mkdir -p $out
-        appimage-run ./DaVinci_Resolve_Studio_${version}_Linux.run -i -y -n -C $out
+                mkdir -p $out
+                appimage-run ./DaVinci_Resolve_Studio_${version}_Linux.run -i -y -n -C $out
 
-        mkdir -p $out/{configs,DolbyVision,easyDCP,Fairlight,GPUCache,logs,Media,"Resolve Disk Database",.crashreport,.license,.LUT}
+                mkdir -p $out/{configs,DolbyVision,easyDCP,Fairlight,GPUCache,logs,Media,"Resolve Disk Database",.crashreport,.license,.LUT}
 
-        tar -zf $out/share/panels/dvpanel-framework-linux-x86_64.tgz -C $out -x
-#        mv $out/libDaVinciPanelAPI.so $out/libs/
-        runHook postInstall
+                tar -zf $out/share/panels/dvpanel-framework-linux-x86_64.tgz -C $out -x
+        #        mv $out/libDaVinciPanelAPI.so $out/libs/
+                runHook postInstall
       '';
 
       dontStrip = true;

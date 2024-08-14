@@ -19,11 +19,11 @@ stdenv.mkDerivation rec {
     cmake
   ];
   installPhase = ''
-  mkdir -p "$out"
-  mkdir -p "$out/usr"
-  mkdir -p "$out/usr/local"
-  mkdir -p "$out/usr/local/sbin"
-  make install
+    mkdir -p "$out"
+    mkdir -p "$out/usr"
+    mkdir -p "$out/usr/local"
+    mkdir -p "$out/usr/local/sbin"
+    make install
   '';
   meta = with lib; {
     description = "A sophisticated low memory handler for Linux";

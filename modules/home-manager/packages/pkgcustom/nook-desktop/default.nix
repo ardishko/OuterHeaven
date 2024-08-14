@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [ jre ];
-  
+
   meta = with lib; {
     description = "Desktop version of Nook, since Chrome MV3 will render it unusable";
     homepage = "https://github.com/mn6/nook-desktop";

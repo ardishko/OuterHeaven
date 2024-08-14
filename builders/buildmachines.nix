@@ -10,8 +10,8 @@
         protocol = "ssh-ng";
         maxJobs = 4;
         speedFactor = 2;
-        supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
-        mandatoryFeatures = [];
+        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+        mandatoryFeatures = [ ];
       }
     ];
     distributedBuilds = true;

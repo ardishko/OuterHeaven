@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     (pkgs.lutris.overrideAttrs {
-      buildInputs = with pkgs; [xorg.libXdamage];
+      buildInputs = with pkgs; [ xorg.libXdamage ];
     })
   ];
 }

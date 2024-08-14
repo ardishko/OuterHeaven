@@ -28,6 +28,6 @@
       "x-scheme-handler/magnet" = [ "mpv.desktop" ];
       "x-scheme-handler/curseforge" = [ "prismlauncher.desktop" ];
     };
-  };  
+  };
   home.packages = with pkgs; [ open-in-mpv ];
 }

@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  home.packages = with pkgs; [ prismlauncher ];
+  home.packages = with pkgs; [ (prismlauncher.override { withWaylandGLFW = true; }) ];
   xdg.desktopEntries = {
     "org.prismlauncher.PrismLauncher" = lib.mkForce {
       name = "Turizm Launcher";

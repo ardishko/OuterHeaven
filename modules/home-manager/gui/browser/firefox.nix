@@ -1,119 +1,122 @@
 { pkgs, inputs, fetchurl, ... }:
 let
-  extra-addons = let
-    buildFirefoxXpiAddon = {
-      src,
-      pname,
-      version,
-      addonId
-    }: pkgs.stdenv.mkDerivation {
-      name = "${pname}-${version}";
+  extra-addons =
+    let
+      buildFirefoxXpiAddon =
+        { src
+        , pname
+        , version
+        , addonId
+        }: pkgs.stdenv.mkDerivation {
+          name = "${pname}-${version}";
 
-      inherit src;
+          inherit src;
 
-      preferLocalBuild = true;
-      allowSubstitutes = true;
+          preferLocalBuild = true;
+          allowSubstitutes = true;
 
-      buildCommand = ''
-        dst="$out/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-        mkdir -p "$dst"
-        install -v -m644 "$src" "$dst/${addonId}.xpi"
-      '';
-    };
+          buildCommand = ''
+            dst="$out/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+            mkdir -p "$dst"
+            install -v -m644 "$src" "$dst/${addonId}.xpi"
+          '';
+        };
 
-    remoteXpiAddon = { pname, version, addonId, url, sha256 }: buildFirefoxXpiAddon {
-      inherit pname version addonId;
-      src = pkgs.fetchurl { inherit url sha256; };
-    };
+      remoteXpiAddon = { pname, version, addonId, url, sha256 }: buildFirefoxXpiAddon {
+        inherit pname version addonId;
+        src = pkgs.fetchurl { inherit url sha256; };
+      };
 
-    theme = { name, theme }: buildFirefoxXpiAddon {
-      pname = "firefox-theme-xpi-${name}";
-      version = "1.0";
-      addonId = "theme-${name}@outfoxxed.me";
-      src = import ./theme.nix { inherit pkgs name theme; };
+      theme = { name, theme }: buildFirefoxXpiAddon {
+        pname = "firefox-theme-xpi-${name}";
+        version = "1.0";
+        addonId = "theme-${name}@outfoxxed.me";
+        src = import ./theme.nix { inherit pkgs name theme; };
+      };
+    in
+    {
+      read-aloud = remoteXpiAddon {
+        pname = "read-aloud";
+        version = "1.67.1";
+        addonId = "{ddc62400-f22d-4dd3-8b4a-05837de53c2e}";
+        url = "https://addons.mozilla.org/firefox/downloads/file/4219454/read_aloud-1.67.1.xpi";
+        sha256 = "sha256-YLkh100nbuIYy7q+Vd0RQ4RN5N0tBWuExkGnDQw06UA=";
+      };
+      open-tabs-next-to-current = remoteXpiAddon {
+        pname = "open-tabs-next-to-current";
+        version = "2.0.14";
+        addonId = "opentabsnexttocurrent@sblask";
+        url = "https://addons.mozilla.org/firefox/downloads/file/3784283/open_tabs_next_to_current-2.0.14.xpi";
+        sha256 = "sha256-Q8qQm/k4CPAu8zlrO4/Gsx/qE4x+rnIlKa8mcFgY1sU=";
+      };
+      premid = remoteXpiAddon {
+        pname = "premid";
+        version = "2.5.2";
+        addonId = "support@premid.app";
+        url = "https://dl.premid.app/PreMiD.xpi";
+        sha256 = "sha256-S7V8iusOIiCCuDUr6FuI+5Gq7gJPV28CiFmzz614RmQ=";
+      };
+      catppuccin-frappe-sky = remoteXpiAddon {
+        pname = "catppuccin-frappe-sky";
+        version = "unknown";
+        addonId = "{c7cf6786-24b7-4bd2-ae71-b985fcc98f20}";
+        url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_frappe_sky.xpi";
+        sha256 = "sha256-Fb9VUpsWKtERV4VkeWhBZBSZLMkQMrnBexaRIuPc4Ho=";
+      };
+      # A: This one's for my friend. It's not referenced anywhere in the conf.
+      catppuccin-mocha-lavender = remoteXpiAddon {
+        pname = "catppuccin-mocha-lavender";
+        version = "unknown";
+        addonId = "{8446b178-c865-4f5c-8ccc-1d7887811ae3}";
+        url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_lavender.xpi";
+        sha256 = "sha256-cCkrC4ZSy6tAjRXSYdxRUPaQ+1u6+W9OcxclbH2beTM=";
+      };
+      # and this one too
+      catppuccin-mocha-green = remoteXpiAddon {
+        pname = "catppuccin-mocha-green";
+        version = "unknown";
+        addonId = "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}";
+        url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_green.xpi";
+        sha256 = "sha256-mKTr2yab/BOFnRBRrgqiVFoFxGms2nvjcOXKmYL54ww=";
+      };
+      cf-purge-plugin = remoteXpiAddon {
+        pname = "Cloudflare Purge Plugin";
+        version = "1.5.1";
+        addonId = "{0a40b0aa-001b-41c9-a3d7-7f4c4fe77025}";
+        url = "https://addons.mozilla.org/firefox/downloads/file/1199228/cf_purge_plugin-1.5.1.xpi";
+        sha256 = "sha256-duYhpU5YuVDYNHYTdvI2Do58ZJx5UrmjRjxARUOFNq8=";
+      };
+      btroblox = remoteXpiAddon {
+        pname = "btroblox";
+        version = "3.5.0";
+        addonId = "btroblox@antiboomz.com";
+        url = "https://addons.mozilla.org/firefox/downloads/file/4226524/btroblox-3.5.0.xpi";
+        sha256 = "sha256-I5rEKfRv6UVwqAw1poaFHIlrSQpAnjk0jNaYl+3xuVE=";
+      };
+      google-container = remoteXpiAddon {
+        pname = "Google Container";
+        version = "1.5.4";
+        addonId = "@contain-google";
+        url = "https://addons.mozilla.org/firefox/downloads/file/3736912/google_container-1.5.4.xpi";
+        sha256 = "sha256-R6fA6FRoMyoNlJko2LdDdhks3kq6oUKAACs6yk7IFNA=";
+      };
+      watch-on-odysee = remoteXpiAddon {
+        pname = "Watch on Odysee";
+        version = "2.0.1";
+        addonId = "{884679b9-5d6b-48b2-90a7-15ae26ce568a}";
+        url = "https://addons.mozilla.org/firefox/downloads/file/3984569/watch_on_odysee-2.0.1.xpi";
+        sha256 = "sha256-/aJ0A/b1sRtyAOZizraL2Nlq0nOUfLN9Z+Cf4S7eUDQ=";
+      };
+      youtube-for-tv = remoteXpiAddon {
+        pname = "Youtube for TV";
+        version = "0.0.3";
+        addonId = "{d2bcedce-889b-4d53-8ce9-493d8f78612a}";
+        url = "https://addons.mozilla.org/firefox/downloads/file/3420768/youtube_for_tv-0.0.3.xpi";
+        sha256 = "sha256-Xfa7cB4D0Iyfex5y9/jRR93gUkziaIyjqMT0LIOhT6o=";
+      };
     };
-  in {
-    read-aloud = remoteXpiAddon {
-      pname = "read-aloud";
-      version = "1.67.1";
-      addonId = "{ddc62400-f22d-4dd3-8b4a-05837de53c2e}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4219454/read_aloud-1.67.1.xpi";
-      sha256 = "sha256-YLkh100nbuIYy7q+Vd0RQ4RN5N0tBWuExkGnDQw06UA=";
-    };
-    open-tabs-next-to-current = remoteXpiAddon {
-      pname = "open-tabs-next-to-current";
-      version = "2.0.14";
-      addonId = "opentabsnexttocurrent@sblask";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3784283/open_tabs_next_to_current-2.0.14.xpi";
-      sha256 = "sha256-Q8qQm/k4CPAu8zlrO4/Gsx/qE4x+rnIlKa8mcFgY1sU=";
-    };
-    premid = remoteXpiAddon {
-      pname = "premid";
-      version = "2.5.2";
-      addonId = "support@premid.app";
-      url = "https://dl.premid.app/PreMiD.xpi";
-      sha256 = "sha256-S7V8iusOIiCCuDUr6FuI+5Gq7gJPV28CiFmzz614RmQ=";
-    };
-    catppuccin-frappe-sky = remoteXpiAddon {
-      pname = "catppuccin-frappe-sky";
-      version = "unknown";
-      addonId = "{c7cf6786-24b7-4bd2-ae71-b985fcc98f20}";
-      url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_frappe_sky.xpi";
-      sha256 = "sha256-Fb9VUpsWKtERV4VkeWhBZBSZLMkQMrnBexaRIuPc4Ho=";
-    };
-    # A: This one's for my friend. It's not referenced anywhere in the conf.
-    catppuccin-mocha-lavender = remoteXpiAddon {
-      pname = "catppuccin-mocha-lavender";
-      version = "unknown";
-      addonId = "{8446b178-c865-4f5c-8ccc-1d7887811ae3}";
-      url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_lavender.xpi";
-      sha256 = "sha256-cCkrC4ZSy6tAjRXSYdxRUPaQ+1u6+W9OcxclbH2beTM=";
-    };
-    # and this one too
-    catppuccin-mocha-green = remoteXpiAddon {
-      pname = "catppuccin-mocha-green";
-      version = "unknown";
-      addonId = "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}";
-      url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_green.xpi";
-      sha256 = "sha256-mKTr2yab/BOFnRBRrgqiVFoFxGms2nvjcOXKmYL54ww=";
-    };
-    cf-purge-plugin = remoteXpiAddon {
-      pname = "Cloudflare Purge Plugin";
-      version = "1.5.1";
-      addonId = "{0a40b0aa-001b-41c9-a3d7-7f4c4fe77025}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/1199228/cf_purge_plugin-1.5.1.xpi";
-      sha256 = "sha256-duYhpU5YuVDYNHYTdvI2Do58ZJx5UrmjRjxARUOFNq8=";
-    };
-    btroblox = remoteXpiAddon {
-      pname = "btroblox";
-      version = "3.5.0";
-      addonId = "btroblox@antiboomz.com";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4226524/btroblox-3.5.0.xpi";
-      sha256 = "sha256-I5rEKfRv6UVwqAw1poaFHIlrSQpAnjk0jNaYl+3xuVE=";
-    };
-    google-container = remoteXpiAddon {
-      pname = "Google Container";
-      version = "1.5.4";
-      addonId = "@contain-google";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3736912/google_container-1.5.4.xpi";
-      sha256 = "sha256-R6fA6FRoMyoNlJko2LdDdhks3kq6oUKAACs6yk7IFNA=";
-    };
-    watch-on-odysee = remoteXpiAddon {
-      pname = "Watch on Odysee";
-      version = "2.0.1";
-      addonId = "{884679b9-5d6b-48b2-90a7-15ae26ce568a}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3984569/watch_on_odysee-2.0.1.xpi";
-      sha256 = "sha256-/aJ0A/b1sRtyAOZizraL2Nlq0nOUfLN9Z+Cf4S7eUDQ=";
-    };
-    youtube-for-tv = remoteXpiAddon {
-      pname = "Youtube for TV";
-      version = "0.0.3";
-      addonId = "{d2bcedce-889b-4d53-8ce9-493d8f78612a}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3420768/youtube_for_tv-0.0.3.xpi";
-      sha256 = "sha256-Xfa7cB4D0Iyfex5y9/jRR93gUkziaIyjqMT0LIOhT6o=";
-    };
-  };
-in {
+in
+{
   programs = {
     firefox = {
       enable = true;
@@ -169,7 +172,7 @@ in {
               "Brave Images" = {
                 urls = [{ template = "https://search.brave.com/images?q={searchTerms}"; }];
                 iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
-                updateInterval = 24 * 60 * 60 * 1000; 
+                updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!i" ];
               };
               "Flathub" = {
@@ -408,7 +411,7 @@ in {
               ];
             }
             {
-              name = "Nix";              
+              name = "Nix";
               bookmarks = [
                 {
                   name = "NixOS Wiki";
@@ -505,7 +508,7 @@ in {
             }
             {
               name = "Tutorials";
-              bookmarks = [ 
+              bookmarks = [
                 {
                   name = "Python w3s";
                   url = "https://www.w3schools.com/python/default.asp";

@@ -1,4 +1,4 @@
-{ lib, ...}:
+{ lib, ... }:
 {
   xdg.mimeApps = {
     enable = true;

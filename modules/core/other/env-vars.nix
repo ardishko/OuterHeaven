@@ -5,5 +5,5 @@
   environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
   environment.sessionVariables.RUST_BACKTRACE = "1";
   environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
-  environment.sessionVariables.EDITOR="nvim";
+  environment.sessionVariables.EDITOR = "nvim";
 }

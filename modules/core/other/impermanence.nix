@@ -101,28 +101,28 @@
       };
     };
   };
-    # set persist fs as neededForBoot
+  # set persist fs as neededForBoot
   fileSystems = {
     "/" = lib.mkForce {
-        device = "tmpfs";
-        fsType = "tmpfs";
-        neededForBoot = true;
-        options = [
-          "defaults"
-          "size=5G"
-          "mode=755"
-        ];
-      };
+      device = "tmpfs";
+      fsType = "tmpfs";
+      neededForBoot = true;
+      options = [
+        "defaults"
+        "size=5G"
+        "mode=755"
+      ];
+    };
     "/home/${username}" = lib.mkForce {
-        device = "tmpfs";
-        fsType = "tmpfs";
-        neededForBoot = true;
-        options = [
-          "defaults"
-          "size=5G"
-          "mode=777"
-        ];
-      };
+      device = "tmpfs";
+      fsType = "tmpfs";
+      neededForBoot = true;
+      options = [
+        "defaults"
+        "size=5G"
+        "mode=777"
+      ];
+    };
     "/persist".neededForBoot = true;
     "/persist/cache".neededForBoot = true;
   };

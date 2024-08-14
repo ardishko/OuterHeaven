@@ -1,8 +1,7 @@
-{
-  pkgs,
-  inputs,
-  lib,
-  ...
+{ pkgs
+, inputs
+, lib
+, ...
 }: {
   # Define your packages here and everything related.
 
@@ -25,7 +24,7 @@
     # Over
     wget
     lutris
-    steam-rom-manager 
+    steam-rom-manager
     neofetch
     font-manager
     gnome-photos
@@ -35,7 +34,6 @@
     htop
     killall
     steamtinkerlaunch
-    prismlauncher
     appimage-run
     nemo-fileroller
     nerdfonts
@@ -183,7 +181,7 @@
     mullvad-vpn
     impression
     woeusb
-    reaper 
+    reaper
     parabolic
     nexusmods-app
     stremio
@@ -198,7 +196,7 @@
     melonDS
 
     # Override Template
-    
+
     # (pkgs.<package>.overrideAttrs {
     #   src = pkgs.fetchFromGitHub {
     #     owner = "";
@@ -209,11 +207,11 @@
     # })
 
     # Custom packages
-    (callPackage ./pkgcustom/gpu-screen-recorder-gtk {})
-    (callPackage ./pkgcustom/discover-overlay/default.nix {})
-    (callPackage ./pkgcustom/hyprswitch {})
+    (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
+    (callPackage ./pkgcustom/discover-overlay/default.nix { })
+    (callPackage ./pkgcustom/hyprswitch { })
     # (callPackage ./pkgcustom/video-downloader {})
-    (callPackage ./pkgcustom/vinegar {})
+    (callPackage ./pkgcustom/vinegar { })
     # (callPackage ./pkgcustom/davinci-resolve {})
     # (callPackage ./pkgcustom/lime3ds {})
     # (callPackage ./pkgcustom/roblox-fd {})
@@ -233,7 +231,7 @@
         "python-2.7.18.8"
         "electron-19.1.9"
       ];
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["davinci-resolve"];
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "davinci-resolve" ];
       allowUnfree = true;
       allowBroken = true;
     };

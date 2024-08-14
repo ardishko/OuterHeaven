@@ -1,18 +1,19 @@
 { pkgs, config, boot, hostname, ... }:
 {
   boot = {
-    loader = if (hostname == "ShadowMoses") then {
-      grub = {
-         enable = true;
-         efiSupport = true;
-         useOSProber = true;
-         devices = [ "nodev" ];
-      };
-      # grub = {
-      #   enable = true;
-      #   devices = [ "nodev" ];
-      #   efiSupport = true;
-      #   useOSProber = true;
+    loader =
+      if (hostname == "ShadowMoses") then {
+        grub = {
+          enable = true;
+          efiSupport = true;
+          useOSProber = true;
+          devices = [ "nodev" ];
+        };
+        # grub = {
+        #   enable = true;
+        #   devices = [ "nodev" ];
+        #   efiSupport = true;
+        #   useOSProber = true;
         # theme = {
         #   pkgs.fetchFromGitHub = {
         #     owner = "catppuccin";
@@ -22,35 +23,35 @@
         #   }
         #   + "/src/catppuccin-frappe-grub-theme";
         # };
-      # };
+        # };
         systemd-boot.enable = false;
         efi = {
           canTouchEfiVariables = true;
         };
       } else
-      if (hostname == "BigShell") then {
-        grub = {
-          enable = true;
-          efiSupport = true;
-          useOSProber = true;
-          devices = [ "nodev" ];
-        };
-        systemd-boot.enable = false;
-        efi = {
-          canTouchEfiVariables = true;
-        };
-      } else
-      if (hostname == "Tanker") then {
-        grub = {
-          enable = true;
-          efiSupport = true;
-          useOSProber = true;
-          devices = [ "nodev" ];
-        };
-        systemd-boot.enable = false;
-        efi = {
-          canTouchEfiVariables = true;
-        };
-      } else {};
+        if (hostname == "BigShell") then {
+          grub = {
+            enable = true;
+            efiSupport = true;
+            useOSProber = true;
+            devices = [ "nodev" ];
+          };
+          systemd-boot.enable = false;
+          efi = {
+            canTouchEfiVariables = true;
+          };
+        } else
+          if (hostname == "Tanker") then {
+            grub = {
+              enable = true;
+              efiSupport = true;
+              useOSProber = true;
+              devices = [ "nodev" ];
+            };
+            systemd-boot.enable = false;
+            efi = {
+              canTouchEfiVariables = true;
+            };
+          } else { };
   };
 }

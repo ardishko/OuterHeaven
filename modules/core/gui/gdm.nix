@@ -1,7 +1,7 @@
 {
-  services = { 
+  services = {
     xserver = {
-      displayManager = { 
+      displayManager = {
         lightdm.enable = false;
         gdm.enable = true;
       };

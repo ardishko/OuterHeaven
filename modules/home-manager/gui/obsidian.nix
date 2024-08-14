@@ -9,8 +9,8 @@
           comment = "Knowledge base";
           icon = "obsidian";
           exec = "obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland";
-          categories = ["Office"];
-          mimeTypes = ["x-scheme-handler/obsidian"];
+          categories = [ "Office" ];
+          mimeTypes = [ "x-scheme-handler/obsidian" ];
         })
       ];
     })

@@ -35,5 +35,5 @@
       --action-icon-hover: var(--accent-overlay);
       --action-icon-active: var(--accent);
     }
-'';
+  '';
 }

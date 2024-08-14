@@ -1,10 +1,10 @@
-{
-  lib,
-  python3Packages,
-  fetchFromGitHub,
-  wrapGAppsHook,
-  gobject-introspection,
-  gtk-layer-shell,
+{ lib
+, python3Packages
+, fetchFromGitHub
+, wrapGAppsHook
+, gobject-introspection
+, gtk-layer-shell
+,
 }:
 python3Packages.buildPythonApplication rec {
   pname = "discover";
@@ -40,7 +40,7 @@ python3Packages.buildPythonApplication rec {
     description = "Yet another discord overlay for linux";
     homepage = "https://github.com/trigg/Discover";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [];
+    maintainers = with maintainers; [ ];
     mainProgram = "discover";
   };
 }

@@ -1,15 +1,14 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
+{ inputs
+, pkgs
+, lib
+, ...
 }: {
-  imports = [inputs.nixvim.homeManagerModules.nixvim];
+  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
   xdg.desktopEntries = {
     nvim = lib.mkForce {
       name = "Neovim";
       type = "Application";
-      mimeType = ["text/plain"];
+      mimeType = [ "text/plain" ];
 
       icon = builtins.fetchurl {
         url = "https://raw.githubusercontent.com/NotAShelf/nvf/08547724e42a510e8917125ec86a879cc3013349/.github/assets/nvf-logo-work.svg";
@@ -47,44 +46,44 @@
           "all"
         ];
         nixvimInjections = true;
+      };
+      lsp = {
+        enable = true;
+        servers = {
+          bashls.enable = true;
+          lua-ls.enable = true;
+          tsserver.enable = true;
+          # pylyzer.enable = true;
+          # rust-analyzer = {
+          #   enable = true;
+          #   installCargo = false;
+          #   installRustc = false;
+          # };
         };
-        lsp = {
-          enable = true;
-          servers = {
-            bashls.enable = true;
-            lua-ls.enable = true;
-            tsserver.enable = true;
-            # pylyzer.enable = true;
-            # rust-analyzer = {
-            #   enable = true;
-            #   installCargo = false;
-            #   installRustc = false;
-            # };
-          };
-        };
+      };
       alpha = {
         enable = true;
         theme = null;
 
         layout = [
           {
-          opts = {
-            position = "center";
-            hl = "Type";
-          };
+            opts = {
+              position = "center";
+              hl = "Type";
+            };
             type = "text";
             val = [
-        "                                                "
-        " ███▄    █  ██▓▒██   ██▒ ██▒   █▓ ██▓ ███▄ ▄███▓"
-        " ██ ▀█   █ ▓██▒▒▒ █ █ ▒░▓██░   █▒▓██▒▓██▒▀█▀ ██▒"
-        "▓██  ▀█ ██▒▒██▒░░  █   ░ ▓██  █▒░▒██▒▓██    ▓██░"
-        "▓██▒  ▐▌██▒░██░ ░ █ █ ▒   ▒██ █░░░██░▒██    ▒██ "
-        "▒██░   ▓██░░██░▒██▒ ▒██▒   ▒▀█░  ░██░▒██▒   ░██▒"
-        "░ ▒░   ▒ ▒ ░▓  ▒▒ ░ ░▓ ░   ░ ▐░  ░▓  ░ ▒░   ░  ░"
-        "░ ░░   ░ ▒░ ▒ ░░░   ░▒ ░   ░ ░░   ▒ ░░  ░      ░"
-        "   ░   ░ ░  ▒ ░ ░    ░       ░░   ▒ ░░      ░   "
-        "         ░  ░   ░    ░        ░   ░         ░   "
-        "                                                "
+              "                                                "
+              " ███▄    █  ██▓▒██   ██▒ ██▒   █▓ ██▓ ███▄ ▄███▓"
+              " ██ ▀█   █ ▓██▒▒▒ █ █ ▒░▓██░   █▒▓██▒▓██▒▀█▀ ██▒"
+              "▓██  ▀█ ██▒▒██▒░░  █   ░ ▓██  █▒░▒██▒▓██    ▓██░"
+              "▓██▒  ▐▌██▒░██░ ░ █ █ ▒   ▒██ █░░░██░▒██    ▒██ "
+              "▒██░   ▓██░░██░▒██▒ ▒██▒   ▒▀█░  ░██░▒██▒   ░██▒"
+              "░ ▒░   ▒ ▒ ░▓  ▒▒ ░ ░▓ ░   ░ ▐░  ░▓  ░ ▒░   ░  ░"
+              "░ ░░   ░ ▒░ ▒ ░░░   ░▒ ░   ░ ░░   ▒ ░░  ░      ░"
+              "   ░   ░ ░  ▒ ░ ░    ░       ░░   ▒ ░░      ░   "
+              "         ░  ░   ░    ░        ░   ░         ░   "
+              "                                                "
             ];
           }
         ];
@@ -116,8 +115,8 @@
       oil.enable = true;
     };
     globals = {
-        mapleader = " ";
-      };
+      mapleader = " ";
+    };
     keymaps = [
       {
         action = "<cmd>Neotree<CR>";

@@ -110,65 +110,65 @@
       url = "github:fn2006/PollyMC";
     };
   };
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    disko,
-    ...
-  }: {
-    nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = let username = "vaporsnake"; hostname = "ShadowMoses"; in {inherit inputs username hostname;};
-      modules = [
-        ./machines/ShadowMoses
-        ./modules
-        ./secrets
-        home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
-        (import ./disko.nix {
-          device = "/dev/nvme0n1";
-          hostname = "ShadowMoses";
-        })
-      ];
+  outputs =
+    inputs @ { nixpkgs
+    , home-manager
+    , disko
+    , ...
+    }: {
+      nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = let username = "vaporsnake"; hostname = "ShadowMoses"; in { inherit inputs username hostname; };
+        modules = [
+          ./machines/ShadowMoses
+          ./modules
+          ./secrets
+          home-manager.nixosModules.home-manager
+          disko.nixosModules.disko
+          (import ./disko.nix {
+            device = "/dev/nvme0n1";
+            hostname = "ShadowMoses";
+          })
+        ];
+      };
+      nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = let username = "raiden"; hostname = "Tanker"; in { inherit inputs username hostname; };
+        modules = [
+          ./machines/Tanker
+          ./modules
+          ./secrets
+          home-manager.nixosModules.home-manager
+          disko.nixosModules.disko
+          (import ./disko.nix {
+            device = "/dev/nvme0n1";
+            hostname = "Tanker";
+          })
+        ];
+      };
+      nixosConfigurations.BigShell = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = let username = "liquid"; hostname = "BigShell"; in { inherit inputs username hostname; };
+        modules = [
+          ./machines/BigShell
+          ./modules
+          ./secrets
+          home-manager.nixosModules.home-manager
+          disko.nixosModules.disko
+          (import ./disko.nix {
+            device = "/dev/nvme0n1";
+            hostname = "BigShell";
+          })
+        ];
+      };
+      nixosConfigurations.jd = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = let username = "theabyssbar"; hostname = "jd"; in { inherit inputs username hostname; };
+        modules = [
+          ./machines/jd
+          ./modules/self-host
+          home-manager.nixosModules.home-manager
+        ];
+      };
     };
-    nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = let username = "raiden"; hostname = "Tanker"; in {inherit inputs username hostname;};
-      modules = [
-        ./machines/Tanker
-        ./modules
-        ./secrets
-        home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
-        (import ./disko.nix {
-          device = "/dev/nvme0n1";
-          hostname = "Tanker";
-        })
-      ];
-    };
-    nixosConfigurations.BigShell = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = let username = "liquid"; hostname = "BigShell"; in {inherit inputs username hostname;};
-      modules = [
-        ./machines/BigShell
-        ./modules
-        ./secrets
-        home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
-        (import ./disko.nix {
-          device = "/dev/nvme0n1";
-          hostname = "BigShell";
-        })
-      ];
-    };
-    nixosConfigurations.jd = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = let username = "theabyssbar"; hostname = "jd"; in {inherit inputs username hostname;};
-      modules = [
-        ./machines/jd
-        ./modules/self-host
-        home-manager.nixosModules.home-manager
-      ];
-    };
-  };
 }

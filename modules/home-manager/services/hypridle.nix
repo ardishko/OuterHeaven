@@ -18,5 +18,5 @@
       timeout = 11000
       on-timeout = systemctl suspend
     }
-    '';
+  '';
 }

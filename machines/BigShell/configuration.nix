@@ -2,10 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, 
-  pkgs, 
-  username,
-  ...
+{ config
+, pkgs
+, username
+, ...
 }: {
   # Define your hostname.
   networking.hostName = "BigShell";

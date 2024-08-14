@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: 
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.nix-gaming.nixosModules.platformOptimizations ];
   programs = {
@@ -8,7 +8,7 @@
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       gamescopeSession.enable = true;
       platformOptimizations.enable = true;
-      extraCompatPackages = with pkgs; [ 
+      extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
     };
@@ -31,7 +31,7 @@
               libkrb5
               keyutils
             ];
-          });
+        });
         #   .overrideAttrs (old: {
         #     desktopItems = [
         #       (pkgs.makeDesktopItem {
@@ -48,8 +48,8 @@
   };
   nixpkgs.overlays = [
     (final: prev: {
-      steam = prev.steam.override ({ extraLibraries ? pkgs': [], ... }: {
-        extraLibraries = pkgs': (extraLibraries pkgs') ++ ( [
+      steam = prev.steam.override ({ extraLibraries ? pkgs': [ ], ... }: {
+        extraLibraries = pkgs': (extraLibraries pkgs') ++ ([
           pkgs'.gperftools
         ]);
       });

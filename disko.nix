@@ -3,74 +3,75 @@
   disko = {
     devices = {
       disk = {
-        main = if (hostname == "ShadowMoses") then {
-          inherit device;
-          type = "disk";
-          content = {
-            type = "gpt";
-            partitions = {
-              boot = {
-                name = "boot";
-                size = "1M";
-                type = "EF02";
-              };
-              esp = {
-                name = "ESP";
-                size = "500M";
-                type = "EF00";
-                content = {
-                  type = "filesystem";
-                  format = "vfat";
-                  mountpoint = "/boot";
+        main =
+          if (hostname == "ShadowMoses") then {
+            inherit device;
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                boot = {
+                  name = "boot";
+                  size = "1M";
+                  type = "EF02";
+                };
+                esp = {
+                  name = "ESP";
+                  size = "500M";
+                  type = "EF00";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                  };
+                };
+                root = {
+                  size = "100%";
+                  content = {
+                    type = "zfs";
+                    pool = "zroot";
+                  };
                 };
               };
-              root = {
-                size = "100%";
-                content = {
-                  type = "zfs";
-                  pool = "zroot";
+            };
+          } else {
+            inherit device;
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                boot = {
+                  name = "boot";
+                  size = "1M";
+                  type = "EF02";
+                };
+                esp = {
+                  name = "ESP";
+                  size = "500M";
+                  type = "EF00";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                  };
+                };
+                root = {
+                  size = "100%";
+                  content = {
+                    type = "zfs";
+                    pool = "zroot";
+                  };
+                };
+                swap = {
+                  size = "16G";
+                  content = {
+                    type = "swap";
+                    resumeDevice = true;
+                  };
                 };
               };
             };
           };
-        } else {
-          inherit device;
-          type = "disk";
-          content = {
-            type = "gpt";
-            partitions = {
-              boot = {
-                name = "boot";
-                size = "1M";
-                type = "EF02";
-              };
-              esp = {
-                name = "ESP";
-                size = "500M";
-                type = "EF00";
-                content = {
-                  type = "filesystem";
-                  format = "vfat";
-                  mountpoint = "/boot";
-                };
-              };
-              root = {
-                size = "100%";
-                content = {
-                  type = "zfs";
-                  pool = "zroot";
-                };
-              };
-              swap = {
-                size = "16G";
-                content = {
-                  type = "swap";
-                  resumeDevice = true;
-                };
-              };
-            };
-          };
-        };
       };
       zpool = {
         zroot = {

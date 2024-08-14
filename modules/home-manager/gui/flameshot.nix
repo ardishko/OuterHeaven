@@ -12,7 +12,7 @@
         "-DUSE_WAYLAND_GRIM=True"
         "-DUSE_WAYLAND_CLIPBOARD=1"
       ];
-      buildInputs = with pkgs; [libsForQt5.kguiaddons];
+      buildInputs = with pkgs; [ libsForQt5.kguiaddons ];
     })
   ];
 }

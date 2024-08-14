@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   services = {
     byedpi = {
       enable = true;
