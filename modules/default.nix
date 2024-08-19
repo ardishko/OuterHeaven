@@ -5,7 +5,6 @@
     inputs.home-manager.nixosModules.home-manager 
   ];
   home-manager = {
-    enable = true;
     extraSpecialArgs = { inherit inputs outputs username hostname; };
     useGlobalPkgs = false;
     useUserPackages = true;
