@@ -1,8 +1,6 @@
-{ inputs, outputs, username, hostname, ... }:
+{ inputs, outputs, username, ... }:
 {
-  imports = if (hostname == "jd") then [
-    inputs.home-manager.nixosModules.home-manager
-  ] else [ 
+  imports = [ 
     ./core
     inputs.home-manager.nixosModules.home-manager 
   ];
