@@ -1,4 +1,4 @@
-{ inputs, username, lib, ... }:
+{ inputs, username, hostname, lib, ... }:
 {
   imports = [ inputs.impermanence.nixosModule ];
   boot.tmp.cleanOnBoot = true;
@@ -7,7 +7,23 @@
       files = [
         "/etc/machine-id"
       ];
-      directories = [
+      directories = if (hostname == "jd") then [
+      "/var/log"
+      "/var/lib/systemd/coredump"
+      "/etc/NetworkManager/system-connections"
+      "/etc/mullvad-vpn"
+      "/var/lib/nixos-containers"
+      "/etc/nixos-containers"
+      "/var/lib/tailscale" # tailscale
+      "/var/lib/vaultwarden" # vaultwarden backup dir
+      "/var/lib/bitwarden_rs" # vaultwarden
+      "/var/lib/nextcloud" # nextcloud
+      "/var/lib/redis-nitter" # nitter
+      "/var/lib/parrot" # parrot
+      "/var/lib/jellyfin" # jellyfin
+      "/var/lib/playit" # playit
+      "/var/lib/palworld" # palworld
+      ] else [
         "/var/log"
         "/var/lib/bluetooth"
         "/var/lib/systemd/coredump"
@@ -20,7 +36,13 @@
         # "/mnt"
       ];
       users.${username} = {
-        directories = [
+        directories = if (hostname == "jd") then [
+          ".config/Mullvad VPN"
+          ".local/state/syncthing"
+          ".local/share/Steam"
+          "Backups"
+          ".ssh"
+        ] else [
           ".config/Ryujinx"
           ".config/dolphin-emu"
           ".config/melonDS"
@@ -44,6 +66,7 @@
           ".config/obs-studio"
           ".config/steam-rom-manager"
           ".config/cosmic"
+          ".config/deadbolt_game"
           ".local/share/bottles"
           ".local/state/syncthing"
           ".local/state/wireplumber"
@@ -69,6 +92,7 @@
           ".local/share/Terraria"
           ".local/share/DaVinciResolve"
           ".local/share/Smart Code ltd"
+          ".local/share/nemo"
           ".ssh"
           ".klei"
           ".thunderbird"

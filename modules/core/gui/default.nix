@@ -13,7 +13,7 @@
     ./hyprland.nix
     ./sway.nix
     ./gdm.nix
-    ./cosmic.nix
+    # ./cosmic.nix
   ])
   ++ (lib.lists.optionals (hostname == "BigShell") [
     ./hyprland.nix

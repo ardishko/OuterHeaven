@@ -109,6 +109,9 @@
     polly-mc = {
       url = "github:fn2006/PollyMC";
     };
+    flux = {
+      url = "github:IogaMaster/flux";
+    };
   };
   outputs =
     inputs @ { nixpkgs
@@ -123,7 +126,6 @@
           ./machines/ShadowMoses
           ./modules
           ./secrets
-          home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           (import ./disko.nix {
             device = "/dev/nvme0n1";
@@ -138,7 +140,6 @@
           ./machines/Tanker
           ./modules
           ./secrets
-          home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           (import ./disko.nix {
             device = "/dev/nvme0n1";
@@ -153,7 +154,6 @@
           ./machines/BigShell
           ./modules
           ./secrets
-          home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           (import ./disko.nix {
             device = "/dev/nvme0n1";
@@ -163,11 +163,20 @@
       };
       nixosConfigurations.jd = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = let username = "theabyssbar"; hostname = "jd"; in { inherit inputs username hostname; };
+        specialArgs = let username = "snake"; hostname = "jd"; in { inherit inputs username hostname; };
         modules = [
           ./machines/jd
-          ./modules/self-host
+          ./server
+          ./modules/home-manager/tui/nushell.nix
+          ./modules/home-manager/packages/packages.nix
+          ./modules/core/services/firewall.nix
+          ./modules/core/other/impermanence.nix
           home-manager.nixosModules.home-manager
+          disko.nixosModules.disko
+          (import ./disko.nix {
+            device = "/dev/nvme0n1";
+            hostname = "jd";
+          })
         ];
       };
     };

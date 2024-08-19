@@ -30,18 +30,14 @@
         name = "flathub";
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }
-      {
-        name = "sober";
-        location = "https://sober.vinegarhq.org/repo/";
-      }
     ];
     packages = [
-      "${
-        pkgs.fetchurl {
-          url = "https://sober.vinegarhq.org/sober.flatpakref";
-          hash = "sha256-VFRvboQ7IZwYDQvEcWimOuno7vIj+5EztOvxCHvwSN4="; 
-        }
-      }"
+      # "${
+      #   pkgs.fetchurl {
+      #     url = "https://sober.vinegarhq.org/sober.flatpakref";
+      #     hash = "sha256-VFRvboQ7IZwYDQvEcWimOuno7vIj+5EztOvxCHvwSN4="; 
+      #   }
+      # }"
       "com.github.tchx84.Flatseal"
       "com.steamgriddb.SGDBoop"
       "io.mrarm.mcpelauncher"

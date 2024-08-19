@@ -1,11 +1,23 @@
 { pkgs
 , inputs
 , lib
+, hostname
 , ...
 }: {
   # Define your packages here and everything related.
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; if (hostname == "jd") then [
+    inputs.nh.packages.${pkgs.system}.default
+    inputs.flux.packages.${pkgs.system}.mcman
+    neovim
+    unzip
+    fastfetch
+    parrot
+    screen
+    wget
+    cinnamon.nemo
+    kitty
+  ] else [
     # Define packages that derive from inputs
 
     inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
@@ -21,6 +33,7 @@
     inputs.dolphin-emu.packages.${pkgs.system}.default
     # inputs.polly-mc.${pkgs.system}.default
     # inputs.tag-studio.packages.${pkgs.system}.default
+
     # Over
     wget
     lutris
@@ -55,7 +68,7 @@
     mangohud
     nix-init
     waydroid
-    rustdesk
+    rustdesk-flutter
     ffmpeg
     helvum
     krita
@@ -123,7 +136,7 @@
     firewalld-gui
     element-desktop
     gtkcord4
-    wine-staging
+    wineWowPackages.full
     nmap
     ntfs3g
     revolt-desktop
@@ -153,7 +166,6 @@
     swappy
     bottom
     btop
-    rustdesk
     moonlight-qt
     pulseaudioFull
     pinentry-qt

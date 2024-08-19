@@ -7,6 +7,7 @@
       layout = "tr";
       xkbVariant = "";
       excludePackages = [ pkgs.xterm ];
+      displayManager.lightdm.enable = false;
     };
   };
 }
