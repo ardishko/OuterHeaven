@@ -15,5 +15,4 @@
     };
     backupFileExtension = "backup";
   };
-  home.stateVersion = "23.05";
 }
