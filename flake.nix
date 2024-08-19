@@ -167,10 +167,7 @@
         modules = [
           ./machines/jd
           ./server
-          ./modules/home-manager
-          ./modules/core/services/firewall.nix
-          ./modules/core/other/impermanence.nix
-          home-manager.nixosModules.home-manager
+          ./modules
           disko.nixosModules.disko
           (import ./disko.nix {
             device = "/dev/nvme0n1";
