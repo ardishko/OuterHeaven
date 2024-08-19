@@ -42,6 +42,7 @@
           ".local/share/Steam"
           "Backups"
           ".ssh"
+          "NixOS"
         ] else [
           ".config/Ryujinx"
           ".config/dolphin-emu"
