@@ -1,4 +1,4 @@
-{ inputs, outputs, username, ... }:
+{ inputs, outputs, username, hostname, ... }:
 {
   imports = [ 
     ./core
