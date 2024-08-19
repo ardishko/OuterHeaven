@@ -1,3 +1,4 @@
+{ hostname, ... }:
 {
   imports = if (hostname == "jd") then [ inputs.home-manager.nixosModules.home-manager ] else [ ];
   programs.nushell = {
