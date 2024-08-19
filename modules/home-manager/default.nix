@@ -12,5 +12,4 @@
     #        ./schizofox.nix
     #           wtf raf
   ];
-  home.stateVersion = "23.05";
 }

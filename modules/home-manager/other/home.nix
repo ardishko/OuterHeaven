@@ -89,6 +89,4 @@
       userEmail = "ardishco@protonmail.com";
     };
   };
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
