@@ -14,7 +14,7 @@
       Restart = "always";
       User = "playit";
       Group = "playit";
-      WorkingDirectory = "/var/lib/playit"
+      WorkingDirectory = "/var/lib/playit";
     };
   };
 }
