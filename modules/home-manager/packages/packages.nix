@@ -5,7 +5,7 @@
 , ...
 }: {
   # Define your packages here and everything related.
-  imports = if (hostname == "jd") then [ inputs.home-manager.nixosModules.home-manager ] else [ ];
+
   home.packages = with pkgs; if (hostname == "jd") then [
     inputs.nh.packages.${pkgs.system}.default
     inputs.flux.packages.${pkgs.system}.mcman

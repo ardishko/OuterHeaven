@@ -167,8 +167,7 @@
         modules = [
           ./machines/jd
           ./server
-          ./modules/home-manager/tui/nushell.nix
-          ./modules/home-manager/packages/packages.nix
+          ./modules/home-manager
           ./modules/core/services/firewall.nix
           ./modules/core/other/impermanence.nix
           home-manager.nixosModules.home-manager

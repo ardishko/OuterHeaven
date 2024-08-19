@@ -1,5 +1,9 @@
+{ hostname, ... }:
 {
-  imports = [
+  imports = if (hostname == "jd") then [
+    ./tui/nushell.nix
+    ./packages/packages.nix
+  ] else [
     ./gui
     ./other
     ./packages
