@@ -4,6 +4,7 @@
     ./services/firewall.nix
     ./other/impermanence.nix
     ./services/openssh.nix
+    ./tui/keymap.nix
     ./boot
   ] else [
     ./boot
