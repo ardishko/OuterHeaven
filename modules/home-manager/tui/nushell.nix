@@ -1,6 +1,5 @@
 { hostname, inputs, ... }:
 {
-  imports = if (hostname == "jd") then [ inputs.home-manager.nixosModules.home-manager ] else [ ];
   programs.nushell = {
     enable = true;
     configFile.text = "
