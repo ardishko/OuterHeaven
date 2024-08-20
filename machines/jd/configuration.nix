@@ -6,6 +6,7 @@
 
 {
   networking.hostName = "jd"; # Define your hostname.
+  networking.hostId = "47c1a15f";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
