@@ -17,6 +17,7 @@
     wget
     cinnamon.nemo
     kitty
+    git
   ] else [
     # Define packages that derive from inputs
 
