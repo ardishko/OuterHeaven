@@ -12,6 +12,7 @@
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
       "/etc/mullvad-vpn"
+      "/etc/backups"
       "/var/lib/nixos-containers"
       "/etc/nixos-containers"
       "/var/lib/tailscale" # tailscale
