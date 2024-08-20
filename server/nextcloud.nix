@@ -12,13 +12,13 @@
       appVersion = "25.0.0-alpha4";
       license = "agpl3Plus";
       }; 
-    epubviewer = pkgs.fetchNextcloudApp {
-      appName = "epubviewer";
-      sha256 = "sha256-ZRz/IadW6xm1Dd4+/GzMhxof11Sp7XEaloExDwgHzCY=";
-      url = "https://github.com/devnoname120/epubviewer/releases/download/1.5.3/epubviewer-1.5.3.tar.gz";
-      appVersion = "1.5.3";
-      license = "agpl3Plus";
-      }; 
+    # epubviewer = pkgs.fetchNextcloudApp {
+    #   appName = "epubviewer";
+    #   sha256 = "sha256-ZRz/IadW6xm1Dd4+/GzMhxof11Sp7XEaloExDwgHzCY=";
+    #   url = "https://github.com/devnoname120/epubviewer/releases/download/1.5.3/epubviewer-1.5.3.tar.gz";
+    #   appVersion = "1.5.3";
+    #   license = "agpl3Plus";
+    #   }; 
     };
     hostName = "files.ardishco.net";
     config.adminpassFile = "/persist/etc/nextcloud-admin-pass";
