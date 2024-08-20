@@ -5,13 +5,13 @@
     package = pkgs.nextcloud28;
     extraApps = {
       inherit (pkgs.nextcloud28Packages.apps) cookbook notes bookmarks maps tasks spreed previewgenerator phonetrack memories calendar contacts forms;
-    news = pkgs.fetchNextcloudApp {
-      appName = "news";
-      sha256 = "sha256-aePXUn57U+1e01dntxFuzWZ8ILzwbnsAOs60Yz/6zUU=";
-      url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha4/news.tar.gz";
-      appVersion = "25.0.0-alpha4";
-      license = "agpl3Plus";
-      }; 
+    # news = pkgs.fetchNextcloudApp {
+    #   appName = "news";
+    #   sha256 = "sha256-aePXUn57U+1e01dntxFuzWZ8ILzwbnsAOs60Yz/6zUU=";
+    #   url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha4/news.tar.gz";
+    #   appVersion = "25.0.0-alpha4";
+    #   license = "agpl3Plus";
+    #   }; 
     # epubviewer = pkgs.fetchNextcloudApp {
     #   appName = "epubviewer";
     #   sha256 = "sha256-ZRz/IadW6xm1Dd4+/GzMhxof11Sp7XEaloExDwgHzCY=";
