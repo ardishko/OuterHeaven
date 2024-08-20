@@ -36,7 +36,9 @@
     isNormalUser = true;
     description = "snake";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+    # package names go here
+    ];
   };
 
   nix.settings = {

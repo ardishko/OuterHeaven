@@ -1,6 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
-  home.packages = with pkgs; [ (prismlauncher.override { withWaylandGLFW = true; }) ];
+  home.packages = with pkgs; [ 
+    (prismlauncher.override { withWaylandGLFW = true; }) 
+    inputs.polly-mc.packages.${pkgs.system}.default
+  ];
   xdg.desktopEntries = {
     "org.prismlauncher.PrismLauncher" = lib.mkForce {
       name = "Turizm Launcher";

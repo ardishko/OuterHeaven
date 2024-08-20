@@ -49,9 +49,9 @@ And with that, you'll get this config on a brand new computer! Hopefully.
 
 The versioning would be largely inconsistent if I version every update since this is something I modify daily or at the very worst weekly BUT when there is a major change I will bump the number up from 2.0 -> 3.0 for example. I will update the current major version we're on when I release big updates for this config such as changes to config structre.
 
-Current major version: `3.0`
+Current major version: `4.0`
 <br>
-Next Major version: `4.0` (will be released when my configuration is a multi-system configuration like mentioned above.) (No plans for this yet.)
+Next Major version: `5.0` (will be released when my configuration is a multi-system configuration like mentioned above.) (No plans for this yet.)
 
 # Why?
 

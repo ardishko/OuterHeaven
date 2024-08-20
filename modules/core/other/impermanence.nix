@@ -38,6 +38,7 @@
       users.${username} = {
         directories = if (hostname == "jd") then [
           ".config/Mullvad VPN"
+          ".config/sops"
           ".local/state/syncthing"
           ".local/share/Steam"
           "Backups"
@@ -82,6 +83,7 @@
           ".local/share/Cemu"
           ".local/share/flatpak"
           ".local/share/PrismLauncher"
+          ".local/share/PollyMC"
           ".local/share/HotlineMiami2"
           ".local/share/HotlineMiami"
           ".local/share/Celeste"

@@ -3,6 +3,7 @@
   imports = if (hostname == "jd") then [
     ./services/firewall.nix
     ./other/impermanence.nix
+    ./services/openssh.nix
     ./boot
   ] else [
     ./boot

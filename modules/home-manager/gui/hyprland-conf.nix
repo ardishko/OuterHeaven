@@ -94,7 +94,6 @@
         "SUPER_SHIFT, Del, exec, pkill Hyprland"
         "$mainMod, A, togglefloating,"
         "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
-        "$mainMod SHIFT, F, exec, ${pkgs.gnome.nautilus}/bin/nautilus"
         "$mainMod, E, togglesplit, # dwindle"
         "$mainMod,F,fullscreen"
         '',Print, exec, ${inputs.wayfreeze.packages.${pkgs.system}.wayfreeze}/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${inputs.shadower.packages.${pkgs.system}.shadower}/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
