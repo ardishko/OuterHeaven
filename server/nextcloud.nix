@@ -21,7 +21,7 @@
       }; 
     };
     hostName = "files.ardishco.net";
-    config.adminpassFile = "/persist/etc/nextcloud-admin-pass";
+    config.adminpassFile = "/etc/cred/nextcloud-admin-pass";
     settings = {
       trusted_domains = [ 
         "files.ardishco.net"
