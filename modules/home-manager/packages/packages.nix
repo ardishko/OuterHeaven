@@ -18,6 +18,7 @@
     cinnamon.nemo
     kitty
     git
+    sops
   ] else [
     # Define packages that derive from inputs
 
@@ -200,6 +201,7 @@
     parabolic
     nexusmods-app
     stremio
+    sops
 
     # emu
     ryujinx
