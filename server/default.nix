@@ -3,7 +3,7 @@
     ./nextcloud.nix
 #    ./palworld.nix
     ./parrot.nix
-    # ./cloudflare.nix
+    ./cloudflare.nix
     ./vaultwarden.nix
     ./jellyfin.nix
     ./tailscale.nix
