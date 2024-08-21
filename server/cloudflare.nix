@@ -10,7 +10,7 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" "systemd-resolved.service" ];
     serviceConfig = {
-      ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=${config.sops.secrets.my-password}";
+      ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=$(cat ${config.sops.secrets.cloudflare.path})";
       Restart = "always";
       User = "cloudflared";
       Group = "cloudflared";

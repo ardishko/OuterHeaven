@@ -168,6 +168,7 @@
           ./machines/jd
           ./server
           ./modules
+          ./secrets
           disko.nixosModules.disko
           (import ./disko.nix {
             device = "/dev/nvme0n1";
