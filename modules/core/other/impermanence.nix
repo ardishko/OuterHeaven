@@ -13,6 +13,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/mullvad-vpn"
       "/etc/backups"
+      "/etc/cred"
       "/var/lib/nixos-containers"
       "/etc/nixos-containers"
       "/var/lib/tailscale" # tailscale
