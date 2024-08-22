@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 {
   users.users.cloudflared = {
     group = "cloudflared";
@@ -10,7 +10,7 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" "systemd-resolved.service" ];
     serviceConfig = {
-      ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=$(cat ${config.sops.secrets.cloudflare.path})";
+      ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --cred-file /etc/cred/cloudflare-cred.json homeserver";
       Restart = "always";
       User = "cloudflared";
       Group = "cloudflared";

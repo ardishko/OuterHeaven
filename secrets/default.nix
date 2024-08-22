@@ -1,4 +1,4 @@
-{ inputs, username, ... }:
+{ inputs, username, config, ... }:
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
@@ -14,7 +14,16 @@
     secrets = {
       user-pass-dir = { };
       root-pass-dir = { };
-      cloudflare = { };
+      cloudflare = {
+        # owner = "cloudflared";
+      };
     };
+    # templates = {
+    #   cloudflare = {
+    #     content = '' 
+    #       ${config.sops.secrets.cloudflare.path}
+    #     '';
+    #   };
+    # };
   };
 }
