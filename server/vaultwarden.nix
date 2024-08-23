@@ -1,7 +1,7 @@
 {
   services.vaultwarden = {
     enable = true;
-    backupDir = "/etc/backups/vaultwarden";
+    backupDir = "/var/lib/bitwarden-backup";
     config = {
         ROCKET_ADDRESS = "0.0.0.0";
         ROCKET_PORT = 8222;
