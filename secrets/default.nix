@@ -14,7 +14,7 @@
     secrets = {
       user-pass-dir = { };
       root-pass-dir = { };
-      cloudflare = {
+      cf = {
         # owner = "cloudflared";
       };
     };
