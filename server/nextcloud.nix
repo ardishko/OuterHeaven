@@ -2,14 +2,14 @@
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud28;
+    package = pkgs.nextcloud29;
     extraApps = {
-      inherit (pkgs.nextcloud28Packages.apps) cookbook notes bookmarks maps tasks spreed previewgenerator phonetrack memories calendar contacts forms;
+      inherit (pkgs.nextcloud29Packages.apps) cookbook notes bookmarks maps tasks spreed previewgenerator phonetrack memories calendar contacts forms;
     news = pkgs.fetchNextcloudApp {
       appName = "news";
       sha256 = "sha256-9exftg1BS9pTJeKdJzt0XzXlFRDNZCh8aBgkC+e40zc=";
-      url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha4/news.tar.gz";
-      appVersion = "25.0.0-alpha4";
+      url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha8/news.tar.gz";
+      appVersion = "25.0.0-alpha8";
       license = "agpl3Plus";
       }; 
     epubviewer = pkgs.fetchNextcloudApp {
@@ -20,11 +20,11 @@
       license = "agpl3Plus";
       }; 
     };
-    hostName = "files.ardishco.net";
+    hostName = "nextcloud.ardishco.net";
     config.adminpassFile = "/etc/cred/nextcloud-admin-pass";
     settings = {
       trusted_domains = [ 
-        "files.ardishco.net"
+        "nextcloud.ardishco.net"
         "192.168.1.112"
       ];
     };

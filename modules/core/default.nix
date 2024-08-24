@@ -5,6 +5,7 @@
     ./other/impermanence.nix
     ./services/openssh.nix
     ./tui/keymap.nix
+    ./gui/hyprland.nix
     ./boot
   ] else [
     ./boot
