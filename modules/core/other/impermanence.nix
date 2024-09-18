@@ -71,6 +71,7 @@
           ".config/steam-rom-manager"
           ".config/cosmic"
           ".config/deadbolt_game"
+          ".config/obsidian"
           ".local/share/bottles"
           ".local/state/syncthing"
           ".local/state/wireplumber"
