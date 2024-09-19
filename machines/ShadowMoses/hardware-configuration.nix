@@ -30,14 +30,14 @@
 
   # External drives
 
-  # fileSystems."/disks/EEEEEEEEEEE" = {
-  #   device = "/dev/disk/by-uuid/bd44ffbb-b994-4b47-b5a2-eea71704cfbf";
-  #   fsType = "ext4";
-  # };
-  # fileSystems."/disks/1TBCP" = {
-  #   device = "/dev/disk/by-uuid/cee53a9e-310e-4ead-bde1-cb8ef6badc87";
-  #   fsType = "ext4";
-  # };
+  fileSystems."/disks/EEEEEEEEEEE" = {
+    device = "/dev/disk/by-uuid/bd44ffbb-b994-4b47-b5a2-eea71704cfbf";
+    fsType = "ext4";
+  };
+  fileSystems."/disks/1TBCP" = {
+    device = "/dev/disk/by-uuid/cee53a9e-310e-4ead-bde1-cb8ef6badc87";
+    fsType = "ext4";
+  };
 
   swapDevices = [ ];
 
