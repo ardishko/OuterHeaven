@@ -17,7 +17,7 @@
     ./prism-launcher.nix
     ./qt
     ./spicetify.nix
-    ./swaync.nix
+    ./swaync
     ./vesktop.nix
     ./virt-manager.nix
     ./waybar
