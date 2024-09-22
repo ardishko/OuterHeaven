@@ -17,7 +17,7 @@
     config = {
       allowUnfree = true;
       packageOverrides = pkgs: {
-        steam = (pkgs.steam.override {
+        steam = pkgs.steam.override {
           extraPkgs = pkgs:
             with pkgs; [
               xorg.libXcursor
@@ -31,7 +31,7 @@
               libkrb5
               keyutils
             ];
-        });
+        };
         #   .overrideAttrs (old: {
         #     desktopItems = [
         #       (pkgs.makeDesktopItem {
@@ -49,9 +49,9 @@
   nixpkgs.overlays = [
     (_final: prev: {
       steam = prev.steam.override ({ extraLibraries ? _pkgs': [ ], ... }: {
-        extraLibraries = pkgs': (extraLibraries pkgs') ++ ([
+        extraLibraries = pkgs': (extraLibraries pkgs') ++ [
           pkgs'.gperftools
-        ]);
+        ];
       });
     })
   ];

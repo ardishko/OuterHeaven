@@ -17,8 +17,7 @@
 }:
 
 let
-  davinci = (
-    stdenv.mkDerivation rec {
+  davinci = stdenv.mkDerivation rec {
       pname = "davinci-resolve";
       version = "18.0b3";
 
@@ -72,8 +71,7 @@ let
           fi
         done
       '';
-    }
-  );
+    };
 in
 buildFHSUserEnv {
   name = "davinci-resolve";
