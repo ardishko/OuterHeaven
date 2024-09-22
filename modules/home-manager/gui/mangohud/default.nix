@@ -1,1 +1,5 @@
-{ xdg.configFile."MangoHud/MangoHud.conf".text = ''${builtins.readFile ./MangoHud.conf} ''; }
+{ pkgs, ... }:
+{ 
+  home.packages = with pkgs; [ mangohud ];
+  xdg.configFile."MangoHud/MangoHud.conf".source = ./MangoHud.conf; 
+}

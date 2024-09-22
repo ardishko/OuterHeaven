@@ -76,7 +76,6 @@
         themechanger
         piper
         thunderbird
-        mangohud
         nix-init
         waydroid
         rustdesk-flutter
@@ -91,7 +90,6 @@
         baobab
         python3Full
         gnupg
-        mangohud
         gzdoom
         wlprop
         mate.mate-polkit
