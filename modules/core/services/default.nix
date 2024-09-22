@@ -9,7 +9,7 @@
     ./kdeconnect.nix
     ./joycond.nix
     ./mullvad-vpn.nix
-    ./mysql.nix
+    # ./mysql.nix
     ./noisetorch.nix
     ./openssh.nix
     ./printing.nix
