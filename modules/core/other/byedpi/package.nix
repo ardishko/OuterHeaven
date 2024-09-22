@@ -1,6 +1,4 @@
 { config
-, lib
-, pkgs
 , ...
 }:
 with lib; let
@@ -8,9 +6,7 @@ with lib; let
 
   byedpi = pkgs.callPackage
     ({ stdenv
-     , pkgs
      , fetchFromGitHub
-     , lib
      ,
      }:
       stdenv.mkDerivation rec {
@@ -43,16 +39,6 @@ with lib; let
       '';
       })
     { };
-
-  meta = with lib; {
-    description = " Bypass DPI";
-
-    longDescription = " Bypass DPI";
-
-    homepage = "https://github.com/hufrea/byedpi";
-
-    platforms = platforms.all;
-  };
 in
 {
   options.services.byedpi = {

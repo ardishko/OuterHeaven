@@ -1,9 +1,5 @@
 { stdenv
 , lib
-, cacert
-, curl
-, runCommandLocal
-, targetPlatform
 , unzip
 , appimage-run
 , addOpenGLRunpath
@@ -17,7 +13,6 @@
 , glib
 , libarchive
 , python
-, patchelf
 , dbus
 }:
 

@@ -47,8 +47,8 @@
     };
   };
   nixpkgs.overlays = [
-    (final: prev: {
-      steam = prev.steam.override ({ extraLibraries ? pkgs': [ ], ... }: {
+    (_final: prev: {
+      steam = prev.steam.override ({ extraLibraries ? _pkgs': [ ], ... }: {
         extraLibraries = pkgs': (extraLibraries pkgs') ++ ([
           pkgs'.gperftools
         ]);

@@ -1,4 +1,4 @@
-{ pkgs, config, hostname, ... }:
+{ pkgs, hostname, ... }:
 {
   boot = {
     consoleLogLevel = 1;

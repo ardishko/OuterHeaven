@@ -1,4 +1,4 @@
-{ inputs, lib, hostname, ... }:
+{ lib, hostname, ... }:
 {
   imports = [
     ./dconf.nix

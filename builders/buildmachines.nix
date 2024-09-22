@@ -1,5 +1,3 @@
-{ config, inputs, outputs, username, ... }:
-
 {
   nix = {
     buildMachines = [

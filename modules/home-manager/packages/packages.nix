@@ -96,12 +96,11 @@
     qalculate-gtk
     cargo
     distrobox
-    wf-recorder
     clonehero
     scanmem
     unzip
     bless
-    bottles-unwrapped
+    bottles
     signal-desktop-beta
     qgnomeplatform-qt6
     qgnomeplatform

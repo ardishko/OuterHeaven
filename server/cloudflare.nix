@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }:
+{ pkgs, ... }:
 {
   users.users.cloudflared = {
     group = "cloudflared";

@@ -115,7 +115,6 @@
   };
   outputs =
     inputs @ { nixpkgs
-    , home-manager
     , disko
     , ...
     }: {

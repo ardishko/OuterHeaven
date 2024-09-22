@@ -1,8 +1,4 @@
-{ config
-, pkgs
-, self
-, user
-, inputs
+{ pkgs
 , username
 , ...
 }: {

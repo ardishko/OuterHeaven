@@ -1,4 +1,4 @@
-{ hostname, inputs, ... }:
+{ ... }:
 {
   programs.nushell = {
     enable = true;

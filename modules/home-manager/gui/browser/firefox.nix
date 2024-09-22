@@ -26,13 +26,6 @@ let
         inherit pname version addonId;
         src = pkgs.fetchurl { inherit url sha256; };
       };
-
-      theme = { name, theme }: buildFirefoxXpiAddon {
-        pname = "firefox-theme-xpi-${name}";
-        version = "1.0";
-        addonId = "theme-${name}@outfoxxed.me";
-        src = import ./theme.nix { inherit pkgs name theme; };
-      };
     in
     {
       read-aloud = remoteXpiAddon {

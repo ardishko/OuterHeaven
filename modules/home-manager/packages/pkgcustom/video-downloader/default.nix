@@ -5,7 +5,6 @@
 , ninja
 , python3
 , gettext
-, glib
 , appstream-glib
 , desktop-file-utils
 , librsvg
