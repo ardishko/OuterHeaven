@@ -1,7 +1,3 @@
-{ inputs, pkgs, ... }:
-{
-  home.packages = with pkgs; [ wlogout ];
-  xdg.configFile."wlogout/layout".text = ''
     {
         "label" : "lock",
         "action" : "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock",
@@ -38,5 +34,3 @@
         "text" : "Reboot",
         "keybind" : "r"
     }
-  '';
-}

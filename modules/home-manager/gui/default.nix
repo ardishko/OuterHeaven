@@ -6,7 +6,7 @@
     ./discord-canary.nix
     ./flameshot.nix
     ./goverlay.nix
-    ./heroic.nix
+    ./heroic
     ./hyprland-conf.nix
     ./hyprlock.nix
     ./kitty.nix
@@ -20,8 +20,8 @@
     ./swaync.nix
     ./vesktop.nix
     ./virt-manager.nix
-    ./waybar.nix
-    ./wlogout.nix
+    ./waybar
+    ./wlogout
     ./fastfetch
     ./mangohud
   ];

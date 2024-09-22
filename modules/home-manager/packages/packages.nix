@@ -196,7 +196,6 @@
         slurp
         file-roller
         zoom-us
-        heroic
         upscayl
         wl-gammarelay-rs
         lmms

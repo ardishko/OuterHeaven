@@ -1,0 +1,131 @@
+      {
+
+      	// waybar-bluetooth
+          "bluetooth": {
+              //"controller": "controller1",
+              //"format-device-preference": "",
+              "format": " {status}",
+              "format-on": " {status}",
+              "format-off": " {status}",
+              "format-disabled": " {status}",
+              "format-connected": " {device_alias}",
+              "format-connected-battery": " {device_alias}, {device_battery_percentage}%",
+              "tooltip": true,
+              "tooltip-format": "{controller_alias}\t{controller_address}",
+              "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+              "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+              "on-click": "blueman-manager",
+          },
+
+      	// waybar-clock
+          "clock": {
+      		"interval": 60,
+      		"align": 0,
+      		"rotate": 0,
+              "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+              "format": " {:%H:%M}",
+              "format-alt": " {:%A | %b %d, %G}"
+          },
+
+      	// waybar-custom
+          "custom/menu": {
+               "format": " ",
+               "tooltip": false,
+               "on-click": "sleep 0.1 && anyrun",
+               "on-click-right": "wvkbd-mobintl",
+          },
+
+          "custom/power": {
+               "format": "襤",
+               "tooltip": false,
+               "on-click": "sleep 0.1 && wlogout",
+          },
+
+      	// waybar-mpd
+          "mpd": {
+              "interval": 1,
+              "unknown-tag": "N/A",
+              "format": "{stateIcon} {artist} - {title} | 祥 {elapsedTime:%M:%S}",
+              "format-disconnected": " Disconnected",
+              "format-paused": "{stateIcon} {artist} - {title}",
+              "format-stopped": " Stopped",
+              "state-icons": {
+                  "paused": "",
+                  "playing": ""
+              },
+              "tooltip-format": "MPD (connected)",
+              "tooltip-format-disconnected": "MPD (disconnected)",
+      		// Commands to execute on events
+              "on-click": "mpc toggle",
+              "on-click-middle": "mpc prev",
+              "on-click-right": "mpc next",
+              "on-update": "",
+              "on-scroll-up": "mpc seek +00:00:01",
+              "on-scroll-down": "mpc seek -00:00:01",
+              "smooth-scrolling-threshold": 1,
+          },
+
+      	// waybar-network
+          "network": {
+      		"interval": 5,
+              //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+              "format-wifi": " {essid}",
+              "format-ethernet": " {ipaddr}/{cidr}",
+              "format-linked": " {ifname} (No IP)",
+              "format-disconnected": "睊 Disconnected",
+              "format-disabled": "睊 Disabled",
+              "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+              "tooltip-format": " {ifname} via {gwaddr}",
+          },
+
+      	// waybar-pulseaudio
+          "pulseaudio": {
+              //"format": "{volume}% {icon} {format_source}",
+              "format": "{icon} {volume}%",
+              "format-muted": "  Mute",
+              "format-bluetooth": " {volume}% {format_source}",
+              "format-bluetooth-muted": " Mute",
+              "format-source": " {volume}%",
+              "format-source-muted": "",
+              "format-icons": {
+                  "headphone": "",
+                  "hands-free": "",
+                  "headset": "",
+                  "phone": "",
+                  "portable": "",
+                  "car": "",
+                  "default": ["", "", ""]
+              },
+              "scroll-step": 5.0,
+      		// Commands to execute on events
+              "on-click": "pulsemixer --toggle-mute",
+              "on-click-right": "pulsemixer --toggle-mute",
+              "smooth-scrolling-threshold": 1,
+          },
+
+      	// waybar-hyprland-workspaces
+          "hyprland/workspaces": {
+               "disable-scroll": false,
+               "disable-click": false,
+               "all-outputs": true,
+               "format": "{}",
+               },
+              "smooth-scrolling-threshold": 1,
+              "disable-scroll-wraparound": false,
+              "enable-bar-scroll": true,
+              "disable-markup": false,
+              "current-only": false,
+              "sort-by-number": false,
+          },
+
+      	// waybar-tray
+          "tray": {
+              "icon-size": 16,
+              "spacing": 10
+          },
+
+          // hyprland/language
+          "hyprland/language": {
+              "on-click": "wvkbd-mobintl",
+              "on-click-right": "pkill -9 wvkbd-mobintl",
+          }
