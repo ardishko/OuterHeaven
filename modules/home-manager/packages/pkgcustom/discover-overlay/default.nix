@@ -1,10 +1,10 @@
-{ lib
-, python3Packages
-, fetchFromGitHub
-, wrapGAppsHook
-, gobject-introspection
-, gtk-layer-shell
-,
+{
+  lib,
+  python3Packages,
+  fetchFromGitHub,
+  wrapGAppsHook,
+  gobject-introspection,
+  gtk-layer-shell,
 }:
 python3Packages.buildPythonApplication rec {
   pname = "discover";

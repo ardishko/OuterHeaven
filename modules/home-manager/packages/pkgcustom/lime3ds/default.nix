@@ -1,19 +1,20 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, cmake
-, qt6
-, SDL2
-, portaudio
-, gcc_multi
-, pipewire
-, xorg
-, spirv-tools
-, pulseaudio
-, git
-, openssl
-, jack1
-, sndio
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  cmake,
+  qt6,
+  SDL2,
+  portaudio,
+  gcc_multi,
+  pipewire,
+  xorg,
+  spirv-tools,
+  pulseaudio,
+  git,
+  openssl,
+  jack1,
+  sndio,
 }:
 stdenv.mkDerivation rec {
   pname = "lime3ds";

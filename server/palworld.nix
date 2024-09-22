@@ -1,9 +1,6 @@
+{ pkgs, lib, ... }:
+with lib;
 {
-  pkgs,
-  lib,
-  ...
-}:
-with lib; {
   programs.nix-ld.enable = true;
   users.users.palworld = {
     home = "/var/lib/palworld";
@@ -11,7 +8,7 @@ with lib; {
     isSystemUser = true;
     group = "palworld";
   };
-  users.groups.palworld = {};
+  users.groups.palworld = { };
 
   # boot.kernel.sysctl."net.ipv6.conf.eth0.disable_ipv6" = true;
   networking.enableIPv6 = false;

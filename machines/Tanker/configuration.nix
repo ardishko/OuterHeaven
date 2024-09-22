@@ -2,10 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs
-, username
-, ...
-}: {
+{ pkgs, username, ... }:
+{
   # Define your hostname.
   networking.hostName = "Tanker";
   networking.hostId = "6a260131"; # required for zfs
@@ -35,9 +33,11 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    extraGroups = [
+      "networkmanager"
+      "wheel"
     ];
+    packages = with pkgs; [ ];
     shell = pkgs.nushell;
   };
 

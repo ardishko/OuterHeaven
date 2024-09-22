@@ -8,7 +8,10 @@
 
   systemd.services.cloudflared = {
     wantedBy = [ "multi-user.target" ];
-    after = [ "network-online.target" "systemd-resolved.service" ];
+    after = [
+      "network-online.target"
+      "systemd-resolved.service"
+    ];
     serviceConfig = {
       ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --cred-file /etc/cred/cloudflare-cred.json homeserver";
       Restart = "always";

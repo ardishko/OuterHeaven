@@ -1,11 +1,11 @@
-{ config
-, lib
-, modulesPath
-, ...
-}: {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+{
+  config,
+  lib,
+  modulesPath,
+  ...
+}:
+{
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot = {
@@ -13,7 +13,15 @@
     supportedFilesystems = [ "ntfs" ];
     kernelModules = [ "kvm-intel" ];
     initrd = {
-      availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [
+        "vmd"
+        "xhci_pci"
+        "ahci"
+        "nvme"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
       kernelModules = [ "amdgpu" ];
     };
   };

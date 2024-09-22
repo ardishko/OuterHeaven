@@ -1,13 +1,20 @@
-{ pkgs, inputs, fetchurl, ... }:
+{
+  pkgs,
+  inputs,
+  fetchurl,
+  ...
+}:
 let
   extra-addons =
     let
       buildFirefoxXpiAddon =
-        { src
-        , pname
-        , version
-        , addonId
-        }: pkgs.stdenv.mkDerivation {
+        {
+          src,
+          pname,
+          version,
+          addonId,
+        }:
+        pkgs.stdenv.mkDerivation {
           name = "${pname}-${version}";
 
           inherit src;
@@ -22,10 +29,18 @@ let
           '';
         };
 
-      remoteXpiAddon = { pname, version, addonId, url, sha256 }: buildFirefoxXpiAddon {
-        inherit pname version addonId;
-        src = pkgs.fetchurl { inherit url sha256; };
-      };
+      remoteXpiAddon =
+        {
+          pname,
+          version,
+          addonId,
+          url,
+          sha256,
+        }:
+        buildFirefoxXpiAddon {
+          inherit pname version addonId;
+          src = pkgs.fetchurl { inherit url sha256; };
+        };
     in
     {
       read-aloud = remoteXpiAddon {
@@ -123,72 +138,102 @@ in
             privateDefault = "Brave";
             engines = {
               "Nix Packages" = {
-                urls = [{
-                  template = "https://search.nixos.org/packages";
-                  params = [
-                    { name = "type"; value = "packages"; }
-                    { name = "query"; value = "{searchTerms}"; }
-                  ];
-                }];
+                urls = [
+                  {
+                    template = "https://search.nixos.org/packages";
+                    params = [
+                      {
+                        name = "type";
+                        value = "packages";
+                      }
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
+                ];
                 icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
                 definedAliases = [ "!np" ];
               };
               "NixOS Wiki" = {
-                urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+                urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
                 iconUpdateURL = "https://nixos.wiki/favicon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "!nw" ];
               };
               "NixOS Options" = {
-                urls = [{
-                  template = "https://search.nixos.org/options";
-                  params = [
-                    { name = "type"; value = "packages"; }
-                    { name = "query"; value = "{searchTerms}"; }
-                  ];
-                }];
+                urls = [
+                  {
+                    template = "https://search.nixos.org/options";
+                    params = [
+                      {
+                        name = "type";
+                        value = "packages";
+                      }
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
+                ];
                 icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
                 definedAliases = [ "!no" ];
               };
               "ProtonDB" = {
-                urls = [{ template = "https://www.protondb.com/search?q={searchTerms}"; }];
+                urls = [ { template = "https://www.protondb.com/search?q={searchTerms}"; } ];
                 iconUpdateURL = "https://icons.iconarchive.com/icons/simpleicons-team/simple/256/protondb-icon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "!pdb" ];
               };
               "Brave" = {
-                urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
+                urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
                 iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
                 updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!b" ];
               };
               "Brave Images" = {
-                urls = [{ template = "https://search.brave.com/images?q={searchTerms}"; }];
+                urls = [ { template = "https://search.brave.com/images?q={searchTerms}"; } ];
                 iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
                 updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!i" ];
               };
               "Flathub" = {
-                urls = [{ template = "https://flathub.org/apps/search?q={searchTerms}"; }];
+                urls = [ { template = "https://flathub.org/apps/search?q={searchTerms}"; } ];
                 iconUpdateURL = "https://styles.redditmedia.com/t5_3k6jw/styles/communityIcon_b1hyv6wssjd91.png";
                 updateInterval = 24 * 60 * 1000;
-                definedAliases = [ "!f" "!flathub" "!flatpak" ];
+                definedAliases = [
+                  "!f"
+                  "!flathub"
+                  "!flatpak"
+                ];
               };
               "Github Code" = {
-                urls = [{ template = "https://github.com/search?q={searchTerms}&type=code"; }];
-                definedAliases = [ "!code" "!ghc" "!gc" ];
+                urls = [ { template = "https://github.com/search?q={searchTerms}&type=code"; } ];
+                definedAliases = [
+                  "!code"
+                  "!ghc"
+                  "!gc"
+                ];
                 iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
                 updateInterval = 24 * 60 * 1000;
               };
               "Github Repos" = {
-                urls = [{ template = "https://github.com/search?q={searchTerms}&type=repositories"; }];
-                definedAliases = [ "!gh" "!repo" ];
+                urls = [ { template = "https://github.com/search?q={searchTerms}&type=repositories"; } ];
+                definedAliases = [
+                  "!gh"
+                  "!repo"
+                ];
                 iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
                 updateInterval = 24 * 60 * 1000;
               };
               "Youtube" = {
-                urls = [{ template = "https://www.youtube.com/results?search_query={searchTerms}"; }];
-                definedAliasses = [ "!yt" "!y" ];
+                urls = [ { template = "https://www.youtube.com/results?search_query={searchTerms}"; } ];
+                definedAliasses = [
+                  "!yt"
+                  "!y"
+                ];
                 iconUpdateURL = "https://imgs.search.brave.com/0s_rkLjPXG0u6MFQl24I-Debkq4Mp8JmX04Any5mq6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMzg0LzEzODQw/NjAucG5n";
                 updateInterval = 24 * 60 * 1000;
               };
@@ -211,53 +256,56 @@ in
               "Flathub"
             ];
           };
-          extensions = with inputs.firefox-addons.packages.${pkgs.system}; with extra-addons; [
-            bitwarden
-            ublock-origin
-            sponsorblock
-            darkreader
-            dearrow
-            enhanced-h264ify
-            firefox-color
-            fx_cast
-            iina-open-in-mpv
-            protondb-for-steam
-            sidebery
-            terms-of-service-didnt-read
-            vimium-c
-            gesturefy
-            no-pdf-download
-            istilldontcareaboutcookies
-            violentmonkey
-            stylus
-            torrent-control
-            to-deepl
-            blocktube
-            decentraleyes
-            clearurls
-            user-agent-string-switcher
-            wayback-machine
-            youtube-shorts-block
-            return-youtube-dislikes
-            (youtube-recommended-videos.overrideAttrs { meta.license.free = true; }) # IDK why it wouldn't build without this. This is retarded.
-            (flagfox.overrideAttrs { meta.license.free = true; })
-            facebook-container
-            (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
-            read-aloud
-            open-tabs-next-to-current
-            premid
-            cf-purge-plugin
-            btroblox
-            (w2g.overrideAttrs { meta.license.free = true; })
-            watch-on-odysee
-            youtube-for-tv
-            google-container
-            # Theme
-            catppuccin-frappe-sky
-            #catppuccin-mocha-lavender # over here
-            # catppuccin-mocha-green
-            tridactyl
-          ];
+          extensions =
+            with inputs.firefox-addons.packages.${pkgs.system};
+            with extra-addons;
+            [
+              bitwarden
+              ublock-origin
+              sponsorblock
+              darkreader
+              dearrow
+              enhanced-h264ify
+              firefox-color
+              fx_cast
+              iina-open-in-mpv
+              protondb-for-steam
+              sidebery
+              terms-of-service-didnt-read
+              vimium-c
+              gesturefy
+              no-pdf-download
+              istilldontcareaboutcookies
+              violentmonkey
+              stylus
+              torrent-control
+              to-deepl
+              blocktube
+              decentraleyes
+              clearurls
+              user-agent-string-switcher
+              wayback-machine
+              youtube-shorts-block
+              return-youtube-dislikes
+              (youtube-recommended-videos.overrideAttrs { meta.license.free = true; }) # IDK why it wouldn't build without this. This is retarded.
+              (flagfox.overrideAttrs { meta.license.free = true; })
+              facebook-container
+              (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
+              read-aloud
+              open-tabs-next-to-current
+              premid
+              cf-purge-plugin
+              btroblox
+              (w2g.overrideAttrs { meta.license.free = true; })
+              watch-on-odysee
+              youtube-for-tv
+              google-container
+              # Theme
+              catppuccin-frappe-sky
+              #catppuccin-mocha-lavender # over here
+              # catppuccin-mocha-green
+              tridactyl
+            ];
           userChrome = ''
             ${builtins.readFile ./userChrome.css}
           '';
@@ -552,8 +600,7 @@ in
             }
             {
               name = "Books";
-              bookmarks = [
-              ];
+              bookmarks = [ ];
             }
           ];
         };

@@ -10,8 +10,17 @@
           icon = "discord";
           startupWMClass = "VencordDesktop";
           genericName = "Internet Messenger";
-          keywords = [ "discord" "vencord" "electron" "chat" ];
-          categories = [ "Network" "InstantMessaging" "Chat" ];
+          keywords = [
+            "discord"
+            "vencord"
+            "electron"
+            "chat"
+          ];
+          categories = [
+            "Network"
+            "InstantMessaging"
+            "Chat"
+          ];
         })
       ];
     })

@@ -43,7 +43,7 @@
         color = rgba(166, 173, 200, 1.0)
         font_family = Iosevka Nerd Font
         font_size = 41
-    
+
         position = 0, -100
         halign = center
         valign = top

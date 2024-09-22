@@ -1,7 +1,7 @@
 {
   imports = [
     ./nextcloud.nix
-#    ./palworld.nix
+    #    ./palworld.nix
     ./parrot.nix
     ./cloudflare.nix
     ./vaultwarden.nix

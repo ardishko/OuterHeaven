@@ -15,7 +15,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Istanbul";
-  
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -35,14 +35,20 @@
   users.users.snake = {
     isNormalUser = true;
     description = "snake";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    # package names go here
+      # package names go here
     ];
   };
 
   nix.settings = {
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -68,8 +74,8 @@
   # Open ports in the firewall.
 
   # NOTE: PORT THIS PART
-   # networking.firewall.allowedTCPPorts = [ 22 80 443 8211 8096 8080 8222 8000 25565 ];
-   # networking.firewall.allowedUDPPorts = [ 22 80 443 8211 8096 8080 8222 8000 25565 ];
+  # networking.firewall.allowedTCPPorts = [ 22 80 443 8211 8096 8080 8222 8000 25565 ];
+  # networking.firewall.allowedUDPPorts = [ 22 80 443 8211 8096 8080 8222 8000 25565 ];
 
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -80,5 +86,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment? 
+  system.stateVersion = "23.05"; # Did you read the comment?
 }

@@ -1,10 +1,12 @@
-{ pkgs
-, inputs
-, lib
-, hostname
-, username
-, ...
-}: {
+{
+  pkgs,
+  inputs,
+  lib,
+  hostname,
+  username,
+  ...
+}:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -25,58 +27,63 @@
       "$mainMod" = "SUPER";
       "general:layout" = "dwindle";
       monitor =
-        if (hostname == "ShadowMoses") then [
-          "DP-2,2560x1440@164.998993, 0x350, 1"
-          "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
-        ] else
-          if (hostname == "BigShell") then [
-            "eDP-1,1920x1200@60.001999, 0x0, 1"
-          ] else [ ];
-      exec-once = [
-        "mullvad-gui"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "hyprctl setcursor macOS-BigSur 24"
-        "discover-overlay"
-        "flameshot"
-        "sleep 0.5 && ags"
-        "obs --startreplaybuffer"
-        "${pkgs.wlsunset}/bin/wlsunset"
-        "${pkgs.swaynotificationcenter}/bin/swaync"
-        "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
-        "${pkgs.swayosd}/bin/swayosd-server"
-        "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
-        "${pkgs.hypridle}/bin/hypridle"
-        "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
-        "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
-        "${pkgs.arrpc}/bin/arrpc"
-        "${pkgs.premid}/bin/premid --in-process-gpu"
-      ]
-      ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
-        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
-        "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
-      ])
-      ++ (lib.lists.optionals (hostname == "BigShell") [
-        "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
-      ]);
+        if (hostname == "ShadowMoses") then
+          [
+            "DP-2,2560x1440@164.998993, 0x350, 1"
+            "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
+          ]
+        else if (hostname == "BigShell") then
+          [ "eDP-1,1920x1200@60.001999, 0x0, 1" ]
+        else
+          [ ];
+      exec-once =
+        [
+          "mullvad-gui"
+          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "hyprctl setcursor macOS-BigSur 24"
+          "discover-overlay"
+          "flameshot"
+          "sleep 0.5 && ags"
+          "obs --startreplaybuffer"
+          "${pkgs.wlsunset}/bin/wlsunset"
+          "${pkgs.swaynotificationcenter}/bin/swaync"
+          "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
+          "${pkgs.swayosd}/bin/swayosd-server"
+          "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
+          "${pkgs.hypridle}/bin/hypridle"
+          "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
+          "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
+          "${pkgs.arrpc}/bin/arrpc"
+          "${pkgs.premid}/bin/premid --in-process-gpu"
+        ]
+        ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+          "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
+          "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+          "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
+        ])
+        ++ (lib.lists.optionals (hostname == "BigShell") [
+          "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
+        ]);
       workspace =
-        if (hostname == "ShadowMoses") then [
-          "1,monitor:DP-2"
-          "2,monitor:DP-2"
-          "3,monitor:DP-2"
-          "4,monitor:DP-2"
-          "5,monitor:DP-2"
-          "6,monitor:DP-2"
-          "7,monitor:DP-2"
-          "8,monitor:DP-2"
-          "9,monitor:DP-2"
-          "10,monitor:DP-2"
-          "11,monitor:HDMI-A-1"
-          "12,monitor:HDMI-A-1"
-          "13,monitor:HDMI-A-1"
-          "14,monitor:HDMI-A-1"
-        ] else
-          if (hostname == "BigShell") then [
+        if (hostname == "ShadowMoses") then
+          [
+            "1,monitor:DP-2"
+            "2,monitor:DP-2"
+            "3,monitor:DP-2"
+            "4,monitor:DP-2"
+            "5,monitor:DP-2"
+            "6,monitor:DP-2"
+            "7,monitor:DP-2"
+            "8,monitor:DP-2"
+            "9,monitor:DP-2"
+            "10,monitor:DP-2"
+            "11,monitor:HDMI-A-1"
+            "12,monitor:HDMI-A-1"
+            "13,monitor:HDMI-A-1"
+            "14,monitor:HDMI-A-1"
+          ]
+        else if (hostname == "BigShell") then
+          [
             "1,monitor:eDP-1"
             "2,monitor:eDP-1"
             "3,monitor:eDP-1"
@@ -87,91 +94,98 @@
             "8,monitor:eDP-1"
             "9,monitor:eDP-1"
             "10,monitor:eDP-1"
-          ] else [ ];
-      bind = [
-        "$mainMod, Return, exec, kitty"
-        "SUPER_SHIFT, W, killactive,"
-        "SUPER_SHIFT, Del, exec, pkill Hyprland"
-        "$mainMod, A, togglefloating,"
-        "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
-        "$mainMod, E, togglesplit, # dwindle"
-        "$mainMod,F,fullscreen"
-        '',Print, exec, ${inputs.wayfreeze.packages.${pkgs.system}.wayfreeze}/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${inputs.shadower.packages.${pkgs.system}.shadower}/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
-        "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
-        "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
-        "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
-        "Alt_L, E, exec, hyprctl dispatch workspace +1"
-        "Alt_L, Q, exec, hyprctl dispatch workspace -1"
-        # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
-        "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
-        # Move focus with mainMod + arrow keys
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
-        "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
-        "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
-        "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${username}/Videos'"
-        #i3/sway type beat
+          ]
+        else
+          [ ];
+      bind =
+        [
+          "$mainMod, Return, exec, kitty"
+          "SUPER_SHIFT, W, killactive,"
+          "SUPER_SHIFT, Del, exec, pkill Hyprland"
+          "$mainMod, A, togglefloating,"
+          "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
+          "$mainMod, E, togglesplit, # dwindle"
+          "$mainMod,F,fullscreen"
+          '',Print, exec, ${
+            inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
+          }/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${
+            inputs.shadower.packages.${pkgs.system}.shadower
+          }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
+          "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
+          "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
+          "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
+          "Alt_L, E, exec, hyprctl dispatch workspace +1"
+          "Alt_L, Q, exec, hyprctl dispatch workspace -1"
+          # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
+          "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
+          # Move focus with mainMod + arrow keys
+          "$mainMod, left, movefocus, l"
+          "$mainMod, right, movefocus, r"
+          "$mainMod, up, movefocus, u"
+          "$mainMod, down, movefocus, d"
+          "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
+          "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
+          "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${username}/Videos'"
+          #i3/sway type beat
 
-        ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
-        "$mainMod, Q, togglegroup"
-        "$mainMod, D, changegroupactive"
-        "$mainMod, W, lockgroups, toggle"
+          ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
+          "$mainMod, Q, togglegroup"
+          "$mainMod, D, changegroupactive"
+          "$mainMod, W, lockgroups, toggle"
 
-        #global shortcuts
-        "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
-        "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
-        "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
-        "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
-        "$mainMod, Insert,pass,^(discordcanary)$"
-        "$mainMod, Home,pass,^(discordcanary)$"
+          #global shortcuts
+          "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
+          "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
+          "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
+          "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
+          "$mainMod, Insert,pass,^(discordcanary)$"
+          "$mainMod, Home,pass,^(discordcanary)$"
 
-        # Switch workspaces with mainMod + [0-9]
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
+          # Switch workspaces with mainMod + [0-9]
+          "$mainMod, 1, workspace, 1"
+          "$mainMod, 2, workspace, 2"
+          "$mainMod, 3, workspace, 3"
+          "$mainMod, 4, workspace, 4"
+          "$mainMod, 5, workspace, 5"
+          "$mainMod, 6, workspace, 6"
+          "$mainMod, 7, workspace, 7"
+          "$mainMod, 8, workspace, 8"
+          "$mainMod, 9, workspace, 9"
+          "$mainMod, 0, workspace, 10"
 
-        # Move active window to a workspace with mainMod + SHIFT + [0-9]
-        "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-        "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-        "$mainMod, minus, movetoworkspace, special:scratchpad"
-        # Move window with mainMod_SHIFT + arrow keys
-        "$mainMod SHIFT, left, movewindow, l"
-        "$mainMod SHIFT, right, movewindow, r"
-        "$mainMod SHIFT, up, movewindow, u"
-        "$mainMod SHIFT, down, movewindow, d"
+          # Move active window to a workspace with mainMod + SHIFT + [0-9]
+          "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
+          "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
+          "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
+          "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
+          "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
+          "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
+          "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
+          "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
+          "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
+          "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
+          "$mainMod, minus, movetoworkspace, special:scratchpad"
+          # Move window with mainMod_SHIFT + arrow keys
+          "$mainMod SHIFT, left, movewindow, l"
+          "$mainMod SHIFT, right, movewindow, r"
+          "$mainMod SHIFT, up, movewindow, u"
+          "$mainMod SHIFT, down, movewindow, d"
 
-        # Scroll through existing workspaces with mainMod + scroll
-        "$mainMod, mouse_up, workspace, r+1"
-        "$mainMod, mouse_down, workspace, r-1"
-      ]
-      ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-        "$mainMod, h, workspace, 11"
-        "$mainMod, j, workspace, 12"
-        "$mainMod, k, workspace, 13"
-        "$mainMod, l, workspace, 14"
-        # Move to active window workspaces, for HJKL workspaces with SUPER + SHIFT + [h,j,k,l]
-        "$mainMod SHIFT, h, movetoworkspacesilent, 11"
-        "$mainMod SHIFT, j, movetoworkspacesilent, 12"
-        "$mainMod SHIFT, k, movetoworkspacesilent, 13"
-        "$mainMod SHIFT, l, movetoworkspacesilent, 14"
-      ]);
+          # Scroll through existing workspaces with mainMod + scroll
+          "$mainMod, mouse_up, workspace, r+1"
+          "$mainMod, mouse_down, workspace, r-1"
+        ]
+        ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+          "$mainMod, h, workspace, 11"
+          "$mainMod, j, workspace, 12"
+          "$mainMod, k, workspace, 13"
+          "$mainMod, l, workspace, 14"
+          # Move to active window workspaces, for HJKL workspaces with SUPER + SHIFT + [h,j,k,l]
+          "$mainMod SHIFT, h, movetoworkspacesilent, 11"
+          "$mainMod SHIFT, j, movetoworkspacesilent, 12"
+          "$mainMod SHIFT, k, movetoworkspacesilent, 13"
+          "$mainMod SHIFT, l, movetoworkspacesilent, 14"
+        ]);
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
@@ -208,9 +222,7 @@
       };
       animations = {
         enabled = true;
-        bezier = [
-          "overshot, 0.13, 0.99, 0.29, 1.1"
-        ];
+        bezier = [ "overshot, 0.13, 0.99, 0.29, 1.1" ];
         animation = [
           "windows, 1, 3, overshot, slide"
           "windowsOut, 1, 7, overshot, slide"

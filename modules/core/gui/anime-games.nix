@@ -9,4 +9,3 @@
 
   # what the fuck is this nixos module this is horrible
 }
-

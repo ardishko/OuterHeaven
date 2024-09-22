@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./buildmachines.nix
-  ];
-}
+{ imports = [ ./buildmachines.nix ]; }

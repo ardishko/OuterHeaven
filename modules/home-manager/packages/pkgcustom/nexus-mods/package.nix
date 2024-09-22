@@ -1,9 +1,10 @@
-{ buildDotnetModule
-, dotnetCorePackages
-, fetchFromGitHub
-, lib
-, nexus-mods-app
-, runCommand
+{
+  buildDotnetModule,
+  dotnetCorePackages,
+  fetchFromGitHub,
+  lib,
+  nexus-mods-app,
+  runCommand,
 }:
 buildDotnetModule rec {
   pname = "nexus-mods-app";

@@ -4,8 +4,6 @@
   # Someday.
   xdg.portal = {
     enable = true;
-    wlr = lib.mkForce {
-      enable = false;
-    };
+    wlr = lib.mkForce { enable = false; };
   };
 }

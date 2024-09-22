@@ -1,28 +1,24 @@
-{ config
-, ...
-}:
-with lib; let
+{ config, ... }:
+with lib;
+let
   cfg = config.services.byedpi;
 
-  byedpi = pkgs.callPackage
-    ({ stdenv
-     , fetchFromGitHub
-     ,
-     }:
-      stdenv.mkDerivation rec {
-        name = "byedpi";
+  byedpi = pkgs.callPackage (
+    { stdenv, fetchFromGitHub }:
+    stdenv.mkDerivation rec {
+      name = "byedpi";
 
-        version = "0.11.1";
+      version = "0.11.1";
 
-        src = fetchFromGitHub {
-          owner = "hufrea";
-          repo = "byedpi";
-          rev = "f4c55af73aefeec55b5cbc557c9641af3682dc47";
+      src = fetchFromGitHub {
+        owner = "hufrea";
+        repo = "byedpi";
+        rev = "f4c55af73aefeec55b5cbc557c9641af3682dc47";
 
-          sha256 = "sha256-hsyCBpq/7PKqMwAjGrCBKIszJD2nV34xdlKme2XIa3o=";
-        };
+        sha256 = "sha256-hsyCBpq/7PKqMwAjGrCBKIszJD2nV34xdlKme2XIa3o=";
+      };
 
-        buildPhase = ''
+      buildPhase = ''
 
         mkdir obj
 
@@ -30,15 +26,15 @@ with lib; let
 
       '';
 
-        installPhase = ''
+      installPhase = ''
 
         mkdir -p $out/bin
 
         install -m 755 ciadpi $out/bin
 
       '';
-      })
-    { };
+    }
+  ) { };
 in
 {
   options.services.byedpi = {
@@ -85,9 +81,7 @@ in
 
       wantedBy = [ "default.target" ];
       serviceConfig = {
-        ExecStart = "${byedpi}/bin/ciadpi -ip ${config.services.byedpi.address} -p ${
-          toString config.services.byedpi.socksPort
-        } ${config.services.byedpi.commandLine} ";
+        ExecStart = "${byedpi}/bin/ciadpi -ip ${config.services.byedpi.address} -p ${toString config.services.byedpi.socksPort} ${config.services.byedpi.commandLine} ";
         Type = "exec";
         PIDFile = "/run/ciadpi.pid";
         ExecReload = "/bin/kill -HUP $MAINPID";
@@ -100,6 +94,8 @@ in
       allowedTCPPorts = with cfg; optionals openFirewall [ socksPort ];
     };
 
-    environment = { systemPackages = [ byedpi ]; };
+    environment = {
+      systemPackages = [ byedpi ];
+    };
   };
 }

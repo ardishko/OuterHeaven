@@ -1,14 +1,15 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, meson
-, ninja
-, python3
-, gettext
-, appstream-glib
-, desktop-file-utils
-, librsvg
-, gtk4
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  meson,
+  ninja,
+  python3,
+  gettext,
+  appstream-glib,
+  desktop-file-utils,
+  librsvg,
+  gtk4,
 }:
 
 stdenv.mkDerivation rec {

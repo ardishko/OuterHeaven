@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.nushell = {
     enable = true;
     configFile.text = "

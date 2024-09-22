@@ -1,1 +1,7 @@
-{ ... }: { imports = [ ./module.nix ./package.nix ]; }
+{ ... }:
+{
+  imports = [
+    ./module.nix
+    ./package.nix
+  ];
+}

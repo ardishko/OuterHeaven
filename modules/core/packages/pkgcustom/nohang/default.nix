@@ -1,7 +1,8 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, cmake
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  cmake,
 }:
 
 stdenv.mkDerivation rec {
@@ -14,9 +15,7 @@ stdenv.mkDerivation rec {
     rev = "v${version}";
     hash = "sha256-aRiBGnJHdtQ5euvJ4DSuCZO5i5OJVRiCesaatrIARmg=";
   };
-  buildInputs = [
-    cmake
-  ];
+  buildInputs = [ cmake ];
   installPhase = ''
     mkdir -p "$out"
     mkdir -p "$out/usr"

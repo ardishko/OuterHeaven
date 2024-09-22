@@ -1,9 +1,9 @@
-{ lib
-, python3Packages
-, fetchFromGitHub
-, fetchurl
-, pkgs
-,
+{
+  lib,
+  python3Packages,
+  fetchFromGitHub,
+  fetchurl,
+  pkgs,
 }:
 let
   sqlcipher3-binary = python3Packages.buildPythonPackage rec {
@@ -13,9 +13,7 @@ let
     #disabled = pythonOlder "3.6";
 
     # if needed
-    buildInputs = [
-      pkgs.sqlcipher
-    ];
+    buildInputs = [ pkgs.sqlcipher ];
 
     format = "setuptools";
 

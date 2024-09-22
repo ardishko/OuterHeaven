@@ -1,7 +1,4 @@
-{ pkgs
-, inputs
-, ...
-}:
+{ pkgs, inputs, ... }:
 let
   officialThemesOLD = pkgs.fetchgit {
     url = "https://github.com/ardishco-the-great/spicetify-themes";
@@ -37,9 +34,6 @@ in
       seekSong
       powerBar
     ];
-    enabledCustomApps = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.apps; [
-      nameThatTune
-    ];
+    enabledCustomApps = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.apps; [ nameThatTune ];
   };
 }
-

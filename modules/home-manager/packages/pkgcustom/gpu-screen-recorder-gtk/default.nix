@@ -1,20 +1,21 @@
-{ stdenv
-, lib
-, fetchurl
-, pkg-config
-, makeWrapper
-, gtk3
-, libpulseaudio
-, libdrm
-, gpu-screen-recorder
-, libglvnd
-, wrapGAppsHook
-, libXcomposite
-, ffmpeg
-, wayland
-, libva
-, libXrandr
-, pulseaudioFull
+{
+  stdenv,
+  lib,
+  fetchurl,
+  pkg-config,
+  makeWrapper,
+  gtk3,
+  libpulseaudio,
+  libdrm,
+  gpu-screen-recorder,
+  libglvnd,
+  wrapGAppsHook,
+  libXcomposite,
+  ffmpeg,
+  wayland,
+  libva,
+  libXrandr,
+  pulseaudioFull,
 }:
 stdenv.mkDerivation {
   pname = "gpu-screen-recorder-gtk";
@@ -54,7 +55,9 @@ stdenv.mkDerivation {
 
     gappsWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ gpu-screen-recorder ]})
     # we also append /run/opengl-driver/lib as it otherwise fails to find libcuda.
-    gappsWrapperArgs+=(--prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libglvnd ]}:/run/opengl-driver/lib)
+    gappsWrapperArgs+=(--prefix LD_LIBRARY_PATH : ${
+      lib.makeLibraryPath [ libglvnd ]
+    }:/run/opengl-driver/lib)
   '';
 
   meta = with lib; {

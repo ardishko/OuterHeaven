@@ -1,4 +1,8 @@
-{ pkgs, name, theme }:
+{
+  pkgs,
+  name,
+  theme,
+}:
 let
   json = builtins.toJSON {
     manifest_version = 2;

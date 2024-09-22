@@ -9,8 +9,5 @@
     ./xdg.nix
     ./impermanence.nix
     # ./byedpi
-  ]
-  ++ (lib.lists.optionals (hostname == "Tanker") [
-    ./jovian.nix
-  ]);
+  ] ++ (lib.lists.optionals (hostname == "Tanker") [ ./jovian.nix ]);
 }

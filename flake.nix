@@ -114,13 +114,18 @@
     };
   };
   outputs =
-    inputs @ { nixpkgs
-    , disko
-    , ...
-    }: {
+    inputs@{ nixpkgs, disko, ... }:
+    {
       nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = let username = "vaporsnake"; hostname = "ShadowMoses"; in { inherit inputs username hostname; };
+        specialArgs =
+          let
+            username = "vaporsnake";
+            hostname = "ShadowMoses";
+          in
+          {
+            inherit inputs username hostname;
+          };
         modules = [
           ./machines/ShadowMoses
           ./modules
@@ -134,7 +139,14 @@
       };
       nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = let username = "raiden"; hostname = "Tanker"; in { inherit inputs username hostname; };
+        specialArgs =
+          let
+            username = "raiden";
+            hostname = "Tanker";
+          in
+          {
+            inherit inputs username hostname;
+          };
         modules = [
           ./machines/Tanker
           ./modules
@@ -148,7 +160,14 @@
       };
       nixosConfigurations.BigShell = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = let username = "liquid"; hostname = "BigShell"; in { inherit inputs username hostname; };
+        specialArgs =
+          let
+            username = "liquid";
+            hostname = "BigShell";
+          in
+          {
+            inherit inputs username hostname;
+          };
         modules = [
           ./machines/BigShell
           ./modules
@@ -162,7 +181,14 @@
       };
       nixosConfigurations.jd = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = let username = "snake"; hostname = "jd"; in { inherit inputs username hostname; };
+        specialArgs =
+          let
+            username = "snake";
+            hostname = "jd";
+          in
+          {
+            inherit inputs username hostname;
+          };
         modules = [
           ./machines/jd
           ./server

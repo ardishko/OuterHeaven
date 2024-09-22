@@ -1,9 +1,9 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, curl
-, pkgs
-,
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  curl,
+  pkgs,
 }:
 stdenv.mkDerivation rec {
   pname = "sgdboop";
@@ -33,7 +33,10 @@ stdenv.mkDerivation rec {
     rm -r "$out/share/metainfo"
   '';
 
-  buildInputs = [ curl pkgs.chickenPackages_5.chickenEggs.iup ];
+  buildInputs = [
+    curl
+    pkgs.chickenPackages_5.chickenEggs.iup
+  ];
 
   meta = {
     description = "A program used for applying custom artwork to Steam, using SteamGridDB";

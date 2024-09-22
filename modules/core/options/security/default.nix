@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./pam
-  ];
-}
+{ imports = [ ./pam ]; }

@@ -1,8 +1,10 @@
-{ inputs
-, pkgs
-, lib
-, ...
-}: {
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
+{
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
   xdg.desktopEntries = {
     nvim = lib.mkForce {
@@ -42,9 +44,7 @@
     plugins = {
       treesitter = {
         enable = true;
-        ensureInstalled = [
-          "all"
-        ];
+        ensureInstalled = [ "all" ];
         nixvimInjections = true;
       };
       lsp = {

@@ -8,9 +8,7 @@
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       gamescopeSession.enable = true;
       platformOptimizations.enable = true;
-      extraCompatPackages = with pkgs; [
-        proton-ge-bin
-      ];
+      extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
   };
   nixpkgs = {
@@ -18,8 +16,8 @@
       allowUnfree = true;
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
-          extraPkgs = pkgs:
-            with pkgs; [
+          extraPkgs =
+            pkgs: with pkgs; [
               xorg.libXcursor
               xorg.libXi
               xorg.libXinerama
@@ -48,11 +46,15 @@
   };
   nixpkgs.overlays = [
     (_final: prev: {
-      steam = prev.steam.override ({ extraLibraries ? _pkgs': [ ], ... }: {
-        extraLibraries = pkgs': (extraLibraries pkgs') ++ [
-          pkgs'.gperftools
-        ];
-      });
+      steam = prev.steam.override (
+        {
+          extraLibraries ? _pkgs': [ ],
+          ...
+        }:
+        {
+          extraLibraries = pkgs': (extraLibraries pkgs') ++ [ pkgs'.gperftools ];
+        }
+      );
     })
   ];
 }

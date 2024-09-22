@@ -1,26 +1,28 @@
-{ pkgs
-, inputs
-, lib
-, hostname
-, ...
-}: {
-  imports = [
-    inputs.nix-flatpak.nixosModules.nix-flatpak
-  ];
-  environment.systemPackages = with pkgs; [
-    bash
-    gamescope
-    lshw
-    f3d
-  ]
-  ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-    davinci-resolve
-    hello
-  ])
-  ++ (lib.lists.optionals (hostname == "Tanker") [
-    steamdeck-firmware
-    jupiter-dock-updater-bin
-  ]);
+{
+  pkgs,
+  inputs,
+  lib,
+  hostname,
+  ...
+}:
+{
+  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      bash
+      gamescope
+      lshw
+      f3d
+    ]
+    ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+      davinci-resolve
+      hello
+    ])
+    ++ (lib.lists.optionals (hostname == "Tanker") [
+      steamdeck-firmware
+      jupiter-dock-updater-bin
+    ]);
 
   services.flatpak = {
     enable = true;

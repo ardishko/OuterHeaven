@@ -1,7 +1,5 @@
-{ pkgs
-, username
-, ...
-}: {
+{ pkgs, username, ... }:
+{
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   # home-manager.backupFileExtension = "backup";
@@ -50,7 +48,6 @@
     name = "macOS-BigSur";
     size = 24;
   };
-
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

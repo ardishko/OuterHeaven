@@ -1,7 +1,12 @@
-{ pkgs, lib, inputs, ... }:
 {
-  home.packages = with pkgs; [ 
-    (prismlauncher.override { withWaylandGLFW = true; }) 
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    (prismlauncher.override { withWaylandGLFW = true; })
     inputs.polly-mc.packages.${pkgs.system}.default
   ];
   xdg.desktopEntries = {
