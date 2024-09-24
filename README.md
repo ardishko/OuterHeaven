@@ -61,6 +61,8 @@ I just wanted to share my config, that's all :P
 
 I admit that I sometimes set up stuff in my config that I don't make use of all the time so if there is a problem I might not notice it myself so feel free to open an issue (No, really I don't mind at all. Do it. It helps me better my system too.)
 
+Additionally, there are unused modules that are usually in a folder called `unused/` in their respective directories, which may or may not work, though usually they should because they did in the past.
+
 ## Heirarchy of fixes/workarounds applied
 ```
 ├──modules/core/gui/steam.nix    (gamescope workaround)

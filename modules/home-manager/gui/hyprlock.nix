@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, hostname, ... }:
 # let
 #   ${primary-monitor} = (lib.list.optionals (hostname == "ShadowMoses") "DP-2")
 # in  
@@ -98,6 +98,5 @@
         halign = center
         valign = center
       }
-  '';
-
+      '';
 }
