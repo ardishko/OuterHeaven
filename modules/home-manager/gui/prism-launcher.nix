@@ -6,7 +6,7 @@
 }:
 {
   home.packages = with pkgs; [
-    (prismlauncher.override { withWaylandGLFW = true; })
+    prismlauncher
     inputs.polly-mc.packages.${pkgs.system}.default
   ];
   xdg.desktopEntries = {

@@ -83,7 +83,6 @@
         helvum
         krita
         lolcat
-        cinny-desktop
         vulkan-tools
         fastfetch
         scrcpy
@@ -142,7 +141,6 @@
         nixpkgs-fmt
         nix-update
         firewalld-gui
-        element-desktop
         gtkcord4
         wineWowPackages.full
         nmap
@@ -165,7 +163,7 @@
         r2modman
         # nomachine-client
         qutebrowser
-        nheko
+        # nheko
         nemo-with-extensions
         libsForQt5.dolphin
         nixpkgs-review
@@ -183,7 +181,7 @@
         looking-glass-client
         libsForQt5.ark
         libsForQt5.dolphin
-        zandronum
+        # zandronum
         aria
         jp2a
         deskreen
@@ -227,12 +225,11 @@
         # })
 
         # Custom packages
-        (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
+        # (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
         (callPackage ./pkgcustom/discover-overlay/default.nix { })
         (callPackage ./pkgcustom/hyprswitch { })
         # (callPackage ./pkgcustom/video-downloader {})
-        (callPackage ./pkgcustom/vinegar { })
-        # (callPackage ./pkgcustom/davinci-resolve {})
+        # (callPackage ./pkgcustom/vinegar { })
         # (callPackage ./pkgcustom/lime3ds {})
         # (callPackage ./pkgcustom/roblox-fd {})
         # (callPackage ../pkgcustom/nexus-mods/package.nix {})

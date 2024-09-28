@@ -40,7 +40,7 @@
         [
           "mullvad-gui"
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "hyprctl setcursor macOS-BigSur 24"
+          "hyprctl setcursor macOS 24"
           "discover-overlay"
           "flameshot"
           "sleep 0.5 && ags"
