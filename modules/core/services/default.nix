@@ -7,6 +7,7 @@
     ./gnome-sushi.nix
     ./gvfs.nix
     ./kdeconnect.nix
+    ./localsend.nix
     ./joycond.nix
     ./mullvad-vpn.nix
     # ./mysql.nix
