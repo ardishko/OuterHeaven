@@ -271,7 +271,7 @@ in
               iina-open-in-mpv
               protondb-for-steam
               terms-of-service-didnt-read
-              vimium-c
+              # vimium-c
               gesturefy
               no-pdf-download
               istilldontcareaboutcookies
@@ -303,7 +303,7 @@ in
               catppuccin-frappe-sky
               #catppuccin-mocha-lavender # over here
               # catppuccin-mocha-green
-              tridactyl
+              # tridactyl
             ];
           userChrome = ''
             ${builtins.readFile ./userChrome.css}
