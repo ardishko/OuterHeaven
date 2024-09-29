@@ -365,6 +365,8 @@ in
             "browser.newtabpage.activity-stream.topSitesRows" = 2;
             "general.smoothScroll" = true;
             "general.autoScroll" = true;
+            "sidebar.revamp" = true;
+            "sidebar.verticalTabs" = true;
             "browser.newtabpage.pinned" = [
               {
                 label = "Youtube";

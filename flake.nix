@@ -51,6 +51,8 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim/53a9599cc4da4f7557995b8611e5dba831261eef";
+      # url = "github:nix-community/nixvim";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     anime-games = {
       url = "github:ezKEa/aagl-gtk-on-nix";

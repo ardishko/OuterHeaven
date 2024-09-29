@@ -227,7 +227,7 @@
         # Custom packages
         # (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
         (callPackage ./pkgcustom/discover-overlay/default.nix { })
-        (callPackage ./pkgcustom/hyprswitch { })
+        # (callPackage ./pkgcustom/hyprswitch { })
         # (callPackage ./pkgcustom/video-downloader {})
         # (callPackage ./pkgcustom/vinegar { })
         # (callPackage ./pkgcustom/lime3ds {})
