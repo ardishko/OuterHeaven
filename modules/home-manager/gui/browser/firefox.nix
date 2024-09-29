@@ -270,7 +270,6 @@ in
               fx_cast
               iina-open-in-mpv
               protondb-for-steam
-              sidebery
               terms-of-service-didnt-read
               vimium-c
               gesturefy
