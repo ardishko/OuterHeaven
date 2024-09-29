@@ -366,6 +366,7 @@ in
             "general.autoScroll" = true;
             "sidebar.revamp" = true;
             "sidebar.verticalTabs" = true;
+            "sidebar.main.tools" = "aichat,syncedtabs,history,bookmarks";
             "browser.newtabpage.pinned" = [
               {
                 label = "Youtube";
