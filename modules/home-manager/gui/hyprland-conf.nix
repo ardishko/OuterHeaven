@@ -260,12 +260,16 @@
         "workspace 9,class:^(Waydroid)"
         "workspace 10,class:^(steam_app*)"
         "stayfocused,class:^(Waydroid)"
+        "float,initialTitle:^(Picture-in-Picture)"
+        "pin,initialTitle:^(Picture-in-Picture)"
         # "forceinput,class:^(Waydroid)"
 
       ];
       layerrule = [
         "noanim,rofi"
         "xray 1, wofi"
+        "noanim, wayfreeze"
+        "noanim, selection"
       ];
       dwindle = {
         pseudotile = true;

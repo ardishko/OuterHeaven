@@ -84,6 +84,7 @@
               ".config/cosmic"
               ".config/deadbolt_game"
               ".config/obsidian"
+              ".config/heroic"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"
