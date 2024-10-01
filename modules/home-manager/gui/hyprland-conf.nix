@@ -202,6 +202,9 @@
         touchpad = {
           natural_scroll = true;
         };
+        touchdevice = {
+          transform = 1;
+        };
         float_switch_override_focus = 2;
         # scroll_factor = 2.0;
       };

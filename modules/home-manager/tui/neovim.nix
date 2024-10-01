@@ -26,7 +26,7 @@
   };
   programs.nixvim = {
     enable = true;
-    options = {
+    opts = {
       number = true;
     };
     defaultEditor = true;
@@ -35,11 +35,14 @@
     package = pkgs.neovim-unwrapped;
     enableMan = false;
     clipboard.register = "unnamedplus";
+    # colorscheme = "catppuccin";
     colorscheme = "catppuccin";
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "frappe";
-      transparentBackground = true;
+      settings = {
+        flavour = "frappe";
+        transparent_background = true;
+      };
     };
     plugins = {
       treesitter = {
@@ -97,7 +100,7 @@
       better-escape.enable = true;
       undotree.enable = true;
       which-key.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       telescope.enable = true;
       nvim-colorizer.enable = true;
       lualine.enable = true;

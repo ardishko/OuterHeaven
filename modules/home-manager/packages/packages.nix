@@ -111,8 +111,8 @@
         gparted
         gnome-usage
         timeshift
-        gnome.gnome-clocks
-        gnome.gnome-sound-recorder
+        gnome-clocks
+        gnome-sound-recorder
         wev
         clamav
         lutgen
