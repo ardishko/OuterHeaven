@@ -4,8 +4,10 @@
   services = {
     xserver = {
       enable = true;
-      layout = "tr";
-      xkbVariant = "";
+      xkb = { 
+        variant = "";
+        layout = "tr";
+      };
       excludePackages = [ pkgs.xterm ];
       displayManager.lightdm.enable = false;
     };
