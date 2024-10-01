@@ -385,11 +385,11 @@ in
               }
               {
                 label = "Spreed";
-                url = "https://files.ardishco.net/apps/spreed";
+                url = "https://nextcloud.ardishco.net/apps/spreed";
               }
               {
-                label = "Digicampus";
-                url = "https://digicampus.fi";
+                label = "TSI Student Portal";
+                url = "https://my.tsi.lv/";
               }
               {
                 label = "ProtonMail";
@@ -423,6 +423,10 @@ in
                 label = "ProtonDB";
                 url = "https://www.protondb.com/";
               }
+              {
+                label = "Syncthing";
+                url = "http://127.0.0.1:8384/";
+              }
             ];
           };
           bookmarks = [
@@ -434,8 +438,8 @@ in
                   url = "https://www.khanacademy.org/test-prep/digital-sat";
                 }
                 {
-                  name = "Digicampus";
-                  url = "https://digicampus.fi/";
+                  name = "TSI";
+                  url = "https://my.tsi.lv/";
                 }
               ];
             }
@@ -452,7 +456,7 @@ in
                 }
                 {
                   name = "Nextcloud";
-                  url = "https://files.ardishco.net";
+                  url = "https://nextcloud.ardishco.net";
                 }
               ];
             }
