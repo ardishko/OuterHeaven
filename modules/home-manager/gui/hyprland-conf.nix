@@ -273,6 +273,7 @@
         "xray 1, wofi"
         "noanim, wayfreeze"
         "noanim, selection"
+
       ];
       dwindle = {
         pseudotile = true;
