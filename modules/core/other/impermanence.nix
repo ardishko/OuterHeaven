@@ -44,7 +44,9 @@
             "/etc/cosmic-comp"
             # persist /mnt so that all the mounted drives don't get wiped upon reboot
             # "/mnt"
-          ];
+          ] ++ (lib.lists.optionals (hostname == "Tanker") [
+            "/var/lib/decky-loader"
+          ]);
       users.${username} = {
         directories =
           if (hostname == "jd") then
@@ -141,7 +143,7 @@
               "homebrew" # (this is for deckyloader)
               # TO DO: Yuzu/Sudachi dirs, vencord/vesktop declarative configuration, .config/Mullvad VPN, nemo
             ];
-      };
+      }; 
     };
   };
   # set persist fs as neededForBoot

@@ -125,7 +125,6 @@
         wireguard-tools
         kdenlive
         tor-browser
-        neovim-unwrapped
         evince
         tailscale
         telegram-desktop
@@ -203,6 +202,7 @@
         nexusmods-app
         stremio
         sops
+        inkscape
 
         # emu
         ryujinx

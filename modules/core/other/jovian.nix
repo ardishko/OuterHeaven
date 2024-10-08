@@ -12,10 +12,13 @@
     devices = {
       steamdeck = {
         enable = true;
+        enableGyroDsuService = true;
       };
     };
     decky-loader = {
       enable = true;
+      user = "${username}";
+      stateDir = "/var/lib/decky-loader";
     };
   };
 }

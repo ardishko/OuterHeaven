@@ -114,6 +114,7 @@
     flux = {
       url = "github:IogaMaster/flux";
     };
+    nvf.url = "github:notashelf/nvf";
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }:
