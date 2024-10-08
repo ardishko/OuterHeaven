@@ -125,6 +125,7 @@
               ".stremio-server"
               ".mozilla"
               ".mullvad"
+              ".factorio"
               "Backups"
               "Downloads"
               "Desktop"

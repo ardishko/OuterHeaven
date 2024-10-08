@@ -1,7 +1,5 @@
 {
   inputs,
-  pkgs,
-  lib,
   ...
 }:
 {
@@ -12,9 +10,12 @@
       # most settings are documented in the appendix
       settings = {
         vim = {
-          viAlias = false;
+          viAlias = true;
           vimAlias = true;
+          lineNumberMode = "number";
           useSystemClipboard = true;
+          autopairs.enable = true;
+          autocomplete.enable = true;
           theme = { 
             enable = true;
             name = "catppuccin";
@@ -32,23 +33,82 @@
           };
         };
         languages = {
-          rust.enable = true;
-          nix.enable = true;
-          sql.enable = true;
-          clang.enable = true;
-          ts.enable = true;
-          python.enable = true;
-          markdown.enable = true;
-          html.enable = true;
-          go.enable = true;
-          lua.enable = true;
-          dart.enable = true;
+          rust = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
+          nix = {
+            enable = true;
+            lsp.enable = true;
+            extraDiagnostics.enable = true;
+            format = {
+              enable = true;
+              type = "nixpkgs-fmt";
+            };
+            treesitter.enable = true;
+          };
+          sql = {
+            enable = true;
+            lsp.enable = true;
+            format.enable = true;
+          };
+          clang = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+            dap.enable = true;
+          };
+          ts = {
+            enable = true;
+            lsp.enable = true;
+            format.enable = true;
+            treesitter.enable = true;
+          };
+          python = {
+            enable = true;
+            lsp.enable = true;
+            format.enable = true;
+            treesitter.enable = true;
+          };
+          markdown = {
+            enable = true;
+            lsp.enable = true;
+            format.enable = true;
+            treesitter.enable = true;
+          };
+          html = {
+            enable = true;
+            treesitter.enable = true;
+          };
+          go = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
+          lua = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
+          dart = {
+            enable = true;
+            treesitter.enable = true;
+            lsp.enable = true;
+            flutter-tools.enable = true;
+          };
+          css = {
+            enable = true;
+            format.enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
         };
         comments = {
           comment-nvim.enable = true;
         };
         dashboard = {
-          dashboard-nvim.enable = true;
+          alpha.enable = true;
         };
         presence = {
           neocord.enable = true;
@@ -65,6 +125,9 @@
         };
         statusline = {
           lualine.enable = true;
+        };
+        assistant = {
+          copilot.enable = true;
         };
       };
     };
