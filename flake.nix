@@ -91,7 +91,7 @@
       url = "github:Jovian-Experiments/Jovian-NixOS";
     };
     disko = {
-      url = "github:raidenovich/disko";
+      url = "github:ardishko/disko";
     };
     impermanence = {
       url = "github:nix-community/impermanence";
