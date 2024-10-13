@@ -7,6 +7,7 @@
   ...
 }:
 {
+  # balls
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -57,12 +58,12 @@
           "${pkgs.premid}/bin/premid --in-process-gpu"
         ]
         ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-          "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../images/wallpapers/strawHats.png}"
-          "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}"
+          "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../assets/wallpapers/strawHats.png}"
+          "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../assets/wallpapers/mark-of-sacrifice-vertical.png}"
           "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
         ])
         ++ (lib.lists.optionals (hostname == "BigShell") [
-          "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../images/wallpapers/berserk-catppuccin.png}"
+          "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../assets/wallpapers/berserk-catppuccin.png}"
         ]);
       workspace =
         if (hostname == "ShadowMoses") then
@@ -112,9 +113,7 @@
             inputs.shadower.packages.${pkgs.system}.shadower
           }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
           "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
-          "SUPER_SHIFT, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad"
-          "$mainMod, minus, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.scratchpad}/bin/scratchpad -g"
-          "Alt_L, E, exec, hyprctl dispatch workspace +1"
+        "Alt_L, E, exec, hyprctl dispatch workspace +1"
           "Alt_L, Q, exec, hyprctl dispatch workspace -1"
           # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
           "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
