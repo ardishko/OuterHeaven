@@ -292,13 +292,13 @@
       "locked": {
         "lastModified": 1719236180,
         "narHash": "sha256-VZAfBk2Lo8hQy/NQ4XVSpTICT0ownXBUi1QvGfdlxaM=",
-        "owner": "raidenovich",
+        "owner": "ardishko",
         "repo": "disko",
         "rev": "dd4d1663ccf7fbdb32361b9afe9e71206584cd4c",
         "type": "github"
       },
       "original": {
-        "owner": "raidenovich",
+        "owner": "ardishko",
         "repo": "disko",
         "type": "github"
       }

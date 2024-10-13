@@ -14,7 +14,7 @@
 
     background {
         monitor = DP-2
-        path = ${../../../images/wallpapers/idolGoro.jpg}
+        path = ${../../../assets/wallpapers/idolGoro.jpg}
         color = rgba(20, 20, 20, 0.9)
         blur_passes = 5 # 0 disables blurring
         blur_size = 1
@@ -26,7 +26,7 @@
     }
     background {
         monitor = HDMI-A-1
-        path = ${../../../images/wallpapers/mark-of-sacrifice-vertical.png}
+        path = ${../../../assets/wallpapers/mark-of-sacrifice-vertical.png}
         color = rgba(20, 20, 20, 0.9)
         blur_passes = 5 # 0 disables blurring
         blur_size = 1
