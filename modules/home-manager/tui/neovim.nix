@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }:
 {
@@ -128,6 +129,27 @@
         };
         assistant = {
           copilot.enable = true;
+        };
+        extraPlugins = {
+          live-share = {
+            package = pkgs.fetchFromGitHub {
+              owner = "azratul";
+              repo = "live-share.nvim";
+              rev = "main";
+              sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
+            };
+            setup = "require('live-share').setup {}";
+            after = ["instant"];
+          };
+          instant = {
+            package = pkgs.fetchFromGitHub {
+              owner = "jbyuki";
+              repo = "instant.nvim";
+              rev = "master";
+              sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
+            };
+            setup = "require('instant').setup {}";
+          };
         };
       };
     };

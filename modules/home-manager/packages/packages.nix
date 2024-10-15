@@ -203,6 +203,7 @@
         stremio
         sops
         inkscape
+        vscodium-fhs
 
         # emu
         ryujinx
