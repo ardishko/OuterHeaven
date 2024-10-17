@@ -1,10 +1,29 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }:
 {
   imports = [ inputs.nvf.homeManagerModules.default ];
+    xdg.desktopEntries = {
+    nvim = lib.mkForce {
+      name = "Neovim";
+      type = "Application";
+      mimeType = [ "text/plain" ];
+
+      icon = builtins.fetchurl {
+        url = "https://raw.githubusercontent.com/NotAShelf/nvf/08547724e42a510e8917125ec86a879cc3013349/.github/assets/nvf-logo-work.svg";
+        sha256 = "19n7n9xafyak35pkn4cww0s5db2cr97yz78w5ppbcp9jvxw6yyz3";
+      };
+      exec = "${pkgs.kitty}/bin/kitty nvim";
+    };
+    notepad = {
+      name = "Quick Notes (tmp)";
+      exec = "${pkgs.kitty}/bin/kitty nvim tmp.txt";
+      icon = "notepad";
+    };
+  };
     programs.nvf = {
       enable = true;
       # your settings need to go into the settings attribute set
@@ -130,27 +149,27 @@
         assistant = {
           copilot.enable = true;
         };
-        extraPlugins = {
-          live-share = {
-            package = pkgs.fetchFromGitHub {
-              owner = "azratul";
-              repo = "live-share.nvim";
-              rev = "main";
-              sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
-            };
-            setup = "require('live-share').setup {}";
-            after = ["instant"];
-          };
-          instant = {
-            package = pkgs.fetchFromGitHub {
-              owner = "jbyuki";
-              repo = "instant.nvim";
-              rev = "master";
-              sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
-            };
-            setup = "require('instant').setup {}";
-          };
-        };
+        # extraPlugins = {
+        #   live-share = {
+        #     package = pkgs.fetchFromGitHub {
+        #       owner = "azratul";
+        #       repo = "live-share.nvim";
+        #       rev = "main";
+        #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
+        #     };
+        #     setup = "require('live-share').setup {}";
+        #     after = ["instant"];
+        #   };
+        #   instant = {
+        #     package = pkgs.fetchFromGitHub {
+        #       owner = "jbyuki";
+        #       repo = "instant.nvim";
+        #       rev = "master";
+        #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
+        #     };
+        #     setup = "require('instant').setup {}";
+        #   };
+        # };
       };
     };
   };

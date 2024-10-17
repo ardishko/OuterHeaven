@@ -5,8 +5,8 @@
       src = pkgs.fetchFromGitHub {
         owner = "flameshot-org";
         repo = "flameshot";
-        rev = "fa29bcb4279b374ea7753fc4a514fd705499f7e7";
-        sha256 = "sha256-XIquratzK4qW0Q1ZYI5X6HIrnx1kTTFxeYeR7hjrpjQ=";
+        rev = "14a136777cd82ab70f42c13b4bc9418c756d91d2";
+        sha256 = "sha256-xM99adstwfOOaeecKyWQU3yY0p65pQyFgoz7WJNra98=";
       };
       cmakeFlags = [
         "-DUSE_WAYLAND_GRIM=True"

@@ -42,6 +42,7 @@
             "/var/lib/waydroid"
             "/etc/mullvad-vpn"
             "/etc/cosmic-comp"
+            "/var/lib/nixos"
             # persist /mnt so that all the mounted drives don't get wiped upon reboot
             # "/mnt"
           ] ++ (lib.lists.optionals (hostname == "Tanker") [
