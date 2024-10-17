@@ -60,8 +60,7 @@ const WifiIndicator = () => Widget.Box({
             icon: network.wifi.bind('icon_name'),
         }),
         Widget.Label({
-            label: network.wifi.bind('ssid')
-                .as(ssid => ssid || 'Unknown'),
+            label: network.wifi.bind("ssid").as((ssid) => " " + ssid || "Unknown"),
         }),
     ],
 })
@@ -208,7 +207,9 @@ function SysTray() {
 
 function PowerButton() {
     return Widget.Button({
-        child: Widget.Label('襤'),
+        child: Widget.Icon({
+            icon: "logout"
+        }),
 	onClicked: () => Utils.exec('wlogout'),
     })
 }
