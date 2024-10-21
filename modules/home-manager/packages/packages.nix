@@ -103,7 +103,6 @@
         clonehero
         scanmem
         unzip
-        bless
         bottles
         signal-desktop-beta
         qgnomeplatform-qt6
@@ -154,14 +153,12 @@
         rmg
         gnome-text-editor
         bleachbit
-        netflix
         tailscale
         clipit
         ventoy-full
         ripcord
         r2modman
         # nomachine-client
-        qutebrowser
         # nheko
         nemo-with-extensions
         libsForQt5.dolphin
@@ -204,6 +201,7 @@
         sops
         inkscape
         vscodium-fhs
+        ghex
 
         # emu
         ryujinx

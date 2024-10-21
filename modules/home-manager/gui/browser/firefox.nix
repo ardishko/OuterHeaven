@@ -503,6 +503,10 @@ in
                   name = "PR Tracker";
                   url = "https://nixpk.gs/pr-tracker.html";
                 }
+                {
+                  name = "nixcord options";
+                  url = "https://github.com/KaylorBen/nixcord/blob/main/docs/plugins.md";
+                }
               ];
             }
             {

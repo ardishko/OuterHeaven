@@ -4,6 +4,7 @@
     ./anyrun.nix
     ./browser
     ./discord-canary.nix
+    ./discord.nix
     ./flameshot.nix
     ./goverlay.nix
     ./heroic
@@ -18,7 +19,6 @@
     ./qt
     ./spicetify.nix
     ./swaync
-    ./vesktop.nix
     ./virt-manager.nix
     ./waybar
     ./wlogout

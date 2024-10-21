@@ -49,11 +49,6 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim/53a9599cc4da4f7557995b8611e5dba831261eef";
-      # url = "github:nix-community/nixvim";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
     anime-games = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -115,6 +110,7 @@
       url = "github:IogaMaster/flux";
     };
     nvf.url = "github:notashelf/nvf";
+    nixcord.url = "github:KaylorBen/nixcord";
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }:

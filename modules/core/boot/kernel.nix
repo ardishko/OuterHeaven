@@ -21,4 +21,5 @@
       "hid-nintendo"
     ];
   };
+  hardware.uinput.enable = true;
 }

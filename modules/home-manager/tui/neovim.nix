@@ -149,27 +149,51 @@
         assistant = {
           copilot.enable = true;
         };
-        # extraPlugins = {
-        #   live-share = {
-        #     package = pkgs.fetchFromGitHub {
-        #       owner = "azratul";
-        #       repo = "live-share.nvim";
-        #       rev = "main";
-        #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
-        #     };
-        #     setup = "require('live-share').setup {}";
-        #     after = ["instant"];
-        #   };
-        #   instant = {
-        #     package = pkgs.fetchFromGitHub {
-        #       owner = "jbyuki";
-        #       repo = "instant.nvim";
-        #       rev = "master";
-        #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
-        #     };
-        #     setup = "require('instant').setup {}";
-        #   };
-        # };
+        extraPlugins = {
+          slides-nvim = {
+            package = pkgs.vimUtils.buildVimPlugin {
+              name = "slides.nvim";
+              src = pkgs.fetchFromGitHub {
+                owner = "NotAShelf";
+                repo = "slides.nvim";
+                rev = "4c168fb47037dd49961f4aee163905774cc17980";
+                hash = "sha256-He6loB5/b8/Y3qS/Zq5zDUaMQgyWmvl88r7qJi+v/6Y=";
+              };
+            };
+            setup = "require('slides').setup {}";
+          };
+          # live-share = {
+          #   package = pkgs.vimUtils.buildVimPlugin {
+          #     name = "live-share.nvim";
+          #     src = pkgs.fetchFromGitHub {
+          #       owner = "azratul";
+          #       repo = "live-share.nvim";
+          #       rev = "main";
+          #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
+          #     };
+          #   };
+          #   setup = "require('live-share').setup ({
+          #     port_internal = 9876,
+          #     max_attempts = 20, 
+          #     service_url = "/tmp/service.url",
+          #     service = "nokey@serveo.net",
+          #   })";
+          #   after = ["instant"];
+          # };
+          # instant = {
+          #   package = pkgs.vimUtils.buildVimPlugin {
+          #     name = "instant.nvim";
+          #     src = pkgs.fetchFromGitHub {
+          #       owner = "jbyuki";
+          #       repo = "instant.nvim";
+          #       rev = "master";
+          #       sha256 = "sha256-DXJWji/NR8ZCxe014rD51v3EHJHMhRQeOoI3SsY8mR4=";
+          #     };
+          #   };
+          #   setup = "require('instant').setup {}";
+          #   # before = "live-share.nvim";
+          # };
+        };
       };
     };
   };

@@ -1,4 +1,3 @@
-{ boot, ... }:
 {
   boot = {
     loader = {

@@ -22,7 +22,7 @@
     plugins = [
       #inputs.hy3.packages.${pkgs.system}.hy3
       #inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
     settings = {
       "$mainMod" = "SUPER";
@@ -52,8 +52,8 @@
           "${pkgs.swayosd}/bin/swayosd-server"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
           "${pkgs.hypridle}/bin/hypridle"
-          "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
-          "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
+          # "${pkgs.wl-clipboard}/bin/wl-copy --type image --watch ${pkgs.cliphist}/bin/cliphist store"
+          # "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
           "${pkgs.arrpc}/bin/arrpc"
           "${pkgs.premid}/bin/premid --in-process-gpu"
         ]
@@ -116,7 +116,7 @@
         "Alt_L, E, exec, hyprctl dispatch workspace +1"
           "Alt_L, Q, exec, hyprctl dispatch workspace -1"
           # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
-          "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
+          # "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
           # Move focus with mainMod + arrow keys
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
@@ -310,15 +310,18 @@
       }
       plugin {
           hyprbars {
-              bar_height=29
-              bar_text_font="Terminess Nerd Font"
-              bar_text_size=13
-              # config
-              buttons {
-                  button_size= 13
-                  # button config
-              }
-          }
+              bar_height = 30
+              bar_color = rgb(303447)
+              col.text = rgb(99D1DB)
+              bar_text_size = 12
+              bar_text_font = Iosevka Nerd Font Bold
+              bar_button_padding = 12
+              bar_padding = 10
+              bar_precedence_over_border = true
+              hyprbars-button = $color1, 20, ✖, hyprctl dispatch killactive
+              hyprbars-button = $color3, 20, ⛶, hyprctl dispatch fullscreen 1
+              hyprbars-button = $color4, 20, −, hyprctl dispatch togglefloating
+        }
       }
 
       plugin {
