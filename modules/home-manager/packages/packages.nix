@@ -144,7 +144,6 @@
         nmap
         ntfs3g
         revolt-desktop
-        parsec-bin
         amdgpu_top
         inxi
         satty

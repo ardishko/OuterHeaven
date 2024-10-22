@@ -43,7 +43,10 @@
           anonymiseByDefault = true;
         };
         banger.enable = true;
-        betterFolders.enable = true;
+        betterFolders = {
+          enable = true;
+          showFolderIcon = "always";
+        };
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
         betterNotesBox.enable = true;

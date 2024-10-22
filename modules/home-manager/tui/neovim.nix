@@ -12,10 +12,7 @@
       type = "Application";
       mimeType = [ "text/plain" ];
 
-      icon = builtins.fetchurl {
-        url = "https://raw.githubusercontent.com/NotAShelf/nvf/08547724e42a510e8917125ec86a879cc3013349/.github/assets/nvf-logo-work.svg";
-        sha256 = "19n7n9xafyak35pkn4cww0s5db2cr97yz78w5ppbcp9jvxw6yyz3";
-      };
+      icon = ../../../assets/icons/neovim.svg;
       exec = "${pkgs.kitty}/bin/kitty nvim";
     };
     notepad = {
