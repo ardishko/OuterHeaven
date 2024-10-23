@@ -370,6 +370,11 @@ in
             "sidebar.visibility" = "always-show";
             "sidebar.position_start" = true;
             "devtools.toolbox.sidebar.width" = 480;
+            "browser.newtabpage.activity-stream.showRecentSaves" = false;
+            "browser.taskbar.lists.enabled" = false;
+            "browser.taskbar.lists.frequent.enabled" = false;
+            "browser.taskbar.lists.tasks.enabled" = false;
+            "browser.newtabpage.activity-stream.enabled" = false;
             "browser.newtabpage.pinned" = [
               {
                 label = "Youtube";

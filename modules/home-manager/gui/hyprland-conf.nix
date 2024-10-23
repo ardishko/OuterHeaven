@@ -252,7 +252,7 @@
         "workspace 3,class:^(org.prismlauncher.PrismLauncher)"
         "workspace 4,class:^(mpv)"
         "workspace 4,class:^(libreoffice*)"
-        "workspace 5,title:^(nvim)"
+        "workspace 5,initialTitle:^(nvim)"
         "workspace 6,class:^(krita)"
         "workspace 6,class:^(.gimp-2.10-wrapped_)"
         "workspace 7,class:^(evince)"
