@@ -159,6 +159,32 @@
             };
             setup = "require('slides').setup {}";
           };
+          nixd = {
+            package = inputs.nixd.packages.${pkgs.system}.nixd;
+            setup = ''
+require("lspconfig").nixd.setup({
+  cmd = { "${inputs.nixd.packages.${pkgs.system}.nixd}/bin/nixd" },
+  settings = {
+    nixd = {
+      nixpkgs = {
+        expr = "import <nixpkgs> { }",
+      },
+      formatting = {
+        command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
+      },
+      -- options = {
+      --   nixos = {
+      --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
+      --   },
+      --   home_manager = {
+      --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
+      --   },
+      -- },
+    },
+  },
+})
+            '';
+          };
           # live-share = {
           #   package = pkgs.vimUtils.buildVimPlugin {
           #     name = "live-share.nvim";

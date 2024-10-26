@@ -111,6 +111,7 @@
     };
     nvf.url = "github:notashelf/nvf";
     nixcord.url = "github:KaylorBen/nixcord";
+    nixd.url = "github:nix-community/nixd";
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }:
