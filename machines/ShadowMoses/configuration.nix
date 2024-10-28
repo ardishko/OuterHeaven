@@ -16,7 +16,8 @@
       "wheel"
     ];
     packages = [ ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
   };
 
   # This value determines the NixOS release from which the default
