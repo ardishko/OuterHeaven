@@ -21,7 +21,7 @@
       "xpadneo"
       "hid-nintendo"
     ];
-    zfs.package = pkgs.zfs_unstable.overrideAttrs (prevAttrs: {
+    zfs.package = if (hostname == "Tanker") then pkgs.zfs else if (hostname == "jd") then pkgs.zfs else pkgs.zfs_unstable.overrideAttrs (prevAttrs: {
       inherit (inputs.chaotic.packages.${pkgs.system}.linuxPackages_cachyos-lto.zfs_cachyos) src;
       patches = [ ];
       passthru = prevAttrs.passthru // {
