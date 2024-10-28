@@ -1,25 +1,33 @@
-{ pkgs, hostname, ... }:
+{ pkgs, hostname, inputs, ... }:
 {
   boot = {
+    initrd.verbose = false;
     consoleLogLevel = 1;
-    kernelParams = [ "split_lock_detect=off" ];
+    kernelParams = [ "split_lock_detect=off" "quiet" ];
     # kernelParams = [ ];
     extraModulePackages =
       with pkgs;
-      (lib.lists.optionals (hostname == "ShadowMoses") [ linuxKernel.packages.linux_xanmod.xpadneo ]);
+      (lib.lists.optionals (hostname == "ShadowMoses") [ ]);
     kernelPackages =
       if (hostname == "Tanker") then
         pkgs.linuxPackages_jovian
       else if (hostname == "jd") then
         pkgs.linuxPackages_hardened
       else
-        pkgs.linuxPackages_xanmod;
+        inputs.chaotic.packages.${pkgs.system}.linuxPackages_cachyos;
     supportedFilesystems = [ "ntfs" ];
     kernelModules = [
       "udev"
       "xpadneo"
       "hid-nintendo"
     ];
+    zfs.package = pkgs.zfs_unstable.overrideAttrs (prevAttrs: {
+      inherit (inputs.chaotic.packages.${pkgs.system}.linuxPackages_cachyos-lto.zfs_cachyos) src;
+      patches = [ ];
+      passthru = prevAttrs.passthru // {
+        kernelModuleAttribute = "zfs_cachyos";
+      };
+    });
   };
   hardware.uinput.enable = true;
 }

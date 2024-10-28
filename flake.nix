@@ -112,94 +112,96 @@
     nvf.url = "github:notashelf/nvf";
     nixcord.url = "github:KaylorBen/nixcord";
     nixd.url = "github:nix-community/nixd";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
   outputs =
-    inputs@{ nixpkgs, disko, ... }:
-    {
-      nixosConfigurations.ShadowMoses = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs =
-          let
-            username = "vaporsnake";
-            hostname = "ShadowMoses";
-          in
-          {
-            inherit inputs username hostname;
-          };
-        modules = [
-          ./machines/ShadowMoses
-          ./modules
-          ./secrets
-          disko.nixosModules.disko
-          (import ./disko.nix {
-            device = "/dev/nvme0n1";
-            hostname = "ShadowMoses";
-          })
-        ];
-      };
-      nixosConfigurations.Tanker = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs =
-          let
-            username = "raiden";
-            hostname = "Tanker";
-          in
-          {
-            inherit inputs username hostname;
-          };
-        modules = [
-          ./machines/Tanker
-          ./modules
-          ./secrets
-          disko.nixosModules.disko
-          (import ./disko.nix {
-            device = "/dev/nvme0n1";
-            hostname = "Tanker";
-          })
-        ];
-      };
-      nixosConfigurations.BigShell = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs =
-          let
-            username = "liquid";
-            hostname = "BigShell";
-          in
-          {
-            inherit inputs username hostname;
-          };
-        modules = [
-          ./machines/BigShell
-          ./modules
-          ./secrets
-          disko.nixosModules.disko
-          (import ./disko.nix {
-            device = "/dev/nvme0n1";
-            hostname = "BigShell";
-          })
-        ];
-      };
-      nixosConfigurations.jd = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs =
-          let
-            username = "snake";
-            hostname = "jd";
-          in
-          {
-            inherit inputs username hostname;
-          };
-        modules = [
-          ./machines/jd
-          ./server
-          ./modules
-          ./secrets
-          disko.nixosModules.disko
-          (import ./disko.nix {
-            device = "/dev/nvme0n1";
-            hostname = "jd";
-          })
-        ];
+    inputs@{ nixpkgs, disko, ... }: {
+      nixosConfigurations = {
+        ShadowMoses = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs =
+            let
+              username = "vaporsnake";
+              hostname = "ShadowMoses";
+            in
+            {
+              inherit inputs username hostname;
+            };
+          modules = [
+            ./machines/ShadowMoses
+            ./modules
+            ./secrets
+            disko.nixosModules.disko
+            (import ./disko.nix {
+              device = "/dev/nvme0n1";
+              hostname = "ShadowMoses";
+            })
+          ];
+        };
+        Tanker = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs =
+            let
+              username = "raiden";
+              hostname = "Tanker";
+            in
+            {
+              inherit inputs username hostname;
+            };
+          modules = [
+            ./machines/Tanker
+            ./modules
+            ./secrets
+            disko.nixosModules.disko
+            (import ./disko.nix {
+              device = "/dev/nvme0n1";
+              hostname = "Tanker";
+            })
+          ];
+        };
+        BigShell = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs =
+            let
+              username = "liquid";
+              hostname = "BigShell";
+            in
+            {
+              inherit inputs username hostname;
+            };
+          modules = [
+            ./machines/BigShell
+            ./modules
+            ./secrets
+            disko.nixosModules.disko
+            (import ./disko.nix {
+              device = "/dev/nvme0n1";
+              hostname = "BigShell";
+            })
+          ];
+        };
+        jd = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs =
+            let
+              username = "snake";
+              hostname = "jd";
+            in
+            {
+              inherit inputs username hostname;
+            };
+          modules = [
+            ./machines/jd
+            ./server
+            ./modules
+            ./secrets
+            disko.nixosModules.disko
+            (import ./disko.nix {
+              device = "/dev/nvme0n1";
+              hostname = "jd";
+            })
+          ];
+        };
       };
     };
 }

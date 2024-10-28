@@ -7,24 +7,6 @@
   networking.hostName = "ShadowMoses";
   networking.hostId = "69fbbf79";
 
-  # Set your time zone.
-  time.timeZone = "Europe/Istanbul";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "tr_TR.UTF-8";
-    LC_IDENTIFICATION = "tr_TR.UTF-8";
-    LC_MEASUREMENT = "tr_TR.UTF-8";
-    LC_MONETARY = "tr_TR.UTF-8";
-    LC_NAME = "tr_TR.UTF-8";
-    LC_NUMERIC = "tr_TR.UTF-8";
-    LC_PAPER = "tr_TR.UTF-8";
-    LC_TELEPHONE = "tr_TR.UTF-8";
-    LC_TIME = "tr_TR.UTF-8";
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vaporsnake = {
     isNormalUser = true;
@@ -33,11 +15,9 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
+    packages = [ ];
     shell = pkgs.nushell;
   };
-
-  boot.tmp.cleanOnBoot = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

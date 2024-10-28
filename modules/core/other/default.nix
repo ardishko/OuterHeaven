@@ -10,6 +10,7 @@
     ./impermanence.nix
     ./security.nix
     ./virtualization.nix
+    ./locales.nix
     # ./byedpi
   ] ++ (lib.lists.optionals (hostname == "Tanker") [ ./jovian.nix ]);
 }
