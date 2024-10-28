@@ -8,17 +8,17 @@
   networking.hostId = "69fbbf79";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.vaporsnake = {
-    isNormalUser = true;
-    description = "vaporsnake";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = [ ];
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
-  };
+  # users.users.vaporsnake = {
+  #   isNormalUser = true;
+  #   description = "vaporsnake";
+  #   extraGroups = [
+  #     "networkmanager"
+  #     "wheel"
+  #   ];
+  #   packages = [ ];
+  #   shell = pkgs.zsh;
+  #   ignoreShellProgramCheck = true;
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
