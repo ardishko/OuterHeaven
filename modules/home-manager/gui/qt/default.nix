@@ -3,7 +3,7 @@
   qt = {
     enable = true;
     platformTheme = {
-      name = "qtct";
+      name = "qt5ct";
     };
     style = {
       package = pkgs.libsForQt5.qt5ct;

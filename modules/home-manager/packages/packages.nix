@@ -201,6 +201,7 @@
         inkscape
         vscodium-fhs
         ghex
+        osu-lazer-bin
 
         # emu
         ryujinx

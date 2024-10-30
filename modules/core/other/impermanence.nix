@@ -115,6 +115,7 @@
               ".local/share/DaVinciResolve"
               ".local/share/Smart Code ltd"
               ".local/share/nemo"
+              ".local/share/osu"
               ".ssh"
               ".klei"
               ".thunderbird"

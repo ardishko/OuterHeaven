@@ -20,8 +20,8 @@
     syntaxHighlighting = {
       enable = true;
     };
-    zplug = {
-      enable = true;
-    };
+    # zplug = {
+    #   enable = true;
+    # };
   };
 }
