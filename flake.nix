@@ -74,31 +74,33 @@
     shadower = {
       url = "github:n3oney/shadower";
     };
-    vesktop.url = "github:NixOS/nixpkgs/755b915a158c9d588f08e9b08da9f7f3422070cc";
     wayfreeze = {
       url = "github:jappie3/wayfreeze";
     };
     watershot = {
       url = "github:Kirottu/watershot";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
     };
     disko = {
       url = "github:ardishko/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence = {
       url = "github:nix-community/impermanence";
     };
     tag-studio = {
       url = "github:TagStudioDev/TagStudio";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
       url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     dolphin-emu = {
       url = "github:MatthewCroughan/dolphin-emu-nix";
@@ -109,10 +111,22 @@
     flux = {
       url = "github:IogaMaster/flux";
     };
-    nvf.url = "github:notashelf/nvf";
-    nixcord.url = "github:KaylorBen/nixcord";
-    nixd.url = "github:nix-community/nixd";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixcord = { 
+      url = "github:KaylorBen/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixd = {
+      url = "github:nix-community/nixd";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }: {

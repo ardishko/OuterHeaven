@@ -62,7 +62,7 @@ let
         version = "2.5.2";
         addonId = "support@premid.app";
         url = "https://dl.premid.app/PreMiD.xpi";
-        sha256 = "sha256-68n/HAWXzcdhIHCb6xNO7aT/11r8nS5zZYnqR683UFM=";
+        sha256 = "sha256-pHrW/G6zPKXtVXDbz1nXeiemyorh524Z7ccat8Ig8p0=";
       };
       catppuccin-frappe-sky = remoteXpiAddon {
         pname = "catppuccin-frappe-sky";
