@@ -7,27 +7,20 @@
     # kernelParams = [ ];
     extraModulePackages =
       with pkgs;
-      (lib.lists.optionals (hostname == "ShadowMoses") [ linuxKernel.packages.linux_xanmod.xpadneo ]);
+      (lib.lists.optionals (hostname == "ShadowMoses") [ inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.linuxKernel.packages.linux_lqx.xpadneo ]);
     kernelPackages =
       if (hostname == "Tanker") then
         pkgs.linuxPackages_jovian
       else if (hostname == "jd") then
         pkgs.linuxPackages_hardened
       else
-        pkgs.linuxPackages_xanmod;
-    supportedFilesystems = [ "ntfs" ];
+        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.linuxKernel.packages.linux_lqx;
+    supportedFilesystems = [ "ntfs" "zfs" ];
     kernelModules = [
       "udev"
       "xpadneo"
       "hid-nintendo"
     ];
-    # zfs.package = if (hostname == "Tanker") then pkgs.zfs else if (hostname == "jd") then pkgs.zfs else pkgs.zfs_unstable.overrideAttrs (prevAttrs: {
-    #   inherit (inputs.chaotic.packages.${pkgs.system}.linuxPackages_cachyos-lto.zfs_cachyos) src;
-    #   patches = [ ];
-    #   passthru = prevAttrs.passthru // {
-    #     kernelModuleAttribute = "zfs_cachyos";
-    #   };
-    # });
   };
   hardware.uinput.enable = true;
 }

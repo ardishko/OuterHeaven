@@ -20,9 +20,9 @@
     };
     xwayland.enable = true;
     plugins = [
-      #inputs.hy3.packages.${pkgs.system}.hy3
-      #inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # inputs.hy3.packages.${pkgs.system}.hy3
+      # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
     settings = {
       "$mainMod" = "SUPER";
@@ -125,6 +125,7 @@
           "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
           "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
           "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${username}/Videos'"
+          ",XF86AudioPlay, exec, "
           #i3/sway type beat
 
           ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
@@ -194,7 +195,7 @@
         "SUPER, SUPER_L, exec, pkill wofi || ${pkgs.wofi}/bin/wofi"
       ];
       input = {
-        kb_layout = "tr,us";
+        kb_layout = "tr,us,lv";
         kb_options = "grp:rctrl_toggle";
         follow_mouse = 1;
         sensitivity = 0;

@@ -26,6 +26,7 @@
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     xdg-desktop-portal-hyprland = {
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
@@ -96,7 +97,7 @@
     };
     ags = {
       url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -123,9 +124,8 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
+    lqx_commit = {
+      url = "github:NixOS/nixpkgs/d9e6adf4e7f774409472dc3b94330d40a6dc3586";
     };
   };
   outputs =

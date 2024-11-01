@@ -4,7 +4,7 @@
     ./anyrun.nix
     ./browser
     ./discord-canary.nix
-    # ./discord.nix
+    ./discord.nix
     ./flameshot.nix
     ./goverlay.nix
     ./heroic

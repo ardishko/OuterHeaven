@@ -10,7 +10,7 @@
   boot.tmp.cleanOnBoot = true;
   environment.persistence = {
     "/persist" = {
-      files = [ "/etc/machine-id" ];
+      files = [ /* "/etc/machine-id */ ];
       directories =
         if (hostname == "jd") then
           [
