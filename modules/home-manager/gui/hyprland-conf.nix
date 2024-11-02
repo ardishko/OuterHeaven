@@ -22,7 +22,7 @@
     plugins = [
       # inputs.hy3.packages.${pkgs.system}.hy3
       # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
     settings = {
       "$mainMod" = "SUPER";
