@@ -1,4 +1,9 @@
+{ inputs, config, ... }:
+let
+  resolution = if (config.networking.hostName == "ShadowMoses") then "2560x1440" else if (config.networking.hostName == "BigShell") then "1920x1200" else if (config.networking.hostName == "Tanker") then "1280x800" else "1920x1080";
+in
 {
+  imports = [ inputs.minegrub-theme.nixosModules.default ];
   boot = {
     loader = {
       grub = {
@@ -6,22 +11,14 @@
         efiSupport = true;
         useOSProber = true;
         devices = [ "nodev" ];
+        gfxmodeEfi = "${resolution}";
+        minegrub-theme = {
+          enable = true;
+          splash = "Also try Ultrakill!";
+          background = "background_options/1.8  - [Classic Minecraft].png";
+          boot-options-count = 4;
+        };
       };
-      # grub = {
-      #   enable = true;
-      #   devices = [ "nodev" ];
-      #   efiSupport = true;
-      #   useOSProber = true;
-      # theme = {
-      #   pkgs.fetchFromGitHub = {
-      #     owner = "catppuccin";
-      #     repo = "grub";
-      #     rev = "803c5df0e83aba61668777bb96d90ab8f6847106";
-      #     sha256 = "/bSolCta8GCZ4lP0u5NVqYQ9Y3ZooYCNdTwORNvR7M0=";
-      #   }
-      #   + "/src/catppuccin-frappe-grub-theme";
-      # };
-      # };
       systemd-boot.enable = false;
       efi = {
         canTouchEfiVariables = true;

@@ -127,6 +127,12 @@
     lqx_commit = {
       url = "github:NixOS/nixpkgs/d9e6adf4e7f774409472dc3b94330d40a6dc3586";
     };
+    virtualhere = {
+      url = "github:BatteredBunny/virtualhere-nixos";
+    };
+    minegrub-theme = {
+      url = "github:Lxtharia/minegrub-theme";
+    };
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }: {
