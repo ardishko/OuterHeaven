@@ -1,7 +1,10 @@
-{ inputs, pkgs, hostname, ... }:
-# let
-#   ${primary-monitor} = (lib.list.optionals (hostname == "ShadowMoses") "DP-2")
-# in  
+{ inputs, pkgs, osConfig, ... }:
+let
+  primary-monitor = if (osConfig.networking.hostName == "ShadowMoses") then "DP-2"
+  else
+    if (osConfig.networking.hostName == "BigShell" && "Tanker") then "eDP-1"
+  else "HDMI-A-1";
+in  
 {
   home.packages = [ inputs.hyprlock.packages.${pkgs.system}.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
@@ -13,7 +16,7 @@
     }
 
     background {
-        monitor = DP-2
+        monitor = ${primary-monitor}
         path = ${../../../assets/wallpapers/idolGoro.jpg}
         color = rgba(20, 20, 20, 0.9)
         blur_passes = 5 # 0 disables blurring
@@ -38,7 +41,7 @@
     }
 
     label {
-        monitor = DP-2
+        monitor = ${primary-monitor}
         text = $TIME
         color = rgba(166, 173, 200, 1.0)
         font_family = Iosevka Nerd Font
@@ -50,7 +53,7 @@
     }
 
     label {
-        monitor = DP-2
+        monitor = ${primary-monitor}
         text = Got ya now, Kiryu-chan!
         color = rgba(166, 173, 200, 1.0)
         font_size = 21
@@ -73,7 +76,7 @@
     }
 
     label {
-        monitor = DP-2
+        monitor = ${primary-monitor}
         text = ⏾ cmd[systemctl suspend]
         halign = left
         valign = top
@@ -82,7 +85,7 @@
     }
 
     input-field {
-        monitor = DP-2
+        monitor = ${primary-monitor}
         size = 200, 50
         outline_thickness = 3
         dots_size = 0.33 # Scale of input-field height, 0.2 - 0.8
@@ -93,7 +96,6 @@
         fade_on_empty = false
         placeholder_text = <i> ... </i> # Text rendered in the input box when it's empty.
         hide_input = false
-
         position = 0, -20
         halign = center
         valign = center

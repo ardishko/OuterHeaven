@@ -1,7 +1,9 @@
 { pkgs, username, ... }:
 {
-  home.username = "${username}";
-  home.homeDirectory = "/home/${username}";
+  home = { 
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+  };
   # home-manager.backupFileExtension = "backup";
 
   gtk = {

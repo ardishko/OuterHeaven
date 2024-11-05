@@ -41,6 +41,7 @@
         inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
         inputs.dolphin-emu.packages.${pkgs.system}.default
         inputs.sops-nix.packages.${pkgs.system}.default
+        inputs.hyprpanel.packages.${pkgs.system}.default
 
         # inputs.polly-mc.${pkgs.system}.default
         # inputs.tag-studio.packages.${pkgs.system}.default
@@ -202,6 +203,7 @@
         vscodium-fhs
         ghex
         osu-lazer-bin
+        gtop
 
         # emu
         ryujinx

@@ -263,7 +263,7 @@
         "workspace 9,class:^(obsidian)"
         "workspace 9,class:^(Waydroid)"
         "workspace 10,class:^(steam_app*)"
-        "workspace 10,class:^(sober)"
+        "workspace 10,class:^(org.vinegarhq.Sober)"
         "workspace 10,class:^(osu!)"
         "stayfocused,class:^(Waydroid)"
         "float,initialTitle:^(Picture-in-Picture)"

@@ -11,6 +11,7 @@
       gtksourceview
       webkitgtk
       accountsservice
+      bun
     ];
   };
 }

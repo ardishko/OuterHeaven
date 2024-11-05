@@ -2,8 +2,6 @@
   inputs,
   pkgs,
   lib,
-  username,
-  hostname,
   ...
 }:
 {

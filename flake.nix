@@ -133,6 +133,9 @@
     minegrub-theme = {
       url = "github:Lxtharia/minegrub-theme";
     };
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+    };
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }: {
