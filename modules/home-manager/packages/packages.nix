@@ -204,6 +204,14 @@
         ghex
         osu-lazer-bin
         gtop
+        (pkgs.appimageTools.wrapType2 { # or wrapType1
+          name = "suyu";
+          src = fetchurl {
+            url = "https://git.suyu.dev/suyu/suyu/releases/download/v0.0.3/Suyu-Linux_x86_64.AppImage";
+            hash = "sha256-26sWhTvB6K1i/K3fmwYg5pDIUi+7xs3dz8yVj5q7H0c=";
+          };
+          extraPkgs = pkgs: with pkgs; [ ];
+        })
 
         # emu
         ryujinx

@@ -23,6 +23,9 @@
       # inputs.hy3.packages.${pkgs.system}.hy3
       # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      pkgs.hyprlandPlugins.csgo-vulkan-fix
+      pkgs.hyprlandPlugins.hyprbars
+      pkgs.hyprlandPlugins.hyprexpo
     ];
     settings = {
       "$mainMod" = "SUPER";
@@ -113,8 +116,9 @@
             inputs.shadower.packages.${pkgs.system}.shadower
           }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
           "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
-        "Alt_L, E, exec, hyprctl dispatch workspace +1"
+          "Alt_L, E, exec, hyprctl dispatch workspace +1"
           "Alt_L, Q, exec, hyprctl dispatch workspace -1"
+          "Alt_L, Tab, hyprexpo:expo, toggle"
           # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
           # "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
           # Move focus with mainMod + arrow keys
@@ -380,6 +384,18 @@
             col.text.inactive = 0x4D6469
           }
         }
+      }
+      plugin {
+          hyprexpo {
+              columns = 4
+              gap_size = 5
+              workspace_method = first 1 # [center/first] [workspace] e.g. first 1 or center m+1
+
+              enable_gesture = true # laptop touchpad
+              gesture_fingers = 3  # 3 or 4
+              gesture_distance = 300 # how far is the "max"
+              gesture_positive = true # positive = swipe down. Negative = swipe up.
+          }
       }
     '';
   };
