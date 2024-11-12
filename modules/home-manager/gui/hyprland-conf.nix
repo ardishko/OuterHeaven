@@ -20,16 +20,13 @@
     };
     xwayland.enable = true;
     plugins = [
-      # inputs.hy3.packages.${pkgs.system}.hy3
-      # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       pkgs.hyprlandPlugins.csgo-vulkan-fix
       pkgs.hyprlandPlugins.hyprbars
-      pkgs.hyprlandPlugins.hyprexpo
+      pkgs.hyprlandPlugins.hyprspace
     ];
     settings = {
       "$mainMod" = "SUPER";
-      "general:layout" = "dwindle";
+      "general:layout" = "master";
       monitor =
         if (hostname == "ShadowMoses") then
           [
@@ -118,7 +115,6 @@
           "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
           "Alt_L, E, exec, hyprctl dispatch workspace +1"
           "Alt_L, Q, exec, hyprctl dispatch workspace -1"
-          "Alt_L, Tab, hyprexpo:expo, toggle"
           # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
           # "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi --dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
           # Move focus with mainMod + arrow keys
@@ -129,7 +125,7 @@
           "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
           "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
           "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${username}/Videos'"
-          ",XF86AudioPlay, exec, "
+          ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
           #i3/sway type beat
 
           ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
@@ -144,6 +140,7 @@
           "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
           "$mainMod, Insert,pass,^(discordcanary)$"
           "$mainMod, Home,pass,^(discordcanary)$"
+          "Alt_L, Tab, overview:toggle"
 
           # Switch workspaces with mainMod + [0-9]
           "$mainMod, 1, workspace, 1"
@@ -178,6 +175,11 @@
           # Scroll through existing workspaces with mainMod + scroll
           "$mainMod, mouse_up, workspace, r+1"
           "$mainMod, mouse_down, workspace, r-1"
+          # This part is really awesome. 
+          # Like really really cool, you could even say it's cool beans. 
+          
+          # Hyprspace window switcher toggle 
+          "Alt_L, Tab, exec, overview:toggle"
         ]
         ++ (lib.lists.optionals (hostname == "ShadowMoses") [
           "$mainMod, h, workspace, 11"
@@ -195,11 +197,10 @@
         "$mainMod, mouse:273, resizewindow"
       ];
       bindrn = [
-        "Alt_L, Tab, exec, hyprswitch --daemon --ignore-monitors --switch-ws-on-hover || hyprswitch --stop-daemon"
         "SUPER, SUPER_L, exec, pkill wofi || ${pkgs.wofi}/bin/wofi"
       ];
       input = {
-        kb_layout = "tr,us,lv";
+        kb_layout = "tr,lv";
         kb_options = "grp:rctrl_toggle";
         follow_mouse = 1;
         sensitivity = 0;
@@ -217,7 +218,7 @@
         gaps_out = 20;
         border_size = 2;
         "col.active_border" = "rgb(99D1DB)";
-        layout = "dwindle";
+        layout = "master";
         resize_on_border = true;
       };
       decoration = {
@@ -330,71 +331,22 @@
               hyprbars-button = $color4, 20, −, hyprctl dispatch togglefloating
         }
       }
-
       plugin {
-        hy3 {
-          # disable gaps when only one window is onscreen
-          no_gaps_when_only = false
-
-          # offset from group split direction when only one window is in a group
-          group_inset = 10
-
-          # tab group settings
-          tabs {
-            # height of the tab bar
-            height = 10
-
-            # padding between the tab bar and its focused node
-            padding = 15
-
-            # the tab bar should animate in/out from the top instead of below the window
-            from_top = false
-
-            # render the window title on the bar
-            render_text = false
-
-            # rounding of tab bar corners
-            rounding = 15
-
-            # font to render the window title with
-            text_font = "Terminess Nerd Font"
-
-            # height of the window title
-            text_height = 10
-
-            # left padding of the window title
-            text_padding = 0
-
-            # active tab bar segment color
-            col.active = rgb(c8c093)
-
-            # urgent tab bar segment color
-            col.urgent = 0x4D6469
-
-            # inactive tab bar segment color
-            col.inactive = 0x4D6469
-
-            # active tab bar text color
-            col.text.active = 0x4D6469
-
-            # urgent tab bar text color
-            col.text.urgent = 0x4D6469
-
-            # inactive tab bar text color
-            col.text.inactive = 0x4D6469
-          }
-        }
-      }
-      plugin {
-          hyprexpo {
-              columns = 4
-              gap_size = 5
-              workspace_method = first 1 # [center/first] [workspace] e.g. first 1 or center m+1
-
-              enable_gesture = true # laptop touchpad
-              gesture_fingers = 3  # 3 or 4
-              gesture_distance = 300 # how far is the "max"
-              gesture_positive = true # positive = swipe down. Negative = swipe up.
+          overview {
+              onBottom = true
+              autoDrag = true
+              switchOnDrop = false 
+              panelHeight = 450
+              workspaceActiveBorder = rgb(99D1DB)
+              showSpecialWorkspace = true
+              showEmptyWorkspace = true
+              showNewWorkspace = true
+              autoScroll = false
+              affectStrut = false
+              workspaceBorderSize = 2
+              workspaceMargin = 24
+              panelColor = rgb(303447)
+              panelBorderColor = rgb(99D1DB)
           }
       }
     '';

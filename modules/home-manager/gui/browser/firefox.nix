@@ -431,6 +431,10 @@ in
                 label = "Syncthing";
                 url = "http://127.0.0.1:8384/";
               }
+              {
+                label = "Pocket";
+                url = "https://getpocket.com/saves";
+              }
             ];
           };
           bookmarks = [
