@@ -1,10 +1,16 @@
 {
   inputs,
-  username,
-  hostname,
+  config,
   lib,
   ...
 }:
+let
+  userName = if (config.networking.hostName == "ShadowMoses") then "vaporsnake" else
+    if (config.networking.hostName == "BigShell") then "liquid" else
+    if (config.networking.hostName == "Tanker") then "raiden" else
+    if (config.networking.hostName == "jd") then "snake" else 
+    "user";
+in
 {
   imports = [ inputs.impermanence.nixosModule ];
   boot.tmp.cleanOnBoot = true;
@@ -12,7 +18,7 @@
     "/persist" = {
       files = [ /* "/etc/machine-id */ ];
       directories =
-        if (hostname == "jd") then
+        if (config.networking.hostName == "jd") then
           [
             "/var/log"
             "/var/lib/systemd/coredump"
@@ -21,6 +27,7 @@
             "/etc/backups"
             "/etc/cred"
             "/var/lib/nixos-containers"
+            "/var/lib/nixos"
             "/etc/nixos-containers"
             "/var/lib/tailscale" # tailscale
             "/var/lib/bitwarden_rs" # vaultwarden
@@ -45,12 +52,12 @@
             "/var/lib/nixos"
             # persist /mnt so that all the mounted drives don't get wiped upon reboot
             # "/mnt"
-          ] ++ (lib.lists.optionals (hostname == "Tanker") [
+          ] ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
             "/var/lib/decky-loader"
           ]);
-      users.${username} = {
+      users.${userName} = {
         directories =
-          if (hostname == "jd") then
+          if (config.networking.hostName == "jd") then
             [
               ".config/Mullvad VPN"
               ".config/sops"
@@ -91,6 +98,7 @@
               ".config/Vampire_Survivors"
               ".config/Vampire_Survivors_Data"
               ".config/Vampire_Survivors_97277776"
+              ".config/libreoffice"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"
@@ -147,9 +155,10 @@
               "Programs"
               "Public"
               "Videos"
-              "homebrew" # (this is for deckyloader)
               # TO DO: Yuzu/Sudachi dirs, vencord/vesktop declarative configuration, .config/Mullvad VPN, nemo
-            ];
+            ] ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
+            "homebrew" # this is for deckyloader
+            ]); 
           files = [
             ".zsh_history"
         ];
@@ -168,7 +177,7 @@
         "mode=755"
       ];
     };
-    "/home/${username}" = lib.mkForce {
+    "/home/${userName}" = lib.mkForce {
       device = "tmpfs";
       fsType = "tmpfs";
       neededForBoot = true;
@@ -182,7 +191,7 @@
     "/persist/cache".neededForBoot = true;
   };
   users.users = {
-    ${username} = {
+    ${userName} = {
       hashedPasswordFile = "/persist/passwords/user";
       initialPassword = "nutsitch";
     };
