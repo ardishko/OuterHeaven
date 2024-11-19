@@ -107,11 +107,13 @@
           "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
           "$mainMod, E, togglesplit, # dwindle"
           "$mainMod,F,fullscreen"
-          '',Print, exec, ${
-            inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
-          }/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${
-            inputs.shadower.packages.${pkgs.system}.shadower
-          }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
+          # '',Print, exec, ${
+          #   inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
+          # }/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${
+          #   inputs.shadower.packages.${pkgs.system}.shadower
+          # }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
+          ",Print,exec, ${pkgs.flameshot}/bin/flameshot gui -r | ${pkgs.wl-clipboard}/bin/wl-copy | ${pkgs.wl-clipboard}/bin/wl-paste | ${inputs.shadower.packages.${pkgs.system}.shadower}/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-paste"
+          "CTRL, Print, exec, ${pkgs.flameshot}/bin/flameshot gui"
           "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
           "Alt_L, E, exec, hyprctl dispatch workspace +1"
           "Alt_L, Q, exec, hyprctl dispatch workspace -1"
@@ -206,9 +208,6 @@
         sensitivity = 0;
         touchpad = {
           natural_scroll = true;
-        };
-        touchdevice = {
-          transform = 1;
         };
         float_switch_override_focus = 2;
         # scroll_factor = 2.0;

@@ -2,8 +2,11 @@
 let
   primary-monitor = if (osConfig.networking.hostName == "ShadowMoses") then "DP-2"
   else
-    if (osConfig.networking.hostName == "BigShell" && "Tanker") then "eDP-1"
-  else "HDMI-A-1";
+    if (osConfig.networking.hostName == "BigShell") then "eDP-1" 
+  else
+    if (osConfig.networking.hostName == "Tanker") then "eDP-1" 
+  else
+    "HDMI-A-1";
 in  
 {
   home.packages = [ inputs.hyprlock.packages.${pkgs.system}.hyprlock ];
