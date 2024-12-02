@@ -125,9 +125,9 @@ let
 in
 {
   programs = {
-    firefox = {
+    floorp = {
       enable = true;
-      package = pkgs.firefox;
+      package = pkgs.floorp;
       profiles = {
         "freeform" = {
           isDefault = true;
@@ -310,9 +310,9 @@ in
               # catppuccin-mocha-green
               # tridactyl
             ];
-          userChrome = ''
-            ${builtins.readFile ./userChrome.css}
-          '';
+          # userChrome = ''
+          #   ${builtins.readFile ./userChrome.css}
+          # '';
           settings = {
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
             "browser.aboutConfig.showWarning" = false;

@@ -96,7 +96,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
-      url = "github:Aylur/ags/bb91f7c8fdd2f51c79d3af3f2881cacbdff19f60";
+/*       url = "github:Aylur/ags"; */
+       url = "github:Aylur/ags/bb91f7c8fdd2f51c79d3af3f2881cacbdff19f60";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {

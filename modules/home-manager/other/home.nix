@@ -29,7 +29,10 @@
 
     # Where we define the cursor
 
-    cursorTheme.name = "macOS-BigSur";
+    cursorTheme = {
+      name = "Catppuccin-Frappe-Dark";
+      package = pkgs.catppuccin-cursors.frappeDark;
+    };
 
     gtk3.extraConfig = {
       Settings = ''
@@ -46,9 +49,13 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.apple-cursor;
-    name = "macOS-BigSur";
+    package = pkgs.catppuccin-cursors.frappeDark;
+    name = "Catppuccin-Frappe-Dark";
     size = 24;
+    # hyprcursor = {
+    #   enable = true;
+    #   size = "24";
+    # };
   };
 
   # This value determines the Home Manager release that your configuration is

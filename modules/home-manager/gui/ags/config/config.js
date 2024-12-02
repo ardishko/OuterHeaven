@@ -1,2 +1,2 @@
-import "./bar.js"
+import "./bar.ts"
 export { }

@@ -127,9 +127,6 @@
         dashboard = {
           alpha.enable = true;
         };
-        presence = {
-          neocord.enable = true;
-        };
         projects = {
           project-nvim.enable = true;
         };

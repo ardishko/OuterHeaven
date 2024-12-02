@@ -221,6 +221,8 @@
         rpcs3
         # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
+        celeste
+        xclicker
 
         # Override Template
 

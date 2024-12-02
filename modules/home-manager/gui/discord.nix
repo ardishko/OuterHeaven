@@ -12,7 +12,7 @@
           (pkgs.makeDesktopItem {
             name = "vesktop";
             desktopName = "Discord";
-            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
+            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,UseOzonePlatform --ozone-platform=wayland";
             icon = "discord";
             startupWMClass = "VencordDesktop";
             genericName = "Internet Messenger";

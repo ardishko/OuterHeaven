@@ -8,6 +8,7 @@
 }:
 {
   # balls
+  home.packages = with pkgs; [ pkgs.catppuccin-cursors.frappeDark ];
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -46,6 +47,7 @@
           "flameshot"
           "sleep 0.5 && ags"
           "obs --startreplaybuffer"
+          "${pkgs.signal-desktop-beta}/bin/signal-desktop-beta --start-in-tray"
           "${pkgs.wlsunset}/bin/wlsunset"
           "${pkgs.swaynotificationcenter}/bin/swaync"
           "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -252,7 +254,8 @@
         "float,title:^(wlogout)"
         "workspacesilent 1, class:^(firefox)"
         "workspacesilent 2,class:^(discord)"
-        "movetoworkspacesilent 2,class:^(vesktop)"
+        "workspacesilent 2,class:^(vesktop)"
+        "workspacesilent 2,class:^(Signal Beta)"
         "workspacesilent 3,title:^(Steam)"
         "workspacesilent 3,class:^(org.prismlauncher.PrismLauncher)"
         "workspacesilent 4,class:^(mpv)"

@@ -26,6 +26,10 @@
         "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       ];
+      auto-optimise-store = true;
+    };
+    optimise = {
+      automatic = true;
     };
   };
 }

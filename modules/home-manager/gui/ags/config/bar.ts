@@ -63,10 +63,12 @@ const WifiIndicator = () => Widget.Box({
             label: network.wifi.bind("ssid").as((ssid) => " " + ssid || "Unknown"),
         }),
     ],
+    class_name: "NetworkIndicator_Text",
 })
 
 const WiredIndicator = () => Widget.Icon({
     icon: network.wired.bind('icon_name'),
+    class_name: "NetworkIndicator_Icon",
 })
 
 const NetworkIndicator = () => Widget.Stack({
@@ -231,7 +233,6 @@ function Center() {
     return Widget.Box({
         spacing: 8,
         children: [
-           ClientTitle(),
 	]
     })
 }
