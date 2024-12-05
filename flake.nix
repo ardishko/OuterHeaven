@@ -96,9 +96,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
-/*       url = "github:Aylur/ags"; */
-       url = "github:Aylur/ags/bb91f7c8fdd2f51c79d3af3f2881cacbdff19f60";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:ardishko/ags";
+      # url = "github:Aylur/ags/bb91f7c8fdd2f51c79d3af3f2881cacbdff19f60";
+      # url = "github:/Aylur/ags/";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -136,6 +136,10 @@
     };
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
+    };
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
     };
   };
   outputs =

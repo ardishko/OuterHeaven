@@ -61,7 +61,8 @@
         steamtinkerlaunch
         appimage-run
         nemo-fileroller
-        nerdfonts
+        nerd-fonts.iosevka
+        nerd-fonts.iosevka-term
         webdav
         gamemode
         davfs2
@@ -105,7 +106,7 @@
         scanmem
         unzip
         bottles
-        signal-desktop-beta
+        signal-desktop
         qgnomeplatform-qt6
         qgnomeplatform
         gparted

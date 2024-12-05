@@ -8,7 +8,7 @@
 }:
 {
   # balls
-  home.packages = with pkgs; [ pkgs.catppuccin-cursors.frappeDark ];
+  home.packages = with pkgs; [ catppuccin-cursors.frappeDark ];
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -21,6 +21,9 @@
     };
     xwayland.enable = true;
     plugins = [
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
+      # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
       pkgs.hyprlandPlugins.csgo-vulkan-fix
       pkgs.hyprlandPlugins.hyprbars
       pkgs.hyprlandPlugins.hyprspace
@@ -47,7 +50,7 @@
           "flameshot"
           "sleep 0.5 && ags"
           "obs --startreplaybuffer"
-          "${pkgs.signal-desktop-beta}/bin/signal-desktop-beta --start-in-tray"
+          "${pkgs.signal-desktop}/bin/signal-desktop --start-in-tray"
           "${pkgs.wlsunset}/bin/wlsunset"
           "${pkgs.swaynotificationcenter}/bin/swaync"
           "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -224,10 +227,10 @@
       };
       decoration = {
         rounding = 5;
-        drop_shadow = false;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
+        # drop_shadow = false;
+        # shadow_range = 4;
+        # shadow_render_power = 3;
+        # "col.shadow" = "rgba(1a1a1aee)";
       };
       animations = {
         enabled = true;
@@ -328,9 +331,9 @@
               bar_button_padding = 12
               bar_padding = 10
               bar_precedence_over_border = true
-              hyprbars-button = $color1, 20, ✖, hyprctl dispatch killactive
-              hyprbars-button = $color3, 20, ⛶, hyprctl dispatch fullscreen 1
-              hyprbars-button = $color4, 20, −, hyprctl dispatch togglefloating
+              hyprbars-button = rgb(E78284), 20, ✖, hyprctl dispatch killactive
+              hyprbars-button = rgb(A6D189), 20, ⛶, hyprctl dispatch fullscreen 1
+              hyprbars-button = rgb(B5BFE2), 20, −, hyprctl dispatch togglefloating
         }
       }
       plugin {

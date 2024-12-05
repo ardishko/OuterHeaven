@@ -52,10 +52,10 @@
     package = pkgs.catppuccin-cursors.frappeDark;
     name = "Catppuccin-Frappe-Dark";
     size = 24;
-    # hyprcursor = {
-    #   enable = true;
-    #   size = "24";
-    # };
+    hyprcursor = {
+      enable = true;
+      size = 24;
+    };
   };
 
   # This value determines the Home Manager release that your configuration is

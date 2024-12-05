@@ -86,6 +86,7 @@ in
               ".config/VA_11_Hall_A"
               ".config/nuclearthrone"
               ".config/Signal Beta"
+              ".config/Signal"
               ".config/noisetorch"
               ".config/Mullvad VPN"
               ".config/nheko"
