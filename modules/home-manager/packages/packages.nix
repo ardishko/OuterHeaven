@@ -42,7 +42,7 @@
         inputs.dolphin-emu.packages.${pkgs.system}.default
         inputs.sops-nix.packages.${pkgs.system}.default
         inputs.hyprpanel.packages.${pkgs.system}.default
-
+        inputs.anyrun.packages.${pkgs.system}.stdin
         # inputs.polly-mc.${pkgs.system}.default
         # inputs.tag-studio.packages.${pkgs.system}.default
 
@@ -75,7 +75,6 @@
         libreoffice-fresh
         winetricks
         protontricks
-        themechanger
         piper
         thunderbird
         nix-init
@@ -205,14 +204,16 @@
         ghex
         osu-lazer-bin
         gtop
-        (pkgs.appimageTools.wrapType2 { # or wrapType1
-          name = "suyu";
-          src = fetchurl {
-            url = "https://git.suyu.dev/suyu/suyu/releases/download/v0.0.3/Suyu-Linux_x86_64.AppImage";
-            hash = "sha256-26sWhTvB6K1i/K3fmwYg5pDIUi+7xs3dz8yVj5q7H0c=";
-          };
-          extraPkgs = pkgs: with pkgs; [ ];
-        })
+        element-desktop
+        nwg-look
+        # clipboard-jh
+        # (pkgs.appimageTools.wrapType2 { # or wrapType1
+        #   name = "suyu";
+        #   src = fetchurl {
+        #     url = "https://git.suyu.dev/suyu/suyu/releases/download/v0.0.3/Suyu-Linux_x86_64.AppImage";
+        #     hash = "sha256-26sWhTvB6K1i/K3fmwYg5pDIUi+7xs3dz8yVj5q7H0c=";
+        #   };
+        # })
 
         # emu
         ryujinx
@@ -223,7 +224,6 @@
         # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
         celeste
-        xclicker
 
         # Override Template
 

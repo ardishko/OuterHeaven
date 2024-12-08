@@ -141,6 +141,9 @@
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
+    catpuccin-cursors = {
+      url = "github:catppuccin/cursors";
+    };
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }: {

@@ -102,6 +102,7 @@ in
               ".config/Vampire_Survivors_97277776"
               ".config/libreoffice"
               ".config/celeste"
+              ".config/Element"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"

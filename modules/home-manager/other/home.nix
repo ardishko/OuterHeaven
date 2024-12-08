@@ -50,7 +50,7 @@
     gtk.enable = true;
     x11.enable = true;
     package = pkgs.catppuccin-cursors.frappeDark;
-    name = "Catppuccin-Frappe-Dark";
+    name = "catppuccin-frappe-dark-cursors";
     size = 24;
     hyprcursor = {
       enable = true;
