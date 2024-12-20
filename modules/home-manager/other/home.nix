@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, config, ... }:
 {
   home = { 
     username = "${username}";
@@ -30,8 +30,8 @@
     # Where we define the cursor
 
     cursorTheme = {
-      name = "Catppuccin-Frappe-Dark";
-      package = pkgs.catppuccin-cursors.frappeDark;
+      name = "${config.home.pointerCursor.name}";
+      package = config.home.pointerCursor.package;
     };
 
     gtk3.extraConfig = {
@@ -46,6 +46,7 @@
     };
   };
 
+  # remember to set the cursor size in the hyprland conf if you decide to change it
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;

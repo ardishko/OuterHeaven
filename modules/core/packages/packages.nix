@@ -14,6 +14,7 @@
       gamescope
       lshw
       f3d
+      cloudflared
     ]
     ++ (lib.lists.optionals (hostname == "ShadowMoses") [
       davinci-resolve

@@ -1,9 +1,9 @@
 {
+  config,
+  osConfig,
   pkgs,
   inputs,
   lib,
-  hostname,
-  username,
   ...
 }:
 {
@@ -31,12 +31,12 @@
       "$mainMod" = "SUPER";
       "general:layout" = "master";
       monitor =
-        if (hostname == "ShadowMoses") then
+        if (osConfig.users.users.${config.home.username}.description == "vaporsnake") then
           [
             "DP-2,2560x1440@164.998993, 0x350, 1"
             "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
           ]
-        else if (hostname == "BigShell") then
+        else if (osConfig.users.users.${config.home.username}.description == "liquid") then
           [ "eDP-1,1920x1200@60.001999, 0x0, 1" ]
         else
           [ ];
@@ -44,11 +44,16 @@
         [
           "mullvad-gui"
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "hyprctl setcursor catppuccin-frappe-dark-cursors 24"
+          "hyprctl setcursor ${config.home.pointerCursor.name} 24"
           "discover-overlay"
           "flameshot"
           "sleep 0.5 && ags"
           "obs --startreplaybuffer --disable-shutdown-check"
+          # Here's how you grab the username within home manager. I'm looking at you, ardishco.
+          "mpv --playlist=/home/${osConfig.users.users.${config.home.username}.description}/Music/MainMenu --no-video --shuffle --volume=22"
+          "${pkgs.thunderbird}/bin/thunderbird"
+          "${pkgs.electron-mail}/bin/electron-mail"
+          "${pkgs.hyprsunset}/bin/hyprsunset -t 4500"
           "${pkgs.element-desktop}/bin/element-desktop --hidden"
           "${pkgs.signal-desktop}/bin/signal-desktop --start-in-tray"
           "${pkgs.wlsunset}/bin/wlsunset"
@@ -62,16 +67,16 @@
           "${pkgs.arrpc}/bin/arrpc"
           "${pkgs.premid}/bin/premid --in-process-gpu"
         ]
-        ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+        ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
           "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../assets/wallpapers/strawHats.png}"
           "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../assets/wallpapers/mark-of-sacrifice-vertical.png}"
           "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
         ])
-        ++ (lib.lists.optionals (hostname == "BigShell") [
+        ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "liquid") [
           "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../assets/wallpapers/berserk-catppuccin.png}"
         ]);
       workspace =
-        if (hostname == "ShadowMoses") then
+        if (osConfig.users.users.${config.home.username}.description == "vaporsnake") then
           [
             "1,monitor:DP-2"
             "2,monitor:DP-2"
@@ -88,7 +93,7 @@
             "13,monitor:HDMI-A-1"
             "14,monitor:HDMI-A-1"
           ]
-        else if (hostname == "BigShell") then
+        else if (osConfig.users.users.${config.home.username}.description == "liquid") then
           [
             "1,monitor:eDP-1"
             "2,monitor:eDP-1"
@@ -131,7 +136,7 @@
           "$mainMod, down, movefocus, d"
           "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
           "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
-          "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${username}/Videos'"
+          "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${osConfig.users.users.${config.home.username}.description}/Videos'"
           ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
           #i3/sway type beat
 
@@ -188,7 +193,7 @@
           # Hyprspace window switcher toggle 
           "Alt_L, Tab, exec, overview:toggle"
         ]
-        ++ (lib.lists.optionals (hostname == "ShadowMoses") [
+        ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
           "$mainMod, h, workspace, 11"
           "$mainMod, j, workspace, 12"
           "$mainMod, k, workspace, 13"
@@ -215,7 +220,8 @@
           natural_scroll = true;
         };
         float_switch_override_focus = 2;
-        # scroll_factor = 2.0;
+        scroll_factor = 2.0;
+        accel_profile = "adaptive";
       };
       general = {
         gaps_in = 5;
@@ -257,31 +263,40 @@
         "nomaxsize,class:^(steam)"
         "noanim,title:^(wlogout)"
         "float,title:^(wlogout)"
-        "workspacesilent 1 silent, class:^(firefox)"
-        "workspacesilent 2 silent,class:^(discord)"
-        "workspacesilent 2 silent,class:^(vesktop)"
-        "workspacesilent 2 silent,class:^(Signal Beta)"
+        "pin,initialTitle:^(Discord Popout)"
+        "float,initialTitle:^(Discord Popout)"
+        "opacity 0.5,initialTitle:^(Discord Popout)"
+        "workspace 1 silent, class:^(firefox)"
+        "workspace 2 silent,class:^(discord)"
+        "workspace 2 silent,class:^(vesktop)"
+        "workspace 2 silent,class:^(Signal Beta)"
         "workspace 2 silent,class:^(Element)"
         "workspace 2 silent,class:^(soundux)"
-        "workspacesilent 3 silent,title:^(Steam)"
-        "workspacesilent 3 silent,class:^(org.prismlauncher.PrismLauncher)"
-        "workspacesilent 4 silent,class:^(mpv)"
-        "workspacesilent 4 silent,class:^(libreoffice*)"
-        "workspacesilent 5 silent,initialTitle:^(nvim)"
-        "workspacesilent 6 silent,class:^(krita)"
-        "workspacesilent 6 silent,class:^(.gimp-2.10-wrapped_)"
-        "workspacesilent 7 silent,class:^(evince)"
-        "workspacesilent 7 silent,class:^(info.febvre.Komikku)"
-        "workspacesilent 7 silent,class:^(Upscayl)"
+        "workspace 3 silent,title:^(Steam)"
+        "workspace 3 silent,class:^(steam)"
+        "workspace 3 silent,class:^(org.prismlauncher.PrismLauncher)"
+        "workspace 4 silent,initialClass:^(thunderbird)"
+        "workspace 4 silent,initialClass:^(electron-mail)"
+        "workspace 5 silent,initialTitle:^(nvim)"
+        "workspace 6 silent,class:^(libreoffice*)"
+        "workspace 6 silent,class:^(krita)"
+        "workspace 6 silent,class:^(.gimp-2.10-wrapped_)"
+        "workspace 7 silent,class:^(mpv)"
+        "workspace 7 silent,class:^(evince)"
+        "workspace 7 silent,class:^(info.febvre.Komikku)"
+        "workspace 7 silent,class:^(Upscayl)"
         "workspace 8 silent,class:^(com.obsproject.Studio)"
-        "workspacesilent 9 silent,class:^(obsidian)"
-        "workspacesilent 9 silent,class:^(Waydroid)"
+        "workspace 7 silent,class:^(obsidian)"
+        "workspace 9 silent,class:^(Waydroid)"
         "workspace 10,class:^(steam_app*)"
         "workspace 10,class:^(org.vinegarhq.Sober)"
+        "stayfocused,class:^(org.vinegarhq.Sober)"
         "workspace 10,class:^(osu!)"
+        "stayfocused,class:^(osu!)"
         "stayfocused,class:^(Waydroid)"
         "float,initialTitle:^(Picture-in-Picture)"
         "pin,initialTitle:^(Picture-in-Picture)"
+        "opacity 0.5,initialTitle:^(Picture-in-Picture)"
         "float,initialTitle:^(MainPicker)"
         # "forceinput,class:^(Waydroid)"
       ];
@@ -311,6 +326,7 @@
       #   };
       misc = {
         force_default_wallpaper = false;
+        middle_click_paste = false;
       };
     };
     extraConfig = ''

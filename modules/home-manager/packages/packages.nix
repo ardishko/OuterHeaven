@@ -206,6 +206,9 @@
         gtop
         element-desktop
         nwg-look
+        electron-mail
+        hyprsunset
+
         # clipboard-jh
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";

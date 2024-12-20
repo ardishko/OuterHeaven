@@ -1,4 +1,4 @@
-{ pkgs, username, config, ... }:
+{ pkgs, config, ... }:
 let
   userName = if (config.networking.hostName == "ShadowMoses") then "vaporsnake" else
     if (config.networking.hostName == "BigShell") then "liquid" else

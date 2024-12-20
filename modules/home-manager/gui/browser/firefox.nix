@@ -506,8 +506,8 @@ in
                   url = "https://nix-community.github.io/home-manager/options.xhtml";
                 }
                 {
-                  name = "nixvim docs";
-                  url = "https://nix-community.github.io/nixvim/";
+                  name = "nvf docs";
+                  url = "https://notashelf.github.io/nvf/options.html";
                 }
                 {
                   name = "nixpkgs";
@@ -520,6 +520,10 @@ in
                 {
                   name = "nixcord options";
                   url = "https://github.com/KaylorBen/nixcord/blob/main/docs/plugins.md";
+                }
+                {
+                  name = "mdadm";
+                  url = "https://gist.github.com/seanjensengrey/b69ffddbc668e127b1946d4c147e0bcb";
                 }
               ];
             }

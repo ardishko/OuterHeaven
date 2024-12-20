@@ -12,7 +12,7 @@
           (pkgs.makeDesktopItem {
             name = "vesktop";
             desktopName = "Discord";
-            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,UseOzonePlatform --ozone-platform=wayland";
+            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
             icon = "discord";
             startupWMClass = "VencordDesktop";
             genericName = "Internet Messenger";
@@ -53,11 +53,10 @@
         betterRoleDot.enable = true;
         betterUploadButton.enable = true;
         blurNSFW.enable = true;
-        callTimer.enable = true;
+        # callTimer.enable = true;
         clearURLs.enable = true;
         crashHandler.enable = true;
         dearrow.enable = true;
-        disableCallIdle.enable = true;
         emoteCloner.enable = true;
         experiments.enable = true;
         fakeNitro.enable = true;

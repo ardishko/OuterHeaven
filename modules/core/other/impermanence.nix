@@ -75,6 +75,7 @@ in
               ".config/PCSX2"
               ".config/Cemu"
               ".config/spotify"
+              ".config/gzdoom"
               ".config/ags"
               ".config/rpcs3"
               ".config/r2modman"
@@ -103,6 +104,9 @@ in
               ".config/libreoffice"
               ".config/celeste"
               ".config/Element"
+              ".config/discord"
+              ".config/discordcanary"
+              ".config/electron-mail"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"
@@ -170,6 +174,7 @@ in
             ]); 
           files = [
             ".zsh_history"
+            ".config/gtk-3.0/bookmarks"
         ];
       }; 
     };
