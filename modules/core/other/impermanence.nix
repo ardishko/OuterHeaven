@@ -50,6 +50,7 @@ in
             "/etc/mullvad-vpn"
             "/etc/cosmic-comp"
             "/var/lib/nixos"
+            "/var/lib/tailscale" # tailscale
             # persist /mnt so that all the mounted drives don't get wiped upon reboot
             # "/mnt"
           ] ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
@@ -105,6 +106,7 @@ in
               ".config/celeste"
               ".config/Element"
               ".config/discord"
+              ".config/nemo"
               ".config/discordcanary"
               ".config/electron-mail"
               ".local/share/bottles"

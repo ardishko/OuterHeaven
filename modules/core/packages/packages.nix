@@ -49,6 +49,7 @@
       "io.itch.itch"
       "io.github.lime3ds.Lime3DS"
       "io.github.Soundux"
+      "gg.guilded.Guilded"
     ];
     # update.auto = {
     #   enable = true;

@@ -9,8 +9,8 @@
       enable = true;
       extraConfig = {
         disable-autoswitch = {
-        "wireplumber.settings" = {
-          "bluetooth.autoswitch-to-headset-profile" = "false";
+          "wireplumber.settings" = {
+            "bluetooth.autoswitch-to-headset-profile" = "false";
           };
         };
       };

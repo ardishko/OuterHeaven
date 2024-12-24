@@ -9,6 +9,7 @@
     ./kdeconnect.nix
     ./localsend.nix
     ./joycond.nix
+    ./tailscale
     ./mullvad-vpn.nix
     # ./mysql.nix
     ./noisetorch.nix

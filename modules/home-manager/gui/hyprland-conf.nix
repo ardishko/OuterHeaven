@@ -215,7 +215,6 @@
         kb_layout = "tr,lv";
         kb_options = "grp:rctrl_toggle";
         follow_mouse = 1;
-        sensitivity = 0;
         touchpad = {
           natural_scroll = true;
         };

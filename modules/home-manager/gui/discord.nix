@@ -129,11 +129,15 @@
         viewIcons.enable = true;
         voiceChatDoubleClick.enable = true;
         voiceMessages.enable = true;
-        volumeBooster.enable = true;
+        volumeBooster = {
+          enable = true;
+          multiplier = 5;
+        };
         webKeybinds.enable = true;
         webRichPresence.enable = true;
         whoReacted.enable = true;
         youtubeAdblock.enable = true;
+        webScreenShareFixes.enable = true;
       };
     };
   };

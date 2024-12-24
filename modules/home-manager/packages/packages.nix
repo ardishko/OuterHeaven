@@ -109,7 +109,6 @@
         qgnomeplatform-qt6
         qgnomeplatform
         gparted
-        gnome-usage
         timeshift
         gnome-clocks
         gnome-sound-recorder
@@ -208,7 +207,7 @@
         nwg-look
         electron-mail
         hyprsunset
-
+        # resources
         # clipboard-jh
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";

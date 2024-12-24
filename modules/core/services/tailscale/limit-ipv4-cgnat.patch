@@ -1,0 +1,13 @@
+diff --git a/net/tsaddr/tsaddr.go b/net/tsaddr/tsaddr.go
+index 93a720b0..f89c68b5 100644
+--- a/net/tsaddr/tsaddr.go
++++ b/net/tsaddr/tsaddr.go
+@@ -31,7 +31,7 @@ func ChromeOSVMRange() netip.Prefix {
+ // See https://tailscale.com/s/cgnat
+ // Note that Tailscale does not assign out of the ChromeOSVMRange.
+ func CGNATRange() netip.Prefix {
+-	cgnatRange.Do(func() { mustPrefix(&cgnatRange.v, "100.64.0.0/10") })
++	cgnatRange.Do(func() { mustPrefix(&cgnatRange.v, "100.69.0.0/16") })
+ 	return cgnatRange.v
+ }
+ 

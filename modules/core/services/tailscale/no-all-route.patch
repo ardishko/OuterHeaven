@@ -1,0 +1,19 @@
+diff --git a/net/dns/resolved.go b/net/dns/resolved.go
+index 2917ab5b..449b3858 100644
+--- a/net/dns/resolved.go
++++ b/net/dns/resolved.go
+@@ -300,14 +300,6 @@ func (m *resolvedManager) setConfigOverDBus(ctx context.Context, rManager dbus.B
+ 			RoutingOnly: true,
+ 		})
+ 	}
+-	if len(config.MatchDomains) == 0 && len(config.Nameservers) > 0 {
+-		// Caller requested full DNS interception, install a
+-		// routing-only root domain.
+-		linkDomains = append(linkDomains, resolvedLinkDomain{
+-			Domain:      ".",
+-			RoutingOnly: true,
+-		})
+-	}
+ 
+ 	err = rManager.CallWithContext(
+ 		ctx, dbusResolvedInterface+".SetLinkDomains", 0,
