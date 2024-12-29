@@ -50,6 +50,7 @@
       "io.github.lime3ds.Lime3DS"
       "io.github.Soundux"
       "gg.guilded.Guilded"
+      "net.audiorelay.AudioRelay"
     ];
     # update.auto = {
     #   enable = true;

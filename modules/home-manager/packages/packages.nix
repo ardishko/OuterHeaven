@@ -90,7 +90,6 @@
         baobab
         python3Full
         gnupg
-        gzdoom
         wlprop
         mate.mate-polkit
         folder-color-switcher
@@ -132,6 +131,7 @@
         samrewritten
         zathura
         nwg-dock-hyprland
+        nwg-panel
         gnome-pomodoro
         qrscan
         premid
@@ -140,7 +140,7 @@
         nix-update
         firewalld-gui
         gtkcord4
-        wineWowPackages.full
+        wine-staging
         nmap
         ntfs3g
         revolt-desktop
@@ -207,6 +207,9 @@
         nwg-look
         electron-mail
         hyprsunset
+        mangohud
+        discover-overlay
+
         # resources
         # clipboard-jh
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
@@ -240,7 +243,6 @@
 
         # Custom packages
         # (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
-        (callPackage ./pkgcustom/discover-overlay/default.nix { })
         # (callPackage ./pkgcustom/hyprswitch { })
         # (callPackage ./pkgcustom/video-downloader {})
         # (callPackage ./pkgcustom/vinegar { })

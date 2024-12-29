@@ -133,8 +133,8 @@ in
           isDefault = true;
           search = {
             force = true;
-            default = "Qwant";
-            privateDefault = "Qwant";
+            default = "Brave";
+            privateDefault = "Brave";
             engines = {
               "Nix Packages" = {
                 urls = [

@@ -42,12 +42,13 @@
           [ ];
       exec-once =
         [
+          "${pkgs.nwg-panel}/bin/nwg-panel --style gtk"
           "mullvad-gui"
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           "hyprctl setcursor ${config.home.pointerCursor.name} 24"
+          "flatpak run gg.guilded.Guilded"
           "discover-overlay"
           "flameshot"
-          "sleep 0.5 && ags"
           "obs --startreplaybuffer --disable-shutdown-check"
           # Here's how you grab the username within home manager. I'm looking at you, ardishco.
           "mpv --playlist=/home/${osConfig.users.users.${config.home.username}.description}/Music/MainMenu --no-video --shuffle --volume=22"
@@ -64,8 +65,8 @@
           "${pkgs.hypridle}/bin/hypridle"
           "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store"
           # "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
-          "${pkgs.arrpc}/bin/arrpc"
           "${pkgs.premid}/bin/premid --in-process-gpu"
+          "${pkgs.nwg-dock-hyprland}/bin/nwg-dock-hyprland -d"
         ]
         ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
           "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../assets/wallpapers/strawHats.png}"
@@ -269,6 +270,7 @@
         "workspace 2 silent,class:^(discord)"
         "workspace 2 silent,class:^(vesktop)"
         "workspace 2 silent,class:^(Signal Beta)"
+        "workspace 2 silent,class:^(Guilded)"
         "workspace 2 silent,class:^(Element)"
         "workspace 2 silent,class:^(soundux)"
         "workspace 3 silent,title:^(Steam)"
@@ -289,7 +291,6 @@
         "workspace 9 silent,class:^(Waydroid)"
         "workspace 10,class:^(steam_app*)"
         "workspace 10,class:^(org.vinegarhq.Sober)"
-        "stayfocused,class:^(org.vinegarhq.Sober)"
         "workspace 10,class:^(osu!)"
         "stayfocused,class:^(osu!)"
         "stayfocused,class:^(Waydroid)"

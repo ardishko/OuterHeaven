@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  # services.tailscale = {
+  #   enable = true;
+  # }
   # Fix for Tailscale + Mullvad, allows all Tailscale-related traffic
   # to bypass VPN tunnel. See here for details:
   # https://mullvad.net/en/help/split-tunneling-with-linux-advanced

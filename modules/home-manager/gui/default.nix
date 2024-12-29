@@ -3,10 +3,11 @@
     ./ags
     ./anyrun.nix
     ./browser
-    ./discord-canary.nix
+    # ./discord-canary.nix
     ./discord.nix
     ./flameshot.nix
     ./goverlay.nix
+    ./gzdoom.nix
     ./heroic
     ./hyprland-conf.nix
     ./hyprlock.nix
@@ -23,6 +24,5 @@
     ./waybar
     ./wlogout
     ./fastfetch
-    ./mangohud
   ];
 }

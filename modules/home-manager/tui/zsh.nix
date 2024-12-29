@@ -1,4 +1,4 @@
-{ inputs, osConfig, config, ... }:
+{ osConfig, config, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -22,8 +22,5 @@
     syntaxHighlighting = {
       enable = true;
     };
-    # zplug = {
-    #   enable = true;
-    # };
   };
 }

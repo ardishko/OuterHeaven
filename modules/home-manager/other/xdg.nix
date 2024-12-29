@@ -2,6 +2,11 @@
 {
   xdg.mimeApps = {
     enable = true;
+    defaultApplications = {
+      "x-scheme-handler/magnet" = [ "mpv.desktop" ];
+      "x-scheme-handler/curseforge" = [ "prismlauncher.desktop" ];
+      "application/x-doom" = [ "gzdoom.desktop" ];
+    };
   };
   xdg.desktopEntries = {
     "steam" = lib.mkForce {

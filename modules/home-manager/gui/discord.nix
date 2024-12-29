@@ -1,35 +1,27 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 {
   imports = [ inputs.nixcord.homeManagerModules.nixcord ];
-  
+  xdg.desktopEntries = {
+    "discord-canary" = lib.mkForce {
+      name = "Discord Canary";
+      type = "Application";
+      icon = "discord-canary";
+      terminal = false;
+      exec = "mullvad-exclude discordcanary --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
+    };
+  };
   programs.nixcord = {
     enable = true;
-    discord.enable = false;
-    vesktop = {
+    discord = {
       enable = true;
-      package = pkgs.vesktop.overrideAttrs (oldAttrs: {
-        desktopItems = [
-          (pkgs.makeDesktopItem {
-            name = "vesktop";
-            desktopName = "Discord";
-            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
-            icon = "discord";
-            startupWMClass = "VencordDesktop";
-            genericName = "Internet Messenger";
-            keywords = [
-              "discord"
-              "vencord"
-              "electron"
-              "chat"
-            ];
-            categories = [
-              "Network"
-              "InstantMessaging"
-              "Chat"
-            ];
-          })
-        ];
-      });
+      vencord.enable = true;
+      openASAR.enable = false;
+      package = pkgs.discord-canary.overrideAttrs {
+        src = pkgs.fetchurl {
+          url = "https://canary.dl2.discordapp.net/apps/linux/0.0.550/discord-canary-0.0.550.tar.gz";
+          hash = "sha256-VkeLwg2gMH+1JR35gsWGjM5tvGDSfdDTJ2UIu5P4Yqo=";
+        };
+      };
     };
     config = {
       themeLinks = [
