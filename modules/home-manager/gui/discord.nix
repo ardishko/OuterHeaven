@@ -7,7 +7,7 @@
       type = "Application";
       icon = "discord-canary";
       terminal = false;
-      exec = "mullvad-exclude discordcanary --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
+      exec = "mullvad-exclude DiscordCanary --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
     };
   };
   programs.nixcord = {
@@ -22,6 +22,32 @@
           hash = "sha256-VkeLwg2gMH+1JR35gsWGjM5tvGDSfdDTJ2UIu5P4Yqo=";
         };
       };
+    };
+    vesktop = {
+      enable = true;
+      package = pkgs.vesktop.overrideAttrs (oldAttrs: {
+        desktopItems = [
+          (pkgs.makeDesktopItem {
+            name = "vesktop";
+            desktopName = "Discord";
+            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
+            icon = "discord";
+            startupWMClass = "VencordDesktop";
+            genericName = "Internet Messenger";
+            keywords = [
+              "discord"
+              "vencord"
+              "electron"
+              "chat"
+            ];
+            categories = [
+              "Network"
+              "InstantMessaging"
+              "Chat"
+            ];
+          })
+        ];
+      });
     };
     config = {
       themeLinks = [
@@ -70,9 +96,9 @@
         messageLogger = {
           enable = true;
 	        deleteStyle = "text";
-	       logDeletes = true;
-	       logEdits = true;
-	       ignoreSelf = true;
+	        logDeletes = true;
+	        logEdits = true;
+	        ignoreSelf = true;
         };
         messageTags.enable = true;
         moreCommands.enable = true;
@@ -85,7 +111,11 @@
         };
         noDevtoolsWarning.enable = true;
         noF1.enable = true;
-        noReplyMention.enable = true;
+        noReplyMention = {
+          enable = true;
+          userList = "";
+          shouldPingListed = false;
+        };
         noProfileThemes.enable = true;
         noUnblockToJump.enable = true;
         openInApp.enable = true;
@@ -130,6 +160,7 @@
         whoReacted.enable = true;
         youtubeAdblock.enable = true;
         webScreenShareFixes.enable = true;
+        noTypingAnimation.enable = true;
       };
     };
   };

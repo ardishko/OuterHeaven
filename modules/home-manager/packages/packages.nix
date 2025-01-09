@@ -41,11 +41,11 @@
         inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
         inputs.dolphin-emu.packages.${pkgs.system}.default
         inputs.sops-nix.packages.${pkgs.system}.default
-        inputs.hyprpanel.packages.${pkgs.system}.default
         inputs.anyrun.packages.${pkgs.system}.stdin
         # inputs.polly-mc.${pkgs.system}.default
         # inputs.tag-studio.packages.${pkgs.system}.default
-
+        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.bottles
+        inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
         # Over
         wget
         lutris
@@ -60,13 +60,12 @@
         killall
         steamtinkerlaunch
         appimage-run
-        nemo-fileroller
         nerd-fonts.iosevka
         nerd-fonts.iosevka-term
         webdav
         gamemode
         davfs2
-        hollywood
+        # hollywood
         protonup-qt
         protonup-ng
         pavucontrol
@@ -97,18 +96,14 @@
         nvtopPackages.amd
         wlsunset
         pipes-rs
-        qalculate-gtk
         cargo
         distrobox
         clonehero
         scanmem
         unzip
-        bottles
-        signal-desktop
         qgnomeplatform-qt6
         qgnomeplatform
         gparted
-        timeshift
         gnome-clocks
         gnome-sound-recorder
         wev
@@ -122,11 +117,10 @@
         lazygit
         wireguard-tools
         kdenlive
-        tor-browser
         evince
         tailscale
         telegram-desktop
-        android-studio
+        # android-studio
         android-tools
         samrewritten
         zathura
@@ -134,7 +128,7 @@
         nwg-panel
         gnome-pomodoro
         qrscan
-        premid
+        # premid
         gpu-screen-recorder
         nixpkgs-fmt
         nix-update
@@ -146,25 +140,34 @@
         revolt-desktop
         amdgpu_top
         inxi
+        
+        # Image viewer
         satty
+
         nitch
         komikku
         rmg
         gnome-text-editor
         bleachbit
         tailscale
-        clipit
         ventoy-full
         ripcord
         r2modman
-        # nomachine-client
+        
         # nheko
-        nemo-with-extensions
+
+        # file manager
         libsForQt5.dolphin
-        nixpkgs-review
+        libsForQt5.dolphin-plugins
+        # archive manager
+        kdePackages.ark
+        # calculator
+        kdePackages.kalk
+        # document viewer
         evince
-        yambar
-        swappy
+
+        nixpkgs-review
+        
         bottom
         btop
         moonlight-qt
@@ -172,10 +175,7 @@
         pinentry-qt
         sidequest
         nix-index
-        monophony
-        looking-glass-client
-        libsForQt5.ark
-        libsForQt5.dolphin
+
         # zandronum
         aria
         jp2a
@@ -185,11 +185,8 @@
         wl-clipboard
         grim
         slurp
-        file-roller
         zoom-us
         upscayl
-        wl-gammarelay-rs
-        lmms
         mullvad-vpn
         impression
         woeusb
@@ -209,6 +206,16 @@
         hyprsunset
         mangohud
         discover-overlay
+        goverlay 
+        zoom-us
+        signal-desktop
+
+        # (pkgs.signal-desktop.overrideAttrs {
+        #   src = pkgs.fetchurl {  
+        #     url = "https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.33.0_amd64.deb";
+        #     hash = "sha256-9i9FZ8Kn6nXSWdzTLN4Ek6nWe7RaqZgmq1uppc9lnPM=";
+        #   };
+        # })
 
         # resources
         # clipboard-jh
@@ -229,7 +236,7 @@
         # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
         celeste
-
+      
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {
@@ -243,12 +250,8 @@
 
         # Custom packages
         # (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
-        # (callPackage ./pkgcustom/hyprswitch { })
-        # (callPackage ./pkgcustom/video-downloader {})
-        # (callPackage ./pkgcustom/vinegar { })
         # (callPackage ./pkgcustom/lime3ds {})
         # (callPackage ./pkgcustom/roblox-fd {})
-        # (callPackage ../pkgcustom/nexus-mods/package.nix {})
       ];
 
   # List of packages end here

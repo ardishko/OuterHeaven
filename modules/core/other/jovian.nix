@@ -7,7 +7,7 @@
       enable = true;
       autoStart = true;
       user = "${username}";
-      desktopSession = "gnome";
+      desktopSession = "plasma";
     };
     devices = {
       steamdeck = {

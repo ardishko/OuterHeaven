@@ -27,12 +27,11 @@
       # most settings are documented in the appendix
       settings = {
         vim = {
+          splitBelow = true;
           viAlias = true;
           vimAlias = true;
           lineNumberMode = "number";
           useSystemClipboard = true;
-          autopairs.enable = true;
-          autocomplete.enable = true;
           theme = { 
             enable = true;
             name = "catppuccin";
@@ -42,7 +41,6 @@
           enable = true;
           };
         spellcheck.enable = true;
-        splitBelow = true;
         telescope = {
           enable = true;
           mappings = {
@@ -61,7 +59,7 @@
             extraDiagnostics.enable = true;
             format = {
               enable = true;
-              type = "nixpkgs-fmt";
+              type = "nixfmt";
             };
             treesitter.enable = true;
           };
@@ -112,7 +110,7 @@
             enable = true;
             treesitter.enable = true;
             lsp.enable = true;
-            flutter-tools.enable = true;
+            # flutter-tools.enable = true;
           };
           css = {
             enable = true;

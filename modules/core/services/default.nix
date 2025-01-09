@@ -2,6 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./davfs2.nix
+    ./dns.nix
     ./firewall.nix
     ./gnome-keyring.nix
     ./gnome-sushi.nix
@@ -21,5 +22,6 @@
     ./udev.nix
     ./webdav.nix
     ./xserver.nix
+    ./zapret.nix
   ];
 }

@@ -12,13 +12,14 @@
     ]
     ++ (lib.lists.optionals (hostname == "ShadowMoses") [
       ./hyprland.nix
-      ./sway.nix
-      ./gdm.nix
-      # ./cosmic.nix
+      # ./sway.nix
+      ./sddm.nix
+      ./kde6.nix
     ])
     ++ (lib.lists.optionals (hostname == "BigShell") [
       ./hyprland.nix
-      ./gdm.nix
+      ./sddm.nix
+      ./kde6.nix
     ])
-    ++ (lib.lists.optionals (hostname == "Tanker") [ ./gnome.nix ]);
+    ++ (lib.lists.optionals (hostname == "Tanker") [ ./kde6.nix ]);
 }

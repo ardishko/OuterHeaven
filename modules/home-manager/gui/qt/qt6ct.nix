@@ -7,7 +7,7 @@
     custom_palette=true
     icon_theme=Papirus-Dark
     standard_dialogs=default
-    style=Windows
+    style=Breeze
     [Fonts]
     fixed="Iosevka Nerd Font [UKWN],14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
     general="Iosevka Nerd Font [UKWN],14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"

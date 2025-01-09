@@ -62,16 +62,13 @@
       url = "github:hyprwm/hypridle";
       inputs.nixpkgs.follows = "hyprland";
     };
-    pyprland = {
-      url = "github:hyprland-community/pyprland";
-    };
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-alien = {
-      url = "github:thiagokokada/nix-alien";
-    };
+    # nixos-cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # nix-alien = {
+    #   url = "github:thiagokokada/nix-alien";
+    # };
     shadower = {
       url = "github:n3oney/shadower";
     };
@@ -125,17 +122,8 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lqx_commit = {
-      url = "github:NixOS/nixpkgs/d9e6adf4e7f774409472dc3b94330d40a6dc3586";
-    };
-    virtualhere = {
-      url = "github:BatteredBunny/virtualhere-nixos";
-    };
     minegrub-theme = {
       url = "github:Lxtharia/minegrub-theme";
-    };
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
     };
     hyprspace = {
       url = "github:KZDKM/Hyprspace";
@@ -143,6 +131,12 @@
     };
     catpuccin-cursors = {
       url = "github:catppuccin/cursors";
+    };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+    };
+    hyprswitch = {
+      url = "github:H3rmt/hyprswitch/release";
     };
   };
   outputs =

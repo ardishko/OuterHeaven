@@ -10,7 +10,7 @@
   # balls
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.hyprland;
     systemd = {
       enable = true;
       variables = [
@@ -42,6 +42,7 @@
           [ ];
       exec-once =
         [
+          "hyprswitch init &"
           "${pkgs.nwg-panel}/bin/nwg-panel --style gtk"
           "mullvad-gui"
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -65,8 +66,9 @@
           "${pkgs.hypridle}/bin/hypridle"
           "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store"
           # "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
-          "${pkgs.premid}/bin/premid --in-process-gpu"
+          # "${pkgs.premid}/bin/premid --in-process-gpu"
           "${pkgs.nwg-dock-hyprland}/bin/nwg-dock-hyprland -d"
+          # "${pkgs.kdePackages.krunner}/bin/krunner -d"
         ]
         ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
           "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../assets/wallpapers/strawHats.png}"
@@ -116,6 +118,7 @@
           "SUPER_SHIFT, Del, exec, pkill Hyprland"
           "$mainMod, A, togglefloating,"
           "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
+          # "CTRL, Escape, exec, ${pkgs.kdePackages.krunner}/bin/krunner"
           "$mainMod, E, togglesplit, # dwindle"
           "$mainMod,F,fullscreen"
           # '',Print, exec, ${
@@ -135,8 +138,8 @@
           "$mainMod, right, movefocus, r"
           "$mainMod, up, movefocus, u"
           "$mainMod, down, movefocus, d"
-          "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
-          "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
+          # "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
+          # "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
           "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${osConfig.users.users.${config.home.username}.description}/Videos'"
           ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
           #i3/sway type beat
@@ -153,7 +156,7 @@
           "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
           "$mainMod, Insert,pass,^(discordcanary)$"
           "$mainMod, Home,pass,^(discordcanary)$"
-          "Alt_L, Tab, overview:toggle"
+          # "Alt_L, Tab, overview:toggle"
 
           # Switch workspaces with mainMod + [0-9]
           "$mainMod, 1, workspace, 1"
@@ -192,7 +195,8 @@
           # Like really really cool, you could even say it's cool beans. 
           
           # Hyprspace window switcher toggle 
-          "Alt_L, Tab, exec, overview:toggle"
+          # "Alt_L, Tab, exec, overview:toggle"
+          "Alt_L, Tab, exec, hyprswitch gui --mod-key alt_l --key Tab --close mod-key-release --sort-recent"
         ]
         ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
           "$mainMod, h, workspace, 11"
@@ -209,13 +213,10 @@
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
-      bindrn = [
-        "SUPER, SUPER_L, exec, pkill wofi || ${pkgs.wofi}/bin/wofi"
-      ];
       input = {
         kb_layout = "tr,lv";
         kb_options = "grp:rctrl_toggle";
-        follow_mouse = 1;
+        follow_mouse = 2;
         touchpad = {
           natural_scroll = true;
         };
@@ -230,6 +231,7 @@
         "col.active_border" = "rgb(99D1DB)";
         layout = "master";
         resize_on_border = true;
+        allow_tearing = true;
       };
       decoration = {
         rounding = 5;
@@ -245,7 +247,7 @@
           "windows, 1, 3, overshot, slide"
           "windowsOut, 1, 7, overshot, slide"
           "border, 1, 10, default"
-          "fade, 0, 0, default"
+          "fade, 0, 1, default"
           "workspaces, 0, 6, default"
         ];
       };
@@ -298,6 +300,9 @@
         "pin,initialTitle:^(Picture-in-Picture)"
         "opacity 0.5,initialTitle:^(Picture-in-Picture)"
         "float,initialTitle:^(MainPicker)"
+        "immediate,fullscreenstate:* 1"
+        "immediate,fullscreenstate:1 *"
+        "immediate,onworkspace:10"
         # "forceinput,class:^(Waydroid)"
       ];
       layerrule = [
@@ -305,7 +310,6 @@
         "xray 1, wofi"
         "noanim, wayfreeze"
         "noanim, selection"
-
       ];
       dwindle = {
         pseudotile = true;
@@ -354,6 +358,9 @@
               hyprbars-button = rgb(E78284), 20, ✖, hyprctl dispatch killactive
               hyprbars-button = rgb(A6D189), 20, ⛶, hyprctl dispatch fullscreen 1
               hyprbars-button = rgb(B5BFE2), 20, −, hyprctl dispatch togglefloating
+              bar_precedence_over_border = false
+              bar_part_of_window = true
+              bar_padding = 5
         }
       }
       plugin {

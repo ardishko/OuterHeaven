@@ -16,10 +16,6 @@
       f3d
       cloudflared
     ]
-    ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-      davinci-resolve
-      hello
-    ])
     ++ (lib.lists.optionals (hostname == "Tanker") [
       steamdeck-firmware
       jupiter-dock-updater-bin
@@ -40,6 +36,11 @@
       #     hash = "sha256-VFRvboQ7IZwYDQvEcWimOuno7vIj+5EztOvxCHvwSN4="; 
       #   }
       # }"
+      # { 
+      #   flatpakref = "https://sober.vinegarhq.org/sober.flatpakref"; 
+      #   sha256=""; 
+      # }
+      "com.github.Rosalie241.RMG"
       "com.github.tchx84.Flatseal"
       "com.steamgriddb.SGDBoop"
       "io.mrarm.mcpelauncher"
@@ -52,10 +53,13 @@
       "gg.guilded.Guilded"
       "net.audiorelay.AudioRelay"
     ];
-    # update.auto = {
-    #   enable = true;
-    #   onCalendar = "daily";
-    # };
+    update = {
+      onActivation = true;
+      auto = {
+        enable = true;
+        onCalendar = "weekly"; # Default value
+      };
+    };
   };
   fonts.packages = with pkgs; [
     noto-fonts

@@ -1,4 +1,4 @@
-{ pkgs, hostname, inputs, ... }:
+{ pkgs, hostname, config, lib, ... }:
 {
   boot = {
     initrd.verbose = false;
@@ -6,15 +6,15 @@
     kernelParams = [ "split_lock_detect=off" "quiet" ];
     # kernelParams = [ ];
     extraModulePackages =
-      with pkgs;
-      (lib.lists.optionals (hostname == "ShadowMoses") [ inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.linuxKernel.packages.linux_lqx.xpadneo inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.linuxKernel.packages.linux_lqx.usbip ]);
+      with config.boot.kernelPackages;
+      (lib.lists.optionals (hostname == "ShadowMoses") [ xpadneo usbip ]);
     kernelPackages =
       if (hostname == "Tanker") then
         pkgs.linuxPackages_jovian
       else if (hostname == "jd") then
         pkgs.linuxPackages_hardened
       else
-        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.linuxKernel.packages.linux_lqx;
+        pkgs.linuxPackages;
     supportedFilesystems = [ "ntfs" "zfs" ];
     kernelModules = [
       "udev"

@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services = {
     displayManager = {
       sddm = {
         enable = true;
         theme = "catppuccin-frappe";
-        package = pkgs.kdePackages.sddm;
+        package = lib.mkForce pkgs.kdePackages.sddm;
       };
     };
     xserver = {
@@ -19,8 +19,8 @@
       flavor = "frappe";
       font  = "Iosevka Nerd Font";
       fontSize = "15";
-      # background = "${./wallpaper.png}";
-      # loginBackground = false;
+      background = "${../../../assets/wallpapers/idolGoro.jpg}";
+      loginBackground = true;
     }
   )];
 }

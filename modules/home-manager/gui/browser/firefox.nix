@@ -56,13 +56,13 @@ let
         url = "https://addons.mozilla.org/firefox/downloads/file/3784283/open_tabs_next_to_current-2.0.14.xpi";
         sha256 = "sha256-Q8qQm/k4CPAu8zlrO4/Gsx/qE4x+rnIlKa8mcFgY1sU=";
       };
-      premid = remoteXpiAddon {
-        pname = "premid";
-        version = "2.5.2";
-        addonId = "support@premid.app";
-        url = "https://dl.premid.app/PreMiD.xpi";
-        sha256 = "sha256-xdgJLzn+V8yIDkvS7QFzRMuHZAkBCOtHPd+qhhin3HI=";
-      };
+      # premid = remoteXpiAddon {
+      #   pname = "premid";
+      #   version = "2.5.2";
+      #   addonId = "support@premid.app";
+      #   url = "https://dl.premid.app/PreMiD.xpi";
+      #   sha256 = "sha256-cUHDGgidxyj3FDHmzx6pwdYtzv7wy6INr0hBGDXIb/8=";
+      # };
       catppuccin-frappe-sky = remoteXpiAddon {
         pname = "catppuccin-frappe-sky";
         version = "unknown";
@@ -297,7 +297,7 @@ in
               (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
               read-aloud
               open-tabs-next-to-current
-              premid
+              # premid
               cf-purge-plugin
               btroblox
               (w2g.overrideAttrs { meta.license.free = true; })
