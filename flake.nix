@@ -138,6 +138,9 @@
     hyprswitch = {
       url = "github:H3rmt/hyprswitch/release";
     };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    };
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }: {

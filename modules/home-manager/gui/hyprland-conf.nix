@@ -138,8 +138,6 @@
           "$mainMod, right, movefocus, r"
           "$mainMod, up, movefocus, u"
           "$mainMod, down, movefocus, d"
-          # "Alt_L, Tab, exec, sleep 0.1 && hyprswitch --daemon --ignore-monitors --switch-ws-on-hover"
-          # "Alt_L, quotedbl, exec, hyprswitch --stop-daemon"
           "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${osConfig.users.users.${config.home.username}.description}/Videos'"
           ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
           #i3/sway type beat
@@ -365,16 +363,15 @@
       }
       plugin {
           overview {
-              onBottom = true
               autoDrag = true
               switchOnDrop = false 
-              panelHeight = 450
+              panelHeight = 130
               workspaceActiveBorder = rgb(99D1DB)
               showSpecialWorkspace = true
               showEmptyWorkspace = true
               showNewWorkspace = true
               autoScroll = false
-              affectStrut = false
+              # affectStrut = false
               workspaceBorderSize = 2
               workspaceMargin = 24
               panelColor = rgb(303447)

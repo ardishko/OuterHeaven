@@ -40,6 +40,7 @@
       #   flatpakref = "https://sober.vinegarhq.org/sober.flatpakref"; 
       #   sha256=""; 
       # }
+      "io.github.everestapi.Olympus"
       "com.github.Rosalie241.RMG"
       "com.github.tchx84.Flatseal"
       "com.steamgriddb.SGDBoop"

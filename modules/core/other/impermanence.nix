@@ -83,6 +83,7 @@ in
               ".config/r2modman"
               ".config/r2modmanPlus-local"
               ".config/sops"
+              ".config/quickshell"
               ".config/vesktop"
               ".config/Vencord"
               ".config/StardewValley"

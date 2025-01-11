@@ -48,6 +48,17 @@
           };
         };
         languages = {
+          bash = {
+            enable = true;
+            format.enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
+          assembly = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
           rust = {
             enable = true;
             lsp.enable = true;
@@ -73,6 +84,7 @@
             lsp.enable = true;
             treesitter.enable = true;
             dap.enable = true;
+
           };
           ts = {
             enable = true;

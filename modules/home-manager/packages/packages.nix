@@ -46,6 +46,8 @@
         # inputs.tag-studio.packages.${pkgs.system}.default
         inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.bottles
         inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
+        inputs.quickshell.packages.${pkgs.system}.default
+
         # Over
         wget
         lutris
