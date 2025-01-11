@@ -46,7 +46,7 @@
           "${pkgs.nwg-panel}/bin/nwg-panel --style gtk"
           "mullvad-gui"
           "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "hyprctl setcursor ${config.home.pointerCursor.name} 24"
+          "hyprctl setcursor ${config.home.pointerCursor.name} 38"
           "flatpak run gg.guilded.Guilded"
           "discover-overlay"
           "flameshot"
@@ -67,7 +67,7 @@
           "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store"
           # "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
           # "${pkgs.premid}/bin/premid --in-process-gpu"
-          "${pkgs.nwg-dock-hyprland}/bin/nwg-dock-hyprland -d"
+          "${inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland}/bin/nwg-dock-hyprland -d"
           # "${pkgs.kdePackages.krunner}/bin/krunner -d"
         ]
         ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
@@ -114,7 +114,7 @@
       bind =
         [
           "$mainMod, Return, exec, kitty"
-          "SUPER_SHIFT, W, killactive,"
+          "Alt_L, F4, killactive,"
           "SUPER_SHIFT, Del, exec, pkill Hyprland"
           "$mainMod, A, togglefloating,"
           "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"

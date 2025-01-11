@@ -1,6 +1,6 @@
 {
   imports = [
-    ./ags
+    # ./ags
     ./anyrun.nix
     ./browser
     # ./discord-canary.nix

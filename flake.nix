@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,23 +20,18 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-    xdg-desktop-portal-hyprland = {
-      url = "github:hyprwm/xdg-desktop-portal-hyprland";
-      inputs.nixpkgs.follows = "hyprland";
-    };
-    hy3 = {
-      url = "github:outfoxxed/hy3";
-      # or "github:outfoxxed/hy3?ref=hl{version}" for a release version of hyprland
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland = {
+    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # };
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # xdg-desktop-portal-hyprland = {
+    #   url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    #   inputs.nixpkgs.follows = "hyprland";
+    # };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
     nh = {
       url = "github:viperML/nh";
@@ -60,15 +55,8 @@
     };
     hypridle = {
       url = "github:hyprwm/hypridle";
-      inputs.nixpkgs.follows = "hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixos-cosmic = {
-    #   url = "github:lilyinstarlight/nixos-cosmic";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # nix-alien = {
-    #   url = "github:thiagokokada/nix-alien";
-    # };
     shadower = {
       url = "github:n3oney/shadower";
     };
@@ -91,11 +79,6 @@
     tag-studio = {
       url = "github:TagStudioDev/TagStudio";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ags = {
-      url = "github:ardishko/ags";
-      # url = "github:Aylur/ags/bb91f7c8fdd2f51c79d3af3f2881cacbdff19f60";
-      # url = "github:/Aylur/ags/";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -125,10 +108,10 @@
     minegrub-theme = {
       url = "github:Lxtharia/minegrub-theme";
     };
-    hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprspace = {
+    #   url = "github:KZDKM/Hyprspace";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     catpuccin-cursors = {
       url = "github:catppuccin/cursors";
     };

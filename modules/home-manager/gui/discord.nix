@@ -14,7 +14,10 @@
     enable = true;
     discord = {
       enable = true;
-      vencord.enable = true;
+      vencord = {
+        enable = true;
+        package = pkgs.vencord;
+      };
       openASAR.enable = false;
       package = pkgs.discord-canary.overrideAttrs {
         src = pkgs.fetchurl {

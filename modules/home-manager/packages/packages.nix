@@ -45,6 +45,7 @@
         # inputs.polly-mc.${pkgs.system}.default
         # inputs.tag-studio.packages.${pkgs.system}.default
         inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.bottles
+        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland
         inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
         inputs.quickshell.packages.${pkgs.system}.default
 
@@ -126,7 +127,6 @@
         android-tools
         samrewritten
         zathura
-        nwg-dock-hyprland
         nwg-panel
         gnome-pomodoro
         qrscan
