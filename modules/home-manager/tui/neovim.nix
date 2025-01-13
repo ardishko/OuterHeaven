@@ -27,7 +27,15 @@
       # most settings are documented in the appendix
       settings = {
         vim = {
-          splitBelow = true;
+          terminal = {
+            toggleterm = {
+              enable = true;
+              setupOpts = {
+                direction = "vertical";
+                size = 80;
+              };
+            };
+          };
           viAlias = true;
           vimAlias = true;
           lineNumberMode = "number";

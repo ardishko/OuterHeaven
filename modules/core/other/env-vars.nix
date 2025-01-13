@@ -17,5 +17,6 @@ in
     EDITOR = "nvim";
     XCURSOR_THEME = "${config.home-manager.users.${userName}.home.pointerCursor.name}";
     XCURSOR_SIZE = config.home-manager.users.${userName}.home.pointerCursor.size;
+    NIXOS_OZONE_WL= 1;
   };
 }

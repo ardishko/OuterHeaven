@@ -6,7 +6,6 @@
   ...
 }:
 {
-  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
   environment.systemPackages =
     with pkgs;
     [
@@ -20,48 +19,7 @@
       steamdeck-firmware
       jupiter-dock-updater-bin
     ]);
-
-  services.flatpak = {
-    enable = true;
-    remotes = [
-      {
-        name = "flathub";
-        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      }
-    ];
-    packages = [
-      # "${
-      #   pkgs.fetchurl {
-      #     url = "https://sober.vinegarhq.org/sober.flatpakref";
-      #     hash = "sha256-VFRvboQ7IZwYDQvEcWimOuno7vIj+5EztOvxCHvwSN4="; 
-      #   }
-      # }"
-      # { 
-      #   flatpakref = "https://sober.vinegarhq.org/sober.flatpakref"; 
-      #   sha256=""; 
-      # }
-      "io.github.everestapi.Olympus"
-      "com.github.Rosalie241.RMG"
-      "com.github.tchx84.Flatseal"
-      "com.steamgriddb.SGDBoop"
-      "io.mrarm.mcpelauncher"
-      "camp.nook.nookdesktop"
-      "org.freedesktop.Sdk/x86_64/23.08"
-      "com.fightcade.Fightcade"
-      "io.itch.itch"
-      "io.github.lime3ds.Lime3DS"
-      "io.github.Soundux"
-      "gg.guilded.Guilded"
-      "net.audiorelay.AudioRelay"
-    ];
-    update = {
-      onActivation = true;
-      auto = {
-        enable = true;
-        onCalendar = "weekly"; # Default value
-      };
-    };
-  };
+  services.flatpak.enable = true;
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans  

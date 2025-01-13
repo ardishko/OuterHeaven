@@ -14,8 +14,7 @@
     systemd = {
       enable = true;
       variables = [
-        "DISPLAY"
-        "XDG_CURRENT_DESKTOP"
+        "--all"
       ];
     };
     xwayland.enable = true;

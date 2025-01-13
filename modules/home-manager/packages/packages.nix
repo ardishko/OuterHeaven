@@ -7,6 +7,7 @@
 }:
 {
   # Define your packages here and everything related.
+  imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
 
   home.packages =
     with pkgs;
@@ -147,15 +148,17 @@
         satty
 
         nitch
-        komikku
-        rmg
+        # manga reader
+        mangareader
+
         gnome-text-editor
         bleachbit
         tailscale
         ventoy-full
         ripcord
         r2modman
-        
+        qt6.qtdeclarative
+
         # nheko
 
         # file manager
@@ -166,10 +169,9 @@
         # calculator
         kdePackages.kalk
         # document viewer
-        evince
+        kdePackages.okular
 
         nixpkgs-review
-        
         bottom
         btop
         moonlight-qt
@@ -256,7 +258,44 @@
         # (callPackage ./pkgcustom/roblox-fd {})
       ];
 
-  # List of packages end here
+  # List of nix packages end here
+  services.flatpak = {
+    # enable = true; # in /modules/core/packages.nix
+    remotes = [
+      {
+        name = "flathub";
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }
+    ];
+    packages = [
+      # {
+      #   flatpakref = "https://sober.vinegarhq.org/sober.flatpakref";
+      #   sha256 = "sha256:1pj8y1xhiwgbnhrr3yr3ybpfis9slrl73i0b1lc9q89vhip6ym2l";
+      # }
+      "io.github.everestapi.Olympus"
+      "com.github.Rosalie241.RMG"
+      "com.github.tchx84.Flatseal"
+      "com.steamgriddb.SGDBoop"
+      "io.mrarm.mcpelauncher"
+      "camp.nook.nookdesktop"
+      "org.freedesktop.Sdk/x86_64/23.08"
+      "com.fightcade.Fightcade"
+      "io.itch.itch"
+      "io.github.lime3ds.Lime3DS"
+      "io.github.Soundux"
+      "gg.guilded.Guilded"
+      "net.audiorelay.AudioRelay"
+      "org.kde.Platform"
+      "org.freedesktop.Platform"
+    ];
+    update = {
+      onActivation = true;
+      auto = {
+        enable = true;
+        onCalendar = "weekly"; # Default value
+      };
+    };
+  };
 
   # scripts
 
