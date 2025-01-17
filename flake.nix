@@ -97,7 +97,7 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixcord = { 
+    nixcord = {
       url = "github:KaylorBen/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -126,7 +126,8 @@
     };
   };
   outputs =
-    inputs@{ nixpkgs, disko, ... }: {
+    inputs@{ nixpkgs, disko, ... }:
+    {
       nixosConfigurations = {
         ShadowMoses = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

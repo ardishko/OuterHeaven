@@ -24,5 +24,6 @@
     ./waybar
     ./wlogout
     ./fastfetch
+    ./signal.nix
   ];
 }

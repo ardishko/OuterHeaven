@@ -12,7 +12,6 @@
     ]
     ++ (lib.lists.optionals (hostname == "ShadowMoses") [
       ./hyprland.nix
-      # ./sway.nix
       ./sddm.nix
       ./kde6.nix
     ])

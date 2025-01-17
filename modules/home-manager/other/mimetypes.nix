@@ -45,7 +45,7 @@
       "inode/directory" = [ "org.kde.dolphin.desktop" ];
       "application/pdf" = [ "org.kde.okular.desktop" ];
       "application/epub+zip" = [ "com.georgefb.mangareader.desktop" ];
-      "application/x-cbt" = [ "com.georgefb.mangareader.desktop" ]; 
+      "application/x-cbt" = [ "com.georgefb.mangareader.desktop" ];
       "application/x-cb7" = [ "com.georgefb.mangareader.desktop" ];
       "application/vnd.comicbook+zip" = [ "com.georgefb.mangareader.desktop" ];
       "application/cnd.comicbook-rar" = [ "com.georgefb.mangareader.desktop" ];

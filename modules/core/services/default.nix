@@ -23,5 +23,6 @@
     ./webdav.nix
     ./xserver.nix
     ./zapret.nix
+    ./polkit.nix
   ];
 }

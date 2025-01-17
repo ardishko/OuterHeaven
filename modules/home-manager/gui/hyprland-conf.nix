@@ -51,12 +51,14 @@
           "flameshot"
           "obs --startreplaybuffer --disable-shutdown-check"
           # Here's how you grab the username within home manager. I'm looking at you, ardishco.
-          "mpv --playlist=/home/${osConfig.users.users.${config.home.username}.description}/Music/MainMenu --no-video --shuffle --volume=22"
+          "mpv --playlist=/home/${
+            osConfig.users.users.${config.home.username}.description
+          }/Music/MainMenu --no-video --shuffle --volume=22"
           "${pkgs.thunderbird}/bin/thunderbird"
           "${pkgs.electron-mail}/bin/electron-mail"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 4500"
           "${pkgs.element-desktop}/bin/element-desktop --hidden"
-          "${pkgs.signal-desktop}/bin/signal-desktop --start-in-tray"
+          "${pkgs.mullvad}/bin/mullvad-exclude ${pkgs.signal-desktop}/bin/signal-desktop --password-store=basic_text --no-sandbox --start-in-tray"
           "${pkgs.wlsunset}/bin/wlsunset"
           "${pkgs.swaynotificationcenter}/bin/swaync"
           "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
@@ -125,19 +127,25 @@
           # }/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${
           #   inputs.shadower.packages.${pkgs.system}.shadower
           # }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
-          ",Print,exec, ${pkgs.flameshot}/bin/flameshot gui -r | ${pkgs.wl-clipboard}/bin/wl-copy | ${pkgs.wl-clipboard}/bin/wl-paste | ${inputs.shadower.packages.${pkgs.system}.shadower}/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-paste"
+          ",Print,exec, ${pkgs.flameshot}/bin/flameshot gui -r | ${pkgs.wl-clipboard}/bin/wl-copy | ${pkgs.wl-clipboard}/bin/wl-paste | ${
+            inputs.shadower.packages.${pkgs.system}.shadower
+          }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-paste"
           "CTRL, Print, exec, ${pkgs.flameshot}/bin/flameshot gui"
           "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
           "Alt_L, E, exec, hyprctl dispatch workspace +1"
           "Alt_L, Q, exec, hyprctl dispatch workspace -1"
           # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
-          "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | anyrun --show-results-immediately true --plugins ${inputs.anyrun.packages.${pkgs.system}.stdin}/lib/libstdin.so | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
+          "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | anyrun --show-results-immediately true --plugins ${
+            inputs.anyrun.packages.${pkgs.system}.stdin
+          }/lib/libstdin.so | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
           # Move focus with mainMod + arrow keys
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
           "$mainMod, up, movefocus, u"
           "$mainMod, down, movefocus, d"
-          "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${osConfig.users.users.${config.home.username}.description}/Videos'"
+          "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${
+            osConfig.users.users.${config.home.username}.description
+          }/Videos'"
           ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
           #i3/sway type beat
 
@@ -188,10 +196,10 @@
           # Scroll through existing workspaces with mainMod + scroll
           "$mainMod, mouse_up, workspace, r+1"
           "$mainMod, mouse_down, workspace, r-1"
-          # This part is really awesome. 
-          # Like really really cool, you could even say it's cool beans. 
-          
-          # Hyprspace window switcher toggle 
+          # This part is really awesome.
+          # Like really really cool, you could even say it's cool beans.
+
+          # Hyprspace window switcher toggle
           # "Alt_L, Tab, exec, overview:toggle"
           "Alt_L, Tab, exec, hyprswitch gui --mod-key alt_l --key Tab --close mod-key-release --sort-recent"
         ]
@@ -297,8 +305,8 @@
         "pin,initialTitle:^(Picture-in-Picture)"
         "opacity 0.5,initialTitle:^(Picture-in-Picture)"
         "float,initialTitle:^(MainPicker)"
-        "immediate,fullscreenstate:* 1"
-        "immediate,fullscreenstate:1 *"
+        # "immediate,fullscreenstate:* 1"
+        # "immediate,fullscreenstate:1 *"
         "immediate,onworkspace:10"
         # "forceinput,class:^(Waydroid)"
       ];

@@ -1,8 +1,7 @@
 {
   pkgs,
-  inputs,
   lib,
-  hostname,
+  config,
   ...
 }:
 {
@@ -15,14 +14,16 @@
       f3d
       cloudflared
     ]
-    ++ (lib.lists.optionals (hostname == "Tanker") [
+    ++ (lib.lists.optionals (config.networking.hostName == "ShadowMoses") [
+    ])
+    ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
       steamdeck-firmware
       jupiter-dock-updater-bin
     ]);
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk-sans  
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
     fira-code

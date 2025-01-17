@@ -6,7 +6,7 @@
 }:
 {
   imports = [ inputs.nvf.homeManagerModules.default ];
-    xdg.desktopEntries = {
+  xdg.desktopEntries = {
     nvim = lib.mkForce {
       name = "Neovim";
       type = "Application";
@@ -21,33 +21,67 @@
       icon = "notepad";
     };
   };
-    programs.nvf = {
-      enable = true;
-      # your settings need to go into the settings attribute set
-      # most settings are documented in the appendix
-      settings = {
-        vim = {
-          terminal = {
-            toggleterm = {
-              enable = true;
-              setupOpts = {
-                direction = "vertical";
-                size = 80;
-              };
+  programs.nvf = {
+    enable = true;
+    # your settings need to go into the settings attribute set
+    # most settings are documented in the appendix
+    settings = {
+      vim = {
+        preventJunkFiles = true;
+        options = {
+          tabstop = 2;
+          shiftwidth = 2;
+        };
+        lazy = {
+          enable = true;
+        };
+        autocomplete = {
+          nvim-cmp = {
+            enable = true;
+          };
+        };
+        autopairs = {
+          nvim-autopairs = {
+            enable = true;
+          };
+        };
+        lsp = {
+          enable = true;
+          formatOnSave = true;
+          lspconfig = {
+            enable = true;
+          };
+          lsplines = {
+            enable = true;
+          };
+          lspsaga = {
+            enable = true;
+          };
+        };
+        treesitter = {
+          enable = true;
+          indent = {
+            enable = true;
+          };
+        };
+        terminal = {
+          toggleterm = {
+            enable = true;
+            setupOpts = {
+              direction = "vertical";
+              size = 80;
             };
           };
-          viAlias = true;
-          vimAlias = true;
-          lineNumberMode = "number";
-          useSystemClipboard = true;
-          theme = { 
-            enable = true;
-            name = "catppuccin";
-            style = "frappe";
-          };
-          lsp = {
+        };
+        viAlias = true;
+        vimAlias = true;
+        lineNumberMode = "number";
+        useSystemClipboard = true;
+        theme = {
           enable = true;
-          };
+          name = "catppuccin";
+          style = "frappe";
+        };
         spellcheck.enable = true;
         telescope = {
           enable = true;
@@ -174,34 +208,34 @@
             };
             setup = "require('slides').setup {}";
           };
-	    #      nixd = {
-	    #        package = inputs.nixd.packages.${pkgs.system}.nixd;
-	    #        setup = ''
-	    #          require("lspconfig").nixd.setup({
-	    #            cmd = { "${inputs.nixd.packages.${pkgs.system}.nixd}/bin/nixd" },
-	    #            # cmd = { "nixd" },
-	    #            settings = {
-	    #              nixd = {
-	    #                nixpkgs = {
-	    #                  expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").nixosConfigurations.${hostname}.options",
-	    #                },
-	    #                formatting = {
-	    #                  command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
-	    #                },
-	    #                options = {
-	    #                  nixos = {
-	    #                    expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").nixosConfigurations.${hostname}.options",
-	    #                },
-	    #                home_manager = {
-	    #                     expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").homeConfigurations.${hostname}.options",
-	    #                  },
-	    #                },
-	    #              },
-	    #            },
-	    #          })
-	    #        '';
-	    # after = ["telecope"];
-	    #      };
+          #      nixd = {
+          #        package = inputs.nixd.packages.${pkgs.system}.nixd;
+          #        setup = ''
+          #          require("lspconfig").nixd.setup({
+          #            cmd = { "${inputs.nixd.packages.${pkgs.system}.nixd}/bin/nixd" },
+          #            # cmd = { "nixd" },
+          #            settings = {
+          #              nixd = {
+          #                nixpkgs = {
+          #                  expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").nixosConfigurations.${hostname}.options",
+          #                },
+          #                formatting = {
+          #                  command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
+          #                },
+          #                options = {
+          #                  nixos = {
+          #                    expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").nixosConfigurations.${hostname}.options",
+          #                },
+          #                home_manager = {
+          #                     expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").homeConfigurations.${hostname}.options",
+          #                  },
+          #                },
+          #              },
+          #            },
+          #          })
+          #        '';
+          # after = ["telecope"];
+          #      };
           # live-share = {
           #   package = pkgs.vimUtils.buildVimPlugin {
           #     name = "live-share.nvim";
@@ -214,7 +248,7 @@
           #   };
           #   setup = "require('live-share').setup ({
           #     port_internal = 9876,
-          #     max_attempts = 20, 
+          #     max_attempts = 20,
           #     service_url = "/tmp/service.url",
           #     service = "nokey@serveo.net",
           #   })";

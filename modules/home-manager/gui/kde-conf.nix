@@ -1,4 +1,9 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 {
   imports = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
   home.packages = with pkgs; [

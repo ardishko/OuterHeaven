@@ -18,7 +18,7 @@
     };
     # templates = {
     #   cloudflare = {
-    #     content = '' 
+    #     content = ''
     #       ${config.sops.secrets.cloudflare.path}
     #     '';
     #   };

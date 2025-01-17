@@ -1,13 +1,25 @@
-{ pkgs, hostname, config, lib, ... }:
+{
+  pkgs,
+  hostname,
+  config,
+  lib,
+  ...
+}:
 {
   boot = {
     initrd.verbose = false;
     consoleLogLevel = 1;
-    kernelParams = [ "split_lock_detect=off" "quiet" ];
+    kernelParams = [
+      "split_lock_detect=off"
+      "quiet"
+    ];
     # kernelParams = [ ];
     extraModulePackages =
       with config.boot.kernelPackages;
-      (lib.lists.optionals (hostname == "ShadowMoses") [ xpadneo usbip ]);
+      (lib.lists.optionals (hostname == "ShadowMoses") [
+        xpadneo
+        usbip
+      ]);
     kernelPackages =
       if (hostname == "Tanker") then
         pkgs.linuxPackages_jovian
@@ -15,7 +27,10 @@
         pkgs.linuxPackages_hardened
       else
         pkgs.linuxPackages;
-    supportedFilesystems = [ "ntfs" "zfs" ];
+    supportedFilesystems = [
+      "ntfs"
+      "zfs"
+    ];
     kernelModules = [
       "udev"
       "xpadneo"

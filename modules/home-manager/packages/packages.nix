@@ -143,7 +143,7 @@
         revolt-desktop
         amdgpu_top
         inxi
-        
+
         # Image viewer
         satty
 
@@ -210,16 +210,10 @@
         hyprsunset
         mangohud
         discover-overlay
-        goverlay 
+        goverlay
         zoom-us
-        signal-desktop
-
-        # (pkgs.signal-desktop.overrideAttrs {
-        #   src = pkgs.fetchurl {  
-        #     url = "https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.33.0_amd64.deb";
-        #     hash = "sha256-9i9FZ8Kn6nXSWdzTLN4Ek6nWe7RaqZgmq1uppc9lnPM=";
-        #   };
-        # })
+        gpt4all
+        lumafly
 
         # resources
         # clipboard-jh
@@ -240,7 +234,7 @@
         # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
         celeste
-      
+
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {

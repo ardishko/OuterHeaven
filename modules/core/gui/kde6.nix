@@ -22,5 +22,6 @@
     ffmpegthumbs
     xwaylandvideobridge
     discover
+    kwallet
   ];
 }

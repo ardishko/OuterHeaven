@@ -1,4 +1,9 @@
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [ inputs.nixcord.homeManagerModules.nixcord ];
   xdg.desktopEntries = {
@@ -98,10 +103,10 @@
         messageClickActions.enable = true;
         messageLogger = {
           enable = true;
-	        deleteStyle = "text";
-	        logDeletes = true;
-	        logEdits = true;
-	        ignoreSelf = true;
+          deleteStyle = "text";
+          logDeletes = true;
+          logEdits = true;
+          ignoreSelf = true;
         };
         messageTags.enable = true;
         moreCommands.enable = true;
@@ -110,7 +115,7 @@
         newGuildSettings.enable = true;
         noBlockedMessages = {
           enable = true;
-	        ignoreBlockedMessages = true;
+          ignoreBlockedMessages = true;
         };
         noDevtoolsWarning.enable = true;
         noF1.enable = true;

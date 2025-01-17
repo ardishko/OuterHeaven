@@ -1,13 +1,20 @@
-{ inputs, pkgs, osConfig, ... }:
+{
+  inputs,
+  pkgs,
+  osConfig,
+  ...
+}:
 let
-  primary-monitor = if (osConfig.networking.hostName == "ShadowMoses") then "DP-2"
-  else
-    if (osConfig.networking.hostName == "BigShell") then "eDP-1" 
-  else
-    if (osConfig.networking.hostName == "Tanker") then "eDP-1" 
-  else
-    "HDMI-A-1";
-in  
+  primary-monitor =
+    if (osConfig.networking.hostName == "ShadowMoses") then
+      "DP-2"
+    else if (osConfig.networking.hostName == "BigShell") then
+      "eDP-1"
+    else if (osConfig.networking.hostName == "Tanker") then
+      "eDP-1"
+    else
+      "HDMI-A-1";
+in
 {
   home.packages = [ inputs.hyprlock.packages.${pkgs.system}.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
@@ -267,5 +274,5 @@ in
     #     halign = center
     #     valign = center
     #   }
-      '';
+  '';
 }

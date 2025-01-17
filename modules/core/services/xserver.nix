@@ -4,7 +4,7 @@
   services = {
     xserver = {
       enable = true;
-      xkb = { 
+      xkb = {
         variant = "";
         layout = "tr";
       };

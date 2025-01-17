@@ -1,14 +1,15 @@
-{ lib
-, stdenv
-, fetchurl
-, dpkg
-, wrapGAppsHook
-, autoPatchelfHook
-, udev
-, libdrm
-, libpqxx
-, unixODBC
-, gst_all_1
+{
+  lib,
+  stdenv,
+  fetchurl,
+  dpkg,
+  wrapGAppsHook,
+  autoPatchelfHook,
+  udev,
+  libdrm,
+  libpqxx,
+  unixODBC,
+  gst_all_1,
 }:
 
 stdenv.mkDerivation rec {
@@ -28,19 +29,21 @@ stdenv.mkDerivation rec {
     autoPatchelfHook
   ];
 
-  buildInputs = [
-    libdrm
-    libpqxx
-    unixODBC
-    stdenv.cc.cc
-  ] ++ (with gst_all_1; [
-    gstreamer
-    gst-libav
-    gst-plugins-base
-    gst-plugins-good
-    gst-plugins-bad
-    gst-plugins-ugly
-  ]);
+  buildInputs =
+    [
+      libdrm
+      libpqxx
+      unixODBC
+      stdenv.cc.cc
+    ]
+    ++ (with gst_all_1; [
+      gstreamer
+      gst-libav
+      gst-plugins-base
+      gst-plugins-good
+      gst-plugins-bad
+      gst-plugins-ugly
+    ]);
 
   runtimeDependencies = [
     (lib.getLib udev)
@@ -63,7 +66,6 @@ stdenv.mkDerivation rec {
     license = licenses.unfree;
     platforms = [ "x86_64-linux" ];
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
-    maintainers = with maintainers; [  ];
+    maintainers = with maintainers; [ ];
   };
 }
-

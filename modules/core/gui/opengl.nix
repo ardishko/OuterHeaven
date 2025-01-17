@@ -1,18 +1,15 @@
 { pkgs, ... }:
 {
   hardware = {
-    # opengl = lib.mkForce {
-    #   enable = true;
-    #   driSupport = true;
-    #   driSupport32Bit = true;
-    #   extraPackages = with pkgs; [
-    #     rocm-opencl-icd
-    #     rocm-opencl-runtime
-    #   ];
-    # };
     graphics = {
       enable = true;
       enable32Bit = true;
+      extraPackages = with pkgs; [
+        # rocmPackages_5.clr.icd
+        # rocmPackages_5.clr
+        # rocmPackages_5.rocminfo
+        # rocmPackages_5.rocm-runtime
+      ];
     };
     amdgpu = {
       opencl = {

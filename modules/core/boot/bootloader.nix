@@ -1,6 +1,14 @@
 { inputs, config, ... }:
 let
-  resolution = if (config.networking.hostName == "ShadowMoses") then "2560x1440" else if (config.networking.hostName == "BigShell") then "1920x1200" else if (config.networking.hostName == "Tanker") then "1280x800" else "1920x1080";
+  resolution =
+    if (config.networking.hostName == "ShadowMoses") then
+      "2560x1440"
+    else if (config.networking.hostName == "BigShell") then
+      "1920x1200"
+    else if (config.networking.hostName == "Tanker") then
+      "1280x800"
+    else
+      "1920x1080";
 in
 {
   imports = [ inputs.minegrub-theme.nixosModules.default ];

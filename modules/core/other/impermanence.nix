@@ -5,18 +5,26 @@
   ...
 }:
 let
-  userName = if (config.networking.hostName == "ShadowMoses") then "vaporsnake" else
-    if (config.networking.hostName == "BigShell") then "liquid" else
-    if (config.networking.hostName == "Tanker") then "raiden" else
-    if (config.networking.hostName == "jd") then "snake" else 
-    "user";
+  userName =
+    if (config.networking.hostName == "ShadowMoses") then
+      "vaporsnake"
+    else if (config.networking.hostName == "BigShell") then
+      "liquid"
+    else if (config.networking.hostName == "Tanker") then
+      "raiden"
+    else if (config.networking.hostName == "jd") then
+      "snake"
+    else
+      "user";
 in
 {
   imports = [ inputs.impermanence.nixosModule ];
   boot.tmp.cleanOnBoot = true;
   environment.persistence = {
     "/persist" = {
-      files = [ /* "/etc/machine-id */ ];
+      files = [
+        # "/etc/machine-id
+      ];
       directories =
         if (config.networking.hostName == "jd") then
           [
@@ -54,7 +62,8 @@ in
             "/var/lib/containers" # podman / docker / distrobox I think?
             # persist /mnt so that all the mounted drives don't get wiped upon reboot
             # "/mnt"
-          ] ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
+          ]
+          ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
             "/var/lib/decky-loader"
           ]);
       users.${userName} = {
@@ -190,73 +199,74 @@ in
               ".config/plasma-workspace"
               ".config/xsettingsd"
               ".kde"
-            ] ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
-            "homebrew" # this is for deckyloader
-            ]); 
-          files = [
-            ".gtkrc-2.0"
-            ".zsh_history"
-            ".config/gtk-3.0/bookmarks"
-            ## Mane wtf is wrong wit u KDE Plasma team
-            ".config/akregatorrc"
-            ".config/baloofileinformationrc"
-            ".config/baloofilerc"
-            ".config/bluedevilglobalrc"
-            ".config/device_automounter_kcmrc"
-            ".config/dolphinrc"
-            ".config/filetypesrc"
-            ".config/gtkrc"
-            ".config/gtkrc-2.0"
-            ".config/gwenviewrc"
-            ".config/kactivitymanagerd-pluginsrc"
-            ".config/kactivitymanagerd-statsrc"
-            ".config/kactivitymanagerd-switcher"
-            ".config/kactivitymanagerdrc"
-            ".config/katemetainfos"
-            ".config/katerc"
-            ".config/kateschemarc"
-            ".config/katevirc"
-            ".config/kcmfonts"
-            ".config/kcminputrc"
-            ".config/kconf_updaterc"
-            ".config/kded5rc"
-            ".config/kdeglobals"
-            ".config/kgammarc"
-            ".config/kglobalshortcutsrc"
-            ".config/khotkeysrc"
-            ".config/kmixrc"
-            ".config/konsolerc"
-            ".config/kscreenlockerrc"
-            ".config/ksmserverrc"
-            ".config/ksplashrc"
-            ".config/ktimezonedrc"
-            ".config/kwinrc"
-            ".config/kwinrulesrc"
-            ".config/kxkbrc"
-            ".config/partitionmanagerrc"
-            ".config/plasma-localerc"
-            ".config/plasma-nm"
-            ".config/plasma-org.kde.plasma.desktop-appletsrc"
-            ".config/plasmanotifyrc"
-            ".config/plasmarc"
-            ".config/plasmashellrc"
-            ".config/PlasmaUserFeedback"
-            ".config/plasmawindowed-appletsrc"
-            ".config/plasmawindowedrc"
-            ".config/powermanagementprofilesrc"
-            ".config/spectaclerc"
-            ".config/startkderc"
-            ".config/systemsettingsrc"
-            ".config/Trolltech.conf"
-            ".config/user-dirs.dirs"
-            ".config/user-dirs.locale"
+            ]
+            ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
+              "homebrew" # this is for deckyloader
+            ]);
+        files = [
+          ".gtkrc-2.0"
+          ".zsh_history"
+          ".config/gtk-3.0/bookmarks"
+          ## Mane wtf is wrong wit u KDE Plasma team
+          ".config/akregatorrc"
+          ".config/baloofileinformationrc"
+          ".config/baloofilerc"
+          ".config/bluedevilglobalrc"
+          ".config/device_automounter_kcmrc"
+          ".config/dolphinrc"
+          ".config/filetypesrc"
+          ".config/gtkrc"
+          ".config/gtkrc-2.0"
+          ".config/gwenviewrc"
+          ".config/kactivitymanagerd-pluginsrc"
+          ".config/kactivitymanagerd-statsrc"
+          ".config/kactivitymanagerd-switcher"
+          ".config/kactivitymanagerdrc"
+          ".config/katemetainfos"
+          ".config/katerc"
+          ".config/kateschemarc"
+          ".config/katevirc"
+          ".config/kcmfonts"
+          ".config/kcminputrc"
+          ".config/kconf_updaterc"
+          ".config/kded5rc"
+          ".config/kdeglobals"
+          ".config/kgammarc"
+          ".config/kglobalshortcutsrc"
+          ".config/khotkeysrc"
+          ".config/kmixrc"
+          ".config/konsolerc"
+          ".config/kscreenlockerrc"
+          ".config/ksmserverrc"
+          ".config/ksplashrc"
+          ".config/ktimezonedrc"
+          ".config/kwinrc"
+          ".config/kwinrulesrc"
+          ".config/kxkbrc"
+          ".config/partitionmanagerrc"
+          ".config/plasma-localerc"
+          ".config/plasma-nm"
+          ".config/plasma-org.kde.plasma.desktop-appletsrc"
+          ".config/plasmanotifyrc"
+          ".config/plasmarc"
+          ".config/plasmashellrc"
+          ".config/PlasmaUserFeedback"
+          ".config/plasmawindowed-appletsrc"
+          ".config/plasmawindowedrc"
+          ".config/powermanagementprofilesrc"
+          ".config/spectaclerc"
+          ".config/startkderc"
+          ".config/systemsettingsrc"
+          ".config/Trolltech.conf"
+          ".config/user-dirs.dirs"
+          ".config/user-dirs.locale"
 
-            ".local/share/krunnerstaterc"
-            ".local/share/user-places.xbel"
-            ".local/share/user-places.xbel.bak"
-            ".local/share/user-places.xbel.tbcache"
+          ".local/share/krunnerstaterc"
+          ".local/share/user-places.xbel"
+          ".local/share/user-places.xbel.bak"
+          ".local/share/user-places.xbel.tbcache"
         ];
-      }; 
+      };
     };
   };
   # set persist fs as neededForBoot

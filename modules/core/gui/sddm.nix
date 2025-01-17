@@ -14,13 +14,13 @@
       };
     };
   };
-  environment.systemPackages = [(
-    pkgs.catppuccin-sddm.override {
+  environment.systemPackages = [
+    (pkgs.catppuccin-sddm.override {
       flavor = "frappe";
-      font  = "Iosevka Nerd Font";
+      font = "Iosevka Nerd Font";
       fontSize = "15";
       background = "${../../../assets/wallpapers/idolGoro.jpg}";
       loginBackground = true;
-    }
-  )];
+    })
+  ];
 }

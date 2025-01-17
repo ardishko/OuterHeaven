@@ -38,9 +38,9 @@
         #         exec = "mullvad-exclude steam";
         #         icon = "steam";
         #     })
-        #   ];  
+        #   ];
         # });
-        # the custom desktop entry is in modules/home-manager/xdg.nix 
+        # the custom desktop entry is in modules/home-manager/xdg.nix
       };
     };
   };

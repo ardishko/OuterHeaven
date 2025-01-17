@@ -1,7 +1,10 @@
 { pkgs, lib, ... }:
 {
-  networking = { 
-    nameservers = [ "127.0.0.1" "::1" ];
+  networking = {
+    nameservers = [
+      "127.0.0.1"
+      "::1"
+    ];
     # resolvconf.enable = pkgs.lib.mkForce false;
     dhcpcd.extraConfig = "nohook resolv.conf";
     networkmanager.dns = "none";
