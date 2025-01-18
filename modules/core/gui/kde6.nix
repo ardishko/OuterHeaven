@@ -23,5 +23,13 @@
     xwaylandvideobridge
     discover
     kwallet
+    kwallet-pam
+    kde-gtk-config
+    plasma-integration
+    libplasma
+    frameworkintegration
+    kauth
+    phonon-vlc
+    kdeplasma-addons
   ];
 }

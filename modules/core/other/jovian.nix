@@ -20,5 +20,8 @@
       user = "${username}";
       stateDir = "/var/lib/decky-loader";
     };
+    steamos = {
+      useSteamOSConfig = true;
+    };
   };
 }

@@ -21,7 +21,7 @@
         parrot
         screen
         wget
-        cinnamon.nemo
+        nemo
         kitty
         git
         sops

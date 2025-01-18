@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   services.nextcloud = {
     enable = true;
@@ -34,7 +34,10 @@
       };
     };
     hostName = "nextcloud.ardishco.net";
-    config.adminpassFile = "/etc/cred/nextcloud-admin-pass";
+    config = {
+      adminpassFile = "/etc/cred/nextcloud-admin-pass";
+      dbtype = "pgsql";
+    };
     settings = {
       trusted_domains = [
         "nextcloud.ardishco.net"
