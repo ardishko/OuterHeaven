@@ -24,6 +24,6 @@ in
     XCURSOR_THEME = "${config.home-manager.users.${userName}.home.pointerCursor.name}";
     XCURSOR_SIZE = config.home-manager.users.${userName}.home.pointerCursor.size;
     NIXOS_OZONE_WL = 1;
-    WLR_DRM_NO_ATOMIC = 1;
+    WLR_DRM_NO_ATOMIC = 0;
   };
 }
