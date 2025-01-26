@@ -24,6 +24,7 @@
     discover
     kwallet
     kwallet-pam
+    kwalletmanager
     kde-gtk-config
     plasma-integration
     libplasma

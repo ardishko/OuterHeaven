@@ -22,7 +22,6 @@
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
       # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-      pkgs.hyprlandPlugins.csgo-vulkan-fix
       pkgs.hyprlandPlugins.hyprbars
       pkgs.hyprlandPlugins.hyprspace
     ];

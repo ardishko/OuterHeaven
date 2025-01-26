@@ -61,7 +61,7 @@
       themeLinks = [
         "https://raw.githubusercontent.com/ardishco-the-great/catpuccin-discord/main/themes/frappe.theme.css"
       ];
-      frameless = true;
+      frameless = false;
       plugins = {
         alwaysTrust.enable = true;
         anonymiseFileNames = {

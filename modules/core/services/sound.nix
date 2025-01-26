@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
   # sound.enable = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -26,10 +27,10 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
-    # lowLatency = {
-    #   enable = true;
-    #   quantum = 80;
-    #   rate = 50000;
-    # };
+    lowLatency = {
+      enable = true;
+      quantum = 80;
+      rate = 50000;
+    };
   };
 }

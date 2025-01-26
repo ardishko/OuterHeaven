@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   config,
+  osConfig,
   ...
 }:
 {
@@ -14,6 +15,29 @@
   ];
   programs.plasma = {
     enable = true;
+    powerdevil = {
+      battery = {
+        dimDisplay = {
+          enable = true;
+        };
+        displayBrightness = 60;
+      };
+      AC = {
+        dimDisplay = {
+          enable = true;
+          idleTimeout = 4000;
+        };
+        powerProfile =
+          if (osConfig.networking.hostName == "ShadowMoses") then
+            "performance"
+          else if (osConfig.networking.hostName == "BigShell") then
+            "balanced"
+          else if (osConfig.networking.hostName == "Tanker") then
+            "powerSaving"
+          else
+            "balanced";
+      };
+    };
     kwin = {
       nightLight = {
         enable = true;
@@ -42,7 +66,7 @@
       wallpaperBackground = {
         blur = true;
       };
-      wallpaperFillMode = null;
+      wallpaperFillMode = "tile";
       cursor = {
         theme = "${config.home.pointerCursor.name}";
         size = config.home.pointerCursor.size;
@@ -60,14 +84,28 @@
         pointSize = config.gtk.font.size;
       };
     };
-    # input = {
-    #   mice = [
-    #     {
-    #       enable = true;
-    #       acceleration = "default";
-    #       scrollSpeed = 2;
-    #     }
-    #   ];
+    input = {
+      keyboard = {
+        numlockOnStartup = "on";
+      };
+    };
+    spectacle = {
+      shortcuts = {
+        captureRectangularRegion = "Print";
+        captureCurrentMonitor = "Ctrl+Print";
+        captureActiveWindow = "Shift+Print";
+        recordRegion = "F8";
+        recordWindow = "Shift+F8";
+      };
+    };
+    # startup = {
+    #   desktopScript = {
+    #     "hey-listen" = {
+    #       postCommands = "
+    #
+    #       ";
+    #     };
+    #   };
     # };
   };
 }

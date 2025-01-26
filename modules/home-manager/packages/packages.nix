@@ -49,6 +49,8 @@
         inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland
         inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
         inputs.quickshell.packages.${pkgs.system}.default
+        inputs.nix-gaming.packages.${pkgs.system}.viper
+        inputs.nix-gaming.packages.${pkgs.system}.mo2installer
 
         # Over
         wget
@@ -120,7 +122,6 @@
         clamtk
         lazygit
         wireguard-tools
-        kdenlive
         evince
         tailscale
         telegram-desktop
@@ -170,6 +171,8 @@
         kdePackages.kalk
         # document viewer
         kdePackages.okular
+        # screenshot tool
+        kdePackages.spectacle
 
         nixpkgs-review
         bottom
@@ -247,13 +250,12 @@
         # })
 
         # Custom packages
-        # (callPackage ./pkgcustom/gpu-screen-recorder-gtk { })
-        # (callPackage ./pkgcustom/lime3ds {})
         # (callPackage ./pkgcustom/roblox-fd {})
       ];
 
   # List of nix packages end here
   services.flatpak = {
+    uninstallUnmanaged = false;
     # enable = true; # in /modules/core/packages.nix
     remotes = [
       {
@@ -262,10 +264,16 @@
       }
     ];
     packages = [
-      # {
-      #   flatpakref = "https://sober.vinegarhq.org/sober.flatpakref";
-      #   sha256 = "sha256:1pj8y1xhiwgbnhrr3yr3ybpfis9slrl73i0b1lc9q89vhip6ym2l";
-      # }
+      # FUCK THE SOBER DEVELOPERS FOR MAKING THIS SO GODDAMN HARD OH MY GOD. I ACTUALLY WANTED TO KILL MYSELF WHILE TRYING TO INSTALL THIS SHIT DECLARATIVELY FOR FUCKS SAKE
+      # GOD. FUCK. GOD FUCKING DAMN IT. MOTHERFUCKER. THE SOBER WEBSITE DEVELOPERS CAN SHOVE A DRAGON DILDO UP THEIR FUCKING ASS.
+      # I HAVE SO MANY OTHER THINGS I WANNA SAY HERE BUT I HAVE TO HOLD BACK. GODDAMN IT.
+      {
+        flatpakref = "https://sober.vinegarhq.org/sober.flatpakref";
+        sha256 = "sha256:1pj8y1xhiwgbnhrr3yr3ybpfis9slrl73i0b1lc9q89vhip6ym2l";
+      }
+      "net.shadps4.shadPS4"
+      "org.kde.kdenlive"
+      "com.google.AndroidStudio"
       "io.github.everestapi.Olympus"
       "com.github.Rosalie241.RMG"
       "com.github.tchx84.Flatseal"

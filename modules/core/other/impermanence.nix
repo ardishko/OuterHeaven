@@ -159,6 +159,7 @@ in
               ".local/share/nvf"
               ".local/share/vulkan"
               ".local/share/osu"
+              ".local/share/containers"
               ".cache/waydroid_script"
               ".ssh"
               ".klei"

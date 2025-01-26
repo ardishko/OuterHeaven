@@ -27,6 +27,16 @@
     # most settings are documented in the appendix
     settings = {
       vim = {
+        visuals = {
+          indent-blankline = {
+            enable = true;
+          };
+        };
+        tabline = {
+          nvimBufferline = {
+            enable = true;
+          };
+        };
         preventJunkFiles = true;
         options = {
           tabstop = 2;

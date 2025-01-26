@@ -32,7 +32,7 @@
     #   url = "github:hyprwm/xdg-desktop-portal-hyprland";
     #   inputs.nixpkgs.follows = "hyprland";
     # };
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.5.2";
     nh = {
       url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs"; # override this repo's nixpkgs snapshot
@@ -43,7 +43,6 @@
     };
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     anime-games = {
       url = "github:ezKEa/aagl-gtk-on-nix";
