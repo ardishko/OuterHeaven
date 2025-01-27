@@ -582,6 +582,10 @@ in
               name = "Tutorials";
               bookmarks = [
                 {
+                  name = "Davinci Resolve Linux Cheat Sheet";
+                  url "https://alecaddd.com/davinci-resolve-ffmpeg-cheatsheet-for-linux/"
+                }
+                {
                   name = "Python w3s";
                   url = "https://www.w3schools.com/python/default.asp";
                 }
