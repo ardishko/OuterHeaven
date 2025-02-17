@@ -217,6 +217,8 @@
         zoom-us
         gpt4all
         lumafly
+        brave
+        floorp
 
         # resources
         # clipboard-jh
@@ -237,6 +239,7 @@
         # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
         celeste
+        motrix
 
         # Override Template
 
@@ -287,6 +290,7 @@
       "io.github.Soundux"
       "gg.guilded.Guilded"
       "net.audiorelay.AudioRelay"
+      "net.lutris.Lutris"
       "org.kde.Platform"
       "org.freedesktop.Platform"
     ];

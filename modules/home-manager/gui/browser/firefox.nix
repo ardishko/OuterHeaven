@@ -121,6 +121,13 @@ let
         url = "https://addons.mozilla.org/firefox/downloads/file/3420768/youtube_for_tv-0.0.3.xpi";
         sha256 = "sha256-Xfa7cB4D0Iyfex5y9/jRR93gUkziaIyjqMT0LIOhT6o=";
       };
+      netflux = remoteXpiAddon {
+        pname = "Netflux - 1080p, 5.1, & more for Netflix!";
+        version = "1.0.11";
+        addonId = "{b6d82d4f-9fc6-47f1-9191-bbabf829977c}";
+        url = "https://addons.mozilla.org/firefox/downloads/file/4382056/netflux-1.0.11.xpi";
+        sha256 = "sha256-R/Fz1nBljHLZValUnTRY3yNKM2HUvfx2+ph9QIppn2g=";
+      };
     };
 in
 {
@@ -297,13 +304,13 @@ in
               (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
               read-aloud
               open-tabs-next-to-current
-              # premid
               cf-purge-plugin
               btroblox
               (w2g.overrideAttrs { meta.license.free = true; })
               watch-on-odysee
               youtube-for-tv
               google-container
+              netflux
               # Theme
               catppuccin-frappe-sky
               #catppuccin-mocha-lavender # over here
