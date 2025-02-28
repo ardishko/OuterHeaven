@@ -11,12 +11,12 @@
       ./steam.nix
     ]
     ++ (lib.lists.optionals (hostname == "ShadowMoses") [
-      ./hyprland.nix
+      # ./hyprland.nix
       ./sddm.nix
       ./kde6.nix
     ])
     ++ (lib.lists.optionals (hostname == "BigShell") [
-      ./hyprland.nix
+      # ./hyprland.nix
       ./sddm.nix
       ./kde6.nix
     ])

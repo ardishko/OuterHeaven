@@ -1,15 +1,15 @@
 {
   imports = [
     # ./ags
-    ./anyrun.nix
+    # ./anyrun.nix
     ./browser
     # ./discord-canary.nix
     ./discord.nix
-    ./flameshot.nix
+    # ./flameshot.nix
     ./gzdoom.nix
     ./heroic
-    ./hyprland-conf.nix
-    ./hyprlock.nix
+    # ./hyprland-conf.nix
+    # ./hyprlock.nix
     ./kde-conf.nix
     ./kitty.nix
     ./lutris.nix
@@ -19,10 +19,10 @@
     ./prism-launcher.nix
     ./qt
     ./spicetify.nix
-    ./swaync
+    # ./swaync
     ./virt-manager.nix
-    ./waybar
-    ./wlogout
+    # ./waybar
+    # ./wlogout
     ./fastfetch
     ./signal.nix
   ];

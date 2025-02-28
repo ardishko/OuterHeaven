@@ -20,7 +20,7 @@
     discord = {
       enable = true;
       vencord = {
-        enable = true;
+        enable = false;
         package = pkgs.vencord;
       };
       openASAR.enable = false;

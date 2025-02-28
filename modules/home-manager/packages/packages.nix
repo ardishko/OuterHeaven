@@ -30,7 +30,7 @@
       [
         # Define packages that derive from inputs
 
-        inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
+        # inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
         inputs.nh.packages.${pkgs.system}.default
         # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
         inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
@@ -46,8 +46,8 @@
         # inputs.polly-mc.${pkgs.system}.default
         # inputs.tag-studio.packages.${pkgs.system}.default
         inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.bottles
-        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland
-        inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
+        # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland
+        # inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
         inputs.quickshell.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
@@ -75,7 +75,7 @@
         protonup-qt
         protonup-ng
         pavucontrol
-        hyprpicker
+        # hyprpicker
         transmission_4-gtk
         libreoffice-fresh
         winetricks
@@ -210,7 +210,7 @@
         element-desktop
         nwg-look
         electron-mail
-        hyprsunset
+        # hyprsunset
         mangohud
         discover-overlay
         goverlay
@@ -238,7 +238,7 @@
         rpcs3
         # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
-        celeste
+        # celeste
         motrix
 
         # Override Template

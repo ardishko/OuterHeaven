@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services.desktopManager.plasma6 = {
     enable = true;
@@ -33,4 +33,15 @@
     phonon-vlc
     kdeplasma-addons
   ];
+  security.pam.services = {
+    login.kwallet = {
+      enable = lib.mkForce false;
+    };
+    kde = {
+      allowNullPassword = true;
+      kwallet = {
+        enable = lib.mkForce false;
+      };
+    };
+  };
 }

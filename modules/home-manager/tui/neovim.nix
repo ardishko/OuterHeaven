@@ -27,6 +27,17 @@
     # most settings are documented in the appendix
     settings = {
       vim = {
+        globals = {
+          instant_username = "ardishco";
+        };
+        keymaps = [
+          {
+            key = "<C-p>";
+            mode = "n";
+            silent = true;
+            action = ":Telescope zoxide list<CR>";
+          }
+        ];
         visuals = {
           indent-blankline = {
             enable = true;
@@ -189,6 +200,29 @@
         dashboard = {
           alpha.enable = true;
         };
+        pluginRC.alpha = lib.mkForce ''
+
+          local alpha = require("alpha")
+          local dashboard = require("alpha.themes.dashboard")
+
+          dashboard.section.header.opts.hl = "AlphaHeader"
+
+          -- Set menu
+          dashboard.section.buttons.val = {
+              dashboard.button( "n", "📄 New     ", ":ene <BAR> startinsert <CR>"),
+              dashboard.button( "r", "🌺 Recent  ", ":Telescope oldfiles<CR>"),
+              dashboard.button( "s", "🔎 Restore ", "<cmd>lua require('persistence').load({ last = true })<CR>"),
+              dashboard.button( "p", "💼 Projects", ":Telescope projects<CR>"),
+              dashboard.button( "q", "❌ Quit", "<cmd>exit<CR>"),
+          }
+
+          alpha.setup(dashboard.opts)
+
+          -- Disable folding on alpha buffer
+          vim.cmd([[
+            autocmd FileType alpha setlocal nofoldenable
+            ]])
+        '';
         projects = {
           project-nvim.enable = true;
         };
@@ -217,6 +251,12 @@
               };
             };
             setup = "require('slides').setup {}";
+          };
+          rooter = {
+            package = pkgs.vimPlugins.vim-rooter;
+          };
+          zoxide-telescope = {
+            package = pkgs.vimPlugins.telescope-zoxide;
           };
           #      nixd = {
           #        package = inputs.nixd.packages.${pkgs.system}.nixd;
@@ -256,13 +296,15 @@
           #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
           #     };
           #   };
-          #   setup = "require('live-share').setup ({
-          #     port_internal = 9876,
-          #     max_attempts = 20,
-          #     service_url = "/tmp/service.url",
-          #     service = "nokey@serveo.net",
-          #   })";
-          #   after = ["instant"];
+          #   setup = ''
+          #     require('live-share').setup ({
+          #                   port_internal = 9876,
+          #                   max_attempts = 20,
+          #                   service_url = "/tmp/service.url",
+          #                   service = "nokey@localhost.run",
+          #                 })
+          #   '';
+          #   after = [ "instant" ];
           # };
           # instant = {
           #   package = pkgs.vimUtils.buildVimPlugin {
@@ -274,10 +316,13 @@
           #       sha256 = "sha256-DXJWji/NR8ZCxe014rD51v3EHJHMhRQeOoI3SsY8mR4=";
           #     };
           #   };
-          #   setup = "require('instant').setup {}";
+          #   setup = ''require('instant').setup {}'';
           #   # before = "live-share.nvim";
           # };
         };
+        extraPackages = with pkgs; [
+          zoxide
+        ];
       };
     };
   };

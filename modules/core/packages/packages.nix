@@ -13,10 +13,10 @@
       lshw
       f3d
       cloudflared
+      polychromatic
     ]
     ++ (lib.lists.optionals (config.networking.hostName == "ShadowMoses") [
       davinci-resolve
-      davinci-resolve-studio
     ])
     ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
       steamdeck-firmware

@@ -10,7 +10,6 @@
       # mpv-webm
       blacklistExtensions
       sponsorblock
-      simple-mpv-webui
       cutter
       convert
       quality-menu

@@ -1,6 +1,6 @@
 {
   imports = [
-    ./swayosd.nix
-    ./hypridle.nix
+    # ./swayosd.nix
+    # ./hypridle.nix
   ];
 }

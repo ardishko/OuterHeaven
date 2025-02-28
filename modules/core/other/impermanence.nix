@@ -60,6 +60,7 @@ in
             "/var/lib/nixos"
             "/var/lib/tailscale" # tailscale
             "/var/lib/containers" # podman / docker / distrobox I think?
+            "/var/lib/sddm"
             # persist /mnt so that all the mounted drives don't get wiped upon reboot
             # "/mnt"
           ]
@@ -125,6 +126,11 @@ in
               ".config/nwg-panel"
               ".config/nwg-dock"
               ".config/steamtinkerlaunch"
+              ".config/mangareader"
+              ".local/share/openrazer"
+              ".local/share/sddm"
+              ".local/share/kactivitymanagerd"
+              ".local/share/kscreen"
               ".local/share/dolphin-emu"
               ".local/share/dolphin"
               ".local/share/bottles"
@@ -160,6 +166,7 @@ in
               ".local/share/vulkan"
               ".local/share/osu"
               ".local/share/containers"
+              ".local/share/kwalletd"
               ".cache/waydroid_script"
               ".ssh"
               ".klei"
