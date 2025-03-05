@@ -43,8 +43,8 @@
         enable = true;
         mode = "times";
         temperature = {
-          day = 4500;
-          night = 2500;
+          day = 5500;
+          night = 5000;
         };
         time = {
           morning = "06:30";

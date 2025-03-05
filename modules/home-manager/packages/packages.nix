@@ -217,8 +217,6 @@
         zoom-us
         gpt4all
         lumafly
-        brave
-        floorp
 
         # resources
         # clipboard-jh
@@ -236,11 +234,7 @@
         pcsx2
         duckstation
         rpcs3
-        # inputs.dolphin-emu.packages.${pkgs.system}.default
         melonDS
-        # celeste
-        motrix
-
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {

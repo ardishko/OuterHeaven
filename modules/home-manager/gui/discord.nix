@@ -24,12 +24,7 @@
         package = pkgs.vencord;
       };
       openASAR.enable = false;
-      package = pkgs.discord-canary.overrideAttrs {
-        src = pkgs.fetchurl {
-          url = "https://canary.dl2.discordapp.net/apps/linux/0.0.550/discord-canary-0.0.550.tar.gz";
-          hash = "sha256-VkeLwg2gMH+1JR35gsWGjM5tvGDSfdDTJ2UIu5P4Yqo=";
-        };
-      };
+      package = pkgs.discord-canary;
     };
     vesktop = {
       enable = true;
