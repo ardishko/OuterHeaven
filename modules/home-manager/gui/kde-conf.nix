@@ -31,7 +31,7 @@
           if (osConfig.networking.hostName == "ShadowMoses") then
             "performance"
           else if (osConfig.networking.hostName == "BigShell") then
-            "balanced"
+            "powerSaving"
           else if (osConfig.networking.hostName == "Tanker") then
             "powerSaving"
           else
