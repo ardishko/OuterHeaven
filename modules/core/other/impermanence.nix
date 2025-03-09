@@ -127,6 +127,12 @@ in
               ".config/nwg-dock"
               ".config/steamtinkerlaunch"
               ".config/mangareader"
+              ".config/kdeconnect"
+              ".config/openrazer"
+              ".config/polychromatic"
+              ".config/gtk-4.0"
+              ".config/gtk-3.0"
+              ".config/kdedefaults"
               ".local/share/openrazer"
               ".local/share/sddm"
               ".local/share/kactivitymanagerd"
@@ -214,7 +220,6 @@ in
         files = [
           ".gtkrc-2.0"
           ".zsh_history"
-          ".config/gtk-3.0/bookmarks"
           ## Mane wtf is wrong wit u KDE Plasma team
           ".config/akregatorrc"
           ".config/baloofileinformationrc"
@@ -268,7 +273,7 @@ in
           ".config/Trolltech.conf"
           ".config/user-dirs.dirs"
           ".config/user-dirs.locale"
-
+          ".config/kwalletrc"
           ".local/share/krunnerstaterc"
           ".local/share/user-places.xbel"
           ".local/share/user-places.xbel.bak"
