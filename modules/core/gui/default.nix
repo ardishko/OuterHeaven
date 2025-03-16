@@ -7,6 +7,7 @@
       ./droidcam.nix
       ./opengl.nix
       ./steam.nix
+      ./blueman.nix
     ]
     ++ (lib.lists.optionals (hostname == "ShadowMoses" || hostname == "BigShell") [
       # ./hyprland.nix

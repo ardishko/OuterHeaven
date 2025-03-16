@@ -25,5 +25,6 @@
     ./xserver.nix
     ./zapret.nix
     ./polkit.nix
+    ./fwupd.nix
   ];
 }
