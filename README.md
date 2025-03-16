@@ -71,9 +71,10 @@ major change I will bump the number up from 2.0 -> 3.0 for example. I will
 update the current major version we're on when I release big updates for this
 config such as changes to config structre.
 
-Current major version: `4.0`
-<br> Next Major version: `5.0` (will be released when my configuration is a
-multi-system configuration like mentioned above.) (No plans for this yet.)
+Current major version: `5.0`
+<br> Next Major version: `6.0` (Currently, there are no goals, but will be
+released when my server configuration has full Kubernetes integration.) (No
+plans for this yet as I don't have the hardware for testing currently.)
 
 # Why?
 
