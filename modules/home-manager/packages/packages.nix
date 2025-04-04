@@ -217,6 +217,7 @@
         zoom-us
         gpt4all
         lumafly
+        modrinth-app
 
         # resources
         # clipboard-jh
@@ -284,7 +285,6 @@
       "io.github.Soundux"
       "gg.guilded.Guilded"
       "net.audiorelay.AudioRelay"
-      "net.lutris.Lutris"
       "org.kde.Platform"
       "org.freedesktop.Platform"
     ];
