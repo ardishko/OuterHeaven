@@ -20,7 +20,7 @@
     discord = {
       enable = true;
       vencord = {
-        enable = false;
+        enable = true;
         package = pkgs.vencord;
       };
       openASAR.enable = false;
@@ -96,13 +96,13 @@
         loadingQuotes.enable = true;
         memberCount.enable = true;
         messageClickActions.enable = true;
-        messageLogger = {
-          enable = true;
-          deleteStyle = "text";
-          logDeletes = true;
-          logEdits = true;
-          ignoreSelf = true;
-        };
+        # messageLogger = {
+        #   enable = true;
+        #   deleteStyle = "text";
+        #   logDeletes = true;
+        #   logEdits = true;
+        #   ignoreSelf = true;
+        # };
         messageTags.enable = true;
         moreCommands.enable = true;
         moreKaomoji.enable = true;

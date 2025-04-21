@@ -218,7 +218,6 @@ in
               "homebrew" # this is for deckyloader
             ]);
         files = [
-          ".gtkrc-2.0"
           ".zsh_history"
           ## Mane wtf is wrong wit u KDE Plasma team
           ".config/powerdevilrc"

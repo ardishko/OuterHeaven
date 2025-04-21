@@ -84,7 +84,6 @@
         thunderbird
         nix-init
         waydroid
-        rustdesk-flutter
         ffmpeg
         helvum
         krita
@@ -217,7 +216,7 @@
         zoom-us
         gpt4all
         lumafly
-        modrinth-app
+        blockbench
 
         # resources
         # clipboard-jh
@@ -262,13 +261,8 @@
       }
     ];
     packages = [
-      # FUCK THE SOBER DEVELOPERS FOR MAKING THIS SO GODDAMN HARD OH MY GOD. I ACTUALLY WANTED TO KILL MYSELF WHILE TRYING TO INSTALL THIS SHIT DECLARATIVELY FOR FUCKS SAKE
-      # GOD. FUCK. GOD FUCKING DAMN IT. MOTHERFUCKER. THE SOBER WEBSITE DEVELOPERS CAN SHOVE A DRAGON DILDO UP THEIR FUCKING ASS.
-      # I HAVE SO MANY OTHER THINGS I WANNA SAY HERE BUT I HAVE TO HOLD BACK. GODDAMN IT.
-      {
-        flatpakref = "https://sober.vinegarhq.org/sober.flatpakref";
-        sha256 = "sha256:1pj8y1xhiwgbnhrr3yr3ybpfis9slrl73i0b1lc9q89vhip6ym2l";
-      }
+      "org.vinegarhq.Sober"
+      "com.modrinth.ModrinthApp"
       "net.shadps4.shadPS4"
       "org.kde.kdenlive"
       "com.google.AndroidStudio"
