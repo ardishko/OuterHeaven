@@ -261,6 +261,7 @@
       }
     ];
     packages = [
+      "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"
       "com.modrinth.ModrinthApp"
       "net.shadps4.shadPS4"
