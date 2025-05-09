@@ -3,6 +3,8 @@
   inputs,
   lib,
   hostname,
+  osConfig,
+  config,
   ...
 }:
 {
@@ -83,15 +85,12 @@
         piper
         thunderbird
         nix-init
-        waydroid
         ffmpeg
         helvum
         krita
         lolcat
         vulkan-tools
         fastfetch
-        scrcpy
-        qtscrcpy
         baobab
         python3Full
         gnupg
@@ -103,7 +102,6 @@
         wlsunset
         pipes-rs
         cargo
-        distrobox
         clonehero
         scanmem
         unzip
@@ -219,8 +217,6 @@
         lumafly
         blockbench
         remmina
-        vscodium-fhs
-        arduino-ide
 
         # resources
         # clipboard-jh
@@ -252,7 +248,20 @@
 
         # Custom packages
         # (callPackage ./pkgcustom/roblox-fd {})
-      ];
+      ]
+      ++ (lib.lists.optionals
+        (
+          osConfig.users.users.${config.home.username}.description == "vaporsnake"
+          || osConfig.users.users.${config.home.username}.description == "liquid"
+        )
+        [
+          scrcpy
+          qtscrcpy
+          distrobox
+          vscodium-fhs
+          arduino-ide
+        ]
+      );
 
   # List of nix packages end here
   services.flatpak = {
