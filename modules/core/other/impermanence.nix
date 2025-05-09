@@ -49,6 +49,7 @@ in
           ]
         else
           [
+            "/var/lib/libvirt"
             "/var/log"
             "/var/lib/bluetooth"
             "/var/lib/systemd/coredump"
@@ -132,6 +133,7 @@ in
               ".config/polychromatic"
               ".config/gtk-4.0"
               ".config/gtk-3.0"
+              ".config/VSCodium"
               ".config/kdedefaults"
               ".local/share/openrazer"
               ".local/share/sddm"
@@ -184,7 +186,7 @@ in
               ".minecraft"
               ".stremio-server"
               ".mozilla"
-              ".floorp"
+              ".zen"
               ".mullvad"
               ".factorio"
               ".zplug"

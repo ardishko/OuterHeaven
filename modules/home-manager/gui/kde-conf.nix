@@ -16,6 +16,12 @@
   ];
   programs.plasma = {
     enable = true;
+    panels = [
+      {
+        floating = false;
+        location = "bottom";
+      }
+    ];
     powerdevil = {
       battery = {
         dimDisplay = {
@@ -25,8 +31,8 @@
       };
       AC = {
         dimDisplay = {
-          enable = true;
-          idleTimeout = 4000;
+          enable = if (osConfig.networking.hostName == "ShadowMoses") then false else true;
+          idleTimeout = if (osConfig.networking.hostName == "ShadowMoses") then null else 4000;
         };
         powerProfile =
           if (osConfig.networking.hostName == "ShadowMoses") then
@@ -44,12 +50,12 @@
         enable = true;
         mode = "times";
         temperature = {
-          day = 5500;
-          night = 5000;
+          day = 2800;
+          night = 1900;
         };
         time = {
           morning = "06:30";
-          evening = "18:00";
+          evening = "19:00";
         };
       };
       effects = {
@@ -285,11 +291,11 @@
 
           [NightColor]
           Active=true
-          DayTemperature=5500
-          EveningBeginFixed=1800
+          DayTemperature=2800
+          EveningBeginFixed=1900
           Mode=Times
           MorningBeginFixed=0630
-          NightTemperature=5000
+          NightTemperature=1900
 
           [Plugins]
           fadeEnabled=false

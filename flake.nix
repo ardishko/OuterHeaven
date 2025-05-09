@@ -117,11 +117,17 @@
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
     };
-    hyprswitch = {
-      url = "github:H3rmt/hyprswitch/release";
-    };
+    # hyprswitch = {
+    #   url = "github:H3rmt/hyprswitch/release";
+    # };
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+      # to have it up-to-date or simply don't specify the nixpkgs input
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =

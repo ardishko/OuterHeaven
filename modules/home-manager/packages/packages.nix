@@ -91,6 +91,7 @@
         vulkan-tools
         fastfetch
         scrcpy
+        qtscrcpy
         baobab
         python3Full
         gnupg
@@ -217,6 +218,9 @@
         gpt4all
         lumafly
         blockbench
+        remmina
+        vscodium-fhs
+        arduino-ide
 
         # resources
         # clipboard-jh
@@ -261,6 +265,7 @@
       }
     ];
     packages = [
+      "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"
       "com.modrinth.ModrinthApp"

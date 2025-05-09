@@ -1,6 +1,7 @@
 {
   pkgs,
   username,
+  lib,
   config,
   ...
 }:
@@ -8,6 +9,29 @@
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
+    activation = {
+      deleteOnActivation = lib.hm.dag.entryBefore [ "writeBoundary" ] ''
+        if [ -f "/home/${username}/.config/kdeglobals" ]; then
+          rm -f "/home/${username}/.config/kdeglobals"
+        fi
+
+        if [ -f "/home/${username}/.config/kcminputrc" ]; then
+          rm -f "/home/${username}/.config/kcminputrc"
+        fi
+
+        if [ -f "/home/${username}/.config/kwinrc" ]; then
+          rm -f "/home/${username}/.config/kwinrc"
+        fi
+
+        if [ -f "/home/${username}/.gtkrc-2.0" ]; then
+          rm -f "/home/${username}/.gtkrc-2.0"
+        fi
+
+        if [ -f "/home/${username}/.config/mimeapps.list" ]; then
+          rm -f "/home/${username}/.config/mimeapps.list"
+        fi
+      '';
+    };
   };
   # home-manager.backupFileExtension = "backup";
 

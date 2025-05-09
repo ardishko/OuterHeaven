@@ -131,17 +131,17 @@ let
     };
 in
 {
+  imports = [ inputs.zen-browser.homeModules.beta ];
   programs = {
-    firefox = {
+    zen-browser = {
       enable = true;
-      package = pkgs.firefox;
       profiles = {
         "freeform" = {
           isDefault = true;
           search = {
             force = true;
-            default = "Brave";
-            privateDefault = "Brave";
+            default = "ddg";
+            privateDefault = "ddg";
             engines = {
               "Nix Packages" = {
                 urls = [
@@ -164,7 +164,7 @@ in
               };
               "NixOS Wiki" = {
                 urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
-                iconUpdateURL = "https://nixos.wiki/favicon.png";
+                icon = "https://nixos.wiki/favicon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "!nw" ];
               };
@@ -189,31 +189,37 @@ in
               };
               "ProtonDB" = {
                 urls = [ { template = "https://www.protondb.com/search?q={searchTerms}"; } ];
-                iconUpdateURL = "https://icons.iconarchive.com/icons/simpleicons-team/simple/256/protondb-icon.png";
+                icon = "https://icons.iconarchive.com/icons/simpleicons-team/simple/256/protondb-icon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "!pdb" ];
               };
-              "Qwant" = {
+              "ddg" = {
+                urls = [ { template = "https://duckduckgo.com/?t=h_&q={searchTerms}"; } ];
+                icon = "https://images.icon-icons.com/2429/PNG/512/duckduckgo_logo_icon_147296.png";
+                updateInterval = 24 * 60 * 60 * 1000;
+                definedAliases = [ "!q" ];
+              };
+              "qwant" = {
                 urls = [ { template = "https://www.qwant.com/?q={searchTerms}"; } ];
-                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Qwant-Icone-2022.svg";
+                icon = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Qwant-Icone-2022.svg";
                 updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!q" ];
               };
               "Brave" = {
                 urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
-                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
+                icon = "https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lionface.png";
                 updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!b" ];
               };
               "Qwant Images" = {
                 urls = [ { template = "https://www.qwant.com/?t=images&q={searchTerms}"; } ];
-                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Qwant-Icone-2022.svg";
+                icon = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Qwant-Icone-2022.svg";
                 updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "!i" ];
               };
               "Flathub" = {
                 urls = [ { template = "https://flathub.org/apps/search?q={searchTerms}"; } ];
-                iconUpdateURL = "https://styles.redditmedia.com/t5_3k6jw/styles/communityIcon_b1hyv6wssjd91.png";
+                icon = "https://styles.redditmedia.com/t5_3k6jw/styles/communityIcon_b1hyv6wssjd91.png";
                 updateInterval = 24 * 60 * 1000;
                 definedAliases = [
                   "!f"
@@ -228,7 +234,7 @@ in
                   "!ghc"
                   "!gc"
                 ];
-                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
+                icon = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
                 updateInterval = 24 * 60 * 1000;
               };
               "Github Repos" = {
@@ -237,7 +243,7 @@ in
                   "!gh"
                   "!repo"
                 ];
-                iconUpdateURL = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
+                icon = "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg";
                 updateInterval = 24 * 60 * 1000;
               };
               "Youtube" = {
@@ -246,16 +252,15 @@ in
                   "!yt"
                   "!y"
                 ];
-                iconUpdateURL = "https://imgs.search.brave.com/0s_rkLjPXG0u6MFQl24I-Debkq4Mp8JmX04Any5mq6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMzg0LzEzODQw/NjAucG5n";
+                icon = "https://imgs.search.brave.com/0s_rkLjPXG0u6MFQl24I-Debkq4Mp8JmX04Any5mq6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMzg0LzEzODQw/NjAucG5n";
                 updateInterval = 24 * 60 * 1000;
               };
-              "Bing".metaData.hidden = true;
-              "Google".metaData = {
+              "bing".metaData.hidden = true;
+              "google".metaData = {
                 hidden = true;
                 alias = "!g"; # builtin engines only support specifying one additional alias
               };
-              "DuckDuckGo".metaData = {
-                hidden = true;
+              "ddg".metaData = {
                 alias = "!ddg";
               };
             };
@@ -268,57 +273,62 @@ in
               "Flathub"
             ];
           };
-          extensions =
-            with inputs.firefox-addons.packages.${pkgs.system};
-            with extra-addons;
-            [
-              bitwarden
-              ublock-origin
-              sponsorblock
-              darkreader
-              dearrow
-              enhanced-h264ify
-              firefox-color
-              fx_cast
-              iina-open-in-mpv
-              protondb-for-steam
-              terms-of-service-didnt-read
-              # vimium-c
-              gesturefy
-              no-pdf-download
-              istilldontcareaboutcookies
-              violentmonkey
-              stylus
-              torrent-control
-              to-deepl
-              blocktube
-              decentraleyes
-              clearurls
-              user-agent-string-switcher
-              wayback-machine
-              youtube-shorts-block
-              return-youtube-dislikes
-              (youtube-recommended-videos.overrideAttrs { meta.license.free = true; }) # IDK why it wouldn't build without this. This is retarded.
-              (flagfox.overrideAttrs { meta.license.free = true; })
-              facebook-container
-              (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
-              read-aloud
-              open-tabs-next-to-current
-              cf-purge-plugin
-              btroblox
-              (w2g.overrideAttrs { meta.license.free = true; })
-              watch-on-odysee
-              youtube-for-tv
-              google-container
-              netflux
-              # Theme
-              catppuccin-frappe-sky
-              #catppuccin-mocha-lavender # over here
-              # catppuccin-mocha-green
-              # tridactyl
-            ];
+          extensions = {
+            packages =
+              with inputs.firefox-addons.packages.${pkgs.system};
+              with extra-addons;
+              [
+                bitwarden
+                ublock-origin
+                sponsorblock
+                darkreader
+                dearrow
+                enhanced-h264ify
+                firefox-color
+                fx_cast
+                iina-open-in-mpv
+                protondb-for-steam
+                terms-of-service-didnt-read
+                # vimium-c
+                gesturefy
+                no-pdf-download
+                istilldontcareaboutcookies
+                violentmonkey
+                stylus
+                torrent-control
+                to-deepl
+                blocktube
+                decentraleyes
+                clearurls
+                user-agent-string-switcher
+                wayback-machine
+                youtube-shorts-block
+                return-youtube-dislikes
+                (youtube-recommended-videos.overrideAttrs { meta.license.free = true; }) # IDK why it wouldn't build without this. This is retarded.
+                (flagfox.overrideAttrs { meta.license.free = true; })
+                facebook-container
+                (enhancer-for-youtube.overrideAttrs { meta.license.tree = true; })
+                read-aloud
+                open-tabs-next-to-current
+                cf-purge-plugin
+                btroblox
+                (w2g.overrideAttrs { meta.license.free = true; })
+                watch-on-odysee
+                youtube-for-tv
+                google-container
+                netflux
+                # Theme
+                catppuccin-frappe-sky
+                #catppuccin-mocha-lavender # over here
+                # catppuccin-mocha-green
+                # tridactyl
+              ];
+          };
           userChrome = ''
             ${builtins.readFile ./userChrome.css}
+          '';
+          userContent = ''
+            ${builtins.readFile ./userContent.css}
           '';
           settings = {
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
@@ -387,6 +397,7 @@ in
             "browser.taskbar.lists.frequent.enabled" = false;
             "browser.taskbar.lists.tasks.enabled" = false;
             "browser.newtabpage.activity-stream.enabled" = false;
+            "browser.tabs.inTitlebar" = 0;
             "browser.newtabpage.pinned" = [
               {
                 label = "Youtube";
@@ -511,6 +522,10 @@ in
                 {
                   name = "HM Options";
                   url = "https://nix-community.github.io/home-manager/options.xhtml";
+                }
+                {
+                  name = "Plasma Manager options";
+                  url = "https://nix-community.github.io/plasma-manager/options.xhtml";
                 }
                 {
                   name = "nvf docs";
