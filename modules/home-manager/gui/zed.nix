@@ -17,6 +17,7 @@
       "dockerfile"
       "toml"
       "java"
+      "discord-presence"
     ];
     extraPackages = [
       pkgs.nixd

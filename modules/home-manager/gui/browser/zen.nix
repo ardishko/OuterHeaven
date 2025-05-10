@@ -461,205 +461,208 @@ in
               }
             ];
           };
-          bookmarks = [
-            {
-              name = "Edu";
-              bookmarks = [
+          bookmarks = {
+            force = true;
+            settings = [
                 {
-                  name = "Khan Academy SAT Prep";
-                  url = "https://www.khanacademy.org/test-prep/digital-sat";
+                name = "Edu";
+                bookmarks = [
+                    {
+                    name = "Khan Academy SAT Prep";
+                    url = "https://www.khanacademy.org/test-prep/digital-sat";
+                    }
+                    {
+                    name = "TSI";
+                    url = "https://my.tsi.lv/";
+                    }
+                ];
                 }
                 {
-                  name = "TSI";
-                  url = "https://my.tsi.lv/";
-                }
-              ];
-            }
-            {
-              name = "Hosted";
-              bookmarks = [
-                {
-                  name = "Syncthing";
-                  url = "http://127.0.0.1:8384/#";
-                }
-                {
-                  name = "Tailscale";
-                  url = "https://login.tailscale.com/admin/machines";
-                }
-                {
-                  name = "Nextcloud";
-                  url = "https://nextcloud.ardishco.net";
-                }
-              ];
-            }
-            {
-              name = "Nix";
-              bookmarks = [
-                {
-                  name = "NixOS Wiki";
-                  url = "https://nixos.wiki/wiki/";
+                name = "Hosted";
+                bookmarks = [
+                    {
+                    name = "Syncthing";
+                    url = "http://127.0.0.1:8384/#";
+                    }
+                    {
+                    name = "Tailscale";
+                    url = "https://login.tailscale.com/admin/machines";
+                    }
+                    {
+                    name = "Nextcloud";
+                    url = "https://nextcloud.ardishco.net";
+                    }
+                ];
                 }
                 {
-                  name = "nixiv";
-                  url = "https://wiki.nikiv.dev/package-managers/nix/";
+                name = "Nix";
+                bookmarks = [
+                    {
+                    name = "NixOS Wiki";
+                    url = "https://nixos.wiki/wiki/";
+                    }
+                    {
+                    name = "nixiv";
+                    url = "https://wiki.nikiv.dev/package-managers/nix/";
+                    }
+                    {
+                    name = "Zero to Nix";
+                    url = "https://zero-to-nix.com/";
+                    }
+                    {
+                    name = "NixOS & Flakes Book";
+                    url = "https://nixos-and-flakes.thiscute.world/";
+                    }
+                    {
+                    name = "MyNixOS";
+                    url = "https://mynixos.com/";
+                    }
+                    {
+                    name = "OuterHeaven";
+                    url = "https://github.com/liquidovski/OuterHeaven";
+                    }
+                    {
+                    name = "HM Options";
+                    url = "https://nix-community.github.io/home-manager/options.xhtml";
+                    }
+                    {
+                    name = "Plasma Manager options";
+                    url = "https://nix-community.github.io/plasma-manager/options.xhtml";
+                    }
+                    {
+                    name = "nvf docs";
+                    url = "https://notashelf.github.io/nvf/options.html";
+                    }
+                    {
+                    name = "nixpkgs";
+                    url = "https://github.com/NixOS/nixpkgs/";
+                    }
+                    {
+                    name = "PR Tracker";
+                    url = "https://nixpk.gs/pr-tracker.html";
+                    }
+                    {
+                    name = "nixcord options";
+                    url = "https://github.com/KaylorBen/nixcord/blob/main/docs/plugins.md";
+                    }
+                    {
+                    name = "mdadm";
+                    url = "https://gist.github.com/seanjensengrey/b69ffddbc668e127b1946d4c147e0bcb";
+                    }
+                ];
                 }
                 {
-                  name = "Zero to Nix";
-                  url = "https://zero-to-nix.com/";
+                name = "Trading";
+                bookmarks = [
+                    {
+                    name = "coin360";
+                    url = "https://coin360.com/";
+                    }
+                ];
                 }
                 {
-                  name = "NixOS & Flakes Book";
-                  url = "https://nixos-and-flakes.thiscute.world/";
+                name = "Utils";
+                bookmarks = [
+                    {
+                    name = "Steam Sale Dates";
+                    url = "https://steamdb.info/sales/history/";
+                    }
+                    {
+                    name = "De-Googled App DB";
+                    url = "https://plexus.techlore.tech/";
+                    }
+                    {
+                    name = "CyberChef";
+                    url = "https://gchq.github.io/CyberChef/";
+                    }
+                    {
+                    name = "YT Thumnail";
+                    url = "https://downdetector.com/";
+                    }
+                    {
+                    name = "Video Embedder";
+                    url = "https://stolen.shoes/";
+                    }
+                    {
+                    name = "Carrd";
+                    url = "https://carrd.co/build";
+                    }
+                    {
+                    name = "Flourish";
+                    url = "https://flourish.studio/";
+                    }
+                ];
                 }
                 {
-                  name = "MyNixOS";
-                  url = "https://mynixos.com/";
+                name = "Food";
+                bookmarks = [
+                    {
+                    name = "Yemeksepeti";
+                    url = "https://www.yemeksepeti.com/istanbul";
+                    }
+                ];
                 }
                 {
-                  name = "OuterHeaven";
-                  url = "https://github.com/liquidovski/OuterHeaven";
+                name = "Tutorials";
+                bookmarks = [
+                    {
+                    name = "Davinci Resolve Linux Cheat Sheet";
+                    url = "https://alecaddd.com/davinci-resolve-ffmpeg-cheatsheet-for-linux/";
+                    }
+                    {
+                    name = "Python w3s";
+                    url = "https://www.w3schools.com/python/default.asp";
+                    }
+                    {
+                    name = "Godot Docs";
+                    url = "https://docs.godotengine.org/en/stable/about/introduction.html";
+                    }
+                    {
+                    name = "Git Book";
+                    url = "https://git-scm.com/book/en/v2";
+                    }
+                    {
+                    name = "Wayland Root";
+                    url = "https://github.com/swaywm/sway/wiki#wayland-wont-let-me-run-apps-as-root";
+                    }
+                    {
+                    name = "Nginx-Proxy Tutor";
+                    url = "https://medium.com/@life-is-short-so-enjoy-it/homelab-nginx-proxy-manager-setup-ssl-certificate-with-domain-name-in-cloudflare-dns-732af64ddc0b";
+                    }
+                    {
+                    name = "EasyEffects Pipewire Screensharing";
+                    url = "https://gist.github.com/amsyarzero/57ff8e566af48265950aead5ff900ce5";
+                    }
+                ];
                 }
                 {
-                  name = "HM Options";
-                  url = "https://nix-community.github.io/home-manager/options.xhtml";
+                name = "Games";
+                bookmarks = [
+                    {
+                    name = "Jackbox";
+                    url = "https://jackbox.tv/#/";
+                    }
+                ];
                 }
                 {
-                  name = "Plasma Manager options";
-                  url = "https://nix-community.github.io/plasma-manager/options.xhtml";
+                name = "Anime";
+                bookmarks = [
+                    {
+                    name = "Filler List";
+                    url = "https://www.animefillerlist.com/";
+                    }
+                    {
+                    name = "MAL";
+                    url = "https://myanimelist.net/";
+                    }
+                ];
                 }
                 {
-                  name = "nvf docs";
-                  url = "https://notashelf.github.io/nvf/options.html";
+                name = "Books";
+                bookmarks = [ ];
                 }
-                {
-                  name = "nixpkgs";
-                  url = "https://github.com/NixOS/nixpkgs/";
-                }
-                {
-                  name = "PR Tracker";
-                  url = "https://nixpk.gs/pr-tracker.html";
-                }
-                {
-                  name = "nixcord options";
-                  url = "https://github.com/KaylorBen/nixcord/blob/main/docs/plugins.md";
-                }
-                {
-                  name = "mdadm";
-                  url = "https://gist.github.com/seanjensengrey/b69ffddbc668e127b1946d4c147e0bcb";
-                }
-              ];
-            }
-            {
-              name = "Trading";
-              bookmarks = [
-                {
-                  name = "coin360";
-                  url = "https://coin360.com/";
-                }
-              ];
-            }
-            {
-              name = "Utils";
-              bookmarks = [
-                {
-                  name = "Steam Sale Dates";
-                  url = "https://steamdb.info/sales/history/";
-                }
-                {
-                  name = "De-Googled App DB";
-                  url = "https://plexus.techlore.tech/";
-                }
-                {
-                  name = "CyberChef";
-                  url = "https://gchq.github.io/CyberChef/";
-                }
-                {
-                  name = "YT Thumnail";
-                  url = "https://downdetector.com/";
-                }
-                {
-                  name = "Video Embedder";
-                  url = "https://stolen.shoes/";
-                }
-                {
-                  name = "Carrd";
-                  url = "https://carrd.co/build";
-                }
-                {
-                  name = "Flourish";
-                  url = "https://flourish.studio/";
-                }
-              ];
-            }
-            {
-              name = "Food";
-              bookmarks = [
-                {
-                  name = "Yemeksepeti";
-                  url = "https://www.yemeksepeti.com/istanbul";
-                }
-              ];
-            }
-            {
-              name = "Tutorials";
-              bookmarks = [
-                {
-                  name = "Davinci Resolve Linux Cheat Sheet";
-                  url = "https://alecaddd.com/davinci-resolve-ffmpeg-cheatsheet-for-linux/";
-                }
-                {
-                  name = "Python w3s";
-                  url = "https://www.w3schools.com/python/default.asp";
-                }
-                {
-                  name = "Godot Docs";
-                  url = "https://docs.godotengine.org/en/stable/about/introduction.html";
-                }
-                {
-                  name = "Git Book";
-                  url = "https://git-scm.com/book/en/v2";
-                }
-                {
-                  name = "Wayland Root";
-                  url = "https://github.com/swaywm/sway/wiki#wayland-wont-let-me-run-apps-as-root";
-                }
-                {
-                  name = "Nginx-Proxy Tutor";
-                  url = "https://medium.com/@life-is-short-so-enjoy-it/homelab-nginx-proxy-manager-setup-ssl-certificate-with-domain-name-in-cloudflare-dns-732af64ddc0b";
-                }
-                {
-                  name = "EasyEffects Pipewire Screensharing";
-                  url = "https://gist.github.com/amsyarzero/57ff8e566af48265950aead5ff900ce5";
-                }
-              ];
-            }
-            {
-              name = "Games";
-              bookmarks = [
-                {
-                  name = "Jackbox";
-                  url = "https://jackbox.tv/#/";
-                }
-              ];
-            }
-            {
-              name = "Anime";
-              bookmarks = [
-                {
-                  name = "Filler List";
-                  url = "https://www.animefillerlist.com/";
-                }
-                {
-                  name = "MAL";
-                  url = "https://myanimelist.net/";
-                }
-              ];
-            }
-            {
-              name = "Books";
-              bookmarks = [ ];
-            }
-          ];
+            ];
+          };
         };
       };
     };
