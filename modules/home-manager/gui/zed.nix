@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.zed-editor = {
     enable = true;
@@ -18,9 +18,13 @@
       "toml"
       "java"
       "discord-presence"
+      "catppuccin"
+      "catppuccin-icons"
+      "nu"
     ];
     extraPackages = [
       pkgs.nixd
+      pkgs.nil
     ];
     userSettings = {
       features = {
@@ -30,6 +34,16 @@
         metrics = false;
       };
       vim_mode = true;
+      enable_language_server = true;
+      formatter = "auto";
+      icon_theme = lib.mkForce {
+        light = "Catppuccin Frappe";
+        dark = "Catppuccin Frappe";
+      };
+      theme = {
+        light = lib.mkForce "Catppuccin Frappé";
+        dark = lib.mkForce "Catppuccin Frappé";
+      };
     };
   };
 }

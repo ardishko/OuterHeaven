@@ -51,7 +51,7 @@
         mode = "times";
         temperature = {
           day = 2800;
-          night = 1900;
+          night = 2400;
         };
         time = {
           morning = "06:30";
@@ -295,7 +295,7 @@
           EveningBeginFixed=1900
           Mode=Times
           MorningBeginFixed=0630
-          NightTemperature=1900
+          NightTemperature=2400
 
           [Plugins]
           fadeEnabled=false
@@ -396,7 +396,7 @@
       # Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
       # homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
       # absolute path. No other format is supported.
-      # 
+      #
       XDG_DESKTOP_DIR="$HOME/Desktop"
       XDG_DOWNLOAD_DIR="$HOME/Downloads"
       XDG_TEMPLATES_DIR="$HOME/Templates"

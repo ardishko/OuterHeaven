@@ -6,9 +6,8 @@
       name = "pdiary";
       type = "Application";
       mimeType = [ "text/plain" ];
-
       icon = "almanah";
-      exec = "${pkgs.kitty}/bin/kitty pdiary";
+      exec = "${pkgs.wezterm}/bin/wezterm pdiary";
     };
   };
 }

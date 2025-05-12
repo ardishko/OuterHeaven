@@ -136,6 +136,8 @@ in
               ".config/VSCodium"
               ".config/kdedefaults"
               ".config/nomic.ai"
+              ".config/remmina"
+              ".local/share/remmina"
               ".local/share/openrazer"
               ".local/share/sddm"
               ".local/share/kactivitymanagerd"

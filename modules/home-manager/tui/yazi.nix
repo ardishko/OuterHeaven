@@ -15,7 +15,7 @@
         url = "https://raw.githubusercontent.com/sxyazi/yazi/main/assets/logo.png";
         sha256 = "05crmd367v5915i553z172fsip6y8n8mvppjcpqxq9v7bml1vw3x";
       };
-      exec = "${pkgs.kitty}/bin/kitty ${pkgs.yazi}/bin/yazi";
+      exec = "${pkgs.wezterm}/bin/wezterm ${pkgs.yazi}/bin/yazi";
     };
   };
 }

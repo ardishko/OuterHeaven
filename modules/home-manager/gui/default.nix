@@ -11,7 +11,8 @@
     # ./hyprland-conf.nix
     # ./hyprlock.nix
     ./kde-conf.nix
-    ./kitty.nix
+    # ./kitty.nix
+    ./wezterm.nix
     ./lutris.nix
     ./mpv.nix
     ./obs
