@@ -82,7 +82,6 @@ in
             ]
           else
             [
-              ".config/Ryujinx"
               ".config/dolphin-emu"
               ".config/melonDS"
               ".config/PCSX2"
@@ -137,6 +136,8 @@ in
               ".config/kdedefaults"
               ".config/nomic.ai"
               ".config/remmina"
+              ".config/zed"
+              ".local/share/zed"
               ".local/share/remmina"
               ".local/share/openrazer"
               ".local/share/sddm"
@@ -210,7 +211,6 @@ in
               "Programs"
               "Public"
               "Videos"
-              # TO DO: Yuzu/Sudachi dirs, nemo
 
               ## KDE Related stuff
               ## KDE Team why are you like this
