@@ -19,7 +19,7 @@
     ./obsidian.nix
     ./prism-launcher.nix
     ./qt
-    ./spicetify.nix
+    # ./spicetify.nix
     # ./swaync
     ./virt-manager.nix
     # ./waybar

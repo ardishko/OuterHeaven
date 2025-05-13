@@ -72,9 +72,6 @@
           lspconfig = {
             enable = true;
           };
-          lsplines = {
-            enable = true;
-          };
           lspsaga = {
             enable = true;
           };

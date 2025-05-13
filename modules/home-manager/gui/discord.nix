@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ inputs.nixcord.homeManagerModules.nixcord ];
+  imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
     "discord-canary" = lib.mkForce {
       name = "Discord Canary";

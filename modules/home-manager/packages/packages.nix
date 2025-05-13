@@ -315,7 +315,8 @@
         "electron-25.9.0"
         "python-2.7.18.7"
         "python-2.7.18.8"
-        "electron-19.1.9"
+        # "electron-19.1.9"
+        "ventoy-1.1.05"
       ];
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "davinci-resolve" ];
       allowUnfree = true;
