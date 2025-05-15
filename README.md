@@ -16,7 +16,7 @@ OuterHeaven/
 ├───flake.nix       (my flake containing my inputs, outputs and 2 custom variables for each machine.)
 └───flake.lock      (the flake lock, which controls version locks for each input.)
 ```
-# Screenshots
+# Showcase
 
 ![image](https://github.com/user-attachments/assets/b1086491-1b0d-4e78-96d2-588c20ec00dc)
 
