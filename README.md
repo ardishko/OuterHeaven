@@ -18,9 +18,7 @@ OuterHeaven/
 ```
 # Showcase
 
-![image](https://github.com/user-attachments/assets/b1086491-1b0d-4e78-96d2-588c20ec00dc)
-
-![image](https://github.com/user-attachments/assets/9ddab770-7f84-438d-9a38-2c24abc498d4)
+![image](https://github.com/user-attachments/assets/b1086491-1b0d-4e78-96d2-588c20ec00dcuuuuu
 
 ![image](https://github.com/user-attachments/assets/80062146-b123-4448-af7b-c661b87f0867)
 
@@ -103,7 +101,7 @@ usually they should because they did in the past.
 ```
 ├──modules/core/gui/steam.nix    (gamescope workaround)
 ├──modules/home-manager/gui/flameshot.nix      (flameshot wayland fix)
-├──modules/home-manager/gui/vesktop.nix        (vesktop override)
+├──modules/home-manager/gui/discord.nix        (discord desktop entry override)
 ├──modules/home-manager/packages/packages.nix   (packages module)
 └──modules/home-manager/packages/pkgcustom/     (pkgcustom)
 ```
@@ -134,7 +132,7 @@ certain commit known to work with Wayland.
 </details>
 
 <details>
-<summary><b><font size="+3">vesktop override</font></b></summary>
+<summary><b><font size="+3">discord desktop entry override</font></b></summary>
 
 The overrides used here removes Vencord related branding and replaces the icons
 and name with regular Discord's and adds launch flags that help with screen

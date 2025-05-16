@@ -53,7 +53,6 @@
         inputs.quickshell.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
-
         # Over
         wget
         lutris

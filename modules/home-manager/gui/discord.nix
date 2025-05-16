@@ -5,14 +5,14 @@
   ...
 }:
 {
-  imports = [ inputs.nixcord.homeModules.nixcord ];
+  imports = [ inputs.nixcord.homeManagerModules.nixcord ];
   xdg.desktopEntries = {
-    "discord-canary" = lib.mkForce {
-      name = "Discord Canary";
+    "discord" = lib.mkForce {
+      name = "Discord";
       type = "Application";
-      icon = "discord-canary";
+      icon = "discord";
       terminal = false;
-      exec = "mullvad-exclude DiscordCanary --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
+      exec = "mullvad-exclude Discord --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
     };
   };
   programs.nixcord = {
@@ -24,7 +24,7 @@
         package = pkgs.vencord;
       };
       openASAR.enable = false;
-      package = pkgs.discord-canary;
+      # package = pkgs.discord;
     };
     vesktop = {
       enable = true;
@@ -32,7 +32,7 @@
         desktopItems = [
           (pkgs.makeDesktopItem {
             name = "vesktop";
-            desktopName = "Discord";
+            desktopName = "Vesktop (Discord)";
             exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
             icon = "discord";
             startupWMClass = "VencordDesktop";

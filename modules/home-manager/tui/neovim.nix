@@ -94,7 +94,7 @@
         viAlias = true;
         vimAlias = true;
         lineNumberMode = "number";
-        useSystemClipboard = true;
+        # useSystemClipboard = true;
         theme = {
           enable = true;
           name = "catppuccin";
