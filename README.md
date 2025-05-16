@@ -18,7 +18,7 @@ OuterHeaven/
 ```
 # Showcase
 
-![image](https://github.com/user-attachments/assets/b1086491-1b0d-4e78-96d2-588c20ec00dcuuuuu
+![image](https://github.com/user-attachments/assets/b1086491-1b0d-4e78-96d2-588c20ec00dc)
 
 ![image](https://github.com/user-attachments/assets/80062146-b123-4448-af7b-c661b87f0867)
 
