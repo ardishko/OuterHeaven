@@ -50,7 +50,7 @@
         inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.bottles
         # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland
         # inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
-        inputs.quickshell.packages.${pkgs.system}.default
+        # inputs.quickshell.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
         # Over
@@ -259,6 +259,7 @@
           distrobox
           vscodium-fhs
           arduino-ide
+          vlc
         ]
       );
 

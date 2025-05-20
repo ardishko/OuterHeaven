@@ -272,6 +272,7 @@ in
           ".config/startkderc"
           ".config/systemsettingsrc"
           ".config/kwalletrc"
+          ".local/state/mpv/watch_history.jsonl"
           ".local/share/krunnerstaterc"
           ".local/share/user-places.xbel"
           ".local/share/user-places.xbel.bak"

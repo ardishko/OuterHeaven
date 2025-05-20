@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ inputs.nixcord.homeManagerModules.nixcord ];
+  imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
     "discord" = lib.mkForce {
       name = "Discord";
@@ -20,11 +20,9 @@
     discord = {
       enable = true;
       vencord = {
-        enable = true;
-        package = pkgs.vencord;
+        enable = false;
       };
-      openASAR.enable = false;
-      # package = pkgs.discord;
+      openASAR.enable = true;
     };
     vesktop = {
       enable = true;

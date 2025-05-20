@@ -21,6 +21,12 @@
         path = "/tmp";
       };
     };
+    config = {
+      save-watch-history = true;
+      watch-later-options = "start";
+      save-position-on-quit = true;
+      keen-open = true;
+    };
   };
   home.packages = with pkgs; [ open-in-mpv ];
 }
