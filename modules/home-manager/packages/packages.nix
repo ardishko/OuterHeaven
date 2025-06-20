@@ -53,6 +53,8 @@
         # inputs.quickshell.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
+        # inputs.citron-flake.packages.${pkgs.system}.citron
+
         # Over
         wget
         lutris
@@ -78,7 +80,6 @@
         pavucontrol
         # hyprpicker
         transmission_4-gtk
-        libreoffice-fresh
         winetricks
         protontricks
         piper
@@ -195,7 +196,6 @@
         impression
         woeusb
         reaper
-        parabolic
         nexusmods-app
         stremio
         sops
@@ -216,6 +216,9 @@
         lumafly
         blockbench
         remmina
+        audacity
+        tartube-yt-dlp
+        limo
 
         # resources
         # clipboard-jh
@@ -274,6 +277,8 @@
       }
     ];
     packages = [
+      "org.onlyoffice.desktopeditors"
+      "dev.overlayed.Overlayed"
       "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"
@@ -297,6 +302,7 @@
       "org.kde.Platform"
       "org.freedesktop.Platform"
     ];
+    # TODO add conditionally installed flatpak packages.
     update = {
       onActivation = true;
       auto = {

@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, config, pkgs, ... }:
 let
   resolution =
     if (config.networking.hostName == "ShadowMoses") then
@@ -31,6 +31,17 @@ in
       efi = {
         canTouchEfiVariables = true;
       };
+    };
+    plymouth = {
+      enable = true;
+      font = "${pkgs.nerd-fonts.iosevka}/share/fonts/truetype/NerdFonts/Iosevka/IosevkaNerdFontMono-Bold.ttf";
+      theme = "catppuccin-frappe";
+      themePackages = with pkgs; [
+        (catppuccin-plymouth.override {
+          variant = "frappe";
+        })
+      ];
+      logo = pkgs.emptyFile;
     };
   };
 }

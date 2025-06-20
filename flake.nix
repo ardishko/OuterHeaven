@@ -97,7 +97,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcord = {
-      url = "github:KaylorBen/nixcord";
+      url = "github:KaylorBen/nixcord/donteatoreo/push-sozmozkvomnv";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixd = {

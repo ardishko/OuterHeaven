@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [ signal-desktop ];
   xdg.desktopEntries = {
-    "signal-desktop" = lib.mkForce {
+    "signal" = lib.mkForce {
       name = "Signal";
       type = "Application";
       icon = "signal-desktop";

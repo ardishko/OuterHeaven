@@ -1264,15 +1264,16 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1747377065,
-        "narHash": "sha256-W+ETNRxqNKZtZRlwLClt/8qBoQKNVHs0dQO40yQrpeg=",
+        "lastModified": 1748098472,
+        "narHash": "sha256-9mkzCPwWyysb3vunfVRhkMdmmBUSUEtfNNWdfyEFXT8=",
         "owner": "KaylorBen",
         "repo": "nixcord",
-        "rev": "8b809c190e9b6a6339c62fb5c65c19730ce10ef3",
+        "rev": "6b02a13f050068821eca197f76cd74ebf69baa23",
         "type": "github"
       },
       "original": {
         "owner": "KaylorBen",
+        "ref": "donteatoreo/push-sozmozkvomnv",
         "repo": "nixcord",
         "type": "github"
       }

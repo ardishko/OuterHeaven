@@ -32,6 +32,7 @@
     kauth
     phonon-vlc
     kdeplasma-addons
+    plasma-systemmonitor
   ];
   security.pam.services = {
     login.kwallet = {

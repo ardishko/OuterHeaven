@@ -19,8 +19,9 @@
     enable = true;
     discord = {
       enable = true;
+      package = pkgs.discord;
       vencord = {
-        enable = false;
+        enable = true;
       };
       openASAR.enable = true;
     };
@@ -62,17 +63,18 @@
           anonymiseByDefault = true;
         };
         banger.enable = true;
-        # betterFolders = {
-        #   enable = true;
-        #   showFolderIcon = "always";
-        # };
+        betterFolders = {
+          enable = true;
+          showFolderIcon = "always";
+        };
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
         betterNotesBox.enable = true;
         betterRoleDot.enable = true;
         betterUploadButton.enable = true;
         blurNSFW.enable = true;
-        # callTimer.enable = true;
+        reviewDB.enable = true;
+        callTimer.enable = true;
         clearURLs.enable = true;
         crashHandler.enable = true;
         dearrow.enable = true;
@@ -94,13 +96,13 @@
         loadingQuotes.enable = true;
         memberCount.enable = true;
         messageClickActions.enable = true;
-        # messageLogger = {
-        #   enable = true;
-        #   deleteStyle = "text";
-        #   logDeletes = true;
-        #   logEdits = true;
-        #   ignoreSelf = true;
-        # };
+        messageLogger = {
+          enable = true;
+          deleteStyle = "text";
+          logDeletes = true;
+          logEdits = true;
+          ignoreSelf = true;
+        };
         messageTags.enable = true;
         moreCommands.enable = true;
         moreKaomoji.enable = true;
@@ -122,7 +124,10 @@
         openInApp.enable = true;
         permissionFreeWill.enable = true;
         pictureInPicture.enable = true;
-        pinDMs.enable = true;
+        pinDMs = {
+          enable = true;
+          pinOrder = "mostRecent";
+        };
         plainFolderIcon.enable = true;
         platformIndicators.enable = true;
         previewMessage.enable = true;

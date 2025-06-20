@@ -8,10 +8,14 @@
 {
   boot = {
     initrd.verbose = false;
-    consoleLogLevel = 1;
+    consoleLogLevel = 3;
     kernelParams = [
       "split_lock_detect=off"
       "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
     ];
     # kernelParams = [ ];
     extraModulePackages =

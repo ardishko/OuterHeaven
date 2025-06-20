@@ -290,7 +290,6 @@ in
                 protondb-for-steam
                 terms-of-service-didnt-read
                 # vimium-c
-                gesturefy
                 no-pdf-download
                 istilldontcareaboutcookies
                 violentmonkey
@@ -495,6 +494,23 @@ in
                 ];
                 }
                 {
+                  name = "Tools";
+                  bookmarks = [
+                    {
+                      name = "ChatGPT";
+                      url = "https://chatgpt.com/";
+                    }
+                    {
+                      name = "Grok AI";
+                      url = "https://grok.com/";
+                    }
+                    {
+                      name = "Blackbox AI";
+                      url = "https://www.blackbox.ai/";
+                    }
+                  ];
+                }
+                {
                 name = "Nix";
                 bookmarks = [
                     {
@@ -594,13 +610,21 @@ in
                 ];
                 }
                 {
-                name = "Food";
-                bookmarks = [
+                  name = "Food";
+                  bookmarks = [
                     {
-                    name = "Yemeksepeti";
-                    url = "https://www.yemeksepeti.com/istanbul";
+                      name = "Wolt";
+                      url = "https://wolt.com";
                     }
-                ];
+                    {
+                        name = "Yemeksepeti";
+                        url = "https://www.yemeksepeti.com/istanbul";
+                    }
+                    {
+                        name = "Bolt Food";
+                        url = "https://food.bolt.eu";
+                    }
+                  ];
                 }
                 {
                 name = "Tutorials";

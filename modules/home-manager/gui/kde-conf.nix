@@ -15,10 +15,68 @@
   ];
   programs.plasma = {
     enable = true;
+    overrideConfig = true;
     panels = [
       {
-        floating = false;
+        height = 60;
+        offset = 0;
+        minLength = 720;
+        maxLength = 2400;
         location = "bottom";
+        alignment = "center";
+        hiding = "none";
+        floating = false;
+        widgets = [
+          # Start menu
+          {
+            name = "org.kde.plasma.kickoff";
+            config = {
+              General.icon = "nix-snowflake";
+            };
+          }
+          {
+            name = "org.kde.plasma.icontasks";
+            config = {
+              General.launchers = [
+                # Pinned apps
+                "applications:zen-beta.desktop"
+                "applications:discord-canary.desktop"
+                "applications:steam.desktop"
+                "applications:dev.zed.Zed.desktop"
+                "applications:com.obsproject.Studio.desktop"
+                "applications:signal.desktop"
+                "applications:thunderbird.desktop"
+                "applications:org.wezfurlong.wezterm.desktop"
+              ];
+            };
+          }
+        ];
+      }
+      # Global menu at the top
+      {
+        height = 32;
+        offset = 0;
+        minLength = null;
+        maxLength = null; # Allow it to grow to screen width
+        location = "top";
+        alignment = "center";
+        hiding = "none";
+        floating = false;
+
+        widgets = [
+          "org.kde.plasma.appmenu"
+          "org.kde.plasma.panelspacer"
+          {
+            name = "org.kde.plasma.digitalclock";
+            config.Appearance = {
+              dateDisplayFormat = "BesideTime";
+              dateFormat = "isoDate";
+              showSeconds = "true";
+            };
+          }
+          "org.kde.plasma.panelspacer"
+          "org.kde.plasma.systemtray"
+        ];
       }
     ];
     powerdevil = {
