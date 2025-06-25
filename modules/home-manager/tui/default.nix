@@ -2,7 +2,7 @@
   imports = [
     ./neovim.nix
     # ./nushell.nix
-    ./pdiary.nix
+    # ./pdiary.nix
     ./vinegar.nix
     ./yazi.nix
     ./zsh.nix

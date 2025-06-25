@@ -64,7 +64,6 @@
         gnome-photos
         easyeffects
         wlr-randr
-        thefuck
         htop
         killall
         steamtinkerlaunch
