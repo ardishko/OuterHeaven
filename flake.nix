@@ -132,6 +132,9 @@
     citron-flake = {
       url = "github:Zempashi/citron-flake";
     };
+    millennium = {
+      url = "git+https://github.com/SteamClientHomebrew/Millennium";
+    };
   };
   outputs =
     inputs@{ nixpkgs, disko, ... }:

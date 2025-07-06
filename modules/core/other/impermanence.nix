@@ -215,6 +215,7 @@ in
               "Programs"
               "Public"
               "Videos"
+              "Zomboid"
 
               ## KDE Related stuff
               ## KDE Team why are you like this

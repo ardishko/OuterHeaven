@@ -218,6 +218,7 @@
         audacity
         tartube-yt-dlp
         limo
+        mission-center
 
         # resources
         # clipboard-jh

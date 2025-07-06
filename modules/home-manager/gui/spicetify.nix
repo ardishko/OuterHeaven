@@ -18,7 +18,7 @@ in
       overwriteAssets = true;
       sidebarConfig = true;
     };
-    colorScheme = "CatppuccinLatte";
+    colorScheme = "catppuccinlatte";
     enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
       adblock
       fullScreen

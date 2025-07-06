@@ -132,7 +132,7 @@
         platformIndicators.enable = true;
         previewMessage.enable = true;
         quickMention.enable = true;
-        quickReply.enable = true;
+        # quickReply.enable = true;
         reactErrorDecoder.enable = true;
         relationshipNotifier.enable = true;
         replaceGoogleSearch = {
@@ -149,7 +149,7 @@
         spotifyShareCommands.enable = true;
         translate.enable = true;
         typingIndicator.enable = true;
-        typingTweaks.enable = true;
+        # typingTweaks.enable = true;
         unsuppressEmbeds.enable = true;
         userVoiceShow.enable = true;
         USRBG.enable = true;

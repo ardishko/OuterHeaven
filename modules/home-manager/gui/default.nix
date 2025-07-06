@@ -26,6 +26,7 @@
     # ./wlogout
     ./fastfetch
     ./signal.nix
+    ./spicetify
     ./zed.nix
   ];
 }
