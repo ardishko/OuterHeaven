@@ -225,6 +225,27 @@
             })
           ];
         };
+        Kamurocho = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs =
+            let
+              username = "majima";
+              hostname = "Kamurocho";
+            in
+            {
+              inherit inputs username hostname;
+            };
+          modules = [
+            ./machines/Kamurocho
+            ./modules
+            ./secrets
+            disko.nixosModules.disko
+            (import ./disko.nix {
+              device = "/dev/nvme2n1";
+              hostname = "Kamurocho";
+            })
+          ];
+        };
       };
     };
 }
