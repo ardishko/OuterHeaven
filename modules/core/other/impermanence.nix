@@ -14,6 +14,8 @@ let
       "raiden"
     else if (config.networking.hostName == "jd") then
       "snake"
+    else if (config.networking.hostName == "Kamurocho") then
+      "majima"
     else
       "user";
 in

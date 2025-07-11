@@ -6,6 +6,7 @@
         enable = true;
         theme = "catppuccin-frappe";
         package = lib.mkForce pkgs.kdePackages.sddm;
+        wayland.enable = true;
       };
     };
     xserver = {

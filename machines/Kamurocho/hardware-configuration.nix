@@ -11,7 +11,13 @@
   boot = {
     extraModulePackages = [ ];
     supportedFilesystems = [ "ntfs" ];
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [
+      "kvm-intel"
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ];
     initrd = {
       availableKernelModules = [
         "vmd"
@@ -28,10 +34,11 @@
 
   hardware = {
     nvidia = {
-      enabled = true;
+      # enabled = true;
       videoAcceleration = true;
       modesetting.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+      open = true;
     };
   };
 

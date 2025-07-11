@@ -8,7 +8,7 @@
 {
   home = {
     username = "${username}";
-    homeDirectory = "/home/${username}";
+    homeDirectory = lib.mkForce "/home/${username}";
     activation = {
       deleteOnActivation = lib.hm.dag.entryBefore [ "writeBoundary" ] ''
         if [ -f "/home/${username}/.config/kdeglobals" ]; then
