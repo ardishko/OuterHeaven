@@ -442,7 +442,7 @@
           Scale=1
         ''
       else
-        null;
+        '''';
     force = true;
   };
   xdg.configFile."user-dirs.dirs" = {
