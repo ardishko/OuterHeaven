@@ -42,7 +42,7 @@
         # inputs.nix-alien.packages.${pkgs.system}.nix-alien
         inputs.shadower.packages.${pkgs.system}.shadower
         inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
-        inputs.dolphin-emu.packages.${pkgs.system}.default
+        # inputs.dolphin-emu.packages.${pkgs.system}.default
         inputs.sops-nix.packages.${pkgs.system}.default
         inputs.anyrun.packages.${pkgs.system}.stdin
         # inputs.polly-mc.${pkgs.system}.default

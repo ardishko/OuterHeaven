@@ -9,7 +9,7 @@
       ./steam.nix
       ./blueman.nix
     ]
-    ++ (lib.lists.optionals (hostname == "ShadowMoses" || hostname == "BigShell") [
+    ++ (lib.lists.optionals (hostname == "ShadowMoses" || hostname == "BigShell" || hostname == "Kamurocho") [
       # ./hyprland.nix
       ./sddm.nix
       ./kde6.nix
