@@ -88,8 +88,20 @@
       };
       AC = {
         dimDisplay = {
-          enable = if (osConfig.networking.hostName == "ShadowMoses") then false else true;
-          idleTimeout = if (osConfig.networking.hostName == "ShadowMoses") then null else 4000;
+          enable =
+            if
+              (osConfig.networking.hostName == "ShadowMoses" || osConfig.networking.hostName == "Kamurocho")
+            then
+              false
+            else
+              true;
+          idleTimeout =
+            if
+              (osConfig.networking.hostName == "ShadowMoses" || osConfig.networking.hostName == "Kamurocho")
+            then
+              null
+            else
+              4000;
         };
         powerProfile =
           if (osConfig.networking.hostName == "ShadowMoses") then
@@ -98,6 +110,8 @@
             "balanced"
           else if (osConfig.networking.hostName == "Tanker") then
             "powerSaving"
+          else if (osConfig.networking.hostName == "Kamurocho") then
+            "performance"
           else
             "balanced";
       };
@@ -440,6 +454,50 @@
 
           [Xwayland]
           Scale=1
+        ''
+      else if (osConfig.networking.hostName == "Kamurocho") then
+        ''
+          [Desktops]
+          Id_1=c511f381-96f0-4508-93be-d15d732001cb
+          Number=1
+          Rows=1
+
+          [NightColor]
+          Active=true
+          DayTemperature=2800
+          EveningBeginFixed=1900
+          Mode=Times
+          MorningBeginFixed=0630
+          NightTemperature=2400
+
+          [Plugins]
+          fadeEnabled=false
+          fadedesktopEnabled=false
+          glideEnabled=false
+          magiclampEnabled=false
+          scaleEnabled=false
+          shakecursorEnabled=true
+          slideEnabled=false
+          squashEnabled=false
+
+          [Tiling]
+          padding=4
+
+          [Tiling][74a7097a-326d-5707-b685-fbfdc2c45852]
+          tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+          [Xwayland]
+          Scale=1.25
+
+          [Compositing]
+          # 0=Automatic, 1=FullScreenRepaints (tear‑free), 2=Viewport‑only
+          TearingPreventionType=1
+          # reinforce buffer‑age usage
+          UseBufferAge=true
+
+          [Wayland]
+          # let KWin do buffer‑age‑based repainting under Wayland
+          EglUseBufferAge=true
         ''
       else
         '''';

@@ -30,6 +30,12 @@
       ];
       kernelModules = [ "nvidia" ];
     };
+    kernelParams = [
+      # "mem_sleep_default=deep"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      "nvidia.NVreg_TemporaryFilePath=/run/nvidia-persistenced"
+      "nvidia.NVreg_DynamicPowerManagement=0"
+    ];
   };
 
   hardware = {
@@ -39,7 +45,14 @@
       modesetting.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
       open = true;
+      powerManagement.enable = true;
+      nvidiaPersistenced = true;
     };
+  };
+  environment.sessionVariables = {
+    __GL_SYNC_TO_VBLANK = "0";
+    __GL_YIELD = "run"; # yields to the compositor instead of busy‑waiting
+    __NV_DISABLE_EXPLICIT_SYNC = "1";
   };
 
   #fileSystems."/" = {

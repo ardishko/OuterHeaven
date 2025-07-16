@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
   resolution =
     if (config.networking.hostName == "ShadowMoses") then
@@ -7,6 +12,8 @@ let
       "1920x1200"
     else if (config.networking.hostName == "Tanker") then
       "1280x800"
+    else if (config.networking.hostName == "Kamurocho") then
+      "5120x1440"
     else
       "1920x1080";
 in

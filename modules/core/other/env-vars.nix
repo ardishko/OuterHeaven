@@ -1,4 +1,4 @@
-{ config, userName, ... }:
+{ config, ... }:
 let
   userName =
     if (config.networking.hostName == "ShadowMoses") then
