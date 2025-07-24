@@ -175,8 +175,8 @@ people I was so gracious as to ~~steal~~ take inspiration from :)
 
 https://git.notashelf.dev/NotAShelf/nyx (I didn't actually take anything from
 notashelf's config, but felt like adding them anyway because funny.)
-<br> https://git.jacekpoz.pl/jacekpoz/niksos (I literally stole the entire
-README.md format from this guy)
+<br> https://flake.poz.pet (I literally stole the entire
+README.md format from here)
 <br> https://git.outfoxxed.me/outfoxxed/nixnew (There are way too many things to
 say about this one)
 <br> https://github.com/kinzoku-dev/nebula (this person steals from me) (I'm
