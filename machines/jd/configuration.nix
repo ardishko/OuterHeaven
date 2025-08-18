@@ -44,6 +44,8 @@
     ];
   };
 
+  # services.logrotate.checkConfig = false;
+
   nix.settings = {
     experimental-features = [
       "nix-command"

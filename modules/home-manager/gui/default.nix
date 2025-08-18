@@ -15,6 +15,7 @@
     ./wezterm.nix
     ./lutris.nix
     ./mpv.nix
+    ./nextcloud-client.nix
     ./obs
     ./obsidian.nix
     ./prism-launcher.nix

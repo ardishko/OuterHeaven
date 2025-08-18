@@ -43,10 +43,10 @@
       # enabled = true;
       videoAcceleration = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       open = true;
       powerManagement.enable = true;
-      nvidiaPersistenced = true;
+      # nvidiaPersistenced = true;
     };
   };
   environment.sessionVariables = {
@@ -54,7 +54,7 @@
     # __GL_YIELD = "run"; # yields to the compositor instead of busy‑waiting
     __NV_DISABLE_EXPLICIT_SYNC = "1";
   };
-  
+
   #fileSystems."/" = {
   #  device = "/dev/disk/by-uuid/12f4f756-dfdb-40fd-8ed7-cf710e8cff28";
   #  fsType = "ext4";

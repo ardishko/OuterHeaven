@@ -12,7 +12,6 @@
       gamescope
       lshw
       f3d
-      polychromatic
     ]
     ++ (lib.lists.optionals (config.networking.hostName == "ShadowMoses") [
       # davinci-resolve

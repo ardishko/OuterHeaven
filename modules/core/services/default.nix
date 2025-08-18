@@ -14,7 +14,6 @@
     ./mullvad-vpn.nix
     # ./mysql.nix
     ./noisetorch.nix
-    ./openrazer.nix
     ./openssh.nix
     ./printing.nix
     ./ratbagd.nix
@@ -26,5 +25,6 @@
     ./zapret.nix
     ./polkit.nix
     ./fwupd.nix
+    ./pixelworlds
   ];
 }

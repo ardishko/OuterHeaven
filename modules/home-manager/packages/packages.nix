@@ -53,7 +53,7 @@
         # inputs.quickshell.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
-        # inputs.citron-flake.packages.${pkgs.system}.citron
+        # inputs.citron-flake.packages.${pkgs.system}.citron-master
 
         # Over
         wget
@@ -231,12 +231,14 @@
         # })
 
         # emu
-        ryujinx
         cemu
         pcsx2
         duckstation
         rpcs3
         melonDS
+        azahar
+        shadps4
+
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {
@@ -255,6 +257,7 @@
         (
           osConfig.users.users.${config.home.username}.description == "vaporsnake"
           || osConfig.users.users.${config.home.username}.description == "liquid"
+          || osConfig.users.users.${config.home.username}.description == "majima"
         )
         [
           scrcpy
@@ -283,7 +286,6 @@
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"
       "com.modrinth.ModrinthApp"
-      "net.shadps4.shadPS4"
       "org.kde.kdenlive"
       "com.google.AndroidStudio"
       "io.github.everestapi.Olympus"
@@ -295,7 +297,6 @@
       "org.freedesktop.Sdk/x86_64/23.08"
       "com.fightcade.Fightcade"
       "io.itch.itch"
-      "io.github.lime3ds.Lime3DS"
       "io.github.Soundux"
       "gg.guilded.Guilded"
       "net.audiorelay.AudioRelay"

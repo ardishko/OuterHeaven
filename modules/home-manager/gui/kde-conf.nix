@@ -164,6 +164,17 @@
     };
     input = {
       keyboard = {
+        layouts = [
+          {
+            layout = "tr";
+          }
+          {
+            layout = "se";
+          }
+          {
+            layout = "lv";
+          }
+        ];
         numlockOnStartup = "on";
       };
     };
