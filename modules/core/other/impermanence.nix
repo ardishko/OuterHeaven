@@ -47,7 +47,7 @@ in
             "/var/lib/parrot" # parrot
             "/var/lib/jellyfin" # jellyfin
             "/var/lib/playit" # playit
-            "/var/lib/palworld" # palworld
+            # "/var/lib/palworld" # palworld
           ]
         else
           [

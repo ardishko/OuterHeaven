@@ -3,7 +3,7 @@
   imports =
     if (hostname == "jd") then
       [
-        ./tui/nushell.nix
+        ./tui/zsh.nix
         ./packages/packages.nix
       ]
     else

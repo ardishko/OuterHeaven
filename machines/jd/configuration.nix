@@ -53,6 +53,10 @@
     ];
   };
 
+  # Skip building the HTML NixOS manual to avoid cross-branch doc mismatches
+  documentation.nixos.enable = false;
+  services.logrotate.checkConfig = false;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

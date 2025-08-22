@@ -2,9 +2,10 @@
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud29;
+    package = pkgs.nextcloud31;
+    notify_push.enable = true;
     extraApps = {
-      inherit (pkgs.nextcloud29Packages.apps)
+      inherit (pkgs.nextcloud31Packages.apps)
         cookbook
         notes
         bookmarks
@@ -20,16 +21,16 @@
         ;
       news = pkgs.fetchNextcloudApp {
         appName = "news";
-        sha256 = "sha256-9exftg1BS9pTJeKdJzt0XzXlFRDNZCh8aBgkC+e40zc=";
-        url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha8/news.tar.gz";
-        appVersion = "25.0.0-alpha8";
+        sha256 = "sha256-8U2EOK8mXPEk70IU8GLXYU0EoZU7O4fhFkzhGpauvZc=";
+        url = "https://github.com/nextcloud/news/releases/download/26.1.0/news.tar.gz";
+        appVersion = "26.1.0";
         license = "agpl3Plus";
       };
       epubviewer = pkgs.fetchNextcloudApp {
         appName = "epubviewer";
-        sha256 = "sha256-S2qd3mc/KS7QboJTVJce14wy9/yEvtFUxCaK9RuPrlI=";
-        url = "https://github.com/devnoname120/epubviewer/releases/download/1.5.3/epubviewer-1.5.3.tar.gz";
-        appVersion = "1.5.3";
+        sha256 = "sha256-3JsZY/aF0TbSdAEgS7q53DS9wMcxz4l3A8yyQtJBepM=";
+        url = "https://github.com/devnoname120/epubviewer/releases/download/1.8.0/epubviewer-1.8.0.tar.gz";
+        appVersion = "1.8.0";
         license = "agpl3Plus";
       };
     };
@@ -41,7 +42,7 @@
     settings = {
       trusted_domains = [
         "nextcloud.ardishco.net"
-        "192.168.1.112"
+        "192.168.1.106"
       ];
     };
   };
