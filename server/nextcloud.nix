@@ -4,6 +4,14 @@
     enable = true;
     package = pkgs.nextcloud31;
     database.createLocally = true;
+    https = true;
+    phpPackage = pkgs.php83.withExtensions (
+      exts: with exts; [
+        apcu
+        redis
+        opcache
+      ]
+    );
     # notify_push.enable = true;
     extraApps = {
       inherit (pkgs.nextcloud31Packages.apps)
@@ -49,14 +57,21 @@
         "192.168.1.106"
         "192.168.1.15"
       ];
+      "memcache.local" = "\\OC\\Memcache\\APCu";
+      "memcache.distributed" = "\\OC\\Memcache\\Redis";
+      redis = {
+        host = "/run/redis/redis.sock"; # using the socket
+        port = 0; # 0 means "use socket"
+      };
     };
   };
-  # services.nginx.enable = true;
-  # services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
-  #   forceSSL = true;
-  #   enableACME = true;
-  # };
-  # security.acme.certs.default.email = "config.security.acme.defaults.email";
-  # security.acme.certs.default.listenHTTP = ":80";
-  # security.acme.acceptTerms = true;
+  services.redis = {
+    enable = true;
+    # use a local socket (faster, no TCP)
+    unixSocket = "/run/redis/redis.sock";
+    unixSocketPerm = 770; # group can read/write
+  };
+  # Nextcloud service user needs to read that socket
+  users.users.nextcloud.extraGroups = [ "redis" ]; # the redis service creates group "redis"
+
 }

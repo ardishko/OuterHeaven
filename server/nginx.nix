@@ -22,13 +22,6 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
 
-    # <-- add this block
-    commonHttpConfig = ''
-      # cloudflared runs locally and forwards CF-Connecting-IP
-      real_ip_header CF-Connecting-IP;
-      set_real_ip_from 127.0.0.1;
-    '';
-
     virtualHosts."nextcloud.ardishco.net" = {
       forceSSL = true;
       enableACME = true;
