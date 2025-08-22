@@ -3,7 +3,7 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud31;
-    notify_push.enable = true;
+    # notify_push.enable = true;
     extraApps = {
       inherit (pkgs.nextcloud31Packages.apps)
         cookbook
