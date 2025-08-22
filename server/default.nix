@@ -11,5 +11,6 @@
     # ./home-assistant.nix
     # ./minecraft
     ./playit.nix
+    ./immich.nix
   ];
 }
