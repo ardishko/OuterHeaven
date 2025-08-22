@@ -47,7 +47,7 @@
       trusted_domains = [
         "nextcloud.ardishco.net"
         "192.168.1.106"
-	"192.168.1.15"
+        "192.168.1.15"
       ];
     };
   };

@@ -1,3 +1,5 @@
 {
-  # It's lonely here...
+  services.immich = {
+    enable = true;
+  };
 }
