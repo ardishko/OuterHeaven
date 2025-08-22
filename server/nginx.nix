@@ -20,6 +20,14 @@
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+
+    # <-- add this block
+    commonHttpConfig = ''
+      # cloudflared runs locally and forwards CF-Connecting-IP
+      real_ip_header CF-Connecting-IP;
+      set_real_ip_from 127.0.0.1;
+    '';
 
     virtualHosts."nextcloud.ardishco.net" = {
       forceSSL = true;
@@ -32,7 +40,7 @@
         }
       ];
       locations."/" = {
-        proxyPass = "http://127.0.0.1:8081";
+        proxyPass = "http://127.0.0.1:80";
         extraConfig = ''
           proxy_set_header Host $host;
           proxy_set_header X-Forwarded-Proto https;
