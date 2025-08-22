@@ -3,6 +3,7 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud31;
+    database.createLocally = true;
     # notify_push.enable = true;
     extraApps = {
       inherit (pkgs.nextcloud31Packages.apps)
@@ -38,11 +39,15 @@
     config = {
       adminpassFile = "/etc/cred/nextcloud-admin-pass";
       dbtype = "pgsql";
+      dbhost = "/run/postgresql";
+      dbname = "nextcloud";
+      dbuser = "nextcloud";
     };
     settings = {
       trusted_domains = [
         "nextcloud.ardishco.net"
         "192.168.1.106"
+	"192.168.1.15"
       ];
     };
   };
