@@ -5,13 +5,6 @@
     package = pkgs.nextcloud31;
     database.createLocally = true;
     https = true;
-    phpPackage = pkgs.php83.withExtensions (
-      exts: with exts; [
-        apcu
-        redis
-        opcache
-      ]
-    );
     # notify_push.enable = true;
     extraApps = {
       inherit (pkgs.nextcloud31Packages.apps)
@@ -56,22 +49,9 @@
         "nextcloud.ardishco.net"
         "192.168.1.106"
         "192.168.1.15"
+        "127.0.0.1"
+        "::1"
       ];
-      "memcache.local" = "\\OC\\Memcache\\APCu";
-      "memcache.distributed" = "\\OC\\Memcache\\Redis";
-      redis = {
-        host = "/run/redis/redis.sock"; # using the socket
-        port = 0; # 0 means "use socket"
-      };
     };
   };
-  services.redis = {
-    enable = true;
-    # use a local socket (faster, no TCP)
-    unixSocket = "/run/redis/redis.sock";
-    unixSocketPerm = 770; # group can read/write
-  };
-  # Nextcloud service user needs to read that socket
-  users.users.nextcloud.extraGroups = [ "redis" ]; # the redis service creates group "redis"
-
 }
