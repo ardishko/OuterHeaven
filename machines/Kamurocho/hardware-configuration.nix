@@ -43,7 +43,7 @@
       # enabled = true;
       videoAcceleration = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       open = true;
       powerManagement.enable = true;
       # nvidiaPersistenced = true;

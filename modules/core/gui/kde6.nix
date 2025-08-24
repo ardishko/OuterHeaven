@@ -36,12 +36,12 @@
   ];
   security.pam.services = {
     login.kwallet = {
-      enable = lib.mkForce false;
+      enable = lib.mkForce true;
     };
     kde = {
       allowNullPassword = true;
       kwallet = {
-        enable = lib.mkForce false;
+        enable = lib.mkForce true;
       };
     };
   };
