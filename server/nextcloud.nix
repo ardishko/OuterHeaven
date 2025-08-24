@@ -5,6 +5,7 @@
     package = pkgs.nextcloud31;
     database.createLocally = true;
     https = true;
+    maxUploadSize = "50G";
     # notify_push.enable = true;
     extraApps = {
       inherit (pkgs.nextcloud31Packages.apps)

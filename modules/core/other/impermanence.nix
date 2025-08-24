@@ -145,6 +145,8 @@ in
               ".config/zed"
               ".config/vlc"
               ".config/tartube"
+              ".config/Nextcloud"
+              ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
               ".local/share/remmina"
