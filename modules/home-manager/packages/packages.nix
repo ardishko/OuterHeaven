@@ -235,9 +235,13 @@
         pcsx2
         duckstation
         rpcs3
-        melonDS
+        desmume
         azahar
         shadps4
+        (callPackage ./pkgcustom/eden { })
+        # I will work on this later.
+        # steam emulator artwork adder
+        sgdboop
 
         # Override Template
 
@@ -291,7 +295,6 @@
       "io.github.everestapi.Olympus"
       "com.github.Rosalie241.RMG"
       "com.github.tchx84.Flatseal"
-      "com.steamgriddb.SGDBoop"
       "io.mrarm.mcpelauncher"
       "camp.nook.nookdesktop"
       "org.freedesktop.Sdk/x86_64/23.08"

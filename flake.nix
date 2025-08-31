@@ -129,9 +129,6 @@
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    citron-flake = {
-      url = "github:Zempashi/citron-flake";
-    };
     millennium = {
       url = "git+https://github.com/SteamClientHomebrew/Millennium";
     };
