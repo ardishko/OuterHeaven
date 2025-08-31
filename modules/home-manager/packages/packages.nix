@@ -164,6 +164,8 @@
         libsForQt5.dolphin-plugins
         # archive manager
         kdePackages.ark
+        unrar
+        p7zip
         # calculator
         kdePackages.kalk
         # document viewer
@@ -238,8 +240,10 @@
         desmume
         azahar
         shadps4
+        bsnes-hd
+        nestopia-ue
         (callPackage ./pkgcustom/eden { })
-        # I will work on this later.
+
         # steam emulator artwork adder
         sgdboop
 

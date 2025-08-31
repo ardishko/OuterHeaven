@@ -88,16 +88,10 @@ in
             ]
           else
             [
-              ".config/dolphin-emu"
-              ".config/melonDS"
-              ".config/PCSX2"
-              ".config/Cemu"
               ".config/unity3d"
               ".config/spotify"
               ".config/gzdoom"
               ".config/ags"
-              ".config/rpcs3"
-              ".config/azahar-emu"
               ".config/r2modman"
               ".config/r2modmanPlus-local"
               ".config/sops"
@@ -148,7 +142,6 @@ in
               ".config/tartube"
               ".config/Nextcloud"
               ".local/share/Nextcloud"
-              ".local/share/azahar-emu"
               ".local/share/vlc"
               ".local/share/zed"
               ".local/share/remmina"
@@ -165,11 +158,8 @@ in
               ".local/share/applications"
               ".local/share/Danganronpa2"
               ".local/share/StardewValley"
-              ".local/share/duckstation"
               ".local/share/Steam"
               ".local/share/vinegar"
-              ".local/share/citra-emu"
-              ".local/share/Cemu"
               ".local/share/flatpak"
               ".local/share/PrismLauncher"
               ".local/share/PollyMC"
@@ -224,6 +214,34 @@ in
               "Public"
               "Videos"
               "Zomboid"
+
+              ## Emulators
+              # Eden
+              ".config/eden"
+              ".local/share/eden"
+
+              # Azahar
+              ".local/share/azahar-emu"
+              ".config/azahar-emu"
+
+              # rpcs3
+              ".config/rpcs3"
+
+              # duckstation
+              ".local/share/duckstation"
+
+              # dolphin emulator
+              ".config/dolphin-emu"
+
+              # desmume
+              ".config/desmume"
+
+              # PCSX2
+              ".config/PCSX2"
+
+              # Cemu
+              ".config/Cemu"
+              ".local/share/Cemu"
 
               ## KDE Related stuff
               ## KDE Team why are you like this

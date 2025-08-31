@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
     chmod +x $out/opt/${pname}/${pname}.AppImage
 
     # Copy icon to $out/share/icons
-    cp $ {icon} $out/share/icons/hicolor/scalable/apps/org.eden_emu.eden.svg
+    cp ${icon} $out/share/icons/hicolor/scalable/apps/org.eden_emu.eden.svg
 
     # Wrap with steam-run
     wrapProgram $out/opt/${pname}/${pname}.AppImage \
