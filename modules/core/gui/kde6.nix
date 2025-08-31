@@ -35,8 +35,15 @@
     plasma-systemmonitor
   ];
   security.pam.services = {
-    login.kwallet = {
-      enable = lib.mkForce true;
+    login = {
+      kwallet = {
+        enable = lib.mkForce true;
+      };
+    };
+    sddm = {
+      kwallet = {
+        enable = true;
+      };
     };
     kde = {
       allowNullPassword = true;
