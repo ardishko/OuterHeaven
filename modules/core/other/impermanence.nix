@@ -141,6 +141,7 @@ in
               ".config/vlc"
               ".config/tartube"
               ".config/Nextcloud"
+              ".config/discover_overlay"
               ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
@@ -183,6 +184,7 @@ in
               ".local/share/kwalletd"
               ".local/share/nomic.ai"
               ".cache/waydroid_script"
+              ".local/share/TelegramDesktop"
               ".ssh"
               ".klei"
               ".thunderbird"
@@ -198,6 +200,7 @@ in
               ".factorio"
               ".zplug"
               ".android"
+              ".prefs"
               "Backups"
               "Downloads"
               "Desktop"
@@ -213,8 +216,9 @@ in
               "Programs"
               "Public"
               "Videos"
+              #
               "Zomboid"
-
+              "aspyr-media"
               ## Emulators
               # Eden
               ".config/eden"

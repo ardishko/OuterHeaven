@@ -289,7 +289,6 @@
     ];
     packages = [
       "org.onlyoffice.desktopeditors"
-      "dev.overlayed.Overlayed"
       "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"

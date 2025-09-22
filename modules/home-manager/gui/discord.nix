@@ -12,7 +12,7 @@
       type = "Application";
       icon = "discord";
       terminal = false;
-      exec = "mullvad-exclude Discord --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
+      exec = "mullvad-exclude Discord --enable-features=UseOzonePlatform --ozone-platform=wayland";
     };
   };
   programs.nixcord = {
@@ -32,7 +32,7 @@
           (pkgs.makeDesktopItem {
             name = "vesktop";
             desktopName = "Vesktop (Discord)";
-            exec = "mullvad-exclude vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
+            exec = "mullvad-exclude vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
             icon = "discord";
             startupWMClass = "VencordDesktop";
             genericName = "Internet Messenger";
