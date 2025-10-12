@@ -2,10 +2,10 @@
   description = "me when the flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun = {
@@ -32,7 +32,9 @@
     #   url = "github:hyprwm/xdg-desktop-portal-hyprland";
     #   inputs.nixpkgs.follows = "hyprland";
     # };
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.5.2";
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+    };
     nh = {
       url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs"; # override this repo's nixpkgs snapshot
@@ -45,7 +47,7 @@
       url = "github:fufexan/nix-gaming";
     };
     anime-games = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
+      url = "github:ezKEa/aagl-gtk-on-nix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprlock = {
@@ -94,7 +96,7 @@
     };
     nvf = {
       url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcord = {
       url = "github:KaylorBen/nixcord";
@@ -219,6 +221,28 @@
             (import ./disko.nix {
               device = "/dev/nvme0n1";
               hostname = "jd";
+            })
+          ];
+        };
+        theseus = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs =
+            let
+              username = "snake";
+              hostname = "theseus";
+            in
+            {
+              inherit inputs username hostname;
+            };
+          modules = [
+            ./machines/theseus
+            ./server
+            ./modules
+            ./secrets
+            disko.nixosModules.disko
+            (import ./disko.nix {
+              device = "/dev/nvme0n1";
+              hostname = "theseus";
             })
           ];
         };

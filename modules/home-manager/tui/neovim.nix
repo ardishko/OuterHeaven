@@ -146,12 +146,12 @@
             dap.enable = true;
 
           };
-          ts = {
-            enable = true;
-            lsp.enable = true;
-            format.enable = true;
-            treesitter.enable = true;
-          };
+          # ts = {
+          #   enable = true;
+          #   lsp.enable = true;
+          #   format.enable = true;
+          #   treesitter.enable = true;
+          # };
           python = {
             enable = true;
             lsp.enable = true;
@@ -184,12 +184,12 @@
             lsp.enable = true;
             # flutter-tools.enable = true;
           };
-          css = {
-            enable = true;
-            format.enable = true;
-            lsp.enable = true;
-            treesitter.enable = true;
-          };
+          # css = {
+          #   enable = true;
+          #   format.enable = true;
+          #   lsp.enable = true;
+          #   treesitter.enable = true;
+          # };
         };
         comments = {
           comment-nvim.enable = true;

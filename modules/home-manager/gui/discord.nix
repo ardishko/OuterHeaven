@@ -62,11 +62,11 @@
           enable = true;
           anonymiseByDefault = true;
         };
-        banger.enable = true;
-        # betterFolders = {
-        #   enable = true;
-        #   showFolderIcon = "always";
-        # };
+        # banger.enable = true;
+        betterFolders = {
+          enable = true;
+          showFolderIcon = "always";
+        };
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
         betterNotesBox.enable = true;
@@ -78,7 +78,6 @@
         clearURLs.enable = true;
         crashHandler.enable = true;
         dearrow.enable = true;
-        emoteCloner.enable = true;
         experiments.enable = true;
         fakeNitro.enable = true;
         favoriteEmojiFirst.enable = true;
@@ -132,7 +131,7 @@
         platformIndicators.enable = true;
         previewMessage.enable = true;
         quickMention.enable = true;
-        # quickReply.enable = true;
+        quickReply.enable = true;
         reactErrorDecoder.enable = true;
         relationshipNotifier.enable = true;
         replaceGoogleSearch = {

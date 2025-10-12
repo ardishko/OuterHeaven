@@ -91,9 +91,9 @@
         vulkan-tools
         fastfetch
         baobab
-        python3Full
         gnupg
         wlprop
+        python3
         mate.mate-polkit
         folder-color-switcher
         ioquake3
@@ -128,8 +128,7 @@
         zathura
         nwg-panel
         gnome-pomodoro
-        qrscan
-        # premid
+        premid
         gpu-screen-recorder
         nixpkgs-fmt
         nix-update
@@ -160,8 +159,8 @@
         # nheko
 
         # file manager
-        libsForQt5.dolphin
-        libsForQt5.dolphin-plugins
+        kdePackages.dolphin
+        kdePackages.dolphin-plugins
         # archive manager
         kdePackages.ark
         unrar
@@ -221,6 +220,7 @@
         tartube-yt-dlp
         limo
         mission-center
+        qFlipper
 
         # resources
         # clipboard-jh
@@ -235,7 +235,7 @@
         # emu
         cemu
         pcsx2
-        duckstation
+        # duckstation
         rpcs3
         desmume
         azahar
@@ -245,7 +245,7 @@
         (callPackage ./pkgcustom/eden { })
 
         # steam emulator artwork adder
-        sgdboop
+        # sgdboop
 
         # Override Template
 
@@ -314,7 +314,7 @@
       onActivation = true;
       auto = {
         enable = true;
-        onCalendar = "weekly"; # Default value
+        onCalendar = "weekly";
       };
     };
   };
@@ -330,6 +330,7 @@
         "python-2.7.18.8"
         # "electron-19.1.9"
         "ventoy-1.1.05"
+        "ventoy-1.1.07"
       ];
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "davinci-resolve" ];
       allowUnfree = true;

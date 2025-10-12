@@ -27,6 +27,7 @@ in
       files = [
         # "/etc/machine-id
       ];
+      hideMounts = true;
       directories =
         if (config.networking.hostName == "jd") then
           [
@@ -142,6 +143,7 @@ in
               ".config/tartube"
               ".config/Nextcloud"
               ".config/discover_overlay"
+              ".config/alvr"
               ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
