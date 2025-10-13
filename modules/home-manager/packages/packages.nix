@@ -13,7 +13,7 @@
 
   home.packages =
     with pkgs;
-    if (hostname == "jd") then
+    if (hostname == "jd" && "theseus") then
       [
         inputs.nh.packages.${pkgs.system}.default
         inputs.flux.packages.${pkgs.system}.mcman
@@ -221,7 +221,7 @@
         limo
         mission-center
         qFlipper
-
+        parabolic
         # resources
         # clipboard-jh
         # (pkgs.appimageTools.wrapType2 { # or wrapType1

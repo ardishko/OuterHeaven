@@ -25,6 +25,7 @@ in
         enable = true;
         efiSupport = true;
         useOSProber = true;
+        zfsSupport = true;
         devices = [ "nodev" ];
         gfxmodeEfi = "${resolution}";
         minegrub-theme = {

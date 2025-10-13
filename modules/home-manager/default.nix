@@ -1,7 +1,7 @@
 { hostname, ... }:
 {
   imports =
-    if (hostname == "jd") then
+    if (hostname == "jd" && "theseus") then
       [
         ./tui/zsh.nix
         ./packages/packages.nix

@@ -241,7 +241,8 @@
             ./secrets
             disko.nixosModules.disko
             (import ./disko.nix {
-              device = "/dev/nvme0n1";
+              memcard = "/dev/mmcblk0";
+              hdd1 = "/dev/sda";
               hostname = "theseus";
             })
           ];

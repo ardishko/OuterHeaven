@@ -1,26 +1,24 @@
 { pkgs, inputs, ... }:
-let
-  officialThemesOLD = pkgs.fetchgit {
-    url = "https://github.com/ardishco-the-great/spicetify-themes";
-    rev = "4d096d1374631cc7188cb5487a7fd34dbb5afdbe";
-    sha256 = "sha256-p6lXLdpvO7HC5hL987e1ipgSFaRx0e4GwVu7IkrmA0s=";
-  };
-in
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
   programs.spicetify = {
     enable = true;
     theme = {
       name = "text";
-      src = officialThemesOLD;
+      src = pkgs.fetchFromGitHub {
+          owner = "ardishko";
+          repo = "spicetify-themes";
+          rev = "726097a544172523cdae15da8d3c84032aec8c3b";
+          hash = "sha256-mQgkmbkgzfWlT1iv4jB/cw95v4q0/+57B9rgmezAY34=";
+        };
       injectCss = true;
+      injectThemeJs = true;
       replaceColors = true;
-      overwriteAssets = true;
-      sidebarConfig = true;
+      homeConfig = true;
+      overwriteAssets = false;
     };
-    colorScheme = "catppuccinlatte";
+    colorScheme = "";
     enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
-      adblock
       fullScreen
       skipStats
       volumePercentage
@@ -34,6 +32,5 @@ in
       seekSong
       powerBar
     ];
-    enabledCustomApps = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.apps; [ nameThatTune ];
   };
 }
