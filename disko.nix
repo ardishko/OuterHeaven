@@ -36,7 +36,6 @@
                 };
               };
             };
-
             # ZFS + swap on HDD
             data = {
               device = hdd1;
@@ -52,8 +51,7 @@
                       resumeDevice = true;
                     };
                   };
-                  zfs = {
-                    name = "zfs";
+                  root = {
                     size = "100%";
                     content = {
                       type = "zfs";

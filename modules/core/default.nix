@@ -1,7 +1,7 @@
 { hostname, ... }:
 {
   imports =
-    if (hostname == "jd" && "theseus") then
+    if (hostname == "jd" || hostname == "theseus") then
       [
         ./services/firewall.nix
         ./other/impermanence.nix

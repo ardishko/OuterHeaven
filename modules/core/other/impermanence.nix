@@ -89,6 +89,7 @@ in
             ]
           else
             [
+              ".cache/spotify"
               ".config/unity3d"
               ".config/spotify"
               ".config/gzdoom"

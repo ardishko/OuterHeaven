@@ -13,7 +13,7 @@
 
   home.packages =
     with pkgs;
-    if (hostname == "jd" && "theseus") then
+    if (hostname == "jd" || hostname == "theseus") then
       [
         inputs.nh.packages.${pkgs.system}.default
         inputs.flux.packages.${pkgs.system}.mcman
