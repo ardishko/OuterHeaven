@@ -247,6 +247,8 @@
         # steam emulator artwork adder
         # sgdboop
 
+        ungoogled-chromium
+
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {

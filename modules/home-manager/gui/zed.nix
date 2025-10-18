@@ -44,6 +44,17 @@
         light = lib.mkForce "Catppuccin Frappé";
         dark = lib.mkForce "Catppuccin Frappé";
       };
+      editor = {
+        tab_size = 1;
+        insert_spaces = true;
+        detect_indentation = false; # keep Zed from auto-overriding your size
+        format_on_save = 1;
+      };
+      languages = {
+        Nix = {
+          format_on_save = "on";
+        };
+      };
     };
   };
 }

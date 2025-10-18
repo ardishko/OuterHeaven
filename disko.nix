@@ -10,58 +10,42 @@
     devices = {
       disk =
         if (hostname == "theseus") then
-          {
-            # /boot on internal memcard
-            memcard = {
-              device = memcard;
-              type = "disk";
+        {
+          eMMC = {
+            inherit memcard;
+            boot = {
+              name = "boot";
+              size = "5M";
+              type = "EF02";
+            };
+            esp = {
+              name = "ESP";
+              size = "29G";
+              type = "EF00";
               content = {
-                type = "gpt";
-                partitions = {
-                  boot = {
-                    name = "boot";
-                    size = "1M";
-                    type = "EF02"; # BIOS-boot slice (harmless if UEFI-only)
-                  };
-                  esp = {
-                    name = "ESP";
-                    size = "500M"; # matches your style
-                    type = "EF00";
-                    content = {
-                      type = "filesystem";
-                      format = "vfat";
-                      mountpoint = "/boot";
-                    };
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            };
+          };
+          main = {
+            inherit hdd1;
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                root = {
+                  size = "100%";
+                  content = {
+                    type = "zfs";
+                    pool = "zroot";
                   };
                 };
               };
             };
-            # ZFS + swap on HDD
-            data = {
-              device = hdd1;
-              type = "disk";
-              content = {
-                type = "gpt";
-                partitions = {
-                  swap = {
-                    name = "swap";
-                    size = "56G";
-                    content = {
-                      type = "swap";
-                      resumeDevice = true;
-                    };
-                  };
-                  root = {
-                    size = "100%";
-                    content = {
-                      type = "zfs";
-                      pool = "zroot";
-                    };
-                  };
-                };
-              };
-            };
-          }
+          };
+        }
         else {
           # existing single-disk styles
           main =
