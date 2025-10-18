@@ -12,12 +12,10 @@ let
       "liquid"
     else if (config.networking.hostName == "Tanker") then
       "raiden"
-    else if (config.networking.hostName == "jd") then
+    else if (config.networking.hostName == "jd" || config.networking.hostName == "theseus") then
       "snake"
     else if (config.networking.hostName == "Kamurocho") then
       "majima"
-    else if (config.networking.hostName == "theseus") then
-      "snake"
     else
       "user";
 in
