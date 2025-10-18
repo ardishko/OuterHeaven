@@ -27,7 +27,7 @@
     kernelPackages =
       if (hostname == "Tanker") then
         pkgs.linuxPackages_jovian
-      else if (hostname == "jd") then
+      else if (hostname == "jd" || hostname == "theseus") then
         pkgs.linuxPackages_hardened
       else
         pkgs.linuxPackages;

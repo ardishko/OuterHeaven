@@ -31,7 +31,7 @@ in
       ];
       hideMounts = true;
       directories =
-        if (config.networking.hostName == "jd") then
+        if (config.networking.hostName == "jd" || config.networking.hostName == "theseus") then
           [
             "/var/log"
             "/var/lib/systemd/coredump"
@@ -79,7 +79,7 @@ in
           ]);
       users.${userName} = {
         directories =
-          if (config.networking.hostName == "jd") then
+          if (config.networking.hostName == "jd" || config.networking.hostName == "theseus") then
             [
               ".config/Mullvad VPN"
               ".config/sops"

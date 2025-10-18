@@ -1,7 +1,7 @@
 { hostname, ... }:
 {
   networking =
-    if (hostname == "jd") then
+    if (hostname == "jd" || hostname == "theseus") then
       {
         firewall = {
           enable = true;
