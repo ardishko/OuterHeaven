@@ -12,7 +12,7 @@
         if (hostname == "theseus") then
         {
           eMMC = {
-            inherit memcard;
+            device = memcard;
             type = "disk";
             content = {
               type = "gpt";
@@ -36,7 +36,7 @@
             };
           };
           main = {
-            inherit hdd1;
+            device = hdd1;
             type = "disk";
             content = {
               type = "gpt";
