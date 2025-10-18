@@ -179,7 +179,6 @@
           type = "zpool";
           rootFsOptions = {
             canmount = "off";
-            ashift = "12"; # good default for 4K/large HDDs
             compression = "zstd";
             atime = "off";
           };
