@@ -13,19 +13,25 @@
         {
           eMMC = {
             inherit memcard;
-            boot = {
-              name = "boot";
-              size = "5M";
-              type = "EF02";
-            };
-            esp = {
-              name = "ESP";
-              size = "29G";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                boot = {
+                  name = "boot";
+                  size = "5M";
+                  type = "EF02";
+                };
+                esp = {
+                  name = "ESP";
+                  size = "29G";
+                  type = "EF00";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                  };
+                };
               };
             };
           };
