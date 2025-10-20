@@ -45,7 +45,6 @@
       dbhost = "/run/postgresql";
       dbname = "nextcloud";
       dbuser = "nextcloud";
-      dbpassFile = "/etc/cred/nextcloud-db-pass";
     };
     settings = {
       trusted_domains = [
