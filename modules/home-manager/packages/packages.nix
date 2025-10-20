@@ -151,7 +151,7 @@
         gnome-text-editor
         bleachbit
         tailscale
-        ventoy-full
+        ventoy-full-qt
         ripcord
         r2modman
         qt6.qtdeclarative
@@ -331,6 +331,7 @@
         "python-2.7.18.7"
         "python-2.7.18.8"
         # "electron-19.1.9"
+        "ventoy-qt5-1.1.05"
         "ventoy-1.1.05"
         "ventoy-1.1.07"
       ];

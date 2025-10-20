@@ -39,17 +39,19 @@
     };
     hostName = "nextcloud.ardishco.net";
     config = {
+      adminuser = "king";
       adminpassFile = "/etc/cred/nextcloud-admin-pass";
       dbtype = "pgsql";
       dbhost = "/run/postgresql";
       dbname = "nextcloud";
       dbuser = "nextcloud";
+      dbpassFile = "/etc/cred/nextcloud-db-pass";
     };
     settings = {
       trusted_domains = [
         "nextcloud.ardishco.net"
-        "192.168.1.106"
-        "192.168.1.15"
+        "old-nextcloud.ardishco.net"
+        "192.168.1.152"
         "127.0.0.1"
         "::1"
       ];

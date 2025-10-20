@@ -24,7 +24,7 @@ in
       grub = {
         enable = true;
         efiSupport = true;
-        useOSProber = true;
+        useOSProber = if (config.networking.hostName == "theseus") then false else true;
         zfsSupport = true;
         copyKernels = true;
         devices = [ "nodev" ];
@@ -42,7 +42,7 @@ in
       };
     };
     plymouth = {
-      enable = true;
+      enable = if (config.networking.hostName == "theseus") then false else true;
       font = "${pkgs.nerd-fonts.iosevka}/share/fonts/truetype/NerdFonts/Iosevka/IosevkaNerdFontMono-Bold.ttf";
       theme = "catppuccin-frappe";
       themePackages = with pkgs; [

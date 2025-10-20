@@ -12,5 +12,6 @@
     # ./minecraft
     ./playit.nix
     ./immich.nix
+    ./grafana.nix
   ];
 }
