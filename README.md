@@ -40,6 +40,14 @@ sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-commu
 
 Secondly, run the `nixos-install` command.
 
+but first, If you need to expand the installer's tmpfs size for the install, use
+
+```console
+sudo mount -o remount,size=32G /
+```
+
+and for the install;
+
 ```console
 sudo nixos-install --flake github:raidenovich/OuterHeaven
 ```
