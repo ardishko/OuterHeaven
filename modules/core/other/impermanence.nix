@@ -86,6 +86,30 @@ in
               "Backups"
               ".ssh"
               "NixOS"
+              {
+                directory = "Jellyfin/Movies";
+                user = "jellyfin";
+                group = "jellyfin";
+                mode = "02775";
+              }
+              {
+                directory = "Jellyfin/Music";
+                user = "jellyfin";
+                group = "jellyfin";
+                mode = "02775";
+              }
+              {
+                directory = "Jellyfin/Shows";
+                user = "jellyfin";
+                group = "jellyfin";
+                mode = "02775";
+              }
+              {
+                directory = "Jellyfin/Books";
+                user = "jellyfin";
+                group = "jellyfin";
+                mode = "02775";
+              }
             ]
           else
             [

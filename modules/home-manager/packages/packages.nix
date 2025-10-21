@@ -27,6 +27,7 @@
         kitty
         git
         sops
+        ugreen-leds-cli
       ]
     else
       [

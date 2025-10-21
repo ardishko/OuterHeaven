@@ -5,7 +5,7 @@
     ./parrot.nix
     ./cloudflare.nix
     ./vaultwarden.nix
-    # ./jellyfin.nix
+    ./jellyfin.nix
     ./tailscale.nix
     # ./nitter.nix
     # ./home-assistant.nix
