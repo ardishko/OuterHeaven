@@ -22,8 +22,8 @@
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
       # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-      pkgs.hyprlandPlugins.hyprbars
-      pkgs.hyprlandPlugins.hyprspace
+      # pkgs.hyprlandPlugins.hyprbars
+      # pkgs.hyprlandPlugins.hyprspace
     ];
     settings = {
       "$mainMod" = "SUPER";
@@ -374,7 +374,7 @@
       plugin {
           overview {
               autoDrag = true
-              switchOnDrop = false 
+              switchOnDrop = false
               panelHeight = 130
               workspaceActiveBorder = rgb(99D1DB)
               showSpecialWorkspace = true

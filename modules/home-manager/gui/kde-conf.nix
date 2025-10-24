@@ -183,8 +183,6 @@
         captureRectangularRegion = "Print";
         captureCurrentMonitor = "Ctrl+Print";
         captureActiveWindow = "Shift+Print";
-        recordRegion = "F8";
-        recordWindow = "Shift+F8";
       };
     };
     # startup = {

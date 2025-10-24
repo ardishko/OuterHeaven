@@ -49,10 +49,41 @@ in
             "/var/lib/redis-nitter" # nitter
             "/var/lib/parrot" # parrot
             "/var/lib/jellyfin" # jellyfin
+            "/var/cache/jellyfin" # jellyfin cache
             "/var/lib/playit" # playit
             "/var/lib/immich" # immich
             "/var/lib/postgresql" # postgresql
-            # "/var/lib/palworld" # palworld
+            "/var/lib/palworld" # palworld
+            {
+              directory = "/disks/media";
+              user = "root";
+              group = "jellyfin";
+              mode = "02775";
+            }
+            {
+              directory = "/disks/media/Movies";
+              user = "root";
+              group = "jellyfin";
+              mode = "02775";
+            }
+            {
+              directory = "/disks/media/Shows";
+              user = "root";
+              group = "jellyfin";
+              mode = "02775";
+            }
+            {
+              directory = "/disks/media/Books";
+              user = "root";
+              group = "jellyfin";
+              mode = "02775";
+            }
+            {
+              directory = "/disks/media/";
+              user = "root";
+              group = "jellyfin";
+              mode = "02775";
+            }
           ]
         else
           [
@@ -86,30 +117,6 @@ in
               "Backups"
               ".ssh"
               "NixOS"
-              {
-                directory = "Jellyfin/Movies";
-                user = "jellyfin";
-                group = "jellyfin";
-                mode = "02775";
-              }
-              {
-                directory = "Jellyfin/Music";
-                user = "jellyfin";
-                group = "jellyfin";
-                mode = "02775";
-              }
-              {
-                directory = "Jellyfin/Shows";
-                user = "jellyfin";
-                group = "jellyfin";
-                mode = "02775";
-              }
-              {
-                directory = "Jellyfin/Books";
-                user = "jellyfin";
-                group = "jellyfin";
-                mode = "02775";
-              }
             ]
           else
             [
