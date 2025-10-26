@@ -13,5 +13,6 @@
     ./playit.nix
     ./immich.nix
     ./grafana.nix
+    ./fail2ban.nix
   ];
 }

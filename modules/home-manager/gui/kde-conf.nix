@@ -13,6 +13,14 @@
       accents = [ "sky" ];
     })
   ];
+  xdg = {
+    autostart = {
+      enable = true;
+      entries = [
+      ];
+      readOnly = true;
+    };
+  };
   programs.plasma = {
     enable = true;
     overrideConfig = true;
@@ -140,7 +148,7 @@
       theme = "default";
       lookAndFeel = "Catppuccin-Frappe-Sky";
       colorScheme = "CatppuccinFrappeBlue";
-      # wallpaper = ../../../assets/wallpapers/strawHats.png;
+      wallpaper = ../../../assets/wallpapers/strawHats.png;
       wallpaperBackground = {
         blur = true;
       };

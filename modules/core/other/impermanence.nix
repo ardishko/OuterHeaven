@@ -54,6 +54,10 @@ in
             "/var/lib/immich" # immich
             "/var/lib/postgresql" # postgresql
             "/var/lib/palworld" # palworld
+            "/var/lib/fail2ban" # fail2ban
+            "/var/lib/pterodactyl" # pterodactyl game panel
+            "/var/log/nginx"
+            "/var/log/caddy"
             {
               directory = "/disks/media";
               user = "root";
