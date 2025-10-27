@@ -5,6 +5,7 @@
       [
         ./services/firewall.nix
         ./other/impermanence.nix
+        ./other/i2c.nix
         ./services/openssh.nix
         ./tui/keymap.nix
         ./gui/hyprland.nix

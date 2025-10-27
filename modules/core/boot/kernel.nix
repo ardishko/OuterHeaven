@@ -35,10 +35,12 @@
       "ntfs"
       "zfs"
     ];
-    kernelModules = [
+    kernelModules = if (hostname != "jd" || hostname != "theseus") then [
       "udev"
       "xpadneo"
       "hid-nintendo"
+    ] else [
+      "i2c-i801"
     ];
   };
   hardware.uinput.enable = true;
