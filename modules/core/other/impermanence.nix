@@ -62,31 +62,31 @@ in
             "/etc/ssh"
             {
               directory = "/disks/media";
-              user = "root";
+              user = "media";
               group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/Movies";
-              user = "root";
+              user = "media";
               group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/Shows";
-              user = "root";
+              user = "media";
               group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/Books";
-              user = "root";
+              user = "media";
               group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/";
-              user = "root";
+              user = "media";
               group = "media";
               mode = "02775";
             }
