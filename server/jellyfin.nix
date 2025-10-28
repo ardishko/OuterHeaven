@@ -8,7 +8,9 @@
   users = {
     users = {
       jellyfin.extraGroups = [ "media" ];
-      media = {};
+      media = {
+        groups = "media";
+      };
     };
     groups = {
       media = {};
