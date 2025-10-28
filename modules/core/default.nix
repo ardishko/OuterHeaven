@@ -5,6 +5,8 @@
       [
         ./services/firewall.nix
         ./other/impermanence.nix
+        ./other/mainUser.nix
+        ./other/nix.nix
         ./other/i2c.nix
         ./services/openssh.nix
         ./tui/keymap.nix

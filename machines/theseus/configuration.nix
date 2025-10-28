@@ -31,19 +31,6 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.snake = {
-    isNormalUser = true;
-    description = "snake";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [
-      # package names go here
-    ];
-  };
-
   # services.logrotate.checkConfig = false;
 
   nix.settings = {
