@@ -56,8 +56,9 @@ in
             "/var/lib/palworld" # palworld
             "/var/lib/fail2ban" # fail2ban
             "/var/lib/pterodactyl" # pterodactyl game panel
-            "/var/log/nginx"
-            "/var/log/caddy"
+            "/var/log/nginx" # nginx logs
+            "/var/log/caddy" # caddy logs
+            "/etc/ssh"
             {
               directory = "/disks/media";
               user = "root";
@@ -104,8 +105,7 @@ in
             "/var/lib/tailscale" # tailscale
             "/var/lib/containers" # podman / docker / distrobox I think?
             "/var/lib/sddm"
-            # persist /mnt so that all the mounted drives don't get wiped upon reboot
-            # "/mnt"
+            "/etc/ssh"
           ]
           ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
             "/var/lib/decky-loader"

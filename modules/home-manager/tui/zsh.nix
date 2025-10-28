@@ -1,4 +1,4 @@
-{ osConfig, config, ... }:
+{ osConfig, config, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -25,5 +25,8 @@
     syntaxHighlighting = {
       enable = true;
     };
+    initContent = ''
+      eval "$(${pkgs.thefuck}/bin/thefuck --alias)"
+    '';
   };
 }
