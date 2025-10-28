@@ -13,4 +13,22 @@
       media = {};
     };
   };
+  services.radarr = {
+    enable = true;
+  };
+  services.prowlarr = {
+    enable = true;
+  };
+  services.readarr = {
+    enable = true;
+  };
+  services.sonarr = {
+    enable = true;
+  };
+  services.bazarr = {
+    enable = true;
+  };
+  services.recyclarr = {
+    enable = true;
+  };
 }
