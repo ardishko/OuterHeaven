@@ -63,31 +63,31 @@ in
             {
               directory = "/disks/media";
               user = "root";
-              group = "jellyfin";
+              group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/Movies";
               user = "root";
-              group = "jellyfin";
+              group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/Shows";
               user = "root";
-              group = "jellyfin";
+              group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/Books";
               user = "root";
-              group = "jellyfin";
+              group = "media";
               mode = "02775";
             }
             {
               directory = "/disks/media/";
               user = "root";
-              group = "jellyfin";
+              group = "media";
               mode = "02775";
             }
           ]
