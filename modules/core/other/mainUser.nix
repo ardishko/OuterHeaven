@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, hostname, ... }:
 let
   userName =
     if (config.networking.hostName == "ShadowMoses") then
@@ -16,14 +16,18 @@ let
 in
 {
   # Define a user account. Don't forget to set a password by creating an encrypted file at the relevant location.
-  users.users.${userName} = {
-    isNormalUser = true;
-    description = "${userName}";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
+  users = {
+    users.${userName} = {
+      isNormalUser = true;
+      description = "${userName}";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ] ++ (lib.lists.optionals (hostname == "theseus" || hostname == "jd") [
+        "media"
+      ]);
+      shell = pkgs.zsh;
+      ignoreShellProgramCheck = true;
+    };
   };
 }
