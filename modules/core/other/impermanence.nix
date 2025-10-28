@@ -56,6 +56,7 @@ in
             "/var/lib/palworld" # palworld
             "/var/lib/fail2ban" # fail2ban
             "/var/lib/pterodactyl" # pterodactyl game panel
+	    "/var/lib/grafana" # grafana
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
             "/etc/ssh"

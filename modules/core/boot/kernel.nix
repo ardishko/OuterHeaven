@@ -40,7 +40,7 @@
       "xpadneo"
       "hid-nintendo"
     ] else [
-      "i2c-i801"
+      "i2c-dev"
     ];
   };
   hardware.uinput.enable = true;
