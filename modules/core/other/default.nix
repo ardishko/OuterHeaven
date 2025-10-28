@@ -11,7 +11,7 @@
     ./security.nix
     ./virtualization.nix
     ./locales.nix
-    ./users.nix
+    ./mainUser.nix
     # ./lact.nix
     # ./byedpi
   ] ++ (lib.lists.optionals (hostname == "Tanker") [ ./jovian.nix ]);
