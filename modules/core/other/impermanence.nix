@@ -57,6 +57,7 @@ in
             "/var/lib/fail2ban" # fail2ban
             "/var/lib/pterodactyl" # pterodactyl game panel
             "/var/lib/grafana" # grafana
+            "/var/lib/pufferpanel" # pufferpanel
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
             "/etc/ssh"

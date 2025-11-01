@@ -14,5 +14,6 @@
     ./immich.nix
     ./grafana.nix
     ./fail2ban.nix
+    ./pufferpanel.nix
   ];
 }
