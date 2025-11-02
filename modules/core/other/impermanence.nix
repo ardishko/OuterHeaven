@@ -226,6 +226,7 @@ in
               ".local/share/nomic.ai"
               ".local/share/okular"
               ".local/share/TelegramDesktop"
+              ".local/share/BSManager"
               ".cache/waydroid_script"
               ".ssh"
               ".klei"

@@ -232,6 +232,7 @@
         #     hash = "sha256-26sWhTvB6K1i/K3fmwYg5pDIUi+7xs3dz8yVj5q7H0c=";
         #   };
         # })
+        bs-manager
 
         # emu
         cemu
