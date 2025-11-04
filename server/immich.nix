@@ -4,6 +4,5 @@
     machine-learning = {
       enable = true;
     };
-    openFirewall = true;
   };
 }
