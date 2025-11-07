@@ -41,6 +41,7 @@
       "hid-nintendo"
     ] else [
       "i2c-dev"
+      "i915"
     ];
   };
   hardware.uinput.enable = true;

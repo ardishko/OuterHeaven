@@ -315,7 +315,6 @@ in
                 watch-on-odysee
                 youtube-for-tv
                 google-container
-                netflux
                 # Theme
                 catppuccin-frappe-sky
                 #catppuccin-mocha-lavender # over here

@@ -7,7 +7,7 @@
   };
   users = {
     users = {
-      jellyfin.extraGroups = [ "media" ];
+      jellyfin.extraGroups = [ "media" "video" "render" ];
     };
     groups = {
       media = {};

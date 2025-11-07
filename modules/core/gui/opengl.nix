@@ -4,12 +4,11 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      # extraPackages = with pkgs; [
-      #   # rocmPackages_5.clr.icd
-      #   # rocmPackages_5.clr
-      #   # rocmPackages_5.rocminfo
-      #   # rocmPackages_5.rocm-runtime
-      # ];
+      extraPackages = with pkgs; if (hostname == "theseus") then [
+        intel-media-driver # for newer Intel GPUs (N100, Alder Lake, etc.)
+        intel-vaapi-driver # older fallback
+        libvdpau-va-gl # optional, for broader support
+      ] else [ ];
     };
     amdgpu = {
       opencl = {

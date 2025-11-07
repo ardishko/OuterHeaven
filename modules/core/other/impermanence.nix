@@ -50,6 +50,11 @@ in
             "/var/lib/parrot" # parrot
             "/var/lib/jellyfin" # jellyfin
             "/var/cache/jellyfin" # jellyfin cache
+            "/var/lib/radarr"
+            "/var/lib/recyclarr"
+            "/var/lib/readarr"
+            "/var/lib/sonarr"
+            "/var/lib/fail2ban"
             "/var/lib/playit" # playit
             "/var/lib/immich" # immich
             "/var/lib/postgresql" # postgresql
@@ -57,6 +62,9 @@ in
             "/var/lib/fail2ban" # fail2ban
             "/var/lib/pterodactyl" # pterodactyl game panel
             "/var/lib/grafana" # grafana
+            "/var/lib/prometheus2"
+            "/var/lib/loki"
+            "/var/lib/promtail"
             "/var/lib/pufferpanel" # pufferpanel
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
@@ -183,6 +191,7 @@ in
               ".config/discover_overlay"
               ".config/alvr"
               ".config/YouTube Music Desktop App"
+              ".config/bs-manager"
               ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
@@ -353,7 +362,6 @@ in
           ".local/state/mpv/watch_history.jsonl"
           ".local/share/krunnerstaterc"
           ".local/share/user-places.xbel"
-          ".local/share/user-places.xbel.bak"
           ".local/share/user-places.xbel.tbcache"
         ];
       };

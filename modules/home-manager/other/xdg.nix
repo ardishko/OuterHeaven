@@ -6,6 +6,7 @@
       "x-scheme-handler/magnet" = [ "mpv.desktop" ];
       "x-scheme-handler/curseforge" = [ "prismlauncher.desktop" ];
       "application/x-doom" = [ "gzdoom.desktop" ];
+      "x-scheme-handler/steam" = [ "steam.desktop" ];
     };
   };
   xdg.desktopEntries = {
@@ -15,6 +16,7 @@
       icon = "steam";
       terminal = false;
       exec = "mullvad-exclude steam %u";
+      mimeType = [ "x-scheme-handler/steam" ];
     };
   };
 }
