@@ -11,6 +11,7 @@
         ./services/openssh.nix
         ./tui/keymap.nix
         ./gui/hyprland.nix
+        ./gui/opengl.nix
         ./boot
       ]
     else
