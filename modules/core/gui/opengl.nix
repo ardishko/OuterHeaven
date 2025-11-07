@@ -4,7 +4,7 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = with pkgs; if (hostname == "theseus") then [
+      extraPackages = with pkgs; if (hostname == "theseus" || hostname == "jd") then [
         intel-media-driver # for newer Intel GPUs (N100, Alder Lake, etc.)
         intel-vaapi-driver # older fallback
         libvdpau-va-gl # optional, for broader support

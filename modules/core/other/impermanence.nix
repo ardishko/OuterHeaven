@@ -54,7 +54,6 @@ in
             "/var/lib/recyclarr"
             "/var/lib/readarr"
             "/var/lib/sonarr"
-            "/var/lib/fail2ban"
             "/var/lib/playit" # playit
             "/var/lib/immich" # immich
             "/var/lib/postgresql" # postgresql
