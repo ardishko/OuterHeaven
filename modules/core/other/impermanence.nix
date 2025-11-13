@@ -181,7 +181,6 @@ in
               ".config/gtk-3.0"
               ".config/VSCodium"
               ".config/kdedefaults"
-              ".config/nomic.ai"
               ".config/remmina"
               ".config/zed"
               ".config/vlc"
@@ -191,6 +190,7 @@ in
               ".config/alvr"
               ".config/YouTube Music Desktop App"
               ".config/bs-manager"
+              ".config/jellyfin.org"
               ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
@@ -231,10 +231,11 @@ in
               ".local/share/osu"
               ".local/share/containers"
               ".local/share/kwalletd"
-              ".local/share/nomic.ai"
               ".local/share/okular"
               ".local/share/TelegramDesktop"
               ".local/share/BSManager"
+              ".local/share/Jellyfin Media Player"
+              ".local/share/jellyfinmediaplayer"
               ".cache/waydroid_script"
               ".ssh"
               ".klei"
@@ -270,6 +271,9 @@ in
               #
               "Zomboid"
               "aspyr-media"
+
+              # hd2 arsenal
+              ".config/hd2arsenal"
               ## Emulators
               # Eden
               ".config/eden"
@@ -358,6 +362,9 @@ in
           ".config/startkderc"
           ".config/systemsettingsrc"
           ".config/kwalletrc"
+          ".config/okularrc"
+          ".config/trashrc"
+          ".config/user-dirs.dirs"
           ".local/state/mpv/watch_history.jsonl"
           ".local/share/krunnerstaterc"
           ".local/share/user-places.xbel"

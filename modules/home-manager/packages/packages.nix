@@ -62,9 +62,6 @@
         steam-rom-manager
         neofetch
         font-manager
-        gnome-photos
-        easyeffects
-        wlr-randr
         htop
         killall
         steamtinkerlaunch
@@ -74,7 +71,6 @@
         webdav
         gamemode
         davfs2
-        # hollywood
         protonup-qt
         protonup-ng
         pavucontrol
@@ -95,8 +91,6 @@
         gnupg
         wlprop
         python3
-        mate.mate-polkit
-        folder-color-switcher
         ioquake3
         nvtopPackages.amd
         wlsunset
@@ -120,7 +114,6 @@
         clamtk
         lazygit
         wireguard-tools
-        evince
         tailscale
         telegram-desktop
         # android-studio
@@ -130,17 +123,13 @@
         nwg-panel
         gnome-pomodoro
         premid
-        gpu-screen-recorder
         nixpkgs-fmt
         nix-update
-        firewalld-gui
-        gtkcord4
         wine-staging
         nmap
         ntfs3g
         revolt-desktop
         amdgpu_top
-        inxi
 
         # Image viewer
         satty
@@ -213,7 +202,6 @@
         discover-overlay
         goverlay
         zoom-us
-        gpt4all
         lumafly
         blockbench
         remmina
@@ -221,8 +209,10 @@
         tartube-yt-dlp
         limo
         mission-center
-        qFlipper
         parabolic
+        bs-manager
+        jellyfin-media-player
+
         # resources
         # clipboard-jh
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
@@ -232,7 +222,6 @@
         #     hash = "sha256-26sWhTvB6K1i/K3fmwYg5pDIUi+7xs3dz8yVj5q7H0c=";
         #   };
         # })
-        bs-manager
 
         # emu
         cemu
