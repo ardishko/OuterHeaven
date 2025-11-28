@@ -30,6 +30,9 @@
         if [ -f "/home/${username}/.config/mimeapps.list" ]; then
           rm -f "/home/${username}/.config/mimeapps.list"
         fi
+        if [ -f "/home/${username}/.config/user-dirs.dirs" ]; then
+          rm -f "/home/${username}/.config/user-dirs.dirs"
+        fi
       '';
     };
   };

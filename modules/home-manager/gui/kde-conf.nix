@@ -13,14 +13,6 @@
       accents = [ "sky" ];
     })
   ];
-  xdg = {
-    autostart = {
-      enable = true;
-      entries = [
-      ];
-      readOnly = true;
-    };
-  };
   programs.plasma = {
     enable = true;
     overrideConfig = true;
@@ -53,7 +45,6 @@
                 "applications:dev.zed.Zed.desktop"
                 "applications:com.obsproject.Studio.desktop"
                 "applications:signal.desktop"
-                "applications:thunderbird.desktop"
                 "applications:org.wezfurlong.wezterm.desktop"
               ];
             };
@@ -148,7 +139,7 @@
       theme = "default";
       lookAndFeel = "Catppuccin-Frappe-Sky";
       colorScheme = "CatppuccinFrappeBlue";
-      wallpaper = ../../../assets/wallpapers/strawHats.png;
+      wallpaper = ../../../assets/wallpapers/haha.jpg;
       wallpaperBackground = {
         blur = true;
       };

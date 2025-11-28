@@ -191,6 +191,8 @@ in
               ".config/YouTube Music Desktop App"
               ".config/bs-manager"
               ".config/jellyfin.org"
+              ".config/autostart"
+              ".config/transmission"
               ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
