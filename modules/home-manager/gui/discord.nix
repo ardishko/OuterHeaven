@@ -8,7 +8,7 @@
   imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
     "discord" = lib.mkForce {
-      name = "Discord";
+      name = "Discord (Stable)";
       type = "Application";
       icon = "discord";
       terminal = false;
@@ -31,7 +31,7 @@
         desktopItems = [
           (pkgs.makeDesktopItem {
             name = "vesktop";
-            desktopName = "Vesktop (Discord)";
+            desktopName = "Discord";
             exec = "mullvad-exclude vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
             icon = "discord";
             startupWMClass = "VencordDesktop";

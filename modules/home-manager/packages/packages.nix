@@ -208,7 +208,7 @@
         mission-center
         parabolic
         bs-manager
-        jellyfin-media-player
+        # jellyfin-media-player
 
         # resources
         # clipboard-jh

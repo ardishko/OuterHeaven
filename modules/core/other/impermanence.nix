@@ -193,6 +193,7 @@ in
               ".config/jellyfin.org"
               ".config/autostart"
               ".config/transmission"
+              ".config/easyeffects"
               ".local/share/Nextcloud"
               ".local/share/vlc"
               ".local/share/zed"
@@ -247,7 +248,6 @@ in
               ".steam"
               ".ftba"
               ".minecraft"
-              ".stremio-server"
               ".mozilla"
               ".zen"
               ".mullvad"
@@ -370,7 +370,6 @@ in
           ".local/state/mpv/watch_history.jsonl"
           ".local/share/krunnerstaterc"
           ".local/share/user-places.xbel"
-          ".local/share/user-places.xbel.tbcache"
         ];
       };
     };
