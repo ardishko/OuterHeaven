@@ -69,6 +69,7 @@
     };
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
       url = "github:ardishko/disko";
