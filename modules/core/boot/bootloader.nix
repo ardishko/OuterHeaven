@@ -44,11 +44,9 @@ in
     plymouth = {
       enable = if (config.networking.hostName == "theseus") then false else true;
       font = "${pkgs.nerd-fonts.iosevka}/share/fonts/truetype/NerdFonts/Iosevka/IosevkaNerdFontMono-Bold.ttf";
-      theme = "catppuccin-frappe";
+      theme = "nixos-bgrt";
       themePackages = with pkgs; [
-        (catppuccin-plymouth.override {
-          variant = "frappe";
-        })
+        nixos-bgrt-plymouth
       ];
       logo = pkgs.emptyFile;
     };

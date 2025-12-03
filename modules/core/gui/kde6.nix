@@ -20,7 +20,6 @@
     dolphin-plugins
     spectacle
     ffmpegthumbs
-    xwaylandvideobridge
     discover
     kwallet
     kwallet-pam
@@ -52,6 +51,4 @@
       };
     };
   };
-  systemd.user.services.nextcloud-client.after = [ "graphical-session.target" ];
-  systemd.user.services.nextcloud-client.wants = [ "graphical-session.target" ];
 }

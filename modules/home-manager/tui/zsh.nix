@@ -26,7 +26,7 @@
       enable = true;
     };
     initContent = ''
-      eval "$(${pkgs.thefuck}/bin/thefuck --alias)"
+      eval "$(${pkgs.pay-respects}/bin/pay-respects --alias)"
     '';
   };
 }

@@ -5,6 +5,7 @@
     ./browser
     # ./discord-canary.nix
     ./discord.nix
+    ./easyeffects.nix
     # ./flameshot.nix
     ./gzdoom.nix
     ./heroic

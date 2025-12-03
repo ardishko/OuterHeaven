@@ -1,0 +1,5 @@
+{
+  services.easyeffects = {
+    enable = true;
+  };
+}

@@ -172,7 +172,7 @@
         nix-index
 
         # zandronum
-        aria
+        aria2
         jp2a
         deskreen
         nixpkgs-fmt
@@ -187,7 +187,6 @@
         woeusb
         reaper
         nexusmods-app
-        stremio
         sops
         inkscape
         vscodium-fhs
@@ -196,7 +195,6 @@
         gtop
         element-desktop
         nwg-look
-        electron-mail
         # hyprsunset
         mangohud
         discover-overlay
@@ -207,7 +205,6 @@
         remmina
         audacity
         tartube-yt-dlp
-        limo
         mission-center
         parabolic
         bs-manager
@@ -318,13 +315,9 @@
   nixpkgs = {
     config = {
       permittedInsecurePackages = [
-        "electron-25.9.0"
-        "python-2.7.18.7"
-        "python-2.7.18.8"
-        # "electron-19.1.9"
-        "ventoy-qt5-1.1.05"
-        "ventoy-1.1.05"
+        "ventoy-qt5-1.1.07"
         "ventoy-1.1.07"
+        "qtwebengine-5.15.19"
       ];
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "davinci-resolve" ];
       allowUnfree = true;

@@ -1,4 +1,4 @@
-{ inputs, username, ... }:
+{ inputs, username, config, ... }:
 {
   imports = [ inputs.jovian-nixos.nixosModules.default ];
   # Jovian NixOS options, specific to the deck
@@ -23,5 +23,15 @@
     steamos = {
       useSteamOSConfig = true;
     };
+  };
+  # Create Steam CEF debugging file if it doesn't exist for Decky Loader.
+  systemd.services.steam-cef-debug = lib.mkIf config.jovian.decky-loader.enable {
+    description = "Create Steam CEF debugging file";
+    serviceConfig = {
+      Type = "oneshot";
+      User = config.jovian.steam.user;
+      ExecStart = "/bin/sh -c 'mkdir -p ~/.steam/steam && [ ! -f ~/.steam/steam/.cef-enable-remote-debugging ] && touch ~/.steam/steam/.cef-enable-remote-debugging || true'";
+    };
+    wantedBy = [ "multi-user.target" ];
   };
 }
