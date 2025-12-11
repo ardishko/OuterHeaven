@@ -59,7 +59,6 @@
         # Over
         wget
         lutris
-        steam-rom-manager
         neofetch
         font-manager
         htop
@@ -208,10 +207,6 @@
         mission-center
         parabolic
         bs-manager
-        # jellyfin-media-player
-
-        # resources
-        # clipboard-jh
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";
         #   src = fetchurl {
@@ -223,13 +218,15 @@
         # emu
         cemu
         pcsx2
-        # duckstation
+        duckstation
         rpcs3
         desmume
         azahar
         shadps4
         bsnes-hd
         nestopia-ue
+        dolphin-emu
+        rmg
         (callPackage ./pkgcustom/eden { })
 
         # steam emulator artwork adder
@@ -269,7 +266,7 @@
 
   # List of nix packages end here
   services.flatpak = {
-    uninstallUnmanaged = false;
+    uninstallUnmanaged = true;
     # enable = true; # in /modules/core/packages.nix
     remotes = [
       {
@@ -279,6 +276,7 @@
     ];
     packages = [
       "org.onlyoffice.desktopeditors"
+      "com.github.iwalton3.jellyfin-media-player"
       "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"
@@ -286,7 +284,6 @@
       "org.kde.kdenlive"
       "com.google.AndroidStudio"
       "io.github.everestapi.Olympus"
-      "com.github.Rosalie241.RMG"
       "com.github.tchx84.Flatseal"
       "io.mrarm.mcpelauncher"
       "camp.nook.nookdesktop"
@@ -294,7 +291,6 @@
       "com.fightcade.Fightcade"
       "io.itch.itch"
       "io.github.Soundux"
-      "gg.guilded.Guilded"
       "net.audiorelay.AudioRelay"
       "org.kde.Platform"
       "org.freedesktop.Platform"

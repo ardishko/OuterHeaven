@@ -89,9 +89,6 @@
     dolphin-emu = {
       url = "github:MatthewCroughan/dolphin-emu-nix";
     };
-    polly-mc = {
-      url = "github:fn2006/PollyMC";
-    };
     flux = {
       url = "github:IogaMaster/flux";
     };

@@ -153,7 +153,6 @@ in
               ".config/Mullvad VPN"
               ".config/nheko"
               ".config/obs-studio"
-              ".config/steam-rom-manager"
               ".config/cosmic"
               ".config/deadbolt_game"
               ".config/obsidian"
@@ -162,47 +161,59 @@ in
               ".config/Vampire_Survivors"
               ".config/Vampire_Survivors_Data"
               ".config/Vampire_Survivors_97277776"
-              ".config/libreoffice"
               ".config/celeste"
               ".config/Element"
               ".config/discord"
               ".config/nemo"
               ".config/PreMiD"
-              ".config/discordcanary"
               ".config/electron-mail"
               ".config/MangoHud"
-              ".config/nwg-panel"
-              ".config/nwg-dock"
               ".config/steamtinkerlaunch"
               ".config/mangareader"
-              ".config/kdeconnect"
+              # polychromatic
               ".config/polychromatic"
+              # gtk
               ".config/gtk-4.0"
               ".config/gtk-3.0"
-              ".config/VSCodium"
-              ".config/kdedefaults"
+              # remmina remote desktop client
               ".config/remmina"
+              ".local/share/remmina"
+              # vscodiıum
+              ".config/VSCodium"
+              # zed editor
               ".config/zed"
+              ".local/share/zed"
+              # vlc media player
               ".config/vlc"
+              ".local/share/vlc"
+              # tartube
               ".config/tartube"
+              # nextcloud desktop client
               ".config/Nextcloud"
+              ".local/share/Nextcloud"
+              # discover discord overlay
               ".config/discover_overlay"
+              # ALVR
               ".config/alvr"
+              # youtube music desktop application
               ".config/YouTube Music Desktop App"
+              # beat saber
               ".config/bs-manager"
+              # jellyfin client
               ".config/jellyfin.org"
               ".config/autostart"
+              # transmission
               ".config/transmission"
+              # easyeffects
               ".config/easyeffects"
-              ".local/share/Nextcloud"
-              ".local/share/vlc"
-              ".local/share/zed"
-              ".local/share/remmina"
+              ".local/share/easyeffects"
+              # sddm
               ".local/share/sddm"
+              # KDE retardation
               ".local/share/kactivitymanagerd"
               ".local/share/kscreen"
-              ".local/share/dolphin-emu"
               ".local/share/dolphin"
+              ".config/kdedefaults"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"
@@ -221,9 +232,6 @@ in
               ".local/share/Celeste"
               ".local/share/NexusMods.App"
               ".local/share/waydroid"
-              ".local/share/komikku"
-              ".local/share/anime-games-launcher"
-              ".local/share/sleepy-launcher"
               ".local/share/gvfs-metadata"
               ".local/share/Terraria"
               ".local/share/DaVinciResolve"
@@ -240,6 +248,7 @@ in
               ".local/share/Jellyfin Media Player"
               ".local/share/jellyfinmediaplayer"
               ".cache/waydroid_script"
+              # the home directory lol
               ".ssh"
               ".klei"
               ".thunderbird"
@@ -277,6 +286,10 @@ in
               # hd2 arsenal
               ".config/hd2arsenal"
               ## Emulators
+              # not really an emulator but...
+              # Steam ROM Manager
+              ".config/steam-rom-manager"
+
               # Eden
               ".config/eden"
               ".local/share/eden"
@@ -290,9 +303,11 @@ in
 
               # duckstation
               ".local/share/duckstation"
+              ".config/duckstation"
 
               # dolphin emulator
               ".config/dolphin-emu"
+              ".local/share/dolphin-emu"
 
               # desmume
               ".config/desmume"
@@ -303,6 +318,17 @@ in
               # Cemu
               ".config/Cemu"
               ".local/share/Cemu"
+
+              # RMG (Nintendo 64) (Rosalie's Mupen GUI)
+              ".local/share/RMG"
+              ".config/RMG"
+
+              # Nestopia UE (NES)
+              ".config/nestopia"
+              ".local/share/nestopia"
+
+              # bsnes (SNES)
+              ".config/bsnes-hd beta"
 
               ## KDE Related stuff
               ## KDE Team why are you like this
@@ -366,7 +392,6 @@ in
           ".config/kwalletrc"
           ".config/okularrc"
           ".config/trashrc"
-          ".config/user-dirs.dirs"
           ".local/state/mpv/watch_history.jsonl"
           ".local/share/krunnerstaterc"
           ".local/share/user-places.xbel"

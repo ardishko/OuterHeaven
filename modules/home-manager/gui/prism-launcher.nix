@@ -7,7 +7,6 @@
 {
   home.packages = with pkgs; [
     prismlauncher
-    inputs.polly-mc.packages.${pkgs.system}.default
   ];
   xdg.desktopEntries = {
     "org.prismlauncher.PrismLauncher" = lib.mkForce {

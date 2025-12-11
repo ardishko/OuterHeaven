@@ -31,8 +31,8 @@
             },
 
             active_tab = {
-              bg_color = '#8caaee',
-              fg_color = '#303446',
+              bg_color = '#303446',
+              fg_color = '#c6d0f5',
             },
             inactive_tab = {
               bg_color = '#414559',

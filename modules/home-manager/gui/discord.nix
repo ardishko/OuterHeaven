@@ -32,7 +32,7 @@
           (pkgs.makeDesktopItem {
             name = "vesktop";
             desktopName = "Discord";
-            exec = "mullvad-exclude vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
+            exec = "mullvad-exclude vesktop";
             icon = "discord";
             startupWMClass = "VencordDesktop";
             genericName = "Internet Messenger";
@@ -53,7 +53,7 @@
     };
     config = {
       themeLinks = [
-        "https://raw.githubusercontent.com/ardishco-the-great/catpuccin-discord/main/themes/frappe.theme.css"
+        "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"
       ];
       frameless = false;
       plugins = {
@@ -62,11 +62,10 @@
           enable = true;
           anonymiseByDefault = true;
         };
-        # banger.enable = true;
-        # betterFolders = {
-        #   enable = true;
-        #   showFolderIcon = "always";
-        # };
+        betterFolders = {
+          enable = true;
+          showFolderIcon = 1;
+        };
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
         betterNotesBox.enable = true;
@@ -103,13 +102,10 @@
           ignoreSelf = true;
         };
         messageTags.enable = true;
-        moreCommands.enable = true;
-        moreKaomoji.enable = true;
         mutualGroupDMs.enable = true;
         newGuildSettings.enable = true;
         noBlockedMessages = {
           enable = true;
-          ignoreBlockedMessages = true;
         };
         noDevtoolsWarning.enable = true;
         noF1.enable = true;
@@ -125,7 +121,7 @@
         pictureInPicture.enable = true;
         pinDMs = {
           enable = true;
-          pinOrder = "mostRecent";
+          pinOrder = 1;
         };
         plainFolderIcon.enable = true;
         platformIndicators.enable = true;
@@ -158,7 +154,7 @@
         voiceMessages.enable = true;
         volumeBooster = {
           enable = true;
-          multiplier = 5;
+          multiplier = 5.0;
         };
         webKeybinds.enable = true;
         webRichPresence.enable = true;
