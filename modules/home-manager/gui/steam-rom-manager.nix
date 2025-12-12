@@ -37,7 +37,7 @@ let
                 ]
             },
             "parserInputs": {
-                "glob": "''${title}/USRDIR/@(eboot.bin|EBOOT.BIN)"
+                "glob": "''${title}/PS3_GAME/USRDIR/@(eboot.bin|EBOOT.BIN)"
             },
             "executable": {
                 "path": "/etc/profiles/per-user/${username}/bin/rpcs3",
