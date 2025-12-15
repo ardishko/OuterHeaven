@@ -414,7 +414,7 @@ let
                 ]
             },
             "parserInputs": {
-                "glob": "''${title}/*/*@(.rpx|.RPX)"
+                "glob": "''${title}@(.iso|.ISO|.wad|.WAD|.wua|.WUA|.wud|.WUD|.wux|.WUX)"
             },
             "executable": {
                 "path": "/etc/profiles/per-user/${username}/bin/Cemu",
@@ -1002,7 +1002,10 @@ let
 in
 {
   # Games directories on ShadowMoses are symlinked from ~/Games/Emulators/ to actual actual games dirs on
-  home.packages = with pkgs; [ steam-rom-manager ];
+  home.packages = with pkgs; [
+    steam-rom-manager
+    sgdboop
+  ];
 
   home.activation.steam-rom-manager-config = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         CONFIG_DIR="$HOME/.config/steam-rom-manager/userData"

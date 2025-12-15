@@ -33,28 +33,15 @@
       [
         # Define packages that derive from inputs
 
-        # inputs.hyprcontrib.packages.${pkgs.system}.hyprprop
         inputs.nh.packages.${pkgs.system}.default
-        # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.mysql-workbench
-        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.gimp-with-plugins
-        # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.itch
-        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.handbrake
-        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.valent
         # inputs.nix-alien.packages.${pkgs.system}.nix-alien
         inputs.shadower.packages.${pkgs.system}.shadower
         inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
-        # inputs.dolphin-emu.packages.${pkgs.system}.default
         inputs.sops-nix.packages.${pkgs.system}.default
         inputs.anyrun.packages.${pkgs.system}.stdin
-        # inputs.polly-mc.${pkgs.system}.default
         # inputs.tag-studio.packages.${pkgs.system}.default
-        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.bottles
-        # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland
-        # inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
-        # inputs.quickshell.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
-        # inputs.citron-flake.packages.${pkgs.system}.citron-master
 
         # Over
         wget
@@ -86,7 +73,6 @@
         lolcat
         vulkan-tools
         fastfetch
-        baobab
         gnupg
         wlprop
         python3
@@ -207,6 +193,11 @@
         mission-center
         parabolic
         bs-manager
+        gimp-with-plugins
+        handbrake
+        bottles
+        kdePackages.filelight
+
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";
         #   src = fetchurl {
@@ -228,9 +219,6 @@
         dolphin-emu
         rmg
         (callPackage ./pkgcustom/eden { })
-
-        # steam emulator artwork adder
-        # sgdboop
 
         ungoogled-chromium
 

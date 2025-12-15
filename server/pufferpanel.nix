@@ -2,9 +2,6 @@
   services = {
     pufferpanel = {
       enable = true;
-      extraGroups = [
-        "gameHosting"
-      ];
       environment = {
         PUFFER_WEB_HOST = ":9000";
         PUFFER_DAEMON_SFTP_HOST = ":5657";
@@ -14,7 +11,7 @@
       };
     };
   };
-  users.groups.pufferpanel = {};                 # ensure group exists
+  users.groups.pufferpanel = { }; # ensure group exists
   users.users.pufferpanel = {
     isSystemUser = true;
     group = "pufferpanel";
