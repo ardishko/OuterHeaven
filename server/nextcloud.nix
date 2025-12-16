@@ -12,7 +12,6 @@
         cookbook
         notes
         bookmarks
-        maps
         tasks
         spreed
         previewgenerator
