@@ -8,7 +8,7 @@
     maxUploadSize = "1000G";
     # notify_push.enable = true;
     extraApps = {
-      inherit (pkgs.nextcloud31Packages.apps)
+      inherit (pkgs.nextcloud32Packages.apps)
         cookbook
         notes
         bookmarks
@@ -24,16 +24,16 @@
         ;
       news = pkgs.fetchNextcloudApp {
         appName = "news";
-        sha256 = "sha256-8U2EOK8mXPEk70IU8GLXYU0EoZU7O4fhFkzhGpauvZc=";
-        url = "https://github.com/nextcloud/news/releases/download/26.1.0/news.tar.gz";
-        appVersion = "26.1.0";
+        sha256 = "18c05gldhm3z4si2acdh433j37mjxkcg6dajlkx9qh3bnxyja7kr";
+        url = "https://github.com/nextcloud/news/releases/download/27.2.0/news.tar.gz";
+        appVersion = "27.2.0";
         license = "agpl3Plus";
       };
       epubviewer = pkgs.fetchNextcloudApp {
         appName = "epubviewer";
-        sha256 = "sha256-3JsZY/aF0TbSdAEgS7q53DS9wMcxz4l3A8yyQtJBepM=";
-        url = "https://github.com/devnoname120/epubviewer/releases/download/1.8.0/epubviewer-1.8.0.tar.gz";
-        appVersion = "1.8.0";
+        sha256 = "0wjkbp50sir66lcxv6amnbq06ngcl0gj55azpbq2gg6ds2x041nh";
+        url = "https://github.com/devnoname120/epubviewer/releases/download/1.8.1/epubviewer-1.8.1.tar.gz";
+        appVersion = "1.8.1";
         license = "agpl3Plus";
       };
     };

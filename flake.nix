@@ -20,18 +20,6 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # hyprland = {
-    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    # };
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    #   # inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # xdg-desktop-portal-hyprland = {
-    #   url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    #   inputs.nixpkgs.follows = "hyprland";
-    # };
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
@@ -69,7 +57,7 @@
     };
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
       url = "github:ardishko/disko";
@@ -107,19 +95,12 @@
     minegrub-theme = {
       url = "github:Lxtharia/minegrub-theme";
     };
-    # hyprspace = {
-    #   url = "github:KZDKM/Hyprspace";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
     catpuccin-cursors = {
       url = "github:catppuccin/cursors";
     };
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
     };
-    # hyprswitch = {
-    #   url = "github:H3rmt/hyprswitch/release";
-    # };
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     };
