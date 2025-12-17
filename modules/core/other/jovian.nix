@@ -1,4 +1,9 @@
-{ inputs, username, config, ... }:
+{
+  inputs,
+  username,
+  config,
+  ...
+}:
 {
   imports = [ inputs.jovian-nixos.nixosModules.default ];
   # Jovian NixOS options, specific to the deck
@@ -8,11 +13,17 @@
       autoStart = true;
       user = "${username}";
       desktopSession = "plasma";
+      updater = {
+        splash = "steamos";
+      };
     };
     devices = {
       steamdeck = {
         enable = true;
         enableGyroDsuService = true;
+        enableSoundSupport = true;
+        enableVendorDrivers = true;
+        enableXorgRotation = true;
       };
     };
     decky-loader = {
@@ -22,6 +33,8 @@
     };
     steamos = {
       useSteamOSConfig = true;
+      enableAutoMountUdevRules = true;
+      enableBluetoothConfig = true;
     };
   };
   # Create Steam CEF debugging file if it doesn't exist for Decky Loader.

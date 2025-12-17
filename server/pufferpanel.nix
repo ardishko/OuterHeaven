@@ -11,10 +11,4 @@
       };
     };
   };
-  users.groups.pufferpanel = { }; # ensure group exists
-  users.users.pufferpanel = {
-    isSystemUser = true;
-    group = "pufferpanel";
-    home = "/var/lib/pufferpanel";
-  };
 }
