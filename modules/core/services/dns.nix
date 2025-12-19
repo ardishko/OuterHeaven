@@ -15,7 +15,10 @@
     settings = {
       ipv6_servers = true;
       require_dnssec = true;
-
+      listen_addresses = [
+        "127.0.0.1:53"
+        "[::1]:53"
+      ];
       sources.public-resolvers = {
         urls = [
           "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"

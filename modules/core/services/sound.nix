@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
   # sound.enable = true;
@@ -28,9 +33,9 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
     lowLatency = {
-      enable = true;
-      quantum = 80;
-      rate = 50000;
+      enable = if (config.networking.hostName == "Tanker") then false else true;
+      quantum = 64;
+      rate = 48000;
     };
   };
 }

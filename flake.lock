@@ -1304,22 +1304,6 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/5487e69da40cbd611ab2cadee0b4637225f7cfae.tar.gz"
       }
     },
-    "nixpkgs-unstable": {
-      "locked": {
-        "lastModified": 1765472234,
-        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_10": {
       "locked": {
         "lastModified": 1761880412,
@@ -1762,7 +1746,6 @@
         "nixcord": "nixcord",
         "nixd": "nixd",
         "nixpkgs": "nixpkgs_9",
-        "nixpkgs-unstable": "nixpkgs-unstable",
         "nvf": "nvf",
         "plasma-manager": "plasma-manager",
         "quickshell": "quickshell",
@@ -1770,6 +1753,7 @@
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "tag-studio": "tag-studio",
+        "unstable": "unstable",
         "watershot": "watershot",
         "wayfreeze": "wayfreeze",
         "zen-browser": "zen-browser"
@@ -2078,6 +2062,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "unstable": {
+      "locked": {
+        "lastModified": 1765779637,
+        "narHash": "sha256-KJ2wa/BLSrTqDjbfyNx70ov/HdgNBCBBSQP3BIzKnv4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "1306659b587dc277866c7b69eb97e5f07864d8c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },

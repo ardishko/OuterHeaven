@@ -1,7 +1,0 @@
-{
-  services = {
-    searx = {
-      enable = true;
-    };
-  };
-}
