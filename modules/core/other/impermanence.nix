@@ -170,6 +170,8 @@ in
               ".config/MangoHud"
               ".config/steamtinkerlaunch"
               ".config/mangareader"
+              # rclone
+              ".config/rclone"
               # polychromatic
               ".config/polychromatic"
               # gtk

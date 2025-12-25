@@ -9,7 +9,6 @@
     ./wezterm.nix
     ./lutris.nix
     ./mpv.nix
-    ./nextcloud-client.nix
     ./obs
     ./obsidian.nix
     ./prism-launcher.nix
@@ -18,6 +17,7 @@
     ./fastfetch
     ./signal.nix
     ./spicetify.nix
+    ./nextcloud-client
     ./steam-rom-manager.nix
     ./ytmusic.nix
     ./zed.nix

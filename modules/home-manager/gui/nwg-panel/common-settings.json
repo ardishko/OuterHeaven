@@ -1,6 +1,0 @@
-{
-  "restart-on-display": true,
-  "restart-delay": 500,
-  "processes-backgroud-only": true,
-  "processes-own-only": true
-}

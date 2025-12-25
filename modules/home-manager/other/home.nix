@@ -107,12 +107,6 @@
     };
   };
 
-  # Enable "services"
-  services = {
-    syncthing = {
-      enable = true;
-    };
-  };
   # Enable "programs"
   programs = {
     git = {
