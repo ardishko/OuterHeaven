@@ -13,12 +13,12 @@
         package = lib.mkForce pkgs.kdePackages.sddm;
         wayland.enable = true;
       };
-      autoLogin = {
-        enable = if (config.networking.hostName == "Tanker") then true else false;
-        user = builtins.head (
-          builtins.attrNames (lib.filterAttrs (n: u: u.isNormalUser) config.users.users)
-        );
-      };
+      # autoLogin = {
+      #   enable = if (config.networking.hostName == "Tanker") then true else false;
+      #   user = builtins.head (
+      #     builtins.attrNames (lib.filterAttrs (n: u: u.isNormalUser) config.users.users)
+      #   );
+      # };
     };
     xserver = {
       displayManager = {

@@ -265,6 +265,7 @@
     packages = [
       "org.onlyoffice.desktopeditors"
       "com.github.iwalton3.jellyfin-media-player"
+      "com.stremio.Stremio"
       "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"

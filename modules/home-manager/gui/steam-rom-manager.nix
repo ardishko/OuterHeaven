@@ -21,7 +21,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -116,7 +116,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -210,7 +210,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -304,7 +304,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -398,7 +398,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -494,7 +494,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -588,7 +588,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -682,7 +682,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -776,7 +776,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],
@@ -870,7 +870,7 @@ let
             "titleModifier": "''${fuzzyTitle}",
             "fetchControllerTemplatesButton": null,
             "removeControllersButton": null,
-            "steamInputEnabled": "1",
+            "steamInputEnabled": "2",
             "imageProviders": [
                 "sgdb"
             ],

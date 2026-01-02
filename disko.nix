@@ -10,169 +10,138 @@
     devices = {
       disk =
         if (hostname == "theseus") then
-        {
-          eMMC = {
-            device = memcard;
-            type = "disk";
-            content = {
-              type = "gpt";
-              partitions = {
-                boot = {
-                  name = "boot";
-                  size = "5M";
-                  type = "EF02";
-                };
-                esp = {
-                  name = "ESP";
-                  size = "29G";
-                  type = "EF00";
-                  content = {
-                    type = "filesystem";
-                    format = "vfat";
-                    mountpoint = "/boot";
+          {
+            eMMC = {
+              device = memcard;
+              type = "disk";
+              content = {
+                type = "gpt";
+                partitions = {
+                  boot = {
+                    name = "boot";
+                    size = "5M";
+                    type = "EF02";
+                  };
+                  esp = {
+                    name = "ESP";
+                    size = "29G";
+                    type = "EF00";
+                    content = {
+                      type = "filesystem";
+                      format = "vfat";
+                      mountpoint = "/boot";
+                    };
                   };
                 };
               };
             };
-          };
-          main = {
-            device = hdd1;
-            type = "disk";
-            content = {
-              type = "gpt";
-              partitions = {
-                root = {
-                  size = "100%";
-                  content = {
-                    type = "zfs";
-                    pool = "zroot";
+            main = {
+              device = hdd1;
+              type = "disk";
+              content = {
+                type = "gpt";
+                partitions = {
+                  root = {
+                    size = "100%";
+                    content = {
+                      type = "zfs";
+                      pool = "zroot";
+                    };
                   };
-                };
-                swap = {
-                  size = "56G";
-                  content = {
-                    type = "swap";
-                    resumeDevice = true;
+                  swap = {
+                    size = "56G";
+                    content = {
+                      type = "swap";
+                      resumeDevice = true;
+                    };
                   };
                 };
               };
             };
+          }
+        else
+          {
+            # existing single-disk styles
+            main =
+              if (hostname == "ShadowMoses" || hostname == "BigShell") then
+                {
+                  inherit device;
+                  type = "disk";
+                  content = {
+                    type = "gpt";
+                    partitions = {
+                      boot = {
+                        name = "boot";
+                        size = "1M";
+                        type = "EF02";
+                      };
+                      esp = {
+                        name = "ESP";
+                        size = "500M";
+                        type = "EF00";
+                        content = {
+                          type = "filesystem";
+                          format = "vfat";
+                          mountpoint = "/boot";
+                        };
+                      };
+                      root = {
+                        size = "100%";
+                        content = {
+                          type = "zfs";
+                          pool = "zroot";
+                        };
+                      };
+                      swap = {
+                        size = "8G";
+                        content = {
+                          type = "swap";
+                          resumeDevice = true;
+                        };
+                      };
+                    };
+                  };
+                }
+              else
+                {
+                  inherit device;
+                  type = "disk";
+                  content = {
+                    type = "gpt";
+                    partitions = {
+                      boot = {
+                        name = "boot";
+                        size = "1M";
+                        type = "EF02";
+                      };
+                      esp = {
+                        name = "ESP";
+                        size = "500M";
+                        type = "EF00";
+                        content = {
+                          type = "filesystem";
+                          format = "vfat";
+                          mountpoint = "/boot";
+                        };
+                      };
+                      root = {
+                        size = "100%";
+                        content = {
+                          type = "zfs";
+                          pool = "zroot";
+                        };
+                      };
+                      swap = {
+                        size = "16G";
+                        content = {
+                          type = "swap";
+                          resumeDevice = true;
+                        };
+                      };
+                    };
+                  };
+                };
           };
-        }
-        else {
-          # existing single-disk styles
-          main =
-            if (hostname == "ShadowMoses") then
-              {
-                inherit device;
-                type = "disk";
-                content = {
-                  type = "gpt";
-                  partitions = {
-                    boot = {
-                      name = "boot";
-                      size = "1M";
-                      type = "EF02";
-                    };
-                    esp = {
-                      name = "ESP";
-                      size = "500M";
-                      type = "EF00";
-                      content = {
-                        type = "filesystem";
-                        format = "vfat";
-                        mountpoint = "/boot";
-                      };
-                    };
-                    root = {
-                      size = "100%";
-                      content = {
-                        type = "zfs";
-                        pool = "zroot";
-                      };
-                    };
-                  };
-                };
-              }
-            else if (hostname == "BigShell") then
-              {
-                inherit device;
-                type = "disk";
-                content = {
-                  type = "gpt";
-                  partitions = {
-                    boot = {
-                      name = "boot";
-                      size = "1M";
-                      type = "EF02";
-                    };
-                    esp = {
-                      name = "ESP";
-                      size = "500M";
-                      type = "EF00";
-                      content = {
-                        type = "filesystem";
-                        format = "vfat";
-                        mountpoint = "/boot";
-                      };
-                    };
-                    root = {
-                      size = "100%";
-                      content = {
-                        type = "zfs";
-                        pool = "zroot";
-                      };
-                    };
-                    swap = {
-                      size = "8G";
-                      content = {
-                        type = "swap";
-                        resumeDevice = true;
-                      };
-                    };
-                  };
-                };
-              }
-            else
-              {
-                inherit device;
-                type = "disk";
-                content = {
-                  type = "gpt";
-                  partitions = {
-                    boot = {
-                      name = "boot";
-                      size = "1M";
-                      type = "EF02";
-                    };
-                    esp = {
-                      name = "ESP";
-                      size = "500M";
-                      type = "EF00";
-                      content = {
-                        type = "filesystem";
-                        format = "vfat";
-                        mountpoint = "/boot";
-                      };
-                    };
-                    root = {
-                      size = "100%";
-                      content = {
-                        type = "zfs";
-                        pool = "zroot";
-                      };
-                    };
-                    swap = {
-                      size = "16G";
-                      content = {
-                        type = "swap";
-                        resumeDevice = true;
-                      };
-                    };
-                  };
-                };
-              };
-        };
 
       zpool = {
         zroot = {
