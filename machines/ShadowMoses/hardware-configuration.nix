@@ -41,7 +41,11 @@
     device = "/dev/disk/by-uuid/bd44ffbb-b994-4b47-b5a2-eea71704cfbf";
     fsType = "ext4";
   };
-  fileSystems."/disks/OG1TB" = {
+  fileSystems."/disks/robbie" = {
+    device = "/dev/disk/by-uuid/9d4dc4a2-dc43-48bb-97fd-d8fd0e0f7ab8";
+    fsType = "ext4";
+  };
+  fileSystems."/disks/useless-pos" = {
     device = "/dev/disk/by-uuid/d3c87e16-ef0e-4c9e-b2f5-3cca8b1551d3";
     fsType = "ext4";
   };

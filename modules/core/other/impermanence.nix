@@ -55,19 +55,30 @@ in
             "/var/lib/readarr"
             "/var/lib/sonarr"
             "/var/lib/playit" # playit
-            "/var/lib/immich" # immich
             "/var/lib/postgresql" # postgresql
             "/var/lib/palworld" # palworld
             "/var/lib/fail2ban" # fail2ban
-            "/var/lib/pterodactyl" # pterodactyl game panel
             "/var/lib/grafana" # grafana
             "/var/lib/prometheus2"
             "/var/lib/loki"
             "/var/lib/promtail"
-            "/var/lib/pufferpanel" # pufferpanel
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
             "/etc/ssh"
+            # immich
+            {
+              directory = "/var/lib/immich";
+              user = "immich";
+              group = "immich";
+              mode = "0755";
+            }
+            # pufferpanel
+            {
+              directory = "/var/lib/pufferpanel";
+              user = "pufferpanel";
+              group = "pufferpanel";
+              mode = "0755";
+            }
             {
               directory = "/disks/media";
               user = "jellyfin";
@@ -170,6 +181,8 @@ in
               ".config/MangoHud"
               ".config/steamtinkerlaunch"
               ".config/mangareader"
+              # blender
+              ".config/blender"
               # rclone
               ".config/rclone"
               # polychromatic
