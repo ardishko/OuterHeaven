@@ -48,13 +48,13 @@
                       pool = "zroot";
                     };
                   };
-                  swap = {
-                    size = "56G";
-                    content = {
-                      type = "swap";
-                      resumeDevice = true;
-                    };
-                  };
+                  # swap = {
+                  #   size = "56G";
+                  #   content = {
+                  #     type = "swap";
+                  #     resumeDevice = true;
+                  #   };
+                  # };
                 };
               };
             };
