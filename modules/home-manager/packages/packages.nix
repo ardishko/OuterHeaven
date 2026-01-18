@@ -222,6 +222,8 @@
 
         ungoogled-chromium
 
+        inputs.hytale-launcher.packages.${pkgs.system}.default
+
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {
@@ -270,7 +272,6 @@
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"
       "com.modrinth.ModrinthApp"
-      "org.kde.kdenlive"
       "com.google.AndroidStudio"
       "io.github.everestapi.Olympus"
       "com.github.tchx84.Flatseal"

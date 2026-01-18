@@ -1,9 +1,12 @@
 {
   services.immich = {
     enable = true;
-    port = 2283;
-    machine-learning = {
+    openFirewall = true;
+    redis = {
       enable = true;
+    };
+    machine-learning = {
+      enable = false;
     };
   };
 }

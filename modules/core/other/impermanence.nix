@@ -72,6 +72,12 @@ in
               group = "immich";
               mode = "0755";
             }
+            {
+              directory = "/var/lib/redis-immich";
+              user = "immich";
+              group = "immich";
+              mode = "0755";
+            }
             # pufferpanel
             {
               directory = "/var/lib/pufferpanel";
@@ -181,6 +187,7 @@ in
               ".config/MangoHud"
               ".config/steamtinkerlaunch"
               ".config/mangareader"
+              ".local/share/millenium"
               # blender
               ".config/blender"
               # rclone

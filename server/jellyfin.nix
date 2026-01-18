@@ -7,29 +7,14 @@
   };
   users = {
     users = {
-      jellyfin.extraGroups = [ "media" "video" "render" ];
+      jellyfin.extraGroups = [
+        "media"
+        "video"
+        "render"
+      ];
     };
     groups = {
-      media = {};
+      media = { };
     };
-  };
-  services.radarr = {
-    enable = true;
-  };
-  services.prowlarr = {
-    enable = true;
-    openFirewall = true;
-  };
-  services.readarr = {
-    enable = true;
-  };
-  services.sonarr = {
-    enable = true;
-  };
-  services.bazarr = {
-    enable = true;
-  };
-  services.recyclarr = {
-    enable = true;
   };
 }

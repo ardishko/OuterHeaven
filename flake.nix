@@ -110,8 +110,8 @@
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    millennium = {
-      url = "git+https://github.com/SteamClientHomebrew/Millennium";
+    hytale-launcher = {
+      url = "github:JPyke3/hytale-launcher-nix";
     };
   };
   outputs =
