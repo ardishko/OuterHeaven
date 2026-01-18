@@ -82,7 +82,7 @@ in
               directory = "/var/lib/pufferpanel";
               user = "pufferpanel";
               group = "pufferpanel";
-              mode = "0755";
+              mode = "0750";
             }
             {
               directory = "/disks/media";
