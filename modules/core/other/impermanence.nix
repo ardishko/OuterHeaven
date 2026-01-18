@@ -69,13 +69,13 @@ in
               directory = "/var/lib/immich";
               user = "immich";
               group = "immich";
-              mode = "0755";
+              mode = "0770";
             }
             {
               directory = "/var/lib/redis-immich";
               user = "immich";
               group = "immich";
-              mode = "0755";
+              mode = "0770";
             }
             # pufferpanel
             {

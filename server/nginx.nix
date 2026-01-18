@@ -14,6 +14,10 @@
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/cred/cloudflare-dns.ini";
     };
+    certs."pufferpanel.ardishco.net" = {
+      dnsProvider = "cloudflare";
+      credentialsFile = "/etc/cred/cloudflare-dns.ini";
+    };
   };
 
   # nginx TLS vhosts
@@ -69,6 +73,20 @@
       ];
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
+      };
+    };
+    virtualHosts."hosting.ardishco.net" = {
+      forceSSL = true;
+      enableACME = true;
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 443;
+          ssl = true;
+        }
+      ];
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:9000";
       };
     };
   };
