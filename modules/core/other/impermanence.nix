@@ -45,7 +45,6 @@ in
             "/var/lib/bitwarden-backup"
             "/var/lib/nextcloud" # nextcloud
             "/var/lib/redis-nextcloud" # redis nextcloud
-            "/var/lib/redis-immich" # redis immich
             "/var/lib/redis-nitter" # nitter
             "/var/lib/parrot" # parrot
             "/var/lib/jellyfin" # jellyfin
