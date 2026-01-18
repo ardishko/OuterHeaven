@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   users.users.pufferpanel = {
     isSystemUser = true;
@@ -22,5 +22,6 @@
     DynamicUser = lib.mkForce false;
     User = "pufferpanel";
     Group = "pufferpanel";
+    ExecStart = lib.mkForce "${steam-run}/bin/steam-run ${pkgs.pufferpanel}/bin/pufferpanel";
   };
 }
