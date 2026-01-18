@@ -7,6 +7,7 @@
         ./other/impermanence.nix
         ./other/mainUser.nix
         ./other/nix.nix
+        ./other/nixpkgs.nix
         ./other/i2c.nix
         ./services/openssh.nix
         ./tui/keymap.nix
