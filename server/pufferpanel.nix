@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   users.users.pufferpanel = {
     isSystemUser = true;
@@ -18,7 +19,7 @@
   };
 
   systemd.services.pufferpanel.serviceConfig = {
-    DynamicUser = false;
+    DynamicUser = lib.mkForce false;
     User = "pufferpanel";
     Group = "pufferpanel";
   };
