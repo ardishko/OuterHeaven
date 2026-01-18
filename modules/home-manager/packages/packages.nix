@@ -27,6 +27,7 @@
         kitty
         git
         sops
+        steam-run
         ugreen-leds-cli
       ]
     else
