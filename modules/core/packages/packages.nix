@@ -34,4 +34,9 @@
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
   ];
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
 }

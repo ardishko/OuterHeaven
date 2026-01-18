@@ -306,7 +306,6 @@
         "ventoy-1.1.07"
         "qtwebengine-5.15.19"
       ];
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "davinci-resolve" ];
       allowUnfree = true;
       allowBroken = true;
     };
