@@ -1,4 +1,19 @@
 { lib, pkgs, ... }:
+let
+  pufferpanel-fhs = pkgs.buildFHSEnv {
+    name = "pufferpanel-fhs";
+    targetPkgs = pkgs: with pkgs; [
+      glibc
+      gcc-unwrapped
+      zlib
+      libstdc++
+      openssl
+      curl
+      wget
+    ];
+    runScript = "${pkgs.pufferpanel}/bin/pufferpanel";
+  };
+in
 {
   users.users.pufferpanel = {
     isSystemUser = true;
@@ -18,9 +33,12 @@
     };
   };
 
-  systemd.services.pufferpanel.serviceConfig = {
-    DynamicUser = lib.mkForce false;
-    User = "pufferpanel";
-    Group = "pufferpanel";
+  systemd.services.pufferpanel = {
+    serviceConfig = {
+      DynamicUser = lib.mkForce false;
+      User = "pufferpanel";
+      Group = "pufferpanel";
+      ExecStart = lib.mkForce "${pufferpanel-fhs}/bin/pufferpanel-fhs";
+    };
   };
 }
