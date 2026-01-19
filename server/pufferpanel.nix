@@ -2,15 +2,12 @@
 let
   pufferpanel-fhs = pkgs.buildFHSEnv {
     name = "pufferpanel-fhs";
-    targetPkgs = pkgs: with pkgs; [
-      glibc
-      gcc-unwrapped
-      zlib
-      libstdc++
-      openssl
-      curl
-      wget
-    ];
+    targetPkgs =
+      pkgs: with pkgs; [
+        glibc
+        gcc-unwrapped
+        openssl
+      ];
     runScript = "${pkgs.pufferpanel}/bin/pufferpanel";
   };
 in
