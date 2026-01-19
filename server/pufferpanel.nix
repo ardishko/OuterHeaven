@@ -22,6 +22,5 @@
     DynamicUser = lib.mkForce false;
     User = "pufferpanel";
     Group = "pufferpanel";
-    ExecStart = lib.mkForce "${pkgs.steam-run}/bin/steam-run ${pkgs.pufferpanel}/bin/pufferpanel";
   };
 }
