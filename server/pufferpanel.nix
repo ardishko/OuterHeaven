@@ -1,16 +1,4 @@
 { lib, pkgs, ... }:
-let
-  pufferpanel-fhs = pkgs.buildFHSEnv {
-    name = "pufferpanel-fhs";
-    targetPkgs =
-      pkgs: with pkgs; [
-        glibc
-        gcc-unwrapped
-        openssl
-      ];
-    runScript = "${pkgs.pufferpanel}/bin/pufferpanel";
-  };
-in
 {
   users.users.pufferpanel = {
     isSystemUser = true;
@@ -18,7 +6,12 @@ in
     home = "/var/lib/pufferpanel";
   };
   users.groups.pufferpanel = { };
-
+  # this only because of nix-ld,
+  # otherwise you'd have to wrap this in FHS which would have you enabling
+  # boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
+  # which isn't good for security cus it's vulnerable to privilege escalation,
+  # however unlikely that is to happen on up-to-date systems, on a homeserver
+  # it is best to have a litle peace of mind.
   services.pufferpanel = {
     enable = true;
     environment = {
@@ -30,12 +23,9 @@ in
     };
   };
 
-  systemd.services.pufferpanel = {
-    serviceConfig = {
-      DynamicUser = lib.mkForce false;
-      User = "pufferpanel";
-      Group = "pufferpanel";
-      ExecStart = lib.mkForce "${pufferpanel-fhs}/bin/pufferpanel-fhs";
-    };
+  systemd.services.pufferpanel.serviceConfig = {
+    DynamicUser = lib.mkForce false;
+    User = "pufferpanel";
+    Group = "pufferpanel";
   };
 }

@@ -8,6 +8,7 @@
         ./other/mainUser.nix
         ./other/nix.nix
         ./other/nixpkgs.nix
+        ./other/nix-ld.nix
         ./other/i2c.nix
         ./services/openssh.nix
         ./tui/keymap.nix
