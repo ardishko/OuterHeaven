@@ -33,6 +33,7 @@
     virtualHosts."immich.ardishco.net" = {
       addSSL = true;
       enableACME = true;
+      host = "0.0.0.0";
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
         # extraConfig = ''
