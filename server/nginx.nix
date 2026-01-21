@@ -25,19 +25,10 @@
     enable = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
-
-    virtualHosts."nextcloud.ardishco.net" = {
-      forceSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:80";
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Forwarded-Proto https;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        '';
-      };
-    };
+    recommendedUwsgiSettings = true;
+    recommendedOptimisation = true;
+    recommendedGzipSettings = true;
+    recommendedBrotliSettings = true;
 
     virtualHosts."immich.ardishco.net" = {
       forceSSL = true;
