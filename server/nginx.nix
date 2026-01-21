@@ -1,23 +1,27 @@
 {
   security.acme = {
     acceptTerms = true;
-    defaults.email = "ardishco@protonmail.com";
-    certs."nextcloud.ardishco.net" = {
-      dnsProvider = "cloudflare";
-      credentialsFile = "/etc/cred/cloudflare-dns.ini"; # CF_API_TOKEN=...
-    };
-    certs."immich.ardishco.net" = {
+    defaults = {
+      email = "ardishco@protonmail.com";
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/cred/cloudflare-dns.ini";
     };
-    certs."vault.ardishco.net" = {
-      dnsProvider = "cloudflare";
-      credentialsFile = "/etc/cred/cloudflare-dns.ini";
-    };
-    certs."pufferpanel.ardishco.net" = {
-      dnsProvider = "cloudflare";
-      credentialsFile = "/etc/cred/cloudflare-dns.ini";
-    };
+    # certs."nextcloud.ardishco.net" = {
+    #   dnsProvider = "cloudflare";
+    #   credentialsFile = "/etc/cred/cloudflare-dns.ini"; # CF_API_TOKEN=...
+    # };
+    # certs."immich.ardishco.net" = {
+    #   dnsProvider = "cloudflare";
+    #   credentialsFile = "/etc/cred/cloudflare-dns.ini";
+    # };
+    # certs."vault.ardishco.net" = {
+    #   dnsProvider = "cloudflare";
+    #   credentialsFile = "/etc/cred/cloudflare-dns.ini";
+    # };
+    # certs."pufferpanel.ardishco.net" = {
+    #   dnsProvider = "cloudflare";
+    #   credentialsFile = "/etc/cred/cloudflare-dns.ini";
+    # };
   };
 
   # nginx TLS vhosts
@@ -33,7 +37,6 @@
     virtualHosts."immich.ardishco.net" = {
       addSSL = true;
       enableACME = true;
-      host = "0.0.0.0";
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
         # extraConfig = ''
