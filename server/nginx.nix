@@ -25,7 +25,6 @@
 
     virtualHosts."immich.ardishco.net" = {
       forceSSL = true;
-      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
@@ -34,7 +33,6 @@
 
     virtualHosts."vault.ardishco.net" = {
       forceSSL = true;
-      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
@@ -43,7 +41,6 @@
 
     virtualHosts."stats.ardishco.net" = {
       forceSSL = true;
-      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:3000";
@@ -52,7 +49,6 @@
 
     virtualHosts."media.ardishco.net" = {
       forceSSL = true;
-      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8096";
@@ -61,7 +57,6 @@
 
     virtualHosts."hosting.ardishco.net" = {
       forceSSL = true;
-      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:9000";
