@@ -29,18 +29,6 @@
     virtualHosts."nextcloud.ardishco.net" = {
       forceSSL = true;
       enableACME = true;
-      listen = [
-        {
-          addr = "0.0.0.0";
-          port = 80;
-          ssl = false;
-        }
-        {
-          addr = "0.0.0.0";
-          port = 443;
-          ssl = true;
-        }
-      ];
       locations."/" = {
         proxyPass = "http://127.0.0.1:80";
         extraConfig = ''
@@ -54,18 +42,6 @@
     virtualHosts."immich.ardishco.net" = {
       forceSSL = true;
       enableACME = true;
-      listen = [
-        {
-          addr = "0.0.0.0";
-          port = 80;
-          ssl = false;
-        }
-        {
-          addr = "0.0.0.0";
-          port = 443;
-          ssl = true;
-        }
-      ];
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
         extraConfig = ''
