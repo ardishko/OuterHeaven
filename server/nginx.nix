@@ -17,6 +17,10 @@
     recommendedOptimisation = true;
     recommendedGzipSettings = true;
     recommendedBrotliSettings = true;
+    virtualHosts.default = {
+      locations."/".return = "301 https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      default = true;
+    };
 
     virtualHosts."immich.ardishco.net" = {
       addSSL = true;
