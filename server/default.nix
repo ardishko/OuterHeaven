@@ -2,7 +2,6 @@
   imports = [
     ./nextcloud.nix
     ./parrot.nix
-    ./cloudflare.nix
     ./vaultwarden.nix
     ./jellyfin.nix
     ./tailscale.nix
