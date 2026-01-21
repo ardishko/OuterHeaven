@@ -6,22 +6,6 @@
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/cred/cloudflare-dns.ini";
     };
-    # certs."nextcloud.ardishco.net" = {
-    #   dnsProvider = "cloudflare";
-    #   credentialsFile = "/etc/cred/cloudflare-dns.ini"; # CF_API_TOKEN=...
-    # };
-    # certs."immich.ardishco.net" = {
-    #   dnsProvider = "cloudflare";
-    #   credentialsFile = "/etc/cred/cloudflare-dns.ini";
-    # };
-    # certs."vault.ardishco.net" = {
-    #   dnsProvider = "cloudflare";
-    #   credentialsFile = "/etc/cred/cloudflare-dns.ini";
-    # };
-    # certs."pufferpanel.ardishco.net" = {
-    #   dnsProvider = "cloudflare";
-    #   credentialsFile = "/etc/cred/cloudflare-dns.ini";
-    # };
   };
 
   # nginx TLS vhosts

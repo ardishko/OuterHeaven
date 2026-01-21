@@ -48,10 +48,7 @@
     settings = {
       trusted_domains = [
         "nextcloud.ardishco.net"
-        "old-nextcloud.ardishco.net"
         "192.168.1.152"
-        "127.0.0.1"
-        "::1"
       ];
     };
   };
