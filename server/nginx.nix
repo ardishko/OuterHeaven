@@ -44,7 +44,7 @@
     };
 
     virtualHosts."vault.ardishco.net" = {
-      forceSSL = true;
+      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
@@ -57,7 +57,7 @@
     };
 
     virtualHosts."hosting.ardishco.net" = {
-      forceSSL = true;
+      addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:9000";
