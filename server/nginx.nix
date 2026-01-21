@@ -35,11 +35,11 @@
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Forwarded-Proto https;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        '';
+        # extraConfig = ''
+        #   proxy_set_header Host $host;
+        #   proxy_set_header X-Forwarded-Proto https;
+        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # '';
       };
     };
 
@@ -48,11 +48,11 @@
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Forwarded-Proto https;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        '';
+        # extraConfig = ''
+        #   proxy_set_header Host $host;
+        #   proxy_set_header X-Forwarded-Proto https;
+        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # '';
       };
     };
 
@@ -61,11 +61,11 @@
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:9000";
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Forwarded-Proto https;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        '';
+        # extraConfig = ''
+        #   proxy_set_header Host $host;
+        #   proxy_set_header X-Forwarded-Proto https;
+        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # '';
       };
     };
   };
