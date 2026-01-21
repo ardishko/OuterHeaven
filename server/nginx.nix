@@ -17,73 +17,54 @@
     recommendedOptimisation = true;
     recommendedGzipSettings = true;
     recommendedBrotliSettings = true;
+
     virtualHosts.default = {
       locations."/".return = "301 https://www.youtube.com/watch?v=dQw4w9WgXcQ";
       default = true;
     };
 
     virtualHosts."immich.ardishco.net" = {
+      forceSSL = true;
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
-        # extraConfig = ''
-        #   proxy_set_header Host $host;
-        #   proxy_set_header X-Forwarded-Proto https;
-        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        # '';
       };
     };
 
     virtualHosts."vault.ardishco.net" = {
+      forceSSL = true;
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
-        # extraConfig = ''
-        #   proxy_set_header Host $host;
-        #   proxy_set_header X-Forwarded-Proto https;
-        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        # '';
       };
     };
 
     virtualHosts."stats.ardishco.net" = {
+      forceSSL = true;
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:3000";
-        # extraConfig = ''
-        #   proxy_set_header Host $host;
-        #   proxy_set_header X-Forwarded-Proto https;
-        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        # '';
       };
     };
 
     virtualHosts."media.ardishco.net" = {
+      forceSSL = true;
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8096";
-        # extraConfig = ''
-        #   proxy_set_header Host $host;
-        #   proxy_set_header X-Forwarded-Proto https;
-        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        # '';
       };
     };
 
     virtualHosts."hosting.ardishco.net" = {
+      forceSSL = true;
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:9000";
-        # extraConfig = ''
-        #   proxy_set_header Host $host;
-        #   proxy_set_header X-Forwarded-Proto https;
-        #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        # '';
       };
     };
   };
