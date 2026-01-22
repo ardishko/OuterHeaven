@@ -23,14 +23,14 @@
       default = true;
     };
     virtualHosts."agrf.ardishco.net" = {
-      forceSSL = true;
+      addSSL = true;
       enableACME = true;
       locations."/" = {
         return = "301 https://agracingfoundation.org/static/images/psp.gif";
       };
     };
     virtualHosts."jesus.ardishco.net" = {
-      forceSSL = true;
+      addSSL = true;
       enableACME = true;
       locations."/" = {
         return = "301 https://agracingfoundation.org/static/images/psp.gif";
