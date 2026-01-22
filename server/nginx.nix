@@ -22,7 +22,20 @@
       locations."/".return = "301 https://www.youtube.com/watch?v=dQw4w9WgXcQ";
       default = true;
     };
-
+    virtualHosts."agrf.ardishco.net" = {
+      forceSSL = true;
+      enableACME = true;
+      locations."/" = {
+        return = "301 https://agracingfoundation.org/static/images/psp.gif";
+      };
+    };
+    virtualHosts."jesus.ardishco.net" = {
+      forceSSL = true;
+      enableACME = true;
+      locations."/" = {
+        return = "301 https://agracingfoundation.org/static/images/psp.gif";
+      };
+    };
     virtualHosts."immich.ardishco.net" = {
       addSSL = true;
       enableACME = true;

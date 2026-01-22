@@ -300,10 +300,12 @@ in
               "Programs"
               "Public"
               "Videos"
-              #
+
               "Zomboid"
               "aspyr-media"
-
+              # hytale
+              ".local/share/hytale-launcher"
+              ".local/share/Hytale"
               # hd2 arsenal
               ".config/hd2arsenal"
               ## Emulators
