@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   networking.hostName = "theseus"; # Define your hostname.
@@ -63,6 +63,9 @@
       dockerCompat = true;
     };
     oci-containers.backend = "podman";
+    docker = {
+      enable = true;
+    };
   };
   # Open ports in the firewall.
 
