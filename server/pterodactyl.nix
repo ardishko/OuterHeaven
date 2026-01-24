@@ -53,7 +53,4 @@
 
     api.ssl.enable = false; # Wings communicates internally, so we don't need SSL
   };
-
-  # PHP-FPM listens on socket, expose via port 9000 internally
-  services.phpfpm.pools.pterodactyl-panel.settings."listen" = "127.0.0.1:9000";
 }
