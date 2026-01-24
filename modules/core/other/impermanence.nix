@@ -109,8 +109,9 @@ in
               directory = "/var/lib/pufferpanel";
               user = "pufferpanel";
               group = "pufferpanel";
-              mode = "0750";
+              mode = "0775";
             }
+            # jellyfin
             {
               directory = "/disks/media";
               user = "jellyfin";
