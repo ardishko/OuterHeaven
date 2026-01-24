@@ -1,32 +1,28 @@
-{ lib, ... }:
+{ ... }:
 {
-  users.users.pufferpanel = {
-    isSystemUser = true;
-    group = "pufferpanel";
-    home = "/var/lib/pufferpanel";
-    extraGroups = [ "docker" ];
-  };
-  users.groups.pufferpanel = { };
-  # this only because of nix-ld,
-  # otherwise you'd have to wrap this in FHS which would have you enabling
-  # boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
-  # which isn't good for security cus it's vulnerable to privilege escalation,
-  # however unlikely that is to happen on up-to-date systems, on a homeserver
-  # it is best to have a litle peace of mind.
-  services.pufferpanel = {
-    enable = true;
-    environment = {
-      PUFFER_WEB_HOST = "0.0.0.0:9000";
-      PUFFER_DAEMON_SFTP_HOST = ":5657";
-      PUFFER_DAEMON_CONSOLE_BUFFER = "1000";
-      PUFFER_DAEMON_CONSOLE_FORWARD = "true";
-      PUFFER_PANEL_REGISTRATIONENABLED = "false";
+  virtualisation.oci-containers = {
+    containers = {
+      "pufferpanel" = {
+        image = "pufferpanel/pufferpanel:latest";
+        ports = [
+          "0.0.0.0:7777:7777"
+          "25560-25570:25560-25570"
+          "127.0.0.1:9000:8080"
+        ];
+        environment = {
+          PUFFER_LOGS = "/etc/pufferpanel/logs";
+          PUFFER_PANEL_DATABASE_DIALECT = "sqlite3";
+          PUFFER_PANEL_DATABASE_URL = "file:/etc/pufferpanel/pufferpanel.db?cache=shared";
+          PUFFER_DAEMON_DATA_CACHE = "/var/lib/pufferpanel/cache";
+          PUFFER_DAEMON_DATA_SERVERS = "/var/lib/pufferpanel/servers";
+          PUFFER_DAEMON_DATA_MODULES = "/var/lib/pufferpanel/modules";
+        };
+        volumes = [
+          "/etc/pufferpanel:/etc/pufferpanel"
+          "/var/lib/pufferpanel:/var/lib/pufferpanel"
+        ];
+        extraOptions = [ "--pull=newer" ];
+      };
     };
-  };
-
-  systemd.services.pufferpanel.serviceConfig = {
-    DynamicUser = lib.mkForce false;
-    User = "pufferpanel";
-    Group = "pufferpanel";
   };
 }
