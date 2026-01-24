@@ -8,7 +8,7 @@
     ./immich.nix
     ./grafana.nix
     ./fail2ban.nix
-    ./pterodactyl.nix
-    # ./pufferpanel.nix
+    # ./pterodactyl.nix
+    ./pufferpanel.nix
   ];
 }
