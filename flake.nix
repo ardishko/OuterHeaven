@@ -113,9 +113,6 @@
     hytale-launcher = {
       url = "github:JPyke3/hytale-launcher-nix";
     };
-    pterodactyl = {
-      url = "github:PadowYT2/pterodactyl.nix";
-    };
   };
   outputs =
     inputs@{

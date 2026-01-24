@@ -67,31 +67,6 @@ in
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
             "/etc/ssh"
-            # pterodactyl
-            {
-              directory = "/var/lib/pterodactyl-panel";
-              user = "pterodactyl-panel";
-              group = "pterodactyl-panel";
-              mode = "0750";
-            }
-            {
-              directory = "/var/lib/pterodactyl-wings";
-              user = "pterodactyl-wings";
-              group = "pterodactyl-wings";
-              mode = "0750";
-            }
-            {
-              directory = "/var/log/pterodactyl-wings";
-              user = "pterodactyl-wings";
-              group = "pterodactyl-wings";
-              mode = "0755";
-            }
-            {
-              directory = "/var/cache/pterodactyl-wings";
-              user = "pterodactyl-wings";
-              group = "pterodactyl-wings";
-              mode = "0755";
-            }
             # immich
             {
               directory = "/var/lib/immich";
