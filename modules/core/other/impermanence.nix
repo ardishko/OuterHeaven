@@ -55,6 +55,7 @@ in
             "/var/lib/recyclarr"
             "/var/lib/readarr"
             "/var/lib/sonarr"
+            "/var/lib/pufferpanel" # pufferpanel
             "/var/lib/playit" # playit
             "/var/lib/postgresql" # postgresql
             "/var/lib/palworld" # palworld
@@ -103,13 +104,6 @@ in
               user = "immich";
               group = "immich";
               mode = "0770";
-            }
-            # pufferpanel
-            {
-              directory = "/var/lib/pufferpanel";
-              user = "pufferpanel";
-              group = "pufferpanel";
-              mode = "0775";
             }
             # jellyfin
             {
