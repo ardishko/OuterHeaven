@@ -40,6 +40,8 @@ in
             "/var/lib/nixos-containers"
             "/var/lib/nixos"
             "/etc/nixos-containers"
+            "/var/lib/containers"
+            "/var/lib/docker"
             "/var/lib/tailscale" # tailscale
             "/var/lib/bitwarden_rs" # vaultwarden
             "/var/lib/bitwarden-backup"
