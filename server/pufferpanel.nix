@@ -4,6 +4,7 @@
     isSystemUser = true;
     group = "pufferpanel";
     home = "/var/lib/pufferpanel";
+    extraGroups = [ "docker" ];
   };
   users.groups.pufferpanel = { };
   # this only because of nix-ld,
