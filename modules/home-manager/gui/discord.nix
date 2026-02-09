@@ -12,45 +12,17 @@
       type = "Application";
       icon = "discord";
       terminal = false;
-      exec = "mullvad-exclude Discord --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      exec = "mullvad-exclude vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
     };
   };
   programs.nixcord = {
     enable = true;
-    discord = {
-      enable = true;
-      package = pkgs.discord;
-      vencord = {
-        enable = true;
-      };
-      openASAR.enable = true;
-    };
-    vesktop = {
-      enable = true;
-      package = pkgs.vesktop.overrideAttrs (oldAttrs: {
-        desktopItems = [
-          (pkgs.makeDesktopItem {
-            name = "vesktop";
-            desktopName = "Discord";
-            exec = "mullvad-exclude vesktop";
-            icon = "discord";
-            startupWMClass = "VencordDesktop";
-            genericName = "Internet Messenger";
-            keywords = [
-              "discord"
-              "vencord"
-              "electron"
-              "chat"
-            ];
-            categories = [
-              "Network"
-              "InstantMessaging"
-              "Chat"
-            ];
-          })
-        ];
-      });
-    };
+    # discord = {
+    #   enable = true;
+    #   openASAR.enable = true;
+    #   equicord.enable = true;
+    # };
+    vesktop.enable = true;
     config = {
       themeLinks = [
         "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"
@@ -71,10 +43,10 @@
         betterNotesBox.enable = true;
         betterRoleDot.enable = true;
         betterUploadButton.enable = true;
-        blurNSFW.enable = true;
-        reviewDB.enable = true;
+        BlurNSFW.enable = true;
+        ReviewDB.enable = true;
         callTimer.enable = true;
-        clearURLs.enable = true;
+        ClearURLs.enable = true;
         crashHandler.enable = true;
         dearrow.enable = true;
         experiments.enable = true;
@@ -102,7 +74,7 @@
           ignoreSelf = true;
         };
         messageTags.enable = true;
-        mutualGroupDMs.enable = true;
+        MutualGroupDMs.enable = true;
         newGuildSettings.enable = true;
         noBlockedMessages = {
           enable = true;
@@ -119,7 +91,7 @@
         openInApp.enable = true;
         permissionFreeWill.enable = true;
         pictureInPicture.enable = true;
-        pinDMs = {
+        PinDMs = {
           enable = true;
           pinOrder = 1;
         };
@@ -148,7 +120,6 @@
         unsuppressEmbeds.enable = true;
         userVoiceShow.enable = true;
         USRBG.enable = true;
-        vencordToolbox.enable = true;
         viewIcons.enable = true;
         voiceChatDoubleClick.enable = true;
         voiceMessages.enable = true;

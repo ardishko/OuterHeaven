@@ -114,6 +114,7 @@ in
           ]
         else
           [
+            "/run/nvidia-persistenced"
             "/var/lib/libvirt"
             "/var/log"
             "/var/lib/bluetooth"
@@ -157,6 +158,8 @@ in
               ".config/quickshell"
               ".config/vesktop"
               ".config/Vencord"
+              # equibop
+              ".config/equibop"
               ".config/StardewValley"
               ".config/VA_11_Hall_A"
               ".config/nuclearthrone"
@@ -225,6 +228,8 @@ in
               # easyeffects
               ".config/easyeffects"
               ".local/share/easyeffects"
+              # War Thunder
+              ".config/WarThunder"
               # sddm
               ".local/share/sddm"
               # KDE retardation

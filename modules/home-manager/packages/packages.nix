@@ -61,7 +61,6 @@
         protonup-qt
         protonup-ng
         pavucontrol
-        # hyprpicker
         transmission_4-gtk
         winetricks
         protontricks
@@ -172,7 +171,6 @@
         impression
         woeusb
         reaper
-        nexusmods-app
         sops
         inkscape
         vscodium-fhs
@@ -288,7 +286,6 @@
     ];
     # TODO add conditionally installed flatpak packages.
     update = {
-      onActivation = true;
       auto = {
         enable = true;
         onCalendar = "weekly";

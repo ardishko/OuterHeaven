@@ -120,8 +120,8 @@
         enable = true;
         mode = "times";
         temperature = {
-          day = 2800;
-          night = 2400;
+          day = 5800;
+          night = 4600;
         };
         time = {
           morning = "06:30";

@@ -111,8 +111,12 @@
   programs = {
     git = {
       enable = true;
-      userName = "ardishco";
-      userEmail = "ardishco@protonmail.com";
+      settings = {
+        user = {
+          name = "ardishco";
+          email = "ardishco@protonmail.com";
+        };
+      };
     };
   };
 }

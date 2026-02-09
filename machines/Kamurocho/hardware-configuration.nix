@@ -52,7 +52,7 @@
   environment.sessionVariables = {
     # __GL_SYNC_TO_VBLANK = "0";
     # __GL_YIELD = "run"; # yields to the compositor instead of busy‑waiting
-    __NV_DISABLE_EXPLICIT_SYNC = "1";
+    __NV_DISABLE_EXPLICIT_SYNC = "0";
   };
 
   #fileSystems."/" = {

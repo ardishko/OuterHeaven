@@ -313,6 +313,7 @@ in
       mkdir -p "$NEXTCLOUD_DIR"
 
       # Always update sync-exclude.lst
+      $DRY_RUN_CMD rm -f "$NEXTCLOUD_DIR/sync-exclude.lst"
       $DRY_RUN_CMD cp ${excludeFile} "$NEXTCLOUD_DIR/sync-exclude.lst"
       $DRY_RUN_CMD chmod 644 "$NEXTCLOUD_DIR/sync-exclude.lst"
 

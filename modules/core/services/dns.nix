@@ -10,7 +10,7 @@
     networkmanager.dns = "none";
   };
   services.resolved.enable = false;
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
     settings = {
       ipv6_servers = true;
