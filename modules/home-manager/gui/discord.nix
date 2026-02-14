@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   lib,
   ...
 }:
@@ -17,7 +16,10 @@
   };
   programs.nixcord = {
     enable = true;
+    discord.enable = false;
     vesktop.enable = true;
+    quickCss = "
+    ";
     config = {
       themeLinks = [
         "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"

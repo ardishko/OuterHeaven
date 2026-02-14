@@ -1,6 +1,4 @@
 {
-  # Set your time zone.
-  time.timeZone = "Europe/Riga";
 
   # Select internationalisation properties
 
