@@ -7,8 +7,8 @@
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
-    "discord" = lib.mkForce {
-      name = "Discord (Stable)";
+    "vesktop" = lib.mkForce {
+      name = "Discord";
       type = "Application";
       icon = "discord";
       terminal = false;
@@ -17,11 +17,6 @@
   };
   programs.nixcord = {
     enable = true;
-    # discord = {
-    #   enable = true;
-    #   openASAR.enable = true;
-    #   equicord.enable = true;
-    # };
     vesktop.enable = true;
     config = {
       themeLinks = [

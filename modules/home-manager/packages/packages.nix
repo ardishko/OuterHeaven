@@ -286,6 +286,7 @@
     ];
     # TODO add conditionally installed flatpak packages.
     update = {
+      onActivation = true;
       auto = {
         enable = true;
         onCalendar = "weekly";

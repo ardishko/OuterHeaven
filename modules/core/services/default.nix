@@ -1,5 +1,6 @@
 {
   imports = [
+    ./automaticTimezoned.nix
     ./bluetooth.nix
     ./davfs2.nix
     ./dns.nix
