@@ -37,10 +37,6 @@
 
   # External drives
 
-  fileSystems."/disks/EEEEEEEEEEE" = {
-    device = "/dev/disk/by-uuid/bd44ffbb-b994-4b47-b5a2-eea71704cfbf";
-    fsType = "ext4";
-  };
   fileSystems."/disks/robbie" = {
     device = "/dev/disk/by-uuid/9d4dc4a2-dc43-48bb-97fd-d8fd0e0f7ab8";
     fsType = "ext4";

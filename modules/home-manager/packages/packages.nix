@@ -221,7 +221,9 @@
 
         ungoogled-chromium
 
-        inputs.hytale-launcher.packages.${pkgs.system}.default
+        # inputs.hytale-launcher.packages.${pkgs.system}.default
+        # gonna fix this one ^
+
 
         # Override Template
 
