@@ -224,7 +224,6 @@
         # inputs.hytale-launcher.packages.${pkgs.system}.default
         # gonna fix this one ^
 
-
         # Override Template
 
         # (pkgs.<package>.overrideAttrs {
@@ -266,6 +265,7 @@
       }
     ];
     packages = [
+      "io.github.wivrn.wivrn"
       "org.onlyoffice.desktopeditors"
       "com.github.iwalton3.jellyfin-media-player"
       "com.stremio.Stremio"

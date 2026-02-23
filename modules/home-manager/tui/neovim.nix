@@ -13,12 +13,7 @@
       mimeType = [ "text/plain" ];
 
       icon = ../../../assets/icons/neovim.svg;
-      exec = "${pkgs.kitty}/bin/kitty nvim";
-    };
-    notepad = {
-      name = "Quick Notes (tmp)";
-      exec = "${pkgs.kitty}/bin/kitty nvim tmp.txt";
-      icon = "notepad";
+      exec = "${pkgs.ghostty}/bin/ghostty --command=nvim";
     };
   };
   programs.nvf = {
@@ -255,67 +250,6 @@
           zoxide-telescope = {
             package = pkgs.vimPlugins.telescope-zoxide;
           };
-          #      nixd = {
-          #        package = inputs.nixd.packages.${pkgs.system}.nixd;
-          #        setup = ''
-          #          require("lspconfig").nixd.setup({
-          #            cmd = { "${inputs.nixd.packages.${pkgs.system}.nixd}/bin/nixd" },
-          #            # cmd = { "nixd" },
-          #            settings = {
-          #              nixd = {
-          #                nixpkgs = {
-          #                  expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").nixosConfigurations.${hostname}.options",
-          #                },
-          #                formatting = {
-          #                  command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
-          #                },
-          #                options = {
-          #                  nixos = {
-          #                    expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").nixosConfigurations.${hostname}.options",
-          #                },
-          #                home_manager = {
-          #                     expr = "(builtins.getFlake "/home/${username}/NixOS/OuterHeaven").homeConfigurations.${hostname}.options",
-          #                  },
-          #                },
-          #              },
-          #            },
-          #          })
-          #        '';
-          # after = ["telecope"];
-          #      };
-          # live-share = {
-          #   package = pkgs.vimUtils.buildVimPlugin {
-          #     name = "live-share.nvim";
-          #     src = pkgs.fetchFromGitHub {
-          #       owner = "azratul";
-          #       repo = "live-share.nvim";
-          #       rev = "main";
-          #       sha256 = "sha256-HYe8WZu5SCIV1ypZ/MxdfDe9SBQ5nPBb3zrk7dMccxI=";
-          #     };
-          #   };
-          #   setup = ''
-          #     require('live-share').setup ({
-          #                   port_internal = 9876,
-          #                   max_attempts = 20,
-          #                   service_url = "/tmp/service.url",
-          #                   service = "nokey@localhost.run",
-          #                 })
-          #   '';
-          #   after = [ "instant" ];
-          # };
-          # instant = {
-          #   package = pkgs.vimUtils.buildVimPlugin {
-          #     name = "instant.nvim";
-          #     src = pkgs.fetchFromGitHub {
-          #       owner = "jbyuki";
-          #       repo = "instant.nvim";
-          #       rev = "master";
-          #       sha256 = "sha256-DXJWji/NR8ZCxe014rD51v3EHJHMhRQeOoI3SsY8mR4=";
-          #     };
-          #   };
-          #   setup = ''require('instant').setup {}'';
-          #   # before = "live-share.nvim";
-          # };
         };
         extraPackages = with pkgs; [
           zoxide

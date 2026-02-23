@@ -180,6 +180,7 @@ in
               ".config/celeste"
               ".config/Element"
               ".config/discord"
+              ".config/fluxer"
               ".config/nemo"
               ".config/PreMiD"
               ".config/electron-mail"

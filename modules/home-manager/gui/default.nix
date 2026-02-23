@@ -3,10 +3,10 @@
     ./browser
     ./discord.nix
     ./easyeffects.nix
+    ./ghostty.nix
     ./gzdoom.nix
     ./heroic
     ./kde-conf.nix
-    ./wezterm.nix
     ./lutris.nix
     ./mpv.nix
     ./obs
