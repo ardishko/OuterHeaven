@@ -63,6 +63,7 @@ in
             "/var/lib/grafana" # grafana
             "/var/lib/navidrome" # navidrome
             "/var/lib/gitlab" # gitlab
+            "/var/lib/gitlab-runner" # gitlab runner, workflows
             "/var/lib/audiobookshelf" # audiobookshelf
             "/var/lib/kavita" # kavita
             "/var/lib/hass" # home assistant

@@ -75,5 +75,45 @@
         proxyPass = "http://127.0.0.1:9000";
       };
     };
+
+    virtualHosts."gitlab.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:6967";
+      };
+    };
+
+    virtualHosts."pages.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8090";
+      };
+    };
+
+    virtualHosts."home.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8123";
+      };
+    };
+
+    virtualHosts."music.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:4533";
+      };
+    };
+
+    virtualHosts."reading.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:5000";
+      };
+    };
   };
 }
