@@ -1,5 +1,9 @@
 {
   imports = [
+    ./fail2ban.nix
+    ./gitlab.nix
+    ./home-assistant.nix
+    ./navidrome.nix
     ./nextcloud.nix
     ./vaultwarden.nix
     ./jellyfin.nix

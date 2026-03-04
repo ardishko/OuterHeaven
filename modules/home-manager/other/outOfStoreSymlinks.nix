@@ -1,15 +1,8 @@
 {
-  hostname,
-  lib,
-  config,
   ...
 }:
 {
   home.file = {
-    "Games/Emulators" = lib.mkIf (hostname == "ShadowMoses") {
-      source = config.lib.file.mkOutOfStoreSymlink "/disks/EEEEEEEEEEE/Totally Legit Consoles/Totally Legit Games";
-    };
-
     "Games/EMULATORS.txt".text = ''
       Setup Instructions for New Devices
       ===================================

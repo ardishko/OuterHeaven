@@ -5,7 +5,6 @@
   appimage-run,
   addOpenGLRunpath,
   libGLU,
-  xorg,
   buildFHSUserEnv,
   bash,
   writeText,
@@ -31,7 +30,7 @@ let
     # Pretty sure, there are missing dependencies ...
     buildInputs = [
       libGLU
-      xorg.libXxf86vm
+      libxxf86vm
     ];
 
     src = /home/luke/Downloads/DaVinci_Resolve_Studio_${version}_Linux.zip;
@@ -88,15 +87,15 @@ buildFHSUserEnv {
       librsvg
       libGLU
       libGL
-      xorg.libICE
-      xorg.libSM
-      xorg.libXxf86vm
-      xorg.libxcb
+      libice
+      libsm
+      libxxf86vm
+      libxcb
       udev
       opencl-headers
       alsa-lib
-      xorg.libX11
-      xorg.libXext
+      libx11
+      libxext
       expat
       zlib
       libuuid

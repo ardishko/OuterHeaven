@@ -1,0 +1,5 @@
+{
+  services.audiobookshelf = {
+    enable = true;
+  };
+}

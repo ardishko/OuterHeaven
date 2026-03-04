@@ -32,6 +32,21 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  hardware.fw-fanctrl = {
+    enable = true;
+    config = {
+      defaultStrategy = "lazy";
+      strategyOnDischarging = "laziest";
+    };
+    # config = {
+    #   strategies = {
+    #     "medium"
+    #     "agile"
+    #     "very-agile"
+    #   };
+    # };
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

@@ -61,6 +61,11 @@ in
             "/var/lib/palworld" # palworld
             "/var/lib/fail2ban" # fail2ban
             "/var/lib/grafana" # grafana
+            "/var/lib/navidrome" # navidrome
+            "/var/lib/gitlab" # gitlab
+            "/var/lib/audiobookshelf" # audiobookshelf
+            "/var/lib/kavita" # kavita
+            "/var/lib/hass" # home assistant
             "/var/lib/prometheus2"
             "/var/lib/loki"
             "/var/lib/promtail"
@@ -80,13 +85,7 @@ in
               group = "immich";
               mode = "0770";
             }
-            # jellyfin
-            {
-              directory = "/disks/media";
-              user = "jellyfin";
-              group = "media";
-              mode = "02775";
-            }
+            # jellyfin, navidrome, audiobookshelf
             {
               directory = "/disks/media/Movies";
               user = "jellyfin";
@@ -101,13 +100,19 @@ in
             }
             {
               directory = "/disks/media/Books";
-              user = "jellyfin";
+              user = "kavita";
               group = "media";
               mode = "02775";
             }
             {
-              directory = "/disks/media/";
-              user = "jellyfin";
+              directory = "/disks/media/Music";
+              user = "navidrome";
+              group = "media";
+              mode = "02775";
+            }
+            {
+              directory = "/disks/media/Audiobooks";
+              user = "audiobookshelf";
               group = "media";
               mode = "02775";
             }
@@ -187,6 +192,7 @@ in
               ".config/MangoHud"
               ".config/steamtinkerlaunch"
               ".config/mangareader"
+              ".config/chromium"
               ".local/share/millenium"
               # blender
               ".config/blender"
@@ -233,7 +239,7 @@ in
               ".config/WarThunder"
               # sddm
               ".local/share/sddm"
-              # KDE retardation
+              # KDE's massive persistence directory list that I fucking hate
               ".local/share/kactivitymanagerd"
               ".local/share/kscreen"
               ".local/share/dolphin"
@@ -303,7 +309,6 @@ in
               "Programs"
               "Public"
               "Videos"
-
               "Zomboid"
               "aspyr-media"
               # hytale
@@ -420,7 +425,11 @@ in
           ".config/trashrc"
           ".local/state/mpv/watch_history.jsonl"
           ".local/share/krunnerstaterc"
-          ".local/share/user-places.xbel"
+          {
+            file = ".local/share/user-places.xbel";
+            method = "symlink";
+          }
+          ".local/share/recently-used.xbel"
         ];
       };
     };
@@ -449,6 +458,7 @@ in
     };
     "/persist".neededForBoot = true;
     "/persist/cache".neededForBoot = true;
+    "/disks".neededForBoot = true;
   };
   users.users = {
     ${userName} = {

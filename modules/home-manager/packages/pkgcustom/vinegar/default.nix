@@ -6,7 +6,6 @@
   pkg-config,
   libGL,
   libxkbcommon,
-  xorg,
   wayland,
   vulkan-headers,
   wine64Packages,
@@ -77,9 +76,9 @@ buildGoModule rec {
   buildInputs = [
     libGL
     libxkbcommon
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXfixes
+    libx11
+    libxcursor
+    libxfixes
     wayland
     vulkan-headers
     wine

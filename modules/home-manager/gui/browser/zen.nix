@@ -558,7 +558,7 @@ in
                   }
                   {
                     name = "nixcord options";
-                    url = "https://github.com/KaylorBen/nixcord/blob/main/docs/plugins.md";
+                    url = "https://flameflag.github.io/nixcord/#sec-options";
                   }
                   {
                     name = "mdadm";

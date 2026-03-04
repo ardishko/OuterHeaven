@@ -43,6 +43,8 @@
         # inputs.tag-studio.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
+        inputs.fluxer-nix.packages.${pkgs.system}.fluxer
+        inputs.rpcs3-flake.packages.${pkgs.system}.rpcs3
 
         # Over
         wget
@@ -62,6 +64,7 @@
         protonup-ng
         pavucontrol
         transmission_4-gtk
+        nicotine-plus
         winetricks
         protontricks
         piper
@@ -136,6 +139,9 @@
         # file manager
         kdePackages.dolphin
         kdePackages.dolphin-plugins
+        nemo-with-extensions
+        nemo-fileroller
+
         # archive manager
         kdePackages.ark
         unrar
@@ -209,7 +215,6 @@
         cemu
         pcsx2
         duckstation
-        rpcs3
         desmume
         azahar
         shadps4
@@ -217,11 +222,9 @@
         nestopia-ue
         dolphin-emu
         rmg
-        (callPackage ./pkgcustom/eden { })
+        inputs.eden-flake.packages.${pkgs.system}.eden
 
-        ungoogled-chromium
-
-        # inputs.hytale-launcher.packages.${pkgs.system}.default
+        inputs.hytale-launcher.packages.${pkgs.system}.default
         # gonna fix this one ^
 
         # Override Template
@@ -267,7 +270,6 @@
     packages = [
       "io.github.wivrn.wivrn"
       "org.onlyoffice.desktopeditors"
-      "com.github.iwalton3.jellyfin-media-player"
       "com.stremio.Stremio"
       "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
