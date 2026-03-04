@@ -8,6 +8,9 @@
       initialRootPasswordFile = "/etc/cred/gitlab/rootPassword";
       pages = {
         enable = true;
+        settings = {
+          pages-domain = "pages.ardishco.net";
+        };
       };
       secrets = {
         secretFile = "/etc/cred/gitlab/secret";
