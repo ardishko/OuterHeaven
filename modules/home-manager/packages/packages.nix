@@ -304,7 +304,7 @@
   nixpkgs = {
     config = {
       permittedInsecurePackages = [
-        "ventoy-qt5-1.1.07"
+        "ventoy-qt5-1.1.10"
         "ventoy-1.1.07"
         "qtwebengine-5.15.19"
       ];
