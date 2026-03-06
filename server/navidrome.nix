@@ -1,4 +1,3 @@
-{ inputs, pkgs, ... }:
 {
   services.navidrome = {
     enable = true;

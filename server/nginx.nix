@@ -115,5 +115,13 @@
         proxyPass = "http://127.0.0.1:5000";
       };
     };
+
+    virtualHosts."audiobooks.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:13378";
+      };
+    };
   };
 }

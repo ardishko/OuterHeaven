@@ -2,13 +2,13 @@
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud32;
+    package = pkgs.nextcloud33;
     database.createLocally = true;
     https = true;
     maxUploadSize = "1000G";
     # notify_push.enable = true;
     extraApps = {
-      inherit (pkgs.nextcloud32Packages.apps)
+      inherit (pkgs.nextcloud33Packages.apps)
         cookbook
         notes
         bookmarks
@@ -16,23 +16,15 @@
         spreed
         previewgenerator
         phonetrack
-        memories
         calendar
         contacts
         forms
         ;
       news = pkgs.fetchNextcloudApp {
         appName = "news";
-        sha256 = "18c05gldhm3z4si2acdh433j37mjxkcg6dajlkx9qh3bnxyja7kr";
-        url = "https://github.com/nextcloud/news/releases/download/27.2.0/news.tar.gz";
-        appVersion = "27.2.0";
-        license = "agpl3Plus";
-      };
-      epubviewer = pkgs.fetchNextcloudApp {
-        appName = "epubviewer";
-        sha256 = "0wjkbp50sir66lcxv6amnbq06ngcl0gj55azpbq2gg6ds2x041nh";
-        url = "https://github.com/devnoname120/epubviewer/releases/download/1.8.1/epubviewer-1.8.1.tar.gz";
-        appVersion = "1.8.1";
+        sha256 = "sha256-jYtcsIiUvRv/AuMJJLTnGMdWlyYuQp8D3XJXjqZuaQw=";
+        url = "https://github.com/nextcloud/news/releases/download/28.0.0/news.tar.gz";
+        appVersion = "28.0.0";
         license = "agpl3Plus";
       };
     };
