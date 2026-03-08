@@ -62,6 +62,7 @@ in
             "/var/lib/fail2ban" # fail2ban
             "/var/lib/grafana" # grafana
             "/var/lib/navidrome" # navidrome
+            "/var/gitlab" # gitlab state
             "/var/lib/gitlab" # gitlab
             "/var/lib/gitlab-runner" # gitlab runner, workflows
             "/var/lib/audiobookshelf" # audiobookshelf
