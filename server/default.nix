@@ -5,7 +5,7 @@
     ./gitlab.nix
     ./grafana.nix
     ./home-assistant.nix
-    ./navidrome.nix
+    # ./navidrome.nix
     ./nextcloud.nix
     ./vaultwarden.nix
     ./jellyfin.nix
