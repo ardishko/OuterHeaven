@@ -3,7 +3,7 @@
     gitlab = {
       enable = true;
       port = 6967;
-      databaseHost = "gitlab";
+      databaseHost = "";
       databasePasswordFile = "/etc/cred/gitlab/dbPasswd";
       initialRootPasswordFile = "/etc/cred/gitlab/rootPassword";
       pages = {
