@@ -1,6 +1,6 @@
 {
   services.kavita = {
     enable = true;
-    tokenKeyFile = "/etc/cred/kavitaToken";
+    tokenKeyFile = "/etc/cred/kavita-token";
   };
 }
