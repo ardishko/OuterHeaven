@@ -16,6 +16,5 @@
     ./fail2ban.nix
     # ./pterodactyl.nix
     ./postgresql.nix
-    ./pufferpanel.nix
   ];
 }

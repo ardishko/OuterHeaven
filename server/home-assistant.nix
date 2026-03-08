@@ -1,7 +1,6 @@
 {
   services.home-assistant = {
     enable = true;
-    openFirewall = true;
     config = {
       http.server_port = 8123;
       homeassistant = {
