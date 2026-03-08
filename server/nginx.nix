@@ -80,7 +80,8 @@
       addSSL = true;
       enableACME = true;
       locations."/" = {
-        proxyPass = "http://127.0.0.1:6967";
+        proxyPass = "http://unix:/var/gitlab/state/tmp/sockets/gitlab.socket";
+        proxyWebsockets = true;
       };
     };
 
