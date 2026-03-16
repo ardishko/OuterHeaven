@@ -19,11 +19,8 @@
     };
     xwayland.enable = true;
     plugins = [
-      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-      # inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-      # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-      # pkgs.hyprlandPlugins.hyprbars
-      # pkgs.hyprlandPlugins.hyprspace
+      pkgs.hyprlandPlugins.csgo-vulkan-fix
+      pkgs.hyprlandPlugins.hyprbars
     ];
     settings = {
       "$mainMod" = "SUPER";
@@ -32,52 +29,40 @@
         if (osConfig.users.users.${config.home.username}.description == "vaporsnake") then
           [
             "DP-2,2560x1440@164.998993, 0x350, 1"
-            "HDMI-A-1,1920x1080,2560x0, 1, transform, 3"
           ]
         else if (osConfig.users.users.${config.home.username}.description == "liquid") then
           [ "eDP-1,1920x1200@60.001999, 0x0, 1" ]
         else
           [ ];
-      exec-once =
-        [
-          "hyprswitch init &"
-          "${pkgs.nwg-panel}/bin/nwg-panel --style gtk"
-          "mullvad-gui"
-          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "hyprctl setcursor ${config.home.pointerCursor.name} 38"
-          "flatpak run gg.guilded.Guilded"
-          "discover-overlay"
-          "flameshot"
-          "obs --startreplaybuffer --disable-shutdown-check"
-          # Here's how you grab the username within home manager. I'm looking at you, ardishco.
-          "mpv --playlist=/home/${
-            osConfig.users.users.${config.home.username}.description
-          }/Music/MainMenu --no-video --shuffle --volume=22"
-          "${pkgs.thunderbird}/bin/thunderbird"
-          "${pkgs.electron-mail}/bin/electron-mail"
-          "${pkgs.hyprsunset}/bin/hyprsunset -t 4500"
-          "${pkgs.element-desktop}/bin/element-desktop --hidden"
-          "${pkgs.mullvad}/bin/mullvad-exclude ${pkgs.signal-desktop}/bin/signal-desktop --password-store=basic_text --no-sandbox --start-in-tray"
-          "${pkgs.wlsunset}/bin/wlsunset"
-          "${pkgs.swaynotificationcenter}/bin/swaync"
-          "${pkgs.swayidle}/bin/swayidle -C ~/.config/swayidle/config"
-          "${pkgs.swayosd}/bin/swayosd-server"
-          "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
-          "${pkgs.hypridle}/bin/hypridle"
-          "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store"
-          # "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
-          # "${pkgs.premid}/bin/premid --in-process-gpu"
-          "${inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.nwg-dock-hyprland}/bin/nwg-dock-hyprland -d"
-          # "${pkgs.kdePackages.krunner}/bin/krunner -d"
-        ]
-        ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
-          "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../assets/wallpapers/strawHats.png}"
-          "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../assets/wallpapers/mark-of-sacrifice-vertical.png}"
-          "${pkgs.noisetorch}/bin/noisetorch -i alsa_input.usb-IK_Multimedia_iRig_Mic_HD_2_N_A-00.mono-fallback"
-        ])
-        ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "liquid") [
-          "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../assets/wallpapers/berserk-catppuccin.png}"
-        ]);
+      exec-once = [
+        "mullvad-gui"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "hyprctl setcursor ${config.home.pointerCursor.name} 38"
+        "discover-overlay"
+        "flameshot"
+        "obs --startreplaybuffer --disable-shutdown-check"
+        # Here's how you grab the username within home manager. I'm looking at you, ardishco.
+        "mpv --playlist=/home/${
+          osConfig.users.users.${config.home.username}.description
+        }/Music/MainMenu --no-video --shuffle --volume=22"
+        "${pkgs.thunderbird}/bin/thunderbird"
+        "${pkgs.hyprsunset}/bin/hyprsunset -t 4500"
+        "${pkgs.element-desktop}/bin/element-desktop --hidden"
+        "${pkgs.mullvad}/bin/mullvad-exclude ${pkgs.signal-desktop}/bin/signal-desktop --password-store=basic_text --no-sandbox --start-in-tray"
+        "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
+        "${pkgs.hypridle}/bin/hypridle"
+        "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store"
+        # "${pkgs.wl-clipboard}/bin/wl-copy --type text --watch ${pkgs.cliphist}/bin/cliphist store"
+        # "${pkgs.premid}/bin/premid --in-process-gpu"
+        # "${pkgs.kdePackages.krunner}/bin/krunner -d"
+      ]
+      ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
+        "${pkgs.swaybg}/bin/swaybg --o DP-2 -i ${../../../assets/wallpapers/strawHats.png}"
+        "${pkgs.swaybg}/bin/swaybg --o HDMI-A-1 -i ${../../../assets/wallpapers/mark-of-sacrifice-vertical.png}"
+      ])
+      ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "liquid") [
+        "${pkgs.swaybg}/bin/swaybg --o eDP-1 -i ${../../../assets/wallpapers/berserk-catppuccin.png}"
+      ]);
       workspace =
         if (osConfig.users.users.${config.home.username}.description == "vaporsnake") then
           [
@@ -91,10 +76,6 @@
             "8,monitor:DP-2"
             "9,monitor:DP-2"
             "10,monitor:DP-2"
-            "11,monitor:HDMI-A-1"
-            "12,monitor:HDMI-A-1"
-            "13,monitor:HDMI-A-1"
-            "14,monitor:HDMI-A-1"
           ]
         else if (osConfig.users.users.${config.home.username}.description == "liquid") then
           [
@@ -111,114 +92,100 @@
           ]
         else
           [ ];
-      bind =
-        [
-          "$mainMod, Return, exec, kitty"
-          "Alt_L, F4, killactive,"
-          "SUPER_SHIFT, Del, exec, pkill Hyprland"
-          "$mainMod, A, togglefloating,"
-          "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
-          # "CTRL, Escape, exec, ${pkgs.kdePackages.krunner}/bin/krunner"
-          "$mainMod, E, togglesplit, # dwindle"
-          "$mainMod,F,fullscreen"
-          # '',Print, exec, ${
-          #   inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
-          # }/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${
-          #   inputs.shadower.packages.${pkgs.system}.shadower
-          # }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
-          ",Print,exec, ${pkgs.flameshot}/bin/flameshot gui -r | ${pkgs.wl-clipboard}/bin/wl-copy | ${pkgs.wl-clipboard}/bin/wl-paste | ${
-            inputs.shadower.packages.${pkgs.system}.shadower
-          }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-paste"
-          "CTRL, Print, exec, ${pkgs.flameshot}/bin/flameshot gui"
-          "$mainMod, Tab, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
-          "Alt_L, E, exec, hyprctl dispatch workspace +1"
-          "Alt_L, Q, exec, hyprctl dispatch workspace -1"
-          # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
-          "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | anyrun --show-results-immediately true --plugins ${
-            inputs.anyrun.packages.${pkgs.system}.stdin
-          }/lib/libstdin.so | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
-          # Move focus with mainMod + arrow keys
-          "$mainMod, left, movefocus, l"
-          "$mainMod, right, movefocus, r"
-          "$mainMod, up, movefocus, u"
-          "$mainMod, down, movefocus, d"
-          "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${
-            osConfig.users.users.${config.home.username}.description
-          }/Videos'"
-          ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
-          #i3/sway type beat
+      bind = [
+        "$mainMod, Return, exec, ghostty"
+        "Alt_L, F4, killactive,"
+        "SUPER_SHIFT, Del, exec, pkill Hyprland"
+        "$mainMod, A, togglefloating,"
+        "CTRL, Escape, exec, ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun"
+        # "CTRL, Escape, exec, ${pkgs.kdePackages.krunner}/bin/krunner"
+        "$mainMod, E, togglesplit, # dwindle"
+        "$mainMod,F,fullscreen"
+        # '',Print, exec, ${
+        #   inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
+        # }/bin/wayfreeze --hide-cursor & PID=$!; sleep .1; ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${
+        #   inputs.shadower.packages.${pkgs.system}.shadower
+        # }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-copy; kill $PID''
+        ",Print,exec, ${pkgs.flameshot}/bin/flameshot gui -r | ${pkgs.wl-clipboard}/bin/wl-copy | ${pkgs.wl-clipboard}/bin/wl-paste | ${
+          inputs.shadower.packages.${pkgs.system}.shadower
+        }/bin/shadower | ${pkgs.wl-clipboard}/bin/wl-paste"
+        "CTRL, Print, exec, ${pkgs.flameshot}/bin/flameshot gui"
+        "Alt_L, E, exec, hyprctl dispatch workspace +1"
+        "Alt_L, Q, exec, hyprctl dispatch workspace -1"
+        # "$mainMod, T, exec, ${inputs.hyprcontrib.packages.${pkgs.system}.hdrop}/bin/hdrop ${pkgs.kitty}/bin/kitty --class dropdown-kitty"
+        "$mainMod, V, exec, ${pkgs.cliphist}/bin/cliphist list | anyrun --show-results-immediately true --plugins ${
+          inputs.anyrun.packages.${pkgs.system}.stdin
+        }/lib/libstdin.so | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
+        # Move focus with mainMod + arrow keys
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
+        "$mainMod, quotedbl, exec, ${pkgs.libnotify}/bin/notify-send 'Recording saved' 'check /home/${
+          osConfig.users.users.${config.home.username}.description
+        }/Videos'"
+        ",Pause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+        #i3/sway type beat
 
-          ",Caps_Lock, exec, sleep 0.1 && ${pkgs.swayosd}/bin/swayosd-client --caps-lock"
-          "$mainMod, Q, togglegroup"
-          "$mainMod, D, changegroupactive"
-          "$mainMod, W, lockgroups, toggle"
+        "$mainMod, Q, togglegroup"
+        "$mainMod, D, changegroupactive"
+        "$mainMod, W, lockgroups, toggle"
 
-          #global shortcuts
-          "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
-          "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
-          "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
-          "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
-          "$mainMod, Insert,pass,^(discordcanary)$"
-          "$mainMod, Home,pass,^(discordcanary)$"
-          # "Alt_L, Tab, overview:toggle"
+        #global shortcuts
+        "SUPER,F10,pass,^(com\.obsproject\.Studio)$"
+        "SUPER,F9,pass,^(com\.obsproject\.Studio)$"
+        "SUPER,F4,pass,^(com\.obsproject\.Studio)$"
+        "$mainMod, quotedbl,pass,^(com.obsproject.Studio)"
+        "$mainMod, Insert,pass,^(discordcanary)$"
+        "$mainMod, Home,pass,^(discordcanary)$"
+        # "Alt_L, Tab, overview:toggle"
 
-          # Switch workspaces with mainMod + [0-9]
-          "$mainMod, 1, workspace, 1"
-          "$mainMod, 2, workspace, 2"
-          "$mainMod, 3, workspace, 3"
-          "$mainMod, 4, workspace, 4"
-          "$mainMod, 5, workspace, 5"
-          "$mainMod, 6, workspace, 6"
-          "$mainMod, 7, workspace, 7"
-          "$mainMod, 8, workspace, 8"
-          "$mainMod, 9, workspace, 9"
-          "$mainMod, 0, workspace, 10"
+        # Switch workspaces with mainMod + [0-9]
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
 
-          # Move active window to a workspace with mainMod + SHIFT + [0-9]
-          "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-          "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-          "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-          "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-          "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-          "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-          "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-          "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-          "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-          "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-          "$mainMod, minus, movetoworkspace, special:scratchpad"
-          # Move window with mainMod_SHIFT + arrow keys
-          "$mainMod SHIFT, left, movewindow, l"
-          "$mainMod SHIFT, right, movewindow, r"
-          "$mainMod SHIFT, up, movewindow, u"
-          "$mainMod SHIFT, down, movewindow, d"
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
+        "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
+        "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
+        "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
+        "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
+        "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
+        "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
+        "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
+        "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
+        "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
+        "$mainMod, minus, movetoworkspace, special:scratchpad"
+        # Move window with mainMod_SHIFT + arrow keys
+        "$mainMod SHIFT, left, movewindow, l"
+        "$mainMod SHIFT, right, movewindow, r"
+        "$mainMod SHIFT, up, movewindow, u"
+        "$mainMod SHIFT, down, movewindow, d"
 
-          # Scroll through existing workspaces with mainMod + scroll
-          "$mainMod, mouse_up, workspace, r+1"
-          "$mainMod, mouse_down, workspace, r-1"
-          # This part is really awesome.
-          # Like really really cool, you could even say it's cool beans.
+        # Scroll through existing workspaces with mainMod + scroll
+        "$mainMod, mouse_up, workspace, r+1"
+        "$mainMod, mouse_down, workspace, r-1"
+        # This part is really awesome.
+        # Like really really cool, you could even say it's cool beans.
 
-          # Hyprspace window switcher toggle
-          # "Alt_L, Tab, exec, overview:toggle"
-          "Alt_L, Tab, exec, hyprswitch gui --mod-key alt_l --key Tab --close mod-key-release --sort-recent"
-        ]
-        ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "vaporsnake") [
-          "$mainMod, h, workspace, 11"
-          "$mainMod, j, workspace, 12"
-          "$mainMod, k, workspace, 13"
-          "$mainMod, l, workspace, 14"
-          # Move to active window workspaces, for HJKL workspaces with SUPER + SHIFT + [h,j,k,l]
-          "$mainMod SHIFT, h, movetoworkspacesilent, 11"
-          "$mainMod SHIFT, j, movetoworkspacesilent, 12"
-          "$mainMod SHIFT, k, movetoworkspacesilent, 13"
-          "$mainMod SHIFT, l, movetoworkspacesilent, 14"
-        ]);
+        # Hyprspace window switcher toggle
+        # "Alt_L, Tab, exec, overview:toggle"
+        # "Alt_L, Tab, exec, hyprswitch gui --mod-key alt_l --key Tab --close mod-key-release --sort-recent"
+      ];
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
       input = {
-        kb_layout = "tr,lv";
+        kb_layout = "tr,lv,se";
         kb_options = "grp:rctrl_toggle";
         follow_mouse = 2;
         touchpad = {
@@ -239,10 +206,6 @@
       };
       decoration = {
         rounding = 5;
-        # drop_shadow = false;
-        # shadow_range = 4;
-        # shadow_render_power = 3;
-        # "col.shadow" = "rgba(1a1a1aee)";
       };
       animations = {
         enabled = true;
@@ -257,7 +220,6 @@
       };
       windowrulev2 = [
         "float,class:^(flameshot)"
-        # "move 0 -350,title:^(flameshot)"
         "suppressevent fullscreen,class:^(flameshot)"
         "noanim,class:^(flameshot)"
         "rounding 0,class:^(flameshot)"
@@ -289,7 +251,6 @@
         "workspace 6 silent,class:^(krita)"
         "workspace 6 silent,class:^(.gimp-2.10-wrapped_)"
         "workspace 7 silent,class:^(mpv)"
-        "workspace 7 silent,class:^(evince)"
         "workspace 7 silent,class:^(info.febvre.Komikku)"
         "workspace 7 silent,class:^(Upscayl)"
         "workspace 8 silent,class:^(com.obsproject.Studio)"
@@ -324,7 +285,6 @@
         preserve_split = true;
       };
       gestures = {
-        workspace_swipe = true;
       };
       # group = {
       #   "col.border_active" = "rgb(99D1DB)";

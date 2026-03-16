@@ -16,6 +16,7 @@
     # ./mysql.nix
     ./noisetorch.nix
     ./openssh.nix
+    ./pam.nix
     ./printing.nix
     ./ratbagd.nix
     # ./searx.nix
@@ -24,7 +25,6 @@
     ./webdav.nix
     ./xserver.nix
     ./zapret.nix
-    ./polkit.nix
     ./fwupd.nix
     ./pixelworlds
   ];

@@ -12,7 +12,7 @@
       type = "Application";
       icon = "discord";
       terminal = false;
-      exec = "mullvad-exclude vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      exec = "mullvad-exclude vesktop";
     };
   };
   programs.nixcord = {
@@ -38,7 +38,7 @@
           anonymiseByDefault = true;
         };
         betterFolders = {
-          enable = true;
+          enable = false;
           showFolderIcon = 1;
         };
         betterGifAltText.enable = true;

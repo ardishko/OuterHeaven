@@ -2,13 +2,14 @@
   imports = [
     ./browser
     ./discord.nix
+    ./dankMaterialShell
     ./easyeffects.nix
     ./ghostty.nix
     ./gzdoom.nix
     ./heroic
-    ./kde-conf.nix
     ./lutris.nix
     ./mpv.nix
+    ./niri-conf.nix
     ./obs
     ./obsidian.nix
     ./prism-launcher.nix

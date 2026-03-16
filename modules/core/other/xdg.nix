@@ -6,8 +6,9 @@
     enable = true;
     wlr = lib.mkForce { enable = false; };
     extraPortals = with pkgs; [
-      kdePackages.xdg-desktop-portal-kde
+      kdePackages.kwallet
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
   };
 }

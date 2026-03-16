@@ -7,7 +7,7 @@
       type = "Application";
       icon = "signal-desktop";
       terminal = false;
-      exec = "mullvad-exclude signal-desktop --password-store=basic_text --no-sandbox %U";
+      exec = "mullvad-exclude signal-desktop --password-store=kwallet6 --no-sandbox %U";
     };
   };
 }

@@ -39,8 +39,6 @@
         inputs.shadower.packages.${pkgs.system}.shadower
         inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
         inputs.sops-nix.packages.${pkgs.system}.default
-        inputs.anyrun.packages.${pkgs.system}.stdin
-        # inputs.tag-studio.packages.${pkgs.system}.default
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
         inputs.fluxer-nix.packages.${pkgs.system}.fluxer

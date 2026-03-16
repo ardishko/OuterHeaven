@@ -12,7 +12,7 @@
       enable = true;
       autoStart = true;
       user = "${username}";
-      desktopSession = "plasma";
+      desktopSession = "niri";
       updater = {
         splash = "steamos";
       };

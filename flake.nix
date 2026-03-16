@@ -116,6 +116,14 @@
     eden-flake.url = "github:ardishko/eden-flake";
     fluxer-nix.url = "github:ardishko/fluxer-nix";
     rpcs3-flake.url = "github:ardishko/rpcs3-flake";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dsearch.url = "github:AvengeMedia/danksearch";
+    niri-nix = {
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
+    };
   };
   outputs =
     inputs@{

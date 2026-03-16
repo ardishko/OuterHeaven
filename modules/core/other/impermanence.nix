@@ -135,7 +135,6 @@ in
             "/var/lib/nixos"
             "/var/lib/tailscale" # tailscale
             "/var/lib/containers" # podman / docker / distrobox I think?
-            "/var/lib/sddm"
             "/etc/ssh"
           ]
           ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
@@ -204,8 +203,8 @@ in
               # polychromatic
               ".config/polychromatic"
               # gtk
-              ".config/gtk-4.0"
-              ".config/gtk-3.0"
+              # ".config/gtk-4.0"
+              # ".config/gtk-3.0"
               # remmina remote desktop client
               ".config/remmina"
               ".local/share/remmina"
@@ -240,13 +239,10 @@ in
               ".local/share/easyeffects"
               # War Thunder
               ".config/WarThunder"
-              # sddm
-              ".local/share/sddm"
-              # KDE's massive persistence directory list that I fucking hate
-              ".local/share/kactivitymanagerd"
-              ".local/share/kscreen"
+              # keyrings
+              "~/.local/share/keyrings"
+
               ".local/share/dolphin"
-              ".config/kdedefaults"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"
@@ -363,14 +359,6 @@ in
 
               # bsnes (SNES)
               ".config/bsnes-hd beta"
-
-              ## KDE Related stuff
-              ## KDE Team why are you like this
-              ".config/KDE"
-              ".config/kde.org"
-              ".config/plasma-workspace"
-              ".config/xsettingsd"
-              ".kde"
             ]
             ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
               "homebrew" # this is for deckyloader
@@ -378,61 +366,10 @@ in
         files = [
           ".zsh_history"
           ## Mane wtf is wrong wit u KDE Plasma team
-          ".config/powerdevilrc"
-          ".config/akregatorrc"
-          ".config/baloofileinformationrc"
-          ".config/baloofilerc"
-          ".config/bluedevilglobalrc"
-          ".config/device_automounter_kcmrc"
           ".config/dolphinrc"
-          ".config/filetypesrc"
-          ".config/gwenviewrc"
-          ".config/kactivitymanagerd-pluginsrc"
-          ".config/kactivitymanagerd-statsrc"
-          ".config/kactivitymanagerd-switcher"
-          ".config/kactivitymanagerdrc"
-          ".config/katemetainfos"
-          ".config/katerc"
-          ".config/kateschemarc"
-          ".config/katevirc"
-          ".config/kcmfonts"
-          ".config/kconf_updaterc"
-          ".config/kded5rc"
-          ".config/kgammarc"
-          ".config/kglobalshortcutsrc"
-          ".config/khotkeysrc"
-          ".config/kmixrc"
-          ".config/konsolerc"
-          ".config/kscreenlockerrc"
-          ".config/ksmserverrc"
-          ".config/ksplashrc"
-          ".config/ktimezonedrc"
-          ".config/kwinrulesrc"
-          ".config/kxkbrc"
-          ".config/partitionmanagerrc"
-          ".config/plasma-localerc"
-          ".config/plasma-nm"
-          ".config/plasma-org.kde.plasma.desktop-appletsrc"
-          ".config/plasmanotifyrc"
-          ".config/plasmarc"
-          ".config/plasmashellrc"
-          ".config/PlasmaUserFeedback"
-          ".config/plasmawindowed-appletsrc"
-          ".config/plasmawindowedrc"
-          ".config/powermanagementprofilesrc"
-          ".config/spectaclerc"
-          ".config/startkderc"
-          ".config/systemsettingsrc"
-          ".config/kwalletrc"
           ".config/okularrc"
           ".config/trashrc"
           ".local/state/mpv/watch_history.jsonl"
-          ".local/share/krunnerstaterc"
-          {
-            file = ".local/share/user-places.xbel";
-            method = "symlink";
-          }
-          ".local/share/recently-used.xbel"
         ];
       };
     };

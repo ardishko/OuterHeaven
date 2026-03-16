@@ -319,7 +319,6 @@ in
                 catppuccin-frappe-sky
                 #catppuccin-mocha-lavender # over here
                 # catppuccin-mocha-green
-                # tridactyl
               ];
           };
           userChrome = ''
