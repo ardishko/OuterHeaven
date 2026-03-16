@@ -3,7 +3,6 @@
   osConfig,
   pkgs,
   inputs,
-  lib,
   ...
 }:
 {
@@ -20,7 +19,7 @@
     };
     enableSystemMonitoring = true;
     enableVPN = true;
-    enableDynamicTheming = true;
+    enableDynamicTheming = false;
     enableAudioWavelength = true;
     enableCalendarEvents = true;
     enableClipboardPaste = true;
@@ -35,7 +34,7 @@
         catppuccin = {
           dark = {
             flavor = "frappe";
-            accent = "mauve";
+            accent = "sky";
           };
         };
       };
