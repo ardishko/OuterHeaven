@@ -131,14 +131,15 @@
         ripcord
         r2modman
         qt6.qtdeclarative
+        # feishin navidrome
+        feishin
 
         # nheko
 
         # file manager
         kdePackages.dolphin
         kdePackages.dolphin-plugins
-        nemo-with-extensions
-        nemo-fileroller
+        nautilus
 
         # archive manager
         kdePackages.ark

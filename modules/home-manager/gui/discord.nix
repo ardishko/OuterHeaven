@@ -22,8 +22,7 @@
       enable = true;
       package = inputs.unstable.legacyPackages.${pkgs.system}.vesktop;
     };
-    quickCss = "
-    ";
+    quickCss = "";
     config = {
       autoUpdate = true;
       autoUpdateNotification = true;

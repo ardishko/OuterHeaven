@@ -5,10 +5,9 @@
     ./davfs2.nix
     ./dns.nix
     ./firewall.nix
-    ./gnome-keyring.nix
-    ./gnome-sushi.nix
     ./gvfs.nix
     ./kdeconnect.nix
+    ./kwallet.nix
     ./localsend.nix
     ./joycond.nix
     ./tailscale

@@ -20,7 +20,7 @@
     ./spicetify.nix
     ./nextcloud-client
     ./steam-rom-manager.nix
-    ./ytmusic.nix
+    # ./ytmusic.nix
     ./zed.nix
   ];
 }

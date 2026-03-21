@@ -241,6 +241,13 @@ in
               ".config/WarThunder"
               # keyrings
               "~/.local/share/keyrings"
+              # gtk
+              ".config/gtk-3.0"
+              ".config/gtk-4.0"
+              # dank search
+              ".config/danksearch"
+              # feishin
+              ".config/feishin"
 
               ".local/share/dolphin"
               ".local/share/bottles"
@@ -265,8 +272,11 @@ in
               ".local/share/Terraria"
               ".local/share/DaVinciResolve"
               ".local/share/Smart Code ltd"
-              ".local/share/nemo"
               ".local/share/nvf"
+              # nautilus dirs
+              ".config/nautilus"
+              ".local/share/nautilus"
+
               ".local/share/vulkan"
               ".local/share/osu"
               ".local/share/containers"
