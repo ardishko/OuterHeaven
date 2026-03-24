@@ -1,8 +1,6 @@
 {
-  pkgs,
   username,
   lib,
-  config,
   ...
 }:
 {
@@ -33,63 +31,13 @@
         if [ -f "/home/${username}/.config/user-dirs.dirs" ]; then
           rm -f "/home/${username}/.config/user-dirs.dirs"
         fi
+        if [ -f "/home/${username}/.local/share/recently-used.xbel" ]; then
+          rm -f "/home/${username}/.local/share/recently-used.xbel"
+        fi
       '';
     };
   };
   # home-manager.backupFileExtension = "backup";
-
-  gtk = {
-    enable = true;
-    font = {
-      name = "Iosevka Nerd Font";
-      size = 14;
-    };
-    theme = {
-      name = "catppuccin-frappe-sky-compact+normal";
-      package = pkgs.catppuccin-gtk.override {
-        variant = "frappe";
-        accents = [ "sky" ];
-        size = "compact";
-        tweaks = [ "normal" ];
-      };
-    };
-
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders;
-    };
-
-    # Where we define the cursor
-
-    cursorTheme = {
-      name = "${config.home.pointerCursor.name}";
-      package = config.home.pointerCursor.package;
-    };
-
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
-
-  # remember to set the cursor size in the hyprland conf if you decide to change it
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.catppuccin-cursors.frappeDark;
-    name = "catppuccin-frappe-dark-cursors";
-    size = 24;
-    hyprcursor = {
-      enable = true;
-      size = 24;
-    };
-  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

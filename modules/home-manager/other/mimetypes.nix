@@ -1,6 +1,7 @@
 # asjdnasjnd
 {
   xdg.mimeApps = {
+    enable = true;
     defaultApplications = {
       "x-scheme-handler/magnet" = [ "mpv.desktop" ];
       "x-scheme-handler/curseforge" = [ "prismlauncher.desktop" ];
@@ -49,6 +50,7 @@
       "application/x-cb7" = [ "com.georgefb.mangareader.desktop" ];
       "application/vnd.comicbook+zip" = [ "com.georgefb.mangareader.desktop" ];
       "application/cnd.comicbook-rar" = [ "com.georgefb.mangareader.desktop" ];
+      "x-scheme-handler/steam" = [ "steam.desktop" ];
     };
   };
 }

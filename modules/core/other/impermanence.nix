@@ -240,7 +240,7 @@ in
               # War Thunder
               ".config/WarThunder"
               # keyrings
-              "~/.local/share/keyrings"
+              ".local/share/keyrings"
               # gtk
               ".config/gtk-3.0"
               ".config/gtk-4.0"
@@ -250,6 +250,7 @@ in
               ".config/feishin"
 
               ".local/share/dolphin"
+              ".local/share/kscreen"
               ".local/share/bottles"
               ".local/state/syncthing"
               ".local/state/wireplumber"
@@ -296,8 +297,11 @@ in
               ".steam"
               ".ftba"
               ".minecraft"
+              # firefox
               ".mozilla"
+              # zen browser
               ".zen"
+              ".config/zen"
               ".mullvad"
               ".factorio"
               ".zplug"
@@ -320,6 +324,9 @@ in
               "Videos"
               "Zomboid"
               "aspyr-media"
+              # nicotine
+              ".local/share/nicotine"
+              ".config/nicotine"
               # hytale
               ".local/share/hytale-launcher"
               ".local/share/Hytale"
@@ -369,6 +376,14 @@ in
 
               # bsnes (SNES)
               ".config/bsnes-hd beta"
+              # dumb kde shit
+              ".local/share/kactivitymanagerd"
+              ".config/kdedefaults"
+              ".config/KDE"
+              ".config/kde.org"
+              ".config/plasma-workspace"
+              ".config/xsettingsd"
+              ".kde"
             ]
             ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
               "homebrew" # this is for deckyloader
@@ -380,6 +395,56 @@ in
           ".config/okularrc"
           ".config/trashrc"
           ".local/state/mpv/watch_history.jsonl"
+          ".config/plasmashellrc"
+          ".config/powerdevilrc"
+          ".config/akregatorrc"
+          ".config/baloofileinformationrc"
+          ".config/baloofilerc"
+          ".config/bluedevilglobalrc"
+          ".config/device_automounter_kcmrc"
+          ".config/filetypesrc"
+          ".config/gwenviewrc"
+          ".config/kactivitymanagerd-pluginsrc"
+          ".config/kactivitymanagerd-statsrc"
+          ".config/kactivitymanagerd-switcher"
+          ".config/kactivitymanagerdrc"
+          ".config/katemetainfos"
+          ".config/katerc"
+          ".config/kateschemarc"
+          ".config/katevirc"
+          ".config/kcmfonts"
+          ".config/kconf_updaterc"
+          ".config/kded5rc"
+          ".config/kgammarc"
+          ".config/kglobalshortcutsrc"
+          ".config/khotkeysrc"
+          ".config/kmixrc"
+          ".config/konsolerc"
+          ".config/kscreenlockerrc"
+          ".config/ksmserverrc"
+          ".config/ksplashrc"
+          ".config/ktimezonedrc"
+          ".config/kwinrulesrc"
+          ".config/kxkbrc"
+          ".config/partitionmanagerrc"
+          ".config/plasma-localerc"
+          ".config/plasma-nm"
+          ".config/plasmanotifyrc"
+          ".config/plasmarc"
+          ".config/PlasmaUserFeedback"
+          ".config/plasmawindowed-appletsrc"
+          ".config/plasmawindowedrc"
+          ".config/powermanagementprofilesrc"
+          ".config/spectaclerc"
+          ".config/startkderc"
+          ".config/systemsettingsrc"
+          ".config/kwalletrc"
+          ".local/share/krunnerstaterc"
+          {
+            file = ".local/share/user-places.xbel";
+            method = "symlink";
+          }
+          ".local/share/recently-used.xbel"
         ];
       };
     };

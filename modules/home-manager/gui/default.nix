@@ -1,15 +1,16 @@
 {
   imports = [
+    ./cursor.nix
     ./browser
     ./discord.nix
-    ./dankMaterialShell
     ./easyeffects.nix
     ./ghostty.nix
+    ./gtk.nix
     ./gzdoom.nix
     ./heroic
+    ./kde-conf.nix
     ./lutris.nix
     ./mpv.nix
-    ./niri-conf.nix
     ./obs
     ./obsidian.nix
     ./prism-launcher.nix
@@ -20,7 +21,6 @@
     ./spicetify.nix
     ./nextcloud-client
     ./steam-rom-manager.nix
-    # ./ytmusic.nix
     ./zed.nix
   ];
 }

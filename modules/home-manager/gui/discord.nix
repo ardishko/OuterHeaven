@@ -14,10 +14,17 @@
       terminal = false;
       exec = "mullvad-exclude vesktop";
     };
+    "discord" = lib.mkForce {
+      name = "Discord (Stable)";
+      type = "Application";
+      icon = "discord";
+      terminal = false;
+      exec = "mullvad-exclude discord";
+    };
   };
   programs.nixcord = {
     enable = true;
-    discord.enable = false;
+    discord.enable = true;
     vesktop = {
       enable = true;
       package = inputs.unstable.legacyPackages.${pkgs.system}.vesktop;

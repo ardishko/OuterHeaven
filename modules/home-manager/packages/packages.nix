@@ -43,7 +43,6 @@
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
         inputs.fluxer-nix.packages.${pkgs.system}.fluxer
         inputs.rpcs3-flake.packages.${pkgs.system}.rpcs3
-
         # Over
         wget
         lutris
@@ -201,7 +200,7 @@
         handbrake
         bottles
         kdePackages.filelight
-
+        jellyfin-desktop
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";
         #   src = fetchurl {
@@ -220,7 +219,6 @@
         bsnes-hd
         nestopia-ue
         dolphin-emu
-        rmg
         inputs.eden-flake.packages.${pkgs.system}.eden
 
         inputs.hytale-launcher.packages.${pkgs.system}.default

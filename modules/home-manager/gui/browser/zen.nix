@@ -131,10 +131,11 @@ let
     };
 in
 {
-  imports = [ inputs.zen-browser.homeModules.beta ];
+  imports = [ inputs.zen-browser.homeModules.twilight ];
   programs = {
     zen-browser = {
       enable = true;
+      setAsDefaultBrowser = true;
       profiles = {
         "freeform" = {
           isDefault = true;

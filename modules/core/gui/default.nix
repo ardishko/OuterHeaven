@@ -13,7 +13,8 @@
     [
       ./dankGreeter.nix
       ./niri.nix
+      ./kde6.nix
     ]
   )
-  ++ (lib.lists.optionals (hostname == "Tanker") [ ./niri.nix ]);
+  ++ (lib.lists.optionals (hostname == "Tanker") [ ./kde6.nix ]);
 }
