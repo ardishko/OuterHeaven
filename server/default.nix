@@ -12,7 +12,7 @@
     ./jellyfin.nix
     ./kavita.nix
     ./tailscale.nix
-    ./updatetimeKuma.nix
+    ./uptimeKuma.nix
     ./nginx.nix
     ./immich.nix
     ./fail2ban.nix
