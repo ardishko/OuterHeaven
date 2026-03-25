@@ -42,25 +42,31 @@
     virtualHosts."stats.ardishco.net" = {
       addSSL = true;
       enableACME = true;
-      locations."/".proxyPass = "http://unix:/run/anubis/anubis-stats/main.sock";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:3000";
+      };
     };
     virtualHosts."gitlab.ardishco.net" = {
       addSSL = true;
       enableACME = true;
       locations."/" = {
-        proxyPass = "http://unix:/run/anubis/anubis-gitlab/main.sock";
+        proxyPass = "http://unix:/var/gitlab/state/tmp/sockets/gitlab.socket";
         proxyWebsockets = true;
       };
     };
     virtualHosts."hosting.ardishco.net" = {
       addSSL = true;
       enableACME = true;
-      locations."/".proxyPass = "http://unix:/run/anubis/anubis-hosting/main.sock";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:9000";
+      };
     };
     virtualHosts."reading.ardishco.net" = {
       addSSL = true;
       enableACME = true;
-      locations."/".proxyPass = "http://unix:/run/anubis/anubis-reading/main.sock";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:5000";
+      };
     };
 
     # Rate-limited (services with native apps/APIs)
