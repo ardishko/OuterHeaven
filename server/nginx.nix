@@ -128,5 +128,19 @@
         proxyPass = "http://127.0.0.1:13378";
       };
     };
+    virtualHosts."uptime.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:3001";
+      };
+    };
+    virtualHosts."netdata.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:19999";
+      };
+    };
   };
 }
