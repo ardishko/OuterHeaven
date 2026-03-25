@@ -18,6 +18,11 @@
     recommendedGzipSettings = true;
     recommendedBrotliSettings = true;
 
+    commonHttpConfig = ''
+      limit_req_zone $binary_remote_addr zone=general:10m rate=10r/s;
+    '';
+
+    # Redirects
     virtualHosts.default = {
       locations."/".return = "301 https://www.youtube.com/watch?v=dQw4w9WgXcQ";
       default = true;
@@ -25,74 +30,64 @@
     virtualHosts."agrf.ardishco.net" = {
       addSSL = true;
       enableACME = true;
-      locations."/" = {
-        return = "301 https://agracingfoundation.org/static/images/psp.gif";
-      };
+      locations."/".return = "301 https://agracingfoundation.org/static/images/psp.gif";
     };
     virtualHosts."jesus.ardishco.net" = {
       addSSL = true;
       enableACME = true;
+      locations."/".return = "301 https://agracingfoundation.org/static/images/psp.gif";
+    };
+
+    # Behind Anubis (browser-only services)
+    virtualHosts."stats.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/".proxyPass = "http://unix:/run/anubis/anubis-stats.sock";
+    };
+    virtualHosts."gitlab.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
       locations."/" = {
-        return = "301 https://agracingfoundation.org/static/images/psp.gif";
+        proxyPass = "http://unix:/run/anubis/anubis-gitlab.sock";
+        proxyWebsockets = true;
       };
     };
+    virtualHosts."hosting.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/".proxyPass = "http://unix:/run/anubis/anubis-hosting.sock";
+    };
+    virtualHosts."reading.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/".proxyPass = "http://unix:/run/anubis/anubis-reading.sock";
+    };
+
+    # Rate-limited (services with native apps/APIs)
     virtualHosts."immich.ardishco.net" = {
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:2283";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
-
     virtualHosts."vault.ardishco.net" = {
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
-
-    virtualHosts."stats.ardishco.net" = {
-      addSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:3000";
-      };
-    };
-
     virtualHosts."media.ardishco.net" = {
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8096";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
-
-    virtualHosts."hosting.ardishco.net" = {
-      addSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:9000";
-      };
-    };
-
-    virtualHosts."gitlab.ardishco.net" = {
-      addSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://unix:/var/gitlab/state/tmp/sockets/gitlab.socket";
-        proxyWebsockets = true;
-      };
-    };
-
-    virtualHosts."pages.ardishco.net" = {
-      addSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8090";
-      };
-    };
-
     virtualHosts."home.ardishco.net" = {
       addSSL = true;
       enableACME = true;
@@ -101,31 +96,32 @@
         proxyWebsockets = true;
         extraConfig = ''
           proxy_set_header Host $host;
+          limit_req zone=general burst=20 nodelay;
         '';
       };
     };
-
     virtualHosts."music.ardishco.net" = {
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:4533";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
-
-    virtualHosts."reading.ardishco.net" = {
-      addSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:5000";
-      };
-    };
-
     virtualHosts."audiobooks.ardishco.net" = {
       addSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:13378";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
+      };
+    };
+    virtualHosts."pages.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8090";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
     virtualHosts."uptime.ardishco.net" = {
@@ -133,6 +129,7 @@
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:3001";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
     virtualHosts."netdata.ardishco.net" = {
@@ -140,6 +137,7 @@
       enableACME = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:19999";
+        extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
   };

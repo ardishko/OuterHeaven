@@ -388,64 +388,68 @@ in
             ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
               "homebrew" # this is for deckyloader
             ]);
-        files = [
-          ".zsh_history"
-          ## Mane wtf is wrong wit u KDE Plasma team
-          ".config/dolphinrc"
-          ".config/okularrc"
-          ".config/trashrc"
-          ".local/state/mpv/watch_history.jsonl"
-          ".config/plasmashellrc"
-          ".config/powerdevilrc"
-          ".config/akregatorrc"
-          ".config/baloofileinformationrc"
-          ".config/baloofilerc"
-          ".config/bluedevilglobalrc"
-          ".config/device_automounter_kcmrc"
-          ".config/filetypesrc"
-          ".config/gwenviewrc"
-          ".config/kactivitymanagerd-pluginsrc"
-          ".config/kactivitymanagerd-statsrc"
-          ".config/kactivitymanagerd-switcher"
-          ".config/kactivitymanagerdrc"
-          ".config/katemetainfos"
-          ".config/katerc"
-          ".config/kateschemarc"
-          ".config/katevirc"
-          ".config/kcmfonts"
-          ".config/kconf_updaterc"
-          ".config/kded5rc"
-          ".config/kgammarc"
-          ".config/kglobalshortcutsrc"
-          ".config/khotkeysrc"
-          ".config/kmixrc"
-          ".config/konsolerc"
-          ".config/kscreenlockerrc"
-          ".config/ksmserverrc"
-          ".config/ksplashrc"
-          ".config/ktimezonedrc"
-          ".config/kwinrulesrc"
-          ".config/kxkbrc"
-          ".config/partitionmanagerrc"
-          ".config/plasma-localerc"
-          ".config/plasma-nm"
-          ".config/plasmanotifyrc"
-          ".config/plasmarc"
-          ".config/PlasmaUserFeedback"
-          ".config/plasmawindowed-appletsrc"
-          ".config/plasmawindowedrc"
-          ".config/powermanagementprofilesrc"
-          ".config/spectaclerc"
-          ".config/startkderc"
-          ".config/systemsettingsrc"
-          ".config/kwalletrc"
-          ".local/share/krunnerstaterc"
-          {
-            file = ".local/share/user-places.xbel";
-            method = "symlink";
-          }
-          ".local/share/recently-used.xbel"
-        ];
+        files =
+          if (config.networking.hostName == "jd" || config.networking.hostName == "theseus") then
+            [ ".zsh_history" ]
+          else
+            [
+              ".zsh_history"
+              ## Mane wtf is wrong wit u KDE Plasma team
+              ".config/dolphinrc"
+              ".config/okularrc"
+              ".config/trashrc"
+              ".local/state/mpv/watch_history.jsonl"
+              ".config/plasmashellrc"
+              ".config/powerdevilrc"
+              ".config/akregatorrc"
+              ".config/baloofileinformationrc"
+              ".config/baloofilerc"
+              ".config/bluedevilglobalrc"
+              ".config/device_automounter_kcmrc"
+              ".config/filetypesrc"
+              ".config/gwenviewrc"
+              ".config/kactivitymanagerd-pluginsrc"
+              ".config/kactivitymanagerd-statsrc"
+              ".config/kactivitymanagerd-switcher"
+              ".config/kactivitymanagerdrc"
+              ".config/katemetainfos"
+              ".config/katerc"
+              ".config/kateschemarc"
+              ".config/katevirc"
+              ".config/kcmfonts"
+              ".config/kconf_updaterc"
+              ".config/kded5rc"
+              ".config/kgammarc"
+              ".config/kglobalshortcutsrc"
+              ".config/khotkeysrc"
+              ".config/kmixrc"
+              ".config/konsolerc"
+              ".config/kscreenlockerrc"
+              ".config/ksmserverrc"
+              ".config/ksplashrc"
+              ".config/ktimezonedrc"
+              ".config/kwinrulesrc"
+              ".config/kxkbrc"
+              ".config/partitionmanagerrc"
+              ".config/plasma-localerc"
+              ".config/plasma-nm"
+              ".config/plasmanotifyrc"
+              ".config/plasmarc"
+              ".config/PlasmaUserFeedback"
+              ".config/plasmawindowed-appletsrc"
+              ".config/plasmawindowedrc"
+              ".config/powermanagementprofilesrc"
+              ".config/spectaclerc"
+              ".config/startkderc"
+              ".config/systemsettingsrc"
+              ".config/kwalletrc"
+              ".local/share/krunnerstaterc"
+              {
+                file = ".local/share/user-places.xbel";
+                method = "symlink";
+              }
+              ".local/share/recently-used.xbel"
+            ];
       };
     };
   };
