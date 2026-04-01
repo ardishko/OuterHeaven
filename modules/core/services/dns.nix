@@ -27,8 +27,16 @@
         cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
         minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
       };
-
+      forwarding_rules = "/etc/dnscrypt-proxy/forwarding-rules.txt";
       server_names = [ "adguard-dns-doh" ];
     };
   };
+  environment.etc."dnscrypt-proxy/forwarding-rules.txt".text = ''
+    ea.com                 9.9.9.9
+    *.ea.com               9.9.9.9
+    eaconnect.ea.com       9.9.9.9
+    accounts.ea.com        9.9.9.9
+    origin.com             9.9.9.9
+    *.origin.com           9.9.9.9
+  '';
 }

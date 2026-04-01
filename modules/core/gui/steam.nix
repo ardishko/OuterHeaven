@@ -31,16 +31,6 @@
               keyutils
             ];
         };
-        #   .overrideAttrs (old: {
-        #     desktopItems = [
-        #       (pkgs.makeDesktopItem {
-        #         name = "steam";
-        #         desktopName = "Steam (mullvad-exclude)";
-        #         exec = "mullvad-exclude steam";
-        #         icon = "steam";
-        #     })
-        #   ];
-        # });
         # the custom desktop entry is in modules/home-manager/xdg.nix
       };
     };

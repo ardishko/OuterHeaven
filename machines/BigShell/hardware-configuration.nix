@@ -35,7 +35,7 @@
   hardware.fw-fanctrl = {
     enable = true;
     config = {
-      defaultStrategy = "lazy";
+      defaultStrategy = "laziest";
       strategyOnDischarging = "laziest";
     };
     # config = {

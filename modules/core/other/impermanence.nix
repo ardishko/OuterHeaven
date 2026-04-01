@@ -287,6 +287,7 @@ in
               ".local/share/BSManager"
               ".local/share/Jellyfin Media Player"
               ".local/share/jellyfinmediaplayer"
+              ".local/share/jellyfin-desktop"
               ".cache/waydroid_script"
               # the home directory lol
               ".ssh"
