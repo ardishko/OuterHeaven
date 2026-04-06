@@ -6,4 +6,6 @@
     compositor.name = "niri";
     configHome = "/home/${username}";
   };
+  services.greetd.settings.default_session.user = "${username}";
+  security.pam.services.greetd.enableKwallet = true;
 }
