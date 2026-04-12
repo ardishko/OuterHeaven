@@ -5,6 +5,20 @@
 }:
 
 {
+  # SECRETS - create before first deploy, restart pterodactyl-panel-setup.service after
+  # echo "base64:$(openssl rand -base64 32)" | sudo tee /etc/cred/pterodactyl-app-key
+  # openssl rand -base64 24 | sudo tee /etc/cred/pterodactyl-db-password
+  # openssl rand -base64 24 | sudo tee /etc/cred/pterodactyl-hashids-salt
+  # openssl rand -base64 24 | sudo tee /etc/cred/pterodactyl-redis-password
+  # sudo chmod 640 /etc/cred/pterodactyl-*
+  # sudo chown root:nginx /etc/cred/pterodactyl-*
+  #
+  # After creating node in panel UI:
+  # echo -n "<token-id>" | sudo tee /etc/cred/pterodactyl-wings-token-id
+  # echo -n "<token>" | sudo tee /etc/cred/pterodactyl-wings-token
+  # sudo chmod 640 /etc/cred/pterodactyl-wings-token*
+  # sudo chown root:pterodactyl-wings /etc/cred/pterodactyl-wings-token*
+
   imports = [ inputs.pterodactyl-nix.nixosModules.default ];
   nixpkgs.overlays = [ inputs.pterodactyl-nix.overlays.default ];
 
@@ -22,7 +36,6 @@
     database = {
       createLocally = true;
       user = "pterodactyl-panel";
-      passwordFile = "/etc/cred/pterodactyl-db-password";
     };
 
     redis = {
