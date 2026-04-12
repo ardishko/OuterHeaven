@@ -1,9 +1,13 @@
 {
   config,
+  inputs,
   ...
 }:
 
 {
+  imports = [ inputs.pterodactyl-nix.nixosModules.default ];
+  nixpkgs.overlays = [ inputs.pterodactyl-nix.overlays.default ];
+
   services.pterodactyl.panel = {
     enable = true;
     enableNginx = false;

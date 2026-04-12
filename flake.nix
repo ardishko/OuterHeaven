@@ -124,6 +124,9 @@
     niri-nix = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     };
+    pterodactyl-nix = {
+      url = "github:PadowYT2/pterodactyl.nix";
+    };
   };
   outputs =
     inputs@{
