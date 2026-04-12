@@ -7,7 +7,6 @@
 {
   # SECRETS - create before first deploy, restart pterodactyl-panel-setup.service after
   # echo "base64:$(openssl rand -base64 32)" | sudo tee /etc/cred/pterodactyl-app-key
-  # openssl rand -base64 24 | sudo tee /etc/cred/pterodactyl-db-password
   # openssl rand -base64 24 | sudo tee /etc/cred/pterodactyl-hashids-salt
   # openssl rand -base64 24 | sudo tee /etc/cred/pterodactyl-redis-password
   # sudo chmod 640 /etc/cred/pterodactyl-*
@@ -35,7 +34,7 @@
 
     database = {
       createLocally = true;
-      user = "pterodactyl-panel";
+      user = "nginx";
     };
 
     redis = {
