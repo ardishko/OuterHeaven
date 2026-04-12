@@ -55,13 +55,6 @@
         proxyWebsockets = true;
       };
     };
-    virtualHosts."hosting.ardishco.net" = {
-      addSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:9000";
-      };
-    };
     virtualHosts."reading.ardishco.net" = {
       addSSL = true;
       enableACME = true;
