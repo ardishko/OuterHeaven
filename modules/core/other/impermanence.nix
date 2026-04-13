@@ -46,9 +46,12 @@ in
             "/var/lib/bitwarden_rs" # vaultwarden
             "/var/lib/bitwarden-backup"
             "/var/lib/nextcloud" # nextcloud
+            # redis block start
             "/var/lib/redis-nextcloud" # redis nextcloud
             "/var/lib/redis-nitter" # redis nitter
             "/var/lib/redis-gitlab" # redis gitlab
+            "/var/lib/redis-pterodactyl-panel" # redis pterodactyl panel
+            # redis block end
             "/var/lib/parrot" # parrot
             "/var/lib/jellyfin" # jellyfin
             "/var/cache/jellyfin" # jellyfin cache
@@ -74,7 +77,9 @@ in
             "/var/lib/promtail"
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
-            "/var/lib/pterodactyl" # pterodactyl
+            "/var/lib/pterodactyl-panel" # pterodactyl panel
+            "/var/lib/pterodactyl-wings" # pterodactyl wings
+            "/var/lib/mysql" # mysql database
             "/etc/ssh"
             # immich
             {
