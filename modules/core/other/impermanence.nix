@@ -74,6 +74,7 @@ in
             "/var/lib/promtail"
             "/var/log/nginx" # nginx logs
             "/var/log/caddy" # caddy logs
+            "/var/lib/pterodactyl" # pterodactyl
             "/etc/ssh"
             # immich
             {
