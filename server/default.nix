@@ -3,7 +3,7 @@
     # ./anubis.nix
     ./audiobookshelf.nix
     ./fail2ban.nix
-    ./gitlab.nix
+    # ./gitlab.nix
     ./grafana.nix
     ./home-assistant.nix
     ./navidrome.nix
