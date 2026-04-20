@@ -83,5 +83,8 @@
       keyFile = config.security.acme.certs."hosting.ardishco.net".directory + "/key.pem";
     };
   };
-  users.users.pterodactyl-wings.extraGroups = [ "acme" ];
+  users.users.pterodactyl-wings.extraGroups = [
+    "acme"
+    "nginx"
+  ];
 }
