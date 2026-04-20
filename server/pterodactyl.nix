@@ -70,7 +70,7 @@
 
   services.pterodactyl.wings = {
     enable = true;
-    openFirewall = false;
+    openFirewall = true;
 
     remote = "https://hosting.ardishco.net";
     uuid = "7a247f75-cc1c-46f5-9866-20618386172f";
