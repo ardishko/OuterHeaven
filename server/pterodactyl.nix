@@ -73,7 +73,7 @@
     openFirewall = false;
 
     remote = "https://hosting.ardishco.net";
-    uuid = "paste-node-uuid-from-panel-here";
+    uuid = "7a247f75-cc1c-46f5-9866-20618386172f";
     tokenIdFile = "/etc/cred/pterodactyl-wings-token-id";
     tokenFile = "/etc/cred/pterodactyl-wings-token";
 
