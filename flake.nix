@@ -127,9 +127,6 @@
     pterodactyl-nix = {
       url = "github:ardishko/pterodactyl.nix";
     };
-    affinity-nix = {
-      url = "github:mrshmllow/affinity-nix";
-    };
   };
   outputs =
     inputs@{
