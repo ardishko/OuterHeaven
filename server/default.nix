@@ -7,7 +7,7 @@
     ./grafana.nix
     ./home-assistant.nix
     ./navidrome.nix
-    ./netdata.nix
+    # ./netdata.nix
     ./nextcloud.nix
     ./vaultwarden.nix
     ./jellyfin.nix

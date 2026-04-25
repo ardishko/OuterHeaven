@@ -87,7 +87,4 @@
     "acme"
     "nginx"
   ];
-  networking.extraHosts = ''
-    127.0.0.1 hosting.ardishco.net
-  '';
 }
