@@ -73,10 +73,13 @@
     openFirewall = true;
 
     remote = "https://hosting.ardishco.net";
-    uuid = "7a247f75-cc1c-46f5-9866-20618386172f";
+    uuid = "4a9a0a2a-fbcc-4fbd-9ecc-20f693e7e964";
     tokenIdFile = "/etc/cred/pterodactyl-wings-token-id";
     tokenFile = "/etc/cred/pterodactyl-wings-token";
-
+    extraConfig = {
+      allowed_origins = [ "https://hosting.ardishco.net" ];
+      allow_cors_private_network = true;
+    };
     api.ssl = {
       enable = true;
       certFile = config.security.acme.certs."wings.ardishco.net".directory + "/cert.pem";
