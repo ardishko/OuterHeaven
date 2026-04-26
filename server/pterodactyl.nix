@@ -79,8 +79,8 @@
 
     api.ssl = {
       enable = true;
-      certFile = config.security.acme.certs."hosting.ardishco.net".directory + "/cert.pem";
-      keyFile = config.security.acme.certs."hosting.ardishco.net".directory + "/key.pem";
+      certFile = config.security.acme.certs."wings.ardishco.net".directory + "/cert.pem";
+      keyFile = config.security.acme.certs."wings.ardishco.net".directory + "/key.pem";
     };
   };
   users.users.pterodactyl-wings.extraGroups = [

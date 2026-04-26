@@ -7,8 +7,14 @@
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/cred/cloudflare-dns.ini";
     };
+    certs = {
+      "wings.ardishco.net" = { };
+    };
   };
-
+  networking.extraHosts = ''
+    127.0.0.1 hosting.ardishco.net
+    127.0.0.1 wings.ardishco.net
+  '';
   # nginx TLS vhosts
   services.nginx = {
     enable = true;
