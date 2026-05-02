@@ -223,7 +223,7 @@
         dolphin-emu
         inputs.eden-flake.packages.${pkgs.system}.eden
 
-        inputs.hytale-launcher.packages.${pkgs.system}.default
+        # inputs.hytale-launcher.packages.${pkgs.system}.default
         # gonna fix this one ^
 
         # Override Template
