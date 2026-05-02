@@ -169,7 +169,6 @@ in
               ".config/r2modmanPlus-local"
               ".config/sops"
               ".config/quickshell"
-              ".config/vesktop"
               ".config/Vencord"
               # equibop
               ".config/equibop"
@@ -265,7 +264,10 @@ in
               ".local/share/applications"
               ".local/share/Danganronpa2"
               ".local/share/StardewValley"
+              # steam related stuff
               ".local/share/Steam"
+              "~/.config/faugus-launcher/"
+              "~/Faugus/"
               ".local/share/vinegar"
               ".local/share/flatpak"
               ".local/share/PrismLauncher"

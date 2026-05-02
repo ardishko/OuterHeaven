@@ -7,12 +7,12 @@
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
-    "vesktop" = lib.mkForce {
+    "equibop" = lib.mkForce {
       name = "Discord";
       type = "Application";
       icon = "discord";
       terminal = false;
-      exec = "mullvad-exclude vesktop";
+      exec = "mullvad-exclude equibop --ozone-platform=wayland";
     };
     "discord" = lib.mkForce {
       name = "Discord (Stable)";
@@ -25,9 +25,14 @@
   programs.nixcord = {
     enable = true;
     discord.enable = true;
-    vesktop = {
+    # vesktop = {
+    #   enable = true;
+    #   package = inputs.unstable.legacyPackages.${pkgs.system}.vesktop;
+    # };
+    equibop = {
       enable = true;
-      package = inputs.unstable.legacyPackages.${pkgs.system}.vesktop;
+      package = inputs.unstable.legacyPackages.${pkgs.system}.equibop;
+      autoscroll.enable = true;
     };
     quickCss = "";
     config = {
