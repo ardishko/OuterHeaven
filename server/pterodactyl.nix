@@ -90,4 +90,7 @@
     "acme"
     "nginx"
   ];
+  services.phpfpm.pools.pterodactyl-panel.phpEnv = {
+    "openssl.cafile" = "/etc/ssl/certs/ca-bundle.crt";
+  };
 }
