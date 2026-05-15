@@ -8,14 +8,14 @@
   imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
     "equibop" = lib.mkForce {
-      name = "Discord";
+      name = "Discord (Equibop)";
       type = "Application";
       icon = "discord";
       terminal = false;
       exec = "mullvad-exclude equibop --ozone-platform=wayland";
     };
     "discord" = lib.mkForce {
-      name = "Discord (Stable)";
+      name = "Discord";
       type = "Application";
       icon = "discord";
       terminal = false;
@@ -54,7 +54,6 @@
         };
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
-        betterNotesBox.enable = true;
         betterRoleDot.enable = true;
         betterUploadButton.enable = true;
         BlurNSFW.enable = true;

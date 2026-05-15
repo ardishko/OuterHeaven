@@ -11,7 +11,8 @@
   ++ (lib.lists.optionals
     (hostname == "ShadowMoses" || hostname == "BigShell" || hostname == "Kamurocho")
     [
-      ./dankGreeter.nix
+      # ./dankGreeter.nix
+      ./sddm.nix
       ./kde6.nix
     ]
   )

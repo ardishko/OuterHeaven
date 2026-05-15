@@ -168,6 +168,17 @@ in
     # };
   };
 
+  systemd.user.services.kscreen-hdr = {
+    Unit = {
+      Description = "Enable HDR on DP-1";
+      After = [ "plasma-plasmashell.service" ];
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'sleep 3 && ${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.hdr.enable output.DP-1.wcg.enable'";
+    };
+    Install.WantedBy = [ "plasma-plasmashell.service" ];
+  };
   # here's the taskbar, it's seriously annoying to declare. I hate how stateful plasma is
   xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc" = {
     text = ''
@@ -208,7 +219,7 @@ in
       plugin=org.kde.plasma.icontasks
 
       [Containments][2][Applets][5][Configuration][General]
-      launchers=applications:zen-twilight.desktop,applications:vesktop.desktop,applications:steam.desktop,applications:dev.zed.Zed.desktop,applications:signal.desktop,applications:com.mitchellh.ghostty.desktop,applications:feishin.desktop
+      launchers=applications:zen-twilight.desktop,applications:discord.desktop,applications:steam.desktop,applications:dev.zed.Zed.desktop,applications:signal.desktop,applications:com.mitchellh.ghostty.desktop,applications:feishin.desktop,applications:com.obsproject.Studio.desktop
 
       [Containments][2][Applets][6]
       immutability=1
