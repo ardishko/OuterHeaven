@@ -19,7 +19,7 @@
       type = "Application";
       icon = "discord";
       terminal = false;
-      exec = "mullvad-exclude discord";
+      exec = "mullvad-exclude discord --enable-features=UseOzonePlatform --ozone-platform=wayland";
     };
   };
   programs.nixcord = {

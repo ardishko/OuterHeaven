@@ -128,6 +128,20 @@ let
         url = "https://addons.mozilla.org/firefox/downloads/file/4382056/netflux-1.0.11.xpi";
         sha256 = "sha256-R/Fz1nBljHLZValUnTRY3yNKM2HUvfx2+ph9QIppn2g=";
       };
+      leechblock-ng = remoteXpiAddon {
+        pname = "leechblock-ng";
+        version = "1.7.2";
+        addonId = "leechblockng@proginosko.com";
+        url = "https://addons.mozilla.org/firefox/downloads/file/4657335/leechblock_ng-1.7.2.xpi";
+        sha256 = "sha256:1rf1p27xr49wlzxcyp8j3g33fcjk5c07z5b68wlgwllszp66cd8k";
+      };
+      arsenal-support = remoteXpiAddon {
+        pname = "arsenal-support-extension";
+        version = "2026.5.2";
+        addonId = "@ext.arsenal.app";
+        url = "https://addons.mozilla.org/firefox/downloads/file/4812959/arsenal_support_extension-2026.5.2.xpi";
+        sha256 = "sha256:0n0wxkrr6lqkb4d0f9ylr8d7r0phfvd55n4xi5p2s0lpwjkm87f1";
+      };
     };
 in
 {
@@ -316,6 +330,8 @@ in
                 watch-on-odysee
                 youtube-for-tv
                 google-container
+                leechblock-ng
+                arsenal-support
                 # Theme
                 catppuccin-frappe-sky
                 #catppuccin-mocha-lavender # over here

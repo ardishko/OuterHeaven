@@ -336,7 +336,7 @@ in
         RestartSec = "5s";
         Environment = mapAttrsToList (name: value: "${name}=${value}") cfg.environment;
       };
-      Install.WantedBy = [ "default.target" ];
+      Install.WantedBy = [ "graphical-session.target" ];
     };
 
     # Session change detection and restart

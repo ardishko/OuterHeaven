@@ -17,7 +17,6 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
     ];
-    # kernelParams = [ ];
     extraModulePackages =
       with config.boot.kernelPackages;
       (lib.lists.optionals (hostname == "ShadowMoses") [
@@ -35,14 +34,18 @@
       "ntfs"
       "zfs"
     ];
-    kernelModules = if (hostname != "jd" || hostname != "theseus") then [
-      "udev"
-      "xpadneo"
-      "hid-nintendo"
-    ] else [
-      "i2c-dev"
-      "i915"
-    ];
+    kernelModules =
+      if (hostname != "jd" || hostname != "theseus") then
+        [
+          "udev"
+          "xpadneo"
+          "hid-nintendo"
+        ]
+      else
+        [
+          "i2c-dev"
+          "i915"
+        ];
   };
   hardware.uinput.enable = true;
 }
