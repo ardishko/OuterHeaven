@@ -193,7 +193,7 @@
         remmina
         audacity
         tartube-yt-dlp
-        mission-center
+        resources
         parabolic
         bs-manager
         gimp-with-plugins

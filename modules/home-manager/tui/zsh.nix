@@ -21,8 +21,10 @@
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
-      rebuild = "nh os switch ~/NixOS/OuterHeaven";
-      rebuild-boot = "nh os boot /home/${
+      rebuild = "sudo nixos-rebuild switch --flake /home/${
+        osConfig.users.users.${config.home.username}.description
+      }/NixOS/OuterHeaven#";
+      rebuild-boot = "sudo nixos-rebuild switch --flake /home/${
         osConfig.users.users.${config.home.username}.description
       }/NixOS/OuterHeaven";
       ssh-generate-keys = "echo run: ssh-keygen -t rsa -b 2048 -C 'example@your-email.com'";
