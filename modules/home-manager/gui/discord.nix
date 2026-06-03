@@ -103,7 +103,7 @@
         noUnblockToJump.enable = true;
         openInApp.enable = true;
         permissionFreeWill.enable = true;
-        pictureInPicture.enable = true;
+        # pictureInPicture.enable = true;
         PinDMs = {
           enable = true;
           pinOrder = 1;

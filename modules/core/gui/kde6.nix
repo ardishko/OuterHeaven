@@ -24,10 +24,10 @@
     kwallet
     kwallet-pam
     kwalletmanager
-    kde-gtk-config
-    plasma-integration
-    libplasma
-    frameworkintegration
+    # kde-gtk-config
+    # plasma-integration
+    # libplasma
+    # frameworkintegration
     kauth
     phonon-vlc
     kdeplasma-addons

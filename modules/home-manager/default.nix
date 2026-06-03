@@ -13,9 +13,8 @@
         ./packages
         ./services
         ./tui
-        #        ./schizofox.nix
         #           wtf raf
       ];
-  home.stateVersion = "23.05";
+  home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 }

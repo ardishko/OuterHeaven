@@ -8,6 +8,5 @@
     enable = true;
     package = inputs.unstable.legacyPackages.${pkgs.system}.wivrn;
     openFirewall = true;
-    defaultRuntime = true;
   };
 }

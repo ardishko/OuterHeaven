@@ -2,10 +2,10 @@
   description = "me when the flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun = {
@@ -57,7 +57,7 @@
     };
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
       url = "github:ardishko/disko";
@@ -153,7 +153,7 @@
             ./secrets
             disko.nixosModules.disko
             (import ./disko.nix {
-              device = "/dev/nvme0n1";
+              device = "/dev/disk/by-id/nvme-WDS100T1X0E-00AFY0_20503D446001";
               hostname = "ShadowMoses";
             })
           ];

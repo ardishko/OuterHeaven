@@ -528,6 +528,7 @@ in
       ForegroundVisited=202, 158, 230
 
       [General]
+      ColorScheme=CatppuccinFrappeSky
       ColorSchemeHash=f13a5f93a8d2186748a87eaf56ec9fcef24073d5
       font=Iosevka Nerd Font,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 

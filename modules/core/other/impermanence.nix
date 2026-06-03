@@ -142,6 +142,7 @@ in
             "/var/lib/tailscale" # tailscale
             "/var/lib/containers" # podman / docker / distrobox I think?
             "/etc/ssh"
+            "/var/lib/sddm"
           ]
           ++ (lib.lists.optionals (config.networking.hostName == "Tanker") [
             "/var/lib/decky-loader"

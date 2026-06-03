@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.arrpc = {
-    enable = true;
+    enable = false;
     package = pkgs.arrpc;
   };
 }

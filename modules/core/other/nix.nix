@@ -5,6 +5,7 @@
         "nix-command"
         "flakes"
       ];
+      trusted-users = [ "vaporsnake" ];
       builders-use-substitutes = true;
       # substituters to use
       substituters = [

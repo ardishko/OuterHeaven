@@ -42,11 +42,9 @@
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
         inputs.fluxer-nix.packages.${pkgs.system}.fluxer
-        inputs.rpcs3-flake.packages.${pkgs.system}.rpcs3
         # Over
         wget
         lutris
-        neofetch
         font-manager
         htop
         killall
@@ -68,7 +66,6 @@
         thunderbird
         nix-init
         ffmpeg
-        helvum
         krita
         lolcat
         vulkan-tools
@@ -84,8 +81,6 @@
         clonehero
         scanmem
         unzip
-        qgnomeplatform-qt6
-        qgnomeplatform
         gparted
         gnome-clocks
         gnome-sound-recorder
@@ -107,7 +102,6 @@
         zathura
         nwg-panel
         gnome-pomodoro
-        premid
         nixpkgs-fmt
         nix-update
         wine-staging
@@ -180,7 +174,6 @@
         vscodium-fhs
         ghex
         osu-lazer-bin
-        gtop
         element-desktop
         nwg-look
         # hyprsunset
@@ -214,7 +207,7 @@
         # emu
         cemu
         pcsx2
-        duckstation
+        # duckstation
         desmume
         azahar
         shadps4
@@ -222,6 +215,7 @@
         nestopia-ue
         dolphin-emu
         inputs.eden-flake.packages.${pkgs.system}.eden
+        rpcs3
 
         # inputs.hytale-launcher.packages.${pkgs.system}.default
         # gonna fix this one ^
@@ -300,15 +294,4 @@
   # scripts
 
   # Permitted Insecure Packages and Steam gamescope workaround found at: https://github.com/NixOS/nixpkgs/issues/162562#issuecomment-1523177264
-  nixpkgs = {
-    config = {
-      permittedInsecurePackages = [
-        "ventoy-qt5-1.1.10"
-        "ventoy-1.1.07"
-        "qtwebengine-5.15.19"
-      ];
-      allowUnfree = true;
-      allowBroken = true;
-    };
-  };
 }
