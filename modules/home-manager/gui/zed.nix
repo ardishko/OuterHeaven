@@ -17,7 +17,6 @@
       "dockerfile"
       "toml"
       "java"
-      "discord-presence"
       "catppuccin"
       "catppuccin-icons"
       "nu"

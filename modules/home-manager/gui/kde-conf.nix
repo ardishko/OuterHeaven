@@ -537,6 +537,7 @@ in
 
       [KDE]
       LookAndFeelPackage=Catppuccin-Frappe-Sky
+      widgetStyle=kvantum
 
       [WM]
       activeBackground=48,52,70

@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   nix = {
     settings = {
@@ -5,7 +6,7 @@
         "nix-command"
         "flakes"
       ];
-      trusted-users = [ "vaporsnake" ];
+      trusted-users = [ "${username}" ];
       builders-use-substitutes = true;
       # substituters to use
       substituters = [

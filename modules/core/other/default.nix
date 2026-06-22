@@ -5,6 +5,7 @@
     ./env-vars.nix
     ./nix.nix
     ./nixpkgs.nix
+    ./nyx.nix
     ./polkit.nix
     ./xdg.nix
     ./impermanence.nix

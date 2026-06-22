@@ -68,24 +68,24 @@ let
         version = "unknown";
         addonId = "{c7cf6786-24b7-4bd2-ae71-b985fcc98f20}";
         url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_frappe_sky.xpi";
-        sha256 = "sha256-Fb9VUpsWKtERV4VkeWhBZBSZLMkQMrnBexaRIuPc4Ho=";
+        sha256 = "0yp0vkij548ngg0vjchhr4n9j53485l7jr45aw8x2ahnkd95bgqm";
       };
       # A: This one's for my friend. It's not referenced anywhere in the conf.
-      catppuccin-mocha-lavender = remoteXpiAddon {
-        pname = "catppuccin-mocha-lavender";
-        version = "unknown";
-        addonId = "{8446b178-c865-4f5c-8ccc-1d7887811ae3}";
-        url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_lavender.xpi";
-        sha256 = "sha256-cCkrC4ZSy6tAjRXSYdxRUPaQ+1u6+W9OcxclbH2beTM=";
-      };
-      # and this one too
-      catppuccin-mocha-green = remoteXpiAddon {
-        pname = "catppuccin-mocha-green";
-        version = "unknown";
-        addonId = "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}";
-        url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_green.xpi";
-        sha256 = "sha256-mKTr2yab/BOFnRBRrgqiVFoFxGms2nvjcOXKmYL54ww=";
-      };
+      # catppuccin-mocha-lavender = remoteXpiAddon {
+      #   pname = "catppuccin-mocha-lavender";
+      #   version = "unknown";
+      #   addonId = "{8446b178-c865-4f5c-8ccc-1d7887811ae3}";
+      #   url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_lavender.xpi";
+      #   sha256 = "sha256-cCkrC4ZSy6tAjRXSYdxRUPaQ+1u6+W9OcxclbH2beTM=";
+      # };
+      # # and this one too
+      # catppuccin-mocha-green = remoteXpiAddon {
+      #   pname = "catppuccin-mocha-green";
+      #   version = "unknown";
+      #   addonId = "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}";
+      #   url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_green.xpi";
+      #   sha256 = "sha256-mKTr2yab/BOFnRBRrgqiVFoFxGms2nvjcOXKmYL54ww=";
+      # };
       cf-purge-plugin = remoteXpiAddon {
         pname = "Cloudflare Purge Plugin";
         version = "1.5.1";
@@ -155,8 +155,8 @@ in
           isDefault = true;
           search = {
             force = true;
-            default = "ddg";
-            privateDefault = "ddg";
+            default = "Brave";
+            privateDefault = "Brave";
             engines = {
               "Nix Packages" = {
                 urls = [

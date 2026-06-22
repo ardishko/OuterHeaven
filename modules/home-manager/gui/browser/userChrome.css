@@ -42,6 +42,11 @@
         background-color: #292c3c !important;
     }
 
+    .tabbrowser-tab {
+        border: none !important;
+        outline: none !important;
+    }
+
     .urlbar-background {
         background-color: #303446 !important;
     }
@@ -125,6 +130,14 @@
     }
 
     #zen-appcontent-navbar-container {
+        background-color: #292c3c !important;
+    }
+
+    #navigator-toolbox {
+        background-color: #292c3c !important;
+    }
+
+    #nav-bar {
         background-color: #292c3c !important;
     }
 }

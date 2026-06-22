@@ -127,6 +127,9 @@
     pterodactyl-nix = {
       url = "github:ardishko/pterodactyl.nix";
     };
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    };
   };
   outputs =
     inputs@{

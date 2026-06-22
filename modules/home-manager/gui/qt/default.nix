@@ -2,15 +2,19 @@
 {
   qt = {
     enable = true;
-    platformTheme = {
-      name = "qt5ct";
-    };
-    style = {
-      package = pkgs.libsForQt5.qt5ct;
-    };
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
   };
-  imports = [
-    ./qt5ct.nix
-    ./qt6ct.nix
-  ];
+
+  home.packages = with pkgs; [ catppuccin-kvantum ];
+
+  xdg.configFile."Kvantum/catppuccin-frappe-blue" = {
+    source = "${pkgs.catppuccin-kvantum}/share/Kvantum/catppuccin-frappe-blue";
+    recursive = true;
+  };
+
+  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=catppuccin-frappe-blue
+  '';
 }
