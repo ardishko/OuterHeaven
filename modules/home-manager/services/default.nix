@@ -4,5 +4,6 @@
     # ./hypridle.nix
     ./arrpc.nix
     ./gnome-keyring.nix
+    ./xmousepasteblock.nix
   ];
 }

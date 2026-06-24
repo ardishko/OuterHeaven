@@ -307,11 +307,13 @@ in
               ".steam"
               ".ftba"
               ".minecraft"
-              # firefox
-              ".mozilla"
               # zen browser
-              ".zen"
               ".config/zen"
+              # brave browser
+              ".config/BraveSoftware"
+              # librewolf
+              ".config/librewolf"
+              ".librewolf"
               ".mullvad"
               ".factorio"
               ".zplug"

@@ -60,7 +60,7 @@ in
       "plasma-org.kde.plasma.desktop-appletsrc"
     ];
     # Panels are declared via xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc"
-    # below — the panels option in plasma-manager doesn't work reliably.
+    # below, the panels option in plasma-manager doesn't work reliably.
     powerdevil = {
       battery = {
         dimDisplay.enable = true;
@@ -126,7 +126,6 @@ in
       captureActiveWindow = "Shift+Print";
     };
 
-    #  Unbind KRunner
     shortcuts.krunner = {
       "RunClipboard" = "none";
       "Run Command" = "none";
@@ -219,7 +218,7 @@ in
       plugin=org.kde.plasma.icontasks
 
       [Containments][2][Applets][5][Configuration][General]
-      launchers=applications:zen-twilight.desktop,applications:discord.desktop,applications:steam.desktop,applications:dev.zed.Zed.desktop,applications:signal.desktop,applications:com.mitchellh.ghostty.desktop,applications:feishin.desktop,applications:com.obsproject.Studio.desktop
+      launchers=applications:librewolf.desktop,applications:discord.desktop,applications:steam.desktop,applications:dev.zed.Zed.desktop,applications:signal.desktop,applications:com.mitchellh.ghostty.desktop,applications:feishin.desktop,applications:com.obsproject.Studio.desktop
 
       [Containments][2][Applets][6]
       immutability=1
@@ -553,6 +552,9 @@ in
     text = ''
       [Keyboard]
       NumLock=0
+
+      [KDE]
+      MiddleClickPaste=false
 
       [Mouse]
       cursorSize=24

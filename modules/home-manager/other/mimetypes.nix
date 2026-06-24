@@ -51,6 +51,9 @@
       "application/vnd.comicbook+zip" = [ "com.georgefb.mangareader.desktop" ];
       "application/cnd.comicbook-rar" = [ "com.georgefb.mangareader.desktop" ];
       "x-scheme-handler/steam" = [ "steam.desktop" ];
+      "x-scheme-handler/http" = "librewolf.desktop";
+      "x-scheme-handler/https" = "librewolf.desktop";
+      "text/html" = "librewolf.desktop";
     };
   };
 }

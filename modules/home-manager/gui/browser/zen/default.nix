@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./zen.nix
+  ];
+}
