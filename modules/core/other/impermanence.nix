@@ -166,8 +166,6 @@ in
               ".config/spotify"
               ".config/gzdoom"
               ".config/ags"
-              ".config/r2modman"
-              ".config/r2modmanPlus-local"
               ".config/sops"
               ".config/quickshell"
               ".config/Vencord"
@@ -309,8 +307,6 @@ in
               ".minecraft"
               # zen browser
               ".config/zen"
-              # brave browser
-              ".config/BraveSoftware"
               # librewolf
               ".config/librewolf"
               ".librewolf"
@@ -336,6 +332,15 @@ in
               "Videos"
               "Zomboid"
               "aspyr-media"
+              ## Mod Managers
+              # Olympus
+              ".config/Olympus"
+              # r2modman
+              ".config/r2modman"
+              ".config/r2modmanPlus-local"
+              # hedgehog mod man
+              ".local/share/hedge-dev"
+              # Where the fuck even is BeamMP's files?
               # nicotine
               ".local/share/nicotine"
               ".config/nicotine"

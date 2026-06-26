@@ -122,12 +122,18 @@
         tailscale
         ventoy-full-qt
         ripcord
-        r2modman
         qt6.qtdeclarative
+
+        # modding
+        r2modman
+        beammp-launcher
+        balatro-mod-manager
+        hedgemodmanager
+        scarab
+        olympus
+
         # feishin navidrome
         feishin
-
-        # nheko
 
         # file manager
         kdePackages.dolphin
@@ -181,7 +187,6 @@
         discover-overlay
         goverlay
         zoom-us
-        lumafly
         blockbench
         remmina
         audacity
@@ -269,7 +274,6 @@
       "org.vinegarhq.Sober"
       "com.modrinth.ModrinthApp"
       "com.google.AndroidStudio"
-      "io.github.everestapi.Olympus"
       "com.github.tchx84.Flatseal"
       "io.mrarm.mcpelauncher"
       "camp.nook.nookdesktop"
