@@ -284,6 +284,14 @@
       "net.audiorelay.AudioRelay"
       "org.kde.Platform"
       "org.freedesktop.Platform"
+      rec {
+        appId = "io.github.Amethyst.ModManager";
+        sha256 = "sha256-WiGVIi2G9WdqZCGI/PjpjeHh2pD349hW1mtOJrMFUOY=";
+        bundle = "${pkgs.fetchurl {
+          url = "https://github.com/ChrisDKN/Amethyst-Mod-Manager/releases/download/v1.3.11/AmethystModManager.flatpak";
+          inherit sha256;
+        }}";
+      }
     ];
     # TODO add conditionally installed flatpak packages.
     update = {
