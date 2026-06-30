@@ -5,7 +5,9 @@
     defaults = {
       email = "ardishco@protonmail.com";
       dnsProvider = "cloudflare";
-      credentialsFile = "/etc/cred/cloudflare-dns.ini";
+      credentialFiles = {
+        "CF_DNS_API_TOKEN_FILE" = "/etc/cred/cloudflare-dns.ini";
+      };
     };
     certs = {
       "wings.ardishco.net" = { };
