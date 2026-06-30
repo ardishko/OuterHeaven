@@ -2,9 +2,12 @@
   services = {
     grafana = {
       enable = true;
-      settings.server = {
-        http_addr = "0.0.0.0"; # listen on all interfaces
-        http_port = 3000;
+      settings = {
+        server = {
+          http_addr = "0.0.0.0"; # listen on all interfaces
+          http_port = 3000;
+        };
+        security.secret_key = "$__file{/etc/cred/grafana-secret-key}";
       };
       provision = {
         enable = true;
