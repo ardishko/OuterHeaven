@@ -23,13 +23,7 @@
         xpadneo
         usbip
       ]);
-    kernelPackages =
-      if (hostname == "Tanker") then
-        pkgs.linuxPackages_jovian
-      else if (hostname == "jd" || hostname == "theseus") then
-        pkgs.linuxPackages_hardened
-      else
-        pkgs.linuxPackages;
+    kernelPackages = if (hostname == "Tanker") then pkgs.linuxPackages_jovian else pkgs.linuxPackages;
     supportedFilesystems = [
       "ntfs"
       "zfs"

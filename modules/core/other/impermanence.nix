@@ -341,6 +341,7 @@ in
               # hedgehog mod man
               ".local/share/hedge-dev"
               # Where the fuck even is BeamMP's files?
+              ".local/share/BeamNG"
               # nicotine
               ".local/share/nicotine"
               ".config/nicotine"
