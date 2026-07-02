@@ -113,9 +113,8 @@
     hytale-launcher = {
       url = "github:JPyke3/hytale-launcher-nix";
     };
-    eden-flake.url = "github:ardishko/eden-flake";
+    # eden-flake.url = "github:ardishko/eden-flake";
     fluxer-nix.url = "github:ardishko/fluxer-nix";
-    rpcs3-flake.url = "github:ardishko/rpcs3-flake";
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -219,7 +219,7 @@
         bsnes-hd
         nestopia-ue
         dolphin-emu
-        inputs.eden-flake.packages.${pkgs.system}.eden
+        inputs.unstable.legacyPackages.${pkgs.system}.eden
         rpcs3
 
         # inputs.hytale-launcher.packages.${pkgs.system}.default
