@@ -26,11 +26,11 @@
         enableXorgRotation = true;
       };
     };
-    decky-loader = {
-      enable = true;
-      user = "${username}";
-      stateDir = "/var/lib/decky-loader";
-    };
+    # decky-loader = {
+    #   enable = true;
+    #   user = "${username}";
+    #   stateDir = "/var/lib/decky-loader";
+    # };
     steamos = {
       useSteamOSConfig = true;
       enableAutoMountUdevRules = true;

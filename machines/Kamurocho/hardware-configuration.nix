@@ -40,19 +40,20 @@
 
   hardware = {
     nvidia = {
-      # enabled = true;
+      # enabled = true; # this is read-only, apparently??
       videoAcceleration = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
       open = true;
       powerManagement.enable = true;
-      # nvidiaPersistenced = true;
+      nvidiaPersistenced = true;
+      forceFullCompositionPipeline = true;
     };
   };
   environment.sessionVariables = {
     # __GL_SYNC_TO_VBLANK = "0";
     # __GL_YIELD = "run"; # yields to the compositor instead of busy‑waiting
-    __NV_DISABLE_EXPLICIT_SYNC = "0";
+    # __NV_DISABLE_EXPLICIT_SYNC = "0";
   };
 
   #fileSystems."/" = {
