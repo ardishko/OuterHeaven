@@ -17,7 +17,7 @@
     ./nginx.nix
     ./immich.nix
     ./fail2ban.nix
-    # ./pterodactyl.nix
+    ./pterodactyl.nix
     ./postgresql.nix
   ];
 }
