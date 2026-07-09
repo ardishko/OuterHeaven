@@ -2123,15 +2123,15 @@
         "nixpkgs": "nixpkgs_17"
       },
       "locked": {
-        "lastModified": 1776076967,
-        "narHash": "sha256-Axl9fweMlpZ54PYm1YykKU9lG3G0ZL799yPIEEpOiao=",
-        "owner": "ardishko",
+        "lastModified": 1783016704,
+        "narHash": "sha256-I7gTVySxaU/ewnZWdaE4BAL0Qguf9k3oiw90ZKg5Y6I=",
+        "owner": "PadowYT2",
         "repo": "pterodactyl.nix",
-        "rev": "3ab39269d62c429bdc3313bfe39bb7b6ee5e0c82",
+        "rev": "767276354ce3ac8ec793c0d3328dd8477d50d5a1",
         "type": "github"
       },
       "original": {
-        "owner": "ardishko",
+        "owner": "PadowYT2",
         "repo": "pterodactyl.nix",
         "type": "github"
       }

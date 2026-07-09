@@ -5,6 +5,7 @@
       [
         ./tui/zsh.nix
         ./packages/packages.nix
+        ./other/nixpkgs.nix
       ]
     else
       [

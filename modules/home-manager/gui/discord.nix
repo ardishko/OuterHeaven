@@ -24,7 +24,10 @@
   };
   programs.nixcord = {
     enable = true;
-    discord.enable = true;
+    discord = {
+      enable = true;
+      krisp.enable = true;
+    };
     # vesktop = {
     #   enable = true;
     #   package = inputs.unstable.legacyPackages.${pkgs.system}.vesktop;
