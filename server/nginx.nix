@@ -140,38 +140,38 @@
         extraConfig = "limit_req zone=general burst=20 nodelay;";
       };
     };
-    # virtualHosts."hosting.ardishco.net" = {
-    #   addSSL = true;
-    #   enableACME = true;
-    #   root = "${config.services.pterodactyl.panel.package}/public";
+    virtualHosts."hosting.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      root = "${config.services.pterodactyl.panel.package}/public";
 
-    #   extraConfig = ''
-    #     index index.php;
-    #     client_max_body_size 100m;
-    #     client_body_timeout 120s;
-    #     sendfile off;
-    #   '';
+      extraConfig = ''
+        index index.php;
+        client_max_body_size 100m;
+        client_body_timeout 120s;
+        sendfile off;
+      '';
 
-    #   locations."/" = {
-    #     tryFiles = "$uri $uri/ /index.php?$query_string";
-    #     index = "index.php";
-    #     extraConfig = "sendfile off;";
-    #   };
+      locations."/" = {
+        tryFiles = "$uri $uri/ /index.php?$query_string";
+        index = "index.php";
+        extraConfig = "sendfile off;";
+      };
 
-    #   locations."~ \\.php$".extraConfig = ''
-    #     fastcgi_split_path_info ^(.+\.php)(/.+)$;
-    #     fastcgi_pass unix:${config.services.phpfpm.pools.pterodactyl-panel.socket};
-    #     fastcgi_index index.php;
-    #     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    #     fastcgi_param HTTP_PROXY "";
-    #     fastcgi_intercept_errors off;
-    #     fastcgi_buffer_size 16k;
-    #     fastcgi_buffers 4 16k;
-    #     fastcgi_connect_timeout 300;
-    #     fastcgi_send_timeout 300;
-    #     fastcgi_read_timeout 300;
-    #     include ${pkgs.nginx}/conf/fastcgi_params;
-    #   '';
-    # };
+      locations."~ \\.php$".extraConfig = ''
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:${config.services.phpfpm.pools.pterodactyl-panel.socket};
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_intercept_errors off;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
+        fastcgi_connect_timeout 300;
+        fastcgi_send_timeout 300;
+        fastcgi_read_timeout 300;
+        include ${pkgs.nginx}/conf/fastcgi_params;
+      '';
+    };
   };
 }
