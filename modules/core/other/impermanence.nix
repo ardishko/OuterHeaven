@@ -44,6 +44,7 @@ in
             "/var/lib/docker"
             "/var/lib/tailscale" # tailscale
             "/var/lib/bitwarden_rs" # vaultwarden
+            "/var/lib/vaultwarden" # vaultwarden?
             "/var/lib/bitwarden-backup"
             "/var/lib/nextcloud" # nextcloud
             # redis block start
