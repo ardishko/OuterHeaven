@@ -198,7 +198,7 @@
         handbrake
         bottles
         kdePackages.filelight
-        jellyfin-desktop
+        fladder
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";
         #   src = fetchurl {

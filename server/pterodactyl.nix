@@ -82,7 +82,7 @@
     };
     api.ssl = {
       enable = true;
-      certFile = config.security.acme.certs."wings.ardishco.net".directory + "/cert.pem";
+      certFile = config.security.acme.certs."wings.ardishco.net".directory + "/fullchain.pem";
       keyFile = config.security.acme.certs."wings.ardishco.net".directory + "/key.pem";
     };
   };
