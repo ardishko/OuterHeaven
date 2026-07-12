@@ -5,6 +5,20 @@
   ...
 }:
 let
+  # Steam injects its own LD_LIBRARY_PATH (ubuntu12_32/ubuntu12_64) and
+  # LD_PRELOAD (gameoverlayrenderer.so) into launched processes. Those take
+  # precedence over the Nix binaries' DT_RUNPATH, so a dependency resolves to
+  # Steam's Ubuntu-built copy, which in turn wants libGL.so.1 -- a file that
+  # does not exist on NixOS. Result: "error while loading shared libraries:
+  # libGL.so.1". Clearing both vars lets everything resolve from the nix store
+  # again. Trade-off: this also disables the Steam overlay for these launches.
+  steamEnv =
+    name:
+    pkgs.writeShellScriptBin "${name}-steam" ''
+      unset LD_LIBRARY_PATH
+      unset LD_PRELOAD
+      exec /etc/profiles/per-user/${username}/bin/${name} "$@"
+    '';
   userConfigJson = ''
     [
         {
@@ -39,7 +53,7 @@ let
                 "glob": "''${title}/PS3_GAME/USRDIR/@(eboot.bin|EBOOT.BIN)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/rpcs3",
+                "path": "${steamEnv "rpcs3"}/bin/rpcs3-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -134,7 +148,7 @@ let
                 "glob": "''${title}@(.kip|.KIP|.nca|.NCA|.nro|.NRO|.nso|.NSO|.nsp|.NSP|.xci|.XCI)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/eden",
+                "path": "${steamEnv "eden"}/bin/eden-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -228,7 +242,7 @@ let
                 "glob": "''${title}@(.3ds|.3DS|.3dsx|.3DSX|.app|.APP|.axf|.AXF|.cci|.CCI|.cxi|.CXI|.elf|.ELF)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/azahar",
+                "path": "${steamEnv "azahar"}/bin/azahar-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -322,7 +336,7 @@ let
                 "glob": "''${title}@(.bin|.BIN|.chd|.CHD|.cso|.CSO|.dump|.DUMP|.gz|.GZ|.img|.IMG|.iso|.ISO|.mdf|.MDF|.nrg|.NRG)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/pcsx2-qt",
+                "path": "${steamEnv "pcsx2-qt"}/bin/pcsx2-qt-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -416,7 +430,7 @@ let
                 "glob": "''${title}@(.iso|.ISO|.wad|.WAD|.wua|.WUA|.wud|.WUD|.wux|.WUX)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/Cemu",
+                "path": "${steamEnv "Cemu"}/bin/Cemu-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -512,7 +526,7 @@ let
                 "glob": "''${title}@(.ciso|.CISO|.dol|.DOL|.elf|.ELF|.gcz|.GCZ|.iso|.ISO|.rvz|.RVZ|.wad|.WAD|.wbfs|.WBFS|.wia|.WIA)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/dolphin-emu",
+                "path": "${steamEnv "dolphin-emu"}/bin/dolphin-emu-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -606,7 +620,7 @@ let
                 "glob": "''${title}@(.7z|.7Z|.n64|.N64|.v64|.V64|.z64|.Z64|.zip|.ZIP)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/RMG",
+                "path": "${steamEnv "RMG"}/bin/RMG-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -700,7 +714,7 @@ let
                 "glob": "''${title}@(.7z|.7Z|.bz2|.BZ2|.gz|.GZ|.nes|.NES|.fds|.FDS|.unf|.UNF|.xz|.XZ|.zip|.ZIP)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/nestopia",
+                "path": "${steamEnv "nestopia"}/bin/nestopia-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -794,7 +808,7 @@ let
                 "glob": "''${title}@(.7z|.7Z|.bs|.BS|.sfc|.SFC|.smc|.SMC|.zip|.ZIP)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/bsnes",
+                "path": "${steamEnv "bsnes"}/bin/bsnes-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
@@ -888,7 +902,7 @@ let
                 "glob": "''${title}@(.cue|.CUE|.chd|.CHD|.ecm|.ECM|.iso|.ISO|.m3u|.M3U|.mds|.MDS|.pbp|.PBP)"
             },
             "executable": {
-                "path": "/etc/profiles/per-user/${username}/bin/duckstation-qt",
+                "path": "${steamEnv "duckstation-qt"}/bin/duckstation-qt-steam",
                 "shortcutPassthrough": false,
                 "appendArgsToExecutable": true
             },
