@@ -73,7 +73,7 @@
     openFirewall = true;
 
     remote = "https://hosting.ardishco.net";
-    uuid = "4a9a0a2a-fbcc-4fbd-9ecc-20f693e7e964";
+    uuid = "b1a9bd62-c908-4d37-b315-61994d334386";
     tokenIdFile = "/etc/cred/pterodactyl-wings-token-id";
     tokenFile = "/etc/cred/pterodactyl-wings-token";
     extraConfig = {
