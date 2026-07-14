@@ -198,7 +198,7 @@
         handbrake
         bottles
         kdePackages.filelight
-        fladder
+        plezy
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";
         #   src = fetchurl {
