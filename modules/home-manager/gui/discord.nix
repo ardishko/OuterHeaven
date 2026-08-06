@@ -8,14 +8,14 @@
   imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
     "equibop" = lib.mkForce {
-      name = "Discord (Equibop)";
+      name = "Discord";
       type = "Application";
       icon = "discord";
       terminal = false;
       exec = "mullvad-exclude equibop --ozone-platform=wayland";
     };
     "discord" = lib.mkForce {
-      name = "Discord";
+      name = "Discord (Regular)";
       type = "Application";
       icon = "discord";
       terminal = false;
@@ -68,12 +68,12 @@
         experiments.enable = true;
         fakeNitro.enable = true;
         favoriteEmojiFirst.enable = true;
-        favoriteGifSearch.enable = true;
+        # favoriteGifSearch.enable = true;
         fixSpotifyEmbeds.enable = true;
         fixYoutubeEmbeds.enable = true;
         forceOwnerCrown.enable = true;
         friendInvites.enable = true;
-        friendsSince.enable = true;
+        # friendsSince.enable = true;
         fullSearchContext.enable = true;
         fixCodeblockGap.enable = true;
         gameActivityToggle.enable = true;
@@ -89,7 +89,7 @@
           logEdits = true;
           ignoreSelf = true;
         };
-        messageTags.enable = true;
+        customCommands.enable = true;
         MutualGroupDMs.enable = true;
         newGuildSettings.enable = true;
         noBlockedMessages = {
@@ -126,8 +126,8 @@
         showHiddenChannels.enable = true;
         showHiddenThings.enable = true;
         silentTyping.enable = true;
-        sortFriendRequests.enable = true;
-        spotifyControls.enable = true;
+        sortFriends.enable = true;
+        # spotifyControls.enable = true;
         spotifyCrack.enable = true;
         spotifyShareCommands.enable = true;
         translate.enable = true;

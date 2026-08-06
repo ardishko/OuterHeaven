@@ -125,7 +125,7 @@
             extraDiagnostics.enable = true;
             format = {
               enable = true;
-              type = "nixfmt";
+              type = [ "nixfmt" ];
             };
             treesitter.enable = true;
           };

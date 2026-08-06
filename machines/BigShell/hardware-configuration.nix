@@ -5,12 +5,14 @@
   config,
   lib,
   modulesPath,
+  inputs,
   ...
 }:
 
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.framework-16-7040-amd
   ];
 
   boot = {
@@ -32,20 +34,25 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  hardware.fw-fanctrl = {
-    enable = true;
-    config = {
-      defaultStrategy = "laziest";
-      strategyOnDischarging = "laziest";
+  hardware = {
+    inputmodule = {
+      enable = true;
     };
-    # config = {
-    #   strategies = {
-    #     "medium"
-    #     "agile"
-    #     "very-agile"
+    framework.enableKmod = true;
+    keyboard.qmk.enable = true;
+    sensor.iio.enable = true;
+    # fw-fanctrl = {
+    #   enable = true;
+    #   config = {
+    #     defaultStrategy = "laziest";
+    #     strategyOnDischarging = "laziest";
     #   };
     # };
   };
+  services = {
+    fprintd.enable = true;
+  };
+  powerManagement.enable = true;
 
   swapDevices = [ ];
 

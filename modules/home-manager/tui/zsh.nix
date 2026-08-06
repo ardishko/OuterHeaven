@@ -28,6 +28,7 @@
         osConfig.users.users.${config.home.username}.description
       }/NixOS/OuterHeaven";
       ssh-generate-keys = "echo run: ssh-keygen -t rsa -b 2048 -C 'example@your-email.com'";
+      wirelessinfo = "for i in $(${pkgs.iw}/bin/iw dev | ${pkgs.gawk}/bin/awk '/Interface/{print $2}'); do ${pkgs.iw}/bin/iw dev \"$i\" link 2>/dev/null | ${pkgs.gnugrep}/bin/grep -q 'Connected to' && ${pkgs.iw}/bin/iw dev \"$i\" link; done";
     };
     syntaxHighlighting = {
       enable = true;

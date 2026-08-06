@@ -129,6 +129,9 @@
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+    };
   };
   outputs =
     inputs@{

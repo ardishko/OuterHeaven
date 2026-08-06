@@ -253,6 +253,11 @@ in
               ".config/danksearch"
               # feishin
               ".config/feishin"
+              # keepassxc
+              "~/.config/keepassxc/"
+              # stremio
+              ".stremio-server"
+              ".local/share/stremio"
 
               ".local/share/dolphin"
               ".local/share/kscreen"

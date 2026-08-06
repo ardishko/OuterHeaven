@@ -56,7 +56,6 @@
         gamemode
         davfs2
         protonup-qt
-        protonup-ng
         pavucontrol
         transmission_4-gtk
         nicotine-plus
@@ -73,26 +72,18 @@
         gnupg
         wlprop
         python3
-        ioquake3
         nvtopPackages.amd
-        wlsunset
-        pipes-rs
         cargo
-        clonehero
         scanmem
         unzip
         gparted
         gnome-clocks
         gnome-sound-recorder
         wev
-        clamav
         lutgen
         docker
         speedtest-cli
         gh
-        gnome-calendar
-        clamtk
-        lazygit
         wireguard-tools
         tailscale
         telegram-desktop
@@ -118,7 +109,6 @@
         mangareader
 
         gnome-text-editor
-        bleachbit
         tailscale
         ventoy-full-qt
         ripcord
@@ -163,7 +153,6 @@
         # zandronum
         aria2
         jp2a
-        deskreen
         nixpkgs-fmt
         p7zip
         wl-clipboard
@@ -197,8 +186,9 @@
         gimp-with-plugins
         handbrake
         bottles
-        kdePackages.filelight
+        baobab
         plezy
+        keepassxc
         # (pkgs.appimageTools.wrapType2 { # or wrapType1
         #   name = "suyu";
         #   src = fetchurl {
@@ -221,7 +211,6 @@
         dolphin-emu
         inputs.unstable.legacyPackages.${pkgs.system}.eden
         rpcs3
-
         # inputs.hytale-launcher.packages.${pkgs.system}.default
         # gonna fix this one ^
 
@@ -250,10 +239,13 @@
           qtscrcpy
           distrobox
           vscodium-fhs
-          arduino-ide
           vlc
         ]
-      );
+      )
+      ++ (lib.lists.optionals (osConfig.users.users.${config.home.username}.description == "liquid") [
+        framework-tool
+        framework-tool-tui
+      ]);
 
   # List of nix packages end here
   services.flatpak = {
@@ -266,9 +258,9 @@
       }
     ];
     packages = [
+      "com.stremio.Stremio"
       "io.github.wivrn.wivrn"
       "org.onlyoffice.desktopeditors"
-      "com.stremio.Stremio"
       "dev.ftb.ftb-app"
       "io.github.sigmasd.stimulator"
       "org.vinegarhq.Sober"

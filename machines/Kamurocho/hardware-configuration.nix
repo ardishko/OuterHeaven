@@ -45,7 +45,11 @@
       modesetting.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
       open = true;
-      powerManagement.enable = true;
+      powerManagement = {
+        enable = true;
+        kernelSuspendNotifier = true;
+        finegrained = true;
+      };
       nvidiaPersistenced = true;
       forceFullCompositionPipeline = true;
     };
