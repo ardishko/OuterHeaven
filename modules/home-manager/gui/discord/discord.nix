@@ -4,6 +4,17 @@
   pkgs,
   ...
 }:
+let
+  scopebuddy-steam = pkgs.makeDesktopItem {
+    name = "scopebuddy-steam";
+    desktopName = "Steam (Scopebuddy)";
+    comment = "Launch Steam in Gamescope with Scopebuddy auto-resolution";
+    exec = "${pkgs.env}/bin/env SCB_STEAMARGIGNORE=0 SCB_AUTO_RES=1 SCB_AUTO_REFRESH=1 scopebuddy --steam -f -- steam -steamos -gamepadui";
+    icon = "steam";
+    terminal = false;
+    categories = [ "Game" ];
+  };
+in
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
   xdg.desktopEntries = {
@@ -28,17 +39,14 @@
       enable = true;
       krisp.enable = true;
     };
-    # vesktop = {
-    #   enable = true;
-    #   package = inputs.unstable.legacyPackages.${pkgs.system}.vesktop;
-    # };
     equibop = {
       enable = true;
       package = inputs.unstable.legacyPackages.${pkgs.system}.equibop;
       autoscroll.enable = true;
     };
-    quickCss = "";
+    quickCss = "${builtins.readFile ./catppuccin-frappe.css}";
     config = {
+      useQuickCss = true;
       autoUpdate = true;
       autoUpdateNotification = true;
       themeLinks = [

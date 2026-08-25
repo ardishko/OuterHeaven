@@ -132,6 +132,17 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
     };
+    scopebuddy = {
+      url = "github:OpenGamingCollective/ScopeBuddy";
+    };
+    niri-spicy = {
+      url = "github:losnoco/niri/spicy-main";
+      flake = false;
+    };
+    smithay-spicy = {
+      url = "github:losnoco/smithay/spicy-master";
+      flake = false;
+    };
   };
   outputs =
     inputs@{

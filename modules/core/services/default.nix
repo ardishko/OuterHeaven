@@ -25,6 +25,7 @@
     ./xserver.nix
     ./zapret.nix
     ./fwupd.nix
-    ./pixelworlds
+    # ./pixelworlds
+    ./zfs.nix
   ];
 }

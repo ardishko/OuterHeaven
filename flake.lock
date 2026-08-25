@@ -332,7 +332,7 @@
     },
     "fenix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_22",
+        "nixpkgs": "nixpkgs_23",
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
@@ -1314,6 +1314,23 @@
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       }
     },
+    "niri-spicy": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785316363,
+        "narHash": "sha256-dJDpysW5WcecM9Oo2ZmLMd/6UzirLH9qOS/MayVX4qE=",
+        "owner": "losnoco",
+        "repo": "niri",
+        "rev": "eb799fa12e7c5eff8a1c6dfcca51222a622da07a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "losnoco",
+        "ref": "spicy-main",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "niri-unstable": {
       "flake": false,
       "locked": {
@@ -1749,6 +1766,22 @@
     },
     "nixpkgs_20": {
       "locked": {
+        "lastModified": 1785967620,
+        "narHash": "sha256-IItrdb7Puk05RqOBWZYFC5X6Wl1sJmCfh5MWVHw5iMM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b7c2ada94fe99c15b0dbcf4d11fd7850b957a436",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_21": {
+      "locked": {
         "lastModified": 1682809678,
         "narHash": "sha256-jqR8t82mWotOSgnWZvr6xXCO/tc3fCPTLMPvI7Jo5rA=",
         "owner": "NixOS",
@@ -1763,7 +1796,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_21": {
+    "nixpkgs_22": {
       "locked": {
         "lastModified": 1683442750,
         "narHash": "sha256-IiJ0WWW6OcCrVFl1ijE+gTaP0ChFfV6dNkJR05yStmw=",
@@ -1779,7 +1812,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_22": {
+    "nixpkgs_23": {
       "locked": {
         "lastModified": 1677063315,
         "narHash": "sha256-qiB4ajTeAOVnVSAwCNEEkoybrAlA+cpeiBxLobHndE8=",
@@ -1795,7 +1828,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_23": {
+    "nixpkgs_24": {
       "locked": {
         "lastModified": 1768564909,
         "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
@@ -2143,6 +2176,7 @@
         "minegrub-theme": "minegrub-theme",
         "nh": "nh",
         "niri-nix": "niri-nix",
+        "niri-spicy": "niri-spicy",
         "nix-flatpak": "nix-flatpak",
         "nix-gaming": "nix-gaming",
         "nixcord": "nixcord",
@@ -2153,7 +2187,9 @@
         "plasma-manager": "plasma-manager",
         "pterodactyl-nix": "pterodactyl-nix",
         "quickshell": "quickshell",
+        "scopebuddy": "scopebuddy",
         "shadower": "shadower",
+        "smithay-spicy": "smithay-spicy",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "tag-studio": "tag-studio",
@@ -2229,10 +2265,28 @@
         "type": "github"
       }
     },
+    "scopebuddy": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_20"
+      },
+      "locked": {
+        "lastModified": 1785787215,
+        "narHash": "sha256-Z4KE6Qs5dcNdoEra1sx69I8EsxztAeVNGgO0ltYz7r0=",
+        "owner": "OpenGamingCollective",
+        "repo": "ScopeBuddy",
+        "rev": "8c517a4c1b2fb9ed3fe43a95e1c5630cdecc4678",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OpenGamingCollective",
+        "repo": "ScopeBuddy",
+        "type": "github"
+      }
+    },
     "shadower": {
       "inputs": {
         "naersk": "naersk",
-        "nixpkgs": "nixpkgs_20"
+        "nixpkgs": "nixpkgs_21"
       },
       "locked": {
         "lastModified": 1721405001,
@@ -2245,6 +2299,23 @@
       "original": {
         "owner": "n3oney",
         "repo": "shadower",
+        "type": "github"
+      }
+    },
+    "smithay-spicy": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785316355,
+        "narHash": "sha256-6xF9X87uqAr+QFjq/g2yZ6MnTQ71R6j47NK37OVtR1M=",
+        "owner": "losnoco",
+        "repo": "smithay",
+        "rev": "fb40c6908704035f09a2c118e105d3a6ae3deffc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "losnoco",
+        "ref": "spicy-master",
+        "repo": "smithay",
         "type": "github"
       }
     },
@@ -2523,7 +2594,7 @@
     },
     "watershot": {
       "inputs": {
-        "nixpkgs": "nixpkgs_21",
+        "nixpkgs": "nixpkgs_22",
         "std": "std"
       },
       "locked": {
@@ -2542,7 +2613,7 @@
     },
     "wayfreeze": {
       "inputs": {
-        "nixpkgs": "nixpkgs_23",
+        "nixpkgs": "nixpkgs_24",
         "systems": "systems_7"
       },
       "locked": {

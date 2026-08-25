@@ -2,7 +2,7 @@
   imports = [
     ./cursor.nix
     ./browser
-    ./discord.nix
+    ./discord
     ./easyeffects.nix
     ./ghostty.nix
     ./gtk.nix

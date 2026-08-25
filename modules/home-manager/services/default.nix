@@ -1,9 +1,8 @@
 {
   imports = [
-    # ./swayosd.nix
-    # ./hypridle.nix
     ./arrpc.nix
     ./gnome-keyring.nix
     ./xmousepasteblock.nix
+    ./joystickwake.nix
   ];
 }

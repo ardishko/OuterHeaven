@@ -42,7 +42,6 @@ let
       '';
     };
   };
-
   kwin = kwinHosts.${hostName} or kwinHosts.ShadowMoses;
 in
 {
@@ -98,24 +97,38 @@ in
       theme = "default";
       lookAndFeel = "Catppuccin-Frappe-Sky";
       colorScheme = "CatppuccinFrappeSky";
-      wallpaper = ../../../assets/wallpapers/haha.jpg;
-      wallpaperBackground.blur = true;
-      wallpaperFillMode = "tile";
       cursor = {
         theme = "${config.home.pointerCursor.name}";
         size = config.home.pointerCursor.size;
       };
       iconTheme = "${config.gtk.iconTheme.name}";
     };
-    kscreenlocker.appearance.wallpaper = ../../../assets/wallpapers/idolGoro.jpg;
-    fonts.general = {
-      family = "${config.gtk.font.name}";
-      pointSize = config.gtk.font.size;
+    kscreenlocker.appearance.wallpaper = ../../../assets/wallpapers/y0lock.jpg;
+    fonts = {
+      general = {
+        family = "${config.gtk.font.name}";
+        pointSize = config.gtk.font.size;
+      };
+      fixedWidth = {
+        family = "${config.gtk.font.name}";
+        pointSize = config.gtk.font.size;
+      };
+      menu = {
+        family = "${config.gtk.font.name}";
+        pointSize = config.gtk.font.size;
+      };
+      toolbar = {
+        family = "${config.gtk.font.name}";
+        pointSize = config.gtk.font.size;
+      };
+      windowTitle = {
+        family = "${config.gtk.font.name}";
+        pointSize = config.gtk.font.size;
+      };
     };
     input.keyboard = {
       layouts = [
         { layout = "tr"; }
-        { layout = "se"; }
         { layout = "lv"; }
       ];
       numlockOnStartup = "on";
@@ -138,35 +151,8 @@ in
       launch = null;
       runCommandOnClipboard = null;
     };
-
-    #  Anyrun launcher
-    # Uncomment to bind Ctrl+Escape to anyrun:
-    # hotkeys.commands.launch-anyrun = {
-    #   name = "Launch Anyrun";
-    #   key = "Ctrl+Escape";
-    #   command = "anyrun";
-    # };
-
-    #  Flameshot
-    # To use flameshot instead of spectacle, comment out the spectacle
-    # shortcuts above and uncomment this block:
-    # spectacle.shortcuts = {
-    #   captureRectangularRegion = "none";
-    #   captureCurrentMonitor = "none";
-    #   captureActiveWindow = "none";
-    # };
-    # hotkeys.commands.flameshot-gui = {
-    #   name = "Flameshot Screenshot";
-    #   key = "Print";
-    #   command = "flameshot gui";
-    # };
-    # hotkeys.commands.flameshot-full = {
-    #   name = "Flameshot Full Screen";
-    #   key = "Ctrl+Print";
-    #   command = "flameshot full";
-    # };
   };
-
+  # custom user services
   systemd.user.services.kscreen-hdr = {
     Unit = {
       Description = "Enable HDR on DP-1";
@@ -177,6 +163,28 @@ in
       ExecStart = "${pkgs.bash}/bin/bash -c 'sleep 3 && ${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.hdr.enable output.DP-1.wcg.enable'";
     };
     Install.WantedBy = [ "plasma-plasmashell.service" ];
+  };
+  systemd.user.services.set-wallpaper = {
+    Unit = {
+      Description = "Apply wallpaper (plasma-manager's declarative option is broken)";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "plasma-plasmashell.service" ];
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart =
+        if (osConfig.users.users.${config.home.username}.description == "vaporsnake") then
+          "${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${../../../assets/wallpapers/haha.jpg}"
+        else if (osConfig.users.users.${config.home.username}.description == "liquid") then
+          "${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${../../../assets/wallpapers/hades-catppucin.png}"
+        else if (osConfig.users.users.${config.home.username}.description == "raiden") then
+          "${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${../../../assets/wallpapers/steamDeck.png}"
+        else if (osConfig.users.users.${config.home.username}.description == "majima") then
+          "${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${../../../assets/wallpapers/ultrawideHorizons.png}"
+        else
+          "";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
   };
   # here's the taskbar, it's seriously annoying to declare. I hate how stateful plasma is
   xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc" = {
@@ -218,7 +226,7 @@ in
       plugin=org.kde.plasma.icontasks
 
       [Containments][2][Applets][5][Configuration][General]
-      launchers=applications:librewolf.desktop,applications:discord.desktop,applications:steam.desktop,applications:dev.zed.Zed.desktop,applications:signal.desktop,applications:com.mitchellh.ghostty.desktop,applications:feishin.desktop,applications:com.obsproject.Studio.desktop
+      launchers=applications:librewolf.desktop,applications:equibop.desktop,applications:steam.desktop,applications:dev.zed.Zed.desktop,applications:signal.desktop,applications:com.mitchellh.ghostty.desktop,applications:feishin.desktop,applications:com.obsproject.Studio.desktop
 
       [Containments][2][Applets][6]
       immutability=1

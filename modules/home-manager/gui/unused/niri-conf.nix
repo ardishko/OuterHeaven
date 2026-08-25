@@ -8,6 +8,53 @@
 }:
 let
   username = osConfig.users.users.${config.home.username}.description;
+  niri-spicy = pkgs.rustPlatform.buildRustPackage {
+    pname = "niri";
+    version = "spicy";
+    src = inputs.niri-spicy;
+    doCheck = false;
+
+    postPatch = ''
+      substituteInPlace Cargo.toml \
+        --replace-fail 'path = "../smithay"' 'path = "${inputs.smithay-spicy}"' \
+        --replace-fail 'path = "../smithay/smithay-drm-extras"' 'path = "${inputs.smithay-spicy}/smithay-drm-extras"'
+    '';
+
+    cargoLock.lockFile = "${inputs.niri-spicy}/Cargo.lock";
+    cargoLock.allowBuiltinFetchGit = true;
+
+    nativeBuildInputs = with pkgs; [
+      rustPlatform.bindgenHook
+      pkg-config
+      cmake
+    ];
+    buildInputs = with pkgs; [
+      cairo
+      dbus
+      libGL
+      libdisplay-info
+      libinput
+      seatd
+      libxkbcommon
+      libgbm
+      pango
+      wayland
+      pipewire
+      systemd
+      shaderc
+    ];
+
+    env = {
+      RUSTFLAGS = toString (
+        map (arg: "-C link-arg=" + arg) [
+          "-Wl,--push-state,--no-as-needed"
+          "-lEGL"
+          "-lwayland-client"
+          "-Wl,--pop-state"
+        ]
+      );
+    };
+  };
 in
 {
   imports = [ inputs.niri-nix.homeModules.default ];
@@ -16,7 +63,7 @@ in
   ];
   wayland.windowManager.niri = {
     enable = true;
-    package = pkgs.niri;
+    package = niri-spicy;
     settings = {
       output =
         if (username == "vaporsnake") then
@@ -35,12 +82,23 @@ in
           [
             {
               _args = [ "eDP-1" ];
-              mode = "1920x1200@164.998993";
+              mode = "2560x1600@165.000";
               scale = 1.0;
               position._props = {
                 x = 0;
                 y = 0;
               };
+            }
+            {
+              _args = [ "DP-5" ];
+              mode = "2560x1440@143.999";
+              scale = 1.0;
+              position._props = {
+                x = 0;
+                y = 0;
+              };
+              max-bpc = 10;
+              hdr.reference-luminance = 203;
             }
           ]
         else
@@ -387,6 +445,18 @@ in
         {
           match._props.app-id._raw = ''r#"^steam_app"#'';
           open-on-workspace = "10";
+        }
+        {
+          match._props.app-id._raw = ''r#"^steam_app"#'';
+          allow-tearing = true;
+        }
+        {
+          match._props.app-id = "osu!";
+          allow-tearing = true;
+        }
+        {
+          match._props.app-id = "org.vinegarhq.Sober";
+          allow-tearing = true;
         }
       ];
     };

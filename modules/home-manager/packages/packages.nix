@@ -42,6 +42,8 @@
         inputs.nix-gaming.packages.${pkgs.system}.viper
         inputs.nix-gaming.packages.${pkgs.system}.mo2installer
         inputs.fluxer-nix.packages.${pkgs.system}.fluxer
+        inputs.scopebuddy.packages.${pkgs.system}.default
+
         # Over
         wget
         lutris
@@ -69,6 +71,7 @@
         lolcat
         vulkan-tools
         fastfetch
+        nitch
         gnupg
         wlprop
         python3
@@ -102,9 +105,8 @@
         amdgpu_top
 
         # Image viewer
-        satty
+        kdePackages.gwenview
 
-        nitch
         # manga reader
         mangareader
 
@@ -227,6 +229,7 @@
 
         # Custom packages
         # (callPackage ./pkgcustom/roblox-fd {})
+        (callPackage ./pkgcustom/kame-editor { })
       ]
       ++ (lib.lists.optionals
         (

@@ -3,13 +3,6 @@
   pkgs,
   ...
 }:
-let
-  steamDeckScript = pkgs.writeShellScript "steam-deck-launcher" ''
-    #!/usr/bin/env bash
-    read -r W H <<< $("${pkgs.kdePackages.kscreen}/bin/kscreen-doctor" -o | grep "Mode" | head -n1 | "${pkgs.gawk}/bin/awk" '{print $2}' | tr x ' ')
-    "${pkgs.mullvad}/bin/mullvad-exclude" "${pkgs.gamescope}/bin/gamescope" --expose-wayland -f -W "$W" -H "$H" -- "${pkgs.steam}/bin/steam" -gamepadui "$@"
-  '';
-in
 {
   xdg = {
     desktopEntries = {
@@ -26,7 +19,7 @@ in
         type = "Application";
         icon = "steam";
         exec = ''
-          ${steamDeckScript}
+          env SCB_STEAMARGIGNORE=0 SCB_AUTO_RES=1 SCB_AUTO_REFRESH=1 scopebuddy --expose-wayland --force-grab-cursor -s 1.7 -f --steam -- mullvad-exclude steam -steamos -gamepadui
         '';
         terminal = false;
         categories = [ "Game" ];

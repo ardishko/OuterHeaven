@@ -6,10 +6,11 @@
       enable = true;
       # TODO: Millenium addition
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true;
       gamescopeSession.enable = true;
       platformOptimizations.enable = true;
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
+      extest.enable = true;
     };
   };
   hardware.steam-hardware.enable = true;
