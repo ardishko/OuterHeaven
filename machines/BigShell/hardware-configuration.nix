@@ -41,13 +41,6 @@
     framework.enableKmod = true;
     keyboard.qmk.enable = true;
     sensor.iio.enable = true;
-    # fw-fanctrl = {
-    #   enable = true;
-    #   config = {
-    #     defaultStrategy = "laziest";
-    #     strategyOnDischarging = "laziest";
-    #   };
-    # };
   };
   services = {
     fprintd.enable = true;

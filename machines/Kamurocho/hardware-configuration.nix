@@ -34,7 +34,7 @@
       # "mem_sleep_default=deep"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "nvidia.NVreg_TemporaryFilePath=/run/nvidia-persistenced"
-      "nvidia.NVreg_DynamicPowerManagement=0x00"
+      # "nvidia.NVreg_DynamicPowerManagement=0x00"
     ];
   };
 
