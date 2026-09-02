@@ -12,7 +12,6 @@
         ./other/i2c.nix
         ./services/openssh.nix
         ./tui/keymap.nix
-        ./gui/niri.nix
         ./gui/opengl.nix
         ./boot
       ]
