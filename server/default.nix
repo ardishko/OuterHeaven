@@ -4,6 +4,7 @@
     ./audiobookshelf.nix
     ./fail2ban.nix
     # ./gitlab.nix
+    ./gatus.nix
     ./grafana.nix
     ./home-assistant.nix
     ./navidrome.nix
