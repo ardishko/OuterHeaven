@@ -101,7 +101,6 @@
         proxyPass = "http://127.0.0.1:8123";
         proxyWebsockets = true;
         extraConfig = ''
-          proxy_set_header Host $host;
           limit_req zone=general burst=20 nodelay;
         '';
       };
