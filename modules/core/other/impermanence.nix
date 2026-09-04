@@ -81,7 +81,10 @@ in
             "/var/lib/pterodactyl-panel" # pterodactyl panel
             "/var/lib/pterodactyl-wings" # pterodactyl wings
             "/var/lib/vikunja"
-            "/var/lib/mealie"
+            {
+              directory = "/var/lib/private";
+              mode = "0700";
+            }
             "/var/lib/mysql" # mysql database
             "/etc/ssh"
             # immich
