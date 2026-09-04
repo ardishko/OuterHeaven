@@ -80,6 +80,8 @@ in
             "/var/log/caddy" # caddy logs
             "/var/lib/pterodactyl-panel" # pterodactyl panel
             "/var/lib/pterodactyl-wings" # pterodactyl wings
+            "/var/lib/vikunja"
+            "/var/lib/mealie"
             "/var/lib/mysql" # mysql database
             "/etc/ssh"
             # immich

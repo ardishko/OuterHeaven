@@ -10,8 +10,10 @@
     # ./netdata.nix
     ./nextcloud.nix
     ./vaultwarden.nix
+    ./vikunja.nix
     ./jellyfin.nix
     ./kavita.nix
+    ./mealie.nix
     ./tailscale.nix
     ./uptimeKuma.nix
     ./nginx.nix

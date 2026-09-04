@@ -9,15 +9,12 @@
     # notify_push.enable = true;
     extraApps = {
       inherit (pkgs.nextcloud33Packages.apps)
-        cookbook
         notes
         bookmarks
         tasks
         spreed
         previewgenerator
         phonetrack
-        calendar
-        contacts
         forms
         ;
       news = pkgs.fetchNextcloudApp {
