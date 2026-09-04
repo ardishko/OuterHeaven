@@ -6,9 +6,8 @@
         address = "127.0.0.1"; # nginx proxies it; don't expose directly
         port = 8095; # 8080 avoided in case Wings uses it
       };
-      ui.title = "ardishco status";
+      ui.title = "Some statusses";
       endpoints = [
-        # --- Public apps (real services, checked over public HTTPS) ---
         {
           name = "immich";
           group = "apps";
@@ -76,18 +75,7 @@
           ];
         }
         {
-          name = "pages";
-          group = "apps";
-          url = "https://pages.ardishco.net/api/health"; # assumes PocketBase (port 8090)
-          interval = "60s";
-          conditions = [
-            "[STATUS] == 200"
-            "[RESPONSE_TIME] < 1500"
-            "[CERTIFICATE_EXPIRATION] > 168h"
-          ];
-        }
-        {
-          name = "pterodactyl-panel";
+          name = "pterodactyl";
           group = "apps";
           url = "https://hosting.ardishco.net/";
           interval = "60s";
@@ -120,9 +108,9 @@
           ];
         }
 
-        # --- Behind Anubis: check the ORIGIN directly, Anubis walls off bots ---
+        # Behind Anubis: Checks the origin directly
         {
-          name = "stats-origin";
+          name = "stats";
           group = "anubis";
           url = "http://127.0.0.1:3000/";
           interval = "60s";
@@ -132,7 +120,7 @@
           ];
         }
         {
-          name = "reading-origin";
+          name = "reading";
           group = "anubis";
           url = "http://127.0.0.1:5000/";
           interval = "60s";
