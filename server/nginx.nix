@@ -171,5 +171,20 @@
         include ${pkgs.nginx}/conf/fastcgi_params;
       '';
     };
+    virtualHosts."cooking.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:9000";
+      };
+    };
+
+    virtualHosts."todo.ardishco.net" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:3456";
+      };
+    };
   };
 }
