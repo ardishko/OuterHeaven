@@ -42,7 +42,7 @@
           ];
         }
         {
-          name = "home-assistant";
+          name = "home assistant";
           group = "apps";
           url = "https://home.ardishco.net/";
           interval = "60s";
