@@ -15,7 +15,6 @@
     ./kavita.nix
     ./mealie.nix
     ./tailscale.nix
-    ./uptimeKuma.nix
     ./nginx.nix
     ./immich.nix
     ./fail2ban.nix
