@@ -80,7 +80,8 @@ in
             "/var/log/caddy" # caddy logs
             "/var/lib/pterodactyl-panel" # pterodactyl panel
             "/var/lib/pterodactyl-wings" # pterodactyl wings
-            "/var/lib/vikunja"
+            # "/var/lib/vikunja"
+            # "/var/lib/mealie"
             {
               directory = "/var/lib/private";
               mode = "0700";
