@@ -17,7 +17,7 @@
 
 ---
 
-## ❓ Why the move
+## ❓ Why the move?
 
 As this is a personal project and cryptographic keys are stored in this project,
 Github's own AI scraping and policy about not preventing others from doing it
@@ -37,7 +37,7 @@ genuinely how I talk)
 
 ---
 
-## 🙋 What does this mean for my other projects
+## 🙋 What does this mean for my other projects?
 
 They will be judged on a case by case basis. Github is huge and gives you way
 more exposure than you could get elsewhere for finding contributors, so I am
