@@ -41,12 +41,3 @@ more exposure than you could get elsewhere for finding contributors, so I am
 trying to benefit from the best of both worlds. Projects with cryptography
 involved (basically anything vulnerable to the "collect now, harvest later"
 approach) go to Codeberg, everything else stays on Github.
-
----
-
-<div align="center">
-
-**⚠️ Anything you read here is frozen. Go to Codeberg for the current version.
-⚠️**
-
-</div>
