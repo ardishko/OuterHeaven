@@ -4,9 +4,6 @@
 
 ### ➡️ **[CODEBERG LINK](https://codeberg.org/gunslingga/OuterHeaven)** ⬅️
 
-[![Codeberg](https://img.shields.io/badge/Codeberg-2185D0?style=for-the-badge&logo=codeberg&logoColor=white)](https://codeberg.org/ardishko/OuterHeaven)
-[![Status](https://img.shields.io/badge/this%20mirror-ARCHIVED-red?style=for-the-badge)](https://codeberg.org/ardishko/OuterHeaven)
-
 </div>
 
 ---
