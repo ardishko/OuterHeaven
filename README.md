@@ -14,8 +14,6 @@
 > [!IMPORTANT]
 > **This repository is no longer maintained here.** All development, issues, and
 > updates have moved to Codeberg.
->
-> 🔗 **New home:** https://codeberg.org/ardishko/OuterHeaven
 
 ---
 
